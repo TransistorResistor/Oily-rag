@@ -1,0 +1,103 @@
+{
+  "modelID": 2009,
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "AN/APG-63 radar family",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "AN/APG-63 radar family\n\nThe AN/APG-63 and AN/APG-70 are a family of all-weather multimode radar systems designed by Hughes Aircraft (later Raytheon) for the F-15 Eagle air superiority fighter. These X band pulse-Doppler radar systems are designed for both air-air and air-ground missions; they are able to look up at high-flying targets and down at low-flying targets without being confused by ground clutter. The systems can detect and track aircraft and small high-speed targets at distances beyond visual range down to close range, and at altitudes down to treetop level. The radar feeds target information into the aircraft's central computer for effective weapons delivery. For close-in dogfights, the radar automatically acquires enemy aircraft and projects this information onto the cockpit head-up display. The name is assigned from the Army Navy Joint Electronics Type Designation System.",
+      "shortDescription": "The AN/APG-63 and AN/APG-70 are a family of all-weather multimode radar systems designed by Hughes Aircraft (later Raytheon) for the F-15 Eagle air superiority fighter.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "APG-70 systems were originally installed on later model F-15C/D aircraft, but have since been replaced on those aircraft by the APG-63(V)1. As with the basic APG-63, the APG-70 is no longer in production; but were in service on the F-15E Strike Eagle, the Israeli F-15I and the Saudi F-15S. Also, as with APG-63, APG-70 also comes in two versions, both have identical air-to-air capabilities, but slightly different air-to-ground capabilities: APG-70 on F-15Is and F-15Ss exported to foreign customers has lower performance in that the resolution of Doppler Beam Sharpening (DBS) / Mapping / Synthetic Aperture Radar (SAR) modes for the APG-70 on F-15E of USAF were at least three times better than that of the APG-70 on F-15I and F-15S. From 2017, the APG-70s on Israeli F-15Is were planned to be removed and replaced with the APG-82(V)1.\n\nOriginally designated the AN/APG-63(V)4 until 2009, the AN/APG-82(V)1 combines the processor of the AN/APG-79 used on the Boeing F/A-18E/F Super Hornet with the antenna of the APG-63(V)3 AESA from the F-15C for the F-15E radar upgrade. The new radar also includes a new cooling system and Radio Frequency Tunable Filters (RFTF). RFTF is designed to enable the radar and the electronic warfare hardware (jamming) to operate simultaneously without degrading each other.\n\nThe new radar is currently being installed in the F-15E under the Radar Modernization Program (RMP). From 2017, Israel selected the APG-82(V)1 to install in its F-15Is. The radar is also fitted to the new-build F-15EX. In late October 2019 the US Defense Security Cooperation Agency approved a possible sale to Japan of up to 103 APG-82(V)1 radars for the upgrade of 98 Mitsubishi F-15Js to a \"Japanese Super Interceptor\" (JSI) configuration. In 2019 Boeing selected Raytheon for the B-52J Stratofortress radar modernization program, which incorporates technology from the AN/APG-82(V)1.\n\nThe APQ-180 is a derivative of the APG-70 radar, designed for installation on the AC-130U gunship aircraft (Rockwell/Boeing modification). It uses a modified gimbaling scheme for the planar array, and an upgraded analog signal processor unit, and incorporates several enhanced (and new) air-to-ground modes.\n\nAN/AWG-27 is Programmable Armament Control System developed from earlier AWG-20 for use in conjunction with F-15 radars.",
+      "shortDescription": "APG-70 systems were originally installed on later model F-15C/D aircraft, but have since been replaced on those aircraft by the APG-63(V)1.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The APG-70 was a 1980s redesign of the APG-63 for greater reliability and easier maintenance. Additionally, gate array technology enabled the APG-70 to incorporate new modes with enhanced operational capabilities. To reduce production costs, many of the upgraded radar's modules are common with the F/A-18's APG-73 radar, while the computers / processors share an 85% commonality with that of the F-14's APG-71 radar.\n\nAN/AWG-20 is the Armament Control System used in conjunction with F-15 radars.",
+      "shortDescription": "The APG-70 was a 1980s redesign of the APG-63 for greater reliability and easier maintenance.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The APG-63 was developed in the early 1970s and has been operational since 1973, and was installed on all F-15A/Bs. In 1979, it received a major upgrade and became the first airborne radar to incorporate a software programmable signal processor (PSP), and the PSP allowed the system to be modified to accommodate new modes and weapons through software reprogramming rather than by hardware retrofit. The APG-63 with PSP is one of the most important features that distinguishes earlier F-15 A/Bs from the F-15 C/Ds fitted with PSP, and with the exception of the final 43 (which are equipped with APG-70), all F-15 C/Ds are equipped with APG-63 with PSP.\n\nThe APG-63 series is no longer in production but remains in service. Almost 1,000 APG-63s had been delivered when production ended in 1986. About 700 are still operational in F-15As, Bs, and early model Cs and Ds operated by the U.S. Air Force, Air National Guard, and the air forces of Israel, Japan, and Saudi Arabia. They are also fitted to the Lockheed P-3 Orion aircraft of U.S. Customs and Border Protection's Office of Air and Marine.\n\nThe APG-63(V)1 radar is a 1990s reliability/maintainability hardware redesign which also provided significant mode growth opportunities. It was designed to replace outmoded APG-63 radars installed in F-15C/D aircraft models, providing improved performance and a tenfold increase in reliability. The new radar is able to track 14 targets simultaneously while being able to simultaneously attack 6 of those. Raytheon delivered 180 APG-63(V)1 radar systems to the U.S. Air Force (4 of which have since been lost to crashes), and is on contract to deliver an additional 60 radars to the Republic of Korea Air Force for the F-15K Slam Eagle.\n\nThe APG-63(V)2 active electronically scanned array (AESA) radar has been retrofitted to 18 U.S. Air Force F-15C aircraft. This upgrade includes most of the new hardware from the APG-63(V)1, but adds an AESA to provide increased pilot situational awareness. The AESA radar has an exceptionally agile beam, providing nearly instantaneous track updates and enhanced multi-target tracking capability. The APG-63(V)2 is compatible with current F-15C weapon loads and enables pilots to take full advantage of the AIM-120 AMRAAM's capabilities, simultaneously initiating guidance for multiple missiles to several targets widely spaced in azimuth, elevation, or range.\n\nAN/APG-64 was a development of AN/APG-63. It did not enter service.",
+      "shortDescription": "The APG-63 was developed in the early 1970s and has been operational since 1973, and was installed on all F-15A/Bs.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "The APG-63(V)3 radar is a more modern variant of the APG-63(V)2, applying the same AESA technology utilized in Raytheon's APG-79. The (V)3 is currently being retrofitted into F-15C/D and deployed in Singapore's new F-15SG aircraft and Saudi Arabia's new F-15SA aircraft. Raytheon delivered the first prototype APG-63(V)3 system in June 2006. The company started work on an initial production order in October 2007.",
+      "shortDescription": "The APG-63(V)3 radar is a more modern variant of the APG-63(V)2, applying the same AESA technology utilized in Raytheon's APG-79.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 200901,
+      "url": "https://en.wikipedia.org/wiki/AN/APG-63_radar_family",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Hughes Aircraft (later Raytheon)\".",
+      "parameterUomValue": "Hughes Aircraft (later Raytheon)",
+      "classification": "U",
+      "parameterValue": "Hughes Aircraft (later Raytheon)",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Platform",
+      "parameterDescr": "Aircraft type(s) the system is fitted to. Source text: \"F-15 Eagle\".",
+      "parameterUomValue": "F-15 Eagle",
+      "classification": "U",
+      "parameterValue": "F-15 Eagle",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"All-weather multimode pulse-Doppler radar\".",
+      "parameterUomValue": "All-weather multimode pulse-Doppler radar",
+      "classification": "U",
+      "parameterValue": "All-weather multimode pulse-Doppler radar",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Frequency",
+      "parameterDescr": "Operating radio frequency. Source text: \"X band\".",
+      "parameterUomValue": "X band",
+      "classification": "U",
+      "parameterValue": "X band",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"1973 (APG-63)\".",
+      "parameterUomValue": "1973 (APG-63)",
+      "classification": "U",
+      "parameterValue": "1973 (APG-63)",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Production ended",
+      "parameterDescr": "Year production of the system ended. Source text: \"1986 (APG-63, ~1,000 delivered)\".",
+      "parameterUomValue": "1986 (APG-63, ~1,000 delivered)",
+      "classification": "U",
+      "parameterValue": "1986 (APG-63, ~1,000 delivered)",
+      "uom": ""
+    }
+  ]
+}

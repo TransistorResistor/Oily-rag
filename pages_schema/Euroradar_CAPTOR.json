@@ -1,0 +1,130 @@
+{
+  "modelID": 2022,
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "Euroradar CAPTOR",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Euroradar Captor is a next-generation mechanical multi-mode Pulse Doppler Radar designed for the Eurofighter Typhoon. Development of Captor led to the AMSAR (Airborne Multirole Solid State Active Array Radar) project which eventually produced the CAESAR (Captor Active Electronically Scanned Array Radar), now known as Captor-E.\n\nIn June 1985, discussions began amongst various corporations to sound out the possibility of cooperation on the radar for the EFA, the project that would later become the Eurofighter. The United Kingdom chose Ferranti as the leading contract partner, Germany AEG-Telefunken and Italy FIAR. Spain, which had no radar experience, played only a minor role, later selecting Eesa as the main contractor. France had indicated it intended to withdraw from the programme, and Thomson-CSF negotiated with Ferranti in 1987 to secure a share of the work (the travelling-wave tube).\n\nFerranti presented its ECR-90, based on the Blue Vixen, as early as 1986, while AEG offered the MSD-2000 \"Emerald\", based on the AN/APG-65. Both bidders submitted two-part offers. After a new tender in February 1988, the two finalists were:\n- ECR-90 (European Collaborative Radar 90): offered by Ferranti, based on the Blue Vixen of the BAE Sea Harrier FA2, already AMRAAM-capable. The 32-bit signal processor was to be supplied by Hughes, IBM or Ericsson.\n- MSD-2000 (Multimode Silent Radar 2000): from AEG and GEC Marconi, based on the APG-65 of the F-18, with antenna enlarged from 68cm to 75cm and radiation power doubled.",
+      "shortDescription": "The Euroradar Captor is a next-generation mechanical multi-mode Pulse Doppler Radar designed for the Eurofighter Typhoon.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "After October 1988, Ferranti's ECR-90 won the competition but Germany did not agree, leading to a political dispute. In early 1990, GEC Marconi (working on MSD-2000) took over Ferranti (designing the ECR-90). GEC-Ferranti was declared winner of the EFA radar competition and awarded a 300 million pound contract. Hughes sued GEC for $600 million alleging misuse of Hughes technology and was awarded $23 million.\n\nThe ECR-90 was renamed CAPTOR when the project passed the production contract milestone. In 1993 the AMSAR research project was launched, run by the British-French-German GTDAR consortium (now Selex ES, Thales, Airbus), evolving into CAESAR, now known as Captor-E AESA.\n\nIn May 2007, Eurofighter Development Aircraft 5 made the first flight with a prototype of the Captor-E. The Captor-E replaces the mechanically steered antenna and high-power transmitters with an electronically steered array, enabling simultaneous radar functionalities. In July 2010 the Euroradar consortium made a formal offer to provide an AESA solution. On 19 November 2014, Eurofighter GmbH and NETMA signed a 1 billion euro contract to develop the Captor-E radar.",
+      "shortDescription": "After October 1988, Ferranti's ECR-90 won the competition but Germany did not agree, leading to a political dispute.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "Ferranti's labs became GEC Ferranti in 1990, then BAE Systems Avionics. Parts of BAE Systems Avionics later merged with Galileo Avionica to form SELEX Galileo in 2005, which merged into Selex ES in 2013 (rebranded Leonardo since 2017). The development effort is now organized under the Euroradar consortium: Selex ES, Airbus, and Indra.\n\nThe CAPTOR was optimised for air combat with beyond visual range air-to-air missiles (BVRAAM) under strong enemy electronic countermeasures, a Cold War requirement, with ground attack capabilities developed later as focus shifted to multi-role tasks. The radar consists of a mechanically controlled antenna made of carbon fibre-reinforced plastic with a diameter of 0.7 metres, swivelled +/-60 degrees in elevation and +/-70 degrees azimuth using four samarium-cobalt servomotors; roll angles are compensated electronically. Due to high scanning speed, the radar can interleave different modes, e.g. combining air-to-air and air-to-ground in one scan pass. Accuracy is less than one milliradian in alignment and less than 10 metres in distance.\n\nThe CAPTOR operates in the X-band from 8 to 12 GHz (horizontally polarised) with twice the transmission power of the AN/APG-65. It automatically switches between low, medium and high pulse repetition rates (1,000 to 200,000 pulses per second). IFF is integrated. Signal processing consists of 61 plug-in cards and 6 line replaceable units. Software was written in Ada per MIL-STD-2167A. The CAPTOR is the first NATO radar with three processing channels: target search, target tracking/identification, and localisation/classification/jamming resistance/sidelobe suppression. The entire system weighs 193 kilograms and the computers are cooled with both liquid and air.\n\nOperating modes include: Velocity Search (VS) to detect approaching targets in ground clutter; Range While Search (RWS); Track While Scan (TWS); Synthetic Aperture Radar/Automatic Target Recognition (SAR/ATR, automated in CAPTOR-D/E using Gaussian filtering, Canny edge detection, and neural networks for target classification e.g. 'T-72' or 'MLRS'); Non-Cooperative Target Identification (NCTI) using jet engine modulation and High Range Resolution profiling to classify aircraft type (e.g. 'Mrg3' or 'Flkr'); Space-Time Adaptive Processing (STAP) and Combat Search for detecting slow-flying/moving targets under clutter and reacquiring lost targets via chessboard-pattern signal lobes; Jammer Mapping/Deterministic Nulling using digital adaptive beamforming to null out jammers; Low Probability of Intercept (LPI) mode; Noise Jamming/High-Power Microwave (HPM) mode for electronic attack and potential directed-energy applications; High-Speed Datalink/Cyberattack capability (AESA antennas used as directional radio antennas, similar to AN/APG-77 capabilities, with Suter-derived cyberattack expertise); and Bistatic Radar/Space-Based Radar concepts (exchanging data between two Captor-E radars, or using satellites like TerraSAR-X as transmitters).",
+      "shortDescription": "Ferranti's labs became GEC Ferranti in 1990, then BAE Systems Avionics.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "Captor-M is fitted to 571 aircraft including Austrian Air Force (15+3), German Air Force (143), Italian Air Force (96), Royal Air Force of Oman (12), Royal Saudi Air Force (72), Spanish Air and Space Force (73), and Royal Air Force (160). Captor-E ECRS Mk.0 covers 52 aircraft: Kuwait Air Force (6 in service, 22 on order) and Qatar Emiri Air Force (10 in service, 14 on order). Captor-E ECRS Mk.1 covers over 150 aircraft eventually: German Air Force (38 for Tranche 4 Quadriga, 110 for Tranche 2/3 modernisation, 20 for Tranche 5) and Spanish Air and Space Force (20 for Tranche 4 Halcon, 5 for Tranche 3 modernisation, 25 for Tranche 4 Halcon II). Captor-E ECRS Mk.2 covers at least 40 aircraft up to 160: United Kingdom Royal Air Force (40 on order for Tranche 3 modernisation, potential order for up to 67 Tranche 2 aircraft) and Italian Air Force (24 potential Tranche 4).",
+      "shortDescription": "cluding Austrian Air Force (15+3), German Air Force (143), Italian Air Force (96), Royal Air Force of Oman (12), Royal Saudi Air Force (72), Spanish Air and Space Force (73), and Royal Air Force (160).",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Antenna variants:\n- Captor-M: Mechanically scanned antenna, integration by BAE Systems.\n- Captor-E ECRS Mk.0: AESA antenna and T/R modules made with GaAs HEMT HPA, field of regard exceeding 180 degrees, mechanical repositioner with two coupled swashplates for elevation -30 to +30 degrees. Integration by BAE Systems.\n- Captor-E ECRS Mk.1: AESA antenna and T/R modules made with GaN HEMT HPA, field of regard exceeding 180 degrees, installed on a pivot. Integration by Airbus Germany.\n- Captor-E ECRS Mk.2: AESA antenna/T/R modules made with GaAs and GaN HEMT HPA, enabling efficient multi-tasking of radar tracking and electronic warfare simultaneously, field of regard exceeding 180 degrees, pivot derived from the Gripen E's Selex ES-05 Raven radar, new radome. Integration by BAE Systems.",
+      "shortDescription": "- Captor-M: Mechanically scanned antenna, integration by BAE Systems.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 202201,
+      "url": "https://en.wikipedia.org/wiki/Euroradar_CAPTOR",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Germany, Italy, Spain, United Kingdom\".",
+      "parameterUomValue": "Germany, Italy, Spain, United Kingdom",
+      "classification": "U",
+      "parameterValue": "Germany, Italy, Spain, United Kingdom",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Selex ES (now Leonardo), Airbus Defence & Space, Indra Sistemas\".",
+      "parameterUomValue": "Selex ES (now Leonardo), Airbus Defence & Space, Indra Sistemas",
+      "classification": "U",
+      "parameterValue": "Selex ES (now Leonardo), Airbus Defence & Space, Indra Sistemas",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Captor-M: Solid-state Mechanically Scanned Array (MSA); Captor-E: Active Electronically Scanned Array (AESA)\".",
+      "parameterUomValue": "Captor-M: Solid-state Mechanically Scanned Array (MSA); Captor-E: Active Electronically Scanned Array (AESA)",
+      "classification": "U",
+      "parameterValue": "Captor-M: Solid-state Mechanically Scanned Array (MSA); Captor-E: Active Electronically Scanned Array (AESA)",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Frequency",
+      "parameterDescr": "Operating radio frequency. Source text: \"X-band, 8 to 12 GHz\".",
+      "parameterUomValue": "12 GHz",
+      "classification": "U",
+      "parameterValue": "12",
+      "uom": "GHz"
+    },
+    {
+      "seq": 1005,
+      "parameter": "Platform",
+      "parameterDescr": "Aircraft type(s) the system is fitted to. Source text: \"Eurofighter Typhoon\".",
+      "parameterUomValue": "Eurofighter Typhoon",
+      "classification": "U",
+      "parameterValue": "Eurofighter Typhoon",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Weight",
+      "parameterDescr": "Overall weight of the system. Source text: \"193 kilograms (425 lb)\".",
+      "parameterUomValue": "193 kg",
+      "classification": "U",
+      "parameterValue": "193",
+      "uom": "kg"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Antenna diameter",
+      "parameterDescr": "Diameter of the radar antenna/dish. Source text: \"0.7 metres (2 ft 4 in)\".",
+      "parameterUomValue": "0.7 m",
+      "classification": "U",
+      "parameterValue": "0.7",
+      "uom": "m"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Azimuth",
+      "parameterDescr": "Angular field of regard in azimuth (left-right). Source text: \"+/-70 degrees\". Note: source gives a +/- (symmetric) range; see description.",
+      "parameterUomValue": "70 deg",
+      "classification": "U",
+      "parameterValue": "70",
+      "uom": "deg"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Elevation",
+      "parameterDescr": "Angular field of regard in elevation (up-down). Source text: \"+/-60 degrees\". Note: source gives a +/- (symmetric) range; see description.",
+      "parameterUomValue": "60 deg",
+      "classification": "U",
+      "parameterValue": "60",
+      "uom": "deg"
+    }
+  ]
+}

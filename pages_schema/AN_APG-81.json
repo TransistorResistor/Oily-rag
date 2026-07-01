@@ -1,0 +1,97 @@
+{
+  "modelID": 2014,
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "AN/APG-81",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The AN/APG-81 is an active electronically scanned array (AESA) fire-control radar designed by Northrop Grumman Electronic Systems (formerly Westinghouse Electronic Systems) for Lockheed Martin's F-35 Lightning II.\n\nThe APG-81 is a successor radar to the F-22 Raptor's AN/APG-77, and has an antenna composed of 1,676 transceivers. Over three thousand APG-81 AESA systems are expected to be ordered for the F-35, with production to run beyond 2035, including large quantities of international orders.\n\nThe APG-81 enhances the F-35's multirole mission requirement operating as an electronic warfare (EW) aperture utilizing the AESA's multifunction array (MFA). Using electronic protection (EP), electronic attack (EA) and electronic support measures (ESM), it enables the F-35's capability to suppress and destroy advanced enemy air defenses.",
+      "shortDescription": "1 is an active electronically scanned array (AESA) fire-control radar designed by Northrop Grumman Electronic Systems (formerly Westinghouse Electronic Systems) for Lockheed Martin's F-35 Lightning II.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "This Joint Strike Fighter AESA radar is a result of the US government's competition for the world's largest AESA acquisition contract. Westinghouse Electronic Systems (acquired by Northrop Grumman in 1996) and Hughes Aircraft (acquired by Raytheon in 1997) received contracts for the development of the Multifunction Integrated RF System/Multi-Function Array (MIRFS/MFA) in February 1996. Lockheed Martin and Northrop Grumman were selected as the winners of the Joint Strike Fighter competition; the System Development and Demonstration (SDD) contract was announced on 26 October 2001.",
+      "shortDescription": "This Joint Strike Fighter AESA radar is a result of the US government's competition for the world's largest AESA acquisition contract.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "Capabilities of the AN/APG-81 include the AN/APG-77's air-to-air modes, plus advanced air-to-ground modes, including synthetic aperture radar high resolution mapping, multiple ground moving target indication and track, combat identification, electronic warfare, and ultra high bandwidth communications. The F-22 radar from Lot 5 aircraft onward is the APG-77(V)1 drawing heavily on APG-81 hardware and software for its upgraded air-to-ground capabilities.\n\nIn August 2005, the APG-81 radar was flown for the first time aboard Northrop Grumman's BAC 1-11 test aircraft. The radar system accumulated over 300 flight hours by 2010. The first test flight on Lockheed Martin's CATBird avionics test-bed occurred in November 2008.",
+      "shortDescription": "odes, including synthetic aperture radar high resolution mapping, multiple ground moving target indication and track, combat identification, electronic warfare, and ultra high bandwidth communications.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "In June 2009, the F-35's APG-81 radar was integrated in the large-scale military Exercise Northern Edge 2009 mounted on the front of a Northrop Grumman test aircraft. The test events \"validated years of laboratory testing versus a wide array of threat systems, showcasing the extremely robust electronic warfare capabilities of the world's most advanced fighter fire-control radar.\"\n\nAnnounced on 22 June 2010, the radar met and exceeded its performance objectives successfully tracking long-range targets as part of the first mission systems test flights of the F-35 Lightning II BF-4 aircraft.\n\nThe AN/APG-81 team won the Department of Defense 2010 David Packard Excellence in Acquisition Award for performance against jammers.\n\nIn January 2023, it was reported that the AN/APG-81 would be replaced by a new radar, the AN/APG-85 on Block 4 F-35s. The APG-85 had been mentioned in a budgetary document in December 2022.\n\nIn accordance with the Joint Electronics Type Designation System (JETDS), the \"AN/APG-81\" designation represents the 81st design of an Army-Navy airborne electronic device for radar fire-control equipment. The JETDS system also now is used to name all Department of Defense and some NATO electronic systems.",
+      "shortDescription": "In June 2009, the F-35's APG-81 radar was integrated in the large-scale military Exercise Northern Edge 2009 mounted on the front of a Northrop Grumman test aircraft.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 201401,
+      "url": "https://en.wikipedia.org/wiki/AN/APG-81",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Solid-state AESA fire-control radar\".",
+      "parameterUomValue": "Solid-state AESA fire-control radar",
+      "classification": "U",
+      "parameterValue": "Solid-state AESA fire-control radar",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"> 150 km, 93 miles [citation needed]\".",
+      "parameterUomValue": "150 km",
+      "classification": "U",
+      "parameterValue": "150",
+      "uom": "km"
+    },
+    {
+      "seq": 1004,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Northrop Grumman Electronic Systems (formerly Westinghouse Electronic Systems)\".",
+      "parameterUomValue": "Northrop Grumman Electronic Systems (formerly Westinghouse Electronic Systems)",
+      "classification": "U",
+      "parameterValue": "Northrop Grumman Electronic Systems (formerly Westinghouse Electronic Systems)",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Platform",
+      "parameterDescr": "Aircraft type(s) the system is fitted to. Source text: \"F-35 Lightning II\".",
+      "parameterUomValue": "F-35 Lightning II",
+      "classification": "U",
+      "parameterValue": "F-35 Lightning II",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Antenna",
+      "parameterDescr": "Antenna configuration/element count. Source text: \"1,676 transceivers\".",
+      "parameterUomValue": "1,676 transceivers",
+      "classification": "U",
+      "parameterValue": "1,676 transceivers",
+      "uom": ""
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "modelID": 2049,
+  "systemGroup": "Weapon",
+  "systemType": "Surface-to-Air Missile",
+  "nomenclature": "S-400 missile system",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The S-400 Triumf (Russian: C-400 Триумф – Triumf; translation: Triumph ; NATO reporting name : SA-21 Growler ), previously known as the S-300 PMU-3 , is a mobile surface-to-air missile (SAM) system developed in the 1990s by Russia's NPO Almaz as an upgrade to the S-300 family of missiles. The S-400 was approved for service on 28 April 2007 and the first battalion of the systems assumed combat duty on 6 August 2007. Its longest-ranged interceptor missile, the 40N6, has a purported range of 400 km. The S-400 can be integrated with the shorter-ranged Pantsir missile system , and potentially airborne radars such as of the Beriev A-50U and Sukhoi Su-35S .",
+      "shortDescription": "name : SA-21 Growler ), previously known as the S-300 PMU-3 , is a mobile surface-to-air missile (SAM) system developed in the 1990s by Russia's NPO Almaz as an upgrade to the S-300 family of missiles.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The development of the S-400 began in the early 1980s to replace the S-200 missile system, but was rejected by a state commission due to high cost and inability to address the threat of cruise missiles. In the late 1980s, the programme was revived in under the codename Triumf as a system capable of engaging aircraft at long range plus cruise missiles and stealth aircraft. The Soviet government approved the Truimf programme on 22 August 1991, but the collapse of the Soviet Union put development into limbo. It was announced by the Russian Air Force in January 1993. On 12 February 1999 successful tests were reported at Kapustin Yar in Astrakhan , and the S-400 was scheduled for deployment by the Russian army in 2001. The S-400 was officially revived on 7 July 1999, albeit as a modernization of the S-300PM rather than an S-200 replacement. Alexander Lemanskiy of Almaz-Antey was the Chief Engineer on the S-400 project.\n\nA separate independent air defence system, the 42S6 Morfey (Morpheus) is being developed. This system is designated as a short-range air defence system to protect the S-400 from various threats during its terminal phase, and will also act together with the S-350E as a supplement to the S-400. Together, these systems form part of the Russian Aerospace Defence Forces .\n\nDevelopment of Morfey started in 2007 and was planned to be introduced in 2013, but was delayed until at least 2015, in 2023 the development is not completed. The missile system consists of omnidirectional 29YA6 radar and 36 missiles. The missiles have up to 10 km (6.2 mi) range and an altitude of up to 3500 m.\n\nAn external independent target system is in the works (RLS \"Niobium\"). Mobility looks to be in the 5 minute range. It uses multiple frequency capability (band S and UHF) with a declared detection parameter of a 1 square meter RCS at 430 km (270 mi) including a target speed of 8000 km/h (4791 mph, Mach 6.35). The detection system requires the operator to transfer command of targeting to subordinate systems; in this application, the maximum target speed is obtained by use of the subordinate systems.",
+      "shortDescription": "he development of the S-400 began in the early 1980s to replace the S-200 missile system, but was rejected by a state commission due to high cost and inability to address the threat of cruise missiles.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The anti-ballistic missile (ABM) capabilities of the S-400 system are near the maximum allowed under the (now void) Anti-Ballistic Missile Treaty .",
+      "shortDescription": "The anti-ballistic missile (ABM) capabilities of the S-400 system are near the maximum allowed under the (now void) Anti-Ballistic Missile Treaty .",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The S-400 has been deployed by Russia, including in Belarus and Syria by China since 2018, by Turkey since 2019, and by India since 2021. The S-400 was deployed during Russian intervention in the Syrian civil war from 2015 until the fall of the Assad regime in 2024. China's People's Liberation Army Air Force purchased S-400 systems in 2014, receiving six batteries beginning in 2018, where its range has the potential to affect the Cross-Strait conflict and the Senkaku Islands dispute . The delivery of S-400s to Turkey, which cited US refusal to sell the upgraded MIM-104 Patriot system, trigged Turkey's expulsion from the F-35 fighter aircraft program. Russia has also deployed its own S-400s to Belarus , including from late 2021.\n\nThe first alleged S-400 shootdown occurred on 25 February 2022, the second day of the 2022 Russian invasion of Ukraine , when a system based in Belarus downed a Ukrainian Air Force Sukhoi Su-27 near Kyiv. In November 2025, Russian officials claimed the first shootdowns of Ukraine-launched ATACMS tactical ballistic missiles . India, which purchased systems in 2015 and began receiving squadrons in 2021, used it in the May 2025 India–Pakistan conflict . The system is complemented by its successor, the S-500 , with a purported range of 600 km, which began service with Russia in 2021.\n\nIn 2003, it became apparent that the system was not ready for deployment. In August, two high-ranking military officials expressed concern that the S-400 was being tested with older interceptors from the S-300P system and concluded that it was not ready for deployment. The completion of the project was announced in February 2004. In April, a ballistic missile was successfully intercepted in a test of the upgraded 48N6DM missile. The system was approved for service by the government on 28 April 2007. Russia had accepted for service the 40N6 long-range missile for the S-400 air-defence system, a source in the domestic defence industry told TASS news agency in October 2018.\n\nThe S-400 Triumf and Pantsir missile system can be integrated into a two-layer defence system.\n\nS-400 missile systems are organized around the 30K6E administration system, which can coordinate eight divizions (battalions). The 55K6E is a command and control centre based on the Ural-5323 01 vehicle. The 91N6E is a panoramic radar detection system with a 340 km (210 mi) range and protection against jamming, and is mounted on an MZKT-7930 vehicle. [ better source needed ] Six battalions of 98ZH6E surface-to-air missile systems (an independent combat system) can track no more than six targets on their own, with an additional two battalions if they are within a 40-kilometre (25 mi) range. The 92N6E (or 92N2E) is a multi-functional radar with a 340-kilometre (210 mi) range, which can track 20 targets. The 5P85TE2 transporter-erector-launcher and the 5P85SE2 on a trailer (up to 12 launchers) are used for launch. The 48N6E , 48N6E2 , 48N6E3 , 48N6DM , 9M96E , 9M96E2 , and the ultra-long-range 40N6E missiles have been authorized by a Russian presidential decree.\n\nOptional elements of the S-400 (98ZH6E) include the 15I6ME–98ZH6E, which extends coverage 30, 60, and 90 km (19, 38, and 57 mi) from that provided by the 30K6E. The 96L6E has a 300-kilometre (190 mi) detection range. The 40B6M is housing for the 92N6E or 96L6E radar. The Protivnik-GE is an anti-stealth UHF radar with a 400-kilometre (250 mi) range. The Moscow-1 passive sensor is 2 + 1 ⁄ 2 times more effective than the Protivnik, with a 400-kilometre (250 mi) range Orion for a target-designation on-the-air defence system, and the Avtobaza-M and Orion+ Avtobaza add high-precision detection. The 1RL220BE versions were reportedly used for jamming. The 400-kilometre (250 mi)-range S-200D Dubna (SA-5c) missiles and S-300 P-family radar systems can be used without additional command-and-control centres. S-300 (SA-20A, SA-20B) missiles may also be guided. Beriev A-50 aircraft provide early warning and command-and-control target designation.\n\nThe 30К6Е control system can be integrated with the S-400 Triumf 98ZH6E system; the S-300PMU2 (through the 83М6Е2 control system); the S-300PMU1 (through the 83М6Е control system); the Tor-M1 through the Ranzhir-M battery-command post; the Pantsir-S1 through the lead battery vehicle. The Protivnik-GE and Gamma-DE radars, integrated with the 92H6E radar system, enables communication between each battery with Baikal-E senior command posts and similar types; nearby 30К6Е, 83М6Е and 83М6Е2 administration systems; the Polyana-D4М1 command post; fighter-aircraft command post, and mobile long-range radars. The system's VHF component provides sector search-and-tracking, with the X- and L-band components providing fine-tracking capability. Good placement of the radars relative to the threat axis enables the L- and X-band components to illuminate the incoming target from angles where the target radar cross-section (RCS) is sub-optimal. The RLM-S and RLM-D have better elevation-tracking accuracy than the RLM-M, and the Nebo-M should be capable of producing high-quality tracks suitable for mid-course guidance of modern surface-to-air missiles and trajectory guidance of legacy SAMs.\n\nThe Gamma-C1E SHF mobile radar station has a 300-kilometre (190 mi) detection range. The Nebo-M VHF mobile radar station and the Resonance-NE radar station have a detection range of 400 kilometres (250 mi), and 40 kilometres (25 mi) to an altitude of 500 metres (1,600 ft). All Nebo-family locators are doubled for army air defence. During the 1970s, the long-range mobile UHF 5H87, and SHF 5H69 low-altitude locators were used. A goal of the 1980s was detection at an altitude of 10 metres (33 ft) at a distance of 40 km (25 mi). The Elbrus-90 computer is used to control the system.\n\nAccording to the Almaz-Antey product brochure, [ better source needed ] the 92N6E multi-function radar acts as the primary radar with an actual detection range of 340 km. An interceptor missile is highly dependent on 92N6E multi-function radar rather than Nebo-SVU high-altitude VHF radar.\n\nThe 91N6E panoramic radar has a declared targeting range of 150 km (93 mi) Maximum targeting ranges (detection ranges are wider) are:\n\nFor a ballistic target (speed of 4800 m/s and a RCS of 0.4 square metres): 200 km (120 mi)\n\nFor a target with RCS of 4 square metres: 340 km (210 mi) [ better source needed ]\n\nFor targeting of strategic-bomber sized types: 340 km (210 mi) [ better source needed ]\n\nThe 96L6 high-altitude detector (TSBS) radar and equipment operates independently of the 96L6E low-level radar detector. The 96L6E2 export version can track a maximum of 20 targets, [ better source needed ] and is resistant to false returns of clutter in mountainous terrain. It can perform the functions of a command post for battalions of S-300 (SA20/20A/20B) or S-400. The 96L6-1 serves as command of S-400 and S-500 batteries.\n\nPBU 55K6E command centre with a maximum distance between the command centre and the battalion of 98ZH6E when re-transmitters are being used is 100 km (62 mi).\n\nMissiles are launched from 5P85TE2 self-propelled launchers or 5P85SE2 trailer launchers operating in conjunction with a BAZ-64022 or MAZ-543 M tractor-trailer. A new type of transporter was introduced in 2014 to improve mobility while reducing fuel consumption. The cost of transporters in 2014 is 8.7 million rubles. The MAZ launcher chassis are reportedly of higher quality than the domestic equivalent.\n\nOne system comprising eight divizion (battalions) can control 72 launchers, with a maximum of 384 missiles (including missiles with a range of less than 250 km [160 mi]). [ better source needed ] A gas system launches missiles from launch tubes. At 30 metres (98 ft) downrange rocket motor ignition activates. In April 2015, a successful test firing of the missile was conducted at an airborne target at a range of 400 km (250 mi); transporter erector launchers (TELs) carrying the long-range 40N6 may only hold two missiles instead of the typical four due to their large size. Another test recorded a 9M96 missile using an active radar homing head that reached an altitude of 56 km (35 mi). All missiles are equipped with directed explosion warheads, which increases the probability of complete destruction of aerial targets but are less effective against ballistic targets. In 2016, Russian anti-aircraft missile troops received upgraded guided missiles for S-300 and S-400 defence systems. The anti-aircraft version of the missile system, designed to destroy aircraft, cruise, and ballistic missiles, can also be used against ground targets. The S-400 is able to intercept cruise missiles at a range of only about 40 km (25 mi) due to their low-altitude flight paths.\n\nThe new anti-ballistic missiles 77N6-N and 77N6-N1 to enter service in 2022 supposedly add inert/kinetic anti-ballistic capability to the S-400 system and are too large for the SA-20. The same missiles will also be used by the S-500 , which has a clearly stated ABM role.\n\n9M96E2 SAM at the 2017 MAKS airshow\n\n9M96E2 SAM at the 2017 MAKS airshow\n\n9M96E2-1 at the 2017 MAKS airshow\n\n5P85TM TEL for S-400 missile system\n\n5P85SE2 TEL for S-300PM2\n\n5P85TE2 TEL\n\nS-400 firing in 2020 at the Ashuluk Training Ground\n\nS-400 firing in 2013 at the Ashuluk Training Ground\n\nS-400 firing during Kavkaz 2020 exercise",
+      "shortDescription": "The S-400 has been deployed by Russia, including in Belarus and Syria by China since 2018, by Turkey since 2019, and by India since 2021.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 204901,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Mobile long-range surface-to-air / anti-ballistic missile system\".",
+      "parameterUomValue": "Mobile long-range surface-to-air / anti-ballistic missile system",
+      "classification": "U",
+      "parameterValue": "Mobile long-range surface-to-air / anti-ballistic missile system",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Russia\".",
+      "parameterUomValue": "Russia",
+      "classification": "U",
+      "parameterValue": "Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"6 August 2007 – present\".",
+      "parameterUomValue": "6 August 2007 – present",
+      "classification": "U",
+      "parameterValue": "6 August 2007 – present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"Primary user: Russia ; See Operators section for others\".",
+      "parameterUomValue": "Primary user: Russia ; See Operators section for others",
+      "classification": "U",
+      "parameterValue": "Primary user: Russia ; See Operators section for others",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"Syrian Civil War; Russo-Ukrainian war; 2025 India–Pakistan conflict\".",
+      "parameterUomValue": "Syrian Civil War; Russo-Ukrainian war; 2025 India–Pakistan conflict",
+      "classification": "U",
+      "parameterValue": "Syrian Civil War; Russo-Ukrainian war; 2025 India–Pakistan conflict",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"Almaz-Antey\".",
+      "parameterUomValue": "Almaz-Antey",
+      "classification": "U",
+      "parameterValue": "Almaz-Antey",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Fakel Machine-Building Design Bureau\".",
+      "parameterUomValue": "Fakel Machine-Building Design Bureau",
+      "classification": "U",
+      "parameterValue": "Fakel Machine-Building Design Bureau",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Unit cost",
+      "parameterDescr": "Approximate unit cost in US dollars. Source text: \"Domestic : ~ US$500 million for a battery and reserve missiles. ; Export : US$1 –1.25 billion for a battery and reserve missiles (2021)\".",
+      "parameterUomValue": "500000000 USD",
+      "classification": "U",
+      "parameterValue": "500000000",
+      "uom": "USD"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"YaMZ -8424.10 diesel V12 ; 400 hp (300 kW)\".",
+      "parameterUomValue": "YaMZ -8424.10 diesel V12 ; 400 hp (300 kW)",
+      "classification": "U",
+      "parameterValue": "YaMZ -8424.10 diesel V12 ; 400 hp (300 kW)",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Transmission",
+      "parameterDescr": "Transmission (descriptive text, not a unit-bearing quantity). Source text: \"YaMZ\".",
+      "parameterUomValue": "YaMZ",
+      "classification": "U",
+      "parameterValue": "YaMZ",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Suspension",
+      "parameterDescr": "Suspension (descriptive text, not a unit-bearing quantity). Source text: \"Leaf spring\".",
+      "parameterUomValue": "Leaf spring",
+      "classification": "U",
+      "parameterValue": "Leaf spring",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Ground clearance",
+      "parameterDescr": "Ground clearance (descriptive text, not a unit-bearing quantity). Source text: \"485 mm (19.1 in)\".",
+      "parameterUomValue": "485 mm (19.1 in)",
+      "classification": "U",
+      "parameterValue": "485 mm (19.1 in)",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"400 km (250 mi) – 40N6E missile; 150 km (93 mi) – 48N6(E) missile; 200 km (120 mi) – 48N6M(E2) missile; 240 km (150 mi) – 48N6DM(E3) missile; 40 km (25 mi) – 9M96 missile; 120 km (75 mi) – 9M96M(E2) missile\".",
+      "parameterUomValue": "400 km",
+      "classification": "U",
+      "parameterValue": "400",
+      "uom": "km"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"SARH with all missile model, and ARH in 40N6E, 9M96E2, 9M96E and 9M96 missiles\".",
+      "parameterUomValue": "SARH with all missile model, and ARH in 40N6E, 9M96E2, 9M96E and 9M96 missiles",
+      "classification": "U",
+      "parameterValue": "SARH with all missile model, and ARH in 40N6E, 9M96E2, 9M96E and 9M96 missiles",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "DEPLOYMENT HISTORY",
+      "parameterDescr": "DEPLOYMENT HISTORY (descriptive text, not a unit-bearing quantity). Source text: \"On 21 May 2007 the Russian Air Force announced that S-400 systems would be put on combat duty near the town of Elektrostal in Moscow Oblast , to defend Moscow and Central Russia, by 1 July 2007. On 6 August 2007 the first regiment equipped with S-400 systems entered active service near Elektrostal, according to Channel One Russia. The regiment was the 606th Guards Anti-air Rocket Regiment, 9th PVO Division, 1st PVO Corps, of the Special Purpose Command .\".",
+      "parameterUomValue": "On 21 May 2007 the Russian Air Force announced that S-400 systems would be put on combat duty near the town of Elektrostal in Moscow Oblast , to defend Moscow and Central Russia, by 1 July 2007. On 6 August 2007 the first regiment equipped with S-400 systems entered active service near Elektrostal, according to Channel One Russia. The regiment was the 606th Guards Anti-air Rocket Regiment, 9th PVO Division, 1st PVO Corps, of the Special Purpose Command .",
+      "classification": "U",
+      "parameterValue": "On 21 May 2007 the Russian Air Force announced that S-400 systems would be put on combat duty near the town of Elektrostal in Moscow Oblast , to defend Moscow and Central Russia, by 1 July 2007. On 6 August 2007 the first regiment equipped with S-400 systems entered active service near Elektrostal, according to Channel One Russia. The regiment was the 606th Guards Anti-air Rocket Regiment, 9th PVO Division, 1st PVO Corps, of the Special Purpose Command .",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "FOREIGN INTEREST",
+      "parameterDescr": "FOREIGN INTEREST (descriptive text, not a unit-bearing quantity). Source text: \"In September 2009 the S-400 was reportedly part of a US$2 billion arms deal between Russia and Saudi Arabia . The Saudis wanted to acquire the S-400, but Russia was only willing to sell S-300 air defence system at the time. By November 2019 the deal had still not been finalized. Saudi Arabia is no longer considering the Russian S-400 air defence system, following the kingdom's deal for an American alternative. The American Terminal High Altitude Area Defense (THAAD) system has been cleared for sale to the Saudis by the U.S. State Department . The sale of the THAAD package sold to Saudi Arabia is estimated at $15 billion in 2017 dollars.\".",
+      "parameterUomValue": "In September 2009 the S-400 was reportedly part of a US$2 billion arms deal between Russia and Saudi Arabia . The Saudis wanted to acquire the S-400, but Russia was only willing to sell S-300 air defence system at the time. By November 2019 the deal had still not been finalized. Saudi Arabia is no longer considering the Russian S-400 air defence system, following the kingdom's deal for an American alternative. The American Terminal High Altitude Area Defense (THAAD) system has been cleared for sale to the Saudis by the U.S. State Department . The sale of the THAAD package sold to Saudi Arabia is estimated at $15 billion in 2017 dollars.",
+      "classification": "U",
+      "parameterValue": "In September 2009 the S-400 was reportedly part of a US$2 billion arms deal between Russia and Saudi Arabia . The Saudis wanted to acquire the S-400, but Russia was only willing to sell S-300 air defence system at the time. By November 2019 the deal had still not been finalized. Saudi Arabia is no longer considering the Russian S-400 air defence system, following the kingdom's deal for an American alternative. The American Terminal High Altitude Area Defense (THAAD) system has been cleared for sale to the Saudis by the U.S. State Department . The sale of the THAAD package sold to Saudi Arabia is estimated at $15 billion in 2017 dollars.",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "FOREIGN VARIANT",
+      "parameterDescr": "FOREIGN VARIANT (descriptive text, not a unit-bearing quantity). Source text: \"South Korea is developing the KM-SAM , a medium-range SAM system based on technology from the 9M96 missile, with assistance from NPO Almaz . The prime contractor is Hanwha Group (formerly Samsung-Thales, a defunct joint venture between South Korea's Samsung and France's Thales ). The KM-SAM will consist of an X-band multifunction radar vehicle built by Hanwha in technical cooperation with Almaz, with fire control and TEL vehicles built by Doosan . Missiles will be provided by LIG Nex1 .\".",
+      "parameterUomValue": "South Korea is developing the KM-SAM , a medium-range SAM system based on technology from the 9M96 missile, with assistance from NPO Almaz . The prime contractor is Hanwha Group (formerly Samsung-Thales, a defunct joint venture between South Korea's Samsung and France's Thales ). The KM-SAM will consist of an X-band multifunction radar vehicle built by Hanwha in technical cooperation with Almaz, with fire control and TEL vehicles built by Doosan . Missiles will be provided by LIG Nex1 .",
+      "classification": "U",
+      "parameterValue": "South Korea is developing the KM-SAM , a medium-range SAM system based on technology from the 9M96 missile, with assistance from NPO Almaz . The prime contractor is Hanwha Group (formerly Samsung-Thales, a defunct joint venture between South Korea's Samsung and France's Thales ). The KM-SAM will consist of an X-band multifunction radar vehicle built by Hanwha in technical cooperation with Almaz, with fire control and TEL vehicles built by Doosan . Missiles will be provided by LIG Nex1 .",
+      "uom": ""
+    }
+  ]
+}

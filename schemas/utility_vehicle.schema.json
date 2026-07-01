@@ -1,0 +1,205 @@
+{
+  "systemGroup": "Land Vehicle",
+  "systemType": "Utility Vehicle",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Engine",
+      "uom": "",
+      "parameterDescr": "Engine type and configuration.",
+      "count": 2
+    },
+    {
+      "parameter": "Height",
+      "uom": "m",
+      "parameterDescr": "Overall height of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Transmission",
+      "uom": "",
+      "parameterDescr": "Transmission (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Width",
+      "uom": "",
+      "parameterDescr": "Width (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Assembly",
+      "uom": "",
+      "parameterDescr": "Assembly (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Azerbaijan",
+      "uom": "",
+      "parameterDescr": "Azerbaijan (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Class",
+      "uom": "",
+      "parameterDescr": "Class (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 1
+    },
+    {
+      "parameter": "Cuba",
+      "uom": "",
+      "parameterDescr": "Cuba (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Fuel capacity",
+      "uom": "",
+      "parameterDescr": "Internal (and optionally external) fuel capacity.",
+      "count": 1
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 1
+    },
+    {
+      "parameter": "Laos",
+      "uom": "",
+      "parameterDescr": "Laos (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Layout",
+      "uom": "",
+      "parameterDescr": "Layout (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Main armament",
+      "uom": "",
+      "parameterDescr": "Main armament (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Mass",
+      "uom": "kg",
+      "parameterDescr": "Overall mass of the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 1
+    },
+    {
+      "parameter": "Number built",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced.",
+      "count": 1
+    },
+    {
+      "parameter": "OPERATIONAL HISTORY",
+      "uom": "",
+      "parameterDescr": "OPERATIONAL HISTORY (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Philippines",
+      "uom": "",
+      "parameterDescr": "Philippines (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Predecessor",
+      "uom": "",
+      "parameterDescr": "Predecessor (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Produced",
+      "uom": "",
+      "parameterDescr": "Production period.",
+      "count": 1
+    },
+    {
+      "parameter": "Production",
+      "uom": "",
+      "parameterDescr": "Production (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 1
+    },
+    {
+      "parameter": "Suspension",
+      "uom": "",
+      "parameterDescr": "Suspension (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 1
+    },
+    {
+      "parameter": "USERS",
+      "uom": "",
+      "parameterDescr": "USERS (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Unit cost",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost in US dollars.",
+      "count": 1
+    },
+    {
+      "parameter": "VARIANTS",
+      "uom": "",
+      "parameterDescr": "VARIANTS (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "VERSIONS",
+      "uom": "",
+      "parameterDescr": "VERSIONS (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Wars",
+      "uom": "",
+      "parameterDescr": "Conflicts in which the system has seen use.",
+      "count": 1
+    }
+  ]
+}

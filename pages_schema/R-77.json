@@ -1,0 +1,178 @@
+{
+  "modelID": 2046,
+  "systemGroup": "Weapon",
+  "systemType": "Air-to-Air Missile",
+  "nomenclature": "R-77",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Vympel NPO R-77 missile (NATO reporting name: AA-12 Adder) is a Russian active radar homing beyond-visual-range air-to-air missile. It is also known by its export designation RVV-AE. It is the Russian counterpart to the American AIM-120 AMRAAM missile.",
+      "shortDescription": "The Vympel NPO R-77 missile (NATO reporting name: AA-12 Adder) is a Russian active radar homing beyond-visual-range air-to-air missile.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The R-77 was marked by a severely protracted development. Work began in the 1980s but was not completed before the dissolution of the Soviet Union. For many years, only the RVV-AE export model was produced. Production was further disrupted when the Russo-Ukrainian War resulted in a Ukrainian arms embargo against Russia, severing supply chains. The Russian Aerospace Forces finally entered the R-77-1 (AA-12B) into service in 2015, subsequently deployed by Su-35S fighters in Syria on combat air patrols. The export model of the R-77-1 is called RVV-SD.\n\nWork on the R-77 began in 1982 by \"Molnija OKB\" in the Ukrainian SSR. After the Soviet Union's dissolution, R-77 (Izdelie 170) missiles were produced at Kyiv's \"Artem\" plant. It was Ukraine's and later Russia's first multi-purpose fire-and-forget missile usable against targets from hovering helicopters to high-speed, low-altitude aircraft, and reportedly also usable against SAMs like the Patriot and other AAMs like AIM-120/AIM-54. It has a laser-triggered proximity fuze and expanding rod warhead. First seen at the 1992 Moscow Airshow, nicknamed \"Amraamski\" by Western journalists. The basic R-77 (izdeliye 170) and export RVV-AE (izdeliye 190) have an 80 km range. Vympel lacked adequate funding through the 1990s-2000s, and the basic R-77 is not thought to have entered significant Russian Aerospace Forces service.",
+      "shortDescription": "The R-77 was marked by a severely protracted development.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "Operators include Algeria, Egypt, Eritrea, China, India (over 500 delivered 2014-15, 400 more ordered 2019, further RVV-SD batches in 2025), Indonesia, Kazakhstan, Russia, Serbia (32 R-77-1 ordered), Sudan, Syria, Uganda, Venezuela, Vietnam, and Yemen.",
+      "shortDescription": "ndia (over 500 delivered 2014-15, 400 more ordered 2019, further RVV-SD batches in 2025), Indonesia, Kazakhstan, Russia, Serbia (32 R-77-1 ordered), Sudan, Syria, Uganda, Venezuela, Vietnam, and Yemen.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "The R-77 can be used by upgraded Su-27, MiG-29, and MiG-31 variants in Russian service, and by Chinese J-11/Su-30MKK variants. India was the first export customer (RVV-AE), with final batch delivered 2002.\n\nFurther variants under development include the RVV-AE-PD with a solid-fuel ramjet engine extending range to 120-160 km (equivalent to AIM-54 Phoenix class), a terminal infrared-homing seeker option, and the R-77M -- a longer, heavier upgrade with two-stage motor and improved seeker, intended for the Su-57, using an AESA seeker (9B-1103M2), conventional fins (replacing R-77's lattice/grid fins), and dual-pulse motor. A related ramjet variant K-77ME (izdeliye 180-BD) also exists. RVV-SD and RVV-MD (a R-73 derivative) were unveiled together at MAKS 2009, and are part of Russia's offering for India's MRCA competition.\n\nThe missile traditionally used vestigial cruciform wings with grid fins as tail control surfaces (similar to OTR-23 Oka and the US MOAB), which enhance turning ability (up to 150 deg/sec) at the cost of drag and radar cross-section; newer variants like izdeliye 180 use conventional fins instead. It uses a multi-function doppler-monopulse active radar seeker (OAO Agat). Over short ranges it launches in active fire-and-forget mode; at longer range it is guided by inertial autopilot with encoded datalink updates from the launch aircraft, switching to active radar within 20 km of the target.\n\nSince the 2022 invasion of Ukraine, Russia has used R-77-1s on Su-35s and Su-30SMs to shoot down Ukrainian jets that were outranged. In July 2025, The War Zone reported the R-77M's operational debut in Ukraine based on missile wreckage and Su-35S pylon photos showing R-77M, R-74M, and Khibiny-M ECM pods.\n\nR-77 (izdeliye 170, standard USSR-built), RVV-AE (izdeliye 190, export, 80km/22.5kg warhead), R-77-1 (izdeliye 170-1, streamlined nose, new seeker/fins), RVV-SD (export of R-77-1, 110km/22.5kg warhead), R-77M (izdeliye 180, Su-57/Su-35S, AESA seeker, conventional fins, dual-pulse motor), R-77P/RVV-PE (passive radiation homing), R-77T/RVV-TE (infrared homing), R-77-SRK (ship-to-air variant), R-77-ZRK/RVV-AE-ZRK (surface-to-air variant), R-77-PD/RVV-AE-PD (ramjet model), R-77-PD ZRK (surface-to-air ramjet variant), K-77ME (izdeliye 180-BD, ramjet R-77M).",
+      "shortDescription": "The R-77 can be used by upgraded Su-27, MiG-29, and MiG-31 variants in Russian service, and by Chinese J-11/Su-30MKK variants.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 204601,
+      "url": "https://en.wikipedia.org/wiki/R-77",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Medium range radar guided air-to-air missile\".",
+      "parameterUomValue": "Medium range radar guided air-to-air missile",
+      "classification": "U",
+      "parameterValue": "Medium range radar guided air-to-air missile",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1994 (R-77)\".",
+      "parameterUomValue": "1994 (R-77)",
+      "classification": "U",
+      "parameterValue": "1994 (R-77)",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Molnija OKB, Artem, Vympel\".",
+      "parameterUomValue": "Molnija OKB, Artem, Vympel",
+      "classification": "U",
+      "parameterValue": "Molnija OKB, Artem, Vympel",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"175 kg (R-77); 190 kg (R-77-1)\".",
+      "parameterUomValue": "175 kg",
+      "classification": "U",
+      "parameterValue": "175",
+      "uom": "kg"
+    },
+    {
+      "seq": 1005,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"3.6 m (R-77); 3.71 m (R-77-1)\".",
+      "parameterUomValue": "3.6 m",
+      "classification": "U",
+      "parameterValue": "3.6",
+      "uom": "m"
+    },
+    {
+      "seq": 1006,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"200 mm\".",
+      "parameterUomValue": "0.2 m",
+      "classification": "U",
+      "parameterValue": "0.2",
+      "uom": "m"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"700 mm\".",
+      "parameterUomValue": "0.7 m",
+      "classification": "U",
+      "parameterValue": "0.7",
+      "uom": "m"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"22.5 kg HE fragmenting (R-77)\".",
+      "parameterUomValue": "22.5 kg HE fragmenting (R-77)",
+      "classification": "U",
+      "parameterValue": "22.5 kg HE fragmenting (R-77)",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Detonation mechanism",
+      "parameterDescr": "Fuzing/detonation method. Source text: \"laser proximity fuse\".",
+      "parameterUomValue": "laser proximity fuse",
+      "classification": "U",
+      "parameterValue": "laser proximity fuse",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Solid fuel rocket motor (R-77)\".",
+      "parameterUomValue": "Solid fuel rocket motor (R-77)",
+      "classification": "U",
+      "parameterValue": "Solid fuel rocket motor (R-77)",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"R-77/RVV-AE: 80 km (50 mi); R-77-1/RVV-SD: 110 km (68 mi); R-77M: 190 km (120 mi)\".",
+      "parameterUomValue": "80 km",
+      "classification": "U",
+      "parameterValue": "80",
+      "uom": "km"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Flight altitude",
+      "parameterDescr": "Operational flight altitude band. Source text: \"5-25 km (16,000-82,000 ft)\".",
+      "parameterUomValue": "25 km",
+      "classification": "U",
+      "parameterValue": "25",
+      "uom": "km"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Mach 4\".",
+      "parameterUomValue": "4 Mach",
+      "classification": "U",
+      "parameterValue": "4",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Transit guiding phase: inertial guidance with mid-course SARH and datalink update. Terminal homing: active radar homing / infrared homing (R-77T) / passive radiation homing (R-77P)\".",
+      "parameterUomValue": "Transit guiding phase: inertial guidance with mid-course SARH and datalink update. Terminal homing: active radar homing / infrared homing (R-77T) / passive radiation homing (R-77P)",
+      "classification": "U",
+      "parameterValue": "Transit guiding phase: inertial guidance with mid-course SARH and datalink update. Terminal homing: active radar homing / infrared homing (R-77T) / passive radiation homing (R-77P)",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"MiG-21UPG, MiG-29, MiG-31BM, Su-27, Su-30, Su-34, Su-35, Su-57, J-11, Su-47, Mikoyan Project 1.44\".",
+      "parameterUomValue": "MiG-21UPG, MiG-29, MiG-31BM, Su-27, Su-30, Su-34, Su-35, Su-57, J-11, Su-47, Mikoyan Project 1.44",
+      "classification": "U",
+      "parameterValue": "MiG-21UPG, MiG-29, MiG-31BM, Su-27, Su-30, Su-34, Su-35, Su-57, J-11, Su-47, Mikoyan Project 1.44",
+      "uom": ""
+    }
+  ]
+}

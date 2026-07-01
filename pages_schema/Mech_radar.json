@@ -1,0 +1,130 @@
+{
+  "modelID": 2040,
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "Mech radar",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "N001 Mech (Russian: Mech, lit. 'Sword') is a Russian (former USSR) all-weather multimode airborne radar developed by the Tikhomirov Scientific Research Institute of Instrument Design (NIIP) for the Su-27 multi-role combat aircraft.\n\nThe N001 radar for the Su-27 was designed by Viktor Grishin. Pushing the state of the art for the USSR, the original design, known as Mech, was supposed to draw heavily on technologies developed for the experimental Soyuz radar program led by NPO Istok. It was intended to have a great deal of commonality with the MiG-29's N019 Rubin radar. N001 has a 1.075m antenna diameter twist-cassegrain antenna. A pulse-doppler design operating in the 3 cm band using medium and high PRFs for optimum lookdown capability, the N001 has a search range of 80-100 km against a 3m2 RCS target in a headon engagement, 140 km against a large bomber. It can track a 3m2 target at 65 km. In a pursuit engagement, search range for a 3m2 target falls to just 40 km. Azimuth limits are +/-60. Initial units had a MTBF of only 5 hours, but later type is 100 hours; MTBF was eventually brought up to 200 hours. The Su-33 used an updated SUV-33 control system, the N001 radar was largely unchanged but with sea optimised lookdown capability and support for the carrier-based GCI system.",
+      "shortDescription": "N001 Mech (Russian: Mech, lit.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "N001 (RLPK-27) - Standard model.\nN001E - Export version of N001.\nN001V (RLPK-27V) - Processor replaced TS101M capable of single target engagement and simultaneously tracking 10 targets during an engagement.\nN001VE (RLPK-27VE) - Simplified export version of the N001V, or an upgrade of the N001E with added air-to-ground capabilities. New computer hardware and software, possibly including the Baguet-55 signal processor, integrated the R-77 air-to-air missile. It has an all-weather ground mapping mode for detecting land and sea targets. The detection range is 62.1 miles (99.9 km). It can track ten targets simultaneously and engage two with the R-77. Fitted to the Sukhoi Su-30MKK.\nN001VEP (RLPK-27VEP) - Includes a separate computing channel for synthetic aperture terrain-mapping. Integrates the Kh-31A anti-ship missile. The detection range is 68.4 miles (110.1 km). Fitted to the Sukhoi Su-30MK2. Possibly nicknamed \"Panda\".",
+      "shortDescription": "N001 (RLPK-27) - Standard model.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 204001,
+      "url": "https://en.wikipedia.org/wiki/Mech_radar",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Soviet Union/Russia\".",
+      "parameterUomValue": "Soviet Union/Russia",
+      "classification": "U",
+      "parameterValue": "Soviet Union/Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"1985\".",
+      "parameterUomValue": "1985",
+      "classification": "U",
+      "parameterValue": "1985",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Twist cassegrain PESA antenna (N001VEP+Pero)\".",
+      "parameterUomValue": "Twist cassegrain PESA antenna (N001VEP+Pero)",
+      "classification": "U",
+      "parameterValue": "Twist cassegrain PESA antenna (N001VEP+Pero)",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Frequency",
+      "parameterDescr": "Operating radio frequency. Source text: \"X-band\".",
+      "parameterUomValue": "X-band",
+      "classification": "U",
+      "parameterValue": "X-band",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"100 km (fighter); 140 km (bomber); 65 km (track range)\".",
+      "parameterUomValue": "100 km",
+      "classification": "U",
+      "parameterValue": "100",
+      "uom": "km"
+    },
+    {
+      "seq": 1006,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"1.075 m\".",
+      "parameterUomValue": "1.075 m",
+      "classification": "U",
+      "parameterValue": "1.075",
+      "uom": "m"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Azimuth",
+      "parameterDescr": "Angular field of regard in azimuth (left-right). Source text: \"+/-60 degrees\". Note: source gives a +/- (symmetric) range; see description.",
+      "parameterUomValue": "60 deg",
+      "classification": "U",
+      "parameterValue": "60",
+      "uom": "deg"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Elevation",
+      "parameterDescr": "Angular field of regard in elevation (up-down). Source text: \"-55 to +60 degrees\".",
+      "parameterUomValue": "60 deg",
+      "classification": "U",
+      "parameterValue": "60",
+      "uom": "deg"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Power",
+      "parameterDescr": "Transmit power output. Source text: \"1 kW (average)\".",
+      "parameterUomValue": "1 kW",
+      "classification": "U",
+      "parameterValue": "1",
+      "uom": "kW"
+    },
+    {
+      "seq": 1010,
+      "parameter": "Platform",
+      "parameterDescr": "Aircraft type(s) the system is fitted to. Source text: \"Su-27, Su-33, Su-30MKK, Su-30MK2\".",
+      "parameterUomValue": "Su-27, Su-33, Su-30MKK, Su-30MK2",
+      "classification": "U",
+      "parameterValue": "Su-27, Su-33, Su-30MKK, Su-30MK2",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Tikhomirov Scientific Research Institute of Instrument Design (NIIP)\".",
+      "parameterUomValue": "Tikhomirov Scientific Research Institute of Instrument Design (NIIP)",
+      "classification": "U",
+      "parameterValue": "Tikhomirov Scientific Research Institute of Instrument Design (NIIP)",
+      "uom": ""
+    }
+  ]
+}

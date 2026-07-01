@@ -1,0 +1,220 @@
+{
+  "modelID": 2006,
+  "systemGroup": "Weapon",
+  "systemType": "Air-to-Air Missile",
+  "nomenclature": "AIM-120 AMRAAM",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The AIM-120 Advanced Medium-Range Air-to-Air Missile (AMRAAM) is an American beyond-visual-range air-to-air missile capable of all-weather day-and-night operations. It uses active transmit-receive radar guidance instead of semi-active receive-only radar guidance; as an active seeker missile, NATO pilots use the brevity code \"Fox Three\" when firing the AIM-120.\n\nThe AMRAAM largely replaced the AIM-7 Sparrow as the principal beyond-visual-range air-to-air missile in U.S. inventory. As of 2008 more than 14,000 had been produced for the United States Air Force, the United States Navy, and 33 international customers. The AMRAAM has been used in several engagements, achieving 16 air-to-air kills in conflicts over Iraq, Bosnia, Kosovo, India, and Syria. In the long term, it is expected to eventually be replaced by the long range AIM-260 JATM in U.S. service and the MBDA Meteor in some European countries.",
+      "shortDescription": "The AIM-120 Advanced Medium-Range Air-to-Air Missile (AMRAAM) is an American beyond-visual-range air-to-air missile capable of all-weather day-and-night operations.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The AIM-7 Sparrow medium range missile (MRM) was the US Navy's first operational BVR air-to-air missile, effective at around 12 miles range, evolving from beam-riding to semi-active radar guidance. It armed the F-4 Phantom II. The US Navy also developed the AIM-54 Phoenix long-range missile for fleet air defense on the F-14 Tomcat, a 1,000 lb Mach 5 fire-and-forget missile capable of guiding itself to targets up to 100 miles away. The Department of Defense's ACEVAL/AIMVAL evaluation (1974-1978) found that Sparrow's need for continuous illumination let opposing all-aspect Sidewinder-armed aircraft achieve mutual kills, driving the need for a Phoenix-like multi-launch terminal-active capability in a Sparrow-sized airframe. This led to a memorandum of agreement with European allies (principally UK and Germany) for the US to develop AMRAAM, while Europe developed the ASRAAM short-range missile.\n\nAMRAAM needed to fit aircraft as small as the F-16 and BAe Sea Harrier, and became one of the primary weapons of the F-22 Raptor for internal carriage. Deployment of the AIM-120A began in September 1991 in USAF F-15 Eagle squadrons, followed by the US Navy in 1993 on F/A-18 Hornets. The Russian counterpart is the R-77 (\"AMRAAMski\"); France developed the MICA missile family in parallel.",
+      "shortDescription": "The AIM-7 Sparrow medium range missile (MRM) was the US Navy's first operational BVR air-to-air missile, effective at around 12 miles range, evolving from beam-riding to semi-active radar guidance.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "AMRAAM uses two-stage guidance for long-range shots -- inertial navigation toward an initial intercept point using pre-launch target data, with optional periodic mid-course updates from the launch aircraft via datalink, before switching to onboard active radar homing for terminal guidance (\"fire-and-forget\"). It also has a \"Home on Jamming\" capability, homing passively on target jamming signals if actively jammed. Not all users purchased the mid-course update option; the RAF's Tornado F3 force initially lacked it and found AMRAAM less effective than the older semi-active BAe Skyflash as a result.",
+      "shortDescription": "using pre-launch target data, with optional periodic mid-course updates from the launch aircraft via datalink, before switching to onboard active radar homing for terminal guidance (\"fire-and-forget\").",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "First used operationally on 27 December 1992 when a USAF F-16D shot down an Iraqi MiG-25 violating the no-fly zone; a second kill (Iraqi MiG-23) followed in January 1993. On 28 February 1994, a Republika Srpska J-21 Jastreb was shot down by a USAF F-16C over Bosnia (Banja Luka incident) -- by this point three combat launches had resulted in three kills, giving AMRAAM the nickname \"slammer.\" In 1994, an AIM-120 was mistakenly used (alongside an AIM-9) to shoot down a US Army Black Hawk helicopter over Iraq. During 1999's Operation Allied Force (Kosovo), six Serbian MiG-29s were shot down by NATO aircraft using AIM-120s. On 18 June 2017 a US F/A-18E shot down a Syrian Su-22 using an AIM-120 after an AIM-9X failed. Turkish F-16s used AIM-120C-7s to shoot down Syrian and Russian aircraft in 2014-2020, including a Russian Su-24M in November 2015. Pakistan used AMRAAMs to shoot down an Indian MiG-21 during the 2019 Jammu and Kashmir airstrikes. Saudi Arabia has used AIM-120s extensively (with Patriot batteries) against Yemeni drones and missiles. In September 2025, a Polish F-16's AIM-120 fired at a Shahed-type drone went stray and struck a residential building in Wyryki-Wola, Poland during a Russian drone incursion.\n\nThe missile's kill probability (Pk) is about 0.59 in beyond-visual-range engagements, influenced by aspect, altitude, and relative speed/energy at intercept.",
+      "shortDescription": "First used operationally on 27 December 1992 when a USAF F-16D shot down an Iraqi MiG-25 violating the no-fly zone; a second kill (Iraqi MiG-23) followed in January 1993.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "AIM-120A (out of production), AIM-120B (deliveries from 1994, improved electronics), AIM-120C (deliveries from 1996, clipped aerosurfaces for F-22 internal carriage, progressively improved through C-5/C-6/C-7 with HOBS capability and improved fuzing/homing/range), FMRAAM (ramjet-powered derivative proposed for Eurofighter Typhoon, lost to MBDA Meteor, never produced), AIM-120D (upgraded with ~50% greater range than C-7, GPS-enhanced INS, two-way datalink, expanded no-escape envelope, IOC 2015), and NCADE (anti-ballistic missile derivative using a Sidewinder-derived IR seeker and hit-to-kill vehicle). The AIM-120D-3 and AIM-120C-8 (F3R program) are the latest variants as of 2023, expected to remain in production until AIM-260 JATM replaces AMRAAM by around 2026.",
+      "shortDescription": "r range than C-7, GPS-enhanced INS, two-way datalink, expanded no-escape envelope, IOC 2015), and NCADE (anti-ballistic missile derivative using a Sidewinder-derived IR seeker and hit-to-kill vehicle).",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 200601,
+      "url": "https://en.wikipedia.org/wiki/AIM-120_AMRAAM",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Medium range radar guided air-to-air missile/surface-to-air missile (AMRAAM-ER and SLAMRAAM)\".",
+      "parameterUomValue": "Medium range radar guided air-to-air missile/surface-to-air missile (AMRAAM-ER and SLAMRAAM)",
+      "classification": "U",
+      "parameterValue": "Medium range radar guided air-to-air missile/surface-to-air missile (AMRAAM-ER and SLAMRAAM)",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"September 1991-present\".",
+      "parameterUomValue": "September 1991-present",
+      "classification": "U",
+      "parameterValue": "September 1991-present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Hughes (1991-97); Raytheon (1997-present)\".",
+      "parameterUomValue": "Hughes (1991-97); Raytheon (1997-present)",
+      "classification": "U",
+      "parameterValue": "Hughes (1991-97); Raytheon (1997-present)",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Unit cost",
+      "parameterDescr": "Approximate unit cost in US dollars. Source text: \"US$1,095,000 (AIM-120D FY 2019)\".",
+      "parameterUomValue": "1095000 USD",
+      "classification": "U",
+      "parameterValue": "1095000",
+      "uom": "USD"
+    },
+    {
+      "seq": 1006,
+      "parameter": "Variants",
+      "parameterDescr": "Named variants of the base system. Source text: \"AIM-120A, AIM-120B, AIM-120C, AIM-120D, AMRAAM-ER\".",
+      "parameterUomValue": "AIM-120A, AIM-120B, AIM-120C, AIM-120D, AMRAAM-ER",
+      "classification": "U",
+      "parameterValue": "AIM-120A, AIM-120B, AIM-120C, AIM-120D, AMRAAM-ER",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"356 lb (161.5 kg)\".",
+      "parameterUomValue": "161.5 kg",
+      "classification": "U",
+      "parameterValue": "161.5",
+      "uom": "kg"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"12 ft (3.65 m)\".",
+      "parameterUomValue": "3.65 m",
+      "classification": "U",
+      "parameterValue": "3.65",
+      "uom": "m"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"7 in (178 mm)\".",
+      "parameterUomValue": "0.178 m",
+      "classification": "U",
+      "parameterValue": "0.178",
+      "uom": "m"
+    },
+    {
+      "seq": 1010,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"1 ft 7 in (484 mm)\".",
+      "parameterUomValue": "0.484 m",
+      "classification": "U",
+      "parameterValue": "0.484",
+      "uom": "m"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"High explosive blast-fragmentation\".",
+      "parameterUomValue": "High explosive blast-fragmentation",
+      "classification": "U",
+      "parameterValue": "High explosive blast-fragmentation",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Warhead weight",
+      "parameterDescr": "Mass of the warhead section. Source text: \"44 lb (20 kg)\".",
+      "parameterUomValue": "20 kg",
+      "classification": "U",
+      "parameterValue": "20",
+      "uom": "kg"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Detonation mechanism",
+      "parameterDescr": "Fuzing/detonation method. Source text: \"FZU-49 Proximity fuze, impact fuse system\".",
+      "parameterUomValue": "FZU-49 Proximity fuze, impact fuse system",
+      "classification": "U",
+      "parameterValue": "FZU-49 Proximity fuze, impact fuse system",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Solid-fuel rocket motor (boost-sustainer for AIM-120A/B/C-1 to C-4; booster only for C-5 and later/D)\".",
+      "parameterUomValue": "Solid-fuel rocket motor (boost-sustainer for AIM-120A/B/C-1 to C-4; booster only for C-5 and later/D)",
+      "classification": "U",
+      "parameterValue": "Solid-fuel rocket motor (boost-sustainer for AIM-120A/B/C-1 to C-4; booster only for C-5 and later/D)",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Propellant",
+      "parameterDescr": "Rocket motor propellant type. Source text: \"Reduced smoke hydroxyl-terminated poly-butadiene (HTPB) binder\".",
+      "parameterUomValue": "Reduced smoke hydroxyl-terminated poly-butadiene (HTPB) binder",
+      "classification": "U",
+      "parameterValue": "Reduced smoke hydroxyl-terminated poly-butadiene (HTPB) binder",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"AIM-120A/B: 40 nmi (75 km); AIM-120C: 49 nmi (90 km); AIM-120D: 70-86 nmi (130-160 km)\".",
+      "parameterUomValue": "75 km",
+      "classification": "U",
+      "parameterValue": "75",
+      "uom": "km"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Mach 4 (4,501 ft/s; 1,372 m/s)\".",
+      "parameterUomValue": "4 Mach",
+      "classification": "U",
+      "parameterValue": "4",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Inertial guidance, terminal active radar homing, optional mid-course update datalink\".",
+      "parameterUomValue": "Inertial guidance, terminal active radar homing, optional mid-course update datalink",
+      "classification": "U",
+      "parameterValue": "Inertial guidance, terminal active radar homing, optional mid-course update datalink",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Steering system",
+      "parameterDescr": "Method used to steer/control the airframe in flight. Source text: \"AIM-120C-5/6/7: 40G maximum overload via forward and rear canards\".",
+      "parameterUomValue": "AIM-120C-5/6/7: 40G maximum overload via forward and rear canards",
+      "classification": "U",
+      "parameterValue": "AIM-120C-5/6/7: 40G maximum overload via forward and rear canards",
+      "uom": ""
+    }
+  ]
+}

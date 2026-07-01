@@ -1,0 +1,184 @@
+{
+  "modelID": 2055,
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "Sukhoi Su-57",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Sukhoi Su-57 (Russian: Сухой Су-57; NATO reporting name: Felon) is a twin-engine stealth multirole fighter aircraft developed by Sukhoi. It is the product of the PAK FA (prospective aeronautical complex of front-line aviation) programme, initiated in 1999 as a more modern and affordable alternative to the MFI (Mikoyan Project 1.44/1.42). Sukhoi's internal designation for the aircraft is T-50. The Su-57 is the first aircraft in Russian military service designed with stealth technology and is intended to be the basis for a family of stealth combat aircraft.",
+      "shortDescription": "The Sukhoi Su-57 (Russian: Сухой Су-57; NATO reporting name: Felon) is a twin-engine stealth multirole fighter aircraft developed by Sukhoi.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "In 1979, the Soviet Union outlined a need for a next-generation fighter to enter service in the 1990s, becoming the I-90 programme, requiring multirole capability and eventually meant to replace the MiG-29 and Su-27. Two projects emerged to meet this: the MFI and the smaller LFI, with conceptual work beginning in 1983. Mikoyan was selected for the MFI (MiG 1.44/1.42), while Sukhoi pursued its own next-generation technology programme resulting in the forward-swept-wing S-32/S-37, later Su-47. Due to funding shortages after the Soviet collapse, the MFI's first flight was delayed to 2000, and the MFI/LFI programmes were eventually cancelled in favor of a new PAK FA (I-21) programme launched in 1999, aiming for a single affordable fifth-generation multirole fighter to replace both the Su-27 and MiG-29, sized between them.\n\nSukhoi's PAK FA proposal positioned itself as sole lead designer, differing from Mikoyan's consortium approach. Mikoyan's E-721 concept was smaller (16-17 tonnes) with twin Klimov VK-10M engines, while Sukhoi's T-50 was larger (22-23 tonnes) with twin Lyulka-Saturn AL-41F-1 engines. In April 2002, the Ministry of Defence selected Sukhoi as winner and lead design bureau, citing Sukhoi's financial stability from Su-27 derivatives and exports. Alexander Davidenko became chief designer in 2002. NAPO and KnAAZ were selected to manufacture the aircraft, with KnAAZ performing final assembly at Komsomolsk-on-Amur. Avionics suppliers were selected in 2003, and NPO Lyulka-Saturn was signed in 2004 to develop the AL-41F-1 (izdeliye 117) engine. Sukhoi used the Su-47 and Su-27M as testbeds for weapon bays, flight controls, and engines, and applied some T-50 technology to an advanced Su-27 derivative, the T-10BM, which became the Su-35S (entered service 2014).\n\nThe T-50's conceptual design was approved in December 2004, government funding began in 2005 and increased in 2006. The T-50 was renamed Su-57 in July 2017. India partnered on a derivative called the Sukhoi/HAL FGFA starting in 2007, but concerns over stealth performance, cost, and lack of supercruise led India to leave the partnership in 2018. The export variant, Su-57E, was unveiled at MAKS-2019.\n\nFlight testing was repeatedly delayed by engine and technical problems; the first taxi test occurred 24 December 2009, and the maiden flight of prototype T-50-1 occurred 29 January 2010 at Dzemgi Airport, piloted by Sergey Bogdan. By late October 2013, over 450 flights had been logged across five aircraft. Ten flying and three non-flying prototypes were eventually built. Early prototypes suffered inadequate fatigue life and structural cracking, prompting a \"second stage\" structural redesign (increased composites, reinforced airframe, elongated tail sting, greater wingspan) starting with the sixth prototype; normal takeoff weight rose to about 25 tonnes. Delivery of the first production aircraft slipped from 2015 to 2020.\n\nProcurement plans were repeatedly scaled back due to technical issues, India's uncertain commitment, and Russia's economic difficulties following sanctions over the annexation of Crimea. In 2015 the initial order was cut to 12 aircraft. On 15 May 2019, President Putin announced 76 aircraft would be purchased and delivered by 2028 after a 20% price reduction; the contract was formally signed 27 June 2019. Serial production began July 2019; following the crash of the first production aircraft, the Aerospace Forces took delivery of the second-built aircraft as its first in December 2020. Deliveries progressed slowly, with six aircraft delivered by end of 2022, 12 more by end of 2023, and further increases planned.\n\nSukhoi is developing the improved Su-57M under the program name Megapolis, featuring improved mission systems, reliability, electromechanical drives, and new NPO Saturn izdeliye 30 (AL-51F-1) engines; the contract was signed in 2018. Sukhoi has also used Su-57 technology to develop the lightweight single-engine Su-57 LTS 'Checkmate', unveiled as a mockup at MAKS-2021, sharing radar, main weapons bay, tails, and wings with the Su-57.",
+      "shortDescription": "viet Union outlined a need for a next-generation fighter to enter service in the 1990s, becoming the I-90 programme, requiring multirole capability and eventually meant to replace the MiG-29 and Su-27.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Su-57 is a fifth-generation multirole fighter, the first operational stealth aircraft for Russian forces, emphasizing supermaneuverability, large internal payload bays, and advanced sensor fusion via active phased-array radar. Sukhoi cited the F-22 as its baseline but sought to address perceived shortcomings such as insufficient payload and limited thrust-vectoring axes. The aircraft has a wide blended-wing-body fuselage with widely spaced engines, all-moving canted stabilizers for stealth, trapezoid wings with leading-edge flaps, ailerons and flaperons, thrust vectoring, and leading-edge root extensions with adjustable LEVCONs for high-angle-of-attack control. Structural materials are roughly 40-45% aluminum alloys, 18.6% titanium alloys, and 22-26% composites (about 70% of the outer surface).\n\nThe Su-57 has substantial internal payload capacity via two tandem main weapons bays (about 4.4 m long, 0.9 m wide) between the engine nacelles plus two smaller side bays near the wing roots, preserving stealth shaping. High static instability combined with the KSU-50 flight control system and canted thrust-vectoring nozzles make the aircraft highly maneuverable, capable of maneuvers like Pugachev's Cobra. It can reach Mach 2 and supercruise at Mach 1.3, giving supersonic range over 1,500 km, more than double the Su-27's, extendable via aerial refueling.\n\nStealth measures include aligned planform edges, serrated skin panel edges, internally carried weapons, recessed antennas, radar-absorbent material coatings, a backward-turned IRST housing when not in use, RAM-coated inlet ducts with partial serpentine shaping and blocker grids, and metal-oxide-coated canopy. Estimated RCS is reduced roughly thirtyfold versus the Su-27, targeting 0.1-1 m2 versus the Su-27's 10-15 m2 (compared to the F-35's ~0.005 m2 and F-22's ~0.0005 m2); the design emphasizes frontal-arc stealth over all-aspect stealth, reflecting cost tradeoffs and Russian doctrine of operating within friendly air-defense umbrellas. Production quality has been criticized, notably after a 2024 Zhuhai Airshow fuel-stop inspection revealed visible rivets, misaligned panels, and mixed bolt types.\n\nThe aircraft is powered by two NPO Lyulka-Saturn izdeliye 117 (AL-41F-1) augmented turbofans (9 tonnes dry thrust, 14.5 tonnes afterburner, 15 tonnes emergency power), with FADEC integrated into flight controls; thrust-vectoring nozzles are canted to allow roll and yaw moments. The planned Su-57M will use the newer AL-51F-1 (izdeliye 30) engine (11 tonnes dry, 16.5 tonnes afterburner) offering better performance and reduced signature; a hybrid izdeliye 177 engine combining AL-41F-1 and AL-51F-1 technologies first flew in December 2025.\n\nArmament includes four beyond-visual-range missiles (K/R-77M, izdeliye 810 derived from R-37M) in main bays, two short-range R-74M2 infrared missiles in side bays, a developmental K-MD short-range missile, and a 9A1-4071K (GSh-30-1) 30 mm autocannon with 150 rounds. Air-to-surface ordnance includes KAB-250/KAB-500 guided bombs, Kh-38M, Kh-35U anti-ship, Kh-58UShK anti-radiation, and Kh-69 cruise missiles; six external hardpoints support non-stealth missions, and the aircraft is believed to be nuclear-capable via a Kinzhal-like weapon.",
+      "shortDescription": "on multirole fighter, the first operational stealth aircraft for Russian forces, emphasizing supermaneuverability, large internal payload bays, and advanced sensor fusion via active phased-array radar.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "A multirole fighter capable of aerial combat as well as ground and maritime strike, the Su-57 incorporates stealth, supermaneuverability, supercruise, integrated avionics, and large payload capacity. According to the US, it will be nuclear-capable via a forthcoming missile similar to the Kinzhal. The aircraft is expected to succeed the MiG-29 and Su-27 in Russian military service and has also been marketed for export. The first prototype flew in 2010, but the program experienced protracted development due to structural and technical issues, including the destruction of the first production aircraft in a crash before delivery. In 2018, during the Russian intervention in the Syrian civil war, at least two Su-57 prototypes were first deployed and used in combat. After repeated delays, the first Su-57 entered service with the Russian Aerospace Forces (VKS) in December 2020. It has reportedly been sporadically used in Ukraine since the 2022 Russian invasion.\n\nThe cockpit is a glass cockpit with two 38 cm LCD multifunction displays, a wide-angle HUD, and HOTAS controls, using a NPP Zvezda K-36D-5 ejection seat and SOZhE-50 life support system rated for 9-g maneuvers up to 30 seconds. Main avionics comprise the Sh-121 multifunctional integrated radio electronic system (N036 Byelka AESA radar family plus L402 Himalayas ECM) and the 101KS Atoll electro-optical system (IRST, DIRCM, missile-approach warning, thermal imager, targeting pod), integrated via the IMA BK avionics suite running over 4 million lines of code.\n\nFlight testing began with the T-50 prototype's 29 January 2010 maiden flight and first supersonic flight on 14 March 2011. Testing was conducted at the Gromov Flight Research Institute and the 929th State Flight Test Centre at Akhtubinsk, in preliminary trials (PI) and two stages of state trials (GSI). Early tests revealed serious structural fatigue problems, requiring grounding and a \"second stage\" redesign; a 2014 in-flight fire destroyed the fifth prototype. GSI-1 (airworthiness) completed in 2018; GSI-2 (mission systems/armament), delayed partly by the December 2019 crash of the first production aircraft, extended into 2020.\n\nThe Su-57 entered service 25 December 2020 with delivery of the first production aircraft to a regiment in the Southern Military District at Lipetsk. The 23rd Guards Fighter Aviation Regiment at Dzyomgi was designated the first fully operational unit, with a full regiment of 24 aircraft expected by 2025. Two Su-57 prototypes were deployed to Khmeimim air base, Syria, in February 2018 alongside Su-35s, Su-25s, and an A-50, reportedly firing a cruise missile in combat; further Syria deployment occurred in 2019. Russian sources claim Su-57s have been used in Ukraine since 2022, including SEAD missions and long-range R-37 missile kills against Ukrainian aircraft, and a February 2024 Kh-69 cruise missile strike, though independent confirmation of air-to-air combat claims remains limited. In June 2024, Ukraine claimed to have damaged or destroyed two Su-57s in a drone strike on Akhtubinsk air base. In October 2024, a Su-57 reportedly shot down an out-of-control Russian Su-70 Okhotnik-B drone.\n\nExport interest has come from South Korea (bid not submitted), Brazil (lost to Saab Gripen E), Turkey (opted for domestic TF-X instead), Algeria (signed for 14 aircraft in December 2019, first deliveries reported starting 2025-2026), Vietnam, the UAE, Iraq, and India (renewed discussions around Su-57E co-production at HAL's Nashik plant, still preliminary as of 2025). As of 2024, no Su-57s had been confirmed exported, though contracts with unspecified nations were reported at the 2024 Zhuhai Airshow.",
+      "shortDescription": "A multirole fighter capable of aerial combat as well as ground and maritime strike, the Su-57 incorporates stealth, supermaneuverability, supercruise, integrated avionics, and large payload capacity.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Su-57 - production variant for the Russian Aerospace Forces, entering serial production in 2019 with 76 aircraft planned across three regiments. Su-57E - export version with different IFF, Imperial-unit instrumentation, English-labeled cockpit, and support for integrating non-Russian weapons, marketed by Rosoboronexport as the Perspective Multirole Fighter (PMF). Su-57M - improved variant (Megapolis programme) with new engines and mission systems in development. Sukhoi/HAL FGFA - cancelled Indian derivative. Sukhoi LTS 'Checkmate' - lightweight single-engine derivative sharing many Su-57 systems.",
+      "shortDescription": "Su-57 - production variant for the Russian Aerospace Forces, entering serial production in 2019 with 76 aircraft planned across three regiments.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 205501,
+      "url": "https://en.wikipedia.org/wiki/Sukhoi_Su-57",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Stealth multirole fighter\".",
+      "parameterUomValue": "Stealth multirole fighter",
+      "classification": "U",
+      "parameterValue": "Stealth multirole fighter",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Russia\".",
+      "parameterUomValue": "Russia",
+      "classification": "U",
+      "parameterValue": "Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"United Aircraft Corporation\".",
+      "parameterUomValue": "United Aircraft Corporation",
+      "classification": "U",
+      "parameterValue": "United Aircraft Corporation",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Built by",
+      "parameterDescr": "Manufacturing sites/companies that produced the system under license or partnership. Source text: \"Komsomolsk-on-Amur Aircraft Plant\".",
+      "parameterUomValue": "Komsomolsk-on-Amur Aircraft Plant",
+      "classification": "U",
+      "parameterValue": "Komsomolsk-on-Amur Aircraft Plant",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Status",
+      "parameterDescr": "Current operational status of the system. Source text: \"In production\".",
+      "parameterUomValue": "In production",
+      "classification": "U",
+      "parameterValue": "In production",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Primary users",
+      "parameterDescr": "Principal operator(s) of the system. Source text: \"Russian Aerospace Forces; Algerian Air Force\".",
+      "parameterUomValue": "Russian Aerospace Forces; Algerian Air Force",
+      "classification": "U",
+      "parameterValue": "Russian Aerospace Forces; Algerian Air Force",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \"42+ (including 10 prototypes) as of 2026\". Note: source indicates additional units beyond this figure; see description.",
+      "parameterUomValue": "42 units",
+      "classification": "U",
+      "parameterValue": "42",
+      "uom": "units"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Manufactured",
+      "parameterDescr": "Date range during which the system was in production. Source text: \"2019-present\".",
+      "parameterUomValue": "2019-present",
+      "classification": "U",
+      "parameterValue": "2019-present",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"2020\".",
+      "parameterUomValue": "2020",
+      "classification": "U",
+      "parameterValue": "2020",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "First flight",
+      "parameterDescr": "Date of the type's first flight. Source text: \"29 January 2010\".",
+      "parameterUomValue": "29 January 2010",
+      "classification": "U",
+      "parameterValue": "29 January 2010",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Powerplant",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating. Source text: \"Two NPO Lyulka-Saturn izdeliye 117 (AL-41F-1) augmented turbofans, 9 tonnes (88.3 kN) dry thrust, 14.5 tonnes (142.2 kN) afterburner thrust each\".",
+      "parameterUomValue": "Two NPO Lyulka-Saturn izdeliye 117 (AL-41F-1) augmented turbofans, 9 tonnes (88.3 kN) dry thrust, 14.5 tonnes (142.2 kN) afterburner thrust each",
+      "classification": "U",
+      "parameterValue": "Two NPO Lyulka-Saturn izdeliye 117 (AL-41F-1) augmented turbofans, 9 tonnes (88.3 kN) dry thrust, 14.5 tonnes (142.2 kN) afterburner thrust each",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Mach 2 class; supercruise at Mach 1.3\".",
+      "parameterUomValue": "2 Mach",
+      "classification": "U",
+      "parameterValue": "2",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"Supersonic range of over 1,500 km (930 mi)\".",
+      "parameterUomValue": "1500 km",
+      "classification": "U",
+      "parameterValue": "1500",
+      "uom": "km"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Armament",
+      "parameterDescr": "Weapons the system is equipped to carry/fire. Source text: \"9A1-4071K (GSh-30-1) 30 mm autocannon with 150 rounds; internal weapons bays carrying K/R-77M and R-37M-derived (izdeliye 810) air-to-air missiles, R-74M2 short-range missiles, KAB-250/KAB-500 guided bombs, Kh-38M, Kh-35U, Kh-58UShK, Kh-69 air-to-surface/anti-ship/anti-radiation/cruise missiles; six external hardpoints for non-stealth missions\".",
+      "parameterUomValue": "9A1-4071K (GSh-30-1) 30 mm autocannon with 150 rounds; internal weapons bays carrying K/R-77M and R-37M-derived (izdeliye 810) air-to-air missiles, R-74M2 short-range missiles, KAB-250/KAB-500 guided bombs, Kh-38M, Kh-35U, Kh-58UShK, Kh-69 air-to-surface/anti-ship/anti-radiation/cruise missiles; six external hardpoints for non-stealth missions",
+      "classification": "U",
+      "parameterValue": "9A1-4071K (GSh-30-1) 30 mm autocannon with 150 rounds; internal weapons bays carrying K/R-77M and R-37M-derived (izdeliye 810) air-to-air missiles, R-74M2 short-range missiles, KAB-250/KAB-500 guided bombs, Kh-38M, Kh-35U, Kh-58UShK, Kh-69 air-to-surface/anti-ship/anti-radiation/cruise missiles; six external hardpoints for non-stealth missions",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Developed into",
+      "parameterDescr": "Later systems derived from this design. Source text: \"Su-57M (Megapolis programme), Sukhoi/HAL FGFA (cancelled), Sukhoi LTS 'Checkmate' (technology derivative)\".",
+      "parameterUomValue": "Su-57M (Megapolis programme), Sukhoi/HAL FGFA (cancelled), Sukhoi LTS 'Checkmate' (technology derivative)",
+      "classification": "U",
+      "parameterValue": "Su-57M (Megapolis programme), Sukhoi/HAL FGFA (cancelled), Sukhoi LTS 'Checkmate' (technology derivative)",
+      "uom": ""
+    }
+  ]
+}

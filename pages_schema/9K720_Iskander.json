@@ -1,0 +1,193 @@
+{
+  "modelID": 2004,
+  "systemGroup": "Weapon",
+  "systemType": "Ballistic Missile",
+  "nomenclature": "9K720 Iskander",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The 9K720 Iskander ( Russian : «Искандер» ; NATO reporting name SS-26 Stone ) is a family of Russian mobile short-range ballistic missile systems. The basic M model has a range of 500 kilometres (270 nmi; 310 mi). It was intended to replace the OTR-21 Tochka in the Russian military by 2020.",
+      "shortDescription": "The 9K720 Iskander ( Russian : «Искандер» ; NATO reporting name SS-26 Stone ) is a family of Russian mobile short-range ballistic missile systems.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The road-mobile Iskander was the second attempt by Russia to replace the Scud missile . The first attempt, the OTR-23 Oka , was eliminated under the INF Treaty . The design work on Iskander was begun in December 1988, initially directed by the KBM rocket weaponry designer Sergey Nepobedimy , and was not significantly affected by the dissolution of the USSR in 1991.\n\nThe first successful launch occurred in 1996.\n\nIn September 2004, at a meeting with senior defense officials reporting to President Vladimir Putin on the drafting of a defense budget for 2005, the Russian Defence Minister Sergei Ivanov spoke about the completion of static tests of a new tactical missile system called the Iskander. He said that the system would go into quantity production in 2005 and toward the end of that year, Russia would have a brigade armed with it. In March 2005, a source in the Russian defence industry told Interfax-AVN the development of new missiles with a range of 500–600 kilometres (270–320 nmi; 310–370 mi), based on existing Iskander-E tactical missile systems, was a possibility. He said, however, that it \"may take up to five or six years\".\n\nIn 2006, serial production of the Iskander-M tactical ballistic missile system was launched, and the system was adopted by the Russian army. The production cost of the missile system was reported in 2014 to have been slashed by a third by cutting the 20% markup applied by the missile manufacturer at each stage of the components supply chain from a cumulative 810% to markup of 21% applied only to the finished product.\n\nIn November 2016, the Russian military announced that the modernization of the Iskander-M system was underway. A number of countries were reported to have shown interest in purchasing the export version of Iskander, but such possibility was only announced in early February 2017.\n\nThe United States has argued that the 9M728/9M729 (SSC-X-7/SSC-X-8) cruise missiles used by Iskander-K violates the INF Treaty because their estimated range is beyond 500 kilometres (270 nmi; 310 mi).\n\nThe general director of the company-developer of the system said in April 2024 that the precision of the missile has been improved since the start of the Russian invasion of Ukraine .\n\nAccording to a report by the US Defense Intelligence Agency , Russia upgraded 9K720 Iskander and Kh-47M2 Kinzhal missiles with a terminal phase maneuvering capability in spring 2025 in order to bypass Ukraine's Patriot systems. A Financial Times article from October 2025 said, citing current and former Ukrainian and Western officials, that interception rates dropped from 37% in August to 6% in September, allowing Russia to seriously damage key military sites, four drone plants, and critical infrastructure ahead of the winter.\n\nAccording to the French Army, Ukrainian SAMP/T air defence systems have outperformed Patriot missiles in intercepting Iskander missile, after Russia modified the flight profiles of Iskanders.\n\nOn 14 March 2026, Ukrainian drones destroyed an Iskander ballistic missile launcher close to the village of Vyshneve in Crimea.\n\nIn November 2008, the Russian president Dmitry Medvedev in his first annual address to the Federal Assembly of Russia announced plans to deploy Iskander missiles to the Kaliningrad Oblast , Russia's westernmost territory on the south-eastern coast of the Baltic Sea , if the U.S. went ahead with its European Ballistic Missile Defense System . On 17 September 2009, US president Barack Obama announced the cancellation of the U.S. missile defense project in Poland and the Czech Republic. The following day, Moscow indicated it might in turn cancel the plans to deploy Iskander missiles to Kaliningrad; a few days later, the decision not to deploy was confirmed by Medvedev.",
+      "shortDescription": "The road-mobile Iskander was the second attempt by Russia to replace the Scud missile .",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Iskander has several different conventional warheads, including a cluster munitions warhead, a fuel–air explosive enhanced-blast warhead, a high-explosive fragmentation warhead, an earth penetrator for bunker busting and an electromagnetic pulse device for anti-radar missions. The missile can also carry nuclear warheads. In September 2017, the KB Mashinostroyeniya (KBM) general designer Valery M. Kashin said that there were at least seven types of missiles (and \"perhaps more\") for Iskander, including one cruise missile . [ better source needed ]\n\nThere was a report by GosNIIP, the design bureau that builds guidance for cruise missiles, that Russia completed state acceptance trials of the \"ground-based 9M728/9M729 missiles and their modernized version.\" [ citation needed ]\n\nThe Iskander-M system is equipped with two solid-propellant single-stage guided missiles , model 9M723K1 . The missiles are controlled throughout the entire flight path and fitted with an inseparable warhead .\n\nThe missiles can reportedly be re-targeted during flight in the case of engaging mobile targets. Another unique feature of Iskander-M is the optically guided warhead, which can also be controlled by encrypted radio transmission, including such as those from AWACS or UAV .\n\nDuring boost phase, thrust vector control (TVC) is accomplished by graphite vanes similar in layout to the V-2 and Scud series tactical ballistic missiles. The missile [ which? ] is reportedly controlled during the whole flight with gas-dynamic and aerodynamic control surfaces, using small fins to reduce its radar signature. At least some versions [ which? ] are equipped with decoys in order to aid in penetrating missile defense systems.\n\nIskander is a tactical missile system designed to be used in theater level conflicts.\n\nIn 2007, a new missile for the system (and launcher) was test fired, the R-500 [ ru ] cruise missile, with a range of applications up to 2000 km or more. In 2018, the Iskander missile [ which? ] reportedly gained the capability to strike static sea targets.\n\nIn 2020 it was said that the MAZ was the primary supplier for the chassis of the launchers for the Iskander-M because the domestic Russian products are of comparatively low quality.\n\nThe system can be transported by various vehicles, including airplanes .\n\nWhen nuclear armed, the warhead is estimated to have a yield of 5 to 50 kilotonnes of TNT (21 to 209 TJ) (Iskander-M).\n\ntransporter-erector-launcher vehicle (chassis of 8×8 MZKT -79306 ASTROLOG truck)\n\nTransporter and loader vehicle (chassis of 8×8 MZKT-79306 ASTROLOG truck)\n\nCommand and staff vehicle (chassis of KAMAZ six-wheel truck)\n\nInformation preparation station vehicle (chassis of KAMAZ six-wheel truck)\n\nMaintenance and repair vehicle (chassis of KAMAZ six-wheel truck)\n\nLife support vehicle (chassis of KAMAZ six-wheel truck)\n\nDepot equipment set\n\nset of equipment for TEL training class\n\nset of equipment for CSV training class\n\nTraining posters\n\nTraining missile mock-up\n\nThe system is intended to use conventional warheads for the engagement of point and area targets, including:\n\nhostile fire weapons (missile systems, multiple launch rocket systems, long-range artillery pieces)\n\nair and missile defense weapons, aerodrome\n\nfixed- and rotary-wing aircraft at airfields\n\ncommand posts and communications nodes\n\ntroops in concentration areas\n\ncritical civilian infrastructure facilities\n\nIt is also capable of striking strongly protected targets, such as bunkers or hardened aircraft shelters",
+      "shortDescription": "nitions warhead, a fuel–air explosive enhanced-blast warhead, a high-explosive fragmentation warhead, an earth penetrator for bunker busting and an electromagnetic pulse device for anti-radar missions.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The first documented use of the Iskander was in the Russo-Georgian War in which Dutch journalist Stan Storimans was killed on 12 August 2008 in Gori . An investigation by the Dutch government revealed that a single, 5 mm fragment from an anti-personnel sub-munition, carried by an Iskander missile, killed the Dutch journalist.\n\nIn September 2009, the Russian military announced plans to deploy Iskander missiles in all the military districts of Russia \"in a short time\".\n\nAccording to the Stratfor report in 2010 there were five Iskander brigades stationed and operational in Russia, namely the 26th Rocket Brigade in the town of Luga, Leningrad Oblast , south of St. Petersburg ; 92nd Rocket Brigade at Kamenka, near Penza in the Volga region ; 103rd Rocket Brigade at Ulan-Ude , north of Mongolia; 107th Rocket Brigade at Semistochni [ ru ] , in the Far East;\n\nIn June 2013, it was revealed that Russia had deployed several Iskander-M ballistic missile systems in Armenia at undisclosed locations. In 2016, it was reported by media that Armenia had received a divizion of Iskander missiles.\n\nIn November 2014, US General Breedlove stated that Russian forces \"capable of being nuclear\" had been moved into Crimea, the Ukrainian peninsula which the Russian Federation had annexed in March, and the following month Ukrainian Armed Forces announced that Russia had deployed a nuclear-capable Iskander division in the territory. Russian Foreign Ministry officials declared the right to deploy nuclear weapons in the peninsula, which is generally recognized as part of Ukraine , in December 2014 and June 2015.\n\nIn March 2016, at least one Iskander system was reportedly deployed at Russia's Hmeimim airbase in Syria . In January 2017 an Israeli company claimed satellite photography confirmed the Syrian deployment.\n\nAccording to a Fox News report in early February 2017, four Iskander missiles had been fired at opposition targets in the Idlib province in Syria.\n\nDuring the 2022 Russian invasion of Ukraine , Russia launched several Iskander missiles over their border into Ukraine as part of their assault. These missiles demonstrated a previously unknown capability that employed decoys to confuse air defense systems. It is believed this technology was kept a closely guarded secret, and not included on Iskander missiles exported outside of Russia. From 23 April 2022, Russia deployed more units equipped with Iskander-M to the Belgorod Oblast , as close as 60 km from the border of Ukraine.\n\nIn March 2023, Ukrainian Air Force spokesman Yuri Ihnat reported that Ukraine was unable to shoot down Iskander ballistic missiles. [ better source needed ] However, on 29 May, Ukraine claimed to have destroyed 11 Iskander missiles of both the ballistic and cruise missile variants.\n\nOn 5 March 2024, it was confirmed that a M142 HIMARS was destroyed by an Iskander ballistic missile near Nykanorivka in eastern Ukraine's Donetsk Oblast. It was the first time a HIMARS system was destroyed in Ukraine.\n\nOn 9 March 2024, it was confirmed that an Iskander ballistic missile was used to destroy two German-supplied M901 launchers for the MIM-104 Patriot air defence system near Pokrovsk . It was the first time components of a Patriot were destroyed in Ukraine.\n\nOn 14 March 2024, an Iskander strike destroyed two Ukrainian Mi-8/17 helicopters from the 12th Army Aviation Brigade that were rearming in an open field in Novopavlivka, next to Avdiivka.\n\nIn early July 2024, Russian forces launched a wave of attacks using Iskander missiles at Ukrainian airbases, after first using drones for aerial reconnaissance:\n\non 1 July, an attack on Myrhorod Air Base resulted in the destruction of at least two Sukhoi Su-27 fighter jets\n\non 2 July, an attack on Poltava Air Base resulted in a Mi-24 gunship helicopter being severely damaged\n\non 3 July, an attack on Krivoi Rog Air Base resulted in the destruction of a Mikoyan MiG-29 fighter jet and a decoy Sukhoi Su-25 attack jet\n\nOn 22 November 2024, another MiG-29 was destroyed in Aviatorskoe-Dnipro air base by an Iskander missiles attack guided by a Russian drone.\n\nOn 23 February 2025, the Russian Ministry of Defense claimed that it has hit over 1,400 targets with the Iskander system during the war.\n\nOn 1 March 2025, Russian forces attacked a Ukrainian military training site in Cherkaske , leaving scores of Ukrainian soldiers killed and wounded.\n\nOn 5 June 2025, Ukrainian military claimed that their missiles struck a base in the city of Klintsy Bryansk Oblast, destroying one Iskander missile launcher and damaged two more.\n\nAccording to Russian unofficial media reports, Russia deployed Iskander missiles to the Kaliningrad Oblast as part of military exercises in March 2015.\n\nOn 8 October 2016, the Russian military confirmed that they had moved Iskander-M missiles into the Kaliningrad Oblast, adding the move was part of routine drills and had happened previously multiple times and would happen in future.\n\nIn early February 2018, Shamanov confirmed that Russia had deployed an unidentified number of Iskander missiles to the Kaliningrad region. Days prior, the local military commanders said that the \"park zones\" for Iskander missiles deployment had been completed in the Kaliningrad region, as well as in North Ossetia .\n\nArmenia reportedly used its Iskander missiles against Azerbaijani forces during the 2020 Nagorno-Karabakh War . According to unconfirmed claims by ex-president of Armenia Serzh Sargsyan , the missiles were fired on the town of Shushi after its capture by Azerbaijani forces in the last days of the war. Responding to these claims, Prime Minister Nikol Pashinyan neither confirmed nor denied the claim that an Iskander was fired on Shushi, but implied that the missiles that were launched did not explode or only exploded \"by 10 percent.\" [ better source needed ] The Armenian prime minister's claims were rejected by a number of Russian lawmakers and military experts as well as by ex-defense minister of Armenia Seyran Ohanyan (under whom the missiles were acquired by Armenia). The Russian Ministry of Defence released a statement claiming that the Iskander missiles were not used at all during the 2020 Nagorno-Karabakh War. [ better source needed ] Another claim was made by an anonymous Azerbaijani official that Armenian forces fired an Iskander missile at Azerbaijan's capital Baku in the last days of the 2020 Nagorno-Karabakh War, but it was shot down by an Israeli-made Barak 8 . On 15 March, employees of the Azerbaijan National Agency for Mine Action, who were demining and clearing the territories from mines and shells in Shushi, discovered the wreckage of an Iskander-M missile with identification number 9M723.\n\nArmenia – 25 units. [ citation needed ] Several systems were displayed at the Independence Day parade rehearsal in September 2016. Two managers of the Russian military-industrial complex Rosoboronexport confirmed that four 9K720 Iskander systems were delivered to Armenia per CSTO arms agreement, thus making Armenia, a country in military union with Russia , the first foreign state to have the missile system. In February 2017, the Defence minister of Armenia told a Russian mass media outlet that the Iskander missiles stationed in Armenia and shown at the military parade in September 2016 were owned and operated by the Armed Forces of Armenia .\n\nAlgeria – Four regiments (48 launchers). During the Dubai Airshow 2017 exhibition, representatives of the Federal Service of Military-Technical Cooperation officially confirmed that the Iskander-E missile system was delivered to one of the countries in the Middle East and North Africa region . French defense writer Philippe Langloit wrote in the September–October 2017 issue of DSI magazine that Algeria had received 4 Iskander-E regiments. It was confirmed by Kommersant magazine.\n\nBelarus – bought an undisclosed number of Iskander ballistic missile systems in May 2022, according to a statement by Belarus President Alexander Lukashenko . [ citation needed ] President Putin has announced a plan to give Belarus nuclear capable Iskander missiles. He said: \"can fire ballistic and cruise missiles, both conventional and nuclear types\". The systems were delivered in December 2022 and were allegedly handed over to full Belarusian autonomous control in February 2023. Systems operated by 465th Missile Brigade .\n\nRussia – 160 units (13 rocket brigades with 12 units each, and one unit with 4 units at Kapustin Yar ). Roughly 600 Iskander-M ballistic missiles and 300 Iskander-K cruise missiles are stockpiled as of June 2025. In service with the Western Military District since 2010. Missiles are also deployed in Armenia . Two deliveries in 2013. Missile units in Krasnodar and Stavropol territories as well as in the Republic of Adygea in the 49th Army of the Southern Military District, and a missile brigade in the Eastern Military District received Iskander-M in 2013. One more delivery in July 2014. A missile brigade, stationed in the Orenburg region, rearmed on \"Iskander-M\" on 20 November 2014. 6th brigade delivered on 16 June 2015 to unit in Ulan Ude [ citation needed ] (presumably the 103rd Rocket Brigade ). Seventh brigade delivered in November 2015 to the Southern Military District. All scheduled 120 complexes. 20th Separate Guards Rocket Brigade – 5th Red Banner Army of the Eastern Military District (the brigade stationed in Spassk-Dalniy, Primorsky Krai ) – in June 2016. [ citation needed ] One more delivery in November 2016 to the Central MD. Next delivery conducted in 2nd quarter of 2017. [ citation needed ] The contract for two more brigades and cruise missiles for the system signed in August 2017 will increase the total number of rocket brigades to 13. The last brigade was delivered to the WMD for a missile formation of the combined arms army in the Kursk Region in November 2019. One more brigade set and two battalion sets were delivered in late 2021. More missiles ordered in August 2022 and again in August 2023 and in August 2024. According to classified documents, the Russian Defense Ministry ordered 303 9M728 cruise missiles by at least two orders in 2024-2025. A batch of 95 modernized 9M729 missiles with a range of over 2,000 km and requiring an upgraded Iskander-M1 launcher was first ordered for the Russian Army in 2025. An order for 1202 9M723 ballistic missiles in 2024-2025 has been placed (589 missiles were ordered in 2024 and 643 in 2025). The missiles are equipped with cluster or high-explosive warheads. Finally, 18 9M723-2 missiles maybe related to the Iskander-1000 long-range missile project were ordered in 2025.\n\nManufacturer: Votkinsk Machine Building Plant ( Votkinsk ) – missiles Production Association Barricades ( Volgograd ) – ground equipment KBM ( Kolomna ) – developer of the system\n\nLaunch range: minimum: 50 km\n\nminimum: 50 km\n\n5–7 m with terminal phase DSMAC optoelectronic homing system (Iskander-M) 1–30 m 9K720\n\n5–7 m with terminal phase DSMAC optoelectronic homing system (Iskander-M)\n\n1–30 m 9K720\n\nTime to launch: up to 4 min from highest readiness, up to 16 min from march\n\nInterval between launches: less than a minute\n\nOperating temperature range: -50 °C to +50 °C\n\nBurnout velocity: ≈2,100 m/s\n\nNumber of missiles: on 9P78 launcher: 2 on 9T250 transloader: 2\n\non 9P78 launcher: 2\n\non 9T250 transloader: 2\n\nassigned service life: 10 years\n\nCrew: 3 (launcher truck)\n\nThe full Iskander system includes",
+      "shortDescription": "The first documented use of the Iskander was in the Russo-Georgian War in which Dutch journalist Stan Storimans was killed on 12 August 2008 in Gori .",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Variant for the Russian Armed Forces with two 9M723 quasi-ballistic missiles with a confirmed range of 400 km (250 miles), published range of 415 km (258 miles), and rumored range of 500 km (310 miles). Speed Mach 6–7, flight altitude up to 6–50 km, nuclear capable missile, controlled at all stages, not ballistic flight path. Immediately after the launch and upon approach to the target, the missile can perform maneuvering to evade anti-ballistic missiles .\n\n\"K\" for Krylataya (\"Winged\") ( Russian : крылатая ракета ). Variant intended to carry various types of cruise missiles ( Russian : крылатая ракета ; literally winged rocket). At present, it includes:\n\n9M728 (SSC-7) also known as R-500 – flight altitude up to 6 km, published range up to 500 km and automatic adjustment in the way, follow of terrain relief in flight. It is reportedly a variant of the 3M-54 Kalibr .\n\n9M729 (SSC-8) – new long-range missile that is reportedly a land-based version of the 3M14 Kalibr-NK missile complex with a range between 300–3,400 miles (480–5,470 km) and may be based even on the air-launched 5,500 kilometres (3,400 mi)-range Kh-101 cruise missile.\n\n\"E\" for Eksport . The director of the state corporation Rostec Sergey Chemezov commented that the Iskander missile complex is a serious offensive weapon capable of carrying a nuclear warhead. [ citation needed ]\n\nIn 2016, Armenia, a Russian ally and a member of the Collective Security Treaty Organization (CSTO) became the first foreign country to operate the system. Iskander-E has a maximum range up to 280 km, to comply with Missile Technology Control Regime restrictions for export, and is fitted with a simplified inertial guidance system. It flies on a flattened trajectory under 50 km altitude, allowing aerodynamic steering using tail fins, permitting a less predictable flight path and accurate delivery. The system can also use missiles carrying warheads with cluster munitions .",
+      "shortDescription": "ariant for the Russian Armed Forces with two 9M723 quasi-ballistic missiles with a confirmed range of 400 km (250 miles), published range of 415 km (258 miles), and rumored range of 500 km (310 miles).",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 200401,
+      "url": "https://en.wikipedia.org/wiki/9K720_Iskander",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Short-range ballistic missile\".",
+      "parameterUomValue": "Short-range ballistic missile",
+      "classification": "U",
+      "parameterValue": "Short-range ballistic missile",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Russia\".",
+      "parameterUomValue": "Russia",
+      "classification": "U",
+      "parameterValue": "Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"2006–present\".",
+      "parameterUomValue": "2006–present",
+      "classification": "U",
+      "parameterValue": "2006–present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"Russian Ground Forces ; Armenian Armed Forces ; Algerian People's National Army ; Armed Forces of Belarus\".",
+      "parameterUomValue": "Russian Ground Forces ; Armenian Armed Forces ; Algerian People's National Army ; Armed Forces of Belarus",
+      "classification": "U",
+      "parameterValue": "Russian Ground Forces ; Armenian Armed Forces ; Algerian People's National Army ; Armed Forces of Belarus",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"Russo-Georgian War ; Syrian Civil War ; Second Nagorno-Karabakh War ; Russo-Ukrainian war\".",
+      "parameterUomValue": "Russo-Georgian War ; Syrian Civil War ; Second Nagorno-Karabakh War ; Russo-Ukrainian war",
+      "classification": "U",
+      "parameterValue": "Russo-Georgian War ; Syrian Civil War ; Second Nagorno-Karabakh War ; Russo-Ukrainian war",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Designed",
+      "parameterDescr": "Year design work began. Source text: \"From 1988\".",
+      "parameterUomValue": "From 1988",
+      "classification": "U",
+      "parameterValue": "From 1988",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Missiles: Votkinsk Plant State Production Association ( Votkinsk ) ; Ground equipment: Production Association Barricades ( Volgograd ) ; System developer: KBM ( Kolomna )\".",
+      "parameterUomValue": "Missiles: Votkinsk Plant State Production Association ( Votkinsk ) ; Ground equipment: Production Association Barricades ( Volgograd ) ; System developer: KBM ( Kolomna )",
+      "classification": "U",
+      "parameterValue": "Missiles: Votkinsk Plant State Production Association ( Votkinsk ) ; Ground equipment: Production Association Barricades ( Volgograd ) ; System developer: KBM ( Kolomna )",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Unit cost",
+      "parameterDescr": "Approximate unit cost in US dollars. Source text: \"US$3 million (missile)\".",
+      "parameterUomValue": "3000000 USD",
+      "classification": "U",
+      "parameterValue": "3000000",
+      "uom": "USD"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"3,800 kg (8,400 lb)\".",
+      "parameterUomValue": "3800 kg",
+      "classification": "U",
+      "parameterValue": "3800",
+      "uom": "kg"
+    },
+    {
+      "seq": 1010,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"7.3 m (24 ft)\".",
+      "parameterUomValue": "7.3 m",
+      "classification": "U",
+      "parameterValue": "7.3",
+      "uom": "m"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"0.92 m (3 ft 0 in)\".",
+      "parameterUomValue": "0.92 m",
+      "classification": "U",
+      "parameterValue": "0.92",
+      "uom": "m"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"480–700 kg (1,060–1,540 lb) thermonuclear weapon , high-explosive fragmentation, submunition , penetration, fuel–air explosive , EMP\".",
+      "parameterUomValue": "480–700 kg (1,060–1,540 lb) thermonuclear weapon , high-explosive fragmentation, submunition , penetration, fuel–air explosive , EMP",
+      "classification": "U",
+      "parameterValue": "480–700 kg (1,060–1,540 lb) thermonuclear weapon , high-explosive fragmentation, submunition , penetration, fuel–air explosive , EMP",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Single-stage solid propellant\".",
+      "parameterUomValue": "Single-stage solid propellant",
+      "classification": "U",
+      "parameterValue": "Single-stage solid propellant",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"400–500 km (250–310 mi) for Iskander-M\".",
+      "parameterUomValue": "500 km",
+      "classification": "U",
+      "parameterValue": "500",
+      "uom": "km"
+    },
+    {
+      "seq": 1015,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Iskander-M : INS + GLONASS + DSMAC ; Iskander-K : INS + GLONASS + TERCOM\".",
+      "parameterUomValue": "Iskander-M : INS + GLONASS + DSMAC ; Iskander-K : INS + GLONASS + TERCOM",
+      "classification": "U",
+      "parameterValue": "Iskander-M : INS + GLONASS + DSMAC ; Iskander-K : INS + GLONASS + TERCOM",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"Mobile transporter erector launcher\".",
+      "parameterUomValue": "Mobile transporter erector launcher",
+      "classification": "U",
+      "parameterValue": "Mobile transporter erector launcher",
+      "uom": ""
+    }
+  ]
+}

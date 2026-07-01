@@ -1,0 +1,77 @@
+{
+    "modelID":1234,
+    "systemGroup":"Sensors",
+    "systemType":"Laser Sensor",
+    "nomenclature":"LaserEye 3000",
+    "updatedDate":"2020-10-4",
+    "descriptions":
+    [
+        {
+            "description":"1Lorem ipsum odor amet, consectetuer adipiscing elit. Egestas hendrerit posuere volutpat sem lacus ornare. \n Dui inceptos duis taciti; risus fusce lectus euismod. Quisque consectetur feugiat felis netus amet. Ut phasellus sollicitudin proin ut laoreet volutpat; ligula rutrum.",
+            "shortDescription": "Lorem ipsum odor amet, consectetuer adipiscing elit.",
+            "descrType":"Overview",
+            "classification":"A"
+        },
+        {
+            "description":"2Lorem ipsum odor amet, consectetuer adipiscing elit. Egestas hendrerit posuere volutpat sem lacus ornare. \n Dui inceptos duis taciti; risus fusce lectus euismod. Quisque consectetur feugiat felis netus amet. Ut phasellus sollicitudin proin ut laoreet volutpat; ligula rutrum.",
+            "shortDescription": "Lorem ipsum odor amet, consectetuer adipiscing elit.",
+            "descrType":"Operations",
+            "classification":"F"
+        },
+        {
+            "description":"3Lorem ipsum odor amet, consectetuer adipiscing elit. Egestas hendrerit posuere volutpat sem lacus ornare. \n Dui inceptos duis taciti; risus fusce lectus euismod. Quisque consectetur feugiat felis netus amet. Ut phasellus sollicitudin proin ut laoreet volutpat; ligula rutrum.",
+            "shortDescription": "Lorem ipsum odor amet, consectetuer adipiscing elit.",
+            "descrType":"Variants",
+            "classification":"F"
+        }
+    ],
+
+    "media":
+    [
+        {
+            "seq":1,
+            "mediaID":73092,
+            "url":"www.test123.com/testimage.jpg",
+            "title":"System image 1"
+
+        },
+        {
+            "seq":2,
+            "mediaID":73092,
+            "url":"www.test123.com/testimage2.jpg",
+            "title":"System image 2"
+
+        }
+    ]
+    ,
+    "parametrics":
+    [
+        {
+            "seq":1001,
+            "parameter":"Maximum Altitude",
+            "parameterDescr":"Maximum Altitude - the highest altitude the system can operate at, in ft",
+            "parameterUomValue":"5000 ft",
+            "classification":"D",
+            "parameterValue":"5000",
+            "uom":"ft"
+        },
+        {
+            "seq":1001,
+            "parameter":"Maximum Range",
+            "parameterDescr":"Maximum Range - the longest range the system can operate to, in m",
+            "parameterUomValue":"5000 m",
+            "classification":"D",
+            "parameterValue":"5000",
+            "uom":"m"
+        },
+        {
+            "seq":1234,
+            "parameter":"Weight",
+            "parameterDescr":"System weight, in kg",
+            "parameterUomValue":"1.5 kg",
+            "classification":"D",
+            "parameterValue":"1.5",
+            "uom":"kg"
+        }
+    ]   
+}

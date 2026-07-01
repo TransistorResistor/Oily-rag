@@ -1,0 +1,157 @@
+{
+  "systemGroup": "Aircraft",
+  "systemType": "Helicopter",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Capacity",
+      "uom": "",
+      "parameterDescr": "Payload/passenger capacity.",
+      "count": 1
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 1
+    },
+    {
+      "parameter": "Crew",
+      "uom": "",
+      "parameterDescr": "Number of crew required to operate the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Cruise speed",
+      "uom": "",
+      "parameterDescr": "Typical cruising speed.",
+      "count": 1
+    },
+    {
+      "parameter": "Developed from",
+      "uom": "",
+      "parameterDescr": "Earlier system this design is derived from.",
+      "count": 1
+    },
+    {
+      "parameter": "Empty weight",
+      "uom": "kg",
+      "parameterDescr": "Aircraft weight excluding fuel, payload, and crew.",
+      "count": 1
+    },
+    {
+      "parameter": "First flight",
+      "uom": "",
+      "parameterDescr": "Date of the type's first flight.",
+      "count": 1
+    },
+    {
+      "parameter": "Gross weight",
+      "uom": "kg",
+      "parameterDescr": "Typical loaded weight for a standard mission.",
+      "count": 1
+    },
+    {
+      "parameter": "Height",
+      "uom": "m",
+      "parameterDescr": "Overall height of the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Introduced",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service.",
+      "count": 1
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Main rotor area",
+      "uom": "m2",
+      "parameterDescr": "Disc area swept by the main rotor.",
+      "count": 1
+    },
+    {
+      "parameter": "Main rotor diameter",
+      "uom": "m",
+      "parameterDescr": "Diameter of the main rotor disc.",
+      "count": 1
+    },
+    {
+      "parameter": "Manufactured",
+      "uom": "",
+      "parameterDescr": "Date range during which the system was in production.",
+      "count": 1
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Max takeoff weight",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight.",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 1
+    },
+    {
+      "parameter": "Powerplant",
+      "uom": "",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating.",
+      "count": 1
+    },
+    {
+      "parameter": "Primary users",
+      "uom": "",
+      "parameterDescr": "Principal operator(s) of the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 1
+    },
+    {
+      "parameter": "Service ceiling",
+      "uom": "m",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement.",
+      "count": 1
+    },
+    {
+      "parameter": "Status",
+      "uom": "",
+      "parameterDescr": "Current operational status of the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 1
+    },
+    {
+      "parameter": "Variant",
+      "uom": "",
+      "parameterDescr": "Named variant of the base system.",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Maximum speed",
+      "uom": "Mach",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 14
+    },
+    {
+      "parameter": "Powerplant",
+      "uom": "",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating.",
+      "count": 14
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 13
+    },
+    {
+      "parameter": "Introduced",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service.",
+      "count": 13
+    },
+    {
+      "parameter": "Manufactured",
+      "uom": "",
+      "parameterDescr": "Date range during which the system was in production.",
+      "count": 13
+    },
+    {
+      "parameter": "Number built",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced.",
+      "count": 13
+    },
+    {
+      "parameter": "Status",
+      "uom": "",
+      "parameterDescr": "Current operational status of the system.",
+      "count": 13
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 13
+    },
+    {
+      "parameter": "First flight",
+      "uom": "",
+      "parameterDescr": "Date of the type's first flight.",
+      "count": 12
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 12
+    },
+    {
+      "parameter": "Height",
+      "uom": "m",
+      "parameterDescr": "Overall height of the system.",
+      "count": 11
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 11
+    },
+    {
+      "parameter": "Max takeoff weight",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight.",
+      "count": 11
+    },
+    {
+      "parameter": "Primary users",
+      "uom": "",
+      "parameterDescr": "Principal operator(s) of the system.",
+      "count": 11
+    },
+    {
+      "parameter": "Service ceiling",
+      "uom": "m",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement.",
+      "count": 11
+    },
+    {
+      "parameter": "Wingspan",
+      "uom": "m",
+      "parameterDescr": "Wingspan or fin span.",
+      "count": 11
+    },
+    {
+      "parameter": "Crew",
+      "uom": "",
+      "parameterDescr": "Number of crew required to operate the system.",
+      "count": 10
+    },
+    {
+      "parameter": "Empty weight",
+      "uom": "kg",
+      "parameterDescr": "Aircraft weight excluding fuel, payload, and crew.",
+      "count": 10
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 10
+    },
+    {
+      "parameter": "Wing area",
+      "uom": "m2",
+      "parameterDescr": "Total wing planform area.",
+      "count": 10
+    },
+    {
+      "parameter": "Wing loading",
+      "uom": "",
+      "parameterDescr": "Weight per unit wing area.",
+      "count": 10
+    },
+    {
+      "parameter": "Gross weight",
+      "uom": "kg",
+      "parameterDescr": "Typical loaded weight for a standard mission.",
+      "count": 9
+    },
+    {
+      "parameter": "Guns",
+      "uom": "",
+      "parameterDescr": "Internal gun armament.",
+      "count": 9
+    },
+    {
+      "parameter": "g limits",
+      "uom": "",
+      "parameterDescr": "Structural load factor limits.",
+      "count": 9
+    },
+    {
+      "parameter": "Combat range",
+      "uom": "km",
+      "parameterDescr": "Range achievable on a representative combat mission profile.",
+      "count": 8
+    },
+    {
+      "parameter": "Fuel capacity",
+      "uom": "",
+      "parameterDescr": "Internal (and optionally external) fuel capacity.",
+      "count": 8
+    },
+    {
+      "parameter": "Hardpoints",
+      "uom": "",
+      "parameterDescr": "Number and capacity of external weapon stations.",
+      "count": 8
+    },
+    {
+      "parameter": "Thrust/weight",
+      "uom": "",
+      "parameterDescr": "Thrust-to-weight ratio.",
+      "count": 8
+    },
+    {
+      "parameter": "Rate of climb",
+      "uom": "m/s",
+      "parameterDescr": "Maximum sustained rate of climb.",
+      "count": 7
+    },
+    {
+      "parameter": "Developed from",
+      "uom": "",
+      "parameterDescr": "Earlier system this design is derived from.",
+      "count": 6
+    },
+    {
+      "parameter": "Ferry range",
+      "uom": "km",
+      "parameterDescr": "Maximum range in ferry (long-range transit) configuration.",
+      "count": 6
+    },
+    {
+      "parameter": "Developed into",
+      "uom": "",
+      "parameterDescr": "Later systems derived from this design.",
+      "count": 5
+    },
+    {
+      "parameter": "Armament",
+      "uom": "",
+      "parameterDescr": "Weapons the system is equipped to carry/fire.",
+      "count": 4
+    },
+    {
+      "parameter": "Airfoil",
+      "uom": "",
+      "parameterDescr": "Airfoil (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Built by",
+      "uom": "",
+      "parameterDescr": "Manufacturing sites/companies that produced the system under license or partnership.",
+      "count": 3
+    },
+    {
+      "parameter": "Cruise speed",
+      "uom": "",
+      "parameterDescr": "Typical cruising speed.",
+      "count": 3
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 3
+    },
+    {
+      "parameter": "Variants",
+      "uom": "",
+      "parameterDescr": "Named variants of the base system.",
+      "count": 3
+    },
+    {
+      "parameter": "Aspect ratio",
+      "uom": "",
+      "parameterDescr": "Aspect ratio (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Primary user",
+      "uom": "",
+      "parameterDescr": "Principal operator of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Supercruise",
+      "uom": "",
+      "parameterDescr": "Supercruise (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Variant",
+      "uom": "",
+      "parameterDescr": "Named variant of the base system.",
+      "count": 2
+    },
+    {
+      "parameter": "AN/ALR-94 electronic warfare system",
+      "uom": "",
+      "parameterDescr": "AN/ALR-94 electronic warfare system (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "AN/ASQ-220 Integrated CNI Avionics including",
+      "uom": "",
+      "parameterDescr": "AN/ASQ-220 Integrated CNI Avionics including (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Advanced Cockpit / Human Machine Interface",
+      "uom": "",
+      "parameterDescr": "Advanced Cockpit / Human Machine Interface (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Air-to-surface missiles",
+      "uom": "",
+      "parameterDescr": "Air-to-surface missiles (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Bombs",
+      "uom": "",
+      "parameterDescr": "Bombs (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Countermeasures",
+      "uom": "",
+      "parameterDescr": "Countermeasures (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Design load factor",
+      "uom": "",
+      "parameterDescr": "Design load factor (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "External fuel capacity",
+      "uom": "",
+      "parameterDescr": "External fuel capacity (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Integrated Communications Navigation and IFF (ICNI)",
+      "uom": "",
+      "parameterDescr": "Integrated Communications Navigation and IFF (ICNI) (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Integrated Electro-Optical System (IEOS)",
+      "uom": "",
+      "parameterDescr": "Integrated Electro-Optical System (IEOS) (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Integrated RF System (IRFS)",
+      "uom": "",
+      "parameterDescr": "Integrated RF System (IRFS) (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Internal fuel capacity",
+      "uom": "",
+      "parameterDescr": "Internal fuel capacity (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Internal weapons bays",
+      "uom": "",
+      "parameterDescr": "Internal weapons bays (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum fuel",
+      "uom": "",
+      "parameterDescr": "Maximum fuel (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum weapon capacity",
+      "uom": "",
+      "parameterDescr": "Maximum weapon capacity (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Missiles",
+      "uom": "",
+      "parameterDescr": "Missile types associated with the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Radar",
+      "uom": "",
+      "parameterDescr": "Radar (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Radar depands in variants",
+      "uom": "",
+      "parameterDescr": "Radar depands in variants (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Related development / comparable aircraft",
+      "uom": "",
+      "parameterDescr": "Related development / comparable aircraft (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "With external tanks",
+      "uom": "",
+      "parameterDescr": "With external tanks (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    }
+  ]
+}

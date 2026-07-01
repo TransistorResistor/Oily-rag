@@ -1,0 +1,193 @@
+{
+  "systemGroup": "Weapon",
+  "systemType": "Cruise Missile",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 3
+    },
+    {
+      "parameter": "Diameter",
+      "uom": "m",
+      "parameterDescr": "Body/airframe diameter.",
+      "count": 3
+    },
+    {
+      "parameter": "Engine",
+      "uom": "",
+      "parameterDescr": "Engine type and configuration.",
+      "count": 3
+    },
+    {
+      "parameter": "Flight altitude",
+      "uom": "km",
+      "parameterDescr": "Operational flight altitude band.",
+      "count": 3
+    },
+    {
+      "parameter": "Guidance system",
+      "uom": "",
+      "parameterDescr": "Method(s) used to guide the weapon to its target.",
+      "count": 3
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 3
+    },
+    {
+      "parameter": "Launch platform",
+      "uom": "",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from.",
+      "count": 3
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Mass",
+      "uom": "kg",
+      "parameterDescr": "Overall mass of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "Mach",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 3
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 3
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 3
+    },
+    {
+      "parameter": "Unit cost",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost in US dollars.",
+      "count": 3
+    },
+    {
+      "parameter": "Used by",
+      "uom": "",
+      "parameterDescr": "Known operators of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and/or description.",
+      "count": 3
+    },
+    {
+      "parameter": "Accuracy",
+      "uom": "",
+      "parameterDescr": "Positional/targeting accuracy.",
+      "count": 2
+    },
+    {
+      "parameter": "Service ceiling",
+      "uom": "m",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement.",
+      "count": 2
+    },
+    {
+      "parameter": "Wars",
+      "uom": "",
+      "parameterDescr": "Conflicts in which the system has seen use.",
+      "count": 2
+    },
+    {
+      "parameter": "COMBAT USE",
+      "uom": "",
+      "parameterDescr": "COMBAT USE (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 1
+    },
+    {
+      "parameter": "Detonation mechanism",
+      "uom": "",
+      "parameterDescr": "Fuzing/detonation method.",
+      "count": 1
+    },
+    {
+      "parameter": "FURTHER DEVELOPMENTS",
+      "uom": "",
+      "parameterDescr": "FURTHER DEVELOPMENTS (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "OPERATIONAL HISTORY",
+      "uom": "",
+      "parameterDescr": "OPERATIONAL HISTORY (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Produced",
+      "uom": "",
+      "parameterDescr": "Production period.",
+      "count": 1
+    },
+    {
+      "parameter": "Propellant",
+      "uom": "",
+      "parameterDescr": "Rocket motor propellant type.",
+      "count": 1
+    },
+    {
+      "parameter": "Thanjavur AFS",
+      "uom": "",
+      "parameterDescr": "Thanjavur AFS (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "VARIANTS",
+      "uom": "",
+      "parameterDescr": "VARIANTS (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Variants",
+      "uom": "",
+      "parameterDescr": "Named variants of the base system.",
+      "count": 1
+    },
+    {
+      "parameter": "Wingspan",
+      "uom": "m",
+      "parameterDescr": "Wingspan or fin span.",
+      "count": 1
+    }
+  ]
+}

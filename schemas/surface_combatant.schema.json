@@ -1,0 +1,205 @@
+{
+  "systemGroup": "Naval Vessel",
+  "systemType": "Surface Combatant",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Active",
+      "uom": "",
+      "parameterDescr": "Active (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Aircraft carried",
+      "uom": "",
+      "parameterDescr": "Aircraft carried (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Armament",
+      "uom": "",
+      "parameterDescr": "Weapons the system is equipped to carry/fire.",
+      "count": 2
+    },
+    {
+      "parameter": "Armor",
+      "uom": "",
+      "parameterDescr": "Armor (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Beam",
+      "uom": "",
+      "parameterDescr": "Beam (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Builders",
+      "uom": "",
+      "parameterDescr": "Builders (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Built",
+      "uom": "",
+      "parameterDescr": "Built (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Complement",
+      "uom": "",
+      "parameterDescr": "Complement (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Completed",
+      "uom": "",
+      "parameterDescr": "Completed (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Cost",
+      "uom": "",
+      "parameterDescr": "Cost (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Displacement",
+      "uom": "",
+      "parameterDescr": "Displacement (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Draft",
+      "uom": "",
+      "parameterDescr": "Draft (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Electronic warfare & decoys",
+      "uom": "",
+      "parameterDescr": "Electronic warfare & decoys (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "In commission",
+      "uom": "",
+      "parameterDescr": "In commission (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Name",
+      "uom": "",
+      "parameterDescr": "Name (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Operators",
+      "uom": "",
+      "parameterDescr": "Operators (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Preceded by",
+      "uom": "",
+      "parameterDescr": "Preceded by (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Propulsion",
+      "uom": "",
+      "parameterDescr": "Propulsion (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 2
+    },
+    {
+      "parameter": "Retired",
+      "uom": "",
+      "parameterDescr": "Retired (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Sensors & processing systems",
+      "uom": "",
+      "parameterDescr": "Sensors & processing systems (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Speed",
+      "uom": "",
+      "parameterDescr": "Speed (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Succeeded by",
+      "uom": "",
+      "parameterDescr": "Succeeded by (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 2
+    },
+    {
+      "parameter": "Aviation facilities",
+      "uom": "",
+      "parameterDescr": "Aviation facilities (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Boats & landing craft carried",
+      "uom": "",
+      "parameterDescr": "Boats & landing craft carried (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Building",
+      "uom": "",
+      "parameterDescr": "Building (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Installed power",
+      "uom": "",
+      "parameterDescr": "Installed power (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Laid up",
+      "uom": "",
+      "parameterDescr": "Laid up (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "On order",
+      "uom": "",
+      "parameterDescr": "On order (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Planned",
+      "uom": "",
+      "parameterDescr": "Planned (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    }
+  ]
+}

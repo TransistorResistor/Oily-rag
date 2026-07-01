@@ -1,0 +1,169 @@
+{
+  "systemGroup": "Weapon",
+  "systemType": "Torpedo",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 2
+    },
+    {
+      "parameter": "Designed",
+      "uom": "",
+      "parameterDescr": "Year design work began.",
+      "count": 2
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 2
+    },
+    {
+      "parameter": "Diameter",
+      "uom": "m",
+      "parameterDescr": "Body/airframe diameter.",
+      "count": 2
+    },
+    {
+      "parameter": "Effective firing range",
+      "uom": "",
+      "parameterDescr": "Effective firing range (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Engine",
+      "uom": "",
+      "parameterDescr": "Engine type and configuration.",
+      "count": 2
+    },
+    {
+      "parameter": "Guidance system",
+      "uom": "",
+      "parameterDescr": "Method(s) used to guide the weapon to its target.",
+      "count": 2
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 2
+    },
+    {
+      "parameter": "Launch platform",
+      "uom": "",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from.",
+      "count": 2
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Mass",
+      "uom": "kg",
+      "parameterDescr": "Overall mass of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 2
+    },
+    {
+      "parameter": "Propellant",
+      "uom": "",
+      "parameterDescr": "Rocket motor propellant type.",
+      "count": 2
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 2
+    },
+    {
+      "parameter": "Used by",
+      "uom": "",
+      "parameterDescr": "Known operators of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and/or description.",
+      "count": 2
+    },
+    {
+      "parameter": "Warhead weight",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead section.",
+      "count": 2
+    },
+    {
+      "parameter": "Detonation mechanism",
+      "uom": "",
+      "parameterDescr": "Fuzing/detonation method.",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum depth",
+      "uom": "",
+      "parameterDescr": "Maximum depth (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Produced",
+      "uom": "",
+      "parameterDescr": "Production period.",
+      "count": 1
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 1
+    },
+    {
+      "parameter": "Speed Launch speed",
+      "uom": "",
+      "parameterDescr": "Speed Launch speed (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Unit cost",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost in US dollars.",
+      "count": 1
+    },
+    {
+      "parameter": "Variants",
+      "uom": "",
+      "parameterDescr": "Named variants of the base system.",
+      "count": 1
+    },
+    {
+      "parameter": "Wars",
+      "uom": "",
+      "parameterDescr": "Conflicts in which the system has seen use.",
+      "count": 1
+    }
+  ]
+}

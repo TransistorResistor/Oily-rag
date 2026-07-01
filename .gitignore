@@ -1,0 +1,14 @@
+# secrets
+key.env
+
+# local indexes / sqlite artifacts
+*.db
+*.db-shm
+*.db-wal
+
+# python
+__pycache__/
+*.pyc
+
+# bulk archives
+files.zip

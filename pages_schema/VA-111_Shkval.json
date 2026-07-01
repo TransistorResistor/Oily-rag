@@ -1,0 +1,247 @@
+{
+  "modelID": 2061,
+  "systemGroup": "Weapon",
+  "systemType": "Torpedo",
+  "nomenclature": "VA-111 Shkval",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The VA-111 Shkval (from Russian : шквал , squall ) torpedo and its descendants are supercavitating torpedoes originally developed by the Soviet Union . They are capable of speeds in excess of 200 knots (370 km/h or 230 miles/h).",
+      "shortDescription": "The VA-111 Shkval (from Russian : шквал , squall ) torpedo and its descendants are supercavitating torpedoes originally developed by the Soviet Union .",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "In 2016, KTRV was upgrading Shkval.\n\nThe torpedo is manufactured in Kyrgyzstan by the \"Dastan\" state-owned factory. In 2012 the Russian government asked for a 75% ownership of the factory in exchange for writing off $180 million Kyrgyz debt to Russia.\n\nIn 2000, former U.S. Naval intelligence officer and an alleged Defense Intelligence Agency (DIA) spy Edmond Pope (Captain, USN, retired) was held, tried, and convicted in Russia of espionage related to information he obtained about the Shkval weapon system. Russian President Vladimir Putin pardoned Pope in December 2000 on humanitarian grounds because he had bone cancer .",
+      "shortDescription": "In 2016, KTRV was upgrading Shkval.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "Design began in the 1960s when the NII-24 research institute was ordered to produce a new weapon capable of engaging nuclear submarines . The merger of the institute and GSKB-47 created the Research Institute of Applied Hydromechanics, who continued with the design and production of the Shkval.\n\nEarly designs may have relied solely on an inertial guidance system . The initial design was intended for nuclear warhead delivery. Later designs reportedly include terminal guidance and conventional warheads .\n\nThe torpedo steers using four fins that skim the inner surface of the supercavitation gas bubble. To change direction, the fin(s) on the inside of the desired turn are extended, and the opposing fins are retracted.\n\nAll current versions are believed to be fitted only with conventional explosive warheads, although the original design used a nuclear warhead.",
+      "shortDescription": "Design began in the 1960s when the NII-24 research institute was ordered to produce a new weapon capable of engaging nuclear submarines .",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "Previously operational as early as 1977, the torpedo was announced as being deployed in the 1990s. The Shkval is intended as a countermeasure against torpedoes launched by undetected enemy submarines.\n\nThe VA-111 is launched from 533 mm (21 in) torpedo tubes at 50 kn (93 km/h; 58 mph). A solid-fuel rocket accelerates it to cavitation speed, with a combined-cycle gas turbine in the nose creating the required gas bubble. Once accelerated, speed is maintained by an underwater ramjet fueled by hydroreactive metals using seawater as both reactant and the source of oxidizer; the torpedo travels at around 200 kn (370 km/h; 230 mph).\n\nSome reports indicate that the VA-111 possibly exceeds speeds of 250 kn (460 km/h; 290 mph), and that work on a 300 kn (560 km/h; 350 mph) version was underway.\n\nThe high speed is made possible by supercavitation , whereby a gas bubble surrounding the torpedo is created by outward deflection of water by its specially-shaped nose cone and the expansion of gases from its engine and the gas generator in the nose. This minimizes water contact with the torpedo, significantly reducing drag .\n\nIran Islamic Republic of Iran Navy\n\nIslamic Republic of Iran Navy\n\nRussia Russian Navy\n\nRussian Navy\n\nVietnam Vietnam People's Navy\n\nVietnam People's Navy",
+      "shortDescription": "Previously operational as early as 1977, the torpedo was announced as being deployed in the 1990s.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "There are at least three variants:\n\nVA-111 Shkval – Original variant; GOLIS autonomous inertial guidance.\n\n\"Shkval 2\" – Current variant; believed to have additional guidance systems, possibly via the use of vectored thrust , and with a much longer range.\n\nA less capable version currently being exported to foreign naval forces. The export version is referred to as \"Shkval-E\".",
+      "shortDescription": "VA-111 Shkval – Original variant; GOLIS autonomous inertial guidance.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 206101,
+      "url": "https://en.wikipedia.org/wiki/VA-111_Shkval",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Supercavitating torpedo\".",
+      "parameterUomValue": "Supercavitating torpedo",
+      "classification": "U",
+      "parameterValue": "Supercavitating torpedo",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Soviet Union\".",
+      "parameterUomValue": "Soviet Union",
+      "classification": "U",
+      "parameterValue": "Soviet Union",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1977–present\".",
+      "parameterUomValue": "1977–present",
+      "classification": "U",
+      "parameterValue": "1977–present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"Russian Navy and Iranian Navy\".",
+      "parameterUomValue": "Russian Navy and Iranian Navy",
+      "classification": "U",
+      "parameterValue": "Russian Navy and Iranian Navy",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"NII-24 research institute\".",
+      "parameterUomValue": "NII-24 research institute",
+      "classification": "U",
+      "parameterValue": "NII-24 research institute",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Designed",
+      "parameterDescr": "Year design work began. Source text: \"1960s–70s\".",
+      "parameterUomValue": "1960s–70s",
+      "classification": "U",
+      "parameterValue": "1960s–70s",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Tactical Missiles Corporation\".",
+      "parameterUomValue": "Tactical Missiles Corporation",
+      "classification": "U",
+      "parameterValue": "Tactical Missiles Corporation",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Produced",
+      "parameterDescr": "Production period. Source text: \"1977–present\".",
+      "parameterUomValue": "1977–present",
+      "classification": "U",
+      "parameterValue": "1977–present",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Variants",
+      "parameterDescr": "Named variants of the base system. Source text: \"Shkval 2, Shkval-E\".",
+      "parameterUomValue": "Shkval 2, Shkval-E",
+      "classification": "U",
+      "parameterValue": "Shkval 2, Shkval-E",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"2,700 kg (6,000 lb)\".",
+      "parameterUomValue": "2700 kg",
+      "classification": "U",
+      "parameterValue": "2700",
+      "uom": "kg"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"8,200 mm (26 ft 11 in)\".",
+      "parameterUomValue": "8.2 m",
+      "classification": "U",
+      "parameterValue": "8.2",
+      "uom": "m"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"533 mm (21 in)\".",
+      "parameterUomValue": "0.533 m",
+      "classification": "U",
+      "parameterValue": "0.533",
+      "uom": "m"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Effective firing range",
+      "parameterDescr": "Effective firing range (descriptive text, not a unit-bearing quantity). Source text: \"Shkval : 7 km (4.3 mi) ; Shkval 2 : From 11–15 km (6.8–9.3 mi)\".",
+      "parameterUomValue": "Shkval : 7 km (4.3 mi) ; Shkval 2 : From 11–15 km (6.8–9.3 mi)",
+      "classification": "U",
+      "parameterValue": "Shkval : 7 km (4.3 mi) ; Shkval 2 : From 11–15 km (6.8–9.3 mi)",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"Conventional explosive or nuclear\".",
+      "parameterUomValue": "Conventional explosive or nuclear",
+      "classification": "U",
+      "parameterValue": "Conventional explosive or nuclear",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Warhead weight",
+      "parameterDescr": "Mass of the warhead section. Source text: \"210 kg (460 lb)\".",
+      "parameterUomValue": "210 kg",
+      "classification": "U",
+      "parameterValue": "210",
+      "uom": "kg"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Solid-fuel rocket\".",
+      "parameterUomValue": "Solid-fuel rocket",
+      "classification": "U",
+      "parameterValue": "Solid-fuel rocket",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Propellant",
+      "parameterDescr": "Rocket motor propellant type. Source text: \"Solid-fuel\".",
+      "parameterUomValue": "Solid-fuel",
+      "classification": "U",
+      "parameterValue": "Solid-fuel",
+      "uom": ""
+    },
+    {
+      "seq": 1018,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Launch speed: 50 knots (93 km/h; 58 mph) ; Maximum speed: in excess of 200 knots (370 km/h; 230 mph)\".",
+      "parameterUomValue": "Launch speed: 50 knots (93 km/h; 58 mph) ; Maximum speed: in excess of 200 knots (370 km/h; 230 mph)",
+      "classification": "U",
+      "parameterValue": "Launch speed: 50 knots (93 km/h; 58 mph) ; Maximum speed: in excess of 200 knots (370 km/h; 230 mph)",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"GOLIS autonomous inertial guidance\".",
+      "parameterUomValue": "GOLIS autonomous inertial guidance",
+      "classification": "U",
+      "parameterValue": "GOLIS autonomous inertial guidance",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"533 mm (21 in) torpedo tubes\".",
+      "parameterUomValue": "533 mm (21 in) torpedo tubes",
+      "classification": "U",
+      "parameterValue": "533 mm (21 in) torpedo tubes",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Speed Launch speed",
+      "parameterDescr": "Speed Launch speed (descriptive text, not a unit-bearing quantity). Source text: \"50 knots (93 km/h; 58 mph) Maximum speed: 200 knots (370 km/h; 230 mph) or greater\".",
+      "parameterUomValue": "50 knots (93 km/h; 58 mph) Maximum speed: 200 knots (370 km/h; 230 mph) or greater",
+      "classification": "U",
+      "parameterValue": "50 knots (93 km/h; 58 mph) Maximum speed: 200 knots (370 km/h; 230 mph) or greater",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"Around 11–15 km (6.8–9.3 mi) (new version). Older versions only 7 km (4.3 mi)\".",
+      "parameterUomValue": "15 km",
+      "classification": "U",
+      "parameterValue": "15",
+      "uom": "km"
+    }
+  ]
+}

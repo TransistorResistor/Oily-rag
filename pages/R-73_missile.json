@@ -1,0 +1,32 @@
+{
+  "title": "R-73 (missile)",
+  "url": "https://en.wikipedia.org/wiki/R-73_(missile)",
+  "category": "weapon",
+  "subcategory": "air_to_air",
+  "summary": "The Vympel R-73 (NATO reporting name AA-11 Archer) is a short-range IR-homing air-to-air missile developed by Vympel NPO that entered service in 1984. It was developed to replace the earlier R-60 (AA-8 Aphid) and was later developed into the more advanced R-74.",
+  "specs": {
+    "Type": "Short-range air-to-air missile",
+    "Place of origin": "Soviet Union",
+    "In service": "1984-present",
+    "Manufacturer": "Moscow Kommunar Machine-Building Plant, Tbilisi Aircraft Manufacturing, TAM Management",
+    "Mass": "105 kilograms (231 lb)",
+    "Length": "2.93 metres (9 ft 7 in)",
+    "Diameter": "165 millimetres (6.5 in)",
+    "Wingspan": "510 millimetres (20 in)",
+    "Warhead": "7.4 kilograms (16 lb)",
+    "Engine": "Solid-fuel rocket engine",
+    "Operational range": "R-73A, R-73E: 30 km (19 mi); R-74, RVV-MD: 40 km (25 mi)",
+    "Maximum speed": "Mach 2.5",
+    "Guidance system": "All-aspect infrared homing",
+    "Launch platform": "MiG-21 (Upgraded), MiG-23-98, MiG-25, MiG-27, MiG-29, MiG-31, MiG-35, Su-24, Su-25, Su-27, Su-30, Su-33, Su-34, Su-35, Su-57, Su-47, Yak-141, Yak-130, HAL Tejas, IRIAF F-14, J-10, J-11, Mirage 2000 (Indian AF), MAGURA V5 USV, 9K33 Osa, Gravehawk"
+  },
+  "sections": [
+    "Design",
+    "Combat history",
+    "Variants",
+    "Operators",
+    "See also",
+    "References"
+  ],
+  "full_text": "The Vympel R-73 (NATO reporting name AA-11 Archer) is a short-range IR-homing air-to-air missile developed by Vympel NPO that entered service in 1984. It was later developed into the more advanced R-74.\n\nThe R-73 was developed to replace the earlier R-60 (AA-8 'Aphid') short-range missile used by Soviet fighter aircraft. Work began in 1973 initially as the K-73, operational in 1982 with formal service entry in 1984.\n\nThe R-73 is an infrared homing (heat-seeking) missile with a sensitive, cryogenic cooled seeker with substantial off-boresight capability: the seeker can detect targets up to 40 degrees off the missile's centerline. It can be targeted by a helmet-mounted sight (HMS), allowing pilots to designate targets by looking at them. Minimum engagement range is about 300 meters, maximum aerodynamic range nearly 31 km at altitude. It is used by the MiG-29, MiG-31, Su-27/33, Su-34, and Su-35, and can be carried by newer MiG-21, MiG-23, Su-24, and Su-25 aircraft.\n\nAfter German reunification in 1990, Germany and other ex-Warsaw Pact countries found themselves with R-73 stockpiles and concluded the West had underestimated its capabilities -- it was found to be far more maneuverable and capable in seeker acquisition/tracking than the contemporary AIM-9 Sidewinder. This realization spurred development of newer Western missiles like ASRAAM, IRIS-T, and AIM-9X. According to a 2022 interview with a Ukrainian pilot, the R-73 does not track well in clouds, making it difficult to use against Shahed-136 drones.\n\nFurther developments: R-74 (izdeliye 740) and export variant RVV-MD; an improved R-74M (izdeliye 750) with fully digital reprogrammable systems for MiG-35, MiG-29K/M/M2, Su-27SM, Su-30MK, Su-35S; and R-74M2 (izdeliye 760) for the Su-57, with inertial navigation, reduced cross-section (fin span 434mm), IRCCM, matching AIM-9X/IRIS-T/ASRAAM performance -- trials completed 2019, export RVV-MD2 unveiled 2023. A clean-sheet K-MD (izdeliye 300) is expected to eventually supersede the R-74M2.\n\nCombat history: On 24 February 1996, two Brothers to the Rescue Cessna 337s were shot down over international waters by a Cuban Air Force MiG-29UB using R-73 missiles. During the Eritrean-Ethiopian War (1998-2000), R-73s were used in combat by both sides. On 18 March 2008, a Russian MiG-29 destroyed a Georgian Hermes 450 UAV over Abkhazia with an R-73. On 27 February 2019, India claimed a MiG-21 Bison shot down a Pakistani F-16 with an R-73E during the Jammu and Kashmir airstrikes (Pakistan denies the loss). On 7 May 2022, a Russian Su-35 shot down a Ukrainian Mi-14 helicopter with an R-73 after missing with cannon fire. Serbia reportedly developed a ground-launched R-73 variant in 1999 on a modified M53/59 Praga chassis. Houthi forces have adapted R-27/R-60/R-73/R-77 missiles (designated Thaqib-1 for the R-73) as improvised ground-based SAMs against Saudi-led coalition aircraft. During the Russian invasion of Ukraine, Ukraine has repurposed R-73s for surface-to-air use on platforms including Gravehawk, modified 9K33 Osas, Humvees, and naval drones (Sea Dragon variant); notable incidents include a Magura V5 naval drone shooting down a Russian Mi-8 helicopter with an R-73 in December 2024.\n\nVariants: R-73 (standard, +/-40deg off-boresight), R-73E (export, +/-45deg, 30km range, 8kg warhead), R-74 (izdeliye 740, +/-60deg), RVV-MD (export of R-74, +/-75deg, 40km range), R-74M (izdeliye 750, +/-75deg), R-74M2 (izdeliye 760, for Su-57), RVV-MD2 (export of R-74M2), Thaqib-1 (Houthi SAM conversion), Sea Dragon (Ukrainian naval drone conversion).\n\nOperators include Russia, India, China, Ukraine, and numerous former Soviet/Warsaw Pact states, among many others; the United States purchased 100 missiles in 1997 for evaluation purposes."
+}

@@ -1,0 +1,259 @@
+{
+  "modelID": 2043,
+  "systemGroup": "Naval Vessel",
+  "systemType": "Submarine",
+  "nomenclature": "Ohio-class submarine",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Ohio class of nuclear-powered submarines includes the United States Navy 's 14 ballistic missile submarines (SSBNs) and its 4 cruise missile submarines (SSGNs). Each displacing 18,750 tons submerged, the Ohio -class boats are the largest submarines ever built for the U.S. Navy and are capable of carrying 24 Trident II ballistic missiles or 22 tubes with 7 BGM-109 Tomahawk cruise missiles apiece. They are also the third-largest submarines ever built, behind the Russian Navy 's Soviet era 48,000-ton Typhoon class , the last of which was retired in 2023, and 24,000-ton Borei class .\n\nLike their predecessors the Benjamin Franklin and Lafayette classes , the Ohio -class SSBNs are part of the United States' nuclear-deterrent triad , along with U.S. Air Force strategic bombers and intercontinental ballistic missiles . The 14 SSBNs together carry about half of U.S. active strategic thermonuclear warheads. Although the Trident missiles have no preset targets when the submarines go on patrol, they can be given targets quickly, from the United States Strategic Command based in Nebraska , using secure and constant radio communications links , including very low frequency systems.\n\nAll the Ohio -class submarines, except for USS Henry M. Jackson , are named for U.S. states , which U.S. Navy tradition had previously reserved for battleships and later cruisers . The Ohio class is to be gradually replaced by the Columbia class beginning in 2031.",
+      "shortDescription": "The Ohio class of nuclear-powered submarines includes the United States Navy 's 14 ballistic missile submarines (SSBNs) and its 4 cruise missile submarines (SSGNs).",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The Ohio class was designed in the 1970s to carry the concurrently designed Trident submarine-launched ballistic missile . The first eight Ohio -class submarines were armed at first with 24 Trident I C4 SLBMs. Beginning with the ninth Trident submarine, Tennessee , the remaining boats were equipped with the larger, three-stage Trident II D5 missile . The Trident I missile carries eight multiple independently targetable reentry vehicles , while the Trident II missile carries 12, in total delivering more destructive power than the Trident I missile and with greater accuracy. Starting with Alaska in 2000, the Navy began converting its remaining ballistic missile submarines armed with C4 missiles to carry D5 missiles. This task was completed in mid-2008. The first eight submarines had their home ports at Bangor, Washington , to replace the submarines carrying Polaris A3 missiles that were then being decommissioned. The remaining 10 submarines originally had their home ports at Kings Bay, Georgia , replacing the Poseidon and Trident Backfit submarines of the Atlantic Fleet.\n\nIn 1994, the Nuclear Posture Review study determined that, of the 18 Ohio SSBNs the U.S. Navy would be operating in total, 14 would be sufficient for the strategic needs of the U.S. The decision was made to convert four Ohio -class boats into SSGNs capable of conducting conventional land attack and special operations . As a result, the four oldest boats of the class— Ohio , Michigan , Florida , and Georgia —progressively entered the conversion process in late 2002 and were returned to active service by 2008. The boats could thereafter carry 154 Tomahawk cruise missiles and 66 special operations personnel, among other capabilities and upgrades. The cost to refit the four boats was around US$1 billion (2008 dollars) per vessel. During the conversion of these four submarines to SSGNs (see below), five of the remaining submarines, Pennsylvania , Kentucky , Nebraska , Maine , and Louisiana , were transferred from Kings Bay to Bangor. [ citation needed ]\n\nThe conversion modified 22 of the 24 88-inch (2.2 m) diameter Trident missile tubes to contain large vertical launch systems , one configuration of which may be a cluster of seven Tomahawk cruise missiles . In this configuration, the number of cruise missiles carried could be a maximum of 154, the equivalent of what is typically deployed in a surface battle group. Other payload possibilities include new generations of supersonic and hypersonic cruise missiles, and Submarine Launched Intermediate Range Ballistic Missiles, [ citation needed ] unmanned aerial vehicles , the ADM-160 MALD , sensors for antisubmarine warfare or intelligence, surveillance, and reconnaissance missions, counter mine warfare payloads such as the AN/BLQ-11 Long-Term Mine Reconnaissance System , and the broaching universal buoyant launcher and stealthy affordable capsule system specialized payload canisters. [ citation needed ]\n\nThe U.S. Department of Defense anticipated a continued need for a sea-based strategic nuclear force . [ citation needed ] The first of the current Ohio -class SSBNs was expected to be retired by 2029, [ citation needed ] so the replacement submarine would need to be seaworthy by that time. A replacement was expected to cost over $4 billion per unit compared to Ohio ' s $2 billion. The U.S. Navy explored two options. The first option was a variant of the Virginia -class nuclear-powered attack submarines. The second option was a dedicated SSBN, either with a new hull or based on an overhaul of the current Ohio class. [ citation needed ]\n\nWith the cooperation of both Electric Boat and Newport News Shipbuilding, in 2007, the U.S. Navy began a cost-control study. [ citation needed ] Then in December 2008, the U.S. Navy awarded Electric Boat a contract for the missile compartment design of the Ohio -class replacement, worth up to $592 million. Newport News is expected to receive close to 4% of that project. In April 2009, U.S. Defense Secretary Robert M. Gates stated that the U.S. Navy was expected to begin such a program in 2010. The new vessel was scheduled to enter the design phase by 2014. If a new hull design was to be used, the program needed to be initiated by 2016 to meet the 2029 deadline. [ citation needed ] [ needs update ]\n\nThe Columbia class was officially designated on 14 December 2016, by Secretary of the Navy Ray Mabus , and the lead submarine will be USS District of Columbia (SSBN-826) . The Navy wants to procure the first Columbia -class boat in FY2021, though it is not expected to enter service until 2031.\n\nIn 2020, Navy officials first publicly discussed the idea of extending the lives of select Ohio -class boats at the Naval Submarine League's 2020 conference. During the 2022 conference, Rear Admiral Scott Pappano, the program executive officer for strategic submarines, and Rear Admiral Douglas G. Perry , the director of undersea warfare on the Chief of Naval Operations ' staff, discussed the Columbia -class program, and also touched on the possibility of finding Ohio -class boats that had sufficient remaining nuclear fuel and were in good enough material state to be given a further extension to their lives.",
+      "shortDescription": "The Ohio class was designed in the 1970s to carry the concurrently designed Trident submarine-launched ballistic missile .",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Ohio -class submarine was designed for extended strategic deterrent patrols. Each submarine is assigned two complete crews, called the Blue crew and the Gold crew, each typically serving 70-to-90-day deterrent patrols. To decrease the time in port for crew turnover and replenishment, three large logistics hatches have been installed to provide large-diameter resupply and repair access. These hatches allow rapid transfer of supply pallets, equipment replacement modules, and machinery components, speeding up replenishment and maintenance of the submarines. Moreover, the \"stealth\" ability of the submarines was significantly improved over all previous ballistic-missile subs. Ohio was virtually undetectable in her sea trials in 1982, giving the U.S. Navy extremely advanced flexibility.\n\nThe class's design allows the boat to operate for about 15 years between major overhauls. These submarines are reported to be as quiet at their cruising speed of 20 knots (37 km/h; 23 mph) or more as the previous Lafayette -class submarines at 6 knots (11 km/h; 6.9 mph), although exact information remains classified. Fire control for their Mark 48 torpedoes is carried out by Mark 118 Mod 2 system, while the Missile Fire Control system is a Mark 98.\n\nThe Ohio -class submarines were constructed from sections of hull, with each four-deck section being 42 ft (13 m) in diameter. The sections were produced at the General Dynamics Electric Boat facility, Quonset Point , Rhode Island , and then assembled at its shipyard at Groton, Connecticut .\n\nThe US Navy has a total of 18 Ohio -class submarines which consist of 14 ballistic missile submarines (SSBNs), and four cruise missile submarines (SSGNs). The SSBN submarines provide the sea-based leg of the U.S. nuclear triad . Each SSBN submarine is armed with up to 20 Trident II submarine-launched ballistic missiles (SLBM). Each SSGN is capable of carrying 154 Tomahawk cruise missiles , plus a complement of Harpoon missiles to be fired through their torpedo tubes .",
+      "shortDescription": "The Ohio -class submarine was designed for extended strategic deterrent patrols.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The missile tubes also have room for stowage canisters that can extend the forward deployment time for special forces. The other two Trident tubes are converted to swimmer lockout chambers. For special operations, the Dry Combat Submersible (which replaced the Advanced SEAL Delivery System ), as well as the dry deck shelter , can be mounted on the lockout chamber and the boat will be able to host up to 66 special-operations sailors or Marines, such as Navy SEALs , or USMC MARSOC teams. Improved communications equipment installed during the upgrade allows the SSGNs to serve as a forward-deployed, clandestine Small Combatant Joint Command Center.\n\nOn 26 September 2002, the Navy awarded General Dynamics Electric Boat a US$442.9 million contract to begin the first phase of the SSGN submarine conversion program. Those funds covered only the initial phase of conversion for the first two boats on the schedule. Advance procurement was funded at $355 million in fiscal year 2002, $825 million in the FY 2003 budget and, through the five-year defense budget plan, at $936 million in FY 2004, $505 million in FY 2005, and $170 million in FY 2006. Thus, the total cost to refit the four boats is just under $700 million per vessel. [ citation needed ]\n\nIn November 2002, Ohio entered a dry-dock , beginning her 36-month refueling and missile-conversion overhaul . Electric Boat announced on 9 January 2006 that the conversion had been completed. The converted Ohio rejoined the fleet in February 2006, followed by Florida in April 2006. The converted Michigan was delivered in November 2006. The converted Ohio went to sea for the first time in October 2007. Georgia returned to the fleet in March 2008 at Kings Bay . [ failed verification ] These four SSGNs are expected to remain in service until about 2023–2026. At that point, their capabilities will be replaced with Virginia Payload Module-equipped Virginia -class submarine .\n\nIn 2011, Ohio -class submarines carried out 28 deterrent patrols. Each patrol lasts around 70 days. Four boats are on station (\"hard alert\") in designated patrol areas at any given time. From January to June 2014, Pennsylvania carried out a 140-day-long patrol, the longest to date.\n\nAs part of the New START treaty, four tubes on each SSBN were deactivated in 2017, reducing the number of missiles to 20 per boat.\n\n^ Hull numbers beginning with 'SSGN' are guided-missile submarines. Those with 'SSBN' are ballistic missile submarines.\n\n^ Boats based at Naval Base Kitsap , Washington are operated by the U.S. Pacific Fleet , while boats based at Naval Submarine Base Kings Bay , Georgia are operated by U.S. Fleet Forces Command , (formerly the U.S. Atlantic Fleet).",
+      "shortDescription": "The missile tubes also have room for stowage canisters that can extend the forward deployment time for special forces.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 204301,
+      "url": "https://en.wikipedia.org/wiki/Ohio-class_submarine",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Name",
+      "parameterDescr": "Name (descriptive text, not a unit-bearing quantity). Source text: \"Ohio class\".",
+      "parameterUomValue": "Ohio class",
+      "classification": "U",
+      "parameterValue": "Ohio class",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Builders",
+      "parameterDescr": "Builders (descriptive text, not a unit-bearing quantity). Source text: \"General Dynamics Electric Boat\".",
+      "parameterUomValue": "General Dynamics Electric Boat",
+      "classification": "U",
+      "parameterValue": "General Dynamics Electric Boat",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Operators",
+      "parameterDescr": "Operators (descriptive text, not a unit-bearing quantity). Source text: \"United States Navy\".",
+      "parameterUomValue": "United States Navy",
+      "classification": "U",
+      "parameterValue": "United States Navy",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Preceded by",
+      "parameterDescr": "Preceded by (descriptive text, not a unit-bearing quantity). Source text: \"Benjamin Franklin class\".",
+      "parameterUomValue": "Benjamin Franklin class",
+      "classification": "U",
+      "parameterValue": "Benjamin Franklin class",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Succeeded by",
+      "parameterDescr": "Succeeded by (descriptive text, not a unit-bearing quantity). Source text: \"Columbia class (ballistic missile submarine variant); Virginia class (cruise missile submarine variant)\".",
+      "parameterUomValue": "Columbia class (ballistic missile submarine variant); Virginia class (cruise missile submarine variant)",
+      "classification": "U",
+      "parameterValue": "Columbia class (ballistic missile submarine variant); Virginia class (cruise missile submarine variant)",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Cost",
+      "parameterDescr": "Cost (descriptive text, not a unit-bearing quantity). Source text: \"$2 billion (late 1990s) ($3.62 billion in 2024 dollars )\".",
+      "parameterUomValue": "$2 billion (late 1990s) ($3.62 billion in 2024 dollars )",
+      "classification": "U",
+      "parameterValue": "$2 billion (late 1990s) ($3.62 billion in 2024 dollars )",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Built",
+      "parameterDescr": "Built (descriptive text, not a unit-bearing quantity). Source text: \"1976–1997\".",
+      "parameterUomValue": "1976–1997",
+      "classification": "U",
+      "parameterValue": "1976–1997",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "In commission",
+      "parameterDescr": "In commission (descriptive text, not a unit-bearing quantity). Source text: \"1981–present\".",
+      "parameterUomValue": "1981–present",
+      "classification": "U",
+      "parameterValue": "1981–present",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Planned",
+      "parameterDescr": "Planned (descriptive text, not a unit-bearing quantity). Source text: \"24\".",
+      "parameterUomValue": "24",
+      "classification": "U",
+      "parameterValue": "24",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Completed",
+      "parameterDescr": "Completed (descriptive text, not a unit-bearing quantity). Source text: \"18\".",
+      "parameterUomValue": "18",
+      "classification": "U",
+      "parameterValue": "18",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Canceled",
+      "parameterDescr": "Canceled (descriptive text, not a unit-bearing quantity). Source text: \"6\".",
+      "parameterUomValue": "6",
+      "classification": "U",
+      "parameterValue": "6",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Active",
+      "parameterDescr": "Active (descriptive text, not a unit-bearing quantity). Source text: \"18\".",
+      "parameterUomValue": "18",
+      "classification": "U",
+      "parameterValue": "18",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"SSBN / SSGN (hull design SCB-304)\".",
+      "parameterUomValue": "SSBN / SSGN (hull design SCB-304)",
+      "classification": "U",
+      "parameterValue": "SSBN / SSGN (hull design SCB-304)",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Displacement",
+      "parameterDescr": "Displacement (descriptive text, not a unit-bearing quantity). Source text: \"16,764 tonnes (16,499 long tons) surfaced; 18,750 tonnes (18,450 long tons) submerged\".",
+      "parameterUomValue": "16,764 tonnes (16,499 long tons) surfaced; 18,750 tonnes (18,450 long tons) submerged",
+      "classification": "U",
+      "parameterValue": "16,764 tonnes (16,499 long tons) surfaced; 18,750 tonnes (18,450 long tons) submerged",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"560 ft (170 m)\".",
+      "parameterUomValue": "170 m",
+      "classification": "U",
+      "parameterValue": "170",
+      "uom": "m"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Beam",
+      "parameterDescr": "Beam (descriptive text, not a unit-bearing quantity). Source text: \"42 ft (13 m)\".",
+      "parameterUomValue": "42 ft (13 m)",
+      "classification": "U",
+      "parameterValue": "42 ft (13 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Draft",
+      "parameterDescr": "Draft (descriptive text, not a unit-bearing quantity). Source text: \"35.5 ft (10.8 m) maximum\".",
+      "parameterUomValue": "35.5 ft (10.8 m) maximum",
+      "classification": "U",
+      "parameterValue": "35.5 ft (10.8 m) maximum",
+      "uom": ""
+    },
+    {
+      "seq": 1018,
+      "parameter": "Propulsion",
+      "parameterDescr": "Propulsion (descriptive text, not a unit-bearing quantity). Source text: \"1× S8G PWR nuclear reactor; 2× geared turbines ; 35,000 shp (26 MW); 1x Fairbanks Morse auxiliary diesel; 1× 325 hp (242 kW) auxiliary motor; 1 shaft with seven-bladed screw\".",
+      "parameterUomValue": "1× S8G PWR nuclear reactor; 2× geared turbines ; 35,000 shp (26 MW); 1x Fairbanks Morse auxiliary diesel; 1× 325 hp (242 kW) auxiliary motor; 1 shaft with seven-bladed screw",
+      "classification": "U",
+      "parameterValue": "1× S8G PWR nuclear reactor; 2× geared turbines ; 35,000 shp (26 MW); 1x Fairbanks Morse auxiliary diesel; 1× 325 hp (242 kW) auxiliary motor; 1 shaft with seven-bladed screw",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Speed",
+      "parameterDescr": "Speed (descriptive text, not a unit-bearing quantity). Source text: \"12 knots (22 km/h; 14 mph) surfaced; 20 knots (37 km/h; 23 mph) submerged (official); 25 knots (46 km/h; 29 mph) submerged (reported)\".",
+      "parameterUomValue": "12 knots (22 km/h; 14 mph) surfaced; 20 knots (37 km/h; 23 mph) submerged (official); 25 knots (46 km/h; 29 mph) submerged (reported)",
+      "classification": "U",
+      "parameterValue": "12 knots (22 km/h; 14 mph) surfaced; 20 knots (37 km/h; 23 mph) submerged (official); 25 knots (46 km/h; 29 mph) submerged (reported)",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"Limited only by food supplies\".",
+      "parameterUomValue": "Limited only by food supplies",
+      "classification": "U",
+      "parameterValue": "Limited only by food supplies",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Test depth",
+      "parameterDescr": "Test depth (descriptive text, not a unit-bearing quantity). Source text: \"+800 ft (240 m)\".",
+      "parameterUomValue": "+800 ft (240 m)",
+      "classification": "U",
+      "parameterValue": "+800 ft (240 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Complement",
+      "parameterDescr": "Complement (descriptive text, not a unit-bearing quantity). Source text: \"15 officers, 140 enlisted\".",
+      "parameterUomValue": "15 officers, 140 enlisted",
+      "classification": "U",
+      "parameterValue": "15 officers, 140 enlisted",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "Sensors & processing systems",
+      "parameterDescr": "Sensors & processing systems (descriptive text, not a unit-bearing quantity). Source text: \"BQQ-6 passive bow-mounted array (which includes BQS-13 fire control array); BQR-19 navigation; TB-16 or BQR-23 towed array; BQR-25 conformal array; AN/BPS-15J\".",
+      "parameterUomValue": "BQQ-6 passive bow-mounted array (which includes BQS-13 fire control array); BQR-19 navigation; TB-16 or BQR-23 towed array; BQR-25 conformal array; AN/BPS-15J",
+      "classification": "U",
+      "parameterValue": "BQQ-6 passive bow-mounted array (which includes BQS-13 fire control array); BQR-19 navigation; TB-16 or BQR-23 towed array; BQR-25 conformal array; AN/BPS-15J",
+      "uom": ""
+    },
+    {
+      "seq": 1024,
+      "parameter": "Armament",
+      "parameterDescr": "Weapons the system is equipped to carry/fire. Source text: \"22 tubes, each with 7 Tomahawk cruise missiles, totaling 154\".",
+      "parameterUomValue": "22 tubes, each with 7 Tomahawk cruise missiles, totaling 154",
+      "classification": "U",
+      "parameterValue": "22 tubes, each with 7 Tomahawk cruise missiles, totaling 154",
+      "uom": ""
+    }
+  ]
+}

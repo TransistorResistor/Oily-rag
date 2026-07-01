@@ -1,0 +1,229 @@
+{
+  "systemGroup": "Aircraft",
+  "systemType": "Attack Aircraft",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Combat range",
+      "uom": "km",
+      "parameterDescr": "Range achievable on a representative combat mission profile.",
+      "count": 2
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 2
+    },
+    {
+      "parameter": "Crew",
+      "uom": "",
+      "parameterDescr": "Number of crew required to operate the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Empty weight",
+      "uom": "kg",
+      "parameterDescr": "Aircraft weight excluding fuel, payload, and crew.",
+      "count": 2
+    },
+    {
+      "parameter": "First flight",
+      "uom": "",
+      "parameterDescr": "Date of the type's first flight.",
+      "count": 2
+    },
+    {
+      "parameter": "Fuel capacity",
+      "uom": "",
+      "parameterDescr": "Internal (and optionally external) fuel capacity.",
+      "count": 2
+    },
+    {
+      "parameter": "Gross weight",
+      "uom": "kg",
+      "parameterDescr": "Typical loaded weight for a standard mission.",
+      "count": 2
+    },
+    {
+      "parameter": "Guns",
+      "uom": "",
+      "parameterDescr": "Internal gun armament.",
+      "count": 2
+    },
+    {
+      "parameter": "Hardpoints",
+      "uom": "",
+      "parameterDescr": "Number and capacity of external weapon stations.",
+      "count": 2
+    },
+    {
+      "parameter": "Height",
+      "uom": "m",
+      "parameterDescr": "Overall height of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Introduced",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service.",
+      "count": 2
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Manufactured",
+      "uom": "",
+      "parameterDescr": "Date range during which the system was in production.",
+      "count": 2
+    },
+    {
+      "parameter": "Max takeoff weight",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight.",
+      "count": 2
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 2
+    },
+    {
+      "parameter": "Number built",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced.",
+      "count": 2
+    },
+    {
+      "parameter": "Powerplant",
+      "uom": "",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating.",
+      "count": 2
+    },
+    {
+      "parameter": "Primary users",
+      "uom": "",
+      "parameterDescr": "Principal operator(s) of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Rate of climb",
+      "uom": "m/s",
+      "parameterDescr": "Maximum sustained rate of climb.",
+      "count": 2
+    },
+    {
+      "parameter": "Service ceiling",
+      "uom": "m",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement.",
+      "count": 2
+    },
+    {
+      "parameter": "Status",
+      "uom": "",
+      "parameterDescr": "Current operational status of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 2
+    },
+    {
+      "parameter": "Wing area",
+      "uom": "m2",
+      "parameterDescr": "Total wing planform area.",
+      "count": 2
+    },
+    {
+      "parameter": "Wingspan",
+      "uom": "m",
+      "parameterDescr": "Wingspan or fin span.",
+      "count": 2
+    },
+    {
+      "parameter": "g limits",
+      "uom": "",
+      "parameterDescr": "Structural load factor limits.",
+      "count": 2
+    },
+    {
+      "parameter": "Airfoil",
+      "uom": "",
+      "parameterDescr": "Airfoil (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Anti-ship missiles",
+      "uom": "",
+      "parameterDescr": "Anti-ship missiles (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Built by",
+      "uom": "",
+      "parameterDescr": "Manufacturing sites/companies that produced the system under license or partnership.",
+      "count": 1
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 1
+    },
+    {
+      "parameter": "Developed from",
+      "uom": "",
+      "parameterDescr": "Earlier system this design is derived from.",
+      "count": 1
+    },
+    {
+      "parameter": "Ferry range",
+      "uom": "km",
+      "parameterDescr": "Maximum range in ferry (long-range transit) configuration.",
+      "count": 1
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 1
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 1
+    },
+    {
+      "parameter": "Thrust/weight",
+      "uom": "",
+      "parameterDescr": "Thrust-to-weight ratio.",
+      "count": 1
+    },
+    {
+      "parameter": "Variant",
+      "uom": "",
+      "parameterDescr": "Named variant of the base system.",
+      "count": 1
+    },
+    {
+      "parameter": "Wing loading",
+      "uom": "",
+      "parameterDescr": "Weight per unit wing area.",
+      "count": 1
+    }
+  ]
+}

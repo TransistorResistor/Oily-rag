@@ -1,0 +1,220 @@
+{
+  "modelID": 2007,
+  "systemGroup": "Weapon",
+  "systemType": "Air-to-Air Missile",
+  "nomenclature": "AIM-7 Sparrow",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The AIM-7 Sparrow (Air Intercept Missile) is an American medium-range semi-active radar homing air-to-air missile operated by the United States Air Force, United States Navy, United States Marine Corps, and various other air forces and navies. Sparrow and its derivatives were the West's principal beyond visual range (BVR) air-to-air missile from the late 1950s until the 1990s. It remains in service, although it is being phased out in aviation applications in favor of the more advanced AIM-120 AMRAAM. Since 2023, the AIM-7 and its RIM-7 variant have seen major operational use in Ukraine, adapted for improvised ground-based air defense systems to intercept cruise missiles and loitering munitions.\n\nThe early Sparrow was intended primarily for use against larger targets, especially bombers. Against smaller targets, the need for a strong reflected radar signal made it difficult to achieve lock-on at effective range, and since the launching aircraft's radar needed to remain pointed at the target throughout engagement, enemy fighters could close to shorter-range infrared missile distance while the launching aircraft continued flying toward its target. Early models were also only effective against targets at the same or higher altitude.",
+      "shortDescription": "is an American medium-range semi-active radar homing air-to-air missile operated by the United States Air Force, United States Navy, United States Marine Corps, and various other air forces and navies.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "Upgraded designs addressed these issues: the RAF's Skyflash (inverse monopulse seeker, improved motor) and the Italian Aspide, both capable of look-down/shoot-down engagements and resistant to countermeasures. This became the US AIM-7M (monopulse) and later AIM-7P models. The Sparrow was also the basis for the RIM-7 Sea Sparrow surface-to-air missile, later succeeded by the RIM-162 ESSM.\n\nThe Sparrow emerged from a late-1940s US Navy program (Project Hotshot) to develop a beam-riding guided rocket, initially built by Sperry then Douglas Aircraft, expanding the airframe to 8-inch diameter. It entered limited service in 1954 aboard Douglas F3D Skyknight night fighters as the Sparrow I (AAM-N-2/AIM-7A), a beam-riding weapon useless against maneuvering targets; only about 2,000 were built. Sparrow II (XAAM-N-2a, later AIM-7B) attempted active radar guidance for fire-and-forget capability but was never made to work reliably; Douglas abandoned it in 1956, though Canadair continued development for the Avro Arrow until that program's 1959 cancellation.\n\nConcurrently, Raytheon developed the semi-active radar homing Sparrow III (AAM-N-6), entering US Navy service in 1958, followed by the improved AAM-N-6a (7,500 built, USAF designation AIM-101) and the AAM-N-6b with improved Rocketdyne motor. In 1962 standardized naming created the AIM-7 series: AIM-7A/B (Sparrow I/II, both obsolete), AIM-7C/D/E (formerly AAM-N-6/6a/6b).",
+      "shortDescription": "designs addressed these issues: the RAF's Skyflash (inverse monopulse seeker, improved motor) and the Italian Aspide, both capable of look-down/shoot-down engagements and resistant to countermeasures.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Sparrow has four major sections: guidance, warhead, control, and rocket motor (currently Hercules MK-58). It has a cylindrical body with four mid-body wings and four tail fins, and a continuous-rod warhead. As a semi-active radar homing missile, it does not generate its own radar signal but homes on reflected continuous-wave signal from the launch aircraft's radar, comparing the reflected and direct signals to enhance resistance to passive jamming (chaff).",
+      "shortDescription": "The Sparrow has four major sections: guidance, warhead, control, and rocket motor (currently Hercules MK-58).",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "25,000 AIM-7Es were produced and saw extensive Vietnam War use, with disappointing results: kill probability under 10%, with 59 aircraft shot down out of 612 Sparrows fired (97 hits, 56 kills; two kills beyond visual range). The AIM-7E-2 \"dogfight Sparrow\" (1969) had clipped wings for shorter-range use but only a 13% kill rate, leading to ripple-firing four at once. USAF and USN combined AIM-7 kills in Vietnam totaled 60 (13 MiG-17s, 4 MiG-19s, 41 MiG-21s, plus 2 An-2 biplanes by USN).\n\nThe AIM-7F (service 1976) added a dual-stage rocket motor and solid-state electronics for longer range, better reliability, and a larger warhead. The AIM-7M (1982) added an inverse monopulse seeker matching Skyflash/Aspide, active radar proximity fuze, digital controls, and improved ECM resistance and low-altitude performance; it performed well in the 1991 Gulf War, with 30 of 44 fired hitting targets (24-26 kills, 19 beyond visual range). The AIM-7P was primarily a software upgrade to existing M-series missiles.\n\nThe US Navy planned to operate the missile through 2018; it is being phased out in favor of AIM-120 AMRAAM but remains in some service. In 2023 onward, the US, Canada, and Greece provided hundreds of AIM-7/RIM-7 missiles to Ukraine, integrated into Soviet-era Buk-M1 systems under the \"FrankenSAM\" program to provide ground-launched defense against Russian cruise missiles and Shahed-type drones; Greece transferred an additional 24 RIM-7 missiles in January 2025.",
+      "shortDescription": "duced and saw extensive Vietnam War use, with disappointing results: kill probability under 10%, with 59 aircraft shot down out of 612 Sparrows fired (97 hits, 56 kills; two kills beyond visual range).",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Variants also include the nuclear-armed Sparrow X proposal (never built), AIM-7F Multishot (track-via-missile datalink proposal, not pursued), AIM-7G (canceled 1970), and AIM-7R/RIM-7R (infrared seeker addition, canceled 1996). Foreign derivatives include British Skyflash, Italian Aspide (and Chinese PL-11/HQ-6 derived from Aspide), and the Soviet K-25/R-23 lineage which informed the Vympel R-27.",
+      "shortDescription": "nuclear-armed Sparrow X proposal (never built), AIM-7F Multishot (track-via-missile datalink proposal, not pursued), AIM-7G (canceled 1970), and AIM-7R/RIM-7R (infrared seeker addition, canceled 1996).",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 200701,
+      "url": "https://en.wikipedia.org/wiki/AIM-7_Sparrow",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Medium-range, semi-active radar homing air-to-air missile\".",
+      "parameterUomValue": "Medium-range, semi-active radar homing air-to-air missile",
+      "classification": "U",
+      "parameterValue": "Medium-range, semi-active radar homing air-to-air missile",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1958-present\".",
+      "parameterUomValue": "1958-present",
+      "classification": "U",
+      "parameterValue": "1958-present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"Australia, Canada, Egypt, Greece, Iran, Iraq, Israel, Italy, Japan, Jordan, Kuwait, Malaysia, Saudi Arabia, Singapore, South Korea, Spain, Taiwan, Turkey, United Kingdom, United States\".",
+      "parameterUomValue": "Australia, Canada, Egypt, Greece, Iran, Iraq, Israel, Italy, Japan, Jordan, Kuwait, Malaysia, Saudi Arabia, Singapore, South Korea, Spain, Taiwan, Turkey, United Kingdom, United States",
+      "classification": "U",
+      "parameterValue": "Australia, Canada, Egypt, Greece, Iran, Iraq, Israel, Italy, Japan, Jordan, Kuwait, Malaysia, Saudi Arabia, Singapore, South Korea, Spain, Taiwan, Turkey, United Kingdom, United States",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"Vietnam War, Iran-Iraq War, Gulf War, Russo-Ukrainian War\".",
+      "parameterUomValue": "Vietnam War, Iran-Iraq War, Gulf War, Russo-Ukrainian War",
+      "classification": "U",
+      "parameterValue": "Vietnam War, Iran-Iraq War, Gulf War, Russo-Ukrainian War",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Unit cost",
+      "parameterDescr": "Approximate unit cost in US dollars. Source text: \"$125,000\".",
+      "parameterUomValue": "125000 USD",
+      "classification": "U",
+      "parameterValue": "125000",
+      "uom": "USD"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Produced",
+      "parameterDescr": "Production period. Source text: \"AIM-7D: 1959; AIM-7F: 1976; AIM-7M: 1982\".",
+      "parameterUomValue": "AIM-7D: 1959; AIM-7F: 1976; AIM-7M: 1982",
+      "classification": "U",
+      "parameterValue": "AIM-7D: 1959; AIM-7F: 1976; AIM-7M: 1982",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \">70,000\". Note: source gives a lower bound (\"greater than\"); see description.",
+      "parameterUomValue": "70000 units",
+      "classification": "U",
+      "parameterValue": "70000",
+      "uom": "units"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Variants",
+      "parameterDescr": "Named variants of the base system. Source text: \"Sparrow I (AIM-7A), Sparrow II (AIM-7B), Sparrow III (AIM-7C, AIM-7D, AIM-7E, AIM-7E2/Skyflash/Aspide, AIM-7F, AIM-7M, AIM-7P), RIM-7M, AGM-45\".",
+      "parameterUomValue": "Sparrow I (AIM-7A), Sparrow II (AIM-7B), Sparrow III (AIM-7C, AIM-7D, AIM-7E, AIM-7E2/Skyflash/Aspide, AIM-7F, AIM-7M, AIM-7P), RIM-7M, AGM-45",
+      "classification": "U",
+      "parameterValue": "Sparrow I (AIM-7A), Sparrow II (AIM-7B), Sparrow III (AIM-7C, AIM-7D, AIM-7E, AIM-7E2/Skyflash/Aspide, AIM-7F, AIM-7M, AIM-7P), RIM-7M, AGM-45",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"510 lb (230 kg)\".",
+      "parameterUomValue": "230 kg",
+      "classification": "U",
+      "parameterValue": "230",
+      "uom": "kg"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"12 ft (3.7 m)\".",
+      "parameterUomValue": "3.7 m",
+      "classification": "U",
+      "parameterValue": "3.7",
+      "uom": "m"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"8 in (200 mm)\".",
+      "parameterUomValue": "0.2 m",
+      "classification": "U",
+      "parameterValue": "0.2",
+      "uom": "m"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"2 ft 8 in (0.81 m) (AIM-7A/B)\".",
+      "parameterUomValue": "0.81 m",
+      "classification": "U",
+      "parameterValue": "0.81",
+      "uom": "m"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"High explosive blast-fragmentation; AIM-7C/D/E: 65 lb (29 kg); AIM-7F/M: 88 lb (40 kg)\".",
+      "parameterUomValue": "High explosive blast-fragmentation; AIM-7C/D/E: 65 lb (29 kg); AIM-7F/M: 88 lb (40 kg)",
+      "classification": "U",
+      "parameterValue": "High explosive blast-fragmentation; AIM-7C/D/E: 65 lb (29 kg); AIM-7F/M: 88 lb (40 kg)",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"AIM-7A/B/C: Aerojet 1.8KS7800 solid rocket; AIM-7D/E: Rocketdyne MK 38/MK 52 solid rocket; AIM-7F/M/P: Hercules MK-58 solid-propellant rocket motor\".",
+      "parameterUomValue": "AIM-7A/B/C: Aerojet 1.8KS7800 solid rocket; AIM-7D/E: Rocketdyne MK 38/MK 52 solid rocket; AIM-7F/M/P: Hercules MK-58 solid-propellant rocket motor",
+      "classification": "U",
+      "parameterValue": "AIM-7A/B/C: Aerojet 1.8KS7800 solid rocket; AIM-7D/E: Rocketdyne MK 38/MK 52 solid rocket; AIM-7F/M/P: Hercules MK-58 solid-propellant rocket motor",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"AIM-7C: 26 km (14 nmi); AIM-7D: 44 km (24 nmi); AIM-7E/E2: 50 km (27 nmi); AIM-7F/M/P: 70 km (38 nmi)\".",
+      "parameterUomValue": "26 km",
+      "classification": "U",
+      "parameterValue": "26",
+      "uom": "km"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"AIM-7A/B: Mach 2.5; AIM-7C/E/F: Mach 4\".",
+      "parameterUomValue": "2.5 Mach",
+      "classification": "U",
+      "parameterValue": "2.5",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Semi-active radar homing\".",
+      "parameterUomValue": "Semi-active radar homing",
+      "classification": "U",
+      "parameterValue": "Semi-active radar homing",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"F-4 Phantom II, F-15 Eagle, F-15E Strike Eagle, F-16 Fighting Falcon, F-14 Tomcat, F/A-18 Hornet, JA-37 Viggen, F-104S Starfighter, Tornado F.3 ADV, F/A-18E/F Super Hornet, Mitsubishi F-2\".",
+      "parameterUomValue": "F-4 Phantom II, F-15 Eagle, F-15E Strike Eagle, F-16 Fighting Falcon, F-14 Tomcat, F/A-18 Hornet, JA-37 Viggen, F-104S Starfighter, Tornado F.3 ADV, F/A-18E/F Super Hornet, Mitsubishi F-2",
+      "classification": "U",
+      "parameterValue": "F-4 Phantom II, F-15 Eagle, F-15E Strike Eagle, F-16 Fighting Falcon, F-14 Tomcat, F/A-18 Hornet, JA-37 Viggen, F-104S Starfighter, Tornado F.3 ADV, F/A-18E/F Super Hornet, Mitsubishi F-2",
+      "uom": ""
+    }
+  ]
+}

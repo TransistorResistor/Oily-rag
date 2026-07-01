@@ -1,0 +1,22 @@
+{
+  "title": "Mech radar",
+  "url": "https://en.wikipedia.org/wiki/Mech_radar",
+  "category": "radar",
+  "subcategory": "aircraft_radar",
+  "summary": "N001 Mech (Russian: Mech, lit. 'Sword') is a Russian (former USSR) all-weather multimode airborne radar developed by the Tikhomirov Scientific Research Institute of Instrument Design (NIIP) for the Su-27 multi-role combat aircraft. It was designed by Viktor Grishin and was originally intended to have commonality with the MiG-29's N019 Rubin radar.",
+  "specs": {
+    "Country of origin": "Soviet Union/Russia",
+    "Introduced": "1985",
+    "Type": "Twist cassegrain PESA antenna (N001VEP+Pero)",
+    "Frequency": "X-band",
+    "Range": "100 km (fighter); 140 km (bomber); 65 km (track range)",
+    "Diameter": "1.075 m",
+    "Azimuth": "+/-60 degrees",
+    "Elevation": "-55 to +60 degrees",
+    "Power": "1 kW (average)",
+    "Platform": "Su-27, Su-33, Su-30MKK, Su-30MK2",
+    "Manufacturer": "Tikhomirov Scientific Research Institute of Instrument Design (NIIP)"
+  },
+  "sections": ["Overview", "Design and development", "Variants (N001, N001E, N001V, N001VE, N001VEP)", "References", "Bibliography"],
+  "full_text": "N001\nCountry of origin: Soviet Union/Russia\nIntroduced: 1985\nType: Twist cassegrain PESA antenna (N001VEP+Pero)\nFrequency: X-band\nRange: 100km (fighter); 140km (bomber); 65km (track range)\nDiameter: 1.075m\nAzimuth: +/-60\nElevation: -55 +60\nPower: 1kw (average)\n\nN001 Mech (Russian: Mech, lit. 'Sword') is a Russian (former USSR) all-weather multimode airborne radar developed by the Tikhomirov Scientific Research Institute of Instrument Design (NIIP) for the Su-27 multi-role combat aircraft.\n\nThe N001 radar for the Su-27 was designed by Viktor Grishin. Pushing the state of the art for the USSR, the original design, known as Mech, was supposed to draw heavily on technologies developed for the experimental Soyuz radar program led by NPO Istok. It was intended to have a great deal of commonality with the MiG-29's N019 Rubin radar. N001 has a 1.075m antenna diameter twist-cassegrain antenna. A pulse-doppler design operating in the 3 cm band using medium and high PRFs for optimum lookdown capability, the N001 has a search range of 80-100 km against a 3m2 RCS target in a headon engagement, 140 km against a large bomber. It can track a 3m2 target at 65 km. In a pursuit engagement, search range for a 3m2 target falls to just 40 km. Azimuth limits are +/-60. Initial units had a MTBF of only 5 hours, but later type is 100 hours; MTBF was eventually brought up to 200 hours. The Su-33 used an updated SUV-33 control system, the N001 radar was largely unchanged but with sea optimised lookdown capability and support for the carrier-based GCI system.\n\nVariants:\nN001 (RLPK-27) - Standard model.\nN001E - Export version of N001.\nN001V (RLPK-27V) - Processor replaced TS101M capable of single target engagement and simultaneously tracking 10 targets during an engagement.\nN001VE (RLPK-27VE) - Simplified export version of the N001V, or an upgrade of the N001E with added air-to-ground capabilities. New computer hardware and software, possibly including the Baguet-55 signal processor, integrated the R-77 air-to-air missile. It has an all-weather ground mapping mode for detecting land and sea targets. The detection range is 62.1 miles (99.9 km). It can track ten targets simultaneously and engage two with the R-77. Fitted to the Sukhoi Su-30MKK.\nN001VEP (RLPK-27VEP) - Includes a separate computing channel for synthetic aperture terrain-mapping. Integrates the Kh-31A anti-ship missile. The detection range is 68.4 miles (110.1 km). Fitted to the Sukhoi Su-30MK2. Possibly nicknamed \"Panda\".\n\nNote: N001 was originally intended for commonality with the MiG-29's radar, but the MiG-29 ultimately used the N019 Rubin radar, which was not a new design but a development of the Sapfir-23ML architecture used on the MiG-23ML.\n\nBibliography:\nGordon, Yefim (2007). Sukhoi Su-27 Flanker. Famous Russian Aircraft. Hinkley, England: Midland Publishing. ISBN 978-1-85780-247-4.\nWei, Bai (May 2012). \"A Flanker by any other name\". Air Forces Monthly. No. 290. London: Key Publishing."
+}

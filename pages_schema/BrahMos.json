@@ -1,0 +1,280 @@
+{
+  "modelID": 2018,
+  "systemGroup": "Weapon",
+  "systemType": "Cruise Missile",
+  "nomenclature": "BrahMos",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The BrahMos (also designated as PJ-10 ) is a long-range, ramjet -powered supersonic cruise missile that can be launched from submarines, ships, fighter aircraft or TEL . It is a joint venture between India 's Defence Research and Development Organisation (DRDO) and the Russian Federation's NPO Mashinostroyeniya , who together have formed BrahMos Aerospace . The missile is based on P-800 Oniks . The name BrahMos is a portmanteau formed from the names of two rivers, the Brahmaputra of India and the Moskva of Russia.\n\nLand-launched, ship-launched as well as air-launched versions have been inducted across the services of the Indian Armed Forces .",
+      "shortDescription": "The BrahMos (also designated as PJ-10 ) is a long-range, ramjet -powered supersonic cruise missile that can be launched from submarines, ships, fighter aircraft or TEL .",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The missile guidance has been developed by BrahMos Aerospace. In 2016, after India joined the Missile Technology Control Regime (MTCR), the range of the missile was gradually enhanced.\n\nIn 2022, the CEO of BrahMos Aerospace, Atul Rane, stated that a future hypersonic missile, designated as the BrahMos-II and based on the 3M22 Zircon , could be developed.\n\nThe BrahMos was developed from Russia's NPO Mashinostroyenia (NPOMASH) P-800 Oniks family of cruise missiles, through a joint venture between NPOMASH and India's Defence Research and Development Organisation (DRDO), named BrahMos Aerospace.The missile design was significantly aided by Alexander Leonov , CEO and Chief designer at NPOMASH . The company was established on 5 December 1995 with an authorized share capital of US$250 million . India holds 50.5% share of the joint venture, and its initial financial contribution was US$126.25 million , while Russia holds 49.5% share with an initial contribution of US$123.75 million .\n\nSince late 2004, the missile has undergone several tests from a variety of platforms, including a land-based test from the Pokhran range in the desert, in which the evasive 'S' maneuver at Mach 2.8 was demonstrated for the Indian Army , and a launch in which the land attack capability from sea was demonstrated.\n\nKeltec (now known as BrahMos Aerospace Trivandrum Ltd or BATL), an Indian state-owned firm, was acquired by BrahMos Corporation in 2008. Approximately ₹ 1,500 crore (equivalent to ₹ 42 billion or US$436.1 million in 2023) invested in the facility to make BrahMos components and integrate the missile systems. This was necessitated by the increased order book of the missile system, with orders having been placed by both the Indian Army and Navy. Initially, Russia supplied 65% of the BrahMos' components, including its ramjet engine and radar seeker. As of 2018 [update] , 65% of the missile was manufactured in India and there were plans to increase this to 85% by replacing the components with an Indian made seeker and booster.\n\nThe BrahMos headquarters complex is located at New Delhi and consists of a design centre and aerospace knowledge centre. The integration complex is located at Hyderabad and a production centre is located at Thiruvananthapuram . Another assembly line is being established at Pilani . The aerodynamic characterization research was conducted at the National Aerospace Laboratories ' 1.2m Trisonic Wind Tunnel Facility.\n\nDefence Materials and Stores Research and Development Establishment (DMSRDE) was successful in preparing domestic fuel for BrahMos. Testing of the fuel, which will power the missile's liquid ramjet engine, has begun at Defence Research and Development Laboratory (DRDL). As per the lab, the fuel will not freeze even in temperatures between -50° and -55 °C. It will replace the imported fuel from Russia.\n\nBrahMos was first test-fired on 12 June 2001 from the Integrated Test Range (ITR), Chandipur in a vertical launch configuration. On 14 June 2004, another test was conducted at ITR and BrahMos was fired from a mobile launcher. On 5 March 2008, the land attack version of the missile was fired from the destroyer INS Rajput and the missile hit and destroyed the right target among a group of targets. The vertical launch of BrahMos was conducted on 18 December 2008 from INS Ranvir . The BrahMos I Block-I for the army was successfully tested with new capabilities in the deserts of Rajasthan , at a test range near Pokharan in December 2004 and March 2007. During a user trial on 20 January 2009, BrahMos was tested with a new navigation system but it failed to hit the target. BrahMos Aerospace Corporation's director Dr A. Sivathanu Pillai said, \"The missile performance was absolutely normal until the last phase, but the missile missed the target, though it maintained the direction.\" and that \"The problem was in the software, not hardware\". The Defence Research and Development Organisation (DRDO) said that there were \"small hitches\" in the last stage of the test firing due to delay in input of satellite navigation input to the inertial navigation system , the missile travelled for 112 seconds instead of the slated 84 seconds and fell 7 km away from the target. According to BrahMos Corporation, another test of the new missile was to be conducted within one month, but it was eventually conducted on 4 March 2009 and was deemed successful. BrahMos was test-fired again on 29 March 2009. For the test, the missile had to identify a building among a cluster of buildings in an urban environment. BrahMos successfully hit the intended target in two and a half minutes of launch. According to official sources, \"The new seeker is unique and would help us to hit our targets, which are insignificant in terms of size, in a cluster of large buildings. India is now the only nation in the world with this advanced technology\". After the third test, Lt Gen. Noble Thamburaj, said that the Indian Army wanted the BrahMos to achieve high standards of accuracy and congratulated the scientists on behalf of the Indian Army. The Indian Army confirmed that the test was successful and the army is satisfied with the missile. This marking the completion of the development phase of BrahMos Block-II, and it was ready for induction.\n\nThe 5 September 2010 test of BrahMos created a world record for being the first cruise missile to be tested at supersonic speeds in a steep-dive mode. The missile was test-fired from the integrated test range launching complex-3 (LC-3) at Chandipur around 11.35 am. With this launch, the Indian army's requirement for land attacks with Block-II advanced seeker software with target discriminating capabilities was met. BrahMos became the only supersonic cruise missile possessing advanced capability of selection of a particular land target amongst a group of targets, providing an edge to the user with precise hit.\n\nBlock III has advanced guidance and upgraded software, incorporating high manoeuvres at multiple points and steep dive from high altitude. It will be deployed in Arunachal Pradesh . It can engage ground targets from an altitude as low as 10 metres for surgical strikes without any collateral damage. It is capable of being launched from multiple platforms like submarines, ships, aircraft and land based Mobile Autonomous Launchers (MAL). On 12 August 2011, it was test-fired by ground forces and met all mission parameters. [ citation needed ]\n\nThe new navigation system uses an Indian chip called G3OM ( GPS , GLONASS , GAGAN on a module ). The system weighs around 17 grams, and gives accuracy below five metres using Indian, US and Russian navigation satellites. The system can be used in tandem with an inertial navigation system (INS) to provide high-accuracy targeting without using any seeker.\n\nBrahMos was tested with an Indian seeker for the first time on 22 March 2018, and was tested with an India-developed propulsion system, airframe and power supply on 30 September 2019.\n\nOn 30 September 2020, India successfully test-fired an extended range BrahMos, offering a range of around 350 km, at speeds up to Mach 2.8, an improvement over the initial 290 km. The test was carried out under BrahMos project of the Defence Research and Development Organisation (DRDO), under which the missile was launched with an indigenous booster. The missile was launched from a land-based facility in Odisha . This is the second test-firing of the extended range version of the missile which has an indigenously developed airframe and booster.\n\nIn May 2025, a report suggested that an indigenous seeker, developed by Data Patterns, was flight-tested in BrahMos around four weeks earlier. The seeker performed in a \"text book manner\" and the company expected an order for te seekers soon.",
+      "shortDescription": "The missile guidance has been developed by BrahMos Aerospace.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The submarine-launched variant of BrahMos was test fired successfully for the first time from a submerged pontoon near Visakhapatnam at the coast of Bay of Bengal on 20 March 2013. This was the first vertical launch of an Indian supersonic missile from a submerged platform. The missile can be launched from a depth of 40 to 50 m (130 to 160 ft).\n\nThe BrahMos-A is a modified air-launched variant of the missile with a range of 500 km which can be launched from a Sukhoi Su-30MKI as a standoff weapon . To reduce the missile's weight to 2.55 tons, many modifications were made like using a smaller booster, adding fins for airborne stability after launch, and relocating the connector. It can be released from the height of 500 to 14,000 metres (1,640 to 46,000 ft). After release, the missile free falls for 100–150 metres, then goes into a cruise phase at 14,000 metres and finally the terminal phase at 15 metres. BrahMos Aerospace planned to deliver the missile to the IAF in 2015, where it is expected to arm at least three squadrons.\n\nThe missile was also planned to arm the Indian Navy's Ilyushin Il-38 and Tupolev Tu-142 maritime patrol and anti-submarine aircraft with 6 missiles per aircraft, but this could not be made possible due to insufficient ground clearance of the IL-38, high cost of modifying the Tu-142 and the questionable benefits of modifying an aging fleet.\n\nAn expert committee from the DRDO and the Indian Air Force (IAF) had ruled out any structural modifications to the Su-30MKI to carry the missile. On 22 October 2008, A. Sivathanu Pillai , Chief Controller, R&D, DRDO and CEO and managing director of BrahMos Aerospace, announced that trials and tests were to be carried out by 2011, and the IAF would get its own version of BrahMos by 2012.\n\nOn 10 January 2009, it was reported that two Indian Air Force Su-30MKI fighter jets were sent to Russia for a retrofit program that would enable them to launch the missile. On 8 August 2009, Alexander Leonov, Director of the Russian Machine Building Research and Production Centre, said \"we are ready for test launches.\" He also said that a new takeoff engine for the launching of the missile in air and at extremely high altitudes had been developed, and the initial test firing of the missile would be undertaken from the Su-30 MKI but did not specify the dates. On 26 February 2012, A. Sivathanu Pillai said that the air-launched version of BrahMos is being developed and will be tested by the end of 2012. This version of the BrahMos missile will use air-breathing scramjet propulsion technology and would be more fuel-efficient than a traditional rocket-powered missile.\n\nThe purchase of over 200 air-launched BrahMos supersonic cruise missiles for the IAF was cleared by the Cabinet Committee on Security (CCS) on 19 October 2012, at the cost of ₹ 6,000 crore (equivalent to ₹ 110 billion or US$1 billion in 2023). This would include funds for the integration and testing of the BrahMos on Su-30MKI of the IAF. As per this plan, the first test of the air-launched version of the missile was to be conducted by December 2012. Two Su-30MKI of the IAF would be modified by the Hindustan Aeronautics Limited (HAL) at its Nashik facility where they will also be integrated with the missile's aerial launcher.\n\nA demonstration flight was carried out at HAL Nashik on 25 June 2016 as a modified Su-30MKI carrying BrahMos-A underwent a successful trial flight, the first time a heavyweight supersonic cruise missile had been integrated on a long-range fighter aircraft; the project to adapt the weapon for air launch was approved in 2011, but was bogged down with technology transfer and intellectual property rights concerns. To carry the missile, the Su-30MKI undercarriage had to be strengthened, which also required new hard points and structural modifications. The cost of adapting the BrahMos for air launch was \"phenomenal\", but efforts to downsize the missile were abandoned after an attempt to reduce the size of the ramjet. On 22 November 2017, the missile was successfully test fired for the first time from a Sukhoi-30MKI against a sea-based target in the Bay of Bengal. This made the Indian Air Force the first in the world to have successfully tested such a type of air launched trisonic-class missile on a sea-based target. After the IAF successfully tested BrahMos from a Su-30MKI against a sea-based target, it declared on 17 December 2019 that the integration of BrahMos-A on Su-30 MKI is completed.\n\n50 IAF SU-30MKI will be modified to carry the BrahMos-A missile, these modified Su-30MKIs will have electronic circuits capable of withstanding nuclear electromagnetic pulse . According to the CEO of BrahMos Aerospace, Sudhir Kumar Mishra, BrahMos-A can reach targets thousands of kilometres away considering the range of launch aircraft. On 20 January 2020, the IAF commissioned its first squadron of Su-30MKI fighters equipped with the BrahMos-A missile. IAF plans to procure 200 BrahMos-A missiles.\n\nOn 6 April 2021, the contract for the air-launched BrahMos-ER was signed, and two successful live firings were conducted from Su-30MKI against a land target and a sea target, respectively. IAF test fired BrahMos-A from Su-30MKI on 8 December 2021 and is now ready to enter mass production. The test validated the structural integrity and functional performance. Major airframe assemblies such as non-metallic air frame sections comprising ramjet fuel tank and pneumatic fuel supply system which form the integral part of the Ramjet Engine are now locally developed.",
+      "shortDescription": "The submarine-launched variant of BrahMos was test fired successfully for the first time from a submerged pontoon near Visakhapatnam at the coast of Bay of Bengal on 20 March 2013.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 201801,
+      "url": "https://en.wikipedia.org/wiki/BrahMos",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Cruise missile ; Air-launched cruise missile ; Anti-ship missile ; Land-attack missile ; Surface-to-surface missile ; Submarine-launched cruise missile\".",
+      "parameterUomValue": "Cruise missile ; Air-launched cruise missile ; Anti-ship missile ; Land-attack missile ; Surface-to-surface missile ; Submarine-launched cruise missile",
+      "classification": "U",
+      "parameterValue": "Cruise missile ; Air-launched cruise missile ; Anti-ship missile ; Land-attack missile ; Surface-to-surface missile ; Submarine-launched cruise missile",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"India ; Russia\".",
+      "parameterUomValue": "India ; Russia",
+      "classification": "U",
+      "parameterValue": "India ; Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"21 June 2007 – present\".",
+      "parameterUomValue": "21 June 2007 – present",
+      "classification": "U",
+      "parameterValue": "21 June 2007 – present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"Indian Army ; Indian Navy ; Indian Air Force ; Philippine Marine Corps\".",
+      "parameterUomValue": "Indian Army ; Indian Navy ; Indian Air Force ; Philippine Marine Corps",
+      "classification": "U",
+      "parameterValue": "Indian Army ; Indian Navy ; Indian Air Force ; Philippine Marine Corps",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"2025 India–Pakistan conflict\".",
+      "parameterUomValue": "2025 India–Pakistan conflict",
+      "classification": "U",
+      "parameterValue": "2025 India–Pakistan conflict",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"Defence Research and Development Organisation ; NPO Mashinostroyeniya\".",
+      "parameterUomValue": "Defence Research and Development Organisation ; NPO Mashinostroyeniya",
+      "classification": "U",
+      "parameterValue": "Defence Research and Development Organisation ; NPO Mashinostroyeniya",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"BrahMos Aerospace Limited\".",
+      "parameterUomValue": "BrahMos Aerospace Limited",
+      "classification": "U",
+      "parameterValue": "BrahMos Aerospace Limited",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Unit cost",
+      "parameterDescr": "Approximate unit cost in US dollars. Source text: \"BrahMos: US$ 3.5 million ; BrahMos-ER: US$ 4.85 million\".",
+      "parameterUomValue": "3500000 USD",
+      "classification": "U",
+      "parameterValue": "3500000",
+      "uom": "USD"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Variants",
+      "parameterDescr": "Named variants of the base system. Source text: \"Ship-launched ; Land-launched ; Submarine-launched ; Air-launched ; BrahMos-ER ; BrahMos-NG ; BrahMos-II\".",
+      "parameterUomValue": "Ship-launched ; Land-launched ; Submarine-launched ; Air-launched ; BrahMos-ER ; BrahMos-NG ; BrahMos-II",
+      "classification": "U",
+      "parameterValue": "Ship-launched ; Land-launched ; Submarine-launched ; Air-launched ; BrahMos-ER ; BrahMos-NG ; BrahMos-II",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"BrahMos: 3,000 kg (6,600 lb) ; BrahMos-A: 2,500 kg (5,500 lb) ; BrahMos-NG: 1,200–1,500 kg (2,600–3,300 lb)\".",
+      "parameterUomValue": "3000 kg",
+      "classification": "U",
+      "parameterValue": "3000",
+      "uom": "kg"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"BrahMos: 8.4 m (28 ft) ; BrahMos-NG: 6 m (20 ft)\".",
+      "parameterUomValue": "8.4 m",
+      "classification": "U",
+      "parameterValue": "8.4",
+      "uom": "m"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"BrahMos: 0.6 m (2.0 ft) ; BrahMos-NG: 0.5 m (1.6 ft)\".",
+      "parameterUomValue": "0.6 m",
+      "classification": "U",
+      "parameterValue": "0.6",
+      "uom": "m"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"200–300 kg (440–660 lb) nuclear conventional semi- armour-piercing warhead\".",
+      "parameterUomValue": "200–300 kg (440–660 lb) nuclear conventional semi- armour-piercing warhead",
+      "classification": "U",
+      "parameterValue": "200–300 kg (440–660 lb) nuclear conventional semi- armour-piercing warhead",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"1st Stage: ; Solid rocket booster [EEL] ; 2nd Stage: ; Liquid rocket ramjet [NPO]\".",
+      "parameterUomValue": "1st Stage: ; Solid rocket booster [EEL] ; 2nd Stage: ; Liquid rocket ramjet [NPO]",
+      "classification": "U",
+      "parameterValue": "1st Stage: ; Solid rocket booster [EEL] ; 2nd Stage: ; Liquid rocket ramjet [NPO]",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Propellant",
+      "parameterDescr": "Rocket motor propellant type. Source text: \"1st Stage: Solid fuel ; 2nd Stage: Liquid fuel\".",
+      "parameterUomValue": "1st Stage: Solid fuel ; 2nd Stage: Liquid fuel",
+      "classification": "U",
+      "parameterValue": "1st Stage: Solid fuel ; 2nd Stage: Liquid fuel",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"Ship or Land platform : 800–900 km (500–560 mi); Air platform : 450–500 km (280–310 mi); Export : 290 km (180 mi)\".",
+      "parameterUomValue": "900 km",
+      "classification": "U",
+      "parameterValue": "900",
+      "uom": "km"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Service ceiling",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement. Source text: \"15 km (49,000 ft)\".",
+      "parameterUomValue": "14935.2 m",
+      "classification": "U",
+      "parameterValue": "14935.2",
+      "uom": "m"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Flight altitude",
+      "parameterDescr": "Operational flight altitude band. Source text: \"Sea skimming , as low as 3 to 10 meters\".",
+      "parameterUomValue": "0.01 km",
+      "classification": "U",
+      "parameterValue": "0.01",
+      "uom": "km"
+    },
+    {
+      "seq": 1019,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Mach 3 (3,700 km/h; 2,300 mph; 1.0 km/s)\".",
+      "parameterUomValue": "3 Mach",
+      "classification": "U",
+      "parameterValue": "3",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1020,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Mid-course: INS + multi- GNSS ; Terminal: ARH\".",
+      "parameterUomValue": "Mid-course: INS + multi- GNSS ; Terminal: ARH",
+      "classification": "U",
+      "parameterValue": "Mid-course: INS + multi- GNSS ; Terminal: ARH",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Accuracy",
+      "parameterDescr": "Positional/targeting accuracy. Source text: \"1 m CEP\".",
+      "parameterUomValue": "1 m CEP",
+      "classification": "U",
+      "parameterValue": "1 m CEP",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"Warship; Land-based TEL; Submarine; Fighter aircraft\".",
+      "parameterUomValue": "Warship; Land-based TEL; Submarine; Fighter aircraft",
+      "classification": "U",
+      "parameterValue": "Warship; Land-based TEL; Submarine; Fighter aircraft",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "VARIANTS",
+      "parameterDescr": "VARIANTS (descriptive text, not a unit-bearing quantity). Source text: \"Ship-launched, anti-ship variant (operational)\".",
+      "parameterUomValue": "Ship-launched, anti-ship variant (operational)",
+      "classification": "U",
+      "parameterValue": "Ship-launched, anti-ship variant (operational)",
+      "uom": ""
+    },
+    {
+      "seq": 1024,
+      "parameter": "FURTHER DEVELOPMENTS",
+      "parameterDescr": "FURTHER DEVELOPMENTS (descriptive text, not a unit-bearing quantity). Source text: \"BrahMos-NG (Next Generation) or BrahMos-MA is a shortened version based on the existing BrahMos system. A model of the new variant was revealed on 20 February 2013, at the 15th anniversary celebrations of BrahMos Corporation. It will maintain range of 290 km and speed of Mach 3.5 but will weigh around 1.5 tons, with a length of 6 metres and a diameter of 50 cm, making it 50% lighter and three metres shorter than its predecessor. The first test flight was expected to take place in late 2024 induction by the end of 2025. BrahMos-NG will have lesser radar cross section (RCS) compared to its predecessor, making it harder for air defense systems to detect and engage the target. BrahMos-NG will have Air-launched and Submarine torpedo tube/VLS-launched variants. The missile has been designated as BrahMos-M, BrahMos-NG and BrahMos-MA over the years. Additionally, the BrahMos-NG will have an AESA radar rather than the mechanically scanned one on the BrahMos.\".",
+      "parameterUomValue": "BrahMos-NG (Next Generation) or BrahMos-MA is a shortened version based on the existing BrahMos system. A model of the new variant was revealed on 20 February 2013, at the 15th anniversary celebrations of BrahMos Corporation. It will maintain range of 290 km and speed of Mach 3.5 but will weigh around 1.5 tons, with a length of 6 metres and a diameter of 50 cm, making it 50% lighter and three metres shorter than its predecessor. The first test flight was expected to take place in late 2024 induction by the end of 2025. BrahMos-NG will have lesser radar cross section (RCS) compared to its predecessor, making it harder for air defense systems to detect and engage the target. BrahMos-NG will have Air-launched and Submarine torpedo tube/VLS-launched variants. The missile has been designated as BrahMos-M, BrahMos-NG and BrahMos-MA over the years. Additionally, the BrahMos-NG will have an AESA radar rather than the mechanically scanned one on the BrahMos.",
+      "classification": "U",
+      "parameterValue": "BrahMos-NG (Next Generation) or BrahMos-MA is a shortened version based on the existing BrahMos system. A model of the new variant was revealed on 20 February 2013, at the 15th anniversary celebrations of BrahMos Corporation. It will maintain range of 290 km and speed of Mach 3.5 but will weigh around 1.5 tons, with a length of 6 metres and a diameter of 50 cm, making it 50% lighter and three metres shorter than its predecessor. The first test flight was expected to take place in late 2024 induction by the end of 2025. BrahMos-NG will have lesser radar cross section (RCS) compared to its predecessor, making it harder for air defense systems to detect and engage the target. BrahMos-NG will have Air-launched and Submarine torpedo tube/VLS-launched variants. The missile has been designated as BrahMos-M, BrahMos-NG and BrahMos-MA over the years. Additionally, the BrahMos-NG will have an AESA radar rather than the mechanically scanned one on the BrahMos.",
+      "uom": ""
+    },
+    {
+      "seq": 1025,
+      "parameter": "COMBAT USE",
+      "parameterDescr": "COMBAT USE (descriptive text, not a unit-bearing quantity). Source text: \"2020-2021 China-India Skirmishes\".",
+      "parameterUomValue": "2020-2021 China-India Skirmishes",
+      "classification": "U",
+      "parameterValue": "2020-2021 China-India Skirmishes",
+      "uom": ""
+    },
+    {
+      "seq": 1026,
+      "parameter": "OPERATIONAL HISTORY",
+      "parameterDescr": "OPERATIONAL HISTORY (descriptive text, not a unit-bearing quantity). Source text: \"On 21 June 2007, the Indian Army raised its first BrahMos regiment, designated 861 Missile Regiment , equipped with Block-I variant. Before the induction, four tests were conducted successfully including two by Army personnel. The induction took place one year before scheduled delivery in July 2008. Two mobile launchers and mobile command post was delivered. The first regiment with five mobile launcher cost $83 million to set up.\".",
+      "parameterUomValue": "On 21 June 2007, the Indian Army raised its first BrahMos regiment, designated 861 Missile Regiment , equipped with Block-I variant. Before the induction, four tests were conducted successfully including two by Army personnel. The induction took place one year before scheduled delivery in July 2008. Two mobile launchers and mobile command post was delivered. The first regiment with five mobile launcher cost $83 million to set up.",
+      "classification": "U",
+      "parameterValue": "On 21 June 2007, the Indian Army raised its first BrahMos regiment, designated 861 Missile Regiment , equipped with Block-I variant. Before the induction, four tests were conducted successfully including two by Army personnel. The induction took place one year before scheduled delivery in July 2008. Two mobile launchers and mobile command post was delivered. The first regiment with five mobile launcher cost $83 million to set up.",
+      "uom": ""
+    },
+    {
+      "seq": 1027,
+      "parameter": "Thanjavur AFS",
+      "parameterDescr": "Thanjavur AFS (descriptive text, not a unit-bearing quantity). Source text: \"47 Wing No. 222 Squadron ( Tigersharks ) (Air launched BrahMos)\".",
+      "parameterUomValue": "47 Wing No. 222 Squadron ( Tigersharks ) (Air launched BrahMos)",
+      "classification": "U",
+      "parameterValue": "47 Wing No. 222 Squadron ( Tigersharks ) (Air launched BrahMos)",
+      "uom": ""
+    }
+  ]
+}

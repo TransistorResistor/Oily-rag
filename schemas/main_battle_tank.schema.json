@@ -1,0 +1,193 @@
+{
+  "systemGroup": "Land Vehicle",
+  "systemType": "Main Battle Tank",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Armor",
+      "uom": "",
+      "parameterDescr": "Armor (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 3
+    },
+    {
+      "parameter": "Crew",
+      "uom": "",
+      "parameterDescr": "Number of crew required to operate the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 3
+    },
+    {
+      "parameter": "Engine",
+      "uom": "",
+      "parameterDescr": "Engine type and configuration.",
+      "count": 3
+    },
+    {
+      "parameter": "Height",
+      "uom": "m",
+      "parameterDescr": "Overall height of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 3
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Main armament",
+      "uom": "",
+      "parameterDescr": "Main armament (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Mass",
+      "uom": "kg",
+      "parameterDescr": "Overall mass of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 3
+    },
+    {
+      "parameter": "Number built",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced.",
+      "count": 3
+    },
+    {
+      "parameter": "Power/weight",
+      "uom": "",
+      "parameterDescr": "Power/weight (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Produced",
+      "uom": "",
+      "parameterDescr": "Production period.",
+      "count": 3
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 3
+    },
+    {
+      "parameter": "Secondary armament",
+      "uom": "",
+      "parameterDescr": "Secondary armament (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Suspension",
+      "uom": "",
+      "parameterDescr": "Suspension (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 3
+    },
+    {
+      "parameter": "Unit cost",
+      "uom": "",
+      "parameterDescr": "Approximate unit cost in US dollars.",
+      "count": 3
+    },
+    {
+      "parameter": "Used by",
+      "uom": "",
+      "parameterDescr": "Known operators of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Wars",
+      "uom": "",
+      "parameterDescr": "Conflicts in which the system has seen use.",
+      "count": 3
+    },
+    {
+      "parameter": "Width",
+      "uom": "",
+      "parameterDescr": "Width (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Designed",
+      "uom": "",
+      "parameterDescr": "Year design work began.",
+      "count": 2
+    },
+    {
+      "parameter": "Fuel capacity",
+      "uom": "",
+      "parameterDescr": "Internal (and optionally external) fuel capacity.",
+      "count": 2
+    },
+    {
+      "parameter": "Transmission",
+      "uom": "",
+      "parameterDescr": "Transmission (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Variants",
+      "uom": "",
+      "parameterDescr": "Named variants of the base system.",
+      "count": 2
+    },
+    {
+      "parameter": "Elevation",
+      "uom": "",
+      "parameterDescr": "Angular field of regard in elevation (up-down).",
+      "count": 1
+    },
+    {
+      "parameter": "Ground clearance",
+      "uom": "",
+      "parameterDescr": "Ground clearance (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Traverse",
+      "uom": "",
+      "parameterDescr": "Traverse (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    }
+  ]
+}

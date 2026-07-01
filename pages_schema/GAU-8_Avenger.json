@@ -1,0 +1,247 @@
+{
+  "modelID": 2024,
+  "systemGroup": "Weapon",
+  "systemType": "Cannon",
+  "nomenclature": "GAU-8 Avenger",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The General Electric GAU-8/A Avenger is a 30 mm hydraulically driven seven-barrel Gatling-style autocannon that is primarily and most famously mounted in the United States Air Force 's Fairchild Republic A-10 Thunderbolt II . Designed to destroy a wide variety of ground targets, the Avenger delivers 30 mm rounds at a high rate of fire . The GAU-8/A is also used in the Dutch Goalkeeper CIWS ship weapon system, which provides defense against short-range threats such as highly maneuverable missiles, aircraft, and fast-maneuvering surface vessels. The GAU-8/A was designed by General Electric but has been produced by General Dynamics since 1997.",
+      "shortDescription": "-8/A Avenger is a 30 mm hydraulically driven seven-barrel Gatling-style autocannon that is primarily and most famously mounted in the United States Air Force 's Fairchild Republic A-10 Thunderbolt II .",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The GAU-8 was created as a parallel program with the A-X (or Attack Experimental) competition that produced the A-10. The specification for the cannon was laid out in 1970, with General Electric and Philco-Ford offering competing designs. Both of the A-X prototypes, the YA-10 and the Northrop YA-9 , were designed to incorporate the weapon, although it was not available during the initial competition; the M61 Vulcan was used as a temporary replacement. Once completed, the entire GAU-8 assembly (correctly referred to as the A/A 49E-6 Gun System) represents about 16% of the A-10 aircraft's unladen weight. Because the gun plays a significant role in maintaining the A-10's balance and center of gravity, a jack must be installed beneath the airplane's tail whenever the gun is removed for inspection to prevent the aircraft from tipping rearwards.\n\nThe gun is mounted slightly to the port side with the active firing cannon barrel on the starboard side at the 9 o'clock position and on the aircraft's center line. The front landing gear is positioned to the starboard side. The gun is loaded using Syn-Tech's linked tube carrier GFU-8/E 30 mm Ammunition Loading Assembly cart.\n\nThe Avenger's rate of fire was originally selectable, 2,100 rounds per minute (rpm) in the low setting, or 4,200 rpm in the high setting. This rate was later changed to a fixed rate of 3,900 rpm. At this speed, 18 seconds of sustained fire are needed to empty the magazine. In practice, the cannon is limited to one- and two-second bursts to avoid overheating and conserve ammunition; barrel life is also a factor, since the USAF has specified a minimum life of at least 20,000 rounds for each set of barrels. No technical limitation is given on the duration the gun may be continuously fired, and a pilot could potentially expend the entire ammunition load in a single burst with no damage or ill effects to the weapons system itself. This constant rate of fire would shorten the barrel life considerably, though, and require added barrel inspections and result in shorter intervals between replacement.\n\nEach barrel is a very simple nonautomatic design having its own breech and bolt . Like the original Gatling gun , the entire firing cycle is actuated by cams and powered by the rotation of the barrels. The seven-barrel carriage assembly itself is driven by the aircraft's dual hydraulic system.\n\nThe GAU-8/A ammunition feed is linkless, reducing weight and avoiding a great deal of potential for jamming. Additionally, the feed system is double-ended, allowing the spent casings to be returned to the ammunition drum and minimising any shifts on the aircraft's center of gravity. The feed system is based on that developed for later M61 installations, but uses more advanced design techniques and materials throughout, to save weight.\n\nThe GAU-8/A is extremely accurate and can fire up to 3,900 rounds per minute without complications. The 30 mm shell has twice the range, half the time to target, and three times the mass of projectiles fired by guns mounted in comparable close air support aircraft.\n\nWhile the GAU-8/A has a muzzle velocity comparable to that of the M61 Vulcan , it uses heavier ammunition and has superior ballistics. The time of flight of its projectile to 4,000 feet (1,200 m) is 25%-30% less than that of an M61 round; the GAU-8/A projectile decelerates much less after leaving the barrel, and it drops a negligible amount, about 10 ft (3.0 m) over the distance. The GAU-8/A precision when installed in the A-10 is rated at \"5 mil , 80%\", meaning that 80% of rounds fired will hit within a cone with an angle of five milliradians ; this equates to a 40 ft (12 m) diameter circle at the weapon's design range of 4,000 ft (1,200 m). By comparison, the M61 has an 8-milliradian dispersion.\n\nBecause the gun's recoil forces could push the entire plane off target during firing, the weapon is mounted laterally off-center, slightly to the port side of the fuselage centerline, with the active firing barrel lying directly on the aircraft's centerline. The firing barrel also lies just below the aircraft's center of gravity, being bore-sighted along a line 2° below the aircraft's line of flight. This arrangement accurately centers the recoil forces, preventing changes in aircraft pitch or yaw when fired. This configuration also leaves space for the front landing gear, which is mounted slightly off-center on the starboard side of the nose.\n\nThe GAU-8/A uses recoil adapters, which are the interface between the gun housing and the gun mount. By absorbing (in compression) the recoil forces, they spread the time of the recoil impulse and counter recoil energy transmitted to the supporting structure when the gun is fired.",
+      "shortDescription": "The GAU-8 was created as a parallel program with the A-X (or Attack Experimental) competition that produced the A-10.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The GAU-8 itself weighs 620 lb (280 kg), but the complete weapon, with feed system and drum, weighs 4,029 lb (1,828 kg) with a maximum ammunition load. It measures 19 ft 5 + 1 ⁄ 2 in (5.931 m) from the muzzle to the rearmost point of the ammunition system, and the ammunition drum alone is 34.5 in (88 cm) in diameter and 71.5 in (1.82 m) long. Power for operating the gun is provided by twin hydraulic motors pressurized from two independent hydraulic systems. The magazine can hold 1,174 rounds, although 1,150 rounds are the typical load-out. Muzzle velocity when firing armor-piercing incendiary rounds is 1,013 m/s, almost the same as the substantially lighter M61 Vulcan 's 20 mm round, giving the gun a muzzle energy of just over 200 kilojoules .\n\nThe standard ammunition mixture for antiarmor use is a five-to-one mix of PGU-14/B armor-piercing incendiary, with a projectile weight around 14.0 oz (395 g or 6,096 gr) and PGU-13/B high-explosive incendiary rounds, with a projectile weight around 13.3 oz (378 g or 5,833 gr). The PGU-14/B's projectile incorporates a lightweight aluminum body, cast around a smaller caliber depleted uranium penetrating core. In 1979, the Avenger was tested against M47 Patton tanks and caused \"severe damage\".\n\nAn innovation in the design of the GAU-8/A ammunition is the use of aluminum alloy cases in place of the traditional steel or brass. This alone adds 30% to ammunition capacity for a given weight. The projectiles incorporate a plastic driving band to improve barrel life. The cartridges measure 11.4 in (290 mm) in length and weigh 1.53 lb (0.69 kg) or more.\n\nThe A-10 engines were initially susceptible to flameout when subjected to gases generated in the firing of the gun. When the GAU-8 is being fired, the smoke from the gun can make the engines stop, and this did occur during initial flight testing. Gun exhaust is essentially oxygen-free, and is capable of causing flameouts of gas turbines . The A-10 engines now have a self-sustaining combustion section. When the gun is fired, the igniters come on to reduce the possibility of a flameout.\n\nThe average recoil force of the GAU-8/A is 10,000 pounds-force (45 kN), which is slightly more than the output of each of the A-10's two General Electric TF34 engines of 9,065 lbf (40.3 kN). While this recoil force is significant, in practice, a cannon-fire burst slows the aircraft by only a few miles per hour in level flight.",
+      "shortDescription": "The GAU-8 itself weighs 620 lb (280 kg), but the complete weapon, with feed system and drum, weighs 4,029 lb (1,828 kg) with a maximum ammunition load.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The A-10 with its GAU-8/A gun entered service in 1977. It was produced by General Electric, though General Dynamics Armament and Technical Products has been responsible for production and support since 1997, when the division was sold by Lockheed Martin to General Dynamics .\n\nIn November 1988, the US Air Force sought to pursue the idea of a dedicated CAS F-16 using the GAU-8 Avenger cannon from the A-10. The 174th Tactical Fighter Wing was transitioned off of the A-10A to the F-16A/B Block 10, and during Desert Storm, their aircraft were equipped with the GPU-5/A Pave Claw pod housing the 30mm GAU-13/A , which was a four-barrel variant of the seven-barrel GAU-8 Avenger used by the A-10. These aircraft were redesignated F/A-16 and were the only F-16s equipped with this type of weapon. However, the F-16s suffered from poor accuracy (due to the less rigid pylon mounting and stronger vibrations when firing), lack of CCIP software, and faster flight speeds giving pilots less time to aim. The gun was found to be ineffective against point targets and less effective than cluster munitions for area targets, leading the Air Force to quickly abandon the plan.",
+      "shortDescription": "The A-10 with its GAU-8/A gun entered service in 1977.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Some of the GAU-8/A technology has been transferred into the smaller 25 mm GAU-12/U Equalizer , which was developed for the AV-8B Harrier II aircraft. The GAU-12 is about the same size as the 20 mm M61 . GE has also developed the GAU-13/A , a four-barreled weapon using GAU-8/A components, which has been tested in podded form as the GPU-5/A . The Avenger also forms the basis for the Dutch-developed Goalkeeper CIWS naval air-defense gun. No current or contemplated aircraft other than the A-10 carries the full-up Avenger system.",
+      "shortDescription": "Some of the GAU-8/A technology has been transferred into the smaller 25 mm GAU-12/U Equalizer , which was developed for the AV-8B Harrier II aircraft.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 202401,
+      "url": "https://en.wikipedia.org/wiki/GAU-8_Avenger",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Gatling-style autocannon\".",
+      "parameterUomValue": "Gatling-style autocannon",
+      "classification": "U",
+      "parameterValue": "Gatling-style autocannon",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"since 1977\".",
+      "parameterUomValue": "since 1977",
+      "classification": "U",
+      "parameterValue": "since 1977",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"United States Air Force (Avenger) ; Various navies (Goalkeeper)\".",
+      "parameterUomValue": "United States Air Force (Avenger) ; Various navies (Goalkeeper)",
+      "classification": "U",
+      "parameterValue": "United States Air Force (Avenger) ; Various navies (Goalkeeper)",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"General Electric\".",
+      "parameterUomValue": "General Electric",
+      "classification": "U",
+      "parameterValue": "General Electric",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"General Electric (1977–1997) ; General Dynamics (since 1997)\".",
+      "parameterUomValue": "General Electric (1977–1997) ; General Dynamics (since 1997)",
+      "classification": "U",
+      "parameterValue": "General Electric (1977–1997) ; General Dynamics (since 1997)",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Produced",
+      "parameterDescr": "Production period. Source text: \"since 1977\".",
+      "parameterUomValue": "since 1977",
+      "classification": "U",
+      "parameterValue": "since 1977",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Variants",
+      "parameterDescr": "Named variants of the base system. Source text: \"GAU-12/U Equalizer ; GAU-13/A\".",
+      "parameterUomValue": "GAU-12/U Equalizer ; GAU-13/A",
+      "classification": "U",
+      "parameterValue": "GAU-12/U Equalizer ; GAU-13/A",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"619.5 lb (281 kg)\".",
+      "parameterUomValue": "281 kg",
+      "classification": "U",
+      "parameterValue": "281",
+      "uom": "kg"
+    },
+    {
+      "seq": 1010,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"19 ft 10.5 in (6.06 m) (total system) ; 112.28 in (2.85 m) (gun only)\".",
+      "parameterUomValue": "6.06 m",
+      "classification": "U",
+      "parameterValue": "6.06",
+      "uom": "m"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Barrel length",
+      "parameterDescr": "Barrel length (descriptive text, not a unit-bearing quantity). Source text: \"90.5 in (2.30 m)\".",
+      "parameterUomValue": "90.5 in (2.30 m)",
+      "classification": "U",
+      "parameterValue": "90.5 in (2.30 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Width",
+      "parameterDescr": "Width (descriptive text, not a unit-bearing quantity). Source text: \"17.2 in (0.437 m) (barrels only)\".",
+      "parameterUomValue": "17.2 in (0.437 m) (barrels only)",
+      "classification": "U",
+      "parameterValue": "17.2 in (0.437 m) (barrels only)",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Cartridge",
+      "parameterDescr": "Cartridge (descriptive text, not a unit-bearing quantity). Source text: \"30×173 mm\".",
+      "parameterUomValue": "30×173 mm",
+      "classification": "U",
+      "parameterValue": "30×173 mm",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Caliber",
+      "parameterDescr": "Caliber (descriptive text, not a unit-bearing quantity). Source text: \"30 mm\".",
+      "parameterUomValue": "30 mm",
+      "classification": "U",
+      "parameterValue": "30 mm",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Barrels",
+      "parameterDescr": "Barrels (descriptive text, not a unit-bearing quantity). Source text: \"7-barrel (progressive RH parabolic twist, 24 grooves)\".",
+      "parameterUomValue": "7-barrel (progressive RH parabolic twist, 24 grooves)",
+      "classification": "U",
+      "parameterValue": "7-barrel (progressive RH parabolic twist, 24 grooves)",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Action",
+      "parameterDescr": "Action (descriptive text, not a unit-bearing quantity). Source text: \"Electrically controlled, hydraulic-driven\".",
+      "parameterUomValue": "Electrically controlled, hydraulic-driven",
+      "classification": "U",
+      "parameterValue": "Electrically controlled, hydraulic-driven",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Rate of fire",
+      "parameterDescr": "Rate of fire (descriptive text, not a unit-bearing quantity). Source text: \"3,900 rpm (variable)\".",
+      "parameterUomValue": "3,900 rpm (variable)",
+      "classification": "U",
+      "parameterValue": "3,900 rpm (variable)",
+      "uom": ""
+    },
+    {
+      "seq": 1018,
+      "parameter": "Muzzle velocity",
+      "parameterDescr": "Muzzle velocity (descriptive text, not a unit-bearing quantity). Source text: \"3,324 ft/s (1,010 m/s) (API)\".",
+      "parameterUomValue": "3,324 ft/s (1,010 m/s) (API)",
+      "classification": "U",
+      "parameterValue": "3,324 ft/s (1,010 m/s) (API)",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Effective firing range",
+      "parameterDescr": "Effective firing range (descriptive text, not a unit-bearing quantity). Source text: \"4,000 feet (1,220 m)\".",
+      "parameterUomValue": "4,000 feet (1,220 m)",
+      "classification": "U",
+      "parameterValue": "4,000 feet (1,220 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Maximum firing range",
+      "parameterDescr": "Maximum firing range (descriptive text, not a unit-bearing quantity). Source text: \"Over 12,000 feet (3,660 m)\".",
+      "parameterUomValue": "Over 12,000 feet (3,660 m)",
+      "classification": "U",
+      "parameterValue": "Over 12,000 feet (3,660 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Feed system",
+      "parameterDescr": "Feed system (descriptive text, not a unit-bearing quantity). Source text: \"Linkless feed system\".",
+      "parameterUomValue": "Linkless feed system",
+      "classification": "U",
+      "parameterValue": "Linkless feed system",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Ammo",
+      "parameterDescr": "Ammo (descriptive text, not a unit-bearing quantity). Source text: \"PGU-14/B API Armor Piercing Incendiary ( DU ) PGU-13/B HEI High explosive incendiary PGU-15/B TP Target Practice\".",
+      "parameterUomValue": "PGU-14/B API Armor Piercing Incendiary ( DU ) PGU-13/B HEI High explosive incendiary PGU-15/B TP Target Practice",
+      "classification": "U",
+      "parameterValue": "PGU-14/B API Armor Piercing Incendiary ( DU ) PGU-13/B HEI High explosive incendiary PGU-15/B TP Target Practice",
+      "uom": ""
+    }
+  ]
+}

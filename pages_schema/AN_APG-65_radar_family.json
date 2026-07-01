@@ -1,0 +1,91 @@
+{
+  "modelID": 2010,
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "AN/APG-65 radar family",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "AN/APG-65 radar family\n\nThe AN/APG-65 and AN/APG-73 are designations for a family of all-weather multimode airborne radar systems designed by Hughes Aircraft (now Raytheon) for the F/A-18 Hornet, and used on a variety of fighter aircraft types; the APG-73 on the F/A-18E/F Super Hornet has been replaced by the APG-79, initially intended to be an upgraded AESA version but eventually became a largely new radar design.\n\nThese I band (8 to 12 GHz) pulse-Doppler radar systems are designed for both air-to-air and air-to-surface missions. For air-to-air operations they incorporate a variety of search, track and track-while-scan modes to give the pilot a complete look-down/shoot-down capability. Air-to-surface modes include Doppler beam sharpened sector and patch mapping, medium range synthetic aperture radar, fixed and moving ground target track and sea surface search. In the F/A-18, the radar is installed in a slide-out nose rack to facilitate maintenance.",
+      "shortDescription": "of fighter aircraft types; the APG-73 on the F/A-18E/F Super Hornet has been replaced by the APG-79, initially intended to be an upgraded AESA version but eventually became a largely new radar design.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The APG-73 is a late 1980s \"upgrade of the APG-65 that provides higher throughputs, greater memory capacity, improved reliability, and easier maintenance\". To reduce production costs, many of the upgraded radar's modules are common with the APG-70 (F-15E Strike Eagle) radar; its software engineers chose the JOVIAL programming language so that they could borrow and adapt existing software written for the APG-70. When fitted with a motion-sensing subsystem and stretch waveform generator and special test equipment, the APG-73 can generate high resolution ground maps and make use of 'advanced' image correlation algorithms to enhance weapon designation accuracy.",
+      "shortDescription": "The APG-73 is a late 1980s \"upgrade of the APG-65 that provides higher throughputs, greater memory capacity, improved reliability, and easier maintenance\".",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The APG-65 was developed in the late 1970s and has been operational since 1983. The radar includes a velocity search (to provide maximum detection range capability against nose aspect targets), range-while-search (to detect all-aspect targets), track-while-scan (which, when combined with an autonomous missile such as AIM-120, gives the aircraft a fire-and-forget capability), single target track, gun director and raid assessment (which enables the operator to expand the region centred on a single tracked target, permitting radar separation of closely spaced targets) operating modes.\n\nAlthough no longer in production, the APG-65 remains in service in F/A-18 Hornet strike fighters of the U.S. Navy and Marine Corps, and the air forces of Canada, Kuwait, and Spain. It has also been adapted to upgrade the German and Greek F-4 Phantom aircraft, and the AV-8B Harrier II Plus for the U.S. Marine Corps and the Spanish and Italian Navies.\n\nSince 1992, the APG-73 has been operational in U.S. Navy and Marine Corps F/A-18C/D Hornet aircraft; early models of the U.S. Navy F/A-18E/F Super Hornet; and in the air forces of Finland, Switzerland, Malaysia, Canada, and Australia. A total of 932 APG-73 systems were delivered, with the final delivery in 2006.",
+      "shortDescription": "The APG-65 was developed in the late 1970s and has been operational since 1983.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 201001,
+      "url": "https://en.wikipedia.org/wiki/AN/APG-65_radar_family",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Hughes Aircraft (now Raytheon)\".",
+      "parameterUomValue": "Hughes Aircraft (now Raytheon)",
+      "classification": "U",
+      "parameterValue": "Hughes Aircraft (now Raytheon)",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Platform",
+      "parameterDescr": "Aircraft type(s) the system is fitted to. Source text: \"F/A-18 Hornet\".",
+      "parameterUomValue": "F/A-18 Hornet",
+      "classification": "U",
+      "parameterValue": "F/A-18 Hornet",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"All-weather multimode pulse-Doppler radar\".",
+      "parameterUomValue": "All-weather multimode pulse-Doppler radar",
+      "classification": "U",
+      "parameterValue": "All-weather multimode pulse-Doppler radar",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Frequency",
+      "parameterDescr": "Operating radio frequency. Source text: \"I band (8 to 12 GHz)\".",
+      "parameterUomValue": "12 GHz",
+      "classification": "U",
+      "parameterValue": "12",
+      "uom": "GHz"
+    },
+    {
+      "seq": 1005,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"1983 (APG-65); 1992 (APG-73)\".",
+      "parameterUomValue": "1983 (APG-65); 1992 (APG-73)",
+      "classification": "U",
+      "parameterValue": "1983 (APG-65); 1992 (APG-73)",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Units delivered",
+      "parameterDescr": "Total number of units delivered to customers. Source text: \"932 APG-73 systems delivered, final delivery in 2006\".",
+      "parameterUomValue": "932 units",
+      "classification": "U",
+      "parameterValue": "932",
+      "uom": "units"
+    }
+  ]
+}

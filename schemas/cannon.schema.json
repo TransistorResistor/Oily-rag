@@ -1,0 +1,151 @@
+{
+  "systemGroup": "Weapon",
+  "systemType": "Cannon",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Barrel length",
+      "uom": "",
+      "parameterDescr": "Barrel length (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Caliber",
+      "uom": "",
+      "parameterDescr": "Caliber (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 2
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 2
+    },
+    {
+      "parameter": "Effective firing range",
+      "uom": "",
+      "parameterDescr": "Effective firing range (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 2
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Mass",
+      "uom": "kg",
+      "parameterDescr": "Overall mass of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Muzzle velocity",
+      "uom": "",
+      "parameterDescr": "Muzzle velocity (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 2
+    },
+    {
+      "parameter": "Used by",
+      "uom": "",
+      "parameterDescr": "Known operators of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Action",
+      "uom": "",
+      "parameterDescr": "Action (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Ammo",
+      "uom": "",
+      "parameterDescr": "Ammo (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Barrels",
+      "uom": "",
+      "parameterDescr": "Barrels (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Cartridge",
+      "uom": "",
+      "parameterDescr": "Cartridge (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Feed system",
+      "uom": "",
+      "parameterDescr": "Feed system (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum firing range",
+      "uom": "",
+      "parameterDescr": "Maximum firing range (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Produced",
+      "uom": "",
+      "parameterDescr": "Production period.",
+      "count": 1
+    },
+    {
+      "parameter": "Rate of fire",
+      "uom": "",
+      "parameterDescr": "Rate of fire (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Shell",
+      "uom": "",
+      "parameterDescr": "Shell (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Variants",
+      "uom": "",
+      "parameterDescr": "Named variants of the base system.",
+      "count": 1
+    },
+    {
+      "parameter": "Width",
+      "uom": "",
+      "parameterDescr": "Width (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    }
+  ]
+}

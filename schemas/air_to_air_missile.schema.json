@@ -1,0 +1,163 @@
+{
+  "systemGroup": "Weapon",
+  "systemType": "Air-to-Air Missile",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Diameter",
+      "uom": "m",
+      "parameterDescr": "Body/airframe diameter.",
+      "count": 6
+    },
+    {
+      "parameter": "Engine",
+      "uom": "",
+      "parameterDescr": "Engine type and configuration.",
+      "count": 6
+    },
+    {
+      "parameter": "Guidance system",
+      "uom": "",
+      "parameterDescr": "Method(s) used to guide the weapon to its target.",
+      "count": 6
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 6
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 6
+    },
+    {
+      "parameter": "Mass",
+      "uom": "kg",
+      "parameterDescr": "Overall mass of the system.",
+      "count": 6
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "Mach",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 6
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 6
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 6
+    },
+    {
+      "parameter": "Warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and/or description.",
+      "count": 6
+    },
+    {
+      "parameter": "Wingspan",
+      "uom": "m",
+      "parameterDescr": "Wingspan or fin span.",
+      "count": 6
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 5
+    },
+    {
+      "parameter": "Launch platform",
+      "uom": "",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from.",
+      "count": 5
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 5
+    },
+    {
+      "parameter": "Detonation mechanism",
+      "uom": "",
+      "parameterDescr": "Fuzing/detonation method.",
+      "count": 4
+    },
+    {
+      "parameter": "Unit cost",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost in US dollars.",
+      "count": 3
+    },
+    {
+      "parameter": "Flight altitude",
+      "uom": "km",
+      "parameterDescr": "Operational flight altitude band.",
+      "count": 2
+    },
+    {
+      "parameter": "Produced",
+      "uom": "",
+      "parameterDescr": "Production period.",
+      "count": 2
+    },
+    {
+      "parameter": "Variants",
+      "uom": "",
+      "parameterDescr": "Named variants of the base system.",
+      "count": 2
+    },
+    {
+      "parameter": "Warhead weight",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead section.",
+      "count": 2
+    },
+    {
+      "parameter": "Wars",
+      "uom": "",
+      "parameterDescr": "Conflicts in which the system has seen use.",
+      "count": 2
+    },
+    {
+      "parameter": "Number built",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced.",
+      "count": 1
+    },
+    {
+      "parameter": "Propellant",
+      "uom": "",
+      "parameterDescr": "Rocket motor propellant type.",
+      "count": 1
+    },
+    {
+      "parameter": "Steering system",
+      "uom": "",
+      "parameterDescr": "Method used to steer/control the airframe in flight.",
+      "count": 1
+    },
+    {
+      "parameter": "Used by",
+      "uom": "",
+      "parameterDescr": "Known operators of the system.",
+      "count": 1
+    }
+  ]
+}

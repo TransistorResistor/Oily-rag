@@ -1,0 +1,175 @@
+{
+  "systemGroup": "Ammunition",
+  "systemType": "Cartridge",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Base diameter",
+      "uom": "",
+      "parameterDescr": "Base diameter (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Bullet diameter",
+      "uom": "",
+      "parameterDescr": "Bullet diameter (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Bullet mass/type",
+      "uom": "",
+      "parameterDescr": "Bullet mass/type (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Case length",
+      "uom": "",
+      "parameterDescr": "Case length (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Case type",
+      "uom": "",
+      "parameterDescr": "Case type (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 3
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 3
+    },
+    {
+      "parameter": "Land diameter",
+      "uom": "",
+      "parameterDescr": "Land diameter (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Neck diameter",
+      "uom": "",
+      "parameterDescr": "Neck diameter (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Overall length",
+      "uom": "",
+      "parameterDescr": "Overall length (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Primer type",
+      "uom": "",
+      "parameterDescr": "Primer type (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Rim diameter",
+      "uom": "",
+      "parameterDescr": "Rim diameter (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Rim thickness",
+      "uom": "",
+      "parameterDescr": "Rim thickness (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Shoulder diameter",
+      "uom": "",
+      "parameterDescr": "Shoulder diameter (descriptive text, not a unit-bearing quantity).",
+      "count": 3
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 3
+    },
+    {
+      "parameter": "Used by",
+      "uom": "",
+      "parameterDescr": "Known operators of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Case capacity",
+      "uom": "",
+      "parameterDescr": "Case capacity (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Designed",
+      "uom": "",
+      "parameterDescr": "Year design work began.",
+      "count": 2
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 2
+    },
+    {
+      "parameter": "Maximum pressure ( EPVAT )",
+      "uom": "",
+      "parameterDescr": "Maximum pressure ( EPVAT ) (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Parent case",
+      "uom": "",
+      "parameterDescr": "Parent case (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Rifling twist",
+      "uom": "",
+      "parameterDescr": "Rifling twist (descriptive text, not a unit-bearing quantity).",
+      "count": 2
+    },
+    {
+      "parameter": "Wars",
+      "uom": "",
+      "parameterDescr": "Conflicts in which the system has seen use.",
+      "count": 2
+    },
+    {
+      "parameter": "Maximum pressure ( C.I.P. )",
+      "uom": "",
+      "parameterDescr": "Maximum pressure ( C.I.P. ) (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum pressure ( NATO EPVAT )",
+      "uom": "",
+      "parameterDescr": "Maximum pressure ( NATO EPVAT ) (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum pressure ( SCATP 5.56 )",
+      "uom": "",
+      "parameterDescr": "Maximum pressure ( SCATP 5.56 ) (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Maximum pressure ( TM43-0001-27 )",
+      "uom": "",
+      "parameterDescr": "Maximum pressure ( TM43-0001-27 ) (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    }
+  ]
+}

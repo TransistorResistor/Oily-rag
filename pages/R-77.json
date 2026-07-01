@@ -1,0 +1,35 @@
+{
+  "title": "R-77",
+  "url": "https://en.wikipedia.org/wiki/R-77",
+  "category": "weapon",
+  "subcategory": "air_to_air",
+  "summary": "The Vympel NPO R-77 missile (NATO reporting name: AA-12 Adder) is a Russian active radar homing beyond-visual-range air-to-air missile. It is also known by its export designation RVV-AE, and is the Russian counterpart to the American AIM-120 AMRAAM missile.",
+  "specs": {
+    "Type": "Medium range radar guided air-to-air missile",
+    "In service": "1994 (R-77)",
+    "Manufacturer": "Molnija OKB, Artem, Vympel",
+    "Mass": "175 kg (R-77); 190 kg (R-77-1)",
+    "Length": "3.6 m (R-77); 3.71 m (R-77-1)",
+    "Diameter": "200 mm",
+    "Wingspan": "700 mm",
+    "Warhead": "22.5 kg HE fragmenting (R-77)",
+    "Detonation mechanism": "laser proximity fuse",
+    "Engine": "Solid fuel rocket motor (R-77)",
+    "Operational range": "R-77/RVV-AE: 80 km (50 mi); R-77-1/RVV-SD: 110 km (68 mi); R-77M: 190 km (120 mi)",
+    "Flight altitude": "5-25 km (16,000-82,000 ft)",
+    "Maximum speed": "Mach 4",
+    "Guidance system": "Transit guiding phase: inertial guidance with mid-course SARH and datalink update. Terminal homing: active radar homing / infrared homing (R-77T) / passive radiation homing (R-77P)",
+    "Launch platform": "MiG-21UPG, MiG-29, MiG-31BM, Su-27, Su-30, Su-34, Su-35, Su-57, J-11, Su-47, Mikoyan Project 1.44"
+  },
+  "sections": [
+    "Development",
+    "Design (aerodynamics, seeker/guidance)",
+    "Operational history",
+    "Variants",
+    "Operators",
+    "See also",
+    "References",
+    "Bibliography"
+  ],
+  "full_text": "The Vympel NPO R-77 missile (NATO reporting name: AA-12 Adder) is a Russian active radar homing beyond-visual-range air-to-air missile. It is also known by its export designation RVV-AE. It is the Russian counterpart to the American AIM-120 AMRAAM missile.\n\nThe R-77 was marked by a severely protracted development. Work began in the 1980s but was not completed before the dissolution of the Soviet Union. For many years, only the RVV-AE export model was produced. Production was further disrupted when the Russo-Ukrainian War resulted in a Ukrainian arms embargo against Russia, severing supply chains. The Russian Aerospace Forces finally entered the R-77-1 (AA-12B) into service in 2015, subsequently deployed by Su-35S fighters in Syria on combat air patrols. The export model of the R-77-1 is called RVV-SD.\n\nWork on the R-77 began in 1982 by \"Molnija OKB\" in the Ukrainian SSR. After the Soviet Union's dissolution, R-77 (Izdelie 170) missiles were produced at Kyiv's \"Artem\" plant. It was Ukraine's and later Russia's first multi-purpose fire-and-forget missile usable against targets from hovering helicopters to high-speed, low-altitude aircraft, and reportedly also usable against SAMs like the Patriot and other AAMs like AIM-120/AIM-54. It has a laser-triggered proximity fuze and expanding rod warhead. First seen at the 1992 Moscow Airshow, nicknamed \"Amraamski\" by Western journalists. The basic R-77 (izdeliye 170) and export RVV-AE (izdeliye 190) have an 80 km range. Vympel lacked adequate funding through the 1990s-2000s, and the basic R-77 is not thought to have entered significant Russian Aerospace Forces service.\n\nThe R-77 can be used by upgraded Su-27, MiG-29, and MiG-31 variants in Russian service, and by Chinese J-11/Su-30MKK variants. India was the first export customer (RVV-AE), with final batch delivered 2002.\n\nFurther variants under development include the RVV-AE-PD with a solid-fuel ramjet engine extending range to 120-160 km (equivalent to AIM-54 Phoenix class), a terminal infrared-homing seeker option, and the R-77M -- a longer, heavier upgrade with two-stage motor and improved seeker, intended for the Su-57, using an AESA seeker (9B-1103M2), conventional fins (replacing R-77's lattice/grid fins), and dual-pulse motor. A related ramjet variant K-77ME (izdeliye 180-BD) also exists. RVV-SD and RVV-MD (a R-73 derivative) were unveiled together at MAKS 2009, and are part of Russia's offering for India's MRCA competition.\n\nThe missile traditionally used vestigial cruciform wings with grid fins as tail control surfaces (similar to OTR-23 Oka and the US MOAB), which enhance turning ability (up to 150 deg/sec) at the cost of drag and radar cross-section; newer variants like izdeliye 180 use conventional fins instead. It uses a multi-function doppler-monopulse active radar seeker (OAO Agat). Over short ranges it launches in active fire-and-forget mode; at longer range it is guided by inertial autopilot with encoded datalink updates from the launch aircraft, switching to active radar within 20 km of the target.\n\nSince the 2022 invasion of Ukraine, Russia has used R-77-1s on Su-35s and Su-30SMs to shoot down Ukrainian jets that were outranged. In July 2025, The War Zone reported the R-77M's operational debut in Ukraine based on missile wreckage and Su-35S pylon photos showing R-77M, R-74M, and Khibiny-M ECM pods.\n\nVariants: R-77 (izdeliye 170, standard USSR-built), RVV-AE (izdeliye 190, export, 80km/22.5kg warhead), R-77-1 (izdeliye 170-1, streamlined nose, new seeker/fins), RVV-SD (export of R-77-1, 110km/22.5kg warhead), R-77M (izdeliye 180, Su-57/Su-35S, AESA seeker, conventional fins, dual-pulse motor), R-77P/RVV-PE (passive radiation homing), R-77T/RVV-TE (infrared homing), R-77-SRK (ship-to-air variant), R-77-ZRK/RVV-AE-ZRK (surface-to-air variant), R-77-PD/RVV-AE-PD (ramjet model), R-77-PD ZRK (surface-to-air ramjet variant), K-77ME (izdeliye 180-BD, ramjet R-77M).\n\nOperators include Algeria, Egypt, Eritrea, China, India (over 500 delivered 2014-15, 400 more ordered 2019, further RVV-SD batches in 2025), Indonesia, Kazakhstan, Russia, Serbia (32 R-77-1 ordered), Sudan, Syria, Uganda, Venezuela, Vietnam, and Yemen."
+}

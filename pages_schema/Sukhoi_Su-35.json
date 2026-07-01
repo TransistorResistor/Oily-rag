@@ -1,0 +1,367 @@
+{
+  "modelID": 2054,
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "Sukhoi Su-35",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Sukhoi Su-35 (Russian: Сухой Су -35; NATO reporting name: Flanker-E/M , occasionally nicknamed \" Super Flanker \" ) is the designation for two improved derivatives of the Su-27 air superiority fighter. They are single-seat, twin-engine, supermaneuverable, 4.5 generation air superiority fighters, designed by the Sukhoi Design Bureau and built by Sukhoi.",
+      "shortDescription": "Sukhoi Su-35 (Russian: Сухой Су -35; NATO reporting name: Flanker-E/M , occasionally nicknamed \" Super Flanker \" ) is the designation for two improved derivatives of the Su-27 air superiority fighter.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The type was originally developed by the Soviet Union from the Su-27 and was known as the Su-27M . It incorporated canards and a multi-function radar giving it multi-role capabilities. The first prototype made its maiden flight in June 1988. Following the dissolution of the Soviet Union, Sukhoi relabeled it Su-35 in hopes of attracting export orders. Fourteen aircraft were produced and used for tests and demonstrations; one example had thrust-vectoring engines and was in turn redesignated the Su-37. A sole Su-35UB two-seat trainer was also built in the late 1990s that resembled the Su-30MK family.\n\nIn 2003, Sukhoi embarked on a second \"deep\" modernization of the Su-27 to serve as an interim export aircraft awaiting the development of the Sukhoi PAK FA (Su-57) program. Also known as the Su-35, this version incorporates technology from the PAK FA program and has a redesigned cockpit and weapons-control system and features thrust-vectoring engines in place of the canards. The type made its first flight in February 2008. Although it was designed for export, the Russian Air Force became the launch customer in 2009, with the production version designated Su-35S. China's People's Liberation Army Air Force has also placed orders.\n\nThe first aircraft design to receive the Su-35 designation had its origins in the early 1980s, at a time when the Su-27 was being introduced into service with the Soviet Armed Forces. The definitive production version of the Su-27, which had the factory code of T-10S, started mass (\"serial\") production with the Komsomolsk-on-Amur Aircraft Production Association (KnAAPO) in 1983. The following year, this Su-27 version reached initial operational readiness with the Soviet Air Defence Forces. Having begun work on an upgraded Su-27 variant in 1982, the Sukhoi Design Bureau was instructed in December 1983 by the Soviet Council of Ministers to use the Su-27 as the basis for the development of the Su-27M (T-10M). Nikolay Nikitin would lead the design effort throughout much of the project's existence, under the oversight of General Director Mikhail Simonov, who had been the chief designer of the Su-27 along with Mikhail Pogosyan. [ citation needed ]\n\nWhile sharing broadly the blended wing-body design of the Su-27, the Su-27M is visibly distinguished from the basic version by the addition of canards, which are small lifting surfaces, ahead of the wings. First tested in 1985 using an experimental aircraft, the canards, in complement with the reshaped wing leading-edge extension, redirected the airflow in such a way so as to eliminate buffeting at high angles of attack and allowed the airframe to sustain 10- g manoeuvres (as opposed to 9 g on the Su-27) without additional structural reinforcement. More importantly, when working with the relaxed-stability design and the accompanying fly-by-wire flight-control system, the aerodynamic layout improved the aircraft's manoeuvrability and enabled it to briefly fly with its nose past the vertical while maintaining forward momentum. Because of this, theoretically, during combat the pilot could pitch the Su-27M up 120 degrees in under two seconds and fire missiles at the target. Other notable visible changes compared to the T-10S design included taller vertical tails, provisions for in-flight refuelling and the use of two-wheel nose undercarriage to support the heavier airframe.\n\nBesides the increase in manoeuvrability, another feature that distinguished the Su-27M from the original design was the new weapons-control system. The centrepiece of this system was the multi-function N011 Bars (literally \"Leopard\") phased-array radar with pulse-Doppler tracking that allowed it to detect targets below the horizon. First installed on the third prototype, the radar transformed the Su-27M from simply being an air-defence fighter into a multi-role aircraft capable of attacking ground targets. Compared to the N001 Myech (\"Sword\") radar of the Su-27, which could track 10 targets and only direct two missiles towards one target at a time, the new radar could track fifteen targets and direct missiles towards six of them simultaneously. The extra weight of the N011 radar at the front of the aircraft necessitated the addition of the canards; engineers would only later discover the aerodynamic advantages of these devices. In addition, an N012 self-defence radar was housed in the rearward-projecting tail boom, making the aircraft the first in the world to have such a radar. Other changes to the aircraft included the use of uprated turbofan engines, as well as the increased use of lightweight composites and aluminium-lithium alloys in the aircraft's structure.\n\nIn 1987, Sukhoi started converting the first prototype (designated T10M-1 ) from a T-10S airframe at its experimental plant in Moscow. Although it had canards, the first prototype, like several subsequent aircraft, lacked the many physical alterations of the new design. It made its first flight after conversion on 28 June 1988, piloted by Oleg Tsoi, followed by the second prototype in January 1989. Following the conversions of the two Su-27M prototypes, the actual production of the aircraft was transferred to the country's Far East where it was carried out by KnAAPO. The third aircraft ( T10M-3 ), which was the first new-built Su-27M and first to be constructed by KnAAPO, made its first flight in April 1992. By then, the Soviet Union had disintegrated, and the ensuing economic crisis in Russia throughout the 1990s meant that the original plan to mass-produce the aircraft between 1996 and 2005 was abandoned, with the aircraft to serve as experimental test-beds to validate the canards, the flight-control system and thrust-vectoring technology. In total, two prototypes, nine flying pre-production and three production aircraft were constructed by 1995; the production aircraft were delivered in 1996 to the Russian Air Force for weapons testing.\n\nBy the time of the disintegration of the Soviet Union, Sukhoi had been demonstrating the Su-27M to senior defence and government officials. With its debut to a Western audience at the 1992 Farnborough Airshow, the company redesignated the aircraft as Su-35. The aircraft subsequently made flying demonstrations overseas in an effort to attract export orders, starting in November 1993 with Dubai, where Viktor Pugachev flew it in a mock aerial engagement with an Su-30MK in front of spectators. The aircraft then flew in Berlin and Paris, and would be a regular feature at Moscow's MAKS Air Show. The Russian government cleared the aircraft for export during Sukhoi's unsuccessful sales campaign in South Korea during the late 1990s and early 2000s; the company also marketed the aircraft to Brazil, China and the United Arab Emirates.\n\nAs the flight-test programme of the Su-27M proceeded, engineers discovered that the pilot failed to maintain active control of the aircraft during certain manoeuvres, such as the Pugachev's Cobra. The eleventh Su-27M ( T10M-11 ) was therefore equipped with thrust-vectoring engine nozzles in 1995, and the resultant Su-37 technology demonstrator made its first flight on 2 April 1996. It also tested the enhanced N011M radar, as did the twelfth developmental Su-27M. The Su-37's ability to maintain a high angle of attack while flying at close to zero airspeed attracted considerable press attention. It later received different engines and updated fly-by-wire controls and cockpit systems for evaluation.\n\nApart from the single-seat design, a two-seat aircraft was also constructed. Working in cooperation with Sukhoi, KnAAPO's own engineers designed the Su-35UB so as to combine thrust-vectoring engines with features of the Su-27M. Modified from an Su-30MKK airframe, the aircraft made its first flight on 7 August 2000, and afterwards served as an avionics test-bed. While the original Su-27M never entered mass production due to a lack of funding, Sukhoi refined the Su-27M's use of canards and the Su-37's thrust-vectoring technology and later applied them to the Su-30MKI two-seat fighter for the Indian Air Force. The tenth Su-27M (T10M-10) also served as a test-bed for the Saturn AL-41F1 engine that is intended for the Sukhoi Su-57 (previously known under the acronym \"PAK FA\") jet fighter.\n\nWith the need to update Russia's aging fleet of Su-27 aircraft, Sukhoi and KnAAPO in 2002 started integrating glass cockpits and improved weapons-control systems (to accommodate a greater variety of weapons) to air force aircraft. The Su-27SM, as the modified aircraft is called, made its first flight in December 2002. The success of this project led Sukhoi in December 2003 to proceed with a follow-up \"deep\" modernization programme. Known internally as T-10BM, the programme was aimed at a more thorough redesign of the airframe to narrow the qualitative gap between Russian aircraft and foreign fourth-generation aircraft. The resultant design, also designated Su-35, would serve as an interim solution pending the introduction of the PAK FA fifth-generation fighter (which eventually became the Su-57), many features of which the aircraft would incorporate. The aircraft was primarily aimed at the export market, being offered by KnAAPO as a single-seat alternative to the two-seat Su-30MK variants built by Irkutsk Aviation Plant (IAP).\n\nIn many respects, the T-10BM design resembles the Su-27 more than the Su-27M. During tests of the thrust-vectoring engines and the Su-27M's aerodynamic layout, Sukhoi had concluded that the loss of manoeuvrability due to the removal of the canards – the addition of which imposed a weight penalty on the airframe – could be compensated for by the addition of thrust-vectoring nozzles. Industry progress in the fields of avionics and radars has also reduced the weight and size of such components, which shifts the centre of gravity of an aircraft rearward. Accordingly we saw SW, designers removed the canards (and the dorsal air brake) found on the Su-27M; the size of the vertical tails, aft-cockpit hump and tail boom were also reduced. With such changes, as well as the increased use of aluminium and titanium alloys and composites, designers had reduced the empty weight of the aircraft, while maintaining a similar maximum take-off weight to the Su-27M.\n\nFollowing the completion of design work, KnAAPO constructed the first prototype, which was finished in mid-2007. The prototype, Su-35-1, was then transferred to the Gromov Flight Research Institute at Zhukovsky Airfield, in preparation for its maiden flight. On 19 February 2008, Sergey Bogdan took the aircraft aloft for its 55-minute first flight from Zhukovsky. Bogdan later piloted the second prototype on its maiden flight on 2 October from KnAAPO's Dzyomgi Airport. The flight-test programme was expected to involve three flying prototypes, but on 26 April 2009, a day before its scheduled maiden flight, the fourth Su-35 (there's a static test aircraft) crashed during a taxi run at Dzyomgi Airport. The aircraft struck a barrier at the end of the runway and was destroyed by fire; the pilot ejected and sustained burn injuries. The cause of the accident was the failure of the engine management system, as a result of which the afterburner was not turned off.\n\nAlthough the Su-35 project was aimed primarily at the export market, the actual launch order for 48 Su-35S aircraft was placed by the Russian Defence Ministry at the 2009 MAKS Air Show (as part of a larger deal worth US$2.5 billion for 64 fighter aircraft). During the early stages of the flight-test programme, Sukhoi estimated that there was such a market for 160 aircraft, with a particular emphasis on Latin America, Southeast Asia and the Middle East. Some of the candidate countries, such as Algeria, Malaysia, and India, were already operators of the Su-30MK family. As the aircraft was to be available for export starting in 2010, During the type's international debut at the 2013 Paris Air Show, Mikhail Pogosyan, General Director of Sukhoi's parent company United Aircraft Corporation, stated that there was an estimated demand for 200 aircraft, split evenly between the domestic and export markets. It was not until the end of 2015 when the first export contract was signed with China; by then, the Russian government had placed a follow-up order for 50 aircraft.\n\nApart from the launch order at the 2009 MAKS Air Show, the Russian government and the state-owned Vnesheconombank development bank agreed to provide Sukhoi with capital for the aircraft's production. [ citation needed ] In November 2009, KnAAPO (which was renamed KnAAZ in 2013 after it became part of the Sukhoi Company) started manufacturing the first production aircraft, the general assembly of which was completed in October 2010; by then, pilots and engineers had successfully completed preliminary tests of the aircraft's systems. The first Su-35S took its maiden flight in May 2011, [ citation needed ] and would be delivered (along with other aircraft) to Akhtubinsk to start state joint tests with the Defence Ministry to prepare the aircraft for service. Because production of the Su-35S occurred alongside trials, some early-production aircraft were later modified as a result of such tests. In December 2018, United Aircraft Corporation has reported 100th serial Su-35S was produced at the Komsomolsk-on-Amur Aircraft Plant.\n\nInitially, one static and three flyable prototypes (bort no. 901, 902, 904) were built between 2007 and 2009. The third one (bort no. 904) was later destroyed when it crashed into a barrier during its taxi runs.\n\nThe first contract for 48 production aircraft was signed at the 2009 MAKS Air show in Moscow. [ citation needed ] In May 2011, Sukhoi delivered the first Su-35S to Akhtubinsk to conduct state joint tests with the Defence Ministry to prepare for operational service. The first of two stages of the trials commenced in August 2011. By March 2012, the two prototypes and four production aircraft were conducting flights to test the type's technical characteristics, which were assessed by the end of that year to have generally complied with requirements. [ citation needed ] A batch of six production aircraft was handed over in December 2012. In February 2013, five of these at the Gromov Flight Research Institute in Zhukovsky started the second stage of the trials, focusing on the Su-35's weapons and combat maneuverability.\n\nTwelve production Su-35Ss were delivered in December 2013, followed by another twelve production aircraft in February 2014, ten of which were handed over to the 23rd Fighter Aviation Regiment stationed in the Far East with the remaining two tasked with carrying out the final phase of state joint tests. The handover marked its official entry into operational service. Several Su-35Ss were later transferred to Lipetsk to further develop combat tactics and to train service personnel. The Russia's Su-35Ss are also permanently based at Besovets air base near the Finnish border, and at Centralnaya Uglovaya air base near Vladivostok.\n\nOn 20 September 2018, the U.S. imposed sanctions on China's Equipment Development Department and its director, Li Shangfu, for engaging in \"significant transactions\" with Rosoboronexport, specifically naming China's purchase of ten Su-35s in 2017 as well as S-400 surface-to-air missile system-related equipment in 2018.\n\nAccording to Kommersant , the Algerian military had requested a Su-35 for testing in February 2016 and that the country was satisfied with the fighter's flight characteristics and so Moscow is waiting for a formal application. On 27 December 2019, Algeria has reportedly signed a contract for 14 aircraft as part of large military deal that also includes purchase of Sukhoi Su-34 and Su-57 fighters. However, neither the Russian nor Algerian governments had confirmed at that time that such deal exists.\n\nIn 2025, Algeria took delivery of Su-35 fighters (out of a planned approximate two dozen) originally intended to fulfill the Egyptian contract but undelivered due to sanctions and pressure on Egypt. An An-124 transport aircraft was observed arriving at and loading Su-35s from Komsomolsk-On-Amur on 2 March 2025 and then landing at Aim El/Oum el Boughabi air base in Algeria, with at least two spotted flying and at least four ex-Egyptian Air Force order Su-35s seen with newly painted Algerian Air Force Roundels. They are believed to be based out of Ain Beda air force base under the 20th Multirole Wing.\n\nFollowing the Russian purchase of Iranian suicide drones during the invasion in Ukraine, the Islamic Republic of Iran Air Force (IRIAF) is reportedly considering the procurement of the Sukhoi Su-35 in exchange for further delivery of ammunition, drones and ballistic missiles to the Russian Armed Forces, according to US officials. It was also reported that training of Iranian pilots has begun in Spring 2022 and that the aircraft may be delivered in 2023. The deal may include 24 Su-35s originally built for Egypt, but no official reports of delivery have emerged so far. The deal was confirmed by Iranian state-owned media Tasnim News Agency on 28 December 2022 and on 15 January 2023 by an Iranian MP who said that supplies will begin in the spring and also said that Iran has ordered from Russia air defense and missile systems as well as helicopters.\n\nHowever, in July 2023, the Iranian Defense Minister, Mohammad-Reza Gharaei Ashtiani, made vague statements alluding that Iran is reconsidering the acquisition of the Su-35 due to increasing investment towards indigenous fighter building capabilities, leading to some sources to declare that the deal has collapsed. Despite this, the Iranian Air Force has received deliveries of the Yak-130 advanced jet trainer, which are used to train aspiring cadets before they graduate to actual fighter aircraft, such as the Su-35. The trainers have received Islamic Republic of Iran Air Force (IRIAF) livery and serial numbers. On 28 November 2023, Iran's deputy defense minister announced that Iran had finalized a deal for the purchase of Su-35 aircraft from Russia, although further details on the quantity or timeline were not shared. An order for 24 Su-35s was reported in April 2024, but these reports were denied by Iran's SNN media agency. In January 2025, Ali Shadmani, a senior commander in the Islamic Revolutionary Guards Corps, said that Su-35s had been purchased by Iran, without precising how many were procured and whether deliveries had started. An Iranian lawmaker said on 23 September 2025 that Su-35s are \"on the way\".\n\nLeaked documents from ROSTEC reveal that Ethiopia - a long time user of the Su-27 and the first to use them in combat - placed an order for six Su-35s as part of a modernization program. This follows on their orders for four to six Su-30Ks earlier in the decade, but thus far, no deliveries of Su-35s have been confirmed.\n\nThe New York Times alleges that Vietnam has been quietly pursuing Su-35 procurement, featuring sanctions evasion and indirect payments.\n\nWith the tender relaunched in 2007 as the F-X2 competition, the Brazilian Defence Ministry looked to purchase at least 36 aircraft – with a potential for 84 additional aircraft – to replace the country's A-1Ms, F-5BRs and Mirage IIIs. Among the participants were the F/A-18E/F Super Hornet, F-16BR, JAS Gripen NG, Dassault Rafale, Eurofighter Typhoon and the modernized Su-35. [ citation needed ] Although the Brazilian government eliminated the Su-35 in 2008, Rosoboronexport subsequently offered to sell the country 120 aircraft with full technology transfer, as well as participation in the PAK FA programme. In December 2013, the Gripen NG light fighter was selected because of its low cost and the transfer of technology to the Brazilian industry.\n\nIn March 2019, it was reported that Egypt would procure \"over two dozen\" Su-35s from Russia in a deal valued about $US2 billion, finalized in late 2018. Deliveries were expected to begin as early as 2020 or 2021. Deputy head of the Rosoboronexport Sergei Kornev denied the signing of any contract to supply Su-35s to Egypt. U.S. Secretary of State Mike Pompeo warned Egypt against buying Su-35s, saying \"if those systems were to be purchased, the CAATSA statute would require sanctions on the regime.\"\n\nOn 19 May 2020, Russia began Su-35 production for Egypt, and first five production aircraft took off from the KnAAZ plant on 28 July 2020. By June 2021, in total 17 aircraft were produced for Egypt. Egyptian newspaper Arabo reported on 5 January 2022, Egypt, Algeria and Indonesia announced that they would cancel their Su-35 orders with Russia. In March 2022, an agreement with the US to sell variants of F-15Es to the Egyptian Air Force was announced which confirms that Egypt either abandoned or cancelled the Su-35 deal and the planes originally produced for Egypt will be delivered to Iran instead. A contract needs to be finalized after price and delivery date are determined.\n\nIndia has been reluctant to order the Sukhoi/HAL FGFA due to high cost, and it has been reported that India and Russia are studying an upgrade to the Su-35 with stealth technology (similar to the F-15 Silent Eagle) as a more affordable alternative to the FGFA (Su-57). The aircraft is competing with 7 other aircraft in a fresh tender which is referred as MMRCA 2.0 in the Indian media, for the procurement of 114 multi-role combat aircraft. As of May 2026, the Indian Government has opted to procure more Dassault Rafales instead, with a total order of 114 being discussed and negotiated with the French side.\n\nIn 2014, Russia offered the Su-35 for Indonesia's Northrop F-5E replacement competition. In 2015, the Su-35 was selected based on the Indonesian Air Force's familiarity with the Su-27SK and Su-30MK2; the other competitors were the Eurofighter Typhoon, Dassault Rafale, F-16 and Saab JAS 39 Gripen. A contract for 11 aircraft was signed in February 2018; half of the US$1.14 billion price was to be being paid for in commodities. The first two aircraft were expected to be delivered in October.\n\nAs of May 2024, no aircraft have been delivered. In March 2020, Bloomberg reported the purchase was cancelled due to American pressure; Indonesia and Russia denied the cancellation. In December 2021, Chief of Staff of the Indonesian Air Force Air Chief Marshal Fadjar Prasetyo said that the purchase would be cancelled for budgetary reasons. In June 2023, the Indonesian Ministry of Defense reported that the purchase was hampered by the threat of American sanctions through CAATSA and OFAC. In May 2024, Jose Tavares, the Indonesian Ambassador to Russia, stated that the contract remained in force.\n\nIn July 2019, Russia offered the Su-35 to Turkey after it was removed from the F-35 program by United States due to the purchase of the S-400 missile system. CEO of Rostec Sergey Chemezov, said, \"If our Turkish colleagues express a desire, we are ready to work out the deliveries of Su-35 fighter jets\". Previously in May 2019, Sergey Chemezov had said that Russia was ready to cooperate with Turkey on the export and local production of the Su-57. In October 2019, the Turkish Minister of National Defense, Hulusi Akar, has denied any plans to acquire Flankers and has reiterated that Turkey is still a member of the F-35 program and that they merely want their rights respected. Turkey has since gone on to procure Eurofighter Typhoons and is working on an indigenous fifth-generation stealth fighter under the TAI TF KAAN project.\n\nIn 1996, Russia submitted the Su-27M and Su-37 for South Korea's F-X programme, which sought a 40-aircraft replacement for the Republic of Korea Air Force's F-4D/Es, RF-4Cs and F-5E/Fs. The two Russian designs competed against the Dassault Rafale, Eurofighter Typhoon and F-15K Slam Eagle. Sukhoi proposed a design which featured a phased-grid radar and thrust-vectoring engines, and offered full technology transfer as well as final assembly in South Korea. The US$5 billion contract would have been partially financed through a debt-reduction deal on money Russia owed to South Korea. However, the Su-27M was eliminated early in the competition, which was won by the F-15K.\n\nA country that had been reported to be a likely early export customer for the modernized Su-35 was Venezuela. The Venezuelan government of Hugo Chávez in July 2006 placed an order for 24 Su-30MK2s to replace its fleet of F-16s that were subjected to a US arms embargo. The aircraft were delivered to the Venezuelan Air Force from 2006 to 2008. [ citation needed ] The country was expected to follow up with a second order for the same type, or make a purchase of the Su-35. Despite subsequent reports that the Venezuelan government were interested in the aircraft and had placed an order for the Su-35.\n\nIn the mid-1990s, the United Arab Emirates evaluated the Su-27M, but later acquired the Mirage 2000 due to the country's close relationship with France. In February 2017, the country was to sign a preliminary agreement for the Su-35 purchase and also signed an agreement with Rostec, Russia's state-owned corporation responsible for the development of advanced industrial products, to develop a fifth-generation aircraft based on the MiG-29.\n\nPakistan was reportedly seeking to acquire a batch of at least 10 Su-35s in the mid 2010s, though there have been some denials from Russian officials on this. The Pakistan Air Force has more recently acquired the single engine J-10 fighter.\n\nLibya was also expected to be an early export customer for 12 to 15 Su-35s along with other Russian weapons; however, the civil war in Libya and the resulting military intervention cancelled such plans. Russia has also offered the modernized Su-35 to Malaysia, and Greece (a NATO Member) but no firm contracts have materialized, with Malaysia being occupied with another fighter project and unlikely to procure the modernized Su-35.",
+      "shortDescription": "The type was originally developed by the Soviet Union from the Su-27 and was known as the Su-27M .",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "While the Su-27M design had the avionics to give the aircraft the nominal designation as a multi-role fighter, flight tests with the Russian Air Force revealed difficulties in deploying the aircraft's armament efficiently. According to Aviation Week & Space Technology , air force pilots described weapons trials with the aircraft in Akhtubinsk and Lipetsk as a \"negative experience\", with a particular emphasis on the layout of the cockpit and its adverse impact on the workload of the single pilot. Designers, test pilots and avionics software specialists therefore worked together to redesign the cockpit and its attendant systems and improve the human-machine interface. The information management system of aircraft's avionics suite had been changed so that it now has two digital computers which process information from the flight- and weapons-control systems. The information is then displayed on two 9 in × 12 in (23 cm × 30 cm) multi-function liquid crystal displays, which replaced the smaller multi-function cathode-ray tube displays found on the Su-27M. The pilot can also view critical flight information on the head-up display, and is equipped with Hands On Throttle-And-Stick (HOTAS) controls.\n\nThe Su-35 employs the N035 Irbis-E (\"Snow Leopard\") passive electronically scanned array (PESA) radar, which is a further development of the N011M radar that had been evaluated on Su-27M test-beds and constitutes the core of the Su-35's weapons-control system. It is capable of detecting an aerial target up to 400 km (250 mi; 220 nmi) away, and can track thirty airborne targets and engage eight of them simultaneously; in addition, the multi-function radar is capable of providing high-resolution images of the ground using synthetic aperture mode. The aircraft is equipped with an OLS-35 optoelectronic targeting system ahead of the cockpit to provide other forms of tracking including infra-red search and track. For defences against enemy tracking, the Su-35 is equipped with the L175M Khibiny-M electronic countermeasure system, while engineers have applied radar-absorbent materials to the engine inlets and front stages of the engine compressor to halve the Su-35's frontal radar cross-section and minimise the detection range of enemy radars. The radar cross section of the Su-35 is reportedly 1 to 3 square meters. The multi-role Su-35 can deploy air-to-air missiles of up to 300-kilometre (190 mi) range, and can carry the heavy Oniks anti-ship cruise missile, as well as a multitude of air-to-ground weaponry.\n\nThe Su-35 is powered by a pair of Saturn AL-41F1S turbofan engines, formerly known as izdeliye (Product) 117S. A highly upgraded variant of the AL-31F, the AL-41F1S is closely related to the Su-57's Saturn AL-41F1 ( izdeliye 117), differing primarily in the engine control system. The engines are equipped with thrust-vectoring nozzles, which have their rotational axes canted at an angle; the nozzles operate in one plane for pitch, but the canting allows the aircraft to produce both roll and yaw by vectoring each engine nozzle differently; this configuration was first implemented on the Su-30MKI and is also used on the Su-57. The Su-35's thrust-vectoring system and integrated flight- and propulsion-control systems allow the aircraft to attain 9- g manoeuvres and \"supermaneuverability\", enabling it to perform post-stall manoeuvres at low speeds. This differs from Western air combat doctrine, which emphasises the maintenance of a fighter aircraft's kinetic energy. The engine gives the Su-35 the limited ability to sustain supersonic speed above Mach 1.1 without the use of afterburners, also known as \"supercruise\".\n\nOn 31 July 2021, a Su-35S fighter crashed after suffering an engine failure during a routine training mission in the Khabarovsk Territory in Russia, according to statement from the Russian Defence Ministry. According to a preliminary investigation reported by the Russian newspaper Top War, the Su-35 suffered technical malfunctions in the environment control systems that indicate heating and cooling functions. [ citation needed ]\n\nOn 28 March 2024, a Su-35 crashed into the sea off Sevastopol. The pilot is reported to have safely ejected.",
+      "shortDescription": "gn had the avionics to give the aircraft the nominal designation as a multi-role fighter, flight tests with the Russian Air Force revealed difficulties in deploying the aircraft's armament efficiently.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "In 1996, three production Su-27Ms were delivered to the air force's 929th State Flight Test Centre named for V. P. Chkalov (GLITs) at Vladimirovka air base [ru] , Akhtubinsk, to perform weapons trials. In 2001, the air force decided to transfer several Su-27Ms to re-equip the Russian Knights aerobatics team, and so the team's pilots took familiarisation flights with the aircraft. The three production and two other pre-production Su-27Ms arrived at the team's Kubinka air base near Moscow in 2003. However, they were used as a source of spare parts for other aircraft in the demonstration fleet.\n\nThe introduction of the Su-35S into the service with the Russian Aerospace Forces is a part of the Russia's state armament programme for 2011–2020 that was formulated following the war with Georgia in 2008 with an aim to significantly increase the number of modern military equipment in the Russian Armed Forces. The aircraft is delivered alongside the Su-30M2 and Su-30SM and the heavier Su-34 strike aircraft. The first two are domestic variants of KnAAPO's Su-30MK2 and Irkut's Su-30MKI two-seat export aircraft. According to reports, the simultaneous acquisition of three fighter derivatives of the original Su-27 was to support the two aircraft manufacturers amidst a slump in export orders. The Su-30M2 serves as a trainer aircraft for the Su-35.\n\nThe Su-35S attained full operational capability (FOC) in late 2018.\n\nIn July 2020, the Russian Knights aerobatic team received eight new Su-35Ss as an addition to its previously acquired Su-30SM aircraft.\n\nThe 185th Combat Training and Combat Application Center, also known as an aggressor squadron of the Russian Aerospace Forces, has received three new Su-35S on 9 September 2022.\n\nIn January 2016, Russia made the first combat deployment of the Su-35S when it sent four aircraft to Syria. This occurred following the increased tensions between Russia and Turkey as result of reported incursions by Russian aircraft into the Turkish airspace and the shooting down of a Russian Su-24 bomber by a Turkish F-16 fighter in November 2015. Its combat deployment to Syria helped to find and subsequently resolve number of problems, for example with the aircraft avionics. Su-35s in Syria have been seen carrying unguided bombs, with Russian sources claiming that the Su-35 has carried out strikes against ground targets using guided weapons.\n\nOn 20 August 2019, two Russian Aerospace Forces Su-35Ss, operating from the Khmeimim Air Base, intercepted two Turkish Air Force F-16s over the southern Idlib and forced them to leave the Syrian airspace. Russian Su-35Ss again intercepted several Israeli aircraft over southern Syria on 10 September 2019 and prevented them from carrying out airstrikes. Another interception allegedly occurred on 19 September 2019, when two Russian Su-35Ss intercepted Israeli aircraft preparing to attack suburbs of Damascus. On 15 October 2019, a Turkish F-16 fighter was intercepted by Russian Su-35Ss and forced to retreat as it was attempting to bomb the Syrian Democratic Forces's headquarters in Manbij. On 12 November 2019, Russian Su-35Ss intercepted an Israeli fighter during airstrikes on Damascus. On 7 December 2019, several Israeli aircraft were intercepted by Russian Su-35Ss and forced to retreat during an attempt to bomb the T-4 Airbase.\n\nRussian Su-30SM, MiG-31 and Su-35S fighters were used for air superiority missions during the war. By September 2022, at least seven air-to-air victories were confirmed over Ukrainian fighters and one over a Ukrainian Naval Aviation Mil Mi-14.\n\nOn 3 April 2022, a Russian Su-35S was shot down by Ukrainian forces, with the pilot ejecting and being captured; the pilot stated that his Su-35S was shot down near Izyum while battling Ukrainian air defenses.\n\nOn 19 July 2022, the Ukrainian Air Force command claimed that a Su-35 was shot down by Ukrainian air defences near Kakhovka, but at the time there were no photos confirming the loss. In early February 2023, photos of the crash site emerged, confirming the crashed plane was an Su-35S. [ better source needed ]\n\nOn 14 May 2023, a Ukrainian MIM-104 Patriot missile shot down a Su-35 fighter over Bryansk region. On 22 May 2023, another Ukrainian MIM-104 Patriot missile shot down a Su-35 over Bryansk region.\n\nOn 28 September 2023, a Russian S-300 surface-to-air missile shot down a friendly Su-35 near the Tokmak region. The preliminary report suggests the S-300 missile's fire control radar could not identify friend or foe, leading to a friendly fire incident that downed the Su-35.\n\nMinistry of Defense of Ukraine claimed that Ukrainian air defences shot down two Su-35s in February 2024. According to them this was its \"greatest results in downing Russian jets since October 2022\" when they claimed to have downed ten Su-34s and one A-50 that month.\n\nAccording to the International Institute for Strategic Studies in May 2023, Russia has lost more than five Su-35 fighters since the beginning of the Ukraine war, either to friendly fire, crashed or Ukrainian forces shooting down the aircraft using Western-supplied air defences.\n\nOn 7 June 2025, video emerged of a burning Russian Su-35 wreckage in the Kursk direction, with the Ukrainian Air Force stating it was shot down by Ukrainian forces.\n\nAs of early 2026, according to Rostec and as reported in , Su-35S has destroyed more targets in air-to-air combat than any other fighter type in the Russian Armed Forces. Estimates go as far 20+ downed Ukrainian jets, including Su-27 and Mig-29 air superiority fighter jets and Su-24 and Su-25 ground attack aircraft. No air to air losses have been confirmed for the Su-35 in the first four years of the invasion.\n\nIn May 2026, reports emerged alleging the loss of a Ukrainian F-16 to a Russian Su-35 in a long range engagement, though it is not clear with exactly which missile system this was done. There is no confirmation from Ukrainian or other sources as to the specific details of the engagement.\n\nDuring the early 1990s, sales arrangements for the Su-27M were discussed with China. In 1995, Sukhoi officials announced a co-production proposal contingent on Beijing's agreement to purchase 120 aircraft. However, the Russian Foreign Ministry allegedly blocked the sale of the Su-27M and Tupolev Tu-22M bomber over concerns about the arrangements for Chinese production of the Su-27 derivatives.\n\nIn November 2015, China became the Su-35's first export customer when the Russian and Chinese governments signed a contract worth $2 billion to buy 24 aircraft for the People's Liberation Army Air Force. This deal drew international commentaries due to its significance. David Ochmanek of RAND Corporation said the deal \"serves both countries\", as Russia relied on foreign sales to maintain its military production capacity, while China sought to enhance its military capabilities through the advanced weapon platforms such as the Su-35. However, the low number of purchases also signified that the deal was symbolic in nature, as the two countries are still competing over influence in Central Asia, according to Moritz Rudolf of Mercator Institute for China Studies. Ben Moores of IHS believed the Su-35 deal would be the last major order from China, as the Sino-Russian military cooperation saw \"very little action or real substance. China doesn't need Russia as much as Russia needs China.\"\n\nChinese officials had reportedly first shown interest in the Su-35 in 2006, it was not until Zhuhai Airshow 2010 that Alexander Mikheyev of the Rosoboronexport, the Russian state agency responsible for the export and import of defence products, signified that Russia was ready to start talks with China over the Su-35. Russian officials publicly confirmed that talks had been going on in 2012, when a protocol agreement on the purchase was signed. There were subsequent reports of the two countries signing a contract and of imminent deliveries, but negotiations would not actually conclude until 2015.\n\nSales discussions were protracted due to intellectual property rights concerns. China had reverse engineered the Su-27SK and Su-33 to create the J-11B and J-15, respectively, there were fears of China copying the airframe and offer the copied design on the export market. At one stage, Rosoboronexport demanded that China issue a legally binding guarantee against copying. Chinese industry was reportedly interested in the AL-41F1S engine and Irbis-E radar. According to The Diplomat , China held a specific interest in the Su-35's engine, and was already test-flying the J-11D, which reportedly has less range, payload, and maneuverability than the Su-35 but has an active electronically scanned array radar instead of the less advanced PESA radar of the Su-35. Rosoboronexport insisted on China purchasing a minimum of 48 aircraft to offset risks of copying; after the Kremlin intervened in 2012, the minimum quantity was lowered to 24. Another problem was China's insistence that the Su-35 include Chinese-made components and avionics. The Kremlin again intervened and conceded to this demand, allowed the deal to proceed; it was viewed as a major concession since the sales of such components are reportedly lucrative. The contract did not include any technology transfer.\n\nThe Chinese military received the first four aircraft in December 2016. Followed by the first delivery, the People's Liberation Army's website opined that with the J-20's commissioning, Russia understood that the Su-35 would \"lose its value on the Chinese market in the near future...we hope very much that Su-35 will be the last (combat) aircraft China imports.\" China has received a second batch of ten aircraft in 2017, and another ten in 2018. The Su-35S entered service with PLAAF in April 2018, and are based in Guangdong province in southeast China. In June 2019, Russia offered China a second batch of Su-35s. According to Asia Times , Chinese source remarked further purchase of Su-35 is not feasible as Russian jet offers little value over the Chinese J-16, due to the latter having superior radar, avionics and other equipment.\n\nFollowing the deployment to Syria of several new Russian military systems, various countries had reportedly expressed interest in the Su-35. These countries included Vietnam, Kazakhstan, North Korea, and Sudan (during the Sudanese president Omar Hassan al-Bashir's visitation of Moscow in November 2017).\n\nIn the mid-1990s, Brazilian and Russian authorities conducted talks on the possible acquisition of the Su-27M. In 2001, the Brazilian government launched the F-X tender, the objective of which was to procure at least 12 aircraft to replace the Brazilian Air Force's ageing aircraft, primarily the Mirage IIIs. Since the Brazilian government was also looking to develop the country's aerospace and defence industries, Sukhoi partnered with the Brazilian defence contractor Avibras during the tender. The two companies submitted the Su-27M to the US$700-million tender, and included an offset agreement wherein the Brazilian industry would have participated in the manufacturing of certain aircraft equipment. The tender was suspended in 2003 because of domestic political issues and then scrapped in 2005, pending the availability of new fighters. The Su-27M was preferred over the next favourite, the Mirage 2000BR; had the aircraft been purchased, it would have been the first heavy fighter delivered to Latin America.\n\nAlgerian Air Force - Out of the 25 that were produced for Egypt, nine are no longer visible on current satellite images. Two pieces were spotted in Algeria, and another six aircraft were observed on Russian soil in Algerian Air Force markings. Oum el Bouaghi Air Base, Oum el Bouaghi Province.\n\nOum el Bouaghi Air Base, Oum el Bouaghi Province.\n\nPeople's Liberation Army Air Force – 24 aircraft in inventory. 6th Aviation Brigade – Suixi air base, Guangdong\n\n6th Aviation Brigade – Suixi air base, Guangdong\n\nRussian Aerospace Forces – 110 aircraft in inventory as of December 2022. New deliveries conducted in June, July, September and October 2023 for a probable total quantity of 8 delivered aircraft. The final 2023 delivery was conducted in November and the first one for 2024 took place in April. The second delivery was conducted in May and the third one in November. For 2025, the first delivery was conducted in March, the second in May, the third (likely 3 aircraft) in June the fourth in August, the fifth in September, the sixth (likely 3 aircraft) in November, and the seventh in December. The third order for 30 aircraft finalized in August 2020 is to increase the total number to 128. The fourth contract was signed in 2021 for likely 24 aircraft through 2024. The fifth contract was signed after the start of the war in Ukraine. The first delivery for 2026 was conducted in late April and the second reportedly in late May. 23rd Fighter Aviation Regiment – Dzyomgi Airport, Khabarovsk Krai 22nd Guards Fighter Aviation Regiment – Centralnaya Uglovaya Air Base, Primorsky Krai 159th Fighter Aviation Regiment – Besovets Air Base, Republic of Karelia [ citation needed ] 790th Fighter Aviation Regiment – Borisovsky Khotilovo Air Base, Tver Oblast 4th Centre for Combat Employment and Retraining of Personnel – Lipetsk Air Base, Lipetsk Oblast 929th State Flight-Test Centre – Vladimirovka Air Base, Astrakhan Oblast Khmeimim Air Base, Latakia, Syria\n\n23rd Fighter Aviation Regiment – Dzyomgi Airport, Khabarovsk Krai\n\n22nd Guards Fighter Aviation Regiment – Centralnaya Uglovaya Air Base, Primorsky Krai\n\n159th Fighter Aviation Regiment – Besovets Air Base, Republic of Karelia [ citation needed ]\n\n790th Fighter Aviation Regiment – Borisovsky Khotilovo Air Base, Tver Oblast\n\n4th Centre for Combat Employment and Retraining of Personnel – Lipetsk Air Base, Lipetsk Oblast\n\n929th State Flight-Test Centre – Vladimirovka Air Base, Astrakhan Oblast\n\nKhmeimim Air Base, Latakia, Syria\n\nThe fourth Su-35BM prototype was destroyed in a high-speed taxi run on 26 April 2009 due to brake failure. The aircraft crashed into the barrier at the end of the runway and was destroyed. The pilot ejected and sustained burn injuries.",
+      "shortDescription": "In 1996, three production Su-27Ms were delivered to the air force's 929th State Flight Test Centre named for V.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 205401,
+      "url": "https://en.wikipedia.org/wiki/Sukhoi_Su-35",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Multirole fighter\".",
+      "parameterUomValue": "Multirole fighter",
+      "classification": "U",
+      "parameterValue": "Multirole fighter",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Soviet Union (Russia since 1991)\".",
+      "parameterUomValue": "Soviet Union (Russia since 1991)",
+      "classification": "U",
+      "parameterValue": "Soviet Union (Russia since 1991)",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"United Aircraft Corporation (for Su-35S)\".",
+      "parameterUomValue": "United Aircraft Corporation (for Su-35S)",
+      "classification": "U",
+      "parameterValue": "United Aircraft Corporation (for Su-35S)",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"Sukhoi Design Bureau\".",
+      "parameterUomValue": "Sukhoi Design Bureau",
+      "classification": "U",
+      "parameterValue": "Sukhoi Design Bureau",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Built by",
+      "parameterDescr": "Manufacturing sites/companies that produced the system under license or partnership. Source text: \"Sukhoi\".",
+      "parameterUomValue": "Sukhoi",
+      "classification": "U",
+      "parameterValue": "Sukhoi",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Status",
+      "parameterDescr": "Current operational status of the system. Source text: \"In service\".",
+      "parameterUomValue": "In service",
+      "classification": "U",
+      "parameterValue": "In service",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Primary users",
+      "parameterDescr": "Principal operator(s) of the system. Source text: \"Russian Aerospace Forces People's Liberation Army Air Force ; Algerian Air Force\".",
+      "parameterUomValue": "Russian Aerospace Forces People's Liberation Army Air Force ; Algerian Air Force",
+      "classification": "U",
+      "parameterValue": "Russian Aerospace Forces People's Liberation Army Air Force ; Algerian Air Force",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \"Su-27M: 12 ; Su-35S: 155+\".",
+      "parameterUomValue": "12 units",
+      "classification": "U",
+      "parameterValue": "12",
+      "uom": "units"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Manufactured",
+      "parameterDescr": "Date range during which the system was in production. Source text: \"Su-27M: 1987–1995 ; Su-35S: 2007–present\".",
+      "parameterUomValue": "Su-27M: 1987–1995 ; Su-35S: 2007–present",
+      "classification": "U",
+      "parameterValue": "Su-27M: 1987–1995 ; Su-35S: 2007–present",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"February 2014\".",
+      "parameterUomValue": "February 2014",
+      "classification": "U",
+      "parameterValue": "February 2014",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "First flight",
+      "parameterDescr": "Date of the type's first flight. Source text: \"Su-27M: 28 June 1988 ; 38 years ago ( 1988-06-28 ) ; Su-35S: 19 February 2008 ; 18 years ago ( 2008-02-19 )\".",
+      "parameterUomValue": "Su-27M: 28 June 1988 ; 38 years ago ( 1988-06-28 ) ; Su-35S: 19 February 2008 ; 18 years ago ( 2008-02-19 )",
+      "classification": "U",
+      "parameterValue": "Su-27M: 28 June 1988 ; 38 years ago ( 1988-06-28 ) ; Su-35S: 19 February 2008 ; 18 years ago ( 2008-02-19 )",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Developed from",
+      "parameterDescr": "Earlier system this design is derived from. Source text: \"Sukhoi Su-27\".",
+      "parameterUomValue": "Sukhoi Su-27",
+      "classification": "U",
+      "parameterValue": "Sukhoi Su-27",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Variant",
+      "parameterDescr": "Named variant of the base system. Source text: \"Sukhoi Su-37\".",
+      "parameterUomValue": "Sukhoi Su-37",
+      "classification": "U",
+      "parameterValue": "Sukhoi Su-37",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Crew",
+      "parameterDescr": "Number of crew required to operate the system. Source text: \"1\".",
+      "parameterUomValue": "1",
+      "classification": "U",
+      "parameterValue": "1",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"21.9 m (71 ft 10 in)\".",
+      "parameterUomValue": "21.9 m",
+      "classification": "U",
+      "parameterValue": "21.9",
+      "uom": "m"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"15.3 m (50 ft 2 in)\".",
+      "parameterUomValue": "15.3 m",
+      "classification": "U",
+      "parameterValue": "15.3",
+      "uom": "m"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Height",
+      "parameterDescr": "Overall height of the system. Source text: \"5.9 m (19 ft 4 in)\".",
+      "parameterUomValue": "5.9 m",
+      "classification": "U",
+      "parameterValue": "5.9",
+      "uom": "m"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Wing area",
+      "parameterDescr": "Total wing planform area. Source text: \"62 m 2 (670 sq ft)\".",
+      "parameterUomValue": "62 m2",
+      "classification": "U",
+      "parameterValue": "62",
+      "uom": "m2"
+    },
+    {
+      "seq": 1019,
+      "parameter": "Airfoil",
+      "parameterDescr": "Airfoil (descriptive text, not a unit-bearing quantity). Source text: \"5%\".",
+      "parameterUomValue": "5%",
+      "classification": "U",
+      "parameterValue": "5%",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Empty weight",
+      "parameterDescr": "Aircraft weight excluding fuel, payload, and crew. Source text: \"19,000 kg (41,888 lb)\".",
+      "parameterUomValue": "19000 kg",
+      "classification": "U",
+      "parameterValue": "19000",
+      "uom": "kg"
+    },
+    {
+      "seq": 1021,
+      "parameter": "Gross weight",
+      "parameterDescr": "Typical loaded weight for a standard mission. Source text: \"25,300 kg (55,777 lb) with 50% internal fuel\".",
+      "parameterUomValue": "25300 kg",
+      "classification": "U",
+      "parameterValue": "25300",
+      "uom": "kg"
+    },
+    {
+      "seq": 1022,
+      "parameter": "Max takeoff weight",
+      "parameterDescr": "Maximum certified takeoff weight. Source text: \"34,500 kg (76,059 lb)\".",
+      "parameterUomValue": "34500 kg",
+      "classification": "U",
+      "parameterValue": "34500",
+      "uom": "kg"
+    },
+    {
+      "seq": 1023,
+      "parameter": "Fuel capacity",
+      "parameterDescr": "Internal (and optionally external) fuel capacity. Source text: \"11,500 kg (25,400 lb) internal\".",
+      "parameterUomValue": "11,500 kg (25,400 lb) internal",
+      "classification": "U",
+      "parameterValue": "11,500 kg (25,400 lb) internal",
+      "uom": ""
+    },
+    {
+      "seq": 1024,
+      "parameter": "Powerplant",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating. Source text: \"2 × Saturn AL-41F1S afterburning turbofan engines, 86.3 kN (19,400 lbf) thrust each dry, 137.3 kN (30,900 lbf) with afterburner, 142.2 kN (32,000 lbf) in emergency power\".",
+      "parameterUomValue": "2 × Saturn AL-41F1S afterburning turbofan engines, 86.3 kN (19,400 lbf) thrust each dry, 137.3 kN (30,900 lbf) with afterburner, 142.2 kN (32,000 lbf) in emergency power",
+      "classification": "U",
+      "parameterValue": "2 × Saturn AL-41F1S afterburning turbofan engines, 86.3 kN (19,400 lbf) thrust each dry, 137.3 kN (30,900 lbf) with afterburner, 142.2 kN (32,000 lbf) in emergency power",
+      "uom": ""
+    },
+    {
+      "seq": 1025,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"2,400 km/h (1,490 mph, 1,290 kn) at altitude\".",
+      "parameterUomValue": "2,400 km/h (1,490 mph, 1,290 kn) at altitude",
+      "classification": "U",
+      "parameterValue": "2,400 km/h (1,490 mph, 1,290 kn) at altitude",
+      "uom": ""
+    },
+    {
+      "seq": 1026,
+      "parameter": "Cruise speed",
+      "parameterDescr": "Typical cruising speed. Source text: \"1,170 km/h (730 mph, 630 kn) / Mach 1.1 + supercruise at medium altitude\".",
+      "parameterUomValue": "1,170 km/h (730 mph, 630 kn) / Mach 1.1 + supercruise at medium altitude",
+      "classification": "U",
+      "parameterValue": "1,170 km/h (730 mph, 630 kn) / Mach 1.1 + supercruise at medium altitude",
+      "uom": ""
+    },
+    {
+      "seq": 1027,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"3,600 km (2,200 mi, 1,900 nmi) at altitude 1,580 km (982 mi) at sea level\".",
+      "parameterUomValue": "3600 km",
+      "classification": "U",
+      "parameterValue": "3600",
+      "uom": "km"
+    },
+    {
+      "seq": 1028,
+      "parameter": "Combat range",
+      "parameterDescr": "Range achievable on a representative combat mission profile. Source text: \"1,600 km (990 mi, 860 nmi) approx\".",
+      "parameterUomValue": "1600 km",
+      "classification": "U",
+      "parameterValue": "1600",
+      "uom": "km"
+    },
+    {
+      "seq": 1029,
+      "parameter": "Ferry range",
+      "parameterDescr": "Maximum range in ferry (long-range transit) configuration. Source text: \"4,500 km (2,800 mi, 2,400 nmi) with 2 external fuel tanks\".",
+      "parameterUomValue": "4500 km",
+      "classification": "U",
+      "parameterValue": "4500",
+      "uom": "km"
+    },
+    {
+      "seq": 1030,
+      "parameter": "Service ceiling",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement. Source text: \"18,000 m (59,000 ft)\".",
+      "parameterUomValue": "18000 m",
+      "classification": "U",
+      "parameterValue": "18000",
+      "uom": "m"
+    },
+    {
+      "seq": 1031,
+      "parameter": "g limits",
+      "parameterDescr": "Structural load factor limits. Source text: \"+ 9\".",
+      "parameterUomValue": "+ 9",
+      "classification": "U",
+      "parameterValue": "+ 9",
+      "uom": ""
+    },
+    {
+      "seq": 1032,
+      "parameter": "Rate of climb",
+      "parameterDescr": "Maximum sustained rate of climb. Source text: \"280 m/s (55,000 ft/min) +\".",
+      "parameterUomValue": "280 m/s",
+      "classification": "U",
+      "parameterValue": "280",
+      "uom": "m/s"
+    },
+    {
+      "seq": 1033,
+      "parameter": "Wing loading",
+      "parameterDescr": "Weight per unit wing area. Source text: \"408 kg/m 2 (84 lb/sq ft) With 50% fuel 500.8 kg/m 2 (102.6 lb/sq ft) with full internal fuel\".",
+      "parameterUomValue": "408 kg/m 2 (84 lb/sq ft) With 50% fuel 500.8 kg/m 2 (102.6 lb/sq ft) with full internal fuel",
+      "classification": "U",
+      "parameterValue": "408 kg/m 2 (84 lb/sq ft) With 50% fuel 500.8 kg/m 2 (102.6 lb/sq ft) with full internal fuel",
+      "uom": ""
+    },
+    {
+      "seq": 1034,
+      "parameter": "Thrust/weight",
+      "parameterDescr": "Thrust-to-weight ratio. Source text: \"1.13 with 50% fuel 0.92 with full internal fuel\".",
+      "parameterUomValue": "1.13 with 50% fuel 0.92 with full internal fuel",
+      "classification": "U",
+      "parameterValue": "1.13 with 50% fuel 0.92 with full internal fuel",
+      "uom": ""
+    },
+    {
+      "seq": 1035,
+      "parameter": "Guns",
+      "parameterDescr": "Internal gun armament. Source text: \"1 × internal 30 mm Gryazev-Shipunov GSh-30-1 autocannon with 150 rounds\".",
+      "parameterUomValue": "1 × internal 30 mm Gryazev-Shipunov GSh-30-1 autocannon with 150 rounds",
+      "classification": "U",
+      "parameterValue": "1 × internal 30 mm Gryazev-Shipunov GSh-30-1 autocannon with 150 rounds",
+      "uom": ""
+    },
+    {
+      "seq": 1036,
+      "parameter": "Hardpoints",
+      "parameterDescr": "Number and capacity of external weapon stations. Source text: \"12 hardpoints, consisting of 2 wingtip rails, and 10 wing and fuselage stations with a capacity of 8,000 kg (17,630 lb) of ordnance, with provisions to carry combinations of: Rockets: S-25 air-ground rocket S-13 air-ground rocket Missiles: Air-to-air missiles: 8 × R-27ER/ET 6 × R-73E/M 12 × R-77M/P/T/-1 6 × R-74 2 x R-37 Air-to-surface missiles: 6 × Kh-29L/TE 3 × 3M-14AE Anti-ship missiles: 3 × 3M-54AE1 6 × Kh-31A/AD Kh-35U 5 × Kh-59MK 1 × P-800 Oniks Anti-radiation missiles: 6 × Kh-31P/PD 5 × Kh-58UShE Bombs: 8 × KAB-500KR TV-guided bombs 8 × KAB-500L laser-guided bombs 8 × KAB-500OD guided bombs 8 × KAB-500S-E satellite-guided bombs 3 × KAB-1500KR TV-guided bombs 3 × KAB-1500L laser-guided bombs\".",
+      "parameterUomValue": "12 hardpoints, consisting of 2 wingtip rails, and 10 wing and fuselage stations with a capacity of 8,000 kg (17,630 lb) of ordnance, with provisions to carry combinations of: Rockets: S-25 air-ground rocket S-13 air-ground rocket Missiles: Air-to-air missiles: 8 × R-27ER/ET 6 × R-73E/M 12 × R-77M/P/T/-1 6 × R-74 2 x R-37 Air-to-surface missiles: 6 × Kh-29L/TE 3 × 3M-14AE Anti-ship missiles: 3 × 3M-54AE1 6 × Kh-31A/AD Kh-35U 5 × Kh-59MK 1 × P-800 Oniks Anti-radiation missiles: 6 × Kh-31P/PD 5 × Kh-58UShE Bombs: 8 × KAB-500KR TV-guided bombs 8 × KAB-500L laser-guided bombs 8 × KAB-500OD guided bombs 8 × KAB-500S-E satellite-guided bombs 3 × KAB-1500KR TV-guided bombs 3 × KAB-1500L laser-guided bombs",
+      "classification": "U",
+      "parameterValue": "12 hardpoints, consisting of 2 wingtip rails, and 10 wing and fuselage stations with a capacity of 8,000 kg (17,630 lb) of ordnance, with provisions to carry combinations of: Rockets: S-25 air-ground rocket S-13 air-ground rocket Missiles: Air-to-air missiles: 8 × R-27ER/ET 6 × R-73E/M 12 × R-77M/P/T/-1 6 × R-74 2 x R-37 Air-to-surface missiles: 6 × Kh-29L/TE 3 × 3M-14AE Anti-ship missiles: 3 × 3M-54AE1 6 × Kh-31A/AD Kh-35U 5 × Kh-59MK 1 × P-800 Oniks Anti-radiation missiles: 6 × Kh-31P/PD 5 × Kh-58UShE Bombs: 8 × KAB-500KR TV-guided bombs 8 × KAB-500L laser-guided bombs 8 × KAB-500OD guided bombs 8 × KAB-500S-E satellite-guided bombs 3 × KAB-1500KR TV-guided bombs 3 × KAB-1500L laser-guided bombs",
+      "uom": ""
+    }
+  ]
+}

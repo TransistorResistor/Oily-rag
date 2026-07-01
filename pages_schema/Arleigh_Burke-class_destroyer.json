@@ -1,0 +1,328 @@
+{
+  "modelID": 2015,
+  "systemGroup": "Naval Vessel",
+  "systemType": "Surface Combatant",
+  "nomenclature": "Arleigh Burke-class destroyer",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Arleigh Burke class of guided-missile destroyers (DDGs) is a United States Navy class of destroyers centered on the Aegis Combat System and the SPY-1D multifunction passive electronically scanned array radar . As of April 2026, [update] 75 ships are active, with 24 more planned to enter service, making it by far the most numerous class of warship in the U.S. Navy. The class is named after Arleigh Burke , an American destroyer admiral in World War II and later Chief of Naval Operations . With an overall length of 505 to 509.5 feet (153.9 to 155.3 m), displacement ranging from 8,300 to 9,700 tons, and weaponry including over 90 missiles, the Arleigh Burke -class destroyers are larger and more heavily armed than many previous classes of guided-missile cruisers .\n\nThese warships are multimission destroyers able to conduct antiaircraft warfare with Aegis and surface-to-air missiles ; tactical land strikes with Tomahawk missiles ; antisubmarine warfare (ASW) with towed array sonar , antisubmarine rockets , and ASW helicopters ; and antisurface warfare (ASuW) with ship-to-ship missiles and guns. With upgrades to their AN/SPY-1 radar systems and associated missile payloads as part of the Aegis Ballistic Missile Defense System , as well as the introduction of the AN/SPY-6 radar system, the class has also evolved capability as mobile antiballistic missile and antisatellite platforms. Arleigh Burke destroyers can also provide escort and screening towards larger warships and maritime transports, implement blockades around countries, and conduct minesweeping operations.\n\nThe lead ship of the class, USS Arleigh Burke , was commissioned during Admiral Burke's lifetime on 4 July 1991. With the decommissioning of the last Spruance -class destroyer, USS Cushing , on 21 September 2005, the Arleigh Burke -class ships became the U.S. Navy's only active destroyers until the Zumwalt class became active in 2016. The Arleigh Burke class has the longest production run of any U.S. Navy surface combatant .\n\nThe Arleigh Burke -class destroyer has four variants, referred to as \"Flights\". Newer Flights incorporate technological advancements.\n\nFlight I: DDGs 51–71\n\nDDGs 72–78\n\nDDGs 79–124 and DDG-127\n\nDDGs 125–126 and DDG-128 onward\n\nFlight I ship USS Fitzgerald with Tactical Towed Array Sonar (TACTAS) in the center of the fantail, Harpoon missile launchers, distinctive stacks, and no helicopter hangars\n\nFlight IIA ship USS Mustin without TACTAS and no Harpoon launchers, but with helicopter hangars and new exhaust stacks design\n\nFlight III ship USS Jack H. Lucas showing the larger AN/SPY-6 arrays, stacked rigid-hull inflatable boats, and slight exhaust stack modifications\n\nThe Arleigh Burke -class ships are among the largest destroyers built in the United States; only the Spruance , Kidd (563 ft or 172 m), and Zumwalt classes (600 ft or 180 m) are longer. The Arleigh Burke class was designed with a new, large, waterplane area hull form characterized by a wide, flaring bow, which significantly improves seakeeping and permits high speed in high sea states . The class's design incorporates stealth techniques , such as the angled (rather than traditional vertical) surfaces and the raked tripod mainmast, which make the ship more difficult to detect by radar.\n\nIts designers incorporated lessons from the Ticonderoga -class cruiser , which the Navy deemed too expensive to continue building and difficult to upgrade further. For these destroyers, the U.S. Navy returned to all-steel construction, with only the mast being made of aluminum. The Ticonderoga s combined a steel hull with a superstructure of lighter aluminum to reduce top weight, but the aluminum proved vulnerable to cracking. Aluminum is also less fire-resistant than steel; a 1975 fire aboard USS Belknap gutted her aluminum superstructure. Battle damage to Royal Navy ships exacerbated by their aluminum superstructures during the 1982 Falklands War supported the decision to use steel. Other lessons from the Falklands War led to the Navy's decision to protect the Arleigh Burke class's vital spaces with double-spaced steel layers, which create a buffer against anti-ship missiles (AShMs), and Kevlar spall liners. A design study called \" Cruiser Baseline \" was made for a ship that would incorporate the capabilities of the VLS-capable Ticonderoga class on a hull and superstructure designed to the same standards as the Arleigh Burke , although this study was for analytical purposes only and no such ship was built.\n\nArleigh Burke destroyers are equipped with AN/SLQ-32 electronic warfare (EW) suites that provide electronic support . Vessels with the SLQ-32(V)3, SLQ-32(V)6, or SLQ-32(V)7 variant can jam radars.\n\nThe destroyers have Mark 36 infrared and chaff decoy launchers, as well as Nulka decoy launchers, for spoofing incoming AShMs. For defeating incoming torpedoes, the class has two AN/SLQ-25 Nixie towed countermeasures. The ships' Prairie-Maskers can reduce their radiated noise.\n\nA collective protection system makes the Arleigh Burke class the first U.S. warships designed with an air-filtration system against nuclear, biological, and chemical warfare (NBC). Other NBC defenses include double air-locked hatches, pressurized compartments, and an external countermeasure washdown system. The class's electronics are hardened against electromagnetic pulses . Fire suppression equipment includes water sprinklers in the living quarters and the combat information center (CIC).",
+      "shortDescription": "Burke class of guided-missile destroyers (DDGs) is a United States Navy class of destroyers centered on the Aegis Combat System and the SPY-1D multifunction passive electronically scanned array radar .",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "Flights IIA and III—and modernized Flight I and II ships—can carry RIM-162 Evolved SeaSparrow Missiles (ESSMs), which provide medium-range air defense and are also capable of targeting other ships. ESSM is small enough to be quad-packed into a single Mk 41 VLS cell. ESSM Block 1 uses SARH, guided similarly to older SM-2s. ESSM Block 2, which achieved initial operating capability (IOC) in 2021, features a dual-mode seeker with ARH capability.\n\nThe SM-3 , SM-6, and SM-2ER Block IV provide Ballistic Missile Defense (BMD), the SM-3 being an exoatmospheric interceptor and the latter two having terminal phase anti-ballistic capability. So vital has the Aegis BMD role become that all ships of the class are being updated with BMD capability. By January 2023, there were 51 BMD-capable Arleigh Burke -class destroyers. Flight III ships have been delivered since 2023 with AN/SPY-6(V)1 radars and improved BMD capabilities; Flight IIA ships are also planned to receive these upgrades with AN/SPY-6(V)4 radar retrofits.\n\nFlights I and II carry two stand-alone Harpoon anti-ship missile launchers for a total of four or eight Harpoons, providing an anti-ship capability with a range in excess of 65 nautical miles (120 km; 75 mi). During Exercise RIMPAC 2024, DDG-62 , a Flight I ship, launched a Naval Strike Missile (NSM); the launchers for the Harpoons were removed to make room for the NSM's proprietary launch boxes. The Long Range Anti-Ship Missile could be used from the class's VLS, as it has been tested with the Self Defense Test Ship .\n\nThe class can perform tactical land strikes with VLS-launched Tomahawks . With the development of the Tomahawk Block V, all existing Block IV Tomahawks carried will be converted to the Block V. The Tomahawk Block Va version is called the Maritime Strike version, and it provides anti-ship capability in addition to its land attack role. The Block Vb version features the Joint Multi-Effects Warhead System for hitting a wider variety of land targets.\n\nThe Chief of Naval Operations (CNO) from 1970 to 1974, Admiral Elmo Zumwalt , sought to improve the U.S. Navy through modernization at minimal cost. Zumwalt's approach to the fleet was a \"high-low mix\"—a few high-end, high-cost warships supplemented by numerous low-end, low-cost warships. The introduction of the Aegis-equipped Ticonderoga -class cruiser in the early 1980s filled the high end. The Navy started work to develop a lower-cost Aegis-equipped vessel to fill the low end and replace the aging Charles F. Adams and Farragut class destroyers, along with the Leahy and Belknap class cruisers.\n\nIn 1980, the U.S. Navy initiated design studies with seven contractors. By 1983, the number of competitors had been reduced to three: Bath Iron Works , Ingalls Shipbuilding , and Todd Shipyards . On 3 April 1985, Bath Iron Works received a US$321.9 million contract to build the first of the class, USS Arleigh Burke . Gibbs & Cox was awarded the contract to be the lead ship design agent. The Navy contracted Ingalls Shipbuilding to build the second ship.\n\nPolitical restraints led to design restrictions, including the absence of helicopter hangars, a displacement limit of 8,300 tons, and a 50 ft (15 m) shorter hull than the Ticonderoga 's. To compensate for the limited length, a wide flaring bow was incorporated to maintain favorable seakeeping characteristics, and the originally planned 80,000-shaft-horsepower (shp) LM2500 gas turbines were upgraded to 100,000 shp. No main gun was included in the original design, later amended to include an OTO Melara 76 mm , before finally selecting the 5-inch/54-caliber Mark 45. Despite their constraints, the designers benefited from insight gained from previous classes; for example, they chose an all-steel superstructure to improve survivability.\n\nThe total cost of the first ship was $1.1 billion, the other $778 million being for the ship's weapons systems. USS Arleigh Burke was laid down by the Bath Iron Works at Bath, Maine , on 6 December 1988, and launched on 16 September 1989 by Mrs. Arleigh Burke. The Admiral himself was present at her commissioning ceremony on 4 July 1991, held on the waterfront in downtown Norfolk, Virginia . Procurement of Flight I ships continued through FY1992.\n\nThe second ship, ordered two years after Arleigh Burke , added a magazine for nine torpedoes and 150 sonobuoys adjacent to the helipad to allow for rearming of helicopters, as Arleigh Burke was only capable of refueling them. This change was duplicated for all other Flight I ships.\n\nThe Flight II iteration of the class was introduced in FY1992. The incorporation of the AN/SRS-1A(V) Combat Direction Finding enhanced detection of signals. The TADIX-B , JTIDS Command and Control Processor, and Link 16 improved communication with other assets. The SLQ-32 EW suite was upgraded to (V)3, and the SPS-67 (V)3 surface search radar was upgraded to (V)5. Flight II also gained the capability to launch and control the SM-2ER Block IV. An expansion of fuel capacity slightly increased the displacement.\n\nLater ships featured several additional modifications. Starting with USS Mason (DDG-87) , the original AN/SPS-73(V)12 navigation radar was replaced by the BridgeMaster E. New signature reduction measures were incorporated: the hangars of DDG-86 onward are made of composite materials , and the exhaust funnels of DDG-89 onward are shrouded by the superstructure. USS Pinckney (DDG-91) introduced the improved SPY-1D(V) radar, enhancing the ships' ability to filter out clutter and resist electronic attack. Ships of the class starting at this point were also slated to receive the new AN/SLY-2 AIEWS electronic warfare suite in lieu of AN/SLQ-32, which replaced the existing jammer arrays with new ones located in both former Phalanx positions. However, AIEWS was canceled in 2002 and no operational ship received it.\n\nDDGs 91–96 (USS Pinckney , USS Momsen , USS Chung-Hoon , USS Nitze , USS James E. Williams , and USS Bainbridge ) were built with superstructure differences to accommodate the AN/WLD-1 Remote Minehunting System (RMS). However, only Pinckney , Momsen , James E. Williams , [ citation needed ] and Bainbridge were installed with the system before the RMS program was canceled in March 2016.\n\nWork to design a retrofit stern flap for existing Flight I and II vessels modeled on that being used for Flight IIA began in 1996. It was first fitted to USS Curtis Wilbur (DDG-54) in February 2000 and was subsequently fitted to all Flight I and II ships. Trials conducted aboard USS Ramage (DDG-61) that year showed the retrofit flap increased speed by 0.9 knots and reduced fuel consumption by 5.3%.\n\nThe DDG-51 modernization program is designed to provide mid-life upgrades to ensure the destroyers remain effective with service lives of at least 35 years. Modernization of existing ships provides commonality with in-production ships. The program's goals are reduced manning, increased mission effectiveness, and reduced total cost. Mid-life modernization of Flight I and II ships is done in two phases: the first phase updates the hull, mechanical, and electrical (HM&E) systems, while the second phase focuses on Aegis Combat System upgrades and introduces an Open Architecture Computing Environment (OACE). By 2017, modernization technologies were introduced to in-production ships, and the Navy started modernization of Flight IIA ships through a single process that combines both phases of upgrading. The capabilities of modernized destroyers include CEC, Integrated Air and Missile Defense (IAMD), ESSM support, improved electronic support with Surface Electronic Warfare Improvement Program (SEWIP) Block 2, improved data processing with Boeing 's Gigabit Ethernet Data Multiplex System, and improvements to littoral warfare .\n\nFollowing the production restart in the 2010s, some Flight IIA ships have had a towed sonar array installed.\n\nIn July 2010, BAE Systems announced it had been awarded a contract to modernize 11 ships. In May 2014, USNI News reported that 21 of the 28 Flight I and II Arleigh Burke -class destroyers would not receive the full mid-life upgrade that included electronics and Aegis Baseline 9 software for SM-6 compatibility; instead, they would retain the basic BMD 3.6.1 software in a $170 million upgrade concentrating on HM&E systems, and on some ships, their anti-submarine suite. Seven Flight I ships—DDGs 51–53, 57, 61, 65, 69—received the full $270 million Baseline 9 upgrade. Deputy of surface warfare Dave McFarland said that this change was due to the budget cuts under the Budget Control Act of 2011 .\n\nIn 2016, the Navy announced it would begin outfitting 34 Flight IIA Arleigh Burke s with a hybrid-electric drive (HED) to lower fuel costs. The four LM2500 gas turbines of the class are most efficient at high speeds; an electric motor was to be attached to the main reduction gear to turn the drive shaft and propel the ship at speeds under 13 knots (24 km/h), such as during BMD or maritime security operations. Use of the HED for half the time could extend time on station by 2.5 days before refueling. In March 2018, the Navy announced the HED would be installed on USS Truxtun (DDG-103) to test the technology, but installation on additional destroyers would be halted due to changed budget priorities.\n\nAlso in 2016, four destroyers of the U.S. 6th Fleet based in Naval Station Rota, Spain (USS Carney , USS Ross , USS Donald Cook , and USS Porter ) received self-protection upgrades, replacing one of their two Phalanx CIWS with a SeaRAM CIWS, which combines the Phalanx sensor dome with an 11-cell RIM-116 launcher. This was the first time the system was paired with an Aegis ship. Another four ships (USS Arleigh Burke , USS Roosevelt , USS Bulkeley , and USS Paul Ignatius ) have since been forward-deployed to Rota and also received a SeaRAM.\n\nIn February 2018, Lockheed Martin received a contract to deliver its High Energy Laser with Integrated Optical-dazzler and Surveillance (HELIOS) system for installation onto an Arleigh Burke destroyer. HELIOS is a \"60+ kW\"-class laser, scalable to 120 kW, that can \"dazzle\" or destroy small boats and UAVs up to 8.0 km (5 mi) away. It would be the first laser weapon put on a warship. In November 2019, USS Dewey (DDG-105) had the Optical Dazzling Interdictor, Navy (ODIN) system installed. ODIN differs from the XN-1 LaWS previously mounted on USS Ponce in that ODIN functions as a dazzler, which blinds or destroys optical sensors on drones rather than shooting down the aircraft. HELIOS was delivered to the Navy in August 2022 and installed on USS Preble (DDG-88) . In 2024, Preble successfully tested its HELIOS against a cruise missile.\n\nAlso by 2018, all Arleigh Burke -class ships homeported in the Western Pacific were scheduled to have upgraded ASW systems, including the TB-37U MFTA replacing the AN/SQR-19 TACTAS.\n\nAbout 20 Flight IIA destroyers will undergo further modernization under the DDG MOD 2.0 program. DDG MOD 2.0 will backfit SPY-6(V)4 and Aegis Baseline 10 to provide capabilities similar to Flight III ships, as well as upgrade cooling systems to support the new radar. DDG MOD 2.0 will also deliver the AN/SLQ-32(V)7 EW suite, which adds the SEWIP Block 3 electronic attack subsystem. In May 2021, the Navy approved a \"Smart Start Plan\" for four ships—DDGs 91, 93, 95, 97—to make a gradual transition to DDG MOD 2.0. These ships will undergo a DDG MOD 1.5 phase that provides the SLQ-32(V)7; in 2023, DDG-91 became the first destroyer to receive SLQ-32(V)7. They will then receive the SPY-6(V)4, Aegis Baseline 10, and cooling system upgrades during a later depot modernization period.\n\nUSS Michael Murphy (DDG-112) was originally intended to be the last of the Arleigh Burke class. The Navy planned to shift production to the Zumwalt -class destroyer focusing on naval gunfire support and littoral operations. At a July 2008 hearing, however, Navy officials announced intentions to restart Arleigh Burke production in place of additional Zumwalt s, testifying to the latter's inability to counter emerging ballistic missiles, anti-ship missiles, and blue-water submarines. Arleigh Burke -class destroyers have been in production for longer than any other surface combatant class in the U.S. Navy's history.\n\nIn April 2009, the Navy announced a plan limiting the Zumwalt class to three units while ordering another three Arleigh Burke -class ships from both Bath Iron Works and Ingalls Shipbuilding. In December 2009, Northrop Grumman received a $170.7 million letter contract for USS John Finn (DDG-113) long lead-time materials. Shipbuilding contracts for DDG-113 to DDG-115 were awarded in mid-2011 for $679.6 million–$783.6 million; these do not include government-furnished equipment such as weapons and sensors, which took the average cost of the FY2011/12 ships to about $1.843 billion per vessel.\n\nDDGs 113 through 115 are \"restart\" ships, similar to previous Flight IIA ships, but including modernization features such as OACE and the TB-37U MFTA, which are being backfit onto previous ships.\n\nThe U.S. Navy was considering extending the acquisition of Arleigh Burke -class destroyers into the 2040s, according to revised procurement tables sent to Congress, with the procurement of Flight IV ships from 2032 through 2041. This was canceled to cover the cost of the Columbia -class submarines , with the air defense commander role retained on one cruiser per carrier strike group .\n\nIn April 2022, the Navy proposed a procurement plan for nine ships, with an option for a tenth, to build two ships a year from 2023 to 2027. Some lawmakers pushed to add a third ship to be built in 2023, bringing the total of the proposed deal to eleven ships. This would follow the Navy's two-ship-per-year procurement from 2018 to 2022.\n\nDDG-116 to DDG-124 and DDG-127 will be \"Technology Insertion\" ships with elements of Flight III. For example, USS Delbert D. Black (DDG-119) onward have the AN/SPQ-9B , a feature of Flight III, instead of the AN/SPS-67. Flight III proper began with the third ship procured in 2016, USS Jack H. Lucas (DDG-125).\n\nIn place of the canceled CG(X) program, the U.S. Navy began detailed design work on a DDG-51 Flight III design in FY2013. The Navy planned to procure 24 Flight III ships from FY2016 to FY2031. In June 2013, it awarded $6.2 billion in destroyer contracts. Costs for the Flight III ships increased as requirements for the program grew, particularly related to the planned Air and Missile Defense Radar (AMDR) needed for the IAMD role. An AMDR with a mid-diameter of 22 feet (6.7 m) had been proposed for CG(X), while the DDG-51 Flight III design could carry an AMDR with a mid-diameter of only 14 feet (4.3 m). The Government Accountability Office (GAO) found that the design would be \"at best marginally effective\" because of the \"now-shrunken radar\". The U.S. Navy disagreed with the GAO findings, stating that the DDG-51 hull was \"absolutely\" capable of fitting a large enough radar to meet requirements.\n\nThe Flight III's AN/SPY-6 AMDR with a mid-diameter of 14 feet (4.3 m) uses an active electronically scanned array with digital beamforming , compared to the previous passive electronically scanned array AN/SPY-1D with a mid-diameter of 12 feet (3.7 m). According to the SPY-6's contractor, Raytheon , the 37-RMA SPY-6(V)1 is 30 times more sensitive and capable of detecting objects \"half the size at twice the distance\" compared to the SPY-1D. The Flight III's SPY-6 is integrated with Aegis Baseline 10. The new radar also requires more power; the three-megawatt, 450 V AG9140 generators were upgraded to four-megawatt, 4,160 V AG9160 generators. Additionally, the air conditioning plants were upgraded to increase the ships' cooling capacity. The area near where the two rigid-hull inflatable boats (RHIBs) are stored was enclosed to accommodate additional crew, so the RHIBs are stacked. Other modifications include replacement of the Halon -based fire suppression system with a water mist system and strengthening of the hull to support the design's additional weight.\n\nFlight III achieved IOC in 2024. As of January 2025, [update] a total of 24 Flight III ships have been ordered. The U.S. Navy may procure up to 42 Flight III ships for an overall total of 117 ships of the class.\n\nFollowing the announcement of the Trump-class battleship , commander of the Naval Surface Force, Vice Admiral Brendan McLane , said the Flight III could no longer accommodate new systems, stating that the ship is now \"maxed out\" and that \"there is nothing else we can put on the ship\".\n\nIn April 2014, the U.S. Navy began the development of a new destroyer to replace the Arleigh Burke class called the \"Future Surface Combatant\". The new class is expected to enter service in the 2030s and initially serve alongside the Flight III Arleigh Burke s. The destroyer class will incorporate emerging technologies like lasers, onboard power-generation systems, increased automation, and next-generation weapons, sensors, and electronics. They will use technologies from other platforms, such as the Zumwalt -class destroyer, littoral combat ships , and the Gerald R. Ford -class aircraft carrier .\n\nThe Future Surface Combatant may place importance on the Zumwalt -class destroyer's electric drive system that provides propulsion while generating 58 megawatts of electrical power, levels required to operate future directed energy weapons . Initial requirements for the Future Surface Combatant emphasize lethality and survivability. The ships must also be modular to allow for inexpensive upgrades of weaponry, electronics, computing, and sensors over time as threats evolve. The Future Surface Combatant has evolved into the Large Surface Combatant, which became the DDG(X) . The Navy plans to procure the first DDG(X) in FY2032.",
+      "shortDescription": "Flights IIA and III—and modernized Flight I and II ships—can carry RIM-162 Evolved SeaSparrow Missiles (ESSMs), which provide medium-range air defense and are also capable of targeting other ships.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "Starting in 2025, the Navy will replace Phalanx CIWS on the destroyers with RIM-116 Rolling Airframe Missile (RAM) launchers to improve their point-defense capability. Arleigh Burke s with the latest Aegis baselines will receive the 21-cell Mk 49 RAM launcher; Arleigh Burke s with older Aegis software will receive the 11-cell SeaRAM. It is unclear if ships with two Phalanx CIWS or ships already in a Phalanx-SeaRAM configuration will retain one Phalanx.\n\nIn 2025, USS Bainbridge and USS Winston S. Churchill had been equipped with a pair of Block 3/Coyote drone launchers to counter UAVs.",
+      "shortDescription": "Starting in 2025, the Navy will replace Phalanx CIWS on the destroyers with RIM-116 Rolling Airframe Missile (RAM) launchers to improve their point-defense capability.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The Arleigh Burke class are multi-mission ships with numerous combat systems, including anti-aircraft missiles, land attack missiles, ship-to-ship missiles, and an anti-submarine warfare (ASW) system. Missiles are stored in and fired from Mark 41 Vertical Launching System (VLS) cells; with 90 cells on Flights I–II and 96 cells starting with Flight IIA, the Arleigh Burke s are more heavily armed than many preceding guided-missile cruiser classes. The Arleigh Burke -class destroyer is equipped with the Aegis Combat System , which combines information from the ship's sensors to display a coherent image of the environment and guides weapons to targets using advanced tracking and fire control.\n\nTheir main radar differs from traditional mechanically rotating radars. Instead, Aegis uses the AN/SPY-1 D passive electronically scanned array (or the AN/SPY-6 active electronically scanned array on Flight III ships), which allows continual tracking of targets simultaneous to area scans. The system's computer control also allows centralization of the previously separate tracking and targeting functions. The system is resistant to electronic countermeasures .\n\nThe Standard Missile SM-2MR / ER and SM-6 provide area air defense, though they may also be used in a secondary anti-ship role. The SM-2 uses semi-active radar homing (SARH); up to three targets may be simultaneously intercepted as the Arleigh Burke s have three AN/SPG-62 fire-control radars for terminal target illumination. The SM-6, which provides over-the-horizon defense, and the SM-2 Block IIIC feature a dual-mode seeker with active radar homing (ARH) capability; they do not have to rely on external illumination, so more targets may be intercepted simultaneously.\n\nArleigh Burke -class ships have the AN/SQQ-89 ASW combat system, which is integrated with Aegis. It encompasses the AN/SQS-53C bow-mounted sonar and a towed array sonar, though several Flight IIA ships do not have a towed array. The towed array is either the AN/SQR-19 Tactical Towed Array Sonar (TACTAS) or the newer TB-37U Multi-Function Towed Array (MFTA). The ships can carry standoff RUM-139 vertical launch anti-submarine rockets . A Mark 32 triple torpedo tubes mount on each side of the ship can fire Mark 46 , Mark 50 , or Mark 54 lightweight torpedoes for short-range ASW. The ships can detect anti-ship mines at a range of about 1,400 meters.\n\nAll ships of the class are fitted with at least one Phalanx close-in weapon system (CIWS), which provides point defense against air and surface threats. Eight ships ( DDG-51 , DDG-64 , DDG-71 , DDG-75 , DDG-78 , DDG-80 , DDG-84 , DDG-117 ) are equipped with one SeaRAM CIWS for improved self-defense. Arleigh Burke s can also carry two 25 mm Mk 38 machine gun systems , one on each side of the ship, designed to counter fast surface craft. There are numerous mounts for crew-served weapons like the M2 Browning .\n\nLocated on the forward deck is the 5-inch (127 mm) Mark 45 gun . Directed by the Mark 34 Gun Weapon System , it can be used in anti-ship, anti-air, and naval gunfire support roles. It can fire 16–20 rounds per minute and has a range of 13 nautical miles (24 km). Arleigh Burke s can stow 680 5-inch rounds.\n\nAs of 2026, eight destroyers ( DDG-97 , DDG-100 , DDG-101 , DDG-104 , DDG-105 , DDG-106 , DDG-111 , DDG-113 ) have been equipped with the Optical Dazzling Interdictor, Navy (ODIN), a directed energy weapon that can target unmanned vehicles. DDG-88 is equipped with the higher-power High Energy Laser with Integrated Optical-dazzler and Surveillance (HELIOS).\n\nFlights IIA and III have two hangars for stowing MH-60 helicopters. Their Light Airborne Multi-Purpose System (LAMPS) helicopter system improves the ship's capabilities by enabling the MH-60 to monitor submarines and surface ships, launch torpedoes and missiles against them, and provide fire support during insertions/ extractions with machine guns and Hellfire anti-armor guided missiles. The helicopters also serve in a utility role, able to perform vertical replenishment , search and rescue , medical evacuation , communications relay, and naval gunfire spotting and control.\n\nIn March 2022, an Arleigh Burke destroyer was deployed with an AAI Aerosonde unmanned aerial vehicle (UAV). The aircraft is under demonstration for Flight I and II ships, which do not have accommodations for permanently storing helicopters. The Aerosonde has a small enough footprint to be stowed on those destroyers. It can perform missions such as intelligence, surveillance, and reconnaissance at a much lower cost than manned helicopters.\n\nThe class saw its first combat action through Tomahawk Land Attack Missile (TLAM) strikes against Iraq. During 3–4 September 1996, USS Laboon and USS Russell launched thirteen and eight TLAMs, respectively, as part of Operation Desert Strike . In December 1998, Arleigh Burke -class destroyers again performed TLAM strikes as part of Operation Desert Fox . Eleven Arleigh Burke s supported carrier strike groups engaged in Operation Iraqi Freedom , which included TLAM launches against ground targets during the operation's opening stages in 2003.\n\nIn October 2011, the Navy announced that four Arleigh Burke -class destroyers would be forward-deployed in Europe to support the NATO missile defense system . The ships, to be based at Naval Station Rota , Spain, were named in February 2012 as Ross , Donald Cook , Porter , and Carney . By reducing travel times to station, this forward deployment allows for six other destroyers to be shifted from the Atlantic in support of the Pivot to East Asia . Russia threatened to quit the New START treaty over this deployment, calling it a threat to its nuclear deterrent. In 2018, CNO Admiral John Richardson criticized the policy of keeping six highly mobile BMD platforms \"in a little tiny box, defending land\", a role that he believed could be performed equally well at less cost by shore-based systems.\n\nIn October 2016, the Arleigh Burke -class destroyers Mason and Nitze were deployed to the coast of Yemen after a UAE auxiliary ship was struck in an attack for which Houthi rebels claimed responsibility. On 9 October, while in the Red Sea , Mason detected two anti-ship missiles fired from Houthi-controlled territory headed toward herself and nearby USS Ponce . Mason launched two SM-2s, one ESSM, and a Nulka decoy. One AShM was confirmed to have struck the water on its own, and it is unknown if the second missile was intercepted or hit the water on its own. On 12 October, in the Bab-el-Mandeb strait, Mason again detected an inbound anti-ship missile, which was intercepted at a range of 8 miles (13 km) by an SM-2. On 13 October, Nitze conducted TLAM strikes that destroyed three Houthi radar sites used in the previous attacks. Back in the Red Sea, Mason experienced a third attack on 15 October with five AShMs. She fired SM-2s and decoys, destroying or neutralizing four missiles. Nitze neutralized the fifth missile with a radar decoy.\n\nOn 7 April 2017, the Arleigh Burke -class destroyers Ross and Porter conducted a TLAM strike against Shayrat Airfield, Syria, in response to Syrian President Bashar al-Assad 's chemical attack on his people three days prior. The ships fired a total of 59 Tomahawk missiles. On 14 April 2018, Laboon and Higgins conducted another TLAM strike against Syria. They fired seven and twenty-three TLAMs, respectively. The strike targeted chemical weapon sites as part of a continued effort against Assad's use of chemical warfare. The Arleigh Burke -class destroyers Donald Cook and Winston S. Churchill took positions in the Mediterranean prior to the 2018 strike to mislead defending forces.\n\nIn October and November 2023, the Arleigh Burke -class destroyers USS Carney and USS Thomas Hudner , while deployed in the Red Sea, shot down numerous drones and missiles. On 19 October, Carney shot down at least three cruise missiles and eight drones that were potentially targeting Israel. On 15 and 22 November, Thomas Hudner shot down numerous drones launched by Houthi rebels from Yemen. On 27 November, Carney detected two ballistic missile launches from Houthi-controlled territory headed towards herself and nearby M/V Central Park ; they splashed ten nautical miles away. On 29 November, Carney intercepted another Houthi missile. On 30 December, USS Gravely shot down two anti-ship ballistic missiles fired from Houthi-controlled territory at herself and nearby container ship Maersk Hangzhou . On 30 January 2024, a Houthi anti-ship cruise missile fired toward the Red Sea came within one mile of Gravely ; she used her Phalanx CIWS to shoot down the missile.\n\nDuring the Iranian strikes on Israel on 13 April 2024, USS Arleigh Burke and USS Carney fired four to seven SM-3s, shooting down at least three Iranian ballistic missiles. This was the first time the SM-3 was employed in combat. On 1 October, USS Bulkeley and USS Cole fired 12 SM-3 and SM-6 missiles against Iranian ballistic missiles.\n\nDuring the 2026 Iran War on 11 April 2026, USS Frank E. Peterson and USS Michael Murphy conducted a minesweeping operation within the Strait of Hormuz to remove naval mines previously laid by the Islamic Revolutionary Guard Corps . In the following days on 13 April, the U.S. Navy announced a naval blockade would be implemented towards ships entering or exiting Iranian ports. On 19 April, USS Spruance , while participating in the naval blockade, opened fire on Touska , disabling and capturing the ship following attempts at stopping the vessel.\n\nUSS Cole was damaged on 12 October 2000 while docked in Aden , Yemen, by an attack in which a shaped charge of 200–300 kg in a boat was placed against the hull and detonated by suicide bombers , killing 17 crew members. The ship was repaired and returned to duty in 2001.\n\nOn 12 August 2012, USS Porter collided with the oil tanker MV Otowasan near the Strait of Hormuz; there were no injuries. The U.S. Navy removed Porter ' s commanding officer from duty. Repairs took two months at a cost of $700,000.\n\nOn 17 June 2017, USS Fitzgerald (DDG-62) collided with the MV ACX Crystal cargo ship near Yokosuka, Japan. Seven sailors drowned. Following an investigation, the ship's commanding officer, executive officer, and Command Master Chief Petty Officer were relieved of their duties. In addition, close to a dozen sailors were given non-judicial punishment for losing situational awareness. Repairs were originally to be completed by the summer of 2019. However, initial repairs were made by February 2020. After the subsequent sea trials, she was brought in for additional repairs. The ship departed for her home port in June 2020.\n\nOn 21 August 2017, USS John S. McCain collided with the container ship Alnic MC . The collision injured 48 sailors and killed 10, whose bodies were all recovered by 27 August. The cause of the collision was determined to be poor communication between the two ships and the bridge crew lacking situational awareness. In the aftermath, the ship's top leadership, including the commanding officer, executive officer, and Command Master Chief Petty Officer, were removed from command. In addition, top leadership of the U.S. Seventh Fleet, including the commander, Vice Admiral Joseph Aucoin, were relieved of their duties due to a loss of confidence in their ability to command. Other commanders who were relieved included Rear Admiral Charles Williams, commander of Task Force 70, and Captain Jeffrey Bennett, commodore of Destroyer Squadron 15. This was the third incident involving a U.S. Navy ship in 2017, with a repair cost of over $100 million.\n\nBuilders: 40 units constructed by General Dynamics, Bath Iron Works Division , and 35 by Huntington Ingalls Industries (formerly Northrop Grumman Ship Systems ), Ingalls Shipbuilding\n\nAN/SPY-1 radar and Aegis Combat System integrator: Lockheed Martin\n\nAN/SPY-6 radar: Raytheon\n\nDestroyer classes based on the Arleigh Burke have been adopted by the following naval forces:\n\nThe Japanese Maritime Self-Defense Force : Atago -class destroyer Kongō -class destroyer Maya -class destroyer\n\nAtago -class destroyer\n\nKongō -class destroyer\n\nMaya -class destroyer\n\nThe Republic of Korea Navy : Sejong the Great -class destroyer\n\nSejong the Great -class destroyer",
+      "shortDescription": "The Arleigh Burke class are multi-mission ships with numerous combat systems, including anti-aircraft missiles, land attack missiles, ship-to-ship missiles, and an anti-submarine warfare (ASW) system.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Work on a much-improved variant known as Flight III began in 1988. It was of a flush deck configuration and had a 40 ft (12 m) plug amidships to provide greater volume for combat systems and to increase the class's operational radius. Its main improvements were in ASW performance, with a helipad sized for V-22 Osprey along with hangars and support facilities for two embarked SH-60B LAMPS III helicopters and compatibility with the under-development RUM-125 Sea Lance . The ship's AAW performance was also enhanced, with 32 additional VLS cells forward, Cooperative Engagement Capability (CEC), integrated Anti-Ship Missile Defense systems, and air warfare commander facilities to coordinate the actions of a carrier strike group in air defense, as was found on the Ticonderoga -class cruisers . The new AN/SAR-8 also provided the ship with an infrared search and track capability for defense against sea-skimming missiles, and fiber optical cables replaced copper cables to improve bandwidth and reduce weight gain. To power the increased equipment load, the AG9130 ship service gas turbine generator sets were replaced with the newer AG9140, increasing power generation from 2,500 kW to 3,000 kW each. New 18 ft (5.5 m) diameter propellers were also introduced, replacing the extant 17 ft (5.2 m) diameter models in order to reduce fuel consumption and cavitation . Incorporating lessons learned from the attacks on USS Stark in 1987 and USS Samuel B. Roberts in 1988 , five blast-resistant bulkheads were incorporated into the ship to improve damage containment. Flight III was designed with several upgrades to be added on later ships, including new flank and towed sonar arrays, intercooled recuperated gas turbines, and an improved fire-control system.\n\nThe first Flight III was planned to be procured as the last ship of fiscal year (FY) 1994. However, as tensions decreased throughout 1989 and 1990, the need for such a high-performance ship diminished. Flight III was canceled in December 1990 as a cost-reduction measure, saving $75 million per ship.\n\nDevelopment of Flight IIA began shortly after Flight III's demise, with the Destroyer Variant study beginning in mid-1991. These designs were intended to be far more economical than Flight III in light of the less intense warfare they were expected to be used in, while still retaining Flight III's helicopter facilities. Due to the expectation of lower-intensity warfare, the Harpoon missile launchers and AN/SQR-19 TACTAS were to be removed, with reinstallation possible given two years' notice. The Phalanx CIWS systems were also to be removed, pending the availability of RIM-162 ESSM . Most of the resultant designs from this study placed an increased emphasis on land attack, littoral warfare, and reduced operating costs. Almost all featured a reduced cell count, and some even used a smaller hull. Despite this emphasis during the study phase, the selected design was one that did not compromise on the ship's existing performance beyond the mandated deletion of Harpoon and TACTAS.\n\nFlight IIA was first procured in FY 1994 and featured numerous improvements used on Flight III. The two hangars and support facilities for LAMPS helicopters remained, albeit located differently in two hangars outboard of the aft VLS module. To accommodate the hangars, the length was increased to 509.5 ft (155.3 m), and the rear-facing SPY-1D arrays are mounted one deck (8 ft (2.4 m)) higher to prevent a blind spot, as had been done on Flight III for the same reason. CEC, fiber optical data cables, redesigned propellers, blast-resistant bulkheads, and AG9140 ship service generators were also carried over from Flight III. New to Flight IIA was the Kingfisher mine detection system, the replacement of the Strikedown cranes with six additional VLS cells, and a stern flap to reduce fuel consumption. Phalanx was temporarily retained due to developmental issues that delayed ESSM, only being removed starting with USS McCampbell (DDG-85) . This was later partially reversed; starting with USS Gravely (DDG-107) , all ships would have an aft Phalanx CIWS, and all ships lacking one were to be modified as such by 2013.\n\nCongressional concerns over the retirement of the Iowa -class battleships saw the Navy begin a program to field the Extended Range Guided Munition (ERGM) for the DDG-51 class in 1996. The ERGM was to extend the range of the class's 5-inch Mark 45 to 63 nautical miles (117 km), but required modifications to the gun. The longer 5-inch/62-caliber (127 mm) Mark 45 Mod 4 gun was installed starting with USS Winston S. Churchill (DDG-81) . However, the ERGM was canceled in 2008.\n\nIn FY2019, the Navy started a program to procure the Mod 4 variant of the Mark 38 machine gun system to address \"unmanned aerial systems (UAS) and high speed maneuverable unmanned surface vehicle (USV) threats.\" Mod 4 will incorporate the 30 mm Mk44 Bushmaster II instead of the 25 mm M242 Bushmaster of previous variants. The Mk 38 Mod 4 is planned to be fielded on Flight IIA and III Arleigh Burke -class destroyers.\n\nIn October 2020, National Security Advisor Robert C. O'Brien said that all three Flights of the Arleigh Burke -class destroyer would field the Common-Hypersonic Glide Body (C-HGB) missile developed under the Conventional Prompt Strike program. However, the C-HGB is expected to be around 3 ft (0.91 m) wide, making it too large to fit in Mk 41 VLS tubes or on deck launchers. Installing them on Arleigh Burke destroyers would require removing some Mk 41 cells to accommodate the larger weapon, an expensive and time-consuming process. There is criticism of this idea: the oldest Flight I ships would need a service life extension to justify refit costs that would only prolong their service lives a short time when they are already more expensive to operate, and the newest Flight III ships that are optimized for BMD would be given a new, complex mission requiring a major refit shortly after introduction.",
+      "shortDescription": "Work on a much-improved variant known as Flight III began in 1988.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 201501,
+      "url": "https://en.wikipedia.org/wiki/Arleigh_Burke-class_destroyer",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Name",
+      "parameterDescr": "Name (descriptive text, not a unit-bearing quantity). Source text: \"Arleigh Burke class\".",
+      "parameterUomValue": "Arleigh Burke class",
+      "classification": "U",
+      "parameterValue": "Arleigh Burke class",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Builders",
+      "parameterDescr": "Builders (descriptive text, not a unit-bearing quantity). Source text: \"Ingalls Shipbuilding; Bath Iron Works\".",
+      "parameterUomValue": "Ingalls Shipbuilding; Bath Iron Works",
+      "classification": "U",
+      "parameterValue": "Ingalls Shipbuilding; Bath Iron Works",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Operators",
+      "parameterDescr": "Operators (descriptive text, not a unit-bearing quantity). Source text: \"United States Navy\".",
+      "parameterUomValue": "United States Navy",
+      "classification": "U",
+      "parameterValue": "United States Navy",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Preceded by",
+      "parameterDescr": "Preceded by (descriptive text, not a unit-bearing quantity). Source text: \"Kidd class; Spruance class\".",
+      "parameterUomValue": "Kidd class; Spruance class",
+      "classification": "U",
+      "parameterValue": "Kidd class; Spruance class",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Succeeded by",
+      "parameterDescr": "Succeeded by (descriptive text, not a unit-bearing quantity). Source text: \"Zumwalt class; DDG(X)\".",
+      "parameterUomValue": "Zumwalt class; DDG(X)",
+      "classification": "U",
+      "parameterValue": "Zumwalt class; DDG(X)",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Cost",
+      "parameterDescr": "Cost (descriptive text, not a unit-bearing quantity). Source text: \"US$2.2 billion per ship (FY2024)\".",
+      "parameterUomValue": "US$2.2 billion per ship (FY2024)",
+      "classification": "U",
+      "parameterValue": "US$2.2 billion per ship (FY2024)",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Built",
+      "parameterDescr": "Built (descriptive text, not a unit-bearing quantity). Source text: \"1988–2011, 2013–present\".",
+      "parameterUomValue": "1988–2011, 2013–present",
+      "classification": "U",
+      "parameterValue": "1988–2011, 2013–present",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "In commission",
+      "parameterDescr": "In commission (descriptive text, not a unit-bearing quantity). Source text: \"1991–present\".",
+      "parameterUomValue": "1991–present",
+      "classification": "U",
+      "parameterValue": "1991–present",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Planned",
+      "parameterDescr": "Planned (descriptive text, not a unit-bearing quantity). Source text: \"99\".",
+      "parameterUomValue": "99",
+      "classification": "U",
+      "parameterValue": "99",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "On order",
+      "parameterDescr": "On order (descriptive text, not a unit-bearing quantity). Source text: \"13\".",
+      "parameterUomValue": "13",
+      "classification": "U",
+      "parameterValue": "13",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Building",
+      "parameterDescr": "Building (descriptive text, not a unit-bearing quantity). Source text: \"10\".",
+      "parameterUomValue": "10",
+      "classification": "U",
+      "parameterValue": "10",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Completed",
+      "parameterDescr": "Completed (descriptive text, not a unit-bearing quantity). Source text: \"77\".",
+      "parameterUomValue": "77",
+      "classification": "U",
+      "parameterValue": "77",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Active",
+      "parameterDescr": "Active (descriptive text, not a unit-bearing quantity). Source text: \"Total 75 :; Flight I: 21; Flight II: 7; Flight IIA: 34; Flight IIA Restart: 3; Flight IIA Technology Insertion: 9; Flight III: 1\".",
+      "parameterUomValue": "Total 75 :; Flight I: 21; Flight II: 7; Flight IIA: 34; Flight IIA Restart: 3; Flight IIA Technology Insertion: 9; Flight III: 1",
+      "classification": "U",
+      "parameterValue": "Total 75 :; Flight I: 21; Flight II: 7; Flight IIA: 34; Flight IIA Restart: 3; Flight IIA Technology Insertion: 9; Flight III: 1",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Retired",
+      "parameterDescr": "Retired (descriptive text, not a unit-bearing quantity). Source text: \"0\".",
+      "parameterUomValue": "0",
+      "classification": "U",
+      "parameterValue": "0",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Guided-missile destroyer\".",
+      "parameterUomValue": "Guided-missile destroyer",
+      "classification": "U",
+      "parameterValue": "Guided-missile destroyer",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Displacement",
+      "parameterDescr": "Displacement (descriptive text, not a unit-bearing quantity). Source text: \"Fully loaded:; Flight I: 8,300 long tons (8,400 t ); Flight II: 8,400 long tons (8,500 t); Flight IIA: 9,500 long tons (9,700 t); Flight III: 9,700 long tons (9,900 t)\".",
+      "parameterUomValue": "Fully loaded:; Flight I: 8,300 long tons (8,400 t ); Flight II: 8,400 long tons (8,500 t); Flight IIA: 9,500 long tons (9,700 t); Flight III: 9,700 long tons (9,900 t)",
+      "classification": "U",
+      "parameterValue": "Fully loaded:; Flight I: 8,300 long tons (8,400 t ); Flight II: 8,400 long tons (8,500 t); Flight IIA: 9,500 long tons (9,700 t); Flight III: 9,700 long tons (9,900 t)",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"Flights I & II: 505 ft (154 m); Flights IIA & III: 509.5 ft (155.3 m)\".",
+      "parameterUomValue": "154 m",
+      "classification": "U",
+      "parameterValue": "154",
+      "uom": "m"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Beam",
+      "parameterDescr": "Beam (descriptive text, not a unit-bearing quantity). Source text: \"66 ft (20 m)\".",
+      "parameterUomValue": "66 ft (20 m)",
+      "classification": "U",
+      "parameterValue": "66 ft (20 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Draft",
+      "parameterDescr": "Draft (descriptive text, not a unit-bearing quantity). Source text: \"31 ft (9.4 m)\".",
+      "parameterUomValue": "31 ft (9.4 m)",
+      "classification": "U",
+      "parameterValue": "31 ft (9.4 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Installed power",
+      "parameterDescr": "Installed power (descriptive text, not a unit-bearing quantity). Source text: \"Flights I & II: 3 × AG9130 generator sets (2,500 kW (3,400 hp) each, 450 V); Flight IIA: 3 × AG9140 generator sets (3,000 kW (4,000 hp) each, 450 V); Flight III: 3 × AG9160 generator sets (4,000 kW (5,400 hp) each, 4,160 V)\".",
+      "parameterUomValue": "Flights I & II: 3 × AG9130 generator sets (2,500 kW (3,400 hp) each, 450 V); Flight IIA: 3 × AG9140 generator sets (3,000 kW (4,000 hp) each, 450 V); Flight III: 3 × AG9160 generator sets (4,000 kW (5,400 hp) each, 4,160 V)",
+      "classification": "U",
+      "parameterValue": "Flights I & II: 3 × AG9130 generator sets (2,500 kW (3,400 hp) each, 450 V); Flight IIA: 3 × AG9140 generator sets (3,000 kW (4,000 hp) each, 450 V); Flight III: 3 × AG9160 generator sets (4,000 kW (5,400 hp) each, 4,160 V)",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Propulsion",
+      "parameterDescr": "Propulsion (descriptive text, not a unit-bearing quantity). Source text: \"4 × General Electric LM2500 gas turbines each generating 26,250 bhp (19,570 kW);; coupled to two shafts, each driving a five-bladed reversible controllable-pitch propeller ;; Total output: 105,000 bhp (78,000 kW)\".",
+      "parameterUomValue": "4 × General Electric LM2500 gas turbines each generating 26,250 bhp (19,570 kW);; coupled to two shafts, each driving a five-bladed reversible controllable-pitch propeller ;; Total output: 105,000 bhp (78,000 kW)",
+      "classification": "U",
+      "parameterValue": "4 × General Electric LM2500 gas turbines each generating 26,250 bhp (19,570 kW);; coupled to two shafts, each driving a five-bladed reversible controllable-pitch propeller ;; Total output: 105,000 bhp (78,000 kW)",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Speed",
+      "parameterDescr": "Speed (descriptive text, not a unit-bearing quantity). Source text: \"In excess of 30 knots (56 km/h; 35 mph)\".",
+      "parameterUomValue": "In excess of 30 knots (56 km/h; 35 mph)",
+      "classification": "U",
+      "parameterValue": "In excess of 30 knots (56 km/h; 35 mph)",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"4,400 nmi (8,100 km; 5,100 mi) at 20 knots (37 km/h; 23 mph)\".",
+      "parameterUomValue": "8100 km",
+      "classification": "U",
+      "parameterValue": "8100",
+      "uom": "km"
+    },
+    {
+      "seq": 1024,
+      "parameter": "Boats & landing craft carried",
+      "parameterDescr": "Boats & landing craft carried (descriptive text, not a unit-bearing quantity). Source text: \"2 × rigid-hull inflatable boats\".",
+      "parameterUomValue": "2 × rigid-hull inflatable boats",
+      "classification": "U",
+      "parameterValue": "2 × rigid-hull inflatable boats",
+      "uom": ""
+    },
+    {
+      "seq": 1025,
+      "parameter": "Complement",
+      "parameterDescr": "Complement (descriptive text, not a unit-bearing quantity). Source text: \"Flight I: 303 total; Flight IIA: 23 officers, 300 enlisted\".",
+      "parameterUomValue": "Flight I: 303 total; Flight IIA: 23 officers, 300 enlisted",
+      "classification": "U",
+      "parameterValue": "Flight I: 303 total; Flight IIA: 23 officers, 300 enlisted",
+      "uom": ""
+    },
+    {
+      "seq": 1026,
+      "parameter": "Sensors & processing systems",
+      "parameterDescr": "Sensors & processing systems (descriptive text, not a unit-bearing quantity). Source text: \"AN/SPY-1 D PESA 3D radar (Flight I, II, IIA); AN/SPY-6 (V)1 AESA 3D radar (Flight III); AN/SPS-67 (V)3 or (V)5 surface search radar (DDG-51 – DDG-118); AN/SPQ-9B surface search radar (DDG-119 onward); AN/SPS-73(V)12 surface search/navigation radar (DDG-51 – DDG-86); BridgeMaster E surface search/navigation radar (DDG-87 onward); 3 × AN/SPG-62 fire-control radar; Mk 46 optical sight system (Flight I, II, IIA); Mk 20 electro-optical sight system (Flight III); AN/SQQ-89 ASW combat system:; AN/SQS-53C sonar array; AN/SQR-19 tactical towed array sonar (Flight I, II, IIA); TB-37U multi-function towed array sonar (DDG-113 onward); AN/SQQ-28 LAMPS III shipboard system\".",
+      "parameterUomValue": "AN/SPY-1 D PESA 3D radar (Flight I, II, IIA); AN/SPY-6 (V)1 AESA 3D radar (Flight III); AN/SPS-67 (V)3 or (V)5 surface search radar (DDG-51 – DDG-118); AN/SPQ-9B surface search radar (DDG-119 onward); AN/SPS-73(V)12 surface search/navigation radar (DDG-51 – DDG-86); BridgeMaster E surface search/navigation radar (DDG-87 onward); 3 × AN/SPG-62 fire-control radar; Mk 46 optical sight system (Flight I, II, IIA); Mk 20 electro-optical sight system (Flight III); AN/SQQ-89 ASW combat system:; AN/SQS-53C sonar array; AN/SQR-19 tactical towed array sonar (Flight I, II, IIA); TB-37U multi-function towed array sonar (DDG-113 onward); AN/SQQ-28 LAMPS III shipboard system",
+      "classification": "U",
+      "parameterValue": "AN/SPY-1 D PESA 3D radar (Flight I, II, IIA); AN/SPY-6 (V)1 AESA 3D radar (Flight III); AN/SPS-67 (V)3 or (V)5 surface search radar (DDG-51 – DDG-118); AN/SPQ-9B surface search radar (DDG-119 onward); AN/SPS-73(V)12 surface search/navigation radar (DDG-51 – DDG-86); BridgeMaster E surface search/navigation radar (DDG-87 onward); 3 × AN/SPG-62 fire-control radar; Mk 46 optical sight system (Flight I, II, IIA); Mk 20 electro-optical sight system (Flight III); AN/SQQ-89 ASW combat system:; AN/SQS-53C sonar array; AN/SQR-19 tactical towed array sonar (Flight I, II, IIA); TB-37U multi-function towed array sonar (DDG-113 onward); AN/SQQ-28 LAMPS III shipboard system",
+      "uom": ""
+    },
+    {
+      "seq": 1027,
+      "parameter": "Electronic warfare & decoys",
+      "parameterDescr": "Electronic warfare & decoys (descriptive text, not a unit-bearing quantity). Source text: \"AN/SLQ-32 electronic warfare suite; AN/SLQ-25 Nixie torpedo countermeasures; Mk 36 Mod 12 decoy launching systems; Mk 53 Nulka decoy launching systems; Mk 59 decoy launching systems\".",
+      "parameterUomValue": "AN/SLQ-32 electronic warfare suite; AN/SLQ-25 Nixie torpedo countermeasures; Mk 36 Mod 12 decoy launching systems; Mk 53 Nulka decoy launching systems; Mk 59 decoy launching systems",
+      "classification": "U",
+      "parameterValue": "AN/SLQ-32 electronic warfare suite; AN/SLQ-25 Nixie torpedo countermeasures; Mk 36 Mod 12 decoy launching systems; Mk 53 Nulka decoy launching systems; Mk 59 decoy launching systems",
+      "uom": ""
+    },
+    {
+      "seq": 1028,
+      "parameter": "Armament",
+      "parameterDescr": "Weapons the system is equipped to carry/fire. Source text: \"Main Gun:; DDG-51 to 80: 1 × 5-inch (127 mm)/54 Mk 45 Mod 1/2 (lightweight gun); DDG-81 onward: 1 × 5-inch (127 mm)/62 Mk 45 Mod 4 (lightweight gun); CIWS:; DDG-51 to 84: 2 × 20 mm (0.8 in) Phalanx CIWS on front and rear; DDG-85 onward: 1 × 20 mm Phalanx CIWS on rear; Eight destroyers: 1 × SeaRAM (occupying rear CIWS slot); Autocannons and heavy machine guns:; 2 × 25 mm (0.98 in) M242 Bushmaster equipped Mk 38 machine gun systems; 4 × 12.7 mm (0.50 in) M2 Browning heavy machine guns; Canister-launched anti-ship missiles:; Flights I & II only: 2 × Mk 141 Harpoon anti-ship missile launcher with 4 or 8 Harpoon missiles; DDG-62: 8 × Naval Strike Missile (Harpoon missiles removed); Vertical Launching System:; Flights I & II: 1 × 29-cell, 1 × 61-cell (90 total cells) Mk 41 vertical launching system; Flights IIA & III: 1 × 32-cell, 1 × 64-cell (96 total cells) Mk 41 vertical launching system; Mix of:; BGM-109 Tomahawk cruise missile family; Land-attack variant; Anti-ship variant (future); RIM-161 SM-3 SAM; RIM-174 SM-6 SAM; RIM-156 SM-2ER Blk. IV SAM; RIM-66 SM-2MR SAM; RIM-162 ESSM SAM (quad-packed capable); RUM-139 vertical launch ASROC anti-submarine missile; Torpedoes:; 2 × Mark 32 triple torpedo tubes :; Mark 46 lightweight torpedo; Mark 50 lightweight torpedo; Mark 54 lightweight torpedo; Lasers:; Eight destroyers: 1 × Optical Dazzling Interdictor, Navy; DDG-88: 1 × High Energy Laser with Integrated Optical-dazzler and Surveillance (HELIOS); Others:; Two destroyers: 2 × 4-cell (8 total cells) Block 3/Coyote LE SR drone launcher; DDG-120: 1 × 8-cell Block 3/Coyote LE SR drone launcher\".",
+      "parameterUomValue": "Main Gun:; DDG-51 to 80: 1 × 5-inch (127 mm)/54 Mk 45 Mod 1/2 (lightweight gun); DDG-81 onward: 1 × 5-inch (127 mm)/62 Mk 45 Mod 4 (lightweight gun); CIWS:; DDG-51 to 84: 2 × 20 mm (0.8 in) Phalanx CIWS on front and rear; DDG-85 onward: 1 × 20 mm Phalanx CIWS on rear; Eight destroyers: 1 × SeaRAM (occupying rear CIWS slot); Autocannons and heavy machine guns:; 2 × 25 mm (0.98 in) M242 Bushmaster equipped Mk 38 machine gun systems; 4 × 12.7 mm (0.50 in) M2 Browning heavy machine guns; Canister-launched anti-ship missiles:; Flights I & II only: 2 × Mk 141 Harpoon anti-ship missile launcher with 4 or 8 Harpoon missiles; DDG-62: 8 × Naval Strike Missile (Harpoon missiles removed); Vertical Launching System:; Flights I & II: 1 × 29-cell, 1 × 61-cell (90 total cells) Mk 41 vertical launching system; Flights IIA & III: 1 × 32-cell, 1 × 64-cell (96 total cells) Mk 41 vertical launching system; Mix of:; BGM-109 Tomahawk cruise missile family; Land-attack variant; Anti-ship variant (future); RIM-161 SM-3 SAM; RIM-174 SM-6 SAM; RIM-156 SM-2ER Blk. IV SAM; RIM-66 SM-2MR SAM; RIM-162 ESSM SAM (quad-packed capable); RUM-139 vertical launch ASROC anti-submarine missile; Torpedoes:; 2 × Mark 32 triple torpedo tubes :; Mark 46 lightweight torpedo; Mark 50 lightweight torpedo; Mark 54 lightweight torpedo; Lasers:; Eight destroyers: 1 × Optical Dazzling Interdictor, Navy; DDG-88: 1 × High Energy Laser with Integrated Optical-dazzler and Surveillance (HELIOS); Others:; Two destroyers: 2 × 4-cell (8 total cells) Block 3/Coyote LE SR drone launcher; DDG-120: 1 × 8-cell Block 3/Coyote LE SR drone launcher",
+      "classification": "U",
+      "parameterValue": "Main Gun:; DDG-51 to 80: 1 × 5-inch (127 mm)/54 Mk 45 Mod 1/2 (lightweight gun); DDG-81 onward: 1 × 5-inch (127 mm)/62 Mk 45 Mod 4 (lightweight gun); CIWS:; DDG-51 to 84: 2 × 20 mm (0.8 in) Phalanx CIWS on front and rear; DDG-85 onward: 1 × 20 mm Phalanx CIWS on rear; Eight destroyers: 1 × SeaRAM (occupying rear CIWS slot); Autocannons and heavy machine guns:; 2 × 25 mm (0.98 in) M242 Bushmaster equipped Mk 38 machine gun systems; 4 × 12.7 mm (0.50 in) M2 Browning heavy machine guns; Canister-launched anti-ship missiles:; Flights I & II only: 2 × Mk 141 Harpoon anti-ship missile launcher with 4 or 8 Harpoon missiles; DDG-62: 8 × Naval Strike Missile (Harpoon missiles removed); Vertical Launching System:; Flights I & II: 1 × 29-cell, 1 × 61-cell (90 total cells) Mk 41 vertical launching system; Flights IIA & III: 1 × 32-cell, 1 × 64-cell (96 total cells) Mk 41 vertical launching system; Mix of:; BGM-109 Tomahawk cruise missile family; Land-attack variant; Anti-ship variant (future); RIM-161 SM-3 SAM; RIM-174 SM-6 SAM; RIM-156 SM-2ER Blk. IV SAM; RIM-66 SM-2MR SAM; RIM-162 ESSM SAM (quad-packed capable); RUM-139 vertical launch ASROC anti-submarine missile; Torpedoes:; 2 × Mark 32 triple torpedo tubes :; Mark 46 lightweight torpedo; Mark 50 lightweight torpedo; Mark 54 lightweight torpedo; Lasers:; Eight destroyers: 1 × Optical Dazzling Interdictor, Navy; DDG-88: 1 × High Energy Laser with Integrated Optical-dazzler and Surveillance (HELIOS); Others:; Two destroyers: 2 × 4-cell (8 total cells) Block 3/Coyote LE SR drone launcher; DDG-120: 1 × 8-cell Block 3/Coyote LE SR drone launcher",
+      "uom": ""
+    },
+    {
+      "seq": 1029,
+      "parameter": "Armor",
+      "parameterDescr": "Armor (descriptive text, not a unit-bearing quantity). Source text: \"130 tons of Kevlar splinter protection around vital areas\".",
+      "parameterUomValue": "130 tons of Kevlar splinter protection around vital areas",
+      "classification": "U",
+      "parameterValue": "130 tons of Kevlar splinter protection around vital areas",
+      "uom": ""
+    },
+    {
+      "seq": 1030,
+      "parameter": "Aircraft carried",
+      "parameterDescr": "Aircraft carried (descriptive text, not a unit-bearing quantity). Source text: \"Flights I & II: None; Flights IIA & III: Up to two MH-60R Seahawk LAMPS III helicopters\".",
+      "parameterUomValue": "Flights I & II: None; Flights IIA & III: Up to two MH-60R Seahawk LAMPS III helicopters",
+      "classification": "U",
+      "parameterValue": "Flights I & II: None; Flights IIA & III: Up to two MH-60R Seahawk LAMPS III helicopters",
+      "uom": ""
+    },
+    {
+      "seq": 1031,
+      "parameter": "Aviation facilities",
+      "parameterDescr": "Aviation facilities (descriptive text, not a unit-bearing quantity). Source text: \"Flights I & II: Flight deck with LAMPS III electronics; Flights IIA & III: Flight deck with LAMPS III electronics and two hangars\".",
+      "parameterUomValue": "Flights I & II: Flight deck with LAMPS III electronics; Flights IIA & III: Flight deck with LAMPS III electronics and two hangars",
+      "classification": "U",
+      "parameterValue": "Flights I & II: Flight deck with LAMPS III electronics; Flights IIA & III: Flight deck with LAMPS III electronics and two hangars",
+      "uom": ""
+    }
+  ]
+}

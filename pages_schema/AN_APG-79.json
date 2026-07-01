@@ -1,0 +1,88 @@
+{
+  "modelID": 2013,
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "AN/APG-79",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "AN/APG-79",
+      "shortDescription": "AN/APG-79",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The AN/APG-79 is an active electronically scanned array (AESA) radar developed for the F/A-18E/F Super Hornet and EA-18G Growler aircraft of the United States Navy. AESA technology provides quick updates on multiple targets, and its solid-state antenna construction makes it more reliable and cost-effective than traditional radar systems. The radar has a range of up to 150 km (81 nmi; 93 mi) tracking multiple targets simultaneously.\n\nIn accordance with the Joint Electronics Type Designation System (JETDS), the \"AN/APG-79\" designation represents the 79th design of an Army-Navy airborne electronic device for radar fire-control equipment. The JETDS system also now is used to name all Department of Defense electronic systems.\n\nAs of July 2008, Raytheon had delivered one hundred APG-79 sets to the US Navy, with a contract for 437 more. In an April 2011 press release, Raytheon announced they had delivered the 250th APG-79.",
+      "shortDescription": "The AN/APG-79 is an active electronically scanned array (AESA) radar developed for the F/A-18E/F Super Hornet and EA-18G Growler aircraft of the United States Navy.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "In January 2013, the Director, Operational Test and Evaluation (DOT&E) disclosed poor reliability issues with the APG-79 radar during its initial operational testing as a result of software instability.\n\nThe AN/APG-79(V)4 was selected in December 2020 for retrofitting US Navy and US Marine Corps' F/A-18C/D Hornets, and upgrading the fleets of Canadian CF-188 Hornets. The APG-79(V)4 uses gallium nitride (GaN) transmit/receive modules.",
+      "shortDescription": "n January 2013, the Director, Operational Test and Evaluation (DOT&E) disclosed poor reliability issues with the APG-79 radar during its initial operational testing as a result of software instability.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "The AN/APQ-188 is the designation for an upgraded variant of the APG-79 adapted by Raytheon for the B-52 Stratofortress Radar Modernization Program (RMP), replacing the Cold War-era mechanically scanned AN/APQ-166. The new radar would also incorporate technology from the AN/APG-82(V)1 of the F-15E Strike Eagle/F-15EX Eagle II aircraft. Under the RMP, the APQ-188 would replace the existing APQ-166 and the upgraded aircraft would be redesignated as the B-52J.",
+      "shortDescription": "8 is the designation for an upgraded variant of the APG-79 adapted by Raytheon for the B-52 Stratofortress Radar Modernization Program (RMP), replacing the Cold War-era mechanically scanned AN/APQ-166.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 201301,
+      "url": "https://en.wikipedia.org/wiki/AN/APG-79",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Active electronically scanned array (AESA) radar\".",
+      "parameterUomValue": "Active electronically scanned array (AESA) radar",
+      "classification": "U",
+      "parameterValue": "Active electronically scanned array (AESA) radar",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"up to 150 km (81 nmi; 93 mi)\".",
+      "parameterUomValue": "150 km",
+      "classification": "U",
+      "parameterValue": "150",
+      "uom": "km"
+    },
+    {
+      "seq": 1003,
+      "parameter": "Platform",
+      "parameterDescr": "Aircraft type(s) the system is fitted to. Source text: \"F/A-18E/F Super Hornet, EA-18G Growler\".",
+      "parameterUomValue": "F/A-18E/F Super Hornet, EA-18G Growler",
+      "classification": "U",
+      "parameterValue": "F/A-18E/F Super Hornet, EA-18G Growler",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Raytheon\".",
+      "parameterUomValue": "Raytheon",
+      "classification": "U",
+      "parameterValue": "Raytheon",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "modelID": 2060,
+  "systemGroup": "Land Vehicle",
+  "systemType": "Utility Vehicle",
+  "nomenclature": "Ural-4320",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Ural-4320 is a general purpose off-road 6×6 vehicle, produced at the Ural Automotive Plant in Miass , Russia for use by the Russian Army . The wheel arrangement for the Ural-4320 was designed for transporting cargo, people and trailers on all types of roads and terrain. It also serves as a launching platform for the BM-21 \"Grad\" rocket launcher.",
+      "shortDescription": "The Ural-4320 is a general purpose off-road 6×6 vehicle, produced at the Ural Automotive Plant in Miass , Russia for use by the Russian Army .",
+      "descrType": "Overview",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 206001,
+      "url": "https://en.wikipedia.org/wiki/Ural-4320",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Ural Automotive Plant\".",
+      "parameterUomValue": "Ural Automotive Plant",
+      "classification": "U",
+      "parameterValue": "Ural Automotive Plant",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Production",
+      "parameterDescr": "Production (descriptive text, not a unit-bearing quantity). Source text: \"1977–present\".",
+      "parameterUomValue": "1977–present",
+      "classification": "U",
+      "parameterValue": "1977–present",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Assembly",
+      "parameterDescr": "Assembly (descriptive text, not a unit-bearing quantity). Source text: \"Soviet Union / Russia: Miass\".",
+      "parameterUomValue": "Soviet Union / Russia: Miass",
+      "classification": "U",
+      "parameterValue": "Soviet Union / Russia: Miass",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Class",
+      "parameterDescr": "Class (descriptive text, not a unit-bearing quantity). Source text: \"Truck\".",
+      "parameterUomValue": "Truck",
+      "classification": "U",
+      "parameterValue": "Truck",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Layout",
+      "parameterDescr": "Layout (descriptive text, not a unit-bearing quantity). Source text: \"AWD 6×6\".",
+      "parameterUomValue": "AWD 6×6",
+      "classification": "U",
+      "parameterValue": "AWD 6×6",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"11.2L YaMZ-236M2 V6 turbo diesel ; 14.9L YaMZ-238M2 V8 diesel\".",
+      "parameterUomValue": "11.2L YaMZ-236M2 V6 turbo diesel ; 14.9L YaMZ-238M2 V8 diesel",
+      "classification": "U",
+      "parameterValue": "11.2L YaMZ-236M2 V6 turbo diesel ; 14.9L YaMZ-238M2 V8 diesel",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Transmission",
+      "parameterDescr": "Transmission (descriptive text, not a unit-bearing quantity). Source text: \"5-speed manual\".",
+      "parameterUomValue": "5-speed manual",
+      "classification": "U",
+      "parameterValue": "5-speed manual",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"7,366 mm (290.0 in)\".",
+      "parameterUomValue": "7.366 m",
+      "classification": "U",
+      "parameterValue": "7.366",
+      "uom": "m"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Width",
+      "parameterDescr": "Width (descriptive text, not a unit-bearing quantity). Source text: \"2,500 mm (98.4 in)\".",
+      "parameterUomValue": "2,500 mm (98.4 in)",
+      "classification": "U",
+      "parameterValue": "2,500 mm (98.4 in)",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Height",
+      "parameterDescr": "Overall height of the system. Source text: \"2,715 mm (106.9 in); 3,005 mm (118.3 in) (with tent)\".",
+      "parameterUomValue": "2.715 m",
+      "classification": "U",
+      "parameterValue": "2.715",
+      "uom": "m"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Predecessor",
+      "parameterDescr": "Predecessor (descriptive text, not a unit-bearing quantity). Source text: \"Ural-375D\".",
+      "parameterUomValue": "Ural-375D",
+      "classification": "U",
+      "parameterValue": "Ural-375D",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "VERSIONS",
+      "parameterDescr": "VERSIONS (descriptive text, not a unit-bearing quantity). Source text: \"Ural-4320-**** - ** - chassis with the standard (\"classic\") metal cab and a carrying capacity of about 7.9 tons. Ural-4320-19 ** - ** - LONG CHASSIS, capacity about 12 tons. Ural-43203-**** - ** - chassis with reinforced front suspension. Ural-43204-**** - ** - reinforced truck chassis, increased payload. Ural-43206- 4×4 variant with a 180 hp YaMZ-236 diesel and a capacity of 4200 kg. Ural-43206-41\" - with the 230 hp YaMZ-236NE2 turbodiesel. Ural-43206-0551\" - 4×4 variant with a 4-door cab and carrying capacity 3600 kg.\".",
+      "parameterUomValue": "Ural-4320-**** - ** - chassis with the standard (\"classic\") metal cab and a carrying capacity of about 7.9 tons. Ural-4320-19 ** - ** - LONG CHASSIS, capacity about 12 tons. Ural-43203-**** - ** - chassis with reinforced front suspension. Ural-43204-**** - ** - reinforced truck chassis, increased payload. Ural-43206- 4×4 variant with a 180 hp YaMZ-236 diesel and a capacity of 4200 kg. Ural-43206-41\" - with the 230 hp YaMZ-236NE2 turbodiesel. Ural-43206-0551\" - 4×4 variant with a 4-door cab and carrying capacity 3600 kg.",
+      "classification": "U",
+      "parameterValue": "Ural-4320-**** - ** - chassis with the standard (\"classic\") metal cab and a carrying capacity of about 7.9 tons. Ural-4320-19 ** - ** - LONG CHASSIS, capacity about 12 tons. Ural-43203-**** - ** - chassis with reinforced front suspension. Ural-43204-**** - ** - reinforced truck chassis, increased payload. Ural-43206- 4×4 variant with a 180 hp YaMZ-236 diesel and a capacity of 4200 kg. Ural-43206-41\" - with the 230 hp YaMZ-236NE2 turbodiesel. Ural-43206-0551\" - 4×4 variant with a 4-door cab and carrying capacity 3600 kg.",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "OPERATIONAL HISTORY",
+      "parameterDescr": "OPERATIONAL HISTORY (descriptive text, not a unit-bearing quantity). Source text: \"The vehicle was used during the Russian invasion of Ukraine ; Oryxspioenkop analyzed photographic and video data and found Russia, as of 14 November 2024, had lost at least 1,454 Ural-4320s (including 183 tankers). While Ukraine having lost a total of 113.\".",
+      "parameterUomValue": "The vehicle was used during the Russian invasion of Ukraine ; Oryxspioenkop analyzed photographic and video data and found Russia, as of 14 November 2024, had lost at least 1,454 Ural-4320s (including 183 tankers). While Ukraine having lost a total of 113.",
+      "classification": "U",
+      "parameterValue": "The vehicle was used during the Russian invasion of Ukraine ; Oryxspioenkop analyzed photographic and video data and found Russia, as of 14 November 2024, had lost at least 1,454 Ural-4320s (including 183 tankers). While Ukraine having lost a total of 113.",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "USERS",
+      "parameterDescr": "USERS (descriptive text, not a unit-bearing quantity). Source text: \"Armenia\".",
+      "parameterUomValue": "Armenia",
+      "classification": "U",
+      "parameterValue": "Armenia",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Azerbaijan",
+      "parameterDescr": "Azerbaijan (descriptive text, not a unit-bearing quantity). Source text: \"Ural-4320s used by Azerbaijani Armed Forces .\".",
+      "parameterUomValue": "Ural-4320s used by Azerbaijani Armed Forces .",
+      "classification": "U",
+      "parameterValue": "Ural-4320s used by Azerbaijani Armed Forces .",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Cuba",
+      "parameterDescr": "Cuba (descriptive text, not a unit-bearing quantity). Source text: \"Cuban Revolutionary Armed Forces .\".",
+      "parameterUomValue": "Cuban Revolutionary Armed Forces .",
+      "classification": "U",
+      "parameterValue": "Cuban Revolutionary Armed Forces .",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Laos",
+      "parameterDescr": "Laos (descriptive text, not a unit-bearing quantity). Source text: \"In service as of January 2019.\".",
+      "parameterUomValue": "In service as of January 2019.",
+      "classification": "U",
+      "parameterValue": "In service as of January 2019.",
+      "uom": ""
+    },
+    {
+      "seq": 1018,
+      "parameter": "Philippines",
+      "parameterDescr": "Philippines (descriptive text, not a unit-bearing quantity). Source text: \"Philippine Army 20 Units Donated by Russian Federation.\".",
+      "parameterUomValue": "Philippine Army 20 Units Donated by Russian Federation.",
+      "classification": "U",
+      "parameterValue": "Philippine Army 20 Units Donated by Russian Federation.",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "VARIANTS",
+      "parameterDescr": "VARIANTS (descriptive text, not a unit-bearing quantity). Source text: \"Standard cargo/troop transport equipped with a cargo bed. It can be used to transport troops, weapons and other supplies. It has two collapsible benches and a canvas top to provide protection from the elements.\".",
+      "parameterUomValue": "Standard cargo/troop transport equipped with a cargo bed. It can be used to transport troops, weapons and other supplies. It has two collapsible benches and a canvas top to provide protection from the elements.",
+      "classification": "U",
+      "parameterValue": "Standard cargo/troop transport equipped with a cargo bed. It can be used to transport troops, weapons and other supplies. It has two collapsible benches and a canvas top to provide protection from the elements.",
+      "uom": ""
+    }
+  ]
+}

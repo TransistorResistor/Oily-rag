@@ -1,0 +1,196 @@
+{
+  "modelID": 2044,
+  "systemGroup": "Weapon",
+  "systemType": "Air-to-Air Missile",
+  "nomenclature": "R-60 (missile)",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Molniya (now Vympel ) R-60 (NATO reporting name: AA-8 \"Aphid\" ) is a short-range lightweight infrared homing air-to-air missile designed for use by Soviet fighter aircraft. It has been widely exported, and remains in service with the Commonwealth of Independent States and many other nations.",
+      "shortDescription": "The Molniya (now Vympel ) R-60 (NATO reporting name: AA-8 \"Aphid\" ) is a short-range lightweight infrared homing air-to-air missile designed for use by Soviet fighter aircraft.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The R-60 was initially developed for the MiG-23. Work began on the weapon, under the bureau designation K-60 ( izdeliye 62), in the late 1960s. Series production began in 1973. It entered service with the designation R-60 (NATO reporting name \"Aphid-A\" ).\n\nWhen introduced, the R-60 was one of the world's lightest and most agile air-to-air missiles, with a launch weight of 44 kg (97 lb). It has infrared guidance, with an uncooled Komar (Mosquito) seeker head. Control is by forward rudders with large rear fins. The distinctive canards on the nose, known as \"destabilizers,\" serve to improve the rudders' efficiency at high angles of attack. The R-60 uses a very small, 3 kg (6.6 lb), tungsten expanding-rod warhead.\n\nAccording to Russian sources, [ which? ] practical engagement range is about 4,000 m (4,400 yd), although \"brochure range\" is 8 km (5.0 mi) at high altitude. The weapon was one of the most agile air-to-air missiles until the advent of thrust vectored missiles like the R-73 and AIM-9X. The R-60 can be used by aircraft maneuvering at up to 9 g against targets maneuvering at up to 8 g . A tactical advantage is the short minimum range of only 300 m (330 yd).\n\nSoviet practice was to manufacture most air-to-air missiles with interchangeable IR-homer and semi-active radar homing (SARH) seekers – however, an SARH version of the R-60 was never contemplated due to the small size of the missile which makes a radar-homing version with an antenna of reasonable size impractical.\n\nAn inert training version, alternatively designated UZ-62 and UZR-60 , was also built.\n\nAn upgraded version, the R-60M (NATO reporting name: \"Aphid-B\" ), using a nitrogen-cooled seeker with an expanded view angle of ±20°, was introduced around 1982. Although its seeker is more sensitive than its predecessor, the R-60M has only limited all-aspect capability. Minimum engagement range was further reduced, to only 200 m (220 yd). The proximity fuzes had improved resistance to ECM, although both optical and radar fuzes remained available. The export version with the Kolibri-M Radar-fuze are designated R-60MK (NATO reporting name: \"Aphid-C\" ). The R-60M is 42 mm (1.7 in) longer, and has a heavier, 3.5 kg (7.7 lb) continuous-rod warhead, increasing launch weight to 45 kg (99 lb). In the R-60M the continuous rod warhead now uses 1.6 kg (3.5 lb) of depleted uranium rods for enhanced fragmentation.\n\nThe inert training version of the R-60M was the R-60MU .\n\nSince 1999, a modified version of the weapon has been used as a surface-to-air missile (SAM) as part of the Yugoslav M55A3B1 towed anti-aircraft artillery system. It has also been seen carried on a twin rail mount on a modified M53/59 Praga armored SPAAG of (former) Czechoslovak origin. These missiles have been modified with the addition of a first stage booster motor, with the missile's own motor becoming the sustainer. This was done in lieu of modifying the missile's motor for ground launch, as in the case of the US MIM-72 Chaparral.\n\nThe current Russian dogfight missile is the R-73 (AA-11 \"Archer\"), but large numbers of R-60 missiles remain in service.",
+      "shortDescription": "The R-60 was initially developed for the MiG-23.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "On December 1, 2025, an R-60 missile mounted on a Russian-made Geran-2 kamikaze jet engine drone was spotted. After the Geran-2 was shot down by a Sting anti-drone system, debris images also showed the remains of the R-60 missile. This was the first time this type of deployment had been seen in combat. In May 2026 remains of Russian depleted uranium R-60M were found in Ukraine's Chernihiv region.",
+      "shortDescription": "On December 1, 2025, an R-60 missile mounted on a Russian-made Geran-2 kamikaze jet engine drone was spotted.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "On 20 April 1978, two R-60 missiles were fired at Korean Air Lines Flight 902 after a navigational error had caused it to fly into Soviet airspace. One missile hit, detaching 4 meters of the left wing and killing 2 passengers. The plane made an emergency landing on a frozen lake.\n\nOn 21 June 1978, a PVO MiG-23M flown by Pilot Captain V. Shkinder shot down two Iranian Boeing CH-47 Chinook helicopters that had trespassed into Soviet airspace, one helicopter being dispatched by two R-60 missiles and the other by cannon fire.\n\nSeveral Russian reports affirm the R-60 was widely used during the 1982 Lebanon war, and it was the main weapon used by the Syrians in air-to-air combat. Some Russian reports affirm that the R-60 was the most successful air-to-air missile deployed by the Syrians in Lebanon over the Bekaa Valley. According to Israeli reports, the vast majority of air-to-air combat consisted of visual range dogfights, and this has been also confirmed by Russian sources. The Russian reports also mentioned that several F-4s, F-16s, and IAI Kfirs were destroyed by R-60s among other aircraft. Israel claims some F-4s and Kfirs were lost in 1982, but lists surface-to-air missiles as responsible for all Israeli aircraft losses. However, on 9 June 1982, a Syrian MiG-21 heavily damaged an F-15 using an R-60, but the Israeli aircraft was able to make it back to its base and was subsequently repaired.\n\nOn 11 August 1984, during the Iran–Iraq War, an Iraqi Air Force MiG-23ML shot down an Iranian F-14A piloted by Hashem All-e-Agha using an R-60.\n\nIraqi MiG-23s damaged two EF-111A Raven by R-60 (missile)s during the Gulf War.\n\nOn 19 January 1991, during the Gulf War, Iraqi air force pilot Jameel Sayhood claimed to have shot down a Royal Air Force Panavia Tornado with an R-60 missile. However, the Royal Air Force claimed that the aircraft crashed on 22 January 1991 on a bombing mission in Ar Rutba.\n\nOn 27 September 1987, during Operation Moduler, two Cuban FAR MiG-23MLs intercepted Captain Arthur Piercy's Mirage F1CZ, which was damaged by an R-60 fired head-on by Major Alberto Ley Rivas. The explosion destroyed the aircraft's drag chute and damaged the hydraulics. Piercy was able to recover to AFB Rundu, but the aircraft overshot the runway. The impact with the rough terrain caused Piercy's ejection seat to fire, but he failed to separate from the seat and suffered major spinal injuries.\n\nIn 1999, an Indian Air Force MiG-21 used an infrared-homing R-60 to bring down a Pakistani Navy Breguet Atlantic which intruded over Indian airspace. Part of the wreckage was found in contested territory, this incident is widely known as the Atlantic incident.\n\nIn 2024, the R-60 has seen some minor use by the Armed Forces of Ukraine during the Russian invasion, being reportedly adapted for the surface-to-air role and mounted on Sea Baby naval drones. The R-60M has also been mounted on Su-25s, possibly for shooting down drones.\n\nAlgeria\n\nCuba\n\nEritrea\n\nGeorgia\n\nKazakhstan\n\nLibya\n\nNorth Korea\n\nPeru\n\nPoland\n\nRussia - Used by the Air Force and Naval Aviation\n\nSudan\n\nTurkmenistan\n\nUzbekistan\n\nVietnam\n\nAfghanistan\n\nBulgaria\n\nCroatia - R-60 and R-60MK\n\nCzechoslovakia - Passed on to successor states.\n\nCzech Republic\n\nEast Germany\n\nFinland - Was used on the MiG-21bis\n\nHungary\n\nMalaysia\n\nRomania\n\nSlovakia\n\nSoviet Union - Passed on to successor states.\n\nSouth Yemen\n\nYemen\n\nYugoslavia - Passed on to successor states.\n\nZimbabwe",
+      "shortDescription": "On 20 April 1978, two R-60 missiles were fired at Korean Air Lines Flight 902 after a navigational error had caused it to fly into Soviet airspace.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 204401,
+      "url": "https://en.wikipedia.org/wiki/R-60_(missile)",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Lightweight short-range air-to-air missile\".",
+      "parameterUomValue": "Lightweight short-range air-to-air missile",
+      "classification": "U",
+      "parameterValue": "Lightweight short-range air-to-air missile",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Soviet Union\".",
+      "parameterUomValue": "Soviet Union",
+      "classification": "U",
+      "parameterValue": "Soviet Union",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1970–present\".",
+      "parameterUomValue": "1970–present",
+      "classification": "U",
+      "parameterValue": "1970–present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"Iran–Iraq War ; South African Border War ; Lebanese Civil War ; Russo-Ukrainian war\".",
+      "parameterUomValue": "Iran–Iraq War ; South African Border War ; Lebanese Civil War ; Russo-Ukrainian war",
+      "classification": "U",
+      "parameterValue": "Iran–Iraq War ; South African Border War ; Lebanese Civil War ; Russo-Ukrainian war",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Vympel\".",
+      "parameterUomValue": "Vympel",
+      "classification": "U",
+      "parameterValue": "Vympel",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"44 kg (97 lb)\".",
+      "parameterUomValue": "44 kg",
+      "classification": "U",
+      "parameterValue": "44",
+      "uom": "kg"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"2,090 mm (6 ft 10 in)\".",
+      "parameterUomValue": "2.09 m",
+      "classification": "U",
+      "parameterValue": "2.09",
+      "uom": "m"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"120 mm (4.7 in)\".",
+      "parameterUomValue": "0.12 m",
+      "classification": "U",
+      "parameterValue": "0.12",
+      "uom": "m"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"390 mm (15 in)\".",
+      "parameterUomValue": "0.39 m",
+      "classification": "U",
+      "parameterValue": "0.39",
+      "uom": "m"
+    },
+    {
+      "seq": 1010,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"3 kg (6.6 lb)\".",
+      "parameterUomValue": "3 kg (6.6 lb)",
+      "classification": "U",
+      "parameterValue": "3 kg (6.6 lb)",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Detonation mechanism",
+      "parameterDescr": "Fuzing/detonation method. Source text: \"proximity\".",
+      "parameterUomValue": "proximity",
+      "classification": "U",
+      "parameterValue": "proximity",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Solid-fuel rocket engine\".",
+      "parameterUomValue": "Solid-fuel rocket engine",
+      "classification": "U",
+      "parameterValue": "Solid-fuel rocket engine",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"8 kilometres (5.0 mi)\".",
+      "parameterUomValue": "8 km",
+      "classification": "U",
+      "parameterValue": "8",
+      "uom": "km"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Flight altitude",
+      "parameterDescr": "Operational flight altitude band. Source text: \"20,000 m (66,000 ft)\".",
+      "parameterUomValue": "20 km",
+      "classification": "U",
+      "parameterValue": "20",
+      "uom": "km"
+    },
+    {
+      "seq": 1015,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Mach 2.47\".",
+      "parameterUomValue": "2.47 Mach",
+      "classification": "U",
+      "parameterValue": "2.47",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Infrared homing\".",
+      "parameterUomValue": "Infrared homing",
+      "classification": "U",
+      "parameterValue": "Infrared homing",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"MiG-21, MiG-23, MiG-25, MiG-27, MiG-29, MiG-31, Su-15, Su-17, Su-20, Su-22, Su-24, Su-25, Yak-28, Yak-38, Yak-141, Mi-24, BAE Systems Hawk, L39ZA, J-22 Orao\".",
+      "parameterUomValue": "MiG-21, MiG-23, MiG-25, MiG-27, MiG-29, MiG-31, Su-15, Su-17, Su-20, Su-22, Su-24, Su-25, Yak-28, Yak-38, Yak-141, Mi-24, BAE Systems Hawk, L39ZA, J-22 Orao",
+      "classification": "U",
+      "parameterValue": "MiG-21, MiG-23, MiG-25, MiG-27, MiG-29, MiG-31, Su-15, Su-17, Su-20, Su-22, Su-24, Su-25, Yak-28, Yak-38, Yak-141, Mi-24, BAE Systems Hawk, L39ZA, J-22 Orao",
+      "uom": ""
+    }
+  ]
+}

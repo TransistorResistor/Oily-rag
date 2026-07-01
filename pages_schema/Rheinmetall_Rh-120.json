@@ -1,0 +1,166 @@
+{
+  "modelID": 2048,
+  "systemGroup": "Weapon",
+  "systemType": "Cannon",
+  "nomenclature": "Rheinmetall Rh-120",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Rheinmetall Rh-120 is a 120 mm smoothbore tank gun designed and produced in former West Germany by the Rheinmetall Waffe Munition GmbH company. It was developed in response to Soviet advances in armour technology and development of new armoured threats. Production began in 1974, with the first version of the gun, known as the L/44 as it was 44 calibres long , used on the German Leopard 2 tank and soon produced under license for the American M1A1 Abrams and other tanks. The 120-millimetre (4.7 in) L/44 gun has a length of 5.28 metres (17.3 ft) , and the gun system weighs approximately 3,317 kilograms (7,313 lb) .\n\nBy 1990, the L/44 was not considered powerful enough to defeat future Soviet armour, which stimulated an effort by Rheinmetall to develop a better main armament. This first involved a 140-millimeter (5.5 in) tank gun named Neue Panzerkanone 140 ('new tank gun 140'), but later turned into a compromise which led to the development of an advanced 120 mm gun, the L/55, based on the same internal geometry as the L/44 and installed in the same breech and mount. The L/55 is 1.32 metres (4.3 ft) longer, generating increased muzzle velocity for rounds fired through it. As the L/55 retains the same barrel geometry, it can fire the same ammunition as the L/44.\n\nThe L/55 gun was retrofitted into German and Dutch Leopard 2s, and chosen as the main gun of the Spanish Leopard 2E and the Greek Leopard 2HEL. It was tested on the British Challenger 2 as a potential replacement for its rifled L30 120 mm cannon.",
+      "shortDescription": "The Rheinmetall Rh-120 is a 120 mm smoothbore tank gun designed and produced in former West Germany by the Rheinmetall Waffe Munition GmbH company.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "A variety of ammunition has been developed for use by tanks with guns based on Rheinmetall's original L/44 design. This includes a series of kinetic energy penetrators , such as the American M829 series, and high-explosive anti-tank warheads. Recent ammunition includes a range of anti-personnel rounds and demolition munitions. The LAHAT , developed in Israel, is a gun-launched anti-tank guided missile which has received interest from Germany and other Leopard 2 users. It is designed to defeat both land armour and combat helicopters. The Israelis also introduced a new anti-personnel munition which limits collateral damage by controlling the fragmentation of the projectile.\n\nThe development of the 120 mm L/44 gun started in 1965, as the Bundeswehr felt a more powerful gun was needed for its new tanks. The first instance of a larger Soviet tank gun was witnessed on the chassis of a modified T-55 in 1961. In 1965, the Soviet Union 's T-62 made its first public appearance, armed with a 115-millimetre (4.5 in) smoothbore tank gun. The Soviet decision to increase the power of its tank's main armament had come when, in the early 1960s, an Iranian tank commander defected over the Soviet border in a brand-new M60 Patton tank, which was armed with the 105-millimetre (4.1 in) M68 gun, the US version of the British Royal Ordnance L7. Despite the introduction of the T-62, in 1969 their T-64 tank was rearmed with a new 125-millimetre (4.9 in) tank gun, while in 1972 Nizhny Tagil began production of the T-72 tank, also armed with the 125-millimetre (4.9 in) gun. At the fighting at Sultan Yakoub, during the 1982 Lebanon War , the Israeli government claimed to have destroyed nine Syrian T-72s with the Merkava main battle tank, armed with an Israeli version of the American M68 105-millimetre (4.1 in) tank gun. Whether true or not, the Soviets test-fired a number of Israeli M111 Hetz armor-piercing discarding sabot rounds at Kubinka , finding the 105-millimetre (4.1 in) round was able to perforate the sloped front section plate but not the turret armour of the T-72 tank. In response, the Soviets developed the T-72M1. This led Israel to opt for a 120 mm tank gun during the development process of the Merkava III main battle tank. This case is similar to the American decision to replace the M68 105-millimetre (4.1 in) tank gun with Rheinmetall's 120 mm gun in 1976; the introduction of the T-64A had raised the question within the armour community of whether the new ammunition for the existing gun calibre could effectively defeat the new Soviet tank.\n\nIn 1963, Germany and the United States had already embarked on a joint tank program, known as the MBT-70 . The new tank carried a crew of three, with the driver in the turret, an automatic loader for the main gun, a 20-millimetre (0.79 in) autocannon as secondary armament, an active hydropneumatic suspension and spaced armour on the glacis plate and front turret. The new tank concept also had improved armament, a 152-millimetre (6.0 in) missile-launching main gun, designed to fire the MGM-51 Shillelagh anti-tank missile . However, the German Army was interested in a tank gun which could fire conventional ammunition. Although there were attempts to modify the 152-millimetre (6.0 in) tank gun to do so, the process proved extremely difficult, and the Germans began development of the future Rheinmetall 120 mm gun instead.\n\nIn 1967, the German ministry of defence decided to re-open a Leopard 1 improvement program, known as the Vergoldeter Leopard ('Gilded Leopard'), later renamed the Keiler ('Wild Boar'). Krauss-Maffei was chosen as the contractor, and two prototypes were developed in 1969 and 1970. This program grew into the Leopard 2 ; the first prototype of the new tank was delivered in 1972, equipped with a 105-millimetre (4.1 in) smoothbore main gun. Between 1972 and 1975, a total of 17 prototypes were developed. The new 120 mm gun's ten-year development effort ended in 1974. Ten of the seventeen turrets built were equipped with 105 mm smoothbore guns, and the other seven were equipped with larger, 120 mm, guns. Another program aimed to mount the 152-millimetre (6.0 in) missile-gun was also begun in an attempt to save components from the MBT-70, but in 1971 the program was ended for economic reasons. Instead, the Germans opted for Rheinmetall's 120 mm L/44 smoothbore tank gun.\n\nThe German government began developing the Leopard 3, although this was canceled after the fall of the Soviet Union. On 29 October 1991, the governments of Switzerland, the Netherlands and Germany agreed to cooperate in the development of a modernization program for the Leopard 2. Part of this program included the introduction of a longer 120 mm tank gun, a cheaper alternative to a new tank gun, increasing the maximum range of the gun by an estimated 1,500 m (1,600 yd) . Although the gun is longer, allowing for longer and a higher peak pressure from the propellant, the geometry remains the same, allowing the gun to fire the same ammunition as that fired from the shorter version. The longer barrel allows ammunition to attain higher velocities; for example, with new kinetic energy penetrators ammunition can reach velocities of around 1,750 m/s (5,700 ft/s) . The new barrel weighs 1,347 kg (2,970 lb) .\n\nThe longer tank gun has been retrofitted into the Leopard 2, creating a model known as the Leopard 2A6 . The Spanish Leopard 2E , the Greek Leopard 2HEL, and derivatives of the Leopard 2A6, use 55 calibre-long tank guns.\n\nThe Rh-120-55 A1 is similar to earlier Rh-120 L/55 model. Compared to the L/44 and L/55, the L/55 A1 Extreme Service Condition Pressure (ESCP) is raised from 672 to 700 MPa (97,465 to 101,526 psi) , the Permissible Maximum Pressure (PMP) from 710 to 735 MPa (102,977 to 106,603 psi) , and the Design Pressure from 740 to 760 MPa (107,328 to 110,229 psi) . It is also known as the L/55A1 and entered service in 2018.\n\nRussia introduced a new generation of armoured vehicles like the T-14 Armata tank in 2015. In response, Rheinmetall started the development of a larger 130 mm tank gun, financed entirely using internal funding. The first technical demonstrator (TD) was completed in May 2016 and presented at Eurosatory 2016 in June 2016.\n\nThe Rh-130 Future Gun System has a chrome-lined smoothbore barrel (initially L/51, revised to L/52 ) with a vertical sliding breech mechanism, increased chamber volume, no muzzle brake , a thermal sleeve , and a muzzle reference system (MRS) enabling it to be boresighted on a more regular basis without the crew needing to leave the platform. Compared to the 2,700 kg (6,000 lb) 120 mm gun, the 130 mm has a 1,400 kg (3,100 lb) barrel and an all-up weight of 3,000 kg (6,600 lb) including the recoil system. Rheinmetall is developing a new generation APFSDS round featuring a semi-combustible cartridge case, new propellant, and new advanced long rod tungsten penetrator, and a high-explosive air-bursting munition (HE ABM) based on the 120 mm DM11 HE ABM in parallel with the gun. The cartridges of 130 x 850 mm are 30 kg (66 lb) and 1.3 m (4.3 ft) long with the increase of 8% in calibre resulting in 50% more kinetic energy over the 120 mm gun. The chamber volume was increased by 50% compared to the 120 mm gun in the first 130 mm demonstrator gun, but is subject to further refinement. Comparing pressure levels in the 120 mm L/55 A1 gun and in the 130 mm prototype, Extreme Service Condition Pressure climbs from 700 to 800 MPa (101,526 to 116,030 psi) , Permissible Maximum Pressure from 735 to 850 MPa (106,603 to 123,282 psi) , and Design Pressure from 760 to 880 MPa (110,229 to 127,633 psi) .\n\nThe United States developed its own kinetic energy penetrator (KEP) tank round in the form of an APFSDS round, using a DU alloy long-rod penetrator (LRP), designated the M829 , followed by improved versions. An immediate improvement, known as the M829A1 , was called the \"Silver Bullet\" after its good combat performance during the Gulf War against Iraqi T-55 , T-62 and T-72 tanks. The M829 series centres around the depleted uranium penetrator, designed to penetrate enemy armour through kinetic energy and to shatter inside the turret, causing a lot of damage within the tank. In 1998, the United States military introduced the M829A2, which has an improved depleted uranium penetrator and composite sabot petals. In 2002, production began of the ($10,000 per round) M829A3 , using a more efficient propellant (RPD-380 stick), a lighter injection-molded sabot, and a longer (800 mm) and heavier (10 kg / 22 lb) DU penetrator, which is said to be able to defeat the latest versions of Russian Kontakt-5 explosive reactive armour (ERA). This variant is unofficially referred to by Abrams tank crews as the \"super sabot\". In response to the M829A3, the Russian Army designed the Relikt , the most modern Russian ERA, which is claimed to be twice as effective as the Kontakt-5. A further improved M829A4 round with a segmented penetrator to defeat Relikt entered full-rate production in December 2015.\n\nBoth Germany and the United States have developed several other rounds. These include the German DM12 multi-purpose anti-tank projectile (MPAT), based on the technology in a high-explosive anti-tank (HEAT) warhead. However, it was found that the DM12's armour-killing abilities were limited by the lack of blast and fragmentation effects, and that the round was less valuable against lightly armoured targets. The United States also has an MPAT-type projectile, named M830 , later developed into the M830A1, which allows the M1 Abrams to use the round against helicopters. The M1 Abrams can use the M1028 canister round, which is an anti-personnel-anti-helicopter munition, packed with over 1,000 10 mm tungsten balls. The United States Armed Forces accepted a new demolition round, called the M908 obstacle defeating round , based on the M830A1 MPAT, but with the proximity fuse replaced by a hardened nose cap. The cap allows the round to impact and embed itself in concrete, exploding inside the target and causing more damage.\n\nThe Israeli Army introduced a new round known as the laser homing anti-tank ( LAHAT ) projectile. Using a semi-active laser homing guidance method, the LAHAT can be guided by the tank's crew or by teams on the ground, while the missile's trajectory can be selected to attack either from the top (to defeat enemy armour) or frontally (to engage enemy helicopters). The missile can be fired by both 105-millimetre (4.1 in) and 120-millimetre (4.7 in) tank guns. The LAHAT has been offered as an option for the Leopard 2, and has been marketed by both Israel Military Industries and Rheinmetall to Leopard 2 users. Israeli Merkava tanks make use of the APAM round, an anti-personnel munition designed to release fragmentation at controlled intervals to limit the extent of damage. Fragments are shaped to have enough kinetic energy to penetrate body armour. Poland has introduced a series of projectiles for Rheinmetall's tank gun, including an armour-piercing penetrator target practice round (APFSDS-T-TP), a high-explosive round, and a high-explosive target practice (HE-TP) projectile. The ammunition is manufactured by Zakłady Produkcji Specjalnej Sp. z o.o.\n\nIn early 2013 Rheinmetall announced two new rounds suitable for the L44 and the L55 guns, the DM11 HE round, designed for lightly armoured targets, field fortifications and targets behind cover, a lower cost alternative to the DM11, the HE SQ Rh31.\n\nIn April 2024, the British Ministry of Defence announced that a statement of intent had been signed with Germany for the development of an Enhanced Kinetic Energy (EKE) armour-piercing round for both Challenger 3 and Leopard 2 tanks by Rheinmetall BAE Systems Land .",
+      "shortDescription": "A variety of ammunition has been developed for use by tanks with guns based on Rheinmetall's original L/44 design.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "Rheinmetall's L/44 tank gun has a calibre of 120 mm, a length of 44 calibres ( 5.28 metres (17.3 ft) ), and a chamber volume of 10.2 liters (622.44 in 3 ). The gun's barrel weighs 1,190 kilograms (2,620 lb) , and on the M1 Abrams the gun mount weighs 3,317 kilograms (7,313 lb) , while the new barrel (L/55) is 55 calibres long, 1.30 metres (4.3 ft) longer. The bore evacuator and the gun's thermal sleeve, designed to regulate the temperature of the barrel, are made of glass-reinforced plastic , while the barrel has a chrome lining to increase barrel life. Originally the gun had an EFC barrel life of ~1,500 rounds, but with recent advances in propellant technology, the average life has increased even further. The gun's recoil mechanism is composed of two hydraulic retarders and a hydropneumatic assembly.\n\nEngineers believe the weapon can only be used with an automatic loader and new turret design. The gun commenced static firing trials at Rheinmetall's proving ground following Eurosatory, while engineers hoped to receive a new NATO standard by the end of 2016, although development of the gun and ammunition will likely take 8–10 years. The 130 mm is designed to equip the Main Ground Combat System (MGCS), a joint effort between Germany and France to produce a successor to the Leopard 2 and Leclerc , possibly to be launched between 2025 and 2030. In July 2020, Rheinmetall unveiled a testbed tank for the gun in a new turret, mounted on a Challenger 2 hull. In June 2022, Rheinmetall unveiled the Panther KF51 concept tank based on a Leopard 2 chassis and a redesigned turret hosting the new gun. According to Rheinmetall the Rh-130 mm cannon enables a 50% longer kill range compared to their 120 mm cannon with a higher rate of fire due to a fully automated ammunition handling system.\n\nA variety of rounds have been developed for Rheinmetall's tank gun. For example, a long line of armour-piercing discarding sabot (APDS) rounds was developed by Rheinmetall. Originally, the Leopard 2 was outfitted with the DM23 kinetic energy penetrator, based on the Israeli 105 mm M111 Hetz which itself was a licensed copy of the American M735 round. The DM23 was eventually replaced by the DM33, which was also adopted by Japan, Italy, Netherlands and Switzerland. The DM33 has a three-part aluminium sabot and a two-part tungsten penetrator, and is said to be able to penetrate 470 millimetres (19 in) of steel armour at a range of 2,000 metres (2,200 yd) . The DM43 is a further development of this round, codeveloped between Germany and France. The introduction of the longer barrel came together with the introduction of a new kinetic energy penetrator, the DM53 . With the projectile including sabot weighing 8.35 kilograms with a 38:1 length to diameter ratio and with a muzzle velocity of 1,750 metres per second (5,700 ft/s) , the DM53 has an effective engagement range of up to 4,000 metres (4,400 yd) . A further development, called the DM63 , improved upon the round by introducing a new temperature-independent propellant, which allows the propellant to have a constant pattern of expansion between ambient temperatures inside the gun barrel from -47 °C (-53 °F) to +71 °C (160 °F) . The new propellant powders, known as surface-coated double-base (SCDB) propellants, allow the DM63 to be used in many climates with consistent results. The new ammunition has been accepted into service with the Dutch and Swiss, as well as German, armies.\n\nIn 1993, South Korea invented a self-sharpening process on the tungsten heavy alloy (WHA) by applying microstructure control and multi-stage cyclic heat-treatment . Most penetrators in the world receive a single heat treatment, while Korean penetrators are treated 20 times using the new technology, which increases impact toughness by 300%. The self-sharpening effect increases penetration by 8–16% compared to regular penetrators, and compensates 6–10% less penetration from material disadvantage against depleted uranium (DU), providing firepower similar to DU ammunition in a DU particle-free environment. South Korea holds related patents in Japan, United Kingdom, United States, and 3 other unspecified nations. The public appearance of the K276 armour-piercing fin-stabilized discarding sabot (APFSDS), the first 120 mm ammunition with self-sharpening penetrator, was during the release ceremony of K1A1 prototype in 1996.",
+      "shortDescription": "Rheinmetall's L/44 tank gun has a calibre of 120 mm, a length of 44 calibres ( 5.28 metres (17.3 ft) ), and a chamber volume of 10.2 liters (622.44 in 3 ).",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "Due to tank sales, Rheinmetall's L/44 tank gun has been manufactured for other nations. For example, the Leopard 2 armed with the 44 calibre long gun, has been sold to the Netherlands, Switzerland, Sweden, Spain, Austria, Denmark, Finland, and other countries. Egypt had manufactured 700–800 M1A1 Abrams by 2005, and in 2008 requested permission to build another 125 tanks; their M256 main guns (the US version of the L/44) were manufactured by the US Watervliet Arsenal . The M1A1 has also been exported to Australia, while the M1A2 Abrams has been exported to Saudi Arabia and Kuwait.\n\nThe Leopard 2A6 and its longer L/55 main gun have been exported for use by the Canadian Army , and the Netherlands upgraded part of its original fleet of Leopard 2s with the more powerful armament. The British Army has tested Rheinmetall's longer gun, possibly looking to replace the current L30A1 120 mm L/55 rifled main gun on the Challenger 2 . Two Challenger 2s were modified to undergo firing trials. Although the South Korean K2 Black Panther is equipped with a CN08 120 mm L/55 main gun and is often misunderstood as a licensed product of the German counterpart due to its similar appearance of the gun barrel, it is indigenously developed by Agency for Defense Development (ADD) and WIA (Now Hyundai WIA ), a Korea-based powertrain company affiliated with Hyundai Kia Motors Group.",
+      "shortDescription": "Due to tank sales, Rheinmetall's L/44 tank gun has been manufactured for other nations.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Production of the German Leopard 2 and the new 120 mm tank gun began in 1979, fulfilling an order for the German Army. The L/44 Extreme Service Condition Pressure (ESCP) is 672 MPa (97,465 psi) , the Permissible Maximum Pressure (PMP) 710 MPa (102,977 psi) , and the Design Pressure from 740 MPa (107,328 psi) . Although the American M1 Abrams was originally armed with the M68A1 105 mm gun (a version of the L7), the United States Army had planned to fit the tank with a larger main gun at a later date, and the tank's turret had been designed to accommodate a larger 120 mm gun. The larger gun was integrated into the M1A1 Abrams, with the first vehicle coming off the production line in 1985 The gun, known as the M256 , was based on the L/44 tank gun, although manufactured at Watervliet Arsenal . Tanks armed with versions of Rheinmetall's gun produced under licence include Japan's Type 90 and South Korea's K1A1 . The M256 based on the L/44 when firing M829A1 Armor Piercing, Fin Stabilized, Discarding Sabot - Tracer (APFSDS-T) ammunition can attain a Peak Chamber Pressure of 661.9 MPa (96,000 psi) at 49 °C (120 °F) and 569.85 MPa (82,650 psi) at 21 °C (70 °F) .\n\nThe appearance of new Soviet tanks such as the T-80B during the late 1970s and early 1980s led to the development of new technologies and weapons to counter the threat posed to Western armour. The T-80B had increased firepower and new composite ceramic armour . The T-72 also went through a modernization program in an attempt to bring it up to the standards of the T-80B. In 1985 the new T-72B version entered production, with a new laminate armour protection system; its turret armour, designed mainly to defeat anti-tank missiles, surpassed the T-80B's in protection.",
+      "shortDescription": "Production of the German Leopard 2 and the new 120 mm tank gun began in 1979, fulfilling an order for the German Army.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 204801,
+      "url": "https://en.wikipedia.org/wiki/Rheinmetall_Rh-120",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Smoothbore tank gun\".",
+      "parameterUomValue": "Smoothbore tank gun",
+      "classification": "U",
+      "parameterValue": "Smoothbore tank gun",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"West Germany\".",
+      "parameterUomValue": "West Germany",
+      "classification": "U",
+      "parameterValue": "West Germany",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1979–present\".",
+      "parameterUomValue": "1979–present",
+      "classification": "U",
+      "parameterValue": "1979–present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"See Operators\".",
+      "parameterUomValue": "See Operators",
+      "classification": "U",
+      "parameterValue": "See Operators",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"Rheinmetall\".",
+      "parameterUomValue": "Rheinmetall",
+      "classification": "U",
+      "parameterValue": "Rheinmetall",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Rheinmetall ; Watervliet Arsenal ; Japan Steel Works ; Hyundai Precision Industry\".",
+      "parameterUomValue": "Rheinmetall ; Watervliet Arsenal ; Japan Steel Works ; Hyundai Precision Industry",
+      "classification": "U",
+      "parameterValue": "Rheinmetall ; Watervliet Arsenal ; Japan Steel Works ; Hyundai Precision Industry",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"L/44: 1,190 kg (2,620 lb) gun barrel ; L/44: 3,780 kg (8,330 lb) gun mount ; L/55: 1,347 kg (2,970 lb) gun barrel ; L/55: 4,160 kg (9,170 lb) gun mount\".",
+      "parameterUomValue": "1190 kg",
+      "classification": "U",
+      "parameterValue": "1190",
+      "uom": "kg"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"L/44: 5.3 m (17 ft) ; L/55: 6.6 m (22 ft)\".",
+      "parameterUomValue": "5.3 m",
+      "classification": "U",
+      "parameterValue": "5.3",
+      "uom": "m"
+    },
+    {
+      "seq": 1009,
+      "parameter": "Barrel length",
+      "parameterDescr": "Barrel length (descriptive text, not a unit-bearing quantity). Source text: \"44 or 55 calibres\".",
+      "parameterUomValue": "44 or 55 calibres",
+      "classification": "U",
+      "parameterValue": "44 or 55 calibres",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Shell",
+      "parameterDescr": "Shell (descriptive text, not a unit-bearing quantity). Source text: \"120 x 570 mm R\".",
+      "parameterUomValue": "120 x 570 mm R",
+      "classification": "U",
+      "parameterValue": "120 x 570 mm R",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Caliber",
+      "parameterDescr": "Caliber (descriptive text, not a unit-bearing quantity). Source text: \"120 millimetres (4.72 in)\".",
+      "parameterUomValue": "120 millimetres (4.72 in)",
+      "classification": "U",
+      "parameterValue": "120 millimetres (4.72 in)",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Muzzle velocity",
+      "parameterDescr": "Muzzle velocity (descriptive text, not a unit-bearing quantity). Source text: \"L/44: 1,530 to 1,650 m/s (5,000 to 5,400 ft/s) ; L/55: 1,640 to 1,750 m/s (5,400 to 5,700 ft/s)\".",
+      "parameterUomValue": "L/44: 1,530 to 1,650 m/s (5,000 to 5,400 ft/s) ; L/55: 1,640 to 1,750 m/s (5,400 to 5,700 ft/s)",
+      "classification": "U",
+      "parameterValue": "L/44: 1,530 to 1,650 m/s (5,000 to 5,400 ft/s) ; L/55: 1,640 to 1,750 m/s (5,400 to 5,700 ft/s)",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Effective firing range",
+      "parameterDescr": "Effective firing range (descriptive text, not a unit-bearing quantity). Source text: \"4,000 metres (4,400 yd) with DM63 ; 8,000 metres (8,700 yd) with LAHAT anti-tank guided missile\".",
+      "parameterUomValue": "4,000 metres (4,400 yd) with DM63 ; 8,000 metres (8,700 yd) with LAHAT anti-tank guided missile",
+      "classification": "U",
+      "parameterValue": "4,000 metres (4,400 yd) with DM63 ; 8,000 metres (8,700 yd) with LAHAT anti-tank guided missile",
+      "uom": ""
+    }
+  ]
+}

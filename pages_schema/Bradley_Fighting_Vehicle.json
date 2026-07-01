@@ -1,0 +1,265 @@
+{
+  "modelID": 2017,
+  "systemGroup": "Land Vehicle",
+  "systemType": "Armored Fighting Vehicle",
+  "nomenclature": "Bradley Fighting Vehicle",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Bradley Fighting Vehicle ( BFV ) is an American tracked armored fighting vehicle of the United States developed by FMC Corporation and now manufactured by BAE Systems Land & Armaments , formerly United Defense . It is named for U.S. General of the Army Omar Bradley .\n\nThe Bradley is designed to transport infantry or scouts with armor protection, while providing covering fire to suppress enemy troops and armored vehicles . Variants include the M2 Bradley infantry fighting vehicle and the M3 Bradley reconnaissance vehicle . The M2 holds a crew of three—a commander, a gunner and a driver—along with six fully equipped soldiers. The M3 mainly conducts scout missions and carries two scout troopers in addition to the regular crew of three, with space for additional BGM-71 TOW missiles.\n\nIn 2014, the U.S. Army selected BAE Systems ' Armored Multi-Purpose Vehicle (AMPV) proposal of a turretless variant of the Bradley to replace over 2,800 M113 armored personnel carriers . Some 2,907 surplus Bradleys will be modified to become AMPVs for the U.S. Army.",
+      "shortDescription": "ghting Vehicle ( BFV ) is an American tracked armored fighting vehicle of the United States developed by FMC Corporation and now manufactured by BAE Systems Land & Armaments , formerly United Defense .",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "Subsequent ammunition developments resulted in the M919 APFSDS-T ( armor-piercing fin-stabilized discarding sabot (with) tracer ) round containing a finned depleted uranium penetrator similar in concept to armor-piercing munitions used in modern tanks. The M919 was used in combat during the 2003 invasion phase of Operation Iraqi Freedom . [ citation needed ]\n\nAn M240C medium machine gun is mounted coaxially to the M242 , with 2,200 rounds of 7.62×51mm ammunition. For engaging heavier targets, such as acting as an anti-tank gun, the Bradley carries a TOW missile system . This was modified to fire TOW II missiles from the M2A1 model onward. M2 infantry Bradleys have firing ports for M231 Firing Port Weapons (FPWs), providing a means for the occupants to fire from within the vehicle and replacing the top-side gunners on the M113-based Armored Cavalry Assault Vehicles, although the M231 is rarely employed. [ citation needed ]\n\nThe Bradley Urban Survival Kit (BUSK) is an upgrade similar to the M1 Abrams TUSK kit. It decreases the vulnerability of Bradleys in urban environments. The kit includes a more powerful spotlight, a wire mesh protector to keep the optics from getting scratched, and nonconductive arched strips of nylon that push away fallen electrical wires (power line protection) that would endanger crews, additional armor on the underside, and a bullet-resistant transparent shield for the commander outside the turret. It includes sensors and a software package to quickly detect when components are wearing out, and simulation software so gunners can train more realistically.\n\nThe BUSK kit adds 3 tons to the vehicle's weight. Because of this, a major upgrade was planned. Additional upgrades included a stronger, 800 horsepower engine, a larger main gun, lighter armor, improved sensors and cameras to give a 360° view outside, and an improved fire extinguisher system. This system was supposed to enter service in 2012, but the Bradley became too heavy and the kit did not make it survivable enough. A newer BUSK III kit is now available for Bradleys incorporating a blastproof fuel cell, a blast-resistant driver seat, a turret survivability system, and an emergency ramp release. This kit was recently installed on 236 M2A3 Bradleys in South Korea and is scheduled next to be added to Bradleys of the 4th Infantry Division.\n\nAs of late July 2023, Ukrainian Bradleys have been fitted with BUSK upgraded armor and Bradley Reactive Armor Tiles.\n\nThe Bradley is highly capable in cross-country open terrain, in accordance with one of the main design objectives of keeping pace with the M1 Abrams main battle tank. The Bradley was initially designed to float by deploying a flotation curtain around the vehicle, allowing it to \"swim\" at a speed of 4.5 mph (7.2 km/h ). Later armor upgrades have negated this capability.\n\nOne of the early issues that drove the development of the infantry fighting vehicle (IFV) was the need to have a vehicle that could serve in a high-intensity conflict in Europe, which was feared might include the use of nuclear, biological or chemical (NBC) type weapons . To work in such an environment, an IFV would have to have a life support system that protected from outside contaminants, while allowing the soldiers to fight from inside the vehicle. The earliest specification, from 1958, called for a vehicle of no more than 8 tons, mounting a turret with a 20 mm autocannon and a 7.62 mm machine gun, with sealed firing ports for five infantry gunners.\n\nThe prototypes had the following characteristics: a weight of 25–27 tons, depending on an aluminum or steel hull; a 425 hp diesel engine; a two-man turret with a 20 mm gun; a crew of three plus nine infantry equipped with firing ports; a built-in toilet; armor that was proof against Soviet 14.5 mm MG fire beyond a certain range; a collective and overpressure CBR system; amphibious. The filtration system provided a shirt-sleeve environment until the passengers dismounted. After that they could not repressurize without fear of contamination, but they could plug their suits into the vehicle's filtration system. [ citation needed ] The vehicle was 9 ft (2.7 m) high, 20 ft (6.1 m) long, and 10 ft (3.0 m) wide. [ citation needed ] The rising costs of the Vietnam War left less money to go around in the Pentagon's procurement budget. The XM701 project had several technical shortcomings. It had poor mobility relative to upcoming designs such as the MBT-70, and it could not be carried aboard a C-141 Starlifter . The project was canceled, and new specifications were written in 1965. [ citation needed ]\n\nIn 1967, the public display of the BMP-1 caused additional interest in the MICV program, which concluded its studies in 1968. Continued disagreements on specifications slowed down development. In 1968, an Army task force headed by Major General George Casey recommended that the service once again pursue the development of an MICV. The Army opened a new program manager's office later in 1968.\n\nFrom 1969 to 1970, the Army looked at two alternate vehicles that could be fielded more quickly. The FMC Corporation had developed the XM765 Armored Infantry Fighting Vehicle , an IFV version of the M113A1. It had a one-man turret mounting a 25 mm gun, a sealed environment, and firing ports. The vehicle weight was 15 tons. The upper sides of the vehicle were sloped and spaced steel armor plates were added to improve protection. Firing ports for the passengers were added and a M139 20 mm cannon was added to the commander's cupola. The U.S. Army rejected it due to limited mobility, which would have prevented it from keeping pace with the proposed MBT-70. The other alternate vehicle was the West German Marder , which mounted a 20 mm autocannon, relatively strong steel armor, and full CBR protection. The U.S. Army rejected it due to it not being amphibious, too large and heavy for air transport, and too expensive.\n\nThe MICV program continued on, and in 1972, the Army solicited proposals for the MICV. In November 1972, the Army awarded FMC a contract to develop the XM723. This vehicle was similar to the XM765, but had improved armor and speed. It shared components with the LVTP-7 rather than the M113. FMC began construction of the XM723 prototype, which was completed in 1973. The XM723 weighed 21 tons, had spaced aluminum armor proofed against 14.5 mm fire, had a crew of three plus eight infantry, firing ports for the infantry, and a one-man turret with a 20 mm gun. The commander sat inside the hull.\n\nTo adapt the XM723 to a reconnaissance role, as well as an IFV, the turret was replaced in 1976 with a two-man turret mounting a 25 mm Bushmaster cannon and TOW missiles. This was the TBAT-II (Tow Bushmaster Armored Turret, Two Man) design. A two-man turret design put the commander in a position with a better view of the battlefield. The TOW missiles give the vehicle a strong antiarmor capability. The value of anti-tank missiles had been well established in the 1973 Yom Kippur war . The added political advantage was that the TOW missiles made it an easier sell to Congress, as it was a new capability not possessed by the M113.\n\nGeneral Donn Starry wrote:\n\nWe in TRADOC… decided to put the TOW on the MICV because we realized that if we did not put the TOW on the MICV, we would probably never have a MICV.\n\nIn October 1976, the Army accepted a number of recommendations put forward by the MICV Task Force formed earlier that year. The Army would combine the roles of scout and IFV, as the previous Armored Reconnaissance Scout Vehicle had been canceled. The Army agreed to make the armor protection comparable to the XM723. The TBAT-II turret with its 25 mm cannon and a TOW-missile launcher in the two-man turret would be used for the both vehicles.\n\nIn 1977, the MICV was renamed the XM2. The scout version became the XM3. These comprised the two variants of the Fighting Vehicle System. A third variant, called the General Support Rocket System, which later entered production as the M270 Multiple Launch Rocket System , was added to the portfolio in 1977.\n\nCongress was questioning the development of the XM2 due to the high losses incurred by Soviet built BMP-1s in the 1973 Yom Kippur War. Congress suggested the development of a more heavily armored vehicle. The Army argued against this due to concerns about cost, weight, and development time. [ citation needed ] In 1977, Congress ordered two new evaluations of the IFV program, one by the Government Accounting Office (GAO) and one by the Department of the Army , under General Pat Crizer. The GAO report released in early 1978 was critical of the XM2's height, mobility, complexity, lack of clear doctrinal use, and lack of chemical/biological/radiological protection.\n\nBased upon this criticism, the OMB deleted M2/3 funding from the budget for the 1979 financial year. In 1978, the Crizer report asserted that the basic design was consistent with doctrine, and that development of an IFV with superior characteristics would be costly and pose significant developmental risks. An additional study, the IFV/CFV Special Study Group, evaluated whether an improved version of the M113 could be used instead of the M2/3 IFV. Their conclusion was that extensive redesign would be necessary for even marginal improvements in M113 derivatives. In October 1978, Congress reauthorized procurement funds.\n\nFMC delivered eight XM2 prototypes to the Army beginning in December 1978 and progressing through March 1979.\n\nThe XM2/3 passed the Army Systems Acquisition Review Council Milestone III review in 1979. In December 1979, the XM2 and XM3 were type classified as the M2 and M3 respectively. Final approval for production came from the Secretary of Defense in February 1980. In October 1981 the vehicle was named the \"Bradley\" for World War II Army General Omar Bradley , who had died earlier that year.\n\nThe Bradley consists of two types of vehicles, the M2 Infantry Fighting Vehicle and the M3 Cavalry Fighting Vehicle. The M3 CFV was originally planned to be named after General Jacob L. Devers , but it was decided the Bradley name would apply to both, since both vehicles are based on the same chassis. They differ in only some details. The M2 carries a crew of three and a six-man infantry squad . The M3 carries the crew of three and a two-man scout team and additional radios, the BGM-71 TOW and M47 Dragon or FGM-148 Javelin missiles.\n\nThe first BFVs came off the production line in May 1980. The Army accepted delivery of the first production vehicles in May 1981. The first combat unit to be equipped with Bradleys (four M2s and six M3s), in March 1983, was the 1st Battalion, 41st (Mechanized) Infantry, 2nd Armored Division. Several years later, the unit commander, Lt. Col. Franklin W. Trapnell, Jr., became the Army's system manager for the Bradley program.\n\nSaudi Arabia stated an interest in acquiring the Bradley in 1989 and began importing the vehicle in 1990.\n\nBradley production concluded in 1995, with a total of 6,724 Bradleys (4,641 M2s and 2,083 M3s) produced for the U.S. Army. The total cost of the program was $5.7 billion, and the average unit cost $3.2 million. This was despite an unmet requirement by the U.S. Army for 8,709 Bradleys as of 1992. Remanufacture of A0 variants to A2 standard began at the same time. As of 2017, 2,907 Bradleys are slated to be modified to become Armored Multi-Purpose Vehicles for the U.S. Army. 1,600 to 2,000 older Bradleys remain in Army depots as of 2017. Some of these Bradleys will be taken from these stocks. [ page needed ]\n\nEven after the troubled development history of the Bradley additional problems occurred after production started. Air Force Col. James G. Burton , an Office of the Secretary of Defense official, advocated the use of comprehensive live fire tests on fully loaded military vehicles to evaluate their survivability. The Army and Air Force agreed to establish the joint live fire testing program in 1984.\n\nWhen testing the Bradley, disagreements occurred between Burton and the Aberdeen Proving Ground 's Ballistic Research Laboratory (BRL), which preferred smaller, more controlled, \"building block\" tests. They claimed such limited, completely unrealistic, according to Burton, testing would improve the databases used to model vehicle survivability, as opposed to full tests with random shots that would provide a far more accurate picture of its performance under real battlefield conditions but produce less useful statistical data.\n\nBurton insisted on a series of \" overmatch \" tests in which weapons would be fired at the Bradley that were known to be able to penetrate its armor easily, including Russian ordnance. Burton saw attempts to avoid such tests as dishonest, while the BRL saw them as wasteful, as they already knew the vehicle would fail. The disagreements became so contentious that testing was suspended, while a congressional inquiry resulted. Additional improvements to vehicle survivability were added to production vehicles by 1988. Though Burton's actions accelerated the implementation of these changes, the changes themselves were almost wholly the work of the BRL.\n\nBurton was ordered to transfer from his post at OSD, prompting yet more congressional scrutiny. Burton retired from the Air Force rather than accept the new post. The House Armed Services Committee found that Burton's claims of malfeasance were rather due to \"a long-standing fundamental disagreement over testing methodology and, more importantly, the inability of OSD and the Army to reach an agreement on how the test is conducted. ...The Army has complied with many of Colonel Burton's issues of concern over the past several years.\"\n\nU.S. Army began efforts to replace the Bradley in the mid-1980s under the Armored Systems Modernization program. The Army studied creating several vehicle variants under a common heavy chassis to replace main battle tanks and Bradleys. This effort was canceled in 1992 due to the collapse of the Soviet Union.\n\nThe Army's Bradley replacement effort was restarted under the Future Fighting Vehicle (FFV) program. In May 2015, General Dynamics and BAE Systems, the two prime contractors involved with the GCV, were awarded contracts to develop design concepts for the FFV. In June 2018, the Army established the Next Generation Combat Vehicle (NGCV) program to replace the M2 Bradley.\n\nIn October 2018, the program was re-designated as the Optionally Manned Fighting Vehicle (OMFV). The NGCV program was expanded as a portfolio of next-generation vehicles including tanks and the Bradley-based Armored Multi-Purpose Vehicle, a successor to the M113 family. This program placed much of the cost burden of development on contractors, causing many competitors to drop out. In February 2020, the Army restarted the program, promising to take on more responsibility for funding.\n\nFor the U.S. Army's Armored Multi-Purpose Vehicle (AMPV) program to replace the M113, BAE offered a variant of the Bradley. The AMPV submission was a turretless Bradley chassis, but US Army requirements favored providing greater cargo space, increased armor, upgraded engine and electrical systems. For increased protection, the Army required a V-shaped bottom replaces the flat base. These changes created a wholly new chassis design that is based on and shares common components with the Bradley but is a distinctly new vehicle. The AMPV has several modular roof sections to adapt to each role. For fuel efficiency, BAE has considered using a hybrid-electric drive , similar to their Ground Combat Vehicle . It was suggested that surplus Bradleys could be retrofitted into this version.\n\nBAE Systems rolled out the first AMPV prototype on 15 December 2016. Funding allows for 160 vehicles to be produced per year as of 2016, which is enough to field one and a half brigades. The 1st Armored Brigade Combat Team, 3rd Infantry Division was the first unit to be equipped with the AMPV in March 2023. A contract for full-rate production was awarded in September 2023.\n\nBattle Command Vehicle : The vehicle was visually similar to the M2 Bradley on which it is based. Some ammunition space was eliminated in order to accommodate communications equipment and workstations for battle commanders. United Defense LP converted two M2 Bradleys to this configuration, which the Army tested at Fort Hood in 1997.",
+      "shortDescription": "M919 APFSDS-T ( armor-piercing fin-stabilized discarding sabot (with) tracer ) round containing a finned depleted uranium penetrator similar in concept to armor-piercing munitions used in modern tanks.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Bradley was developed largely in response to the Soviet BMP family of infantry fighting vehicles. The Bradley was meant to serve as an armored personnel carrier and a tank-killer. One design requirement specified that it should be as fast as the M1 Abrams main battle tank, so the vehicles could maintain formation.\n\nThe M2/M3's primary armament is a 25 mm chain gun using either 100 or 300 rounds per minute, accurate to 3,000 m. It is armed with a TOW missile launcher capable of carrying two loaded missiles. The missiles, capable of destroying most tanks to a maximum range of 4,000 m (13,000 ft), can only be fired while the vehicle is stationary. The Bradley carries a coaxial 7.62 mm medium machine gun to the right of the chain gun.\n\nThe Bradley is equipped with the 25 mm M242 Bushmaster as its main weapon. The M242 is a single-barrel chain gun with an integrated dual-feed mechanism and remote feed selection. [ unreliable source? ] The cannon carries 300 rounds of ammunition in two ready boxes (one of 70 rounds, the other of 230 rounds), with an extra 600 rounds in storage for the M2 Infantry Fighting Vehicle variant or 1,200 stowed rounds for the M3 Cavalry Fighting Vehicle variant. The two ready-boxes allow a selectable mix of rounds, such as the M791 APDS-T (Armor-Piercing Discarding Sabot (with) Tracer) and M792 HEI-T (High Explosive Incendiary (with) Tracer) rounds. The tungsten APDS-T rounds proved effective in Desert Storm , capable of knocking out many Iraqi vehicles, including several T-55 tanks. [ citation needed ]\n\nThe Red River Army Depot in Texarkana, Texas, is responsible for maintenance and repair of the Bradley system.\n\nThe Bradley ESV enables engineer assets to maintain momentum with the main force while conducting engineer and sapper operations. The ESV is equipped with standard combat engineering equipment and can employ unique mission equipment packages for obstacle neutralization.\n\nThe Bradley BCV allows brigade commanders to move around the battlefield away from their command post. The BCV integrates an enhanced command and control communication suite to maintain digital interface with maneuver forces and the Tactical Operations Center.\n\nThe M270 MLRS is composed of two major sections, a M269 launcher loader module mated to a M993 carrier vehicle. The M993 carrier vehicle portion is a modified BFV chassis. [ citation needed ]\n\nBAE said that they have the capability to build up to eight AMPV platforms per day, the same as the Bradley during the height of its production, as both vehicles share the same production line and supply base. A mortar carrier vehicle can be converted from the original Bradley in 40 days. Underbody blast tests demonstrated that AMPV survivability requirements could be met with a Bradley platform. BAE projected their AMPV submission to have similar operating costs to the M113 and lower costs than an M2 Bradley, as the platform's most expensive components are related to the omitted turret. To better accommodate modern electronics, the turretless Bradley has 78% more internal space than the M113, and two 400-amp generators.",
+      "shortDescription": "The Bradley was developed largely in response to the Soviet BMP family of infantry fighting vehicles.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "In December 1963, the Army Combat Developments Command studied the concept for a \"Post 1965 Infantry Combat Vehicle\", later the MICV. In the interim, the Army planned upgrades to the M113 that would bridge the gap to the MICV. One such upgrade was the XM734 which added firing ports. The .50 caliber machine gun was replaced with a twin machine gun cupola or an M139 20 mm autocannon. This test bed saw limited service in Vietnam, from 1967 to 1972, where it received positive feedback from troops.\n\nIn 1963, the U.S. and West German governments began work on the MBT-70 main battle tank design and an IFV companion project called MICV-65 , Mechanized Infantry Combat Vehicle. In 1964, the Army solicited bids for the MICV-65, awarding the contract for the Pacific Car and Foundry Company . The first XM701 prototype was delivered in 1965 and testing was completed in 1966. The XM701 shared components with the M107 and M110 self-propelled howitzers.\n\nIn 1993, Burton released his book The Pentagon Wars: Reformers Challenge the Old Guard . The book was adapted into the black comedy film The Pentagon Wars in 1998.\n\nDuring the Gulf War , M2 Bradleys destroyed more Iraqi armored vehicles than the M1 Abrams . [ citation needed ] A few kills against Iraqi T-72 tanks at close range are reported. A total of 20 Bradleys were lost—three by enemy fire and 17 due to friendly fire incidents. Another 12 were damaged. The gunner of one Bradley was killed when his vehicle was hit by Iraqi fire, possibly from an Iraqi BMP-1 , during the Battle of 73 Easting . To remedy some problems that were identified as contributing factors in the friendly fire incidents, infrared identification panels and other marking/identification measures were added to the Bradleys.\n\nIn the Iraq War, the Bradley proved vulnerable to improvised explosive device and rocket-propelled grenade attacks, but casualties were light with the crew able to escape. In 2006, total losses included 55 Bradleys destroyed and some 700 others damaged. By the end of the war, about 150 Bradleys had been destroyed. [ unreliable source? ]\n\nDuring the Russian invasion of Ukraine , the US donated about 190 Bradleys to Ukraine's armed forces. Ukraine's first documented use of Bradleys occurred in the Zaporizhzhia region after Ukraine launched its southern counteroffensive in June 2023. An early assault near Mala Tokmachka on June 8 was unsuccessful, and imagery showed that Ukraine lost at least 17 Bradleys of M2 variant. On 19 July, Hanna Maliar , Ukraine's deputy defense minister, claimed on Telegram that a M2 Bradley had killed Russian infantrymen during fighting in the Zaporizhzhia region. She further claimed that using TOW missiles the M2 Bradley was able to destroy two Russian T-72 tanks. The Bradley was assigned to the 47th Mechanized Brigade . These claims could not be independently verified.\n\nOn 12 January 2024, video emerged of a pair of Ukrainian M2A2 Bradleys from the 47th Mechanized Brigade engaging and disabling a Russian T-90M tank at close range with their autocannons in Stepove , Ukraine.\n\nAs of 14 April 2026, 187 of the donated Bradleys had been confirmed destroyed, damaged, abandoned or captured (98 destroyed, 76 damaged and/or abandoned and 13 captured) by the Dutch open-source intelligence website Oryx .\n\nThe U.S. Army began the Future Combat Systems (FCS) Manned Ground Vehicles program in 1999. This family of 18-ton lightweight tracked vehicles centered around a common chassis. It would consist of eight variants, including infantry carriers, scouting vehicles and main battle tanks. FCS was canceled in 2009 due to budget cuts.\n\nIn 2010, the Army began the Ground Combat Vehicle program to replace the M2 Bradley. Entries from BAE Systems and General Dynamics were selected for evaluation. Concerns grew around the vehicle's proposed weight of around 70 tons. The GCV was cancelled in 2014 due to sequestration budget cuts.\n\nThe Black Knight prototype unmanned ground combat vehicle being developed by BAE that resembles a tank and makes extensive use of components from the Bradley Combat Systems program to reduce costs and simplify maintenance. It is designed to be remotely operated from a BFV commander's station while riding mounted, as well as being controllable by dismounted infantry.\n\nCroatia : 89 M2A2 ODS\n\nLebanon : 32 M2A2\n\n400\n\n300+ M2A2 ODS & 4 M7 BFISTs. As of 14 April 2026, 187 Bradleys had reportedly been destroyed, damaged or captured, while in service with Ukrainian forces. On 24 July 2025, the US approved the $150 million sale package of Bradley infantry fighting vehicle as part of secondary sales package along with Hawk Phase III missile systems.\n\nRoughly 4,500 M2 & M3 variants, plus about 2,000 in storage. As of January 2025, there are an estimated 1,200 M3A2/A3 (800 more M3 Bradley in storage), 2,000 M2A2/A3, 285 M2A4, 300 M7A3/SA BFIST (OP), and 35 M7A4 BFIST (OP) (2000 more M2 Bradleys in storage). On 24 July 2025, the US approved the $150 million secondary sale package of Bradley vehicles and related equipment.\n\nPortugal : The Portuguese Army is looking for a new infantry fighting vehicle to replace its M113 fleet.",
+      "shortDescription": "In December 1963, the Army Combat Developments Command studied the concept for a \"Post 1965 Infantry Combat Vehicle\", later the MICV.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Initial variants had six ports, but the side ports were plated over with the armor configuration on the A2 and A3 variants, leaving only the two rear-facing mounts in the loading ramp. No versions of the M3 CFV carry firing port weapons. Early versions had all six firing port mounts fitted and plated over. Newer versions retain the two ramp-mounted firing ports, though plated over. [ citation needed ]\n\nThe use of aluminum armor and the storage of large quantities of ammunition in the vehicle initially raised questions about its combat survivability. Spaced laminate belts and high-hardness steel skirts have been added to improve the side protection of later versions, while overall weight was increased to 33 tons. [ citation needed ]\n\nAll versions are equipped with two four-barreled M257 smoke grenade launchers on the front of the turret for creating defensive smoke screens , which can also be loaded with chaff and flares . [ citation needed ]\n\nThe M2 Bradley Infantry Fighting Vehicle (IFV) consists of five variants: the M2, M2A1, M2A2, M2A2 ODS (Operation Desert Storm improvements), and M2A3. Their main mission is to provide protected transport of an infantry squad , up to six passengers, to critical points. Aside from carrying mechanized infantry into close contact with the enemy, the M2 can provide overwatching fire to dismounting infantrymen. It is adequately armored to provide protection against small arms fire and artillery, and able to combat any vehicle on the battlefield using its TOW missiles. [ citation needed ]\n\nThe M2 IFV has six external firing ports for the squad M231 Firing Port Weapon on the M2 and M2A1 versions only. Four ports were removed on the sides of the vehicle on the M2A2 and A3 versions, and only two in the ramp remain. These ports allow passengers to engage the enemy from within the protection of the Bradley vehicle. These firing ports are almost always covered by additional armor kits and a Bradley with them operable is rare. The proper use of M231 FPWs was rare in practice.\n\nThe M2 Bradley unit cost is $1.11 million (FY 1993 constant dollars) US$1.84M in 2016 (inflation adjusted).\n\nThe M3 Bradley Cavalry Fighting Vehicle (CFV) is virtually identical to the M2 Bradley except that it is equipped as a cavalry / scout vehicle. Instead of holding six infantrymen in the payload compartment, it is designed to seat two scouts and hold additional radios and ammunition. Lacking are the six external firing ports present on the M2 Bradley IFV. [ citation needed ]\n\nThe C2V is based on the M993 M270 multiple launch rocket system (MLRS) carrier chassis and is designed to provide an automated tactical command post and operations centers. It was designed to replace the M113 -based M577A2 command post carrier. Mass production was cancelled in late 1999. Around 25 vehicles were finally produced for the US Army.\n\nThe BSFV is designed specifically for the carriage and support of a Stinger MANPADS team. The MANPADS-Under-Armor (MUA) dismounted Stinger team concept of the BSFV left the operators exposed, so it was replaced by the M6 Linebacker, which retained the dismounted Stinger missile capability.\n\nAn air defense variant, these vehicles are modified M2A2 ODSs with the TOW missile system replaced with a four-tube Stinger missile system. The U.S. Army awarded the initial contract in 1995, calling for 260 Bradleys converted into the configuration. From 2005 to 2006, M6 Linebackers had their Stinger missile systems removed and were converted to standard M2 Bradley ODS IFVs. [ unreliable source? ] By 2017, the US Army was exploring reintroducing air defense Bradleys with the reemergence of hostile aerial threats.\n\nIn October 2017, BAE displayed an updated version of the Bradley Linebacker called the M-SHORAD (Mobile Short-Range Air Defense) equipped with a pMHR (portable multi-mission hemispheric radar) search radar mounted around the turret, a fire-control radar, and a jammer on top of the turret to non-kinetically defeat unmanned aerial vehicles (UAVs). The main gun was replaced with an XM914 30 mm autocannon with airburst rounds , and a missile launcher that could accommodate various missiles including the Stinger, AIM-9X Sidewinder , or others.\n\nThe US Army chose to create an M-SHORAD vehicle out of the Stryker instead of the Bradley. Although the tracked Bradley has better mobility on soft ground, the wheeled Stryker has sufficient mobility to perform tactical air defense while also having greater weight, space, and electrical power capacity to make upgrades.\n\nThe B-FiST has replaced the existing armored FiST vehicle (FiST-V) platform, the M981 FISTV , in the U.S. Army inventory. The TOW/UA suite is replaced by target location equipment, integrated with the Bradley ISU sight unit. It carries equipment for use by dismounted observers. A hybrid GPS / inertial / dead reckoning navigation system robustly provides the vehicle location as a reference point.",
+      "shortDescription": "Initial variants had six ports, but the side ports were plated over with the armor configuration on the A2 and A3 variants, leaving only the two rear-facing mounts in the loading ramp.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 201701,
+      "url": "https://en.wikipedia.org/wiki/Bradley_Fighting_Vehicle",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Armored fighting vehicle; Infantry fighting vehicle\".",
+      "parameterUomValue": "Armored fighting vehicle; Infantry fighting vehicle",
+      "classification": "U",
+      "parameterValue": "Armored fighting vehicle; Infantry fighting vehicle",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1981–present\".",
+      "parameterUomValue": "1981–present",
+      "classification": "U",
+      "parameterValue": "1981–present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"§ Operators\".",
+      "parameterUomValue": "§ Operators",
+      "classification": "U",
+      "parameterValue": "§ Operators",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"Persian Gulf War; Waco siege; Yugoslav Wars Operation Joint Endeavour; Operation Joint Endeavour; Global War on Terrorism War in Afghanistan Iraq War; War in Afghanistan; Iraq War; Russo-Ukrainian War Russian invasion of Ukraine; Russian invasion of Ukraine\".",
+      "parameterUomValue": "Persian Gulf War; Waco siege; Yugoslav Wars Operation Joint Endeavour; Operation Joint Endeavour; Global War on Terrorism War in Afghanistan Iraq War; War in Afghanistan; Iraq War; Russo-Ukrainian War Russian invasion of Ukraine; Russian invasion of Ukraine",
+      "classification": "U",
+      "parameterValue": "Persian Gulf War; Waco siege; Yugoslav Wars Operation Joint Endeavour; Operation Joint Endeavour; Global War on Terrorism War in Afghanistan Iraq War; War in Afghanistan; Iraq War; Russo-Ukrainian War Russian invasion of Ukraine; Russian invasion of Ukraine",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"FMC Corporation\".",
+      "parameterUomValue": "FMC Corporation",
+      "classification": "U",
+      "parameterValue": "FMC Corporation",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Designed",
+      "parameterDescr": "Year design work began. Source text: \"1963–1981\".",
+      "parameterUomValue": "1963–1981",
+      "classification": "U",
+      "parameterValue": "1963–1981",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"United Defense (1981–1995); BAE Systems Platforms & Services (since 2004)\".",
+      "parameterUomValue": "United Defense (1981–1995); BAE Systems Platforms & Services (since 2004)",
+      "classification": "U",
+      "parameterValue": "United Defense (1981–1995); BAE Systems Platforms & Services (since 2004)",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Produced",
+      "parameterDescr": "Production period. Source text: \"1981–1995 ( United Defense ); 2004–present ( BAE Systems Platforms & Services )\".",
+      "parameterUomValue": "1981–1995 ( United Defense ); 2004–present ( BAE Systems Platforms & Services )",
+      "classification": "U",
+      "parameterValue": "1981–1995 ( United Defense ); 2004–present ( BAE Systems Platforms & Services )",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \"6,724\".",
+      "parameterUomValue": "6724 units",
+      "classification": "U",
+      "parameterValue": "6724",
+      "uom": "units"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Variants",
+      "parameterDescr": "Named variants of the base system. Source text: \"§ Variants\".",
+      "parameterUomValue": "§ Variants",
+      "classification": "U",
+      "parameterValue": "§ Variants",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"30.4 short tons (27.6 t)\".",
+      "parameterUomValue": "27600 kg",
+      "classification": "U",
+      "parameterValue": "27600",
+      "uom": "kg"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"21.5 ft (6.55 m)\".",
+      "parameterUomValue": "6.55 m",
+      "classification": "U",
+      "parameterValue": "6.55",
+      "uom": "m"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Width",
+      "parameterDescr": "Width (descriptive text, not a unit-bearing quantity). Source text: \"12 ft (3.6 m)\".",
+      "parameterUomValue": "12 ft (3.6 m)",
+      "classification": "U",
+      "parameterValue": "12 ft (3.6 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Height",
+      "parameterDescr": "Overall height of the system. Source text: \"9.8 ft (2.98 m)\".",
+      "parameterUomValue": "2.98 m",
+      "classification": "U",
+      "parameterValue": "2.98",
+      "uom": "m"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Crew",
+      "parameterDescr": "Number of crew required to operate the system. Source text: \"3 + variable number of passengers depending on variant\".",
+      "parameterUomValue": "3 + variable number of passengers depending on variant",
+      "classification": "U",
+      "parameterValue": "3 + variable number of passengers depending on variant",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Armor",
+      "parameterDescr": "Armor (descriptive text, not a unit-bearing quantity). Source text: \"14.5–30 mm all-around AP protection (depending on variant); Explosive reactive armor for RPG protection\".",
+      "parameterUomValue": "14.5–30 mm all-around AP protection (depending on variant); Explosive reactive armor for RPG protection",
+      "classification": "U",
+      "parameterValue": "14.5–30 mm all-around AP protection (depending on variant); Explosive reactive armor for RPG protection",
+      "uom": ""
+    },
+    {
+      "seq": 1018,
+      "parameter": "Main armament",
+      "parameterDescr": "Main armament (descriptive text, not a unit-bearing quantity). Source text: \"25 mm M242 Bushmaster chain gun; 2× BGM-71 TOW anti-tank missile\".",
+      "parameterUomValue": "25 mm M242 Bushmaster chain gun; 2× BGM-71 TOW anti-tank missile",
+      "classification": "U",
+      "parameterValue": "25 mm M242 Bushmaster chain gun; 2× BGM-71 TOW anti-tank missile",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Secondary armament",
+      "parameterDescr": "Secondary armament (descriptive text, not a unit-bearing quantity). Source text: \"7.62 mm M240C machine gun\".",
+      "parameterUomValue": "7.62 mm M240C machine gun",
+      "classification": "U",
+      "parameterValue": "7.62 mm M240C machine gun",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Cummins VTA-903T diesel ; 600 hp (450 kW)\".",
+      "parameterUomValue": "Cummins VTA-903T diesel ; 600 hp (450 kW)",
+      "classification": "U",
+      "parameterValue": "Cummins VTA-903T diesel ; 600 hp (450 kW)",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Power/weight",
+      "parameterDescr": "Power/weight (descriptive text, not a unit-bearing quantity). Source text: \"19.7 horsepower per short ton (16.2 kW/t)\".",
+      "parameterUomValue": "19.7 horsepower per short ton (16.2 kW/t)",
+      "classification": "U",
+      "parameterValue": "19.7 horsepower per short ton (16.2 kW/t)",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Suspension",
+      "parameterDescr": "Suspension (descriptive text, not a unit-bearing quantity). Source text: \"Torsion bar\".",
+      "parameterUomValue": "Torsion bar",
+      "classification": "U",
+      "parameterValue": "Torsion bar",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"250 mi (400 km)\".",
+      "parameterUomValue": "400 km",
+      "classification": "U",
+      "parameterValue": "400",
+      "uom": "km"
+    },
+    {
+      "seq": 1024,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"35 mph (56 km/h)\".",
+      "parameterUomValue": "35 mph (56 km/h)",
+      "classification": "U",
+      "parameterValue": "35 mph (56 km/h)",
+      "uom": ""
+    }
+  ]
+}

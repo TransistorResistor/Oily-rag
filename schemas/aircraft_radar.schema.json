@@ -1,0 +1,127 @@
+{
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Platform",
+      "uom": "",
+      "parameterDescr": "Aircraft type(s) the system is fitted to.",
+      "count": 10
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 10
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 9
+    },
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 8
+    },
+    {
+      "parameter": "Frequency",
+      "uom": "",
+      "parameterDescr": "Operating radio frequency.",
+      "count": 8
+    },
+    {
+      "parameter": "Introduced",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service.",
+      "count": 6
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 6
+    },
+    {
+      "parameter": "Azimuth",
+      "uom": "deg",
+      "parameterDescr": "Angular field of regard in azimuth (left-right).",
+      "count": 4
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 2
+    },
+    {
+      "parameter": "Diameter",
+      "uom": "m",
+      "parameterDescr": "Body/airframe diameter.",
+      "count": 2
+    },
+    {
+      "parameter": "Elevation",
+      "uom": "deg",
+      "parameterDescr": "Angular field of regard in elevation (up-down).",
+      "count": 2
+    },
+    {
+      "parameter": "Power",
+      "uom": "kW",
+      "parameterDescr": "Transmit power output.",
+      "count": 2
+    },
+    {
+      "parameter": "Antenna",
+      "uom": "",
+      "parameterDescr": "Antenna configuration/element count.",
+      "count": 1
+    },
+    {
+      "parameter": "Antenna diameter",
+      "uom": "m",
+      "parameterDescr": "Diameter of the radar antenna/dish.",
+      "count": 1
+    },
+    {
+      "parameter": "Components",
+      "uom": "",
+      "parameterDescr": "Components (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Production ended",
+      "uom": "",
+      "parameterDescr": "Year production of the system ended.",
+      "count": 1
+    },
+    {
+      "parameter": "Search cone",
+      "uom": "",
+      "parameterDescr": "Total angular search coverage.",
+      "count": 1
+    },
+    {
+      "parameter": "Units delivered",
+      "uom": "units",
+      "parameterDescr": "Total number of units delivered to customers.",
+      "count": 1
+    },
+    {
+      "parameter": "Weight",
+      "uom": "kg",
+      "parameterDescr": "Overall weight of the system.",
+      "count": 1
+    }
+  ]
+}

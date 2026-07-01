@@ -1,0 +1,340 @@
+{
+  "modelID": 2062,
+  "systemGroup": "Naval Vessel",
+  "systemType": "Submarine",
+  "nomenclature": "Virginia-class submarine",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Virginia class , or the SSN-774 class , is a class of nuclear-powered attack submarines with vertical launching system (VLS)-launched cruise missile capability in service with the United States Navy . The class is designed for a broad spectrum of open-ocean and littoral missions, including antisubmarine warfare and intelligence-gathering operations. They are scheduled to replace older Los Angeles -class attack submarines, many of which have already been decommissioned, as well as four cruise missile submarine variants of the Ohio -class submarines . Upon the 25 July 2025 decommissioning of the Los Angeles -class submarine USS Helena (SSN-725) , the Virginia -class became the most numerous active submarine class in the world.\n\nThe Virginia class is built through an industrial arrangement designed to maintain both General Dynamics Electric Boat and Newport News Shipbuilding , the only two U.S. shipyards capable of building nuclear-powered submarines. Under the present arrangement, the Newport News facility builds the stern, habitability, machinery spaces, torpedo room, sail, and bow, while Electric Boat builds the engine room and control room. The facilities alternate work on the reactor plant, as well as the final assembly, test, outfit, and delivery.",
+      "shortDescription": "Virginia class , or the SSN-774 class , is a class of nuclear-powered attack submarines with vertical launching system (VLS)-launched cruise missile capability in service with the United States Navy .",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The class was developed under the codename Centurion, later renamed New SSN (NSSN). The \"Centurion Study\" was initiated in February 1991. The Virginia -class submarine was the first US Navy warship with its development coordinated using such three-dimensional (3D) visualization technology as CATIA , which comprises computer-aided engineering (CAE), computer-aided design (CAD), computer-aided manufacturing (CAM), and product lifecycle management (PLM). Design problems—and maintenance problems for the Navy—ensued, nonetheless.\n\nThe Virginia class was intended in part as a less expensive alternative to the Seawolf -class submarine ($1.8 billion vs $2.8 billion), whose production run was canceled after just three boats had been completed. To reduce costs, the Virginia -class submarines use many \" commercial off-the-shelf \" components, especially in their computers and data networks. In 2001, Newport News Shipbuilding and General Dynamics Electric Boat built a quarter-scale version of a Virginia -class submarine dubbed Large Scale Vehicle II (LSV II) Cutthroat . The vehicle was designed as an affordable test platform for new technologies. By 2007, approximately 35 million labor hours had been spent to design the Virginia class. Constructing a single Virginia -class submarine has required around nine million labor hours, and over 4,000 suppliers. Each submarine is projected to make 14–15 deployments during its 33-year service life.\n\nTo get the submarine's price down to $2 billion per submarine in fiscal year 2005 (FY-05) dollars, the Navy instituted a cost-reduction program to shave off about $400 million of each submarine's price tag. The project was dubbed \"2 for 4 in 12\", referring to the Navy's desire to buy two boats for $4 billion in FY-12. Under pressure from Congress, the Navy opted to start buying two boats per year in FY-11, meaning that officials would not be able to get the $2 billion price tag before the service started buying two submarines per year. However, program manager Dave Johnson said at a conference on 19 March 2008 that the program was only $30 million away from achieving the $2 billion price goal and would reach that target on schedule. Improvements in shipbuilding technology have trimmed production costs below the $1.8 billion projected fiscal year 2009 dollars.\n\nThe Virginia -class Program Office received the David Packard Excellence in Acquisition Award in 1996, 1998, and 2008 \"for excelling in four specific award criteria: reducing life-cycle costs; making the acquisition system more efficient, responsive, and timely; integrating defense with the commercial base and practices; and promoting continuous improvement of the acquisition process\".\n\nIn December 2008, the Navy signed a $14 billion contract with General Dynamics and Northrop Grumman to supply eight submarines. The contract required the delivery of one submarine in each of FY-09 and FY-10, and two submarines in each of FY-11, FY-12, and FY-13. This contract was designed to bring the Navy's Virginia -class fleet to 18 submarines. In December 2010, the United States Congress passed a defense authorization bill that expanded production to two submarines per year. Two submarine-per-year production resumed on 2 September 2011 with commencement of Washington (SSN-787) construction.\n\nOn 21 June 2008, the Navy christened USS New Hampshire , the first Block II submarine. This boat was delivered eight months ahead of schedule and $54 million under budget. Block II boats are built in four sections, compared to the 10 sections of the Block I boats. This enables a cost saving of about $300 million per boat, reducing the overall cost to $2 billion per boat and the construction of two new boats per year. Beginning in 2010, new submarines of this class were to have included a software system that can monitor and reduce their electromagnetic signatures when needed.\n\nBecause of the low rate of Virginia production, the Navy entered into a program with DARPA to overcome technology barriers to lower the cost of attack submarines so that more could be built, to maintain the size of the fleet.\n\nThese include:",
+      "shortDescription": "The class was developed under the codename Centurion, later renamed New SSN (NSSN).",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "In 2013, just as two-per-year construction was supposed to commence, Congress failed to resolve the United States fiscal cliff , forcing the Navy to attempt to \"de-obligate\" construction funds.\n\nIn April 2019, the CRS reported that the Navy estimated the cost of a boat was $2.8 billion. In July 2023, the CRS reported that the Navy estimates at the present production rate of two boats per year that the cost per boat when equipped with the additional Virginia payload module midbody section was $4.3 billion.\n\nOn 14 September 2023, at a Senate confirmation hearing , Admiral Lisa Franchetti said that the Navy would have to work with builders to raise the rate of production from 1.2/year to 2.2/year to meet the AUKUS target. However, on 30 May 2026, the three vessels due for Australia in the 2030s, which would have been two second-hand of Block IV and one new of Block VII, were announced to be all second-hand of Block IV.\n\nThe Virginia class incorporates several innovations not found in previous US submarine classes.\n\nPropulsion concepts not constrained by a centerline shaft\n\nExternally stowed and launched weapons (especially torpedoes)\n\nConformal alternatives to the existing spherical sonar array\n\nTechnologies that eliminate or substantially simplify existing submarine hull, mechanical, and electrical systems\n\nAutomation to reduce crew workload for standard tasks\n\nVirginia -class subs are the first class where all masts share common design – the universal modular mast (UMM) designed by L3 KEO (previously Kollmorgen). Shared components have been maximized and some design choices are also shared between different masts. The first UMM was installed on USS Memphis , a Los Angeles -class submarine. The UMM is an integrated system for housing, erecting, and supporting submarine mast-mounted antennae and sensors. The UMMs are the following:\n\nSnorkel mast\n\nTwo photonic masts\n\nTwo communication masts\n\nOne or two high-data-rate satellite communication (SATCOM) masts, built by Raytheon, enabling communication at super high frequency (for downlink) and extremely high frequency (for uplink) range\n\nRadar mast (carrying AN/BPS-16 surface search and navigation radar)\n\nElectronic warfare mast (AN/BLQ-10 Electronic Support Measures) used to detect, analyze, and identify both radar and communication signals from ships, aircraft, submarines, and land-based transmitters\n\nThe Virginia class is the first to use photonic sensors instead of a traditional periscope . The class is equipped with high- resolution cameras, along with light-intensification and infrared sensors , an infrared laser rangefinder , and an integrated electronic support measures array. Two redundant sets of these sensors are mounted on two AN/BVS-1 photonics masts located outside the pressure hull . Signals from the masts' sensors are transmitted through optical fiber data lines through signal processors to the control center. Visual feeds from the masts are displayed on liquid-crystal display interfaces in the command center.\n\nThe design of earlier optical periscopes required them to penetrate the pressure hull, reducing the structural integrity of the pressure hull, as well as increasing the risk of flooding, and also required the submarine's control room to be located directly below the sail/fin. Implementation of photonics masts (which do not penetrate the pressure hull) enabled the submarine control room to be relocated to a position inside the pressure hull which is not necessarily directly below the sail.\n\nThe current photonics masts have a visual appearance so different from ordinary periscopes that when the submarine is detected, it can be distinctly identified as a Virginia -class vessel. As a result, current photonic masts will be replaced with low-profile photonics masts, which resemble traditional submarine periscopes more closely.\n\nIn the future, a nonrotational affordable modular panoramic photonics mast may be fitted, enabling the submarine to obtain a simultaneous 360° view of the sea surface.\n\nIn contrast to a traditional bladed propeller, the Virginia class uses pump-jet propulsors by BAE Systems , originally developed for the Royal Navy 's Swiftsure -class submarines . The propulsor significantly reduces the risks of cavitation and allows quieter operation.\n\nSonar arrays aboard Virginia -class submarines have an open-system architecture , which enables rapid insertion of new hardware and software as they become available. Hardware upgrades (dubbed technology tnsertions) are usually carried out every four years, while software updates (dubbed advanced processor builds) are carried out every two years. Virginia -class submarines feature several types of sonar arrays.\n\nBQQ-10 bow-mounted spherical active / passive sonar array (large-aperture bow (LAB) sonar array from SSN-784 onward)\n\nA wide-aperture, lightweight fiber-optic sonar array, consisting of three flat panels mounted low along either side of the hull\n\nTwo high-frequency active sonars are mounted in the sail and bow, with the chin-mounted (below the bow) and sail-mounted high-frequency sonars supplementing the (spherical/LAB) main sonar array, enabling safer operations in coastal waters, enhancing under-ice navigation, and improving anti-submarine warfare performance.\n\nA low-cost conformal array high-frequency sonar is mounted on both sides of the submarine's sail to provide coverage above and behind the submarine.\n\nVirginia -class submarines are also equipped with both a low-frequency and a high-frequency towed sonar array .\n\nTB-16 or TB-34 fat-line tactical towed sonar array\n\nTB-29 or TB-33 thin-line long-range search towed sonar array\n\nSubmarine Escape Immersion Equipment MK11 suit(s) that enable ascent from a sunken submarine (maximum ascent depth 600 feet (180 m))\n\nLithium hydroxide canisters that remove carbon dioxide from the submarine's atmosphere\n\nSubmarine Emergency Position Indicating Radio Beacon ( SEPIRB )\n\nThe Block III submarines have two multipurpose Virginia Payload Tubes (VPT) replacing the dozen single purpose cruise missile launch tubes.\n\nThe Block V submarines built from 2019 onward will have an additional Virginia Payload Module (VPM) mid-body section, increasing their overall length. The VPM will add four more VPTs of the same diameter and greater height, located on the centerline, carrying up to seven Tomahawk missiles apiece, that would replace some of the capabilities lost when the SSGN conversion Ohio -class submarines are retired from the fleet. Initially eight payload tubes/silos were planned but this was later rejected in favor of four tubes installed in a 70-foot (21 m) long module between the operations compartment and the propulsion spaces.\n\nThe VPM could potentially carry (non-nuclear) medium-range ballistic missiles. Adding the VPM would increase the cost of each submarine by $500 million (2012 prices). This additional cost would be offset by reducing the total submarine force by four boats. More recent reports state that as a cost reduction measure the VPM would carry only Tomahawk SLCM and possibly unmanned undersea vehicles (UUV) with the new price tag now estimated at $360–380 million per boat (in 2010 prices). The VPM launch tubes/silos will reportedly be similar in design to the ones planned for the Ohio class replacement. In July 2016 General Dynamics was awarded $19 million for VPM development. In February 2017 General Dynamics was awarded $126 million for long lead time construction of Block V submarines equipped with VPM.\n\nThe VPM was designed by General Dynamics Electric Boat; however, manufacturing is undertaken by BWX Technologies and BAE Systems.\n\nAccording to open-source budget documents, Virginia -class submarines are planned to be equipped with a high-energy laser weapon likely to be incorporated into the photonics mast and have a power output of 300–500 kilowatts, based on the submarine's 30 megawatts reactor capacity.\n\nOptical fiber fly-by-wire Ship Control System replaces electro-hydraulic systems for control surface actuation.\n\nCommand and control system module (CCSM) built by Lockheed Martin.\n\nThe auxiliary generator is powered by a Caterpillar model 3512B V-12 marine diesel engine. This replaced the Fairbanks-Morse diesel engine, which would not fit in Virginia ' s auxiliary machinery room.",
+      "shortDescription": "In 2013, just as two-per-year construction was supposed to commence, Congress failed to resolve the United States fiscal cliff , forcing the Navy to attempt to \"de-obligate\" construction funds.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "Virginia -class submarines will be acquired through 2043, and are expected to remain in service until at least 2060, with later submarines expected to operate into the 2070s.\n\nOn 14 March 2023, the trilateral Australian-British-American security pact known as AUKUS announced that the Royal Australian Navy would purchase three Virginia -class submarines as a stopgap measure between the retirement of their conventionally powered Collins -class submarines and the acquisition of the future SSN-AUKUS class submarines. If SSN-AUKUS falls behind schedule, Australia will have the option of purchasing two additional Virginia -class submarines.\n\nThe first full-duration, six-month deployment was successfully carried out from 15 October 2009 to 13 April 2010. Authorization of full-rate production and the declaration of full operational capability was achieved five months later. In September 2010, urethane tiles, applied to the hull to damp internal sound and absorb rather than reflect sonar pulses, were found to be falling off while the subs were at sea. Admiral Kevin McCoy announced that the problems with the mold-in-place special hull treatment for the early boats had been fixed in 2011, then Minnesota was built and found to have the same problem.\n\nModernized version of the AN/BSY-1 integrated combat system designated AN/BYG-1 (previously designated CCS Mk2) and built by General Dynamics AIS (previously Raytheon ). AN/BYG-1 integrates the submarine Tactical Control System (TCS), Payload Control System (PCS) (formerly Weapon Control System (WCS)), and Information Assurance (IA).\n\nUSS California was the first Virginia -class submarine with the advanced electromagnetic signature reduction system built into it, but this system is being retrofitted into the other submarines of the class.\n\nIntegral 9-man lock-out diving chamber .",
+      "shortDescription": "Virginia -class submarines will be acquired through 2043, and are expected to remain in service until at least 2060, with later submarines expected to operate into the 2070s.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 206201,
+      "url": "https://en.wikipedia.org/wiki/Virginia-class_submarine",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Builders",
+      "parameterDescr": "Builders (descriptive text, not a unit-bearing quantity). Source text: \"Newport News Shipbuilding\".",
+      "parameterUomValue": "Newport News Shipbuilding",
+      "classification": "U",
+      "parameterValue": "Newport News Shipbuilding",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Operators",
+      "parameterDescr": "Operators (descriptive text, not a unit-bearing quantity). Source text: \"United States Navy; Royal Australian Navy (planned)\".",
+      "parameterUomValue": "United States Navy; Royal Australian Navy (planned)",
+      "classification": "U",
+      "parameterValue": "United States Navy; Royal Australian Navy (planned)",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Preceded by",
+      "parameterDescr": "Preceded by (descriptive text, not a unit-bearing quantity). Source text: \"Seawolf class; Ohio class (cruise missile submarine variant)\".",
+      "parameterUomValue": "Seawolf class; Ohio class (cruise missile submarine variant)",
+      "classification": "U",
+      "parameterValue": "Seawolf class; Ohio class (cruise missile submarine variant)",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Succeeded by",
+      "parameterDescr": "Succeeded by (descriptive text, not a unit-bearing quantity). Source text: \"SSN(X) class\".",
+      "parameterUomValue": "SSN(X) class",
+      "classification": "U",
+      "parameterValue": "SSN(X) class",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Cost",
+      "parameterDescr": "Cost (descriptive text, not a unit-bearing quantity). Source text: \"$2.8 billion per unit (2019); $4.3 billion per unit w/VPM (2023)\".",
+      "parameterUomValue": "$2.8 billion per unit (2019); $4.3 billion per unit w/VPM (2023)",
+      "classification": "U",
+      "parameterValue": "$2.8 billion per unit (2019); $4.3 billion per unit w/VPM (2023)",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Built",
+      "parameterDescr": "Built (descriptive text, not a unit-bearing quantity). Source text: \"2000–present\".",
+      "parameterUomValue": "2000–present",
+      "classification": "U",
+      "parameterValue": "2000–present",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "In commission",
+      "parameterDescr": "In commission (descriptive text, not a unit-bearing quantity). Source text: \"2004–present\".",
+      "parameterUomValue": "2004–present",
+      "classification": "U",
+      "parameterValue": "2004–present",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Planned",
+      "parameterDescr": "Planned (descriptive text, not a unit-bearing quantity). Source text: \"US Navy : 45; Royal Australian Navy : 3 ; (3 block IV second-hand) + option for 2 more\".",
+      "parameterUomValue": "US Navy : 45; Royal Australian Navy : 3 ; (3 block IV second-hand) + option for 2 more",
+      "classification": "U",
+      "parameterValue": "US Navy : 45; Royal Australian Navy : 3 ; (3 block IV second-hand) + option for 2 more",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "On order",
+      "parameterDescr": "On order (descriptive text, not a unit-bearing quantity). Source text: \"43; Detailed orders: 4 block I, 6 block II, 8 block III, 10 block IV, 12 Block V, 3 block VI)\".",
+      "parameterUomValue": "43; Detailed orders: 4 block I, 6 block II, 8 block III, 10 block IV, 12 Block V, 3 block VI)",
+      "classification": "U",
+      "parameterValue": "43; Detailed orders: 4 block I, 6 block II, 8 block III, 10 block IV, 12 Block V, 3 block VI)",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Building",
+      "parameterDescr": "Building (descriptive text, not a unit-bearing quantity). Source text: \"8; (2 block IV, 6 block V)\".",
+      "parameterUomValue": "8; (2 block IV, 6 block V)",
+      "classification": "U",
+      "parameterValue": "8; (2 block IV, 6 block V)",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Completed",
+      "parameterDescr": "Completed (descriptive text, not a unit-bearing quantity). Source text: \"26; (4 block I, 6 block II, 8 block III, 8 block IV)\".",
+      "parameterUomValue": "26; (4 block I, 6 block II, 8 block III, 8 block IV)",
+      "classification": "U",
+      "parameterValue": "26; (4 block I, 6 block II, 8 block III, 8 block IV)",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Canceled",
+      "parameterDescr": "Canceled (descriptive text, not a unit-bearing quantity). Source text: \"0\".",
+      "parameterUomValue": "0",
+      "classification": "U",
+      "parameterValue": "0",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Active",
+      "parameterDescr": "Active (descriptive text, not a unit-bearing quantity). Source text: \"26; (4 block I, 6 block II, 8 block III, 8 block IV)\".",
+      "parameterUomValue": "26; (4 block I, 6 block II, 8 block III, 8 block IV)",
+      "classification": "U",
+      "parameterValue": "26; (4 block I, 6 block II, 8 block III, 8 block IV)",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Nuclear-powered attack submarine (SSN)\".",
+      "parameterUomValue": "Nuclear-powered attack submarine (SSN)",
+      "classification": "U",
+      "parameterValue": "Nuclear-powered attack submarine (SSN)",
+      "uom": ""
+    },
+    {
+      "seq": 1015,
+      "parameter": "Displacement",
+      "parameterDescr": "Displacement (descriptive text, not a unit-bearing quantity). Source text: \"Submerged:; Block I–IV : 7,900 t (8,700 short tons); Block V : 10,200 t (11,200 short tons)\".",
+      "parameterUomValue": "Submerged:; Block I–IV : 7,900 t (8,700 short tons); Block V : 10,200 t (11,200 short tons)",
+      "classification": "U",
+      "parameterValue": "Submerged:; Block I–IV : 7,900 t (8,700 short tons); Block V : 10,200 t (11,200 short tons)",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"377 ft (115 m); 460 ft (140 m) for Block V\".",
+      "parameterUomValue": "115 m",
+      "classification": "U",
+      "parameterValue": "115",
+      "uom": "m"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Beam",
+      "parameterDescr": "Beam (descriptive text, not a unit-bearing quantity). Source text: \"34 ft (10 m)\".",
+      "parameterUomValue": "34 ft (10 m)",
+      "classification": "U",
+      "parameterValue": "34 ft (10 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1018,
+      "parameter": "Propulsion",
+      "parameterDescr": "Propulsion (descriptive text, not a unit-bearing quantity). Source text: \"1 × S9G nuclear reactor 280,000 hp (210 MW); 2 × steam turbines 40,000 shp (30 MW); 1 × single shaft pump-jet propulsor; 1 × secondary propulsion motor\".",
+      "parameterUomValue": "1 × S9G nuclear reactor 280,000 hp (210 MW); 2 × steam turbines 40,000 shp (30 MW); 1 × single shaft pump-jet propulsor; 1 × secondary propulsion motor",
+      "classification": "U",
+      "parameterValue": "1 × S9G nuclear reactor 280,000 hp (210 MW); 2 × steam turbines 40,000 shp (30 MW); 1 × single shaft pump-jet propulsor; 1 × secondary propulsion motor",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Speed",
+      "parameterDescr": "Speed (descriptive text, not a unit-bearing quantity). Source text: \"25 knots (46 km/h; 29 mph) or over\".",
+      "parameterUomValue": "25 knots (46 km/h; 29 mph) or over",
+      "classification": "U",
+      "parameterValue": "25 knots (46 km/h; 29 mph) or over",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"Unlimited\".",
+      "parameterUomValue": "Unlimited",
+      "classification": "U",
+      "parameterValue": "Unlimited",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Endurance",
+      "parameterDescr": "Endurance (descriptive text, not a unit-bearing quantity). Source text: \"Only limited by food and maintenance requirements.\".",
+      "parameterUomValue": "Only limited by food and maintenance requirements.",
+      "classification": "U",
+      "parameterValue": "Only limited by food and maintenance requirements.",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Test depth",
+      "parameterDescr": "Test depth (descriptive text, not a unit-bearing quantity). Source text: \"Over 800 ft (240 m)\".",
+      "parameterUomValue": "Over 800 ft (240 m)",
+      "classification": "U",
+      "parameterValue": "Over 800 ft (240 m)",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "Complement",
+      "parameterDescr": "Complement (descriptive text, not a unit-bearing quantity). Source text: \"135 (15 officers; 120 enlisted)\".",
+      "parameterUomValue": "135 (15 officers; 120 enlisted)",
+      "classification": "U",
+      "parameterValue": "135 (15 officers; 120 enlisted)",
+      "uom": ""
+    },
+    {
+      "seq": 1024,
+      "parameter": "Armament",
+      "parameterDescr": "Weapons the system is equipped to carry/fire. Source text: \"Block I–II :; 12 × vertically launched missiles:; 12 × VLS tubes (for Tomahawk cruise missiles ); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes (for Mk-48 torpedoes or UGM-84 Harpoon missiles ); Block III–IV :; 12 × vertically launched missiles:; 2 × Virginia payload tubes, each capable of launching six cruise missiles (12 × Tomahawk BGM-109); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes for Mk-48 torpedoes or UGM-84 Harpoon missiles; Block V-VI :; 40 × vertically launched missiles:; 4 × Virginia payload modules (VPM), each capable of launching seven cruise missiles (28 × Tomahawk BGM-109 and future guided cruise missiles); 2 × Virginia payload tubes, each capable of launching six cruise missiles (12 × Tomahawk BGM-109); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes for Mk-48 torpedoes or UGM-84 Harpoon missiles\".",
+      "parameterUomValue": "Block I–II :; 12 × vertically launched missiles:; 12 × VLS tubes (for Tomahawk cruise missiles ); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes (for Mk-48 torpedoes or UGM-84 Harpoon missiles ); Block III–IV :; 12 × vertically launched missiles:; 2 × Virginia payload tubes, each capable of launching six cruise missiles (12 × Tomahawk BGM-109); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes for Mk-48 torpedoes or UGM-84 Harpoon missiles; Block V-VI :; 40 × vertically launched missiles:; 4 × Virginia payload modules (VPM), each capable of launching seven cruise missiles (28 × Tomahawk BGM-109 and future guided cruise missiles); 2 × Virginia payload tubes, each capable of launching six cruise missiles (12 × Tomahawk BGM-109); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes for Mk-48 torpedoes or UGM-84 Harpoon missiles",
+      "classification": "U",
+      "parameterValue": "Block I–II :; 12 × vertically launched missiles:; 12 × VLS tubes (for Tomahawk cruise missiles ); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes (for Mk-48 torpedoes or UGM-84 Harpoon missiles ); Block III–IV :; 12 × vertically launched missiles:; 2 × Virginia payload tubes, each capable of launching six cruise missiles (12 × Tomahawk BGM-109); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes for Mk-48 torpedoes or UGM-84 Harpoon missiles; Block V-VI :; 40 × vertically launched missiles:; 4 × Virginia payload modules (VPM), each capable of launching seven cruise missiles (28 × Tomahawk BGM-109 and future guided cruise missiles); 2 × Virginia payload tubes, each capable of launching six cruise missiles (12 × Tomahawk BGM-109); 25 × torpedo tube launched torpedoes & missiles:; 4 × 21\" torpedo tubes for Mk-48 torpedoes or UGM-84 Harpoon missiles",
+      "uom": ""
+    },
+    {
+      "seq": 1025,
+      "parameter": "Payload",
+      "parameterDescr": "Payload (descriptive text, not a unit-bearing quantity). Source text: \"40 weapons, special operations forces , unmanned undersea vehicles , Advanced SEAL Delivery System ( ASDS ) [Block V: 40 Tomahawk cruise missiles ]\".",
+      "parameterUomValue": "40 weapons, special operations forces , unmanned undersea vehicles , Advanced SEAL Delivery System ( ASDS ) [Block V: 40 Tomahawk cruise missiles ]",
+      "classification": "U",
+      "parameterValue": "40 weapons, special operations forces , unmanned undersea vehicles , Advanced SEAL Delivery System ( ASDS ) [Block V: 40 Tomahawk cruise missiles ]",
+      "uom": ""
+    },
+    {
+      "seq": 1026,
+      "parameter": "Planned cost",
+      "parameterDescr": "Planned cost (descriptive text, not a unit-bearing quantity). Source text: \"about US$1.65 billion each (based on FY95 dollars, 30-boat class and two boat/year build-rate)\".",
+      "parameterUomValue": "about US$1.65 billion each (based on FY95 dollars, 30-boat class and two boat/year build-rate)",
+      "classification": "U",
+      "parameterValue": "about US$1.65 billion each (based on FY95 dollars, 30-boat class and two boat/year build-rate)",
+      "uom": ""
+    },
+    {
+      "seq": 1027,
+      "parameter": "Actual cost",
+      "parameterDescr": "Actual cost (descriptive text, not a unit-bearing quantity). Source text: \"US$1.5 billion (in 1994 prices), US$2.6 billion (in 2012 prices)\".",
+      "parameterUomValue": "US$1.5 billion (in 1994 prices), US$2.6 billion (in 2012 prices)",
+      "classification": "U",
+      "parameterValue": "US$1.5 billion (in 1994 prices), US$2.6 billion (in 2012 prices)",
+      "uom": ""
+    },
+    {
+      "seq": 1028,
+      "parameter": "Annual operating cost",
+      "parameterDescr": "Annual operating cost (descriptive text, not a unit-bearing quantity). Source text: \"$50 million per unit (in 2012 prices)\".",
+      "parameterUomValue": "$50 million per unit (in 2012 prices)",
+      "classification": "U",
+      "parameterValue": "$50 million per unit (in 2012 prices)",
+      "uom": ""
+    },
+    {
+      "seq": 1029,
+      "parameter": "Crew",
+      "parameterDescr": "Number of crew required to operate the system. Source text: \"120 enlisted and 14 officers\".",
+      "parameterUomValue": "120 enlisted and 14 officers",
+      "classification": "U",
+      "parameterValue": "120 enlisted and 14 officers",
+      "uom": ""
+    },
+    {
+      "seq": 1030,
+      "parameter": "Decoys",
+      "parameterDescr": "Decoys (descriptive text, not a unit-bearing quantity). Source text: \"Acoustic Device Countermeasure Mk 3/4\".",
+      "parameterUomValue": "Acoustic Device Countermeasure Mk 3/4",
+      "classification": "U",
+      "parameterValue": "Acoustic Device Countermeasure Mk 3/4",
+      "uom": ""
+    },
+    {
+      "seq": 1031,
+      "parameter": "BLOCKS",
+      "parameterDescr": "BLOCKS (descriptive text, not a unit-bearing quantity). Source text: \"Block I includes 4 boats and modular construction techniques were incorporated during construction. Earlier submarines (e.g., Los Angeles -class SSNs) were built by assembling the pressure hull and then installing the equipment via cavities in the pressure hull. This required extensive construction activities within the narrow confines of the pressure hull which was time-consuming and dangerous. Modular construction was implemented in an effort to overcome these problems and make the construction process more efficient. Modular construction techniques incorporated during construction include constructing large segments of equipment outside the hull. These segments (dubbed rafts) are then inserted into a hull section (a large segment of the pressure hull). The integrated raft and hull section form a module which, when joined with other modules, forms a Virginia -class submarine. Block I boats were built in 10 modules with each submarine requiring roughly 7 years (84 months) to build.\".",
+      "parameterUomValue": "Block I includes 4 boats and modular construction techniques were incorporated during construction. Earlier submarines (e.g., Los Angeles -class SSNs) were built by assembling the pressure hull and then installing the equipment via cavities in the pressure hull. This required extensive construction activities within the narrow confines of the pressure hull which was time-consuming and dangerous. Modular construction was implemented in an effort to overcome these problems and make the construction process more efficient. Modular construction techniques incorporated during construction include constructing large segments of equipment outside the hull. These segments (dubbed rafts) are then inserted into a hull section (a large segment of the pressure hull). The integrated raft and hull section form a module which, when joined with other modules, forms a Virginia -class submarine. Block I boats were built in 10 modules with each submarine requiring roughly 7 years (84 months) to build.",
+      "classification": "U",
+      "parameterValue": "Block I includes 4 boats and modular construction techniques were incorporated during construction. Earlier submarines (e.g., Los Angeles -class SSNs) were built by assembling the pressure hull and then installing the equipment via cavities in the pressure hull. This required extensive construction activities within the narrow confines of the pressure hull which was time-consuming and dangerous. Modular construction was implemented in an effort to overcome these problems and make the construction process more efficient. Modular construction techniques incorporated during construction include constructing large segments of equipment outside the hull. These segments (dubbed rafts) are then inserted into a hull section (a large segment of the pressure hull). The integrated raft and hull section form a module which, when joined with other modules, forms a Virginia -class submarine. Block I boats were built in 10 modules with each submarine requiring roughly 7 years (84 months) to build.",
+      "uom": ""
+    },
+    {
+      "seq": 1032,
+      "parameter": "BOATS IN CLASS",
+      "parameterDescr": "BOATS IN CLASS (descriptive text, not a unit-bearing quantity). Source text: \"The Navy initially planned to acquire at least 30 Virginia -class submarines; however, more recent data provided by the Naval Submarine League (in 2011) and the Congressional Budget Office (in 2012) seems to imply that more than 30 submarines may eventually be built. The Naval Submarine League believes that up to 10 Block V boats will be built. The same source also states that 10 additional submarines could be built after Block V submarines, with 5 in the so-called Block VI and 5 in Block VII, largely due to the delays experienced with the \"Improved Virginia \". These 20 submarines (10 Block V, 5 Block VI, 5 Block VII) would carry VPM, bringing the total number of Virginia -class submarines to 48 (including the 28 submarines in Blocks I, II, III and IV). The CBO in its 2012 report states that 33 Virginia -class submarines will be procured in the 2013–2032 timeframe, resulting in 49 submarines in total since 16 were already procured by the end of 2012. Such a long production run seems unlikely, but another naval program, the Arleigh Burke -class destroyer , is still ongoing even though the first vessel was ordered in 1985. However, other sources believe that production will end with Block V. In addition, data provided in CBO reports tends to vary considerably compared to earlier editions.\".",
+      "parameterUomValue": "The Navy initially planned to acquire at least 30 Virginia -class submarines; however, more recent data provided by the Naval Submarine League (in 2011) and the Congressional Budget Office (in 2012) seems to imply that more than 30 submarines may eventually be built. The Naval Submarine League believes that up to 10 Block V boats will be built. The same source also states that 10 additional submarines could be built after Block V submarines, with 5 in the so-called Block VI and 5 in Block VII, largely due to the delays experienced with the \"Improved Virginia \". These 20 submarines (10 Block V, 5 Block VI, 5 Block VII) would carry VPM, bringing the total number of Virginia -class submarines to 48 (including the 28 submarines in Blocks I, II, III and IV). The CBO in its 2012 report states that 33 Virginia -class submarines will be procured in the 2013–2032 timeframe, resulting in 49 submarines in total since 16 were already procured by the end of 2012. Such a long production run seems unlikely, but another naval program, the Arleigh Burke -class destroyer , is still ongoing even though the first vessel was ordered in 1985. However, other sources believe that production will end with Block V. In addition, data provided in CBO reports tends to vary considerably compared to earlier editions.",
+      "classification": "U",
+      "parameterValue": "The Navy initially planned to acquire at least 30 Virginia -class submarines; however, more recent data provided by the Naval Submarine League (in 2011) and the Congressional Budget Office (in 2012) seems to imply that more than 30 submarines may eventually be built. The Naval Submarine League believes that up to 10 Block V boats will be built. The same source also states that 10 additional submarines could be built after Block V submarines, with 5 in the so-called Block VI and 5 in Block VII, largely due to the delays experienced with the \"Improved Virginia \". These 20 submarines (10 Block V, 5 Block VI, 5 Block VII) would carry VPM, bringing the total number of Virginia -class submarines to 48 (including the 28 submarines in Blocks I, II, III and IV). The CBO in its 2012 report states that 33 Virginia -class submarines will be procured in the 2013–2032 timeframe, resulting in 49 submarines in total since 16 were already procured by the end of 2012. Such a long production run seems unlikely, but another naval program, the Arleigh Burke -class destroyer , is still ongoing even though the first vessel was ordered in 1985. However, other sources believe that production will end with Block V. In addition, data provided in CBO reports tends to vary considerably compared to earlier editions.",
+      "uom": ""
+    },
+    {
+      "seq": 1033,
+      "parameter": "EXPORTS",
+      "parameterDescr": "EXPORTS (descriptive text, not a unit-bearing quantity). Source text: \"On 16 September 2021, Australian Prime Minister Scott Morrison announced that Australia had canceled its contract with French shipbuilder Naval Group for 12 Attack -class diesel-electric submarines based on the French Barracuda-class nuclear submarine that were to replace Australia's diesel-electric Collins -class submarines. The AUKUS trilateral security partnership between Australia, the United Kingdom, and the United States, was announced the same day. Under the pact, the US will share nuclear propulsion technology with Australia the same as it has with the UK since 1958 , as will the UK. The Royal Australian Navy (RAN) would acquire at least eight nuclear-powered submarines armed with conventional weapons with basic design and key technologies decided by an 18-month research project. On 22 November 2021, Australia, the UK and the US signed the Exchange of Naval Nuclear Propulsion Information Agreement (ENNPIA) treaty to share classified information about nuclear propulsion.\".",
+      "parameterUomValue": "On 16 September 2021, Australian Prime Minister Scott Morrison announced that Australia had canceled its contract with French shipbuilder Naval Group for 12 Attack -class diesel-electric submarines based on the French Barracuda-class nuclear submarine that were to replace Australia's diesel-electric Collins -class submarines. The AUKUS trilateral security partnership between Australia, the United Kingdom, and the United States, was announced the same day. Under the pact, the US will share nuclear propulsion technology with Australia the same as it has with the UK since 1958 , as will the UK. The Royal Australian Navy (RAN) would acquire at least eight nuclear-powered submarines armed with conventional weapons with basic design and key technologies decided by an 18-month research project. On 22 November 2021, Australia, the UK and the US signed the Exchange of Naval Nuclear Propulsion Information Agreement (ENNPIA) treaty to share classified information about nuclear propulsion.",
+      "classification": "U",
+      "parameterValue": "On 16 September 2021, Australian Prime Minister Scott Morrison announced that Australia had canceled its contract with French shipbuilder Naval Group for 12 Attack -class diesel-electric submarines based on the French Barracuda-class nuclear submarine that were to replace Australia's diesel-electric Collins -class submarines. The AUKUS trilateral security partnership between Australia, the United Kingdom, and the United States, was announced the same day. Under the pact, the US will share nuclear propulsion technology with Australia the same as it has with the UK since 1958 , as will the UK. The Royal Australian Navy (RAN) would acquire at least eight nuclear-powered submarines armed with conventional weapons with basic design and key technologies decided by an 18-month research project. On 22 November 2021, Australia, the UK and the US signed the Exchange of Naval Nuclear Propulsion Information Agreement (ENNPIA) treaty to share classified information about nuclear propulsion.",
+      "uom": ""
+    }
+  ]
+}

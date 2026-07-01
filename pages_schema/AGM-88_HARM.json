@@ -1,0 +1,256 @@
+{
+  "modelID": 2005,
+  "systemGroup": "Weapon",
+  "systemType": "Air-to-Surface Missile",
+  "nomenclature": "AGM-88 HARM",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The AGM-88 HARM (High-speed Anti-Radiation Missile) is a tactical, air-to-surface anti-radiation missile designed to home in on electronic transmissions coming from surface-to-air radar systems. It was originally developed by Texas Instruments as a replacement for the AGM-45 Shrike and AGM-78 Standard ARM system. Production was later taken over by Raytheon Corporation when it purchased the defense production business of Texas Instruments.",
+      "shortDescription": "The AGM-88 HARM (High-speed Anti-Radiation Missile) is a tactical, air-to-surface anti-radiation missile designed to home in on electronic transmissions coming from surface-to-air radar systems.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The HARM missile was approved for full production in March 1983, obtained initial operating capability (IOC) on the A-7E Corsair II in late 1983 and then deployed in late 1985 with VA-46 aboard the aircraft carrier USS America (CV-66) . In 1986, the first successful firing of the HARM from an EA-6B was performed by VAQ-131. It was soon used in combat—in March 1986 against a Libyan S-200 surface to air missiles site in the Gulf of Sidra , and then during Operation Eldorado Canyon in April.\n\nHARM was used extensively by the Navy, Marine Corps, and the Air Force in Operation Desert Storm during the Persian Gulf War of 1991. During the Gulf War, the HARM was involved in a friendly fire incident when the pilot of an F-4G Wild Weasel escorting a B-52G bomber mistook the latter's tail gun radar for an Iraqi AAA site—this was after the tail gunner of the B-52 had targeted the F-4G, mistaking it for an Iraqi MiG . The F-4 pilot launched the missile and then saw that the target was the B-52, which was hit. It survived with shrapnel damage to the tail and no casualties. The B-52 (serial number 58-0248) was subsequently renamed In HARM's Way .\n\nIn June 2003, Orbital ATK was awarded a $223m contract to develop the AARGM. Subsequently, in November 2005, the Italian Ministry of Defense and the US Department of Defense entered into a memorandum of agreement to jointly fund the project.\n\nThe Navy authorized Full-Rate Production (FRP) of the AARGM in August 2012, with 72 missiles for the Navy and nine for the Italian Air Force to be delivered in 2013. A U.S. Marine Corps F/A-18 Hornet squadron will be the first forward-deployed unit with the AGM-88E.\n\nIn September 2013, ATK delivered the 100th AARGM to the U.S. Navy. The AGM-88E program is on schedule and on budget, with Full Operational Capability (FOC) planned for September 2014. The AGM-88E was designed to improve the effectiveness of legacy HARM variants against fixed and relocatable radar and communications sites, particularly those that would shut down to throw off anti-radiation missiles, by attaching a new seeker to the existing Mach 2-capable rocket motor and warhead section, adding a passive anti-radiation homing receiver, satellite and inertial navigation system , a millimeter-wave radar for terminal guidance, and the ability to beam up images of the target via a satellite link just seconds before impact.\n\nThis model of the HARM will be integrated onto the F/A-18C/D/E/F, EA-18G, Tornado ECR, Eurofighter EK aircraft, and later on the F-35 (externally).\n\nIn September 2015, the AGM-88E successfully hit a mobile ship target in a live fire test, demonstrating the missile's ability to use antiradiation homing and millimeter-wave radar to detect, identify, locate, and engage moving targets.\n\nIn December 2019, the German Air Force ordered the AARGM.\n\nOn August 4, 2020, Northrop Grumman's Alliant Techsystems Operations division, based in Northridge, California, was awarded a $12,190,753 IDIQ contract for AARGM depot sustainment support, guidance section and control section repair, and equipment box test and inspection. On August 31, 2020, the same Northrop Grumman division was allocated roughly $80.9 million to develop new technology for the AARGM.\n\nAlthough the US Navy/Marine Corps chose the Orbital ATK-produced AGM-88E AARGM, Raytheon developed its own update of the HARM, known as the AGM-88F HARM Control Section Modification (HCSM). This modification was tested in collaboration with and eventually adopted by the US Air Force. It includes upgrades such as satellite and inertial navigation controls, designed to minimize collateral damage and friendly fire. The Republic of China (Taiwan), Bahrain, and Qatar have purchased AGM-88Bs retrofitted with the HCSM upgrade.\n\nThe Navy's FY 2016 budget included funding for an AARGM-Extended Range (ER) that uses the existing guidance system and warhead of the AGM-88E with a dual-pulse solid rocket motor to double the range. In September 2016, Orbital ATK unveiled its AARGM-ER, which incorporates a redesigned control section and 11.5 in diameter (290 mm) rocket motor for twice the range and internal carriage on the Lockheed Martin F-35A and F-35C Lightning II, with integration on P-8 Poseidon , F-16 Fighting Falcon , and Eurofighter Typhoon planned afterwards; internal carriage on the F-35B is not possible due to internal space limitations. The new missile, designated AGM-88G, utilizes the AARGM's warhead and guidance systems in a new airframe that replaces the mid-body wings with aerodynamic strakes along the sides with control surfaces relocated to low-drag tail surfaces and a more powerful propulsion system for greater speed and double the range of its predecessor. It weighs 1,030 lb (467 kg) and is slightly shorter than earlier variants at 160 in (4.06 m) in length.\n\nThe U.S. Navy awarded Orbital ATK a contract for AARGM-ER development in January 2018. The USAF later joined the AARGM-ER program, involved in internal F-35A/C integration work. The AARGM-ER received Milestone-C approval in August 2021, and the first low-rate initial production contract was awarded the next month; initial operational capability was planned for 2023. The AARGM-ER completed its first, second, third, fourth, and fifth flight tests in July 2021, January 2022, July 2022, December 2022, and May 2023 respectively.\n\nIn February 2023, the U.S. Navy began exploring the feasibility of launching the AARGM-ER from ground-based launchers and the P-8 Poseidon.\n\nOn February 27, 2023, Australia asked to purchase up to 63 AGM-88G AARGM-ERs.\n\nOn June 5, 2023, The Netherlands announced the acquisition of the AARGM-ER for the use on their F-35A fleet.\n\nOn October 23, 2023, Finland was approved by the U.S. State Department to proceed with purchase of up to 150 AGM-88G AARGM-ERs.\n\nOn January 12, 2024, Lockheed Martin was awarded a contract to integrate the AARGM-ER with all three F-35 variants.\n\nOn April 24, 2024, the U.S. Defense Security Cooperation Agency (DSCA) made it public that the State Department has approved a possible Foreign Military Sale to the Government of the Netherlands of the AARGM-ER and related equipment for an estimated cost of $700 million.\n\nOn September 27, 2024, the U.S. State Department approved the sale of $405 million worth of AARGM-ERs to Australia.\n\nOn 27 January 2026, the U.S. Naval Air Systems Command and Northrop Grumman announced they conducted a new live-fire test of the AGM-88G, which demonstrated AARGM-ER’s \"ability to navigate a challenging flight profile in a GPS-denied environment\".\n\nOn 27 March 2026, Norway announced the acquisition of the AARGM-ER for the use on their F-35A fleet.\n\nIn May 2022, the USAF awarded contracts to L3Harris Technologies , Lockheed Martin , and Northrop Grumman to begin the first phase of development for the Stand-in Attack Weapon (SiAW). While previous HARMs were meant to attack air defense radars, the SiAW will have a broader target set including theater ballistic missile launchers , cruise and anti-ship missile launchers, GPS jamming platforms, and anti-satellite systems. It will have a shorter range than standoff weapons , being fired by an aircraft after penetrating enemy airspace. The SiAW will fit inside the F-35's internal weapon bays. The Air Force plans to have an operational weapon by 2026. Northrop Grumman was chosen to continue development of the SiAW in September 2023, and it will be derived from the AARGM-ER; in 2024 the missile was designated the AGM-88J. Lockheed Martin's offering for the program was the hypersonic Mako missile.\n\nDuring Operation Allied Force , NATO reportedly fired 743 HARMs during the course of the 78-day campaign, but could confirm the destruction of only three of the original 25 SA-6 batteries. Over half of the HARMs expended were preemptive targeting shots (PETs), fired at suspected SAM sites, but without a radar to target. During the campaign, Serbian SAM sites fired more than 800 SAMs with only two NATO aircraft downed; the majority from fixed sites were fired without radar guidance. Radars were also forced to operate for only 20 seconds or less to avoid destruction by HARMs. According to Benjamin Lambeth, the F-117 that was downed did not have support from HARM-carrying F-16CJ aircraft.",
+      "shortDescription": "ull production in March 1983, obtained initial operating capability (IOC) on the A-7E Corsair II in late 1983 and then deployed in late 1985 with VA-46 aboard the aircraft carrier USS America (CV-66) .",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The AGM-88 can detect, attack and destroy a radar antenna or transmitter with minimal aircrew input. The proportional guidance system that homes in on enemy radar emissions has a fixed antenna and seeker head in the missile's nose. A smokeless, solid-propellant, booster-sustainer rocket motor propels the missile at speeds over Mach 2 . The HARM was a missile program led by the U.S. Navy , and it was first carried by the A-6E , A-7 , and F/A-18 A/B aircraft, and then it equipped the EA-6B and EA-18G dedicated electronic attack aircraft. RDT&E for use on the F-14 aircraft was begun, but not completed. The U.S. Air Force (USAF) put the HARM onto the F-4G Wild Weasel aircraft, and later on specialized F-16s equipped with the HARM Targeting System (HTS). The missile has three operational modes: Pre-Briefed (PB), Target of Opportunity (TOO) and Self-Protect (SP). The HTS pod, used by the USAF only, allows F-16s to detect and automatically target radar systems with HARMs instead of relying on the missile's sensors alone.",
+      "shortDescription": "The AGM-88 can detect, attack and destroy a radar antenna or transmitter with minimal aircrew input.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "\"Magnum\" is spoken over the radio to announce the launch of an AGM-88. During the Gulf War, if an aircraft was illuminated by enemy radar a bogus \"Magnum\" call on the radio was often enough to convince the operators to power down. This technique would also be employed in Yugoslavia during air operations in 1999 . On 28 April 1999, during this campaign, an early variant of the AGM-88, after being fired in self defense mode by a NATO jet, lost its radio frequency track as the Serbian air defense radar was turned off, hitting a house in the Gorna Banya district of the Bulgarian capital, Sofia , causing damages, but no casualties.\n\nDuring the 1990s and early 2000s and during the initial weeks of the operation Iraqi Freedom , the HARM was used to enforce the Iraqi No-Fly-Zones , degrading the Iraqi air defenses trying to engage US and allied patrolling aircraft. During the opening days of Operation Iraqi Freedom, deconflicting US Army Patriot batteries and allied aircraft routes turned out being more difficult than expected, resulting in three major friendly fire incidents: in one of them, on March 24, 2003, a USAF F-16CJ Fighting Falcon fired an AGM-88 HARM at a Patriot missile battery after the Patriot's radar had locked onto and prepared to fire at the aircraft, causing the pilot to mistake it for an Iraqi surface-to-air missile system because the aircraft was in air combat operations and was on its way to a mission near Baghdad. The HARM damaged the Patriot's radar system with no casualties.\n\nStarting in March 2011, during Operation Unified Protector against Libya, US Navy EA-18Gs had their combat debut using HARMs against Libyan air defenses together with USAF F-16CJs and Italian Tornadoes.\n\nOn 24 February 2024, a US Navy EA-18G Growler from USS Dwight D. Eisenhower (CVN-69) destroyed a Houthi -operated Mi-24/35 attack helicopter on the ground with an AGM-88E AARGM.\n\nIn 2013, US President Barack Obama offered the AGM-88 to Israel for the first time.\n\nStarting in March 2011, during Operation Unified Protector , Italian Tornados employed AGM-88 HARMs against Libyan air defenses.\n\nIn mid-2022, during the Russian invasion of Ukraine , the US supplied AGM-88 HARM missiles to Ukraine. It was only disclosed after Russian forces showed footage of a tail fin from one of these missiles in early August 2022. U.S. Under Secretary of Defense for Policy Colin Kahl said in recent aid packages they had included a number of anti-radiation missiles that can be fired by Ukrainian aircraft. As built, Soviet-era aircraft do not have the computer architecture to accept NATO standard weapons. Indeed, none of the former Warsaw Pact countries, even those that have had their Soviet-era aircraft updated, were enabled to fire a HARM before. The interface seemed difficult unless using a \"crude modification\", such as integrating it with an added e-tablet into the cockpit, building a nearly totally independent subsystem within the carrying aircraft. As suggested by Domenic Nicholis, defense correspondent for the Telegraph in the UK, the HARM missile is possibly operating in one of its three modes that enables it to find its target once flying after being released towards a possible enemy air defense and electronic emission area. Pre mission or during flight, NATO signals intelligence aircraft or different intelligence would be providing the overall electromagnetic emissions battlefield to locate the Russian radars where the Ukrainian jets, armed with HARMs would be directed to fire them. This allows the missile to achieve a very long range attack profile, even if it's possible that the missile does not find a target while flying, going wasted. A second possible use of the HARM is operating it in a mode called \"HARM as sensor\". Similar to the described mode before, the missile acts as both sensor and weapon, not requiring a sensor pod. A simple interface would show that the missile has a target and the pilot can launch it. In this way the range is shorter, and the jet could be under threat already, but would maximize the possibility to hit the emitter.\n\nIn August 2022, a senior U.S. defense official confirmed that the Ukrainians have successfully integrated the AGM-88 HARM missile onto their \"MiG aircraft\", hinting the MiG-29 was the chosen fighter jet with video evidence of AGM-88 missiles fired by upgraded Ukrainian MiG-29s released by the Ukrainian Air Force a few days later.\n\nSpeaking on 19 September, US Air Force General James B. Hecker said the effort to integrate AGM-88 HARM missiles into the Ukrainian Su-27s and MiG-29s took \"some months\" to achieve. This does not give the Ukrainian Air Force the same \"capabilities that it would on an F-16.\" However he said: \"Even though you don't get a kinetic kill ... you can get local air superiority for a period of time where you can do what you need to do.\"\n\nDuring early September 2022, a Ukrainian Su-27S was spotted with an AGM-88 HARM fitted on the wing pylons. This is the first case of an Su-27 being spotted with an AGM-88 fitted. The missile has been directly fitted to the APU-470 missile launchers, the same launcher used by MiG-29 and Su-27 to fire missiles like the R-27 (air-to-air missile) . This suggests that mounting the missile on Soviet aircraft is much easier than experts initially believed, being as simple as \"requiring just an interface for the different wirings and the hanging points of the missile\". The earlier footage of a Ukrainian MiG-29 using an AGM-88 indicated that the display recognized the missile as a R-27EP, which is designed to lock onto airborne radars. This suggests that the aircraft are using their own avionics to fire the missile, without the need for additional modifications.\n\nIn December, the Ukrainian Air Force released a video showing a MiG-29 firing two HARM missiles in a volley. Russia has made the first claim of the war that they have shot down four HARM missiles.\n\nThe U.S. Navy demonstrated the AARGM's capability during Initial Operational Test and Evaluation (IOT&E) in spring 2012 with live firing of 12 missiles. Aircrew and maintenance training with live missiles was completed in June.\n\nRoyal Australian Air Force : AGM-88E variant ordered; to be used on EA-18G Growlers . On 28 April 2017, the Defense Security Cooperation Agency stated that Australia intended to purchase 70 AGM-88B and 40 AGM-88E missiles. 163 AGM-88G missiles were ordered in 2024.\n\nRoyal Bahraini Air Force : 50 AGM-88Bs refurbished to the AGM-88F standard were ordered in May 2019 to be integrated on newly upgraded F-16 Block 70 fighters.\n\nEgyptian Air Force :\n\nGerman Air Force :",
+      "shortDescription": "\"Magnum\" is spoken over the radio to announce the launch of an AGM-88.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "The AGM-88E Advanced Antiradiation Guided Missile (AARGM) has an updated guidance section and modified control section, along with the rocket motor and warhead section, wings, and fins from the AGM-88 HARM. It utilizes millimeter-wave radar for precise terminal guidance, countering the enemy's radar shut-down capability, and has the ability to transmit images of the target before impact. Northrop Grumman took control of the AARGM program after acquiring Orbital ATK in 2018. The AGM-88E is in use by the US Navy, US Marine Corps, Italian Air Force, and German Air Force.\n\nHellenic Air Force : AGM-88B Block IIIA and AGM-88E variants. AGM-88E AARGM on order.\n\nIsraeli Air Force\n\nItalian Air Force : AGM-88E and AGM-88G AARGM-ER (on order) variants.\n\nRoyal Moroccan Air Force : AGM-88B variant.\n\nQatar Emiri Air Force : 100 AGM-88F.\n\nRoyal Saudi Air Force\n\nRepublic of Korea Air Force\n\nSpanish Air and Space Force\n\nRepublic of China Air Force : 50 AGM-88Bs refurbished to AGM-88F standard ordered in June 2017, with delivery by 2027 for the ROCAF's F-16 Block 70 fleet. Another 100 AGM-88Bs were ordered in March 2023.\n\nTurkish Air Force : 96 AGM-88Bs and 96 AGM-88Es ordered in 2024 upon existing inventory.\n\nUkrainian Air Force\n\nUnited Arab Emirates Air Force\n\nUnited States Air Force\n\nUnited States Marine Corps\n\nFinnish Air Force : up to 150 AGM-88Gs will be bought.\n\nRoyal Netherlands Air Force : up to 265 AGM-88Gs will be purchased.\n\nPolish Air Force : Ordered more than 200 AGM-88G AARGM-ERs to be used with F-35s .\n\nRoyal Norwegian Air Force : Plans to procure AGM-88G AARGM-ER to be used with F-35A, announced in March 2026.",
+      "shortDescription": "GM-88E Advanced Antiradiation Guided Missile (AARGM) has an updated guidance section and modified control section, along with the rocket motor and warhead section, wings, and fins from the AGM-88 HARM.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 200501,
+      "url": "https://en.wikipedia.org/wiki/AGM-88_HARM",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Air-to-surface anti-radiation missile\".",
+      "parameterUomValue": "Air-to-surface anti-radiation missile",
+      "classification": "U",
+      "parameterValue": "Air-to-surface anti-radiation missile",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1985–present\".",
+      "parameterUomValue": "1985–present",
+      "classification": "U",
+      "parameterValue": "1985–present",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"See list of operators\".",
+      "parameterUomValue": "See list of operators",
+      "classification": "U",
+      "parameterValue": "See list of operators",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"Cold War Action in the Gulf of Sidra (1986) Bombing of Libya (1986); Action in the Gulf of Sidra (1986); Bombing of Libya (1986); Gulf War; Kosovo War; Iraq War; First Libyan Civil War 2011 military intervention in Libya; 2011 military intervention in Libya; Russo-Ukrainian War Russian invasion of Ukraine; Russian invasion of Ukraine; Gaza war Red Sea crisis; Red Sea crisis\".",
+      "parameterUomValue": "Cold War Action in the Gulf of Sidra (1986) Bombing of Libya (1986); Action in the Gulf of Sidra (1986); Bombing of Libya (1986); Gulf War; Kosovo War; Iraq War; First Libyan Civil War 2011 military intervention in Libya; 2011 military intervention in Libya; Russo-Ukrainian War Russian invasion of Ukraine; Russian invasion of Ukraine; Gaza war Red Sea crisis; Red Sea crisis",
+      "classification": "U",
+      "parameterValue": "Cold War Action in the Gulf of Sidra (1986) Bombing of Libya (1986); Action in the Gulf of Sidra (1986); Bombing of Libya (1986); Gulf War; Kosovo War; Iraq War; First Libyan Civil War 2011 military intervention in Libya; 2011 military intervention in Libya; Russo-Ukrainian War Russian invasion of Ukraine; Russian invasion of Ukraine; Gaza war Red Sea crisis; Red Sea crisis",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Designer",
+      "parameterDescr": "Organization credited with the system's design. Source text: \"Texas Instruments , Alliant Techsystems (ATK)\".",
+      "parameterUomValue": "Texas Instruments , Alliant Techsystems (ATK)",
+      "classification": "U",
+      "parameterValue": "Texas Instruments , Alliant Techsystems (ATK)",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Designed",
+      "parameterDescr": "Year design work began. Source text: \"1983\".",
+      "parameterUomValue": "1983",
+      "classification": "U",
+      "parameterValue": "1983",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Texas Instruments , then Raytheon Missiles & Defense (AGM-88A/B/C/D/F) ; Alliant Techsystems , then Orbital ATK , then Northrop Grumman (AGM-88E/G)\".",
+      "parameterUomValue": "Texas Instruments , then Raytheon Missiles & Defense (AGM-88A/B/C/D/F) ; Alliant Techsystems , then Orbital ATK , then Northrop Grumman (AGM-88E/G)",
+      "classification": "U",
+      "parameterValue": "Texas Instruments , then Raytheon Missiles & Defense (AGM-88A/B/C/D/F) ; Alliant Techsystems , then Orbital ATK , then Northrop Grumman (AGM-88E/G)",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Unit cost",
+      "parameterDescr": "Approximate unit cost in US dollars. Source text: \"US$ 284,000 ; US$870,000 for AGM-88E AARGM\".",
+      "parameterUomValue": "284000 USD",
+      "classification": "U",
+      "parameterValue": "284000",
+      "uom": "USD"
+    },
+    {
+      "seq": 1010,
+      "parameter": "Produced",
+      "parameterDescr": "Production period. Source text: \"1983–present\".",
+      "parameterUomValue": "1983–present",
+      "classification": "U",
+      "parameterValue": "1983–present",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"796 lb (361 kg)\".",
+      "parameterUomValue": "361 kg",
+      "classification": "U",
+      "parameterValue": "361",
+      "uom": "kg"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"13 ft 8 in (4.17 m)\".",
+      "parameterUomValue": "4.17 m",
+      "classification": "U",
+      "parameterValue": "4.17",
+      "uom": "m"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"10 in (254 mm)\".",
+      "parameterUomValue": "0.254 m",
+      "classification": "U",
+      "parameterValue": "0.254",
+      "uom": "m"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"3 ft 8 in (1.13 m)\".",
+      "parameterUomValue": "1.13 m",
+      "classification": "U",
+      "parameterValue": "1.13",
+      "uom": "m"
+    },
+    {
+      "seq": 1015,
+      "parameter": "Tailspan",
+      "parameterDescr": "Tailspan (descriptive text, not a unit-bearing quantity). Source text: \"2.0 ft (.61 m) est.\".",
+      "parameterUomValue": "2.0 ft (.61 m) est.",
+      "classification": "U",
+      "parameterValue": "2.0 ft (.61 m) est.",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"WAU-7/B blast-fragmentation warhead\".",
+      "parameterUomValue": "WAU-7/B blast-fragmentation warhead",
+      "classification": "U",
+      "parameterValue": "WAU-7/B blast-fragmentation warhead",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Warhead weight",
+      "parameterDescr": "Mass of the warhead section. Source text: \"150 lb (68 kg)\".",
+      "parameterUomValue": "68 kg",
+      "classification": "U",
+      "parameterValue": "68",
+      "uom": "kg"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Thiokol SR113-TC-1 dual-thrust rocket engine\".",
+      "parameterUomValue": "Thiokol SR113-TC-1 dual-thrust rocket engine",
+      "classification": "U",
+      "parameterValue": "Thiokol SR113-TC-1 dual-thrust rocket engine",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"Low-level — 13 nmi (25 km); Medium-level — 43 nmi (80 km); Standoff — 80 nmi (148 km)\".",
+      "parameterUomValue": "25 km",
+      "classification": "U",
+      "parameterValue": "25",
+      "uom": "km"
+    },
+    {
+      "seq": 1020,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Mach 2.9 (987 m/s; 3238 ft/s)\".",
+      "parameterUomValue": "2.9 Mach",
+      "classification": "U",
+      "parameterValue": "2.9",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1021,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Passive radar homing with home-on-jam , additional GPS/INS\".",
+      "parameterUomValue": "Passive radar homing with home-on-jam , additional GPS/INS",
+      "classification": "U",
+      "parameterValue": "Passive radar homing with home-on-jam , additional GPS/INS",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"F-4G , EA-6B , F-15E , F-16 , F/A-18A/B/C/D , F/A-18/E/F , EA-18G , Tornado IDS/ECR , F-35 , MiG-29 , Su-27\".",
+      "parameterUomValue": "F-4G , EA-6B , F-15E , F-16 , F/A-18A/B/C/D , F/A-18/E/F , EA-18G , Tornado IDS/ECR , F-35 , MiG-29 , Su-27",
+      "classification": "U",
+      "parameterValue": "F-4G , EA-6B , F-15E , F-16 , F/A-18A/B/C/D , F/A-18/E/F , EA-18G , Tornado IDS/ECR , F-35 , MiG-29 , Su-27",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "References",
+      "parameterDescr": "References (descriptive text, not a unit-bearing quantity). Source text: \"Janes\".",
+      "parameterUomValue": "Janes",
+      "classification": "U",
+      "parameterValue": "Janes",
+      "uom": ""
+    }
+  ]
+}

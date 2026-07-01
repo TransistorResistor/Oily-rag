@@ -1,0 +1,337 @@
+{
+  "modelID": 2051,
+  "systemGroup": "Aircraft",
+  "systemType": "Attack Aircraft",
+  "nomenclature": "Sukhoi Su-24",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Sukhoi Su-24 (NATO reporting name: Fencer ) is a supersonic, all-weather tactical bomber developed in the Soviet Union. The aircraft has a variable-sweep wing, twin engines and a side-by-side seating arrangement for its crew of two. It was the first of the USSR's aircraft to carry an integrated digital navigation/attack system.",
+      "shortDescription": "The Sukhoi Su-24 (NATO reporting name: Fencer ) is a supersonic, all-weather tactical bomber developed in the Soviet Union.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "One of the conditions for accepting the Sukhoi Su-7B into service in 1961 was the requirement for Sukhoi to develop an all-weather variant capable of precision air strikes. Preliminary investigations with S-28 and S-32 aircraft revealed that the basic Su-7 design was too small to contain all the avionics required for the mission. OKB-794 (later known as Leninets) was tasked with developing an advanced nav/attack system, codenamed Puma , which would be at the core of the new aircraft. That same year, the United States' proposal for its new all-weather strike fighter would be the TFX. The resulting F-111 would introduce a variable-geometry wing for greatly increased payload, range, and low-level penetration capabilities.\n\nIn 1962–1963, Sukhoi initially set out to build an aircraft without the complexity of moving wings like the F-111. It designed and built a mockup of S-6, a delta wing aircraft powered by two Tumansky R-21 turbojet engines and with a crew of two in a tandem arrangement. The mockup was inspected, but no further work was ordered due to lack of progress on the Puma hardware.\n\nIn 1964, Sukhoi started work on S-58M . The aircraft was supposed to represent a modification of the Sukhoi Su-15 interceptor (factory designation S-58 ). In the meantime, revised Soviet Air Force requirements called for a low-altitude strike aircraft with STOL capability. A key feature was the ability to cruise at supersonic speeds at low altitude for extended periods of time in order to traverse enemy air defenses. To achieve this, the design included two Tumansky R-27 afterburning turbojets for cruise and four Rybinsk RD-36-35 turbojets for STOL performance. Side-by-side seating for the crew was implemented since the large Orion radar antennas required a large frontal cross-section. To test the six-engine scheme, the first Su-15 prototype was converted into S-58VD flying laboratory which operated in 1966–1969.\n\nThe aircraft was officially sanctioned on 24 August 1965 under the internal codename T-6 . The first prototype, T-6-1 , was completed in May 1967 and flew on 2 July with Vladimir Ilyushin at the controls. The initial flights were performed without the four lift jets, which were installed in October 1967. At the same time, R-27s were replaced with Lyulka AL-21Fs. STOL tests confirmed the data from S-58VD that short-field performance was achieved at the cost of significant loss of flight distance as the lift engines occupied space normally reserved for fuel, loss of under-fuselage hardpoints, and instability during transition from STOL to conventional flight. So the six-engine approach was abandoned.\n\nThe first production aircraft flew on 31 December 1971 with V.T. Vylomov at the controls, and on 4 February 1975, T-6 was formally accepted into service as the Su-24 . About 1,400 Su-24s were produced.\n\nSurviving Su-24M models have gone through a life-extension and updating program, with GLONASS, upgraded cockpit with multi-function displays (MFDs), HUD, digital moving-map generator, Shchel helmet-mounted sights, and provision for the latest guided weapons, including R-73 (AA-11 'Archer') air-to-air missiles. The upgraded aircraft are designated Su-24M2 .",
+      "shortDescription": "One of the conditions for accepting the Sukhoi Su-7B into service in 1961 was the requirement for Sukhoi to develop an all-weather variant capable of precision air strikes.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Su-24 has a shoulder-mounted variable geometry wing outboard of a relatively small fixed wing glove, swept at 69°. The wing has four sweep settings: 16° for takeoff and landing, 35° and 45° for cruise at different altitudes, and 69° for minimum aspect ratio and wing area in low-level dashes. The variable geometry wing provides excellent STOL performance, allowing a landing speed of 230 kilometers per hour (140 mph), even lower than the Sukhoi Su-17 despite substantially greater takeoff weight. Its high wing loading provides a stable low-level ride and minimal gust response.\n\nThe Su-24 has two Saturn/Lyulka AL-21F-3A afterburning turbojet engines with 109.8 kN (24,700 lbf) thrust each, fed with air from two rectangular side-mounted intakes with splitter plates/boundary-layer diverters.\n\nIn early Su-24 (\"Fencer A\" according to NATO) aircraft these intakes had variable ramps, allowing a maximum speed of 2,320 kilometers per hour (1,440 mph), Mach 2.18, at altitude and a ceiling of 17,500 meters (57,400 ft). Because the Su-24 is used almost exclusively for low-level missions, the actuators for the variable intakes were removed to reduce weight and maintenance. This has no effect on low-level performance, but absolute maximum speed and altitude are cut to Mach 1.35 and 11,000 meters (36,000 ft). [ unreliable source? ] The earliest Su-24 had a box-like rear fuselage, which was soon changed in production to a rear exhaust shroud more closely shaped around the engines to reduce drag. The revised aircraft also gained three side-by-side antenna fairings in the nose, a repositioned braking chute, and a new ram-air inlet at the base of the tail fin. The revised aircraft were dubbed \"Fencer-B\" by NATO, but did not merit a new Soviet designation.\n\nThe Su-24's fixed armament is a single fast-firing GSh-6-23 cannon with 500 rounds of ammunition, mounted in the fuselage underside. The gun is covered with an eyelid shutter when not in use. [ citation needed ] Two or four R-60 (NATO AA-8 'Aphid') infrared missiles are usually carried for self-defence by the Su-24M/24MK.\n\nInitial Su-24s had basic electronic countermeasures (ECM) equipment, with many Su-24s limited to the old Sirena radar-warning receiver with no integral jamming system. Later-production Su-24s had more comprehensive radar warning, missile-launch warning, and active ECM equipment, with triangular antennas on the sides of the intakes and the tip of the vertical fin. This earned the NATO designation \"Fencer-C\", although again it did not have a separate Soviet designation. Some \"Fencer-C\" and later Su-24M (NATO \"Fencer-D\") have large wing fence/pylons on the wing glove portion with integral chaff/flare dispensers; others have such launchers scabbed onto either side of the tail fin.",
+      "shortDescription": "The Su-24 has a shoulder-mounted variable geometry wing outboard of a relatively small fixed wing glove, swept at 69°.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The Su-24 started development in the early 1960s and first flew in 1967. It entered service in 1974 and production ceased in 1993. It remains in service with the Russian Aerospace Forces, Iranian Air Force, Ukrainian Air Force, Algerian Air Force and various other air forces to which it was exported.\n\nBy 1967, the F-111 had entered service and demonstrated the practical advantages and solutions to the technical problems of a swing-wing design. On 7 August 1968, the OKB was officially tasked with investigating a variable geometry wing for the T-6. The resulting T-6-2I first flew on 17 January 1970 with Ilyushin at the controls. The subsequent government trials lasted until 1974, dictated by the complexity of the onboard systems. The day or night and all-weather capability was achieved – for the first time in Soviet tactical attack aircraft – thanks to the Puma nav/attack system consisting of two Orion-A superimposed radar scanners for nav/attack, a dedicated Relyef terrain clearance radar to provide automatic control of flights at low and extremely low altitudes, and an Orbita-10-58 onboard computer. The crew was equipped with Zvezda K-36D ejection seats, allowing them to bail out at any altitude and flight speed, including during takeoff and landing. The resulting design with a range of 3,000 kilometers (1,900 mi) and payload of 8,000 kilograms (18,000 lb) was slightly smaller and shorter ranged than the F-111.\n\nTen fatal accidents occurred during Su-24 development, killing thirteen Sukhoi and Soviet Air Force test pilots, and more than 5 crashes per year were occurring on average after that\n\nSubstantial numbers of ex-Soviet Su-24s remain in service with Kazakhstan, Russia, and Ukraine. In 2008, roughly 415 were in service with Russian forces, with 321 in the Russian Air Force and 94 in the Russian Navy. The Russian Aerospace Forces will eventually replace the Su-24 with the Sukhoi Su-34.\n\nThe Soviet Union used some Su-24s in the Soviet–Afghan War, with an initial round of strikes in 1984 and a second intervention at the end of the war in 1988. No Su-24 was lost.\n\nOn October 13, 1990, Syrian Air Force jets entered Lebanese airspace in order to strike General Michel Aoun's military forces during the Lebanese Civil War. Seven Su-24s were used in this operation.\n\nDuring Operation Desert Storm, the Iraqi Air Force evacuated 24 of its 30 Su-24MKs to Iran. Another five were destroyed on the ground, while the sole survivor remained in service after the war. [ citation needed ]\n\nFencers were used by the Uzbek Air Force (UzAF) against United Tajik Opposition operating from Afghanistan (which also had a civil war of its own going on), as part of a wider air campaign in support of the embattled government of Tajikistan during the 1992–97 civil war. A Su-24M was shot down on 3 May 1993 with an FIM-92 Stinger MANPADS fired by fundamentalists. Both Russian crew members were rescued.\n\nIn August 1999 Tajikistan protested over an alleged strike involving four UzAF Su-24s against Islamist militants in areas close to two mountain villages in the Jirgatol District that, despite not producing human casualties, killed some 100 head of livestock and set ablaze several crop fields. Tashkent denied the accusations.\n\nIn the final stages of the 1996-2001 phase of the Afghan civil war, Uzbekistan launched airstrikes against Taliban positions in support of the Northern Alliance. During a mission to attack a Taliban armoured infantry unit near Heiratan, a UzAF Su-24 was shot down on 6 June 2001, killing both crew members.\n\nOn 3 February 1995, during operations over Chechnya, a Russian Su-24M hit the ground in bad weather killing both crew members.\n\nSu-24s were used in combat during the Second Chechen War performing bombing and reconnaissance missions. Up to four were lost, one due to hostile fire: on 4 October 1999, a Su-24 was shot down by a SAM while searching for the crash site of a downed Su-25. The pilot was killed while the navigator was taken prisoner.\n\nIn August 2008, a low intensity conflict in the breakaway Georgian regions of Samachablo and Abkhazia, escalated into the 2008 South Ossetia war. Russian Su-24s flew bombing and reconnaissance sorties over Georgia. Russia admitted that three of its Su-25 strike aircraft and one Tu-22M3 long-range bomber were lost. Moscow Defence Brief provided a higher estimate, saying that Russian Air Force total losses during the war were one Tu-22M3 long-range bomber, one Su-24M Fencer tactical bomber, one Su-24MR Fencer E reconnaissance plane and four Su-25 attack planes. Anton Lavrov listed one Su-25SM, two Su-25BM, two Su-24M and one Tu-22M3 lost.\n\nLibya received five Su-24MK and one Su-24MR from the Soviet Union in 1989. This was one of the last deliveries by the USSR to Libya before the end of the Cold War. One Su-24MK and one Su-24MR may have been transferred to the Syrian Arab Air Force. [ citation needed ] At the beginning of 2011, the Libyan Air Force was ordered to attack rebel positions and opposition rallies. The Libyan Air Force was limited to a composite force of some MiG-23 (due to be retired, according to plans) and Su-22 and few units of flyable MiG-21, Su-24 and Mirage F1ED fighter-bombers, supported by Soko G-2 Galeb and Aero L-39 Albatros armed trainers. The largest part of the former fleet was in disrepair or stored in not flyable condition. On 5 March 2011, at the beginning of the 2011 Libyan civil war, rebels shot down a Libyan Air Force Su-24MK during fighting around Ra's Lanuf with a ZU-23-2 anti-aircraft gun. Both crew members died. A BBC reporter was on the scene soon after the event and filmed an aircraft part at the crash site showing the emblem of the 1124 Squadron, flying the Su-24MK.\n\nStarting in November 2012, 18 months after the start of the Syrian Civil War and four months after the beginning of air raids by fixed-wing SyAAF aircraft, Su-24 bombers were filmed attacking rebel positions. The SyAAF suffered its first Su-24 loss, an upgraded MK2 version, to an Igla surface-to-air missile on 28 November 2012 near the town of Darat Izza in the Aleppo Governorate. One of the crew members, Col. Ziad Daud Ali, was injured and filmed being taken to a rebel field hospital.\n\nSyrian Su-24s were reportedly involved in near-encounters with NATO warplanes. One such incident occurred in early September 2013, when Syrian Su-24s of the 819th Squadron (launched from Tiyas Military Airbase) flew low over the Mediterranean and approached the 14-mile air exclusion zone surrounding the British airbase in Akrotiri, Cyprus, then turned back before reaching the area after two RAF Eurofighter Typhoons were scrambled to intercept them along with two Turkish F-16s. The Su-24s were possibly testing the base's air defenses (and their reaction time) in preparation for a possible military strike by the U.S., the United Kingdom and France in the aftermath of the Ghouta chemical attack allegedly committed by the Syrian government.\n\nOn 23 September 2014, a Syrian Su-24 was shot down by an Israeli Air Defense Command MIM-104D Patriot missile near Quneitra, after it had flown 800 meters (2,600 ft) into Israeli controlled airspace over the occupied Golan Heights. The missile hit the aircraft after it had already re-entered Syrian air space. Both crew members ejected safely and landed in Syrian territory.\n\nOn 18 March 2018, a SyAAF Su-24 was shot down by rebels in East Qalamoun, East of Damascus province; it fell into territory controlled by Syrian government forces.\n\nOn 1 March 2020, two SyAAF Su-24MK2s were shot down by Turkish Air Force F-16s using air-to-air missiles over the Idlib province. All four pilots ejected safely.\n\nWhile the Russian Air Force (VVS) aviation group deployed at Khmeimim base in Latakia included modern types such as the Su-30SM, Su-34, and the Su-35, the vast majority of airstrikes (over 80%) were conducted by Su-24Ms. According to The Aviationist , at least twelve Su-24M2 bombers were deployed in September 2015. Regardless of type used, the VVS fighter-bombers used old unguided bombs stockpiled during the Soviet era against the insurgents. On 24 November 2015, a Russian Su-24M was shot down by a flight of two Turkish F-16s near the Turkey–Syrian border. The two crew ejected before the plane crashed in Syrian territory. Russia claimed that the jet had not left Syrian airspace while Turkey claimed that the jet entered their airspace and was warned 10–12 times before being shot down.\n\nA deputy commander in a Syrian Turkmen brigade claimed that his personnel shot and killed the crew while they were descending in their parachutes, while some Turkish officials subsequently stated that the crew was still alive. The weapon systems officer was rescued by Russian forces but the pilot was killed by rebels, along with a Russian marine involved in a helicopter rescue attempt. Russian president Vladimir Putin warned Turkey of serious consequences. To increase safety during aerial operations in the region, Russian fighter jets would escort bombers, S-400 SAM systems were deployed in Syria and a Russian cruiser was stationed off the coast to protect Russian aircraft. Following the incident, Russia announced that Su-24s in Syria had been armed with air-to-air missiles on operational sorties. [ citation needed ]\n\nIn late May 2015, a pair of Russian Su-24s made a low pass over the USS Ross in the Black Sea. In April 2016, several Russian Su-24s flew within 30 metres of another American ship, the destroyer USS Donald Cook in the Baltic Sea. The incidents occurred over two days, with the planes making passes by the Donald Cook while it was in international waters. In November 2018, two armed Russian Su-24s flew low over the Belgian auxiliary ship Godetia . At the time of the incident, the Godetia was in use as the command ship of NATO's northern mine-sweeping fleet, probably Standing NATO Mine Countermeasures Group 1.\n\nIn March 2015, Sudanese President Omar al-Bashir committed Sudan to join the Saudi Arabian-led intervention in Yemen against the Houthis. The Sudanese military effort included the commitment of up to four recently acquired Sudanese Air Force Su-24s to the Saudi King Khalid Air Base where they were photographed. Sudanese Armed Forces did not specify the type of mission the Su-24s conducted. Integrating several Soviet-made combat jets with air forces using modern Western models (F-15s, F-16s, F/A-18s, Tornados, Typhoons) during an active military campaign would represent a historical first, requiring extensive communication integration or leaving the Soviet-made jets operating on a different mission plan. Air defense units, like Saudi MIM-104 Patriot batteries, would either need to stand down, taking the risk of not monitoring for incoming threats or some very specific orders to avoid shooting down friendlies. [ citation needed ] On 28 March 2015, during Operation Decisive Storm, Houthi forces claimed they shot down a Sudanese Air Force Su-24. Houthis published photos of an allegedly captured Sudanese pilot and metal parts claiming it as the aircraft wreckage.\n\nThe Ukrainian Air Force inherited all of its Su-24s from the Soviet Union when the latter dissolved in 1991. In 2009, amid declining relations with Russia, Ukraine began to have difficulty obtaining spare parts from Sukhoi. On 5 August 2019, the Mykolaiv Aircraft Repair Plant [uk] announced a modernization and MRO program for Ukraine's Su-24M bombers and Su-24MR reconnaissance aircraft.\n\nDuring the war in Donbas, a Ukrainian Air Force Su-24 was damaged by a MANPADS fired by pro-Russian forces on 2 July 2014. One of the engines was damaged but the crew managed to return to base and land. During landing a new fire started but it was extinguished by the ground crew. Initially identified as a Su-25, on 20 August 2014 a Ukrainian Su-24M was shot down by Russian proxy forces in the Luhansk Oblast and confirmed by Ukrainian authorities who reported that the crew members ejected safely and were recovered. On 21 August 2014, the downed plane was identified as a Su-24M.\n\nUkraine reportedly had 10 to 20 operational Su-24s prior to the invasion by Russia in 2022. Lack of standoff missiles meant that Ukrainian crews had to fly into range of Russian air defences to strike their targets. The 7th Tactical Aviation Brigade suffered many losses in the first few months of the invasion.\n\nIn the first hours of the invasion, the Ukrainian Air Force used at least two Su-24Ms during the Battle of Antonov Airport against Russian Airborne Forces that had flown into the airport in helicopters. On 27 February, one Ukrainian Su-24 was lost near Bucha, Kyiv Oblast. The pilots, Major Ruslan Oleksandrovich Bilous and Captain Roman Oleksandrovich Dovhalyuk, were killed and were posthumously awarded with the Order of Bohdan Khmelnytsky. Another bomber was reported lost on 3 April, when a video emerged showing the crash site with the remains of a blue-coloured AL-21 engine employed by the Su-24. On 22 March, another Ukrainian Su-24M was shot down by Russian forces in Izyum. The navigator ejected successfully, but the pilot, Major Oleksiy Oleksandrovich Kovalenko, was killed. On 19 May, a Su-24 was lost near Pylove. The pilot, Lt. Colonel Igor Khamar and the navigator, Major Ilya Negar, were killed.\n\nOn 9 August, explosions at Saky Airport in Novofedorivka, Crimea, destroyed and damaged several aircraft on the ground, among them at least five Russian Naval Aviation Su-24s. Russia denied the loss of any aircraft, though this was rebutted by satellite imagery. On 9 October 2022, a Russian Su-24 crashed during landing in the Rostov region in Russia due to technical malfunction.\n\nIn May 2023, the United Kingdom supplied Ukraine with Storm Shadow air-launched cruise missiles, allowing Su-24s to launch strikes from a safer distance. On 24 May, Ukrainian Defense Minister Oleksii Reznikov tweeted a composite image of a Su-24MR carrying a Storm Shadow missile on its right wing glove pylon. As a Storm Shadow weighs almost 2,900 pounds, only the Su-24 or Su-27 can carry it. On 2 July, it was reported that Ukrainian Su-24s were modified with pylons taken from decommissioned RAF Panavia Tornado GR4s in order to carry and launch at least two Storm Shadows at once. It appears that the coordinates have to be entered while the aircraft is on the ground.\n\nOn 11 July 2023, Russian Lieutenant general Oleg Tsokov was killed in an airstrike on the command post of the 58th Combined Arms Army in occupied Berdiansk, during the 2023 Ukrainian counteroffensive; Russian state media alleged he was killed by a Storm Shadow missile launched from a Ukrainian Su-24.\n\nOn 9 September 2023, Russian sources claimed that six boats of an attempted Ukrainian amphibious operation near Cape Tarkhankut were intercepted by a Russian Su-24M and that three of the boats were sunk using RBK-500 bombs.\n\nOn 13 September 2023, an attack on Sevastopol Shipyard resulted in damage to port facilities, the submarine Rostov-na-Donu and the landing ship Minsk , both of which were in dry dock. Ukrainian Air Force commander Mykola Oleshchuk strongly implied the use of either British Storm Shadow or French SCALP missiles launched by Ukrainian Su-24s. On 22 September, Ukrainian Su-24s firing Storm Shadow missiles struck the headquarters of the Black Sea Fleet in Sevastopol. The Ukrainian military alleged that the strike was timed to coincide with a meeting of naval officials and there were casualties.\n\nOn 4 November 2023, at least three Storm Shadow/SCALP cruise missiles launched by Ukrainian Su-24s struck the newly built Russian corvette Askold at the Zalyv Shipbuilding Yard in Kerch. The ship, which was to enter service in the second half of 2023, suffered extensive damage to its port side. On 5 December 2023, Lieutenant General Mykola Oleschuk stated that a Ukrainian RBS 70 MANPAD downed a Su-24 in Odesa Oblast.\n\nAs of 6 December 2023, Oryx open-source intelligence website equipment loss tracker reported Russian losses as 1 Su-24M strike aircraft, 1 Su-24MR tactical reconnaissance aircraft, and 10 Su-24M/MR strike/tactical reconnaissance aircraft; and Ukrainian losses as 18 Su-24M strike aircraft, 1 Su-24MR tactical reconnaissance aircraft, and 1 unspecified Su-24 type.\n\nOn 26 December 2023, the Russian landing ship Novocherkassk was destroyed by Ukrainian Su-24s using cruise missiles. Russian officials claimed that two Ukrainian Su-24s were shot down, but this claim was refuted by a Ukrainian Air Force spokesperson.\n\nOn 16 June 2026, a Ukrainian Su-24 crashed in Khmelnytskyi Oblast, assigned to the 7th Tactical Aviation Brigade, while on a combat mission. The crash killed both the pilot and the navigator. The crew were identified as Major Bohdan Hryhorovych Zaharulko and Senior Lieutenant Bohdan Oleksandrovych Babenko.\n\nIn June 2025 an Su-24M was seen in satellite images at Bamako Airport during the Mali War.\n\nOn 2 March 2026, Qatari ministry of defense claimed to have downed two Iranian Su-24 bombers en route to Qatar during the 2026 Iran war. CNN reported that the Su-24s targeted Al Udeid Air Base and were reportedly flying at an altitude of 24 m (79 ft) above sea level to avoid radar detection. The aircraft were reportedly two minutes away from reaching Qatari territory when they were intercepted and shot down by a Qatar Emiri Air Force F-15QA over water. As of 3 March, a search was underway to recover the crew. This was the first air-to-air kill for the QEAF and the first for the newer F-15EX line.\n\nAlgeria\n\nAlgerian Air Force – 33 Su-24M/MKs and 3 Su-24MR as of 2024\n\nIslamic Republic of Iran Air Force – 30 Su-24MKs as of 2024\n\nLibya\n\nLibyan National Army - Unknown number of aircraft were supplied by Russia to the LNA, these are operated by Russian mercenaries. Some Su-24Ms remain airworthy as of 2024\n\nAzerbaijani Air and Air Defence Force - 11 in service as of 2008. Not in service anymore as of December 2021.\n\nBelarusian Air Force - 35 in service as of 2010\n\nIraqi Air Force - 25 in 1991. Two were destroyed and fourteen fled to Iran during Operation Desert Storm. 2 Su-24MK remained in service prior to the 2003 invasion of Iraq\n\nKazakhstan\n\nKazakhstan Air Defense Force - Operated 13 aircraft until retired in 2023 or earlier. The aircraft were put up for auction in October 2023, and reportedly purchased by the US in April 2024. In a later statement, the Kazakh state-owned weapons importer and exporter Kazspetexport denied such claims, saying that foreign companies were not allowed to bid.\n\nLibyan Arab Jamahiriya\n\nLibyan Air Force - Received 15 Su-24s in early 1989. Only six Su-24MKs remained in service as of 2010. Destroyed by NATO airstrikes during the First Libyan Civil War in 2011.\n\nSyrian Arab Air Force – 22 received. 20 Su-24MKs from the Soviet Union starting in 1987, one Su-24MK and one Su-24MR from Libya. It was estimated that 10 Su-24MKs were in service prior to the fall of the Assad regime. At least 10 were destroyed during Operation Bashan Arrow according to Israeli claims. In late 2025 the World Air Forces 2026 publication (by FlightGlobal) removed all Syrian aircraft from their report; thus it is questionable if the Syrian Air Force (which the Syrian Arab Air Force has been transformed into) has any flying aircraft, in particular, any Su-24s, as of December 2025.\n\nTurkmenistan\n\nTurkmen Air Force\n\nUzbekistan\n\nUzbekistan Air and Air Defence Forces - In storage\n\nOn 10 April 2011 an Islamic Republic of Iran Air Force Su-24MK crashed close to Khavaran village near the city of Sarvestan, about 80 km east of Shiraz in the southern province of Fars.\n\nOn 30 October 2012, a Russian Air Force Su-24M crashed in Chelyabinsk Oblast, Russia. During the flight the nose cone fractured. After attempting an emergency landing, the crew of two flew to open territory and safely ejected. A regional government website stated that emergency was the result of aircraft control system failure. Flights of Su-24 were suspended at the Shagol base.\n\nOn 21 March 2014, a Ukrainian Air Force Su-24M belonging to the 7th Brigade crashed during approach for landing near Starokonstantinov in the Khmelnitsky region, Ukraine. Both crew members ejected safely. [ citation needed ]\n\nOn 13 October 2014, an Algerian Air Force Su-24 crashed during a training flight killing both crew members\n\nOn 6 July 2015, a Russian Air Force Su-24 crashed outside of Khabarovsk in Russia's Far East killing one out of two crew members.\n\nOn 10 October 2017, a Russian Aerospace Forces Su-24 crashed during takeoff at Khmeimim Air Base, Latakia province, Syria. Both crew members died in the crash.",
+      "shortDescription": "The Su-24 started development in the early 1960s and first flew in 1967.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Source: Sukhoi\n\nS6\n\nT6-1\n\nT6-2I / T6-3I / T6-4I\n\nSu-24\n\nSu-24M ('Fencer-D')\n\nSu-24M2 ('Fencer-D')\n\nSu-24MK ('Fencer-D')\n\nSu-24MP ('Fencer-F')\n\nRussian Aerospace forces and Naval Aviation Forces operates 296 Su-24 of all variants [1]\n\nRussian Aerospace Forces – 260 as of 2025\n\nRussian Naval Aviation – Up to 30 Su-24M and 10 Su-24MR as of 2024\n\nSudan\n\nEight ex-Belarusian Air Force Su-24s were transferred to the Sudanese Air Force starting in 2013. Estimated to have 4 Su-24M/MR as of 2024\n\nUkrainian Air Force - Estimated to have 5 Su-24M and 8 Su-24MR as of 2024",
+      "shortDescription": "Eight ex-Belarusian Air Force Su-24s were transferred to the Sudanese Air Force starting in 2013.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 205101,
+      "url": "https://en.wikipedia.org/wiki/Sukhoi_Su-24",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"All-weather tactical bomber/interdictor\".",
+      "parameterUomValue": "All-weather tactical bomber/interdictor",
+      "classification": "U",
+      "parameterValue": "All-weather tactical bomber/interdictor",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Soviet Union / Russia\".",
+      "parameterUomValue": "Soviet Union / Russia",
+      "classification": "U",
+      "parameterValue": "Soviet Union / Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Sukhoi\".",
+      "parameterUomValue": "Sukhoi",
+      "classification": "U",
+      "parameterValue": "Sukhoi",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Status",
+      "parameterDescr": "Current operational status of the system. Source text: \"In service\".",
+      "parameterUomValue": "In service",
+      "classification": "U",
+      "parameterValue": "In service",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Primary users",
+      "parameterDescr": "Principal operator(s) of the system. Source text: \"Russian Aerospace Forces Ukrainian Air Force ; Islamic Republic of Iran Air Force ; Algerian Air Force\".",
+      "parameterUomValue": "Russian Aerospace Forces Ukrainian Air Force ; Islamic Republic of Iran Air Force ; Algerian Air Force",
+      "classification": "U",
+      "parameterValue": "Russian Aerospace Forces Ukrainian Air Force ; Islamic Republic of Iran Air Force ; Algerian Air Force",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \"Approximately 1,400\".",
+      "parameterUomValue": "1400 units",
+      "classification": "U",
+      "parameterValue": "1400",
+      "uom": "units"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Manufactured",
+      "parameterDescr": "Date range during which the system was in production. Source text: \"1967–1993\".",
+      "parameterUomValue": "1967–1993",
+      "classification": "U",
+      "parameterValue": "1967–1993",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"1974\".",
+      "parameterUomValue": "1974",
+      "classification": "U",
+      "parameterValue": "1974",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "First flight",
+      "parameterDescr": "Date of the type's first flight. Source text: \"T-6: 2 July 1967 ; 58 years ago ( 1967-07-02 ) ; T-6-2I: 17 January 1970 ; 56 years ago ( 1970-01-17 )\".",
+      "parameterUomValue": "T-6: 2 July 1967 ; 58 years ago ( 1967-07-02 ) ; T-6-2I: 17 January 1970 ; 56 years ago ( 1970-01-17 )",
+      "classification": "U",
+      "parameterValue": "T-6: 2 July 1967 ; 58 years ago ( 1967-07-02 ) ; T-6-2I: 17 January 1970 ; 56 years ago ( 1970-01-17 )",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Developed from",
+      "parameterDescr": "Earlier system this design is derived from. Source text: \"Sukhoi S-6\".",
+      "parameterUomValue": "Sukhoi S-6",
+      "classification": "U",
+      "parameterValue": "Sukhoi S-6",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Crew",
+      "parameterDescr": "Number of crew required to operate the system. Source text: \"2 (pilot and weapons systems operator)\".",
+      "parameterUomValue": "2 (pilot and weapons systems operator)",
+      "classification": "U",
+      "parameterValue": "2 (pilot and weapons systems operator)",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"22.53 m (73 ft 11 in)\".",
+      "parameterUomValue": "22.53 m",
+      "classification": "U",
+      "parameterValue": "22.53",
+      "uom": "m"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"17.64 m (57 ft 10 in) wings spread\".",
+      "parameterUomValue": "17.64 m",
+      "classification": "U",
+      "parameterValue": "17.64",
+      "uom": "m"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Height",
+      "parameterDescr": "Overall height of the system. Source text: \"6.19 m (20 ft 4 in)\".",
+      "parameterUomValue": "6.19 m",
+      "classification": "U",
+      "parameterValue": "6.19",
+      "uom": "m"
+    },
+    {
+      "seq": 1015,
+      "parameter": "Wing area",
+      "parameterDescr": "Total wing planform area. Source text: \"55.2 m 2 (594 sq ft)\".",
+      "parameterUomValue": "55.2 m2",
+      "classification": "U",
+      "parameterValue": "55.2",
+      "uom": "m2"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Airfoil",
+      "parameterDescr": "Airfoil (descriptive text, not a unit-bearing quantity). Source text: \"TsAGI SR14S-5.376; TsAGI SR16M-10\".",
+      "parameterUomValue": "TsAGI SR14S-5.376; TsAGI SR16M-10",
+      "classification": "U",
+      "parameterValue": "TsAGI SR14S-5.376; TsAGI SR16M-10",
+      "uom": ""
+    },
+    {
+      "seq": 1017,
+      "parameter": "Empty weight",
+      "parameterDescr": "Aircraft weight excluding fuel, payload, and crew. Source text: \"22,300 kg (49,163 lb)\".",
+      "parameterUomValue": "22300 kg",
+      "classification": "U",
+      "parameterValue": "22300",
+      "uom": "kg"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Gross weight",
+      "parameterDescr": "Typical loaded weight for a standard mission. Source text: \"38,040 kg (83,864 lb)\".",
+      "parameterUomValue": "38040 kg",
+      "classification": "U",
+      "parameterValue": "38040",
+      "uom": "kg"
+    },
+    {
+      "seq": 1019,
+      "parameter": "Max takeoff weight",
+      "parameterDescr": "Maximum certified takeoff weight. Source text: \"43,755 kg (96,463 lb)\".",
+      "parameterUomValue": "43755 kg",
+      "classification": "U",
+      "parameterValue": "43755",
+      "uom": "kg"
+    },
+    {
+      "seq": 1020,
+      "parameter": "Fuel capacity",
+      "parameterDescr": "Internal (and optionally external) fuel capacity. Source text: \"11,100 kg (24,471 lb)\".",
+      "parameterUomValue": "11,100 kg (24,471 lb)",
+      "classification": "U",
+      "parameterValue": "11,100 kg (24,471 lb)",
+      "uom": ""
+    },
+    {
+      "seq": 1021,
+      "parameter": "Powerplant",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating. Source text: \"2 × Lyulka AL-21F-3A turbojet engines, 75 kN (17,000 lbf) thrust each dry, 109.8 kN (24,700 lbf) with afterburner\".",
+      "parameterUomValue": "2 × Lyulka AL-21F-3A turbojet engines, 75 kN (17,000 lbf) thrust each dry, 109.8 kN (24,700 lbf) with afterburner",
+      "classification": "U",
+      "parameterValue": "2 × Lyulka AL-21F-3A turbojet engines, 75 kN (17,000 lbf) thrust each dry, 109.8 kN (24,700 lbf) with afterburner",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"1,654 km/h (1,028 mph, 893 kn) / M1.6 at high altitude\".",
+      "parameterUomValue": "1,654 km/h (1,028 mph, 893 kn) / M1.6 at high altitude",
+      "classification": "U",
+      "parameterValue": "1,654 km/h (1,028 mph, 893 kn) / M1.6 at high altitude",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "Combat range",
+      "parameterDescr": "Range achievable on a representative combat mission profile. Source text: \"615 km (382 mi, 332 nmi) lo-lo-lo attack mission with 3,000 kg (6,614 lb) of ordnance and external tanks\".",
+      "parameterUomValue": "615 km",
+      "classification": "U",
+      "parameterValue": "615",
+      "uom": "km"
+    },
+    {
+      "seq": 1024,
+      "parameter": "Ferry range",
+      "parameterDescr": "Maximum range in ferry (long-range transit) configuration. Source text: \"2,775 km (1,724 mi, 1,498 nmi)\".",
+      "parameterUomValue": "2775 km",
+      "classification": "U",
+      "parameterValue": "2775",
+      "uom": "km"
+    },
+    {
+      "seq": 1025,
+      "parameter": "Service ceiling",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement. Source text: \"11,000 m (36,000 ft)\".",
+      "parameterUomValue": "11000 m",
+      "classification": "U",
+      "parameterValue": "11000",
+      "uom": "m"
+    },
+    {
+      "seq": 1026,
+      "parameter": "g limits",
+      "parameterDescr": "Structural load factor limits. Source text: \"+ 6\".",
+      "parameterUomValue": "+ 6",
+      "classification": "U",
+      "parameterValue": "+ 6",
+      "uom": ""
+    },
+    {
+      "seq": 1027,
+      "parameter": "Rate of climb",
+      "parameterDescr": "Maximum sustained rate of climb. Source text: \"150 m/s (30,000 ft/min)\".",
+      "parameterUomValue": "150 m/s",
+      "classification": "U",
+      "parameterValue": "150",
+      "uom": "m/s"
+    },
+    {
+      "seq": 1028,
+      "parameter": "Wing loading",
+      "parameterDescr": "Weight per unit wing area. Source text: \"651 kg/m 2 (133 lb/sq ft)\".",
+      "parameterUomValue": "651 kg/m 2 (133 lb/sq ft)",
+      "classification": "U",
+      "parameterValue": "651 kg/m 2 (133 lb/sq ft)",
+      "uom": ""
+    },
+    {
+      "seq": 1029,
+      "parameter": "Thrust/weight",
+      "parameterDescr": "Thrust-to-weight ratio. Source text: \"0.6\".",
+      "parameterUomValue": "0.6",
+      "classification": "U",
+      "parameterValue": "0.6",
+      "uom": ""
+    },
+    {
+      "seq": 1030,
+      "parameter": "Guns",
+      "parameterDescr": "Internal gun armament. Source text: \"1 × internal 23 mm Gryazev-Shipunov GSh-6-23M rotary cannon with 500 rounds\".",
+      "parameterUomValue": "1 × internal 23 mm Gryazev-Shipunov GSh-6-23M rotary cannon with 500 rounds",
+      "classification": "U",
+      "parameterValue": "1 × internal 23 mm Gryazev-Shipunov GSh-6-23M rotary cannon with 500 rounds",
+      "uom": ""
+    },
+    {
+      "seq": 1031,
+      "parameter": "Hardpoints",
+      "parameterDescr": "Number and capacity of external weapon stations. Source text: \"9 hardpoints with a capacity of up to 8,000 kg (17,635 lb), with provisions to carry combinations of: Rockets: S-5 S-8 S-13 S-24B S-25-OFM/LD Missiles: Air-to-air missiles: 4 × R-60MK 4 × R-73E Air-to-surface missiles: 4 × Kh-23M 4 × Kh-25ML Kh-59ME Kh-29L/T/D Anti-ship missiles: Kh-31A Anti-radiation missiles: 2 × Kh-28 2 × Kh-58E Kh-25MP 2 × Kh-31P Kh-27PS Bombs: KAB-500KR TV-guided bomb KAB-500L laser-guided bomb KAB-500OD guided bomb KAB-500S-E satellite-guided bomb KAB-1500KR TV-guided bomb KAB-1500L laser-guided bomb ODAB-500PM bomb RBK-250 cluster bomb RBK-500 cluster bomb 2 × BETAB-500 bomb\".",
+      "parameterUomValue": "9 hardpoints with a capacity of up to 8,000 kg (17,635 lb), with provisions to carry combinations of: Rockets: S-5 S-8 S-13 S-24B S-25-OFM/LD Missiles: Air-to-air missiles: 4 × R-60MK 4 × R-73E Air-to-surface missiles: 4 × Kh-23M 4 × Kh-25ML Kh-59ME Kh-29L/T/D Anti-ship missiles: Kh-31A Anti-radiation missiles: 2 × Kh-28 2 × Kh-58E Kh-25MP 2 × Kh-31P Kh-27PS Bombs: KAB-500KR TV-guided bomb KAB-500L laser-guided bomb KAB-500OD guided bomb KAB-500S-E satellite-guided bomb KAB-1500KR TV-guided bomb KAB-1500L laser-guided bomb ODAB-500PM bomb RBK-250 cluster bomb RBK-500 cluster bomb 2 × BETAB-500 bomb",
+      "classification": "U",
+      "parameterValue": "9 hardpoints with a capacity of up to 8,000 kg (17,635 lb), with provisions to carry combinations of: Rockets: S-5 S-8 S-13 S-24B S-25-OFM/LD Missiles: Air-to-air missiles: 4 × R-60MK 4 × R-73E Air-to-surface missiles: 4 × Kh-23M 4 × Kh-25ML Kh-59ME Kh-29L/T/D Anti-ship missiles: Kh-31A Anti-radiation missiles: 2 × Kh-28 2 × Kh-58E Kh-25MP 2 × Kh-31P Kh-27PS Bombs: KAB-500KR TV-guided bomb KAB-500L laser-guided bomb KAB-500OD guided bomb KAB-500S-E satellite-guided bomb KAB-1500KR TV-guided bomb KAB-1500L laser-guided bomb ODAB-500PM bomb RBK-250 cluster bomb RBK-500 cluster bomb 2 × BETAB-500 bomb",
+      "uom": ""
+    },
+    {
+      "seq": 1032,
+      "parameter": "Anti-ship missiles",
+      "parameterDescr": "Anti-ship missiles (descriptive text, not a unit-bearing quantity). Source text: \"Kh-31A\".",
+      "parameterUomValue": "Kh-31A",
+      "classification": "U",
+      "parameterValue": "Kh-31A",
+      "uom": ""
+    }
+  ]
+}

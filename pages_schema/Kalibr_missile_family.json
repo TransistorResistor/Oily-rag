@@ -1,0 +1,223 @@
+{
+  "modelID": 2027,
+  "systemGroup": "Weapon",
+  "systemType": "Cruise Missile",
+  "nomenclature": "Kalibr (missile family)",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Novator Kalibr (Калибр, caliber), also referred to as 3M54-1 Kalibr , 3M14 Biryuza (Бирюза, turquoise), (NATO reporting name SS-N-27 Sizzler and SS-N-30A ) is a family of Russian cruise missiles developed by NPO Novator (OKB-8). It first saw service in 1994. There are ship-launched, submarine-launched and air-launched versions of the missile, and variants for anti-ship, and land attack use. The missile can carry a conventional or nuclear warhead weighing up to 500 kilograms (1,100 lb) .",
+      "shortDescription": "iber), also referred to as 3M54-1 Kalibr , 3M14 Biryuza (Бирюза, turquoise), (NATO reporting name SS-N-27 Sizzler and SS-N-30A ) is a family of Russian cruise missiles developed by NPO Novator (OKB-8).",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The missile is a modular system with several versions: two anti-shipping types, and one for land attack. The missile is designed to share common parts between the surface and submarine-launched variants but each missile consists of different components, for example, the booster. The missile can be launched from a surface ship using a vertical launching system (VLS).\n\nIt has a booster with thrust vectoring capability. The missile launched from a submarine torpedo tube has no need for such an addition but has a conventional booster instead. The air launched version is held in a container that is dropped as the missile launches, detaching from the container.\n\nThere are several claims about the maximum range of Kalibr land attack versions in use by Russia. The U.S. Department of Defense estimates its range at 1,400 km (870 mi) , and Russian Defence Minister Sergei Shoigu put its range at \"almost 1,500 km (930 mi) .\" Following its first operational firing in October 2015, Russian Ministry of Defence statements suggested a range of 2,000 km (1,200 mi) , while a December 2015 Office of Naval Intelligence report gathered a number of Russian statements projecting ranges between 1,500- 2,500 km (1,600 mi) .\n\nDiscrepancies in range values may be political declarations for strategic effect, or potentially longer 2,500 km-range claims could be associated with a thermonuclear armed variant while shorter 1,500 km-range estimates are for the conventionally armed missile.",
+      "shortDescription": "The missile is a modular system with several versions: two anti-shipping types, and one for land attack.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "On 7 October 2015, a Gepard class frigate and three Buyan-M class Russian Navy corvettes, part of the Caspian Flotilla launched 26 Kalibr-NK system cruise missiles 3M14T from the Caspian Sea at 11 targets in Syria during the Syrian Civil War. [ citation needed ] The missiles traveled 1,500 km (932 mi) through Iranian and Iraqi airspace and struck targets in Raqqa and Aleppo provinces (controlled by the Islamic State) but primarily in Idlib province (controlled by the Free Syrian Army and Nusra Front). Anonymous US DoD officials alleged that four missiles crashed in Iran. Russian and Iranian governments denied the claim of missile crash. Pentagon and State Department officials refused to comment on the reports. Russia posted video footage of 26 Kalibr missile launches as well as several videos of missile impacts without time or location information.\n\nOn 20 November 2015, Russia launched 18 3M14T cruise missiles from the Caspian Sea onto targets in Syria, the targets were in Raqqa, Idlib and Aleppo. [ citation needed ]\n\nOn 9 December 2015, Russia fired a group of 3M14K cruise missiles from Kalibr-PL system at positions occupied by ISIL from the Improved Kilo-class submarine B-237 Rostov-on-Don deployed in the Mediterranean. [ citation needed ]\n\nOn 20 September 2016, Russian state media reported that Russian warships in the Mediterranean fired three Kalibr-NK missiles at western Aleppo, near Mount Simeon. The Russians claimed that the missile strike killed \"30 Israeli and Western officers directing the terrorists' attacks in Aleppo and Idlib\".\n\nOn 15 November 2016, Russian frigate Admiral Grigorovich fired at least three missiles against targets in Idlib and Homs provinces, Syria, in the opening stages of the decisive offensive on Aleppo.\n\nOn 31 May 2017, the Russian frigate Admiral Essen and submarine Krasnodar launched four missiles against targets east of Palmyra, Syria. [ citation needed ]\n\nOn 23 June 2017, Russian frigates Admiral Grigorovich and Admiral Essen , and the submarine Krasnodar fired six Kalibr missiles at ISIL arms depot targets in Hama.\n\nOn 14 September 2017, the Russian submarines Veliky Novgorod and Kolpino fired seven Kalibr missiles on ISIL targets (command posts, communications centers and ammunition depots) in the south-east of Deir ez-Zor.\n\nOn 22 September 2017, the Russian submarine Veliky Novgorod fired at least three Kalibr missiles on al-Nusra in the Idlib province. The missile strike destroyed command centers, training bases and armored vehicles.\n\nOn 5 October 2017, the Russian submarines Veliky Novgorod and Kolpino launched 10 Kalibr missiles. The strikes were to support Syrian troops conducting a ground offensive in Deir-ez-Zor province. [ citation needed ]\n\nOn 3 November 2017, the Russian submarine Kolpino launched 6 Kalibr missiles from a submerged position. Missiles hit terrorists' strongholds, weapon and ammunition depots, concentrations of militants, and important command centres near Abu Kamal, Deir-ez-Zor.\n\nOn 3 February 2018, Russian frigates and submarines active in the Mediterranean sea launched several Kalibr missiles on the positions of rebels in the Idlib province, Syria where the Sukhoi Su-25 attack aircraft of Major Roman Filipov was shot down. The Russian ministry of defence said that more than 30 rebel fighters were killed.\n\nKalibr cruise missiles have been widely used by Russian forces since the start of the 2022 Russian invasion of Ukraine on 24 February 2022. The opening assault is said to have included at least 30 cruise missiles, targeting command and control points, air bases, and air-defense batteries. The missiles were likely fired by the Buyan-class corvettes, Admiral Grigorovich-class frigates and Kilo-class submarines of the Russian Black Sea Fleet. Ukraine's military command reported widespread usage of Kalibr cruise missiles in strikes against strategic and non-combat targets across Ukraine. Most notable incidents were:\n\nOn 14 July 2022, three Kalibr cruise missiles hit the city center of Vinnytsia, Ukraine, killing at least 20 people, including at least three children. Ukraine claimed two other missiles were shot down.\n\nOn 23 July 2022, at least two Kalibr cruise missiles hit the port of Odesa, other two were reportedly shot down.\n\nOn 11 September 2022, Kalibr cruise missiles were again fired from the Black Sea on targets in Ukraine. [ citation needed ] The same day, missile strike on Kharkiv TEC-5 thermal power plant in Kharkiv was confirmed by Ukrainian officials.\n\nDuring 2022 Russian strikes against Ukrainian infrastructure in October, November and December 2022, number of Kalibr cruise missiles fired from the Black Sea targeted various Ukrainian energy facilities across the country. This led to destruction of at least 50% of Ukraine's energy sector by mid-November 2022. On 10 October 2022, three Kalibr cruise missiles violated the airspace of the Republic of Moldova. On 31 October 2022, remains of a Kalibr missile reportedly shot down by Ukrainian air defence crashed in Moldova.\n\nOn 10 October 2022, three Kalibr cruise missiles violated the airspace of the Republic of Moldova.\n\nOn 31 October 2022, remains of a Kalibr missile reportedly shot down by Ukrainian air defence crashed in Moldova.\n\nOn 20 March 2023, Ukraine claimed Russian Kalibr cruise missiles had been involved in an explosion in the north of annexed Crimea. Ukraine announced the explosions but, as is normal, did not explicitly say it was behind the attack.\n\nRussia: Russian Navy uses the 3M14, 3M54, 3M54-1, 91R1, 91RT2. Submarine-launched variants (entered service in 2016) are used by Kilo -class submarine, Lada -class submarine, Akula -class submarine, Oscar II-class submarine and the Yasen -class submarine. Surface ship launched variants are used by the Gremyashchy class, Karakurt class, Buyan-M class corvettes, Gepard class, Admiral Gorshkov class and the Admiral Grigorovich -class frigates. [ citation needed ] According to classified documents, Russia signed two large contracts for the supply of 240 missiles between 2022 and 2024 and 450 missiles between 2025 and 2026. Also, 56 3M-14S missiles with a special nuclear warhead are ordered.",
+      "shortDescription": "and three Buyan-M class Russian Navy corvettes, part of the Caspian Flotilla launched 26 Kalibr-NK system cruise missiles 3M14T from the Caspian Sea at 11 targets in Syria during the Syrian Civil War.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Launch of production of a submarine-variant of the 3M14TE Kalibr-NK called the Kalibr-PL missile occurred in 2012, according to state television news (broadcast of 11.10.2015).\n\nRussia has improved the targeting system of its ship- and submarine-launched Kalibr cruise missiles to improve their ability to conduct time sensitive attacks. Defence Minister Sergei Shoigu revealed the development, which was initiated as a result of combat experience in Syria, in an interview with the Moskovsky Komsomolets newspaper on 22 September 2019.\n\nClub-K – a Russian container complex of missile weapons, placed in the standard 20- and 40-foot sea container. It is designed to defeat surface and ground targets. The complex can be mounted on shorelines, vessels of various classes, rail platforms and trucks. It is a modification of the Kalibr missile system.\n\nA Club-K variant, which is disguised as a shipping container that can be placed on a truck, train, or merchant vessel, was advertised in 2010 and was shown for the first time at the MAKS 2011 air show.\n\nDomestic variants are basic versions of this missile family; these are the 3M54, 3M51, 3M14 and 91R variants. The export model is called Club (formerly Klub). There are two major launch platforms: the Kalibr-PL (export Club-S), designed for use from submarines, and the Kalibr-NK (export Club-N), designed for surface ships. These two launch platforms can be equipped with the following warhead and guidance combinations:\n\nRussian Navy uses the 3M14, 3M54, 3M54-1, 91R1, 91RT2. Submarine-launched variants (entered service in 2016) are used by Kilo -class submarine, Lada -class submarine, Akula -class submarine, Oscar II-class submarine and the Yasen -class submarine. Surface ship launched variants are used by the Gremyashchy class, Karakurt class, Buyan-M class corvettes, Gepard class, Admiral Gorshkov class and the Admiral Grigorovich -class frigates. [ citation needed ] According to classified documents, Russia signed two large contracts for the supply of 240 missiles between 2022 and 2024 and 450 missiles between 2025 and 2026. Also, 56 3M-14S missiles with a special nuclear warhead are ordered.\n\nThe Algerian National Navy uses the 'Club-S' variant for their Kilo class submarines. [ citation needed ]\n\nThe Indian Navy uses both 'Club-S' and 'Club-N' variants for the Kilo class submarines (known as the Sindhughosh -class submarine in Indian service), the Talwar class frigates respectively.\n\nVietnam: The Vietnam People's Navy uses the 'Club-S' variant for its six Kilo class submarines.\n\nThe People's Liberation Army Navy uses the 'Club-S' variant for its Kilo class submarines.\n\nContradictory sources indicate that the Iranian Navy is thought to have purchased or is about to purchase 'Club-S' missiles for its three Kilo class submarines. [ needs update ]",
+      "shortDescription": "Launch of production of a submarine-variant of the 3M14TE Kalibr-NK called the Kalibr-PL missile occurred in 2012, according to state television news (broadcast of 11.10.2015).",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 202701,
+      "url": "https://en.wikipedia.org/wiki/Kalibr_(missile_family)",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Cruise missile ; Anti-ship missile\".",
+      "parameterUomValue": "Cruise missile ; Anti-ship missile",
+      "classification": "U",
+      "parameterValue": "Cruise missile ; Anti-ship missile",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Russia\".",
+      "parameterUomValue": "Russia",
+      "classification": "U",
+      "parameterValue": "Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "In service",
+      "parameterDescr": "Period during which the system has been/was in active service. Source text: \"1994\".",
+      "parameterUomValue": "1994",
+      "classification": "U",
+      "parameterValue": "1994",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Used by",
+      "parameterDescr": "Known operators of the system. Source text: \"See Operators\".",
+      "parameterUomValue": "See Operators",
+      "classification": "U",
+      "parameterValue": "See Operators",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Wars",
+      "parameterDescr": "Conflicts in which the system has seen use. Source text: \"Syrian Civil War ; Russo-Ukrainian War\".",
+      "parameterUomValue": "Syrian Civil War ; Russo-Ukrainian War",
+      "classification": "U",
+      "parameterValue": "Syrian Civil War ; Russo-Ukrainian War",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Novator Design Bureau, KTRV, MKB Fakel, NPO Mash, Raduga, NPO Zvezda Strela (Orenburg)\".",
+      "parameterUomValue": "Novator Design Bureau, KTRV, MKB Fakel, NPO Mash, Raduga, NPO Zvezda Strela (Orenburg)",
+      "classification": "U",
+      "parameterValue": "Novator Design Bureau, KTRV, MKB Fakel, NPO Mash, Raduga, NPO Zvezda Strela (Orenburg)",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Unit cost",
+      "parameterDescr": "Approximate unit cost in US dollars. Source text: \"$980,000 (domestic cost, land-attack version) ; $6.5 million (export cost, anti-ship version)\".",
+      "parameterUomValue": "980000 USD",
+      "classification": "U",
+      "parameterValue": "980000",
+      "uom": "USD"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Produced",
+      "parameterDescr": "Production period. Source text: \"1994–present\".",
+      "parameterUomValue": "1994–present",
+      "classification": "U",
+      "parameterValue": "1994–present",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Mass",
+      "parameterDescr": "Overall mass of the system. Source text: \"Varies on variant, from 1,300 kg-1,780 kg-2,300 kg\".",
+      "parameterUomValue": "1300 kg",
+      "classification": "U",
+      "parameterValue": "1300",
+      "uom": "kg"
+    },
+    {
+      "seq": 1010,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"Varies on variant, from 6.2 m to 8.9 m\".",
+      "parameterUomValue": "6.2 m",
+      "classification": "U",
+      "parameterValue": "6.2",
+      "uom": "m"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Diameter",
+      "parameterDescr": "Body/airframe diameter. Source text: \"(ca. 0.514 m) 0.533 m\".",
+      "parameterUomValue": "0.514 m",
+      "classification": "U",
+      "parameterValue": "0.514",
+      "uom": "m"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Warhead",
+      "parameterDescr": "Warhead type and/or description. Source text: \"400–500 kg\".",
+      "parameterUomValue": "400–500 kg",
+      "classification": "U",
+      "parameterValue": "400–500 kg",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Engine",
+      "parameterDescr": "Engine type and configuration. Source text: \"Multi-stage solid-fuel rocket, turbojet engine for 3M-54/E/TE/E1/TE1, -14/E/TE, solid fuel rocket for 91RE1/RTE2\".",
+      "parameterUomValue": "Multi-stage solid-fuel rocket, turbojet engine for 3M-54/E/TE/E1/TE1, -14/E/TE, solid fuel rocket for 91RE1/RTE2",
+      "classification": "U",
+      "parameterValue": "Multi-stage solid-fuel rocket, turbojet engine for 3M-54/E/TE/E1/TE1, -14/E/TE, solid fuel rocket for 91RE1/RTE2",
+      "uom": ""
+    },
+    {
+      "seq": 1014,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"91R variants: ≥50 km ; 3M54E (export anti-ship version): 220 km ; 3M54E1/3M14E (export anti-ship version): 300 km ; 3M54K/3M54T: 660 km (domestic anti-ship version, estimate) ; 3M14K/3M14T: 1,500–2,500 km (domestic land-attack version, estimate)\".",
+      "parameterUomValue": "50 km",
+      "classification": "U",
+      "parameterValue": "50",
+      "uom": "km"
+    },
+    {
+      "seq": 1015,
+      "parameter": "Service ceiling",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement. Source text: \"1,000 m\".",
+      "parameterUomValue": "1000 m",
+      "classification": "U",
+      "parameterValue": "1000",
+      "uom": "m"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Flight altitude",
+      "parameterDescr": "Operational flight altitude band. Source text: \"50–150 m AGL ; 20 m over water\".",
+      "parameterUomValue": "0.15 km",
+      "classification": "U",
+      "parameterValue": "0.15",
+      "uom": "km"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Mach 0.8\".",
+      "parameterUomValue": "0.8 Mach",
+      "classification": "U",
+      "parameterValue": "0.8",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Guidance system",
+      "parameterDescr": "Method(s) used to guide the weapon to its target. Source text: \"Inertial guidance plus terminal active radar homing\".",
+      "parameterUomValue": "Inertial guidance plus terminal active radar homing",
+      "classification": "U",
+      "parameterValue": "Inertial guidance plus terminal active radar homing",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Accuracy",
+      "parameterDescr": "Positional/targeting accuracy. Source text: \"2–3 m (domestic version, with GLONASS) ; 50 m CEP (Club-T export version, without GLONASS)\".",
+      "parameterUomValue": "2–3 m (domestic version, with GLONASS) ; 50 m CEP (Club-T export version, without GLONASS)",
+      "classification": "U",
+      "parameterValue": "2–3 m (domestic version, with GLONASS) ; 50 m CEP (Club-T export version, without GLONASS)",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Launch platform",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from. Source text: \"naval ships, submarines, containers, TEL\".",
+      "parameterUomValue": "naval ships, submarines, containers, TEL",
+      "classification": "U",
+      "parameterValue": "naval ships, submarines, containers, TEL",
+      "uom": ""
+    }
+  ]
+}

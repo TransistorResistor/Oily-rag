@@ -1,0 +1,265 @@
+{
+  "modelID": 2028,
+  "systemGroup": "Aircraft",
+  "systemType": "Helicopter",
+  "nomenclature": "Kamov Ka-27",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Kamov Ka-27 (NATO reporting name ' Helix' ) is a military helicopter developed for the Soviet Navy, and as of 2024 is in service in various countries including Russia, Ukraine, Vietnam, China, South Korea, and India. Variants include the Ka-29 assault transport, the Ka-28 downgraded export version, and the Ka-32 for civilian use.",
+      "shortDescription": "TO reporting name ' Helix' ) is a military helicopter developed for the Soviet Navy, and as of 2024 is in service in various countries including Russia, Ukraine, Vietnam, China, South Korea, and India.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The helicopter was developed for ferrying and anti-submarine warfare. Design work began in 1969 and the first prototype flew in 1973. It was intended to replace the decade-old Kamov Ka-25, and had to have identical or smaller external dimensions than its predecessor. Like other Kamov military helicopters it has coaxial rotors, removing the need for a tail rotor. In total, five prototypes and pre-series helicopters were built. Series production started at Kumertau in July 1979, and the new helicopter officially entered service with the Soviet Navy in April 1981.\n\nKa-32 pre-production prototype (1985): Exhibited at the 36th Paris Airshow in 1985.\n\nKa-32C (198x): Little-known custom version. [ citation needed ]\n\nKa-32T (1987): (Helix-C) Utility transport helicopter, with accommodation for two crew and 16 passengers. Ka-32A (1990): Civil transport helicopter. Initial production version. Ka-32A1 (1994): Fire fighting helicopter, equipped with a helicopter bucket. Ka-32A2 (1994): Police version, equipped with two searchlights and a loudspeaker. Can carry 11 passengers. Ka-32A7 (1994): Armed version of the Ka-27PS. Can carry 13 passengers. Has provisions to carry 2 x GSh-23L 23mm cannons, B-8V-20 rocket pods, 2 x Kh-35 anti-ship missiles or Kh-25 air-to-air missiles. Ka-32A12 (1996): Swiss-registered and approved version. Ka-32A11BC (1997): Canadian, Chinese, European-certified version with Klimov TV3-117MA engines and Glass Cockpit. Used by Pegasus Air Services, Indonesia. Ka-32A11M (2012) Ka-32A4 (1999): Special search and rescue, salvage and evacuation version. Ka-32K (1991): Flying crane helicopter, fitted with a retractable gondola for a second pilot.\n\nKa-32A (1990): Civil transport helicopter. Initial production version. Ka-32A1 (1994): Fire fighting helicopter, equipped with a helicopter bucket. Ka-32A2 (1994): Police version, equipped with two searchlights and a loudspeaker. Can carry 11 passengers. Ka-32A7 (1994): Armed version of the Ka-27PS. Can carry 13 passengers. Has provisions to carry 2 x GSh-23L 23mm cannons, B-8V-20 rocket pods, 2 x Kh-35 anti-ship missiles or Kh-25 air-to-air missiles. Ka-32A12 (1996): Swiss-registered and approved version. Ka-32A11BC (1997): Canadian, Chinese, European-certified version with Klimov TV3-117MA engines and Glass Cockpit. Used by Pegasus Air Services, Indonesia. Ka-32A11M (2012) Ka-32A4 (1999): Special search and rescue, salvage and evacuation version.\n\nKa-32A1 (1994): Fire fighting helicopter, equipped with a helicopter bucket.\n\nKa-32A2 (1994): Police version, equipped with two searchlights and a loudspeaker. Can carry 11 passengers.\n\nKa-32A7 (1994): Armed version of the Ka-27PS. Can carry 13 passengers. Has provisions to carry 2 x GSh-23L 23mm cannons, B-8V-20 rocket pods, 2 x Kh-35 anti-ship missiles or Kh-25 air-to-air missiles.\n\nKa-32A12 (1996): Swiss-registered and approved version.\n\nKa-32M: Projected development with 1839kW TV3-117VMA-SB3 engines. Probably [ vague ] replaced by the Ka-32-10 project.",
+      "shortDescription": "The helicopter was developed for ferrying and anti-submarine warfare.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Ka-27 has a crew of three with a pilot and navigator both stationed in the cockpit, and a sonar operator seated behind them. It has a four-leg fixed landing gear. The Ka-27 is equipped with two lateral buoys, that can be inflated in the case of a forced landing on water.\n\nThe Ka-27PL anti-submarine version is equipped with a radar, and either a dipping sonar or a magnetic anomaly detector. It can also carry either up to 36 sonobuoys, or a torpedo, or between six and eight conventional depth charges, or a single nuclear one. Ka-27PLs generally operate in pairs as hunter-killer teams.\n\nThe Ka-27PS search and rescue helicopter can carry 12 folding seats or four stretchers in its cabin, and is equipped with a 300 kg (660 lb) winch. Its fuel capacity of 3,450 litres (910 US gal) is greater than the 2,940-litre (780 US gal) capacity of the Ka-27PL.\n\nKa-32s are used for construction of transmission towers for overhead power lines, as it has somewhat higher lift capacity than the Vertol 107. In Canada, the Ka-32 is used for selective logging as it is able to lift selective species vertically.\n\nIn August 2013, a Kamov Ka-32, C-GKHL operating in Bella Coola, British Columbia, Canada, experienced failure of one of its Klimov TV3-117BMA engines (manufactured by Motor Sich in Ukraine). The subsequent technical investigation indicated that there was poor quality control in the assembly of the compressor turbine, leading to failure of the complete unit after several compressor blades separated.\n\nKa-32A11BC (1997): Canadian, Chinese, European-certified version with Klimov TV3-117MA engines and Glass Cockpit. Used by Pegasus Air Services, Indonesia. Ka-32A11M (2012)\n\nKa-32A11M (2012)\n\nKa-32A4 (1999): Special search and rescue, salvage and evacuation version.\n\nKa-32K (1991): Flying crane helicopter, fitted with a retractable gondola for a second pilot.\n\nKa-32S (1987): (Helix-C) Maritime utility transport, search and rescue helicopter, fitted with an undernose radar. Designed for arctic environments.",
+      "shortDescription": "The Ka-27 has a crew of three with a pilot and navigator both stationed in the cockpit, and a sonar operator seated behind them.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "A Russian Navy Ka-27 helicopter from the Russian Udaloy -class destroyer Severomorsk conducted interoperability deck landing training on board the US command ship USS Mount Whitney on 22 July 2010.\n\nKa-32A11BC multipurpose helicopters have been successfully operated in Portugal for over five years. In 2006, Kamov won the tender for the supply of Ka-32A11BC firefighting helicopters, to replace Aérospatiale SA 330 Pumas. [ citation needed ]\n\nOver 240 Ka-32 have been built as of 2019 and have been exported to more than 30 countries; South Korea operates some 60 Ka-32s. In the mid-1990s Russia offset debt to South Korea through supplies of weapons.\n\nThe Ka-32A11BC features a high power-to-weight ratio and ease of handling, owing to its coaxial rotor design. The rotors' diameters are not restricted by the presence of a tail rotor and associated tail boom; this facilitates maneuvering near obstacles and helps assure exceptional accuracy when hovering in heavy smoke and dust conditions. The Ka-32A11BC may be equipped with the Bambi Bucket suspended fire-fighting system of up to five tons capacity. The service life has been extended to up to 32,000 flight hours.\n\nSince the 1990s, China has purchased the Ka-28 export version and Ka-31 radar warning version for the PLAN fleet. Ka-31 purchases were first revealed in 2010. It is believed that Chinese Ka-28s have been equipped with more enhanced avionics compared to Ka-28s exported to other countries.\n\nIn 2013, Russia tested the new Kamov Ka-27M with an active electronically scanned array radar. The basis of the modernization of the Ka-27M is installed on the helicopter airborne radar with an active phased array antenna FH-A. This radar is part of the command and tactical radar system that combines several other systems: acoustic, magnetometric, signals intelligence and radar. All the information on them is displayed on the display instrumentation.\n\nKa-27s were used by the Ba'athist Syrian Navy during the Syrian Civil War.\n\nOn 21 June 2024, a Ka-29 was reportedly shot down over Crimea, by a Russian Pantsir-S1, during a Ukrainian drone attack involving both air and naval drones, killing the crew of four.\n\nOn 15 May 2026 a Ka-27 was destroyed during a Ukrainian drone attack on the Yeysk airport, Krasnodar oblast.\n\nAlgerian Air Force- 12\n\nAzerbaijani Air Forces\n\nMinistry of Emergency Situations\n\nPeople's Liberation Army Naval Air Force\n\nIndian Navy- 20\n\nLao People's Liberation Army Air Force\n\nKorean People's Army Air Force\n\nRussian Naval Aviation\n\nBorder Service of Russia\n\nSerbian Police\n\nRepublic of Korea Air Force\n\nRepublic of Korea Coast Guard\n\nNational Fire Agency\n\nKorea Forest Service (29 in service)\n\nKorea National Park Service",
+      "shortDescription": "A Russian Navy Ka-27 helicopter from the Russian Udaloy -class destroyer Severomorsk conducted interoperability deck landing training on board the US command ship USS Mount Whitney on 22 July 2010.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Ka-32 variants, e.g. the Klimov-powered Ka-32A11BC, have been certified for commercial operations throughout the world, notably in Canada and Europe. The Ka-32 has been certified for the newer Klimov VK-2500PS-02 engine.\n\nKa-32 Ka-32 pre-production prototype (1985): Exhibited at the 36th Paris Airshow in 1985. Ka-32C (198x): Little-known custom version. [ citation needed ] Ka-32T (1987): (Helix-C) Utility transport helicopter, with accommodation for two crew and 16 passengers. Ka-32A (1990): Civil transport helicopter. Initial production version. Ka-32A1 (1994): Fire fighting helicopter, equipped with a helicopter bucket. Ka-32A2 (1994): Police version, equipped with two searchlights and a loudspeaker. Can carry 11 passengers. Ka-32A7 (1994): Armed version of the Ka-27PS. Can carry 13 passengers. Has provisions to carry 2 x GSh-23L 23mm cannons, B-8V-20 rocket pods, 2 x Kh-35 anti-ship missiles or Kh-25 air-to-air missiles. Ka-32A12 (1996): Swiss-registered and approved version. Ka-32A11BC (1997): Canadian, Chinese, European-certified version with Klimov TV3-117MA engines and Glass Cockpit. Used by Pegasus Air Services, Indonesia. Ka-32A11M (2012) Ka-32A4 (1999): Special search and rescue, salvage and evacuation version. Ka-32K (1991): Flying crane helicopter, fitted with a retractable gondola for a second pilot.\n\nDepartment of Disaster Prevention and Mitigation - 4 Ka-32A11BC variant.\n\nMain Directorate of Intelligence - Ka-32 variant\n\nUkrainian Naval Aviation - operated by 10th Naval Aviation Brigade\n\nVietnam People's Navy\n\nHelicargo\n\nBH Air\n\nVancouver Island Helicopters\n\nPegasus Air Services (Leased by BNPB) Ka-32A11BC variant.\n\nDimonim Air [ citation needed ]\n\nAkagi Helicopter\n\nHelikorea\n\nUB Air\n\nUI Helijet\n\nHeliswiss\n\nNational Civil Protection Authority - Replaced by 6 Sikorsky UH-60 Black Hawk firefighting helicopters. 6 Ka-32s transferred to Ukraine in September 2024\n\nMinisterio para la Transición Ecolológica y el Reto Demográfico\n\nSyrian Arab Air Force. The Syrian government of Al-Assad fell to rebels in late 2024, and the Syrian Arab Air Force was dismantled. It was re-established as Syrian Air Force, but the revolution, and the Israeli air strikes that followed it, wrecked havoc in the inventory of the Air Force. In late 2025, the World Air Forces publication by FlightGlobal, which tracks the aircraft inventories of world's air forces and publishes its counts annually, removed all Syrian Air Force's aircraft from their World Air Forces 2026 report. It is thus questionable if the Syrian Air Force has any flying aircraft in their inventory, and in particular, any Ka-27, as of December 2025.\n\nYemeni Air Force\n\nYugoslav Air Force",
+      "shortDescription": "Ka-32 variants, e.g.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 202801,
+      "url": "https://en.wikipedia.org/wiki/Kamov_Ka-27",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Anti-submarine warfare helicopter (Ka-27/Ka-28) ; Attack helicopter with transport capabilities (Ka-29) ; Civilian utility helicopter (Ka-32)\".",
+      "parameterUomValue": "Anti-submarine warfare helicopter (Ka-27/Ka-28) ; Attack helicopter with transport capabilities (Ka-29) ; Civilian utility helicopter (Ka-32)",
+      "classification": "U",
+      "parameterValue": "Anti-submarine warfare helicopter (Ka-27/Ka-28) ; Attack helicopter with transport capabilities (Ka-29) ; Civilian utility helicopter (Ka-32)",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Soviet Union / Russia\".",
+      "parameterUomValue": "Soviet Union / Russia",
+      "classification": "U",
+      "parameterValue": "Soviet Union / Russia",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Kamov\".",
+      "parameterUomValue": "Kamov",
+      "classification": "U",
+      "parameterValue": "Kamov",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Status",
+      "parameterDescr": "Current operational status of the system. Source text: \"In service\".",
+      "parameterUomValue": "In service",
+      "classification": "U",
+      "parameterValue": "In service",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Primary users",
+      "parameterDescr": "Principal operator(s) of the system. Source text: \"Soviet Navy (historical) Russian Navy ; Ukrainian Navy ; Indian Navy\".",
+      "parameterUomValue": "Soviet Navy (historical) Russian Navy ; Ukrainian Navy ; Indian Navy",
+      "classification": "U",
+      "parameterValue": "Soviet Navy (historical) Russian Navy ; Ukrainian Navy ; Indian Navy",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Manufactured",
+      "parameterDescr": "Date range during which the system was in production. Source text: \"1979–2010\".",
+      "parameterUomValue": "1979–2010",
+      "classification": "U",
+      "parameterValue": "1979–2010",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"1982\".",
+      "parameterUomValue": "1982",
+      "classification": "U",
+      "parameterValue": "1982",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "First flight",
+      "parameterDescr": "Date of the type's first flight. Source text: \"24 December 1973\".",
+      "parameterUomValue": "24 December 1973",
+      "classification": "U",
+      "parameterValue": "24 December 1973",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Developed from",
+      "parameterDescr": "Earlier system this design is derived from. Source text: \"Kamov Ka-25\".",
+      "parameterUomValue": "Kamov Ka-25",
+      "classification": "U",
+      "parameterValue": "Kamov Ka-25",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Variant",
+      "parameterDescr": "Named variant of the base system. Source text: \"Kamov Ka-31\".",
+      "parameterUomValue": "Kamov Ka-31",
+      "classification": "U",
+      "parameterValue": "Kamov Ka-31",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Crew",
+      "parameterDescr": "Number of crew required to operate the system. Source text: \"one-three, plus two-three specialists (Ka-27)\".",
+      "parameterUomValue": "one-three, plus two-three specialists (Ka-27)",
+      "classification": "U",
+      "parameterValue": "one-three, plus two-three specialists (Ka-27)",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Capacity",
+      "parameterDescr": "Payload/passenger capacity. Source text: \"4,000 kg (8,818 lb) payload (Ka-32), or up to 16 troops (Ka-29).\".",
+      "parameterUomValue": "4,000 kg (8,818 lb) payload (Ka-32), or up to 16 troops (Ka-29).",
+      "classification": "U",
+      "parameterValue": "4,000 kg (8,818 lb) payload (Ka-32), or up to 16 troops (Ka-29).",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"11.3 m (37 ft 1 in)\".",
+      "parameterUomValue": "11.3 m",
+      "classification": "U",
+      "parameterValue": "11.3",
+      "uom": "m"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Height",
+      "parameterDescr": "Overall height of the system. Source text: \"5.5 m (18 ft 1 in)\".",
+      "parameterUomValue": "5.5 m",
+      "classification": "U",
+      "parameterValue": "5.5",
+      "uom": "m"
+    },
+    {
+      "seq": 1015,
+      "parameter": "Empty weight",
+      "parameterDescr": "Aircraft weight excluding fuel, payload, and crew. Source text: \"6,500 kg (14,330 lb)\".",
+      "parameterUomValue": "6500 kg",
+      "classification": "U",
+      "parameterValue": "6500",
+      "uom": "kg"
+    },
+    {
+      "seq": 1016,
+      "parameter": "Gross weight",
+      "parameterDescr": "Typical loaded weight for a standard mission. Source text: \"11,000 kg (24,251 lb)\".",
+      "parameterUomValue": "11000 kg",
+      "classification": "U",
+      "parameterValue": "11000",
+      "uom": "kg"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Max takeoff weight",
+      "parameterDescr": "Maximum certified takeoff weight. Source text: \"12,000 kg (26,455 lb)\".",
+      "parameterUomValue": "12000 kg",
+      "classification": "U",
+      "parameterValue": "12000",
+      "uom": "kg"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Powerplant",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating. Source text: \"2 × Isotov TV3-117V turboshaft engines, 1,660 kW (2,230 hp) each\".",
+      "parameterUomValue": "2 × Isotov TV3-117V turboshaft engines, 1,660 kW (2,230 hp) each",
+      "classification": "U",
+      "parameterValue": "2 × Isotov TV3-117V turboshaft engines, 1,660 kW (2,230 hp) each",
+      "uom": ""
+    },
+    {
+      "seq": 1019,
+      "parameter": "Main rotor diameter",
+      "parameterDescr": "Diameter of the main rotor disc. Source text: \"2 × 15.8 m (51 ft 10 in)\".",
+      "parameterUomValue": "15.8 m",
+      "classification": "U",
+      "parameterValue": "15.8",
+      "uom": "m"
+    },
+    {
+      "seq": 1020,
+      "parameter": "Main rotor area",
+      "parameterDescr": "Disc area swept by the main rotor. Source text: \"392.2 m 2 (4,222 sq ft) 3-bladed contra-rotating rotors\".",
+      "parameterUomValue": "392.2 m2",
+      "classification": "U",
+      "parameterValue": "392.2",
+      "uom": "m2"
+    },
+    {
+      "seq": 1021,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"270 km/h (170 mph, 150 kn)\".",
+      "parameterUomValue": "270 km/h (170 mph, 150 kn)",
+      "classification": "U",
+      "parameterValue": "270 km/h (170 mph, 150 kn)",
+      "uom": ""
+    },
+    {
+      "seq": 1022,
+      "parameter": "Cruise speed",
+      "parameterDescr": "Typical cruising speed. Source text: \"205 km/h (127 mph, 111 kn)\".",
+      "parameterUomValue": "205 km/h (127 mph, 111 kn)",
+      "classification": "U",
+      "parameterValue": "205 km/h (127 mph, 111 kn)",
+      "uom": ""
+    },
+    {
+      "seq": 1023,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"980 km (610 mi, 530 nmi)\".",
+      "parameterUomValue": "980 km",
+      "classification": "U",
+      "parameterValue": "980",
+      "uom": "km"
+    },
+    {
+      "seq": 1024,
+      "parameter": "Service ceiling",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement. Source text: \"5,000 m (16,000 ft)\".",
+      "parameterUomValue": "5000 m",
+      "classification": "U",
+      "parameterValue": "5000",
+      "uom": "m"
+    }
+  ]
+}

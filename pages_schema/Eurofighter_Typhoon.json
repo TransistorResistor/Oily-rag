@@ -1,0 +1,160 @@
+{
+  "modelID": 2021,
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "Eurofighter Typhoon",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Eurofighter Typhoon is a European multinational twin-engine, supersonic, canard delta wing, multirole fighter. The Typhoon was designed originally as an air-superiority fighter and is manufactured by a consortium of Airbus, BAE Systems and Leonardo that conducts the majority of the project through a joint holding company, Eurofighter Jagdflugzeug GmbH. The NATO Eurofighter and Tornado Management Agency, representing the UK, Germany, Italy and Spain, manages the project and is the prime customer.",
+      "shortDescription": "The Eurofighter Typhoon is a European multinational twin-engine, supersonic, canard delta wing, multirole fighter.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The aircraft's development began in 1983 with the Future European Fighter Aircraft programme, a multinational collaboration among the UK, Germany, France, Italy and Spain. Germany, Italy and the UK had previously jointly developed the Panavia Tornado and wanted to collaborate on a new project with additional EU nations. Disagreements over design authority and operational requirements led France to leave the consortium to develop the Dassault Rafale independently. A technology demonstrator, the British Aerospace EAP, first flew on 6 August 1986; a Eurofighter prototype made its maiden flight on 27 March 1994. The name Typhoon was adopted in September 1998, alongside the first production contracts.\n\nUK work on a Jaguar replacement began around 1971, expanding to include air superiority requirements (AST 403, leading to the unbuilt Hawker P.96). In West Germany, competition for the TKF-90 requirement saw Messerschmitt-Bolkow-Blohm (MBB) succeed with a cranked-delta, canard-controlled, artificially stable design. In 1979 MBB and British Aerospace proposed a collaboration (European Collaborative Fighter/European Combat Fighter); Dassault of France joined in October 1979. Separate national prototype concepts continued (MBB's TKF-90, Dassault's ACX, BAe's P.106B and P.110) until the European Combat Fighter project collapsed in 1981 over design leadership and engine preferences (RB199 vs Snecma M88).\n\nProduction is split across four assembly lines (one per partner nation), each building common parts, organized in three procurement Tranches (Tranche 3 split into 3A/3B, with 3B not proceeding). Costs rose substantially over the programme's life: UK estimates rose from GBP7 billion (1985, for 250 aircraft) to a National Audit Office estimate of total programme costs reaching GBP37 billion by 2011. Later developments include Project Centurion (UK, integrating Meteor, Storm Shadow and Brimstone to replace Tornado strike capability, completed 2018), German Tranche 4 orders (2020, 38 aircraft) and Typhoon EK electronic-warfare conversions (2022), and various AESA radar programmes (ECRS Mk0/Mk1/Mk2) replacing the mechanically scanned Captor radar. Germany plans to eventually replace its Typhoons with the Franco-German-Spanish Global Combat Air Programme/New Generation Fighter under the UK's wider Future Combat Air System framework (actually GCAP is UK-Italy-Japan; NGF is the separate FCAS effort with France/Germany/Spain) as the Typhoon fleet eventually retires.",
+      "shortDescription": "The aircraft's development began in 1983 with the Future European Fighter Aircraft programme, a multinational collaboration among the UK, Germany, France, Italy and Spain.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The Typhoon is a twin-engine, loosely coupled delta-canard, tailless design with 53-degree leading-edge sweep, relaxed stability, and quadruplex digital fly-by-wire controls, giving high agility at both subsonic and supersonic speeds. Roll is controlled primarily by differential flaperons, pitch by combined canard and flaperon deflection, and yaw by a single large rudder; automatic leading-edge slats are fitted. Construction is 82% composite (70% carbon fibre, 12% glass fibre) plus aluminium-lithium and titanium, with an estimated 6,000-flying-hour airframe life.\n\nAlthough not a stealth aircraft, the Typhoon incorporates radar cross-section reduction measures: shielded engine inlets, highly swept reflective surfaces angled away from the front, semi-recessed weapon carriage, and radar-absorbent material coatings on leading edges and intakes.\n\nThe cockpit is a glass cockpit with three full-colour multi-function head-down displays, a wide-angle HUD with FLIR, Direct Voice Input (DVI) — the first production DVI system in a military cockpit, supporting around 26 non-critical functions — HOTAS controls, a Helmet Mounted Symbology System, and a Martin-Baker Mk.16A ejection seat. An Automatic Low-Speed Recovery system and an autorecovery mode (activated via a single button to counter pilot disorientation) are included. Navigation uses GPS and inertial navigation with TERPROM terrain-referenced ground proximity warning, and MIDS provides a Link 16 datalink.\n\nDefensive systems are integrated in the Praetorian (Euro-DASS) suite: radar warning receiver, missile warning system, UK-only laser warning receiver, chaff, flares, an ECM suite, and a towed radar decoy. Sensor fusion is handled by the Attack and Identification System (AIS), combining onboard sensors (radar, PIRATE IRST) with off-board data (AWACS, MIDS) and automatic emissions control (EMCON); the system is claimed to identify targets beyond 150 nmi and auto-prioritize beyond 100 nmi. In 2017 an RAF Typhoon demonstrated interoperability with the F-35B via translated MADL-to-Link16 messaging (Babel Fish III trial).\n\nThe primary radar is the Euroradar Captor, a mechanically scanned multi-mode pulse-Doppler radar, being progressively replaced by the Captor-E/CAESAR AESA radar across three variants: ECRS Mk0 (Leonardo baseline, fitted to Kuwait/Qatar aircraft), ECRS Mk1 (Hensoldt/Indra upgrade for Germany and Spain), and ECRS Mk2 (Leonardo/BAE, incorporating Gripen E ES-05 Raven radar heritage, for the RAF and Italy, with electronic warfare/attack capability). The PIRATE infrared search-and-track system, mounted forward of the windscreen, gives passive detection/tracking of up to 200 targets and can cue high off-boresight missiles such as ASRAAM.\n\nPropulsion is via two Eurojet EJ200 engines, each producing up to 60 kN dry thrust and over 90 kN with afterburner (up to 102 kN briefly in 'war' setting). The Typhoon can supercruise (sustain supersonic speed without afterburner); reported figures range from Mach 1.1 (RAF FGR4 in normal service) up to Mach 1.5 claimed by Eurofighter, with a Singapore evaluation recording Mach 1.21 with a combat load. A thrust-vectoring-nozzle upgrade has been studied but not fielded operationally.\n\nArmament includes a Mauser BK-27 27mm revolver cannon (150 rounds, up to 1,700 rounds/minute) in the starboard wing root, air-to-air missiles (AIM-120 AMRAAM, MBDA Meteor, ASRAAM, IRIS-T, AIM-9 Sidewinder), and air-to-surface weapons (Storm Shadow, Taurus KEPD 350, Brimstone II, and Paveway-series guided bombs including GBU-10, GBU-16, GBU-48, and Paveway IV), with the specific fit varying by operator nation. An anti-ship capability (Harpoon, Marte, Sea Brimstone, RBS-15) has been studied but not contracted.",
+      "shortDescription": "sely coupled delta-canard, tailless design with 53-degree leading-edge sweep, relaxed stability, and quadruplex digital fly-by-wire controls, giving high agility at both subsonic and supersonic speeds.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The end of the Cold War reduced European demand for fighters, leading to debate over cost, workshare, and protracted development. The Typhoon entered operational service in 2003 and is now flown by Austria, Italy, Germany, the United Kingdom, Spain, Saudi Arabia and Oman, with Kuwait and Qatar also as customers (680 aircraft on order as of November 2023). It is a highly agile dogfighter, later equipped for air-to-surface strike with weapons including Storm Shadow, Brimstone and Marte ER missiles. Its combat debut came during the 2011 intervention in Libya with the RAF and Italian Air Force.\n\nThe Panavia partners (MBB, BAe, Aeritalia) then launched the Agile Combat Aircraft (ACA) programme in 1982, leading to the British Aerospace EAP demonstrator, funded 50% by the UK government and 50% by industry, first flying 6 August 1986. In 1983 Italy, Germany, France, the UK and Spain launched the Future European Fighter Aircraft (FEFA) programme. France's insistence on a carrier-capable version and leadership role caused the UK, Italy and West Germany to break away in 1985 and pursue the Eurofighter EFA; Spain rejoined after initially wavering, while France left to pursue what became the Dassault Rafale.\n\nEurofighter Jagdflugzeug GmbH was established in Munich in 1986, alongside EuroJet Turbo GmbH (Rolls-Royce, MTU, FiatAvio/Avio, ITP) to develop the EJ200 engine. The aircraft was called Eurofighter EFA, then EF 2000 from 1992. A 1990 dispute over radar choice (UK/Italy/Spain-backed ECR-90 vs Germany-backed APG-65-based MSD2000) was resolved in the UK's favour. Post-reunification German budget pressure nearly caused Germany to withdraw in the early 1990s, but sunk costs and binding commitments kept it in. Workshare disputes in 1995 were resolved with Germany purchasing additional aircraft, settling shares at UK 37.42%, Germany 29.03%, Italy 19.52%, Spain 14.03%. The first production contract was signed 30 January 1998 (UK 232, Germany 180, Italy 121, Spain 87 aircraft). The Typhoon name was formally adopted at a September 1998 Farnborough ceremony, continuing the storm-naming theme from the Tornado (Germany reportedly objected due to WWII associations with the Hawker Typhoon).\n\nAustria selected the Typhoon in 2002 over the F-16 and Gripen, ultimately buying 15 (reduced from 18) Tranche 1 aircraft, entering service in 2007; the programme was dogged by cost and corruption controversies, and Austria later planned replacement of the type. Germany accepted its first production aircraft in August 2003, replacing MiG-29s and F-4F Phantoms across Luftwaffe wings, assigned to Quick Reaction Alert from 2008, and has intercepted Russian aircraft during Baltic Air Policing deployments; Germany ordered Tranche 4 aircraft in 2020 and additional aircraft in 2024, plus Typhoon EK electronic-warfare conversions. Italy achieved initial operational capability in December 2005, flew combat air patrols over Libya in 2011 as part of Operation Unified Protector, and has participated in Baltic Air Policing. The type's combat debut was in the 2011 Libya intervention with the RAF and Italian Air Force performing reconnaissance and strike missions. More recently, in February 2026, German Eurofighters conducted joint manned-unmanned teaming exercises with Turkish Bayraktar TB3 drones during NATO's Steadfast Dart 26 exercise in the Baltic region.",
+      "shortDescription": "The end of the Cold War reduced European demand for fighters, leading to debate over cost, workshare, and protracted development.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 202101,
+      "url": "https://en.wikipedia.org/wiki/Eurofighter_Typhoon",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Air superiority fighter with multirole capabilities\".",
+      "parameterUomValue": "Air superiority fighter with multirole capabilities",
+      "classification": "U",
+      "parameterValue": "Air superiority fighter with multirole capabilities",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"Multinational\".",
+      "parameterUomValue": "Multinational",
+      "classification": "U",
+      "parameterValue": "Multinational",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Eurofighter GmbH\".",
+      "parameterUomValue": "Eurofighter GmbH",
+      "classification": "U",
+      "parameterValue": "Eurofighter GmbH",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Status",
+      "parameterDescr": "Current operational status of the system. Source text: \"In service\".",
+      "parameterUomValue": "In service",
+      "classification": "U",
+      "parameterValue": "In service",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Primary users",
+      "parameterDescr": "Principal operator(s) of the system. Source text: \"Royal Air Force; German Air Force; Italian Air Force; Spanish Air and Space Force\".",
+      "parameterUomValue": "Royal Air Force; German Air Force; Italian Air Force; Spanish Air and Space Force",
+      "classification": "U",
+      "parameterValue": "Royal Air Force; German Air Force; Italian Air Force; Spanish Air and Space Force",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \"609 + 7 prototypes (as of January 2025)\". Note: source indicates additional units beyond this figure; see description.",
+      "parameterUomValue": "609 units",
+      "classification": "U",
+      "parameterValue": "609",
+      "uom": "units"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Manufactured",
+      "parameterDescr": "Date range during which the system was in production. Source text: \"1994-present\".",
+      "parameterUomValue": "1994-present",
+      "classification": "U",
+      "parameterValue": "1994-present",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"4 August 2003\".",
+      "parameterUomValue": "4 August 2003",
+      "classification": "U",
+      "parameterValue": "4 August 2003",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "First flight",
+      "parameterDescr": "Date of the type's first flight. Source text: \"27 March 1994\".",
+      "parameterUomValue": "27 March 1994",
+      "classification": "U",
+      "parameterValue": "27 March 1994",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Developed from",
+      "parameterDescr": "Earlier system this design is derived from. Source text: \"British Aerospace EAP\".",
+      "parameterUomValue": "British Aerospace EAP",
+      "classification": "U",
+      "parameterValue": "British Aerospace EAP",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Powerplant",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating. Source text: \"Two Eurojet EJ200 engines, each up to 60 kN (13,500 lbf) dry thrust and over 90 kN (20,230 lbf) with afterburner\".",
+      "parameterUomValue": "Two Eurojet EJ200 engines, each up to 60 kN (13,500 lbf) dry thrust and over 90 kN (20,230 lbf) with afterburner",
+      "classification": "U",
+      "parameterValue": "Two Eurojet EJ200 engines, each up to 60 kN (13,500 lbf) dry thrust and over 90 kN (20,230 lbf) with afterburner",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Supercruise (without afterburner) at Mach 1.1 to Mach 1.5 depending on source/configuration; capable of supersonic flight\".",
+      "parameterUomValue": "1.1 Mach",
+      "classification": "U",
+      "parameterValue": "1.1",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Armament",
+      "parameterDescr": "Weapons the system is equipped to carry/fire. Source text: \"Mauser BK-27 27mm revolver cannon (150 rounds); AIM-120 AMRAAM and MBDA Meteor beyond-visual-range missiles; ASRAAM, IRIS-T, and AIM-9 Sidewinder short-range missiles; Storm Shadow, Taurus KEPD 350, and Brimstone air-to-surface weapons; Paveway series guided bombs\".",
+      "parameterUomValue": "Mauser BK-27 27mm revolver cannon (150 rounds); AIM-120 AMRAAM and MBDA Meteor beyond-visual-range missiles; ASRAAM, IRIS-T, and AIM-9 Sidewinder short-range missiles; Storm Shadow, Taurus KEPD 350, and Brimstone air-to-surface weapons; Paveway series guided bombs",
+      "classification": "U",
+      "parameterValue": "Mauser BK-27 27mm revolver cannon (150 rounds); AIM-120 AMRAAM and MBDA Meteor beyond-visual-range missiles; ASRAAM, IRIS-T, and AIM-9 Sidewinder short-range missiles; Storm Shadow, Taurus KEPD 350, and Brimstone air-to-surface weapons; Paveway series guided bombs",
+      "uom": ""
+    }
+  ]
+}

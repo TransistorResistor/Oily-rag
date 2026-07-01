@@ -1,0 +1,223 @@
+{
+  "modelID": 2050,
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "Shenyang J-16",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The Shenyang J-16 (Chinese: 歼-16; pinyin: Jian-Shiliu), also known as Qianlong (Chinese: 潜龙; lit. 'Hidden Dragon', NATO reporting name: Flanker-N) is a Chinese all-weather 4.5 generation, tandem-seat, twin-engine, multirole strike fighter built by Shenyang Aircraft Corporation and operated by the People's Liberation Army Air Force (PLAAF). It is developed from the Shenyang J-11, the licensed production variant of the Russian Sukhoi Su-27. Its design is based on the Su-30MKK.",
+      "shortDescription": "The Shenyang J-16 (Chinese: 歼-16; pinyin: Jian-Shiliu), also known as Qianlong (Chinese: 潜龙; lit.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "With the development of military aircraft during the turn of the century, the PLAAF found its JH-7 fighters becoming increasingly obsolete. In the 1990s, China purchased Sukhoi Su-27 and Sukhoi Su-30MKK air superiority fighters from Russia, including those license-produced in China as the Shenyang J-11A. The J-11A was further developed into the J-11B single-seat and BS twin-seat variant with indigenous technology. The J-16 is a strike fighter derived from the J-11BS model.",
+      "shortDescription": "With the development of military aircraft during the turn of the century, the PLAAF found its JH-7 fighters becoming increasingly obsolete.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The J-16 is equipped with an active electronically scanned array (AESA) radar and is powered by two Chinese Shenyang WS-10A turbofan engines. Weight is reduced through greater use of composite materials. J-16 units have received radar-absorbent paint to reduce radar signature, enhancing suppression of enemy air defenses (SEAD) capability in conjunction with electronic support measures pods. The cockpit is fitted with a helmet-mounted display (HMD) system to improve pilot situational awareness. An electronic warfare version, the J-16D, was developed in the 2010s, reportedly first flying in 2015; it is designed for SEAD, capable of housing internal jamming equipment and carrying external electronic warfare pods.\n\nAccording to aviation researcher Justin Bronk of RUSI, the J-16 holds advantages over Russian Flanker variants through wide use of composite materials, longer-range missiles, and advanced sensors/avionics, representing a shift by Chinese industry away from dependence on Russian technology toward derivatives superior to the originals. British combat aviation expert Abraham Abrams called the J-16 'by far the world's most advanced Flanker derivative,' noting many of its technologies derive from the J-20 fifth-generation fighter program. In March 2021, a J-16 variant reportedly had its backseat co-pilot replaced by an AI algorithm called 'intelligence victory,' undergoing testing at Shenyang Aircraft Corporation, with a similar aircraft spotted near Malan, Xinjiang in June 2021.",
+      "shortDescription": "The J-16 is equipped with an active electronically scanned array (AESA) radar and is powered by two Chinese Shenyang WS-10A turbofan engines.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The J-16 fully replaced the single-seat J-11B in production in 2018, after being produced in parallel for over half a decade; a small number of J-11BS trainers continued production alongside J-16s. The first flight is believed to have occurred in 2011-2012. In April 2014, the PLAAF received a regiment of J-16s. The J-16 entered service in 2015 and was officially revealed in 2017 during the PLA's 90th anniversary parade. Production estimates: by 2022, at least 245 airframes produced; by end of 2023, more than 280; by August 2024, Military Watch Magazine estimated the fleet exceeded 350 fighters (13th production batch then in deliveries, each batch comprising 24-30 aircraft), making the J-16 'by far the most widely commissioned heavyweight fighter class by a single air force anywhere in the world since the turn of the century.' As of September 2025, open-source analysis of serial numbers (e.g., '1518') suggested at least 450 J-16s produced. In 2021, the Chinese Air Force began inducting the J-16D electronic warfare variant into combat training.\n\nOn 26 May 2022, a J-16 intercepted a RAAF P-8 Poseidon surveillance aircraft over the South China Sea, releasing flares and chaff, some of which were ingested by the P-8's engine; Australia lodged a protest while China accused the Australian pilots of acting 'dangerously and provocatively.' J-16 fighters are the most frequently used Chinese aircraft deployed in the Taiwan Strait, likely due to electronic warfare capabilities; large numbers were dispatched in August 2022 in response to Nancy Pelosi's Taiwan visit. On 26 May 2023, a J-16 conducted a fly-by cutting directly in front of a U.S. RC-135 Rivet Joint reconnaissance aircraft over the South China Sea, forcing it through jet wash ('thumping'); the U.S. called it an unnecessarily aggressive maneuver while China said the American aircraft had intruded into a Chinese military training area.\n\nPeople's Liberation Army Air Force - approximately 330 J-16 and 20 J-16D as of 2026 (per The Military Balance 2026).",
+      "shortDescription": "The J-16 fully replaced the single-seat J-11B in production in 2018, after being produced in parallel for over half a decade; a small number of J-11BS trainers continued production alongside J-16s.",
+      "descrType": "Usage",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 205001,
+      "url": "https://en.wikipedia.org/wiki/Shenyang_J-16",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Multirole strike fighter\".",
+      "parameterUomValue": "Multirole strike fighter",
+      "classification": "U",
+      "parameterValue": "Multirole strike fighter",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"People's Republic of China\".",
+      "parameterUomValue": "People's Republic of China",
+      "classification": "U",
+      "parameterValue": "People's Republic of China",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"Shenyang Aircraft Corporation\".",
+      "parameterUomValue": "Shenyang Aircraft Corporation",
+      "classification": "U",
+      "parameterValue": "Shenyang Aircraft Corporation",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Status",
+      "parameterDescr": "Current operational status of the system. Source text: \"In service\".",
+      "parameterUomValue": "In service",
+      "classification": "U",
+      "parameterValue": "In service",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Primary users",
+      "parameterDescr": "Principal operator(s) of the system. Source text: \"People's Liberation Army Air Force\".",
+      "parameterUomValue": "People's Liberation Army Air Force",
+      "classification": "U",
+      "parameterValue": "People's Liberation Army Air Force",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \"450 (as of 2025)\".",
+      "parameterUomValue": "450 units",
+      "classification": "U",
+      "parameterValue": "450",
+      "uom": "units"
+    },
+    {
+      "seq": 1007,
+      "parameter": "Manufactured",
+      "parameterDescr": "Date range during which the system was in production. Source text: \"2017-present\".",
+      "parameterUomValue": "2017-present",
+      "classification": "U",
+      "parameterValue": "2017-present",
+      "uom": ""
+    },
+    {
+      "seq": 1008,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"2015-16\".",
+      "parameterUomValue": "2015-16",
+      "classification": "U",
+      "parameterValue": "2015-16",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Developed into",
+      "parameterDescr": "Later systems derived from this design. Source text: \"Developed from Shenyang J-11 and Su-30MKK\".",
+      "parameterUomValue": "Developed from Shenyang J-11 and Su-30MKK",
+      "classification": "U",
+      "parameterValue": "Developed from Shenyang J-11 and Su-30MKK",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "Length",
+      "parameterDescr": "Overall length of the system. Source text: \"21.9 m (71 ft 10 in)\".",
+      "parameterUomValue": "21.9 m",
+      "classification": "U",
+      "parameterValue": "21.9",
+      "uom": "m"
+    },
+    {
+      "seq": 1011,
+      "parameter": "Wingspan",
+      "parameterDescr": "Wingspan or fin span. Source text: \"14.7 m (48 ft 3 in)\".",
+      "parameterUomValue": "14.7 m",
+      "classification": "U",
+      "parameterValue": "14.7",
+      "uom": "m"
+    },
+    {
+      "seq": 1012,
+      "parameter": "Height",
+      "parameterDescr": "Overall height of the system. Source text: \"6.36 m (20 ft 10 in)\".",
+      "parameterUomValue": "6.36 m",
+      "classification": "U",
+      "parameterValue": "6.36",
+      "uom": "m"
+    },
+    {
+      "seq": 1013,
+      "parameter": "Empty weight",
+      "parameterDescr": "Aircraft weight excluding fuel, payload, and crew. Source text: \"18,700 kg (41,226 lb)\".",
+      "parameterUomValue": "18700 kg",
+      "classification": "U",
+      "parameterValue": "18700",
+      "uom": "kg"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Max takeoff weight",
+      "parameterDescr": "Maximum certified takeoff weight. Source text: \"35,000 kg (77,162 lb)\".",
+      "parameterUomValue": "35000 kg",
+      "classification": "U",
+      "parameterValue": "35000",
+      "uom": "kg"
+    },
+    {
+      "seq": 1015,
+      "parameter": "Powerplant",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating. Source text: \"2 x Shenyang WS-10B afterburning turbofans, 135 kN (30,000 lbf) with afterburner\".",
+      "parameterUomValue": "2 x Shenyang WS-10B afterburning turbofans, 135 kN (30,000 lbf) with afterburner",
+      "classification": "U",
+      "parameterValue": "2 x Shenyang WS-10B afterburning turbofans, 135 kN (30,000 lbf) with afterburner",
+      "uom": ""
+    },
+    {
+      "seq": 1016,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"2,120 km/h (1,320 mph, 1,140 kn), Mach 2\".",
+      "parameterUomValue": "2 Mach",
+      "classification": "U",
+      "parameterValue": "2",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1017,
+      "parameter": "Range",
+      "parameterDescr": "Maximum operational range. Source text: \"3,000 km (1,900 mi, 1,600 nmi); Ferry range 4,000 km (2,500 mi, 2,200 nmi)\".",
+      "parameterUomValue": "3000 km",
+      "classification": "U",
+      "parameterValue": "3000",
+      "uom": "km"
+    },
+    {
+      "seq": 1018,
+      "parameter": "Service ceiling",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement. Source text: \"17,300 m (56,800 ft)\".",
+      "parameterUomValue": "17300 m",
+      "classification": "U",
+      "parameterValue": "17300",
+      "uom": "m"
+    },
+    {
+      "seq": 1019,
+      "parameter": "Armament",
+      "parameterDescr": "Weapons the system is equipped to carry/fire. Source text: \"1 x 30 mm GSh-30-1 cannon; munitions on 12 external hardpoints\".",
+      "parameterUomValue": "1 x 30 mm GSh-30-1 cannon; munitions on 12 external hardpoints",
+      "classification": "U",
+      "parameterValue": "1 x 30 mm GSh-30-1 cannon; munitions on 12 external hardpoints",
+      "uom": ""
+    },
+    {
+      "seq": 1020,
+      "parameter": "Related development / comparable aircraft",
+      "parameterDescr": "Related development / comparable aircraft (descriptive text, not a unit-bearing quantity). Source text: \"Dassault Rafale, Boeing EA-18G Growler, Eurofighter Typhoon, Boeing F-15EX Eagle II, Boeing F/A-18E/F Super Hornet, KAI KF-21 Boramae, Sukhoi Su-35S.\".",
+      "parameterUomValue": "Dassault Rafale, Boeing EA-18G Growler, Eurofighter Typhoon, Boeing F-15EX Eagle II, Boeing F/A-18E/F Super Hornet, KAI KF-21 Boramae, Sukhoi Su-35S.",
+      "classification": "U",
+      "parameterValue": "Dassault Rafale, Boeing EA-18G Growler, Eurofighter Typhoon, Boeing F-15EX Eagle II, Boeing F/A-18E/F Super Hornet, KAI KF-21 Boramae, Sukhoi Su-35S.",
+      "uom": ""
+    }
+  ]
+}

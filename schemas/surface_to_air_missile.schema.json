@@ -1,0 +1,217 @@
+{
+  "systemGroup": "Weapon",
+  "systemType": "Surface-to-Air Missile",
+  "descriptionTypes": [
+    "Overview",
+    "History",
+    "Design",
+    "Usage",
+    "Variants"
+  ],
+  "parametrics": [
+    {
+      "parameter": "Country of origin",
+      "uom": "",
+      "parameterDescr": "Country or countries where the system was designed/originates.",
+      "count": 4
+    },
+    {
+      "parameter": "In service",
+      "uom": "",
+      "parameterDescr": "Period during which the system has been/was in active service.",
+      "count": 4
+    },
+    {
+      "parameter": "Manufacturer",
+      "uom": "",
+      "parameterDescr": "Company or companies that manufacture the system.",
+      "count": 4
+    },
+    {
+      "parameter": "Type",
+      "uom": "",
+      "parameterDescr": "System type/role classification.",
+      "count": 4
+    },
+    {
+      "parameter": "Wars",
+      "uom": "",
+      "parameterDescr": "Conflicts in which the system has seen use.",
+      "count": 4
+    },
+    {
+      "parameter": "Designer",
+      "uom": "",
+      "parameterDescr": "Organization credited with the system's design.",
+      "count": 3
+    },
+    {
+      "parameter": "Engine",
+      "uom": "",
+      "parameterDescr": "Engine type and configuration.",
+      "count": 3
+    },
+    {
+      "parameter": "Guidance system",
+      "uom": "",
+      "parameterDescr": "Method(s) used to guide the weapon to its target.",
+      "count": 3
+    },
+    {
+      "parameter": "Maximum speed",
+      "uom": "Mach",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one.",
+      "count": 3
+    },
+    {
+      "parameter": "Range",
+      "uom": "km",
+      "parameterDescr": "Maximum operational range.",
+      "count": 3
+    },
+    {
+      "parameter": "Unit cost",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost in US dollars.",
+      "count": 3
+    },
+    {
+      "parameter": "Used by",
+      "uom": "",
+      "parameterDescr": "Known operators of the system.",
+      "count": 3
+    },
+    {
+      "parameter": "Designed",
+      "uom": "",
+      "parameterDescr": "Year design work began.",
+      "count": 2
+    },
+    {
+      "parameter": "Diameter",
+      "uom": "m",
+      "parameterDescr": "Body/airframe diameter.",
+      "count": 2
+    },
+    {
+      "parameter": "Length",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Mass",
+      "uom": "kg",
+      "parameterDescr": "Overall mass of the system.",
+      "count": 2
+    },
+    {
+      "parameter": "Produced",
+      "uom": "",
+      "parameterDescr": "Production period.",
+      "count": 2
+    },
+    {
+      "parameter": "Variants",
+      "uom": "",
+      "parameterDescr": "Named variants of the base system.",
+      "count": 2
+    },
+    {
+      "parameter": "Warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and/or description.",
+      "count": 2
+    },
+    {
+      "parameter": "Wingspan",
+      "uom": "m",
+      "parameterDescr": "Wingspan or fin span.",
+      "count": 2
+    },
+    {
+      "parameter": "Crew",
+      "uom": "",
+      "parameterDescr": "Number of crew required to operate the system.",
+      "count": 1
+    },
+    {
+      "parameter": "DEPLOYMENT HISTORY",
+      "uom": "",
+      "parameterDescr": "DEPLOYMENT HISTORY (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Detonation mechanism",
+      "uom": "",
+      "parameterDescr": "Fuzing/detonation method.",
+      "count": 1
+    },
+    {
+      "parameter": "Effective firing range",
+      "uom": "",
+      "parameterDescr": "Effective firing range (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "FOREIGN INTEREST",
+      "uom": "",
+      "parameterDescr": "FOREIGN INTEREST (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "FOREIGN VARIANT",
+      "uom": "",
+      "parameterDescr": "FOREIGN VARIANT (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Ground clearance",
+      "uom": "",
+      "parameterDescr": "Ground clearance (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Launch platform",
+      "uom": "",
+      "parameterDescr": "Aircraft/vessels/vehicles the weapon can be launched from.",
+      "count": 1
+    },
+    {
+      "parameter": "Number built",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced.",
+      "count": 1
+    },
+    {
+      "parameter": "References",
+      "uom": "",
+      "parameterDescr": "References (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Service ceiling",
+      "uom": "m",
+      "parameterDescr": "Maximum altitude the system can maintain controlled flight/engagement.",
+      "count": 1
+    },
+    {
+      "parameter": "Suspension",
+      "uom": "",
+      "parameterDescr": "Suspension (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Transmission",
+      "uom": "",
+      "parameterDescr": "Transmission (descriptive text, not a unit-bearing quantity).",
+      "count": 1
+    },
+    {
+      "parameter": "Warhead weight",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead section.",
+      "count": 1
+    }
+  ]
+}

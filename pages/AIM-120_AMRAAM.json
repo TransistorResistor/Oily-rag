@@ -1,0 +1,39 @@
+{
+  "title": "AIM-120 AMRAAM",
+  "url": "https://en.wikipedia.org/wiki/AIM-120_AMRAAM",
+  "category": "weapon",
+  "subcategory": "air_to_air",
+  "summary": "The AIM-120 Advanced Medium-Range Air-to-Air Missile (AMRAAM) is an American beyond-visual-range air-to-air missile capable of all-weather day-and-night operations. It uses active transmit-receive radar guidance instead of semi-active receive-only radar guidance, and largely replaced the AIM-7 Sparrow as the principal beyond-visual-range air-to-air missile in U.S. inventory.",
+  "specs": {
+    "Type": "Medium range radar guided air-to-air missile/surface-to-air missile (AMRAAM-ER and SLAMRAAM)",
+    "Place of origin": "United States",
+    "In service": "September 1991-present",
+    "Manufacturer": "Hughes (1991-97); Raytheon (1997-present)",
+    "Unit cost": "US$1,095,000 (AIM-120D FY 2019)",
+    "Variants": "AIM-120A, AIM-120B, AIM-120C, AIM-120D, AMRAAM-ER",
+    "Mass": "356 lb (161.5 kg)",
+    "Length": "12 ft (3.65 m)",
+    "Diameter": "7 in (178 mm)",
+    "Wingspan": "1 ft 7 in (484 mm)",
+    "Warhead": "High explosive blast-fragmentation",
+    "Warhead weight": "44 lb (20 kg)",
+    "Detonation mechanism": "FZU-49 Proximity fuze, impact fuse system",
+    "Engine": "Solid-fuel rocket motor (boost-sustainer for AIM-120A/B/C-1 to C-4; booster only for C-5 and later/D)",
+    "Propellant": "Reduced smoke hydroxyl-terminated poly-butadiene (HTPB) binder",
+    "Operational range": "AIM-120A/B: 40 nmi (75 km); AIM-120C: 49 nmi (90 km); AIM-120D: 70-86 nmi (130-160 km)",
+    "Maximum speed": "Mach 4 (4,501 ft/s; 1,372 m/s)",
+    "Guidance system": "Inertial guidance, terminal active radar homing, optional mid-course update datalink",
+    "Steering system": "AIM-120C-5/6/7: 40G maximum overload via forward and rear canards"
+  },
+  "sections": [
+    "Development",
+    "Design",
+    "Guidance",
+    "Variants (AIM-120A/B/C/D, FMRAAM, NCADE)",
+    "Operational history",
+    "Operators",
+    "See also",
+    "References"
+  ],
+  "full_text": "The AIM-120 Advanced Medium-Range Air-to-Air Missile (AMRAAM) is an American beyond-visual-range air-to-air missile capable of all-weather day-and-night operations. It uses active transmit-receive radar guidance instead of semi-active receive-only radar guidance; as an active seeker missile, NATO pilots use the brevity code \"Fox Three\" when firing the AIM-120.\n\nThe AMRAAM largely replaced the AIM-7 Sparrow as the principal beyond-visual-range air-to-air missile in U.S. inventory. As of 2008 more than 14,000 had been produced for the United States Air Force, the United States Navy, and 33 international customers. The AMRAAM has been used in several engagements, achieving 16 air-to-air kills in conflicts over Iraq, Bosnia, Kosovo, India, and Syria. In the long term, it is expected to eventually be replaced by the long range AIM-260 JATM in U.S. service and the MBDA Meteor in some European countries.\n\nDevelopment history: The AIM-7 Sparrow medium range missile (MRM) was the US Navy's first operational BVR air-to-air missile, effective at around 12 miles range, evolving from beam-riding to semi-active radar guidance. It armed the F-4 Phantom II. The US Navy also developed the AIM-54 Phoenix long-range missile for fleet air defense on the F-14 Tomcat, a 1,000 lb Mach 5 fire-and-forget missile capable of guiding itself to targets up to 100 miles away. The Department of Defense's ACEVAL/AIMVAL evaluation (1974-1978) found that Sparrow's need for continuous illumination let opposing all-aspect Sidewinder-armed aircraft achieve mutual kills, driving the need for a Phoenix-like multi-launch terminal-active capability in a Sparrow-sized airframe. This led to a memorandum of agreement with European allies (principally UK and Germany) for the US to develop AMRAAM, while Europe developed the ASRAAM short-range missile.\n\nAMRAAM needed to fit aircraft as small as the F-16 and BAe Sea Harrier, and became one of the primary weapons of the F-22 Raptor for internal carriage. Deployment of the AIM-120A began in September 1991 in USAF F-15 Eagle squadrons, followed by the US Navy in 1993 on F/A-18 Hornets. The Russian counterpart is the R-77 (\"AMRAAMski\"); France developed the MICA missile family in parallel.\n\nOperational history: First used operationally on 27 December 1992 when a USAF F-16D shot down an Iraqi MiG-25 violating the no-fly zone; a second kill (Iraqi MiG-23) followed in January 1993. On 28 February 1994, a Republika Srpska J-21 Jastreb was shot down by a USAF F-16C over Bosnia (Banja Luka incident) -- by this point three combat launches had resulted in three kills, giving AMRAAM the nickname \"slammer.\" In 1994, an AIM-120 was mistakenly used (alongside an AIM-9) to shoot down a US Army Black Hawk helicopter over Iraq. During 1999's Operation Allied Force (Kosovo), six Serbian MiG-29s were shot down by NATO aircraft using AIM-120s. On 18 June 2017 a US F/A-18E shot down a Syrian Su-22 using an AIM-120 after an AIM-9X failed. Turkish F-16s used AIM-120C-7s to shoot down Syrian and Russian aircraft in 2014-2020, including a Russian Su-24M in November 2015. Pakistan used AMRAAMs to shoot down an Indian MiG-21 during the 2019 Jammu and Kashmir airstrikes. Saudi Arabia has used AIM-120s extensively (with Patriot batteries) against Yemeni drones and missiles. In September 2025, a Polish F-16's AIM-120 fired at a Shahed-type drone went stray and struck a residential building in Wyryki-Wola, Poland during a Russian drone incursion.\n\nThe missile's kill probability (Pk) is about 0.59 in beyond-visual-range engagements, influenced by aspect, altitude, and relative speed/energy at intercept.\n\nGuidance: AMRAAM uses two-stage guidance for long-range shots -- inertial navigation toward an initial intercept point using pre-launch target data, with optional periodic mid-course updates from the launch aircraft via datalink, before switching to onboard active radar homing for terminal guidance (\"fire-and-forget\"). It also has a \"Home on Jamming\" capability, homing passively on target jamming signals if actively jammed. Not all users purchased the mid-course update option; the RAF's Tornado F3 force initially lacked it and found AMRAAM less effective than the older semi-active BAe Skyflash as a result.\n\nVariants: AIM-120A (out of production), AIM-120B (deliveries from 1994, improved electronics), AIM-120C (deliveries from 1996, clipped aerosurfaces for F-22 internal carriage, progressively improved through C-5/C-6/C-7 with HOBS capability and improved fuzing/homing/range), FMRAAM (ramjet-powered derivative proposed for Eurofighter Typhoon, lost to MBDA Meteor, never produced), AIM-120D (upgraded with ~50% greater range than C-7, GPS-enhanced INS, two-way datalink, expanded no-escape envelope, IOC 2015), and NCADE (anti-ballistic missile derivative using a Sidewinder-derived IR seeker and hit-to-kill vehicle). The AIM-120D-3 and AIM-120C-8 (F3R program) are the latest variants as of 2023, expected to remain in production until AIM-260 JATM replaces AMRAAM by around 2026."
+}

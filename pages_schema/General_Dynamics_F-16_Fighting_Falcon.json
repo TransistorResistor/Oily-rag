@@ -1,0 +1,175 @@
+{
+  "modelID": 2025,
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "General Dynamics F-16 Fighting Falcon",
+  "updatedDate": "2026-07-01",
+  "descriptions": [
+    {
+      "description": "The General Dynamics (now Lockheed Martin) F-16 Fighting Falcon is an American single-engine supersonic multirole fourth-generation fighter aircraft developed by General Dynamics and produced by multiple companies, including General Dynamics until 1993 and Lockheed Martin until 2017. Designed as an air superiority day fighter, it evolved into a successful all-weather multirole aircraft with over 4,600 built since 1976. Although the original versions are no longer in production, improved versions of the Lockheed Martin F-16V Viper family are being built and upgraded for export in a new production facility of Lockheed Martin. As of 2026, it is the world's most common fixed-wing aircraft in military service, with 2,102 from the F-16 family operational, comprising 15% of all active combat aircraft.",
+      "shortDescription": "le-engine supersonic multirole fourth-generation fighter aircraft developed by General Dynamics and produced by multiple companies, including General Dynamics until 1993 and Lockheed Martin until 2017.",
+      "descrType": "Overview",
+      "classification": "U"
+    },
+    {
+      "description": "The aircraft was first developed by General Dynamics in 1974. In 1993, General Dynamics sold its aircraft manufacturing business to Lockheed, which became part of Lockheed Martin after a 1995 merger with Martin Marietta. The F-16's key features include a frameless bubble canopy for enhanced cockpit visibility, a side-stick to ease control while maneuvering, an ejection seat reclined 30 degrees from vertical to reduce the effect of g-forces on the pilot, and the first use of a relaxed static stability/fly-by-wire flight control system that helps to make it an agile aircraft. The fighter has a single turbofan engine, an internal M61 Vulcan cannon and 11 hardpoints. Although officially named \"Fighting Falcon\", the aircraft is commonly known by the nickname \"Viper\" among its crews and pilots.\n\nSince its introduction in 1978, the F-16 became a mainstay of the U.S. Air Force's tactical airpower, where it mainly replaced the F-105 Thunderchief, A-7 Corsair II, and F-4 Phantom II. The F-16 primarily performed strike and suppression of enemy air defenses (SEAD) missions, and in the latter role, it replaced the F-4G Wild Weasel by 1996. In addition to active duty in the U.S. Air Force, Air Force Reserve Command, and Air National Guard units, the aircraft is also used by the U.S. Air Force Thunderbirds aerial demonstration team, the US Air Combat Command F-16 Viper Demonstration Team, and as an adversary/aggressor aircraft by the United States Navy. The F-16 has also been procured by the air forces of 25 other nations. F-16s from various US-led coalitions flew combat missions in the Gulf War, Bosnia, Yugoslavia, Afghanistan, Libya, and Iraq and Syria. F-16s have also seen extensive combat use by Israel, Pakistan, and Ukraine. Since 1982, it has been a Dual Capable Aircraft platform for US nuclear weapons in Europe. Numerous countries have begun replacing the aircraft with the Lockheed Martin F-35 Lightning II and Lockheed Martin F-16V Viper, although the original versions of F-16 also remain in service with many operators.\n\nUS Vietnam War experience showed the need for air superiority fighters and better air-to-air training for fighter pilots. Based on his experience in the Korean War and as a fighter tactics instructor in the early 1960s, Colonel John Boyd with mathematician Thomas Christie developed the energy-maneuverability theory to model a fighter aircraft's performance in combat. Boyd's work called for a small, lightweight aircraft that could maneuver with the minimum possible energy loss and which also incorporated an increased thrust-to-weight ratio. In the late 1960s, Boyd gathered a group of like-minded innovators known as the Fighter Mafia, and in 1969 secured Department of Defense funding for General Dynamics and Northrop to study design concepts based on the theory.\n\nThe Advanced Day Fighter concept, renamed F-XX, gained civilian political support under Deputy Secretary of Defense David Packard. In May 1971 the Air Force Prototype Study Group was established, and the Lightweight Fighter (LWF) program was funded. The request for proposals issued 6 January 1972 called for a 20,000-pound class air-to-air day fighter optimized for combat at Mach 0.6-1.6 and altitudes of 30,000-40,000 feet. General Dynamics' Model 401 and Northrop's P-600 were selected for prototype development as the YF-16 and YF-17. The YF-16 was developed by a team led by Robert H. Widmer. The first YF-16 was rolled out 13 December 1973; its actual first flight occurred accidentally during a high-speed taxi test on 20 January 1974 when test pilot Phil Oestricher lifted off to avoid a crash; the official first flight occurred 2 February 1974. The YF-16 was declared the winner of the Air Combat Fighter (ACF) competition on 13 January 1975, citing lower operating costs, greater range, and better maneuver performance versus the YF-17. The Navy separately selected the YF-17 as the basis for the F/A-18 Hornet.\n\nThe production F-16 was altered from the YF-16 design: fuselage lengthened, larger nose radome for the AN/APG-66 radar, wing area increased from 280 to 300 sq ft, tailfin height decreased, ventral fins enlarged, two more stores stations added. FSD F-16s were built by General Dynamics in Fort Worth, Texas; the first F-16A rolled out 20 October 1976 and first flew 8 December. Production-standard F-16A first flew 7 August 1978, delivered to USAF 6 January 1979, entering operational service with the 34th Tactical Fighter Squadron at Hill AFB, Utah on 1 October 1980. The name \"Fighting Falcon\" was given 21 July 1980; pilots use the nickname \"Viper.\"\n\nFour NATO allies (Belgium, Denmark, Netherlands, Norway) joined as the European Participation Group, ordering 348 aircraft in 1975, produced at Fokker's Schiphol-Oost facility and SABCA's Gosselies plant. Turkish Aerospace Industries produced 232 Block 30/40/50 F-16s under license plus 46 for Egypt and 30 for Turkey later; Korean Aerospace Industries produced 140 KF-16 Block 52s. Production moved from Fort Worth to Greenville, South Carolina after 2017 to make room for F-35 assembly; the last Fort Worth F-16 was delivered to Iraq on 14 November 2017, and serial production of the F-16V Viper began in Greenville in 2019/2023.\n\nDuring development, augmented pitch control was added to avoid deep stall conditions; the horizontal stabilizer area was increased by 25% on Block 15 aircraft in 1981. The Multinational Staged Improvement Program (MSIP) in the 1980s evolved the F-16's capabilities in three stages, including auto-GCAS (ground collision avoidance system).",
+      "shortDescription": "The aircraft was first developed by General Dynamics in 1974.",
+      "descrType": "History",
+      "classification": "U"
+    },
+    {
+      "description": "The F-16 is a single-engine, highly maneuverable, supersonic, multirole tactical fighter aircraft using relaxed static stability/fly-by-wire (RSS/FBW) flight controls to achieve enhanced maneuver performance. It was the first fighter purpose-built to pull 9-g maneuvers and can reach a maximum speed of over Mach 2. It has a frameless bubble canopy, side-mounted control stick, and reclined seat. It is armed with an internal 20mm M61 Vulcan cannon in the left wing root and has multiple hardpoints for missiles, bombs, and pods. The airframe is about 80% aluminum alloys, 8% steel, 3% composites, and 1.5% titanium. The F-16 has a cropped-delta wing with wing-fuselage blending and forebody vortex-control strakes, fixed-geometry underslung air intake, conventional tri-plane empennage with all-moving stabilator tailplanes, ventral fins, and tricycle landing gear.\n\nEarly F-16s could carry up to six AIM-9 Sidewinder missiles plus AIM-7 Sparrow; later versions support AIM-120 AMRAAM. Weapons are carried on 9 hardpoints - six under the wings, two on wingtips, one under the fuselage. The F-16 is the first production fighter intentionally designed to be slightly aerodynamically unstable (relaxed static stability) to reduce drag and improve maneuverability, using a quadruplex fly-by-wire flight control system.\n\nThe cockpit features exceptional field of view via the bubble canopy (360-degree visibility, 40-degree look-down angle), and an ACES II zero/zero ejection seat reclined at 30 degrees. The pilot uses a side-stick controller and HOTAS (hands-on-throttle-and-stick) controls. The F-16 has a head-up display (HUD) and multi-function displays (MFDs).\n\nRadar evolved from the Westinghouse AN/APG-66 on F-16A/B, to the AN/APG-68 on F-16C/D Block 25, to the AN/APG-80 AESA radar on F-16E/F, and the AN/APG-83 Scalable Agile Beam Radar (SABR) upgrade. The initial powerplant was the Pratt & Whitney F100-PW-200 turbofan; later the F100-PW-220 with Digital Electronic Engine Control; General Electric's F110-GE-100 became an alternate engine option from the 'Great Engine War'; the Increased Performance Engine program led to the F110-GE-129 and F100-PW-229.",
+      "shortDescription": "6 is a single-engine, highly maneuverable, supersonic, multirole tactical fighter aircraft using relaxed static stability/fly-by-wire (RSS/FBW) flight controls to achieve enhanced maneuver performance.",
+      "descrType": "Design",
+      "classification": "U"
+    },
+    {
+      "description": "The F-16 is used by active duty USAF, Air Force Reserve, and Air National Guard units, the Thunderbirds demonstration team, and as an adversary-aggressor aircraft by the US Navy. It flew combat during Operation Desert Storm (1991), the Yugoslav Wars, Operation Northern Watch/Southern Watch, the War in Afghanistan (2001) and Iraq War (2003), and the 2011 intervention in Libya. On 11 September 2001, two unarmed F-16s were launched in an attempt to intercept United Airlines Flight 93.\n\nThe F-16's first air-to-air combat success was by the Israeli Air Force over the Bekaa Valley on 28 April 1981 against a Syrian Mi-8 helicopter. On 7 June 1981, Israeli F-16s executed Operation Opera against the Osirak nuclear reactor in Iraq. During the 1982 Lebanon War, Israeli F-16s were credited with 44 air-to-air kills. Israel used F-16s extensively in the 2006 Lebanon War, 2008-09 Gaza War, and following the October 7 attacks in Operation Swords of Iron, plus strikes against Iranian-linked assets and in the 2026 Operation Roaring Lion strikes on Iran.\n\nPakistan Air Force F-16s shot down 20-30 Soviet/Afghan aircraft during the Soviet-Afghan War. On 27 February 2019, Pakistani F-16s were involved in air combat with Indian Air Force MiG-21s and Su-30MKIs following the 2019 Jammu and Kashmir airstrikes, with competing claims about losses on both sides. Turkey has used F-16s in conflicts with Kurdish insurgents and the Syrian Civil War, including shooting down Syrian and Russian aircraft (a Russian Su-24 in 2015). Turkey is developing the indigenous Ozgur modernization program and Bozdogan/Gokdogan missiles.\n\nThe F-16 has also been operated by numerous other nations and has seen combat or been involved in incidents in Greek-Turkish tensions in the Aegean.",
+      "shortDescription": "The F-16 is used by active duty USAF, Air Force Reserve, and Air National Guard units, the Thunderbirds demonstration team, and as an adversary-aggressor aircraft by the US Navy.",
+      "descrType": "Usage",
+      "classification": "U"
+    },
+    {
+      "description": "Variants include F-16A/B, F-16C/D across multiple production Blocks, F-16E/F (UAE), F-16I Sufa (Israel), F-16V Viper, and special test aircraft like the General Dynamics X-62 VISTA. The design was also developed into the Mitsubishi F-2 for Japan.",
+      "shortDescription": "Variants include F-16A/B, F-16C/D across multiple production Blocks, F-16E/F (UAE), F-16I Sufa (Israel), F-16V Viper, and special test aircraft like the General Dynamics X-62 VISTA.",
+      "descrType": "Variants",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 202501,
+      "url": "https://en.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon",
+      "title": "Wikipedia source page"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameter": "Type",
+      "parameterDescr": "System type/role classification. Source text: \"Multirole fighter, air superiority fighter\".",
+      "parameterUomValue": "Multirole fighter, air superiority fighter",
+      "classification": "U",
+      "parameterValue": "Multirole fighter, air superiority fighter",
+      "uom": ""
+    },
+    {
+      "seq": 1002,
+      "parameter": "Country of origin",
+      "parameterDescr": "Country or countries where the system was designed/originates. Source text: \"United States\".",
+      "parameterUomValue": "United States",
+      "classification": "U",
+      "parameterValue": "United States",
+      "uom": ""
+    },
+    {
+      "seq": 1003,
+      "parameter": "Manufacturer",
+      "parameterDescr": "Company or companies that manufacture the system. Source text: \"General Dynamics (1974-1993); Lockheed Corporation (1993-1995); Lockheed Martin (1995-2017)\".",
+      "parameterUomValue": "General Dynamics (1974-1993); Lockheed Corporation (1993-1995); Lockheed Martin (1995-2017)",
+      "classification": "U",
+      "parameterValue": "General Dynamics (1974-1993); Lockheed Corporation (1993-1995); Lockheed Martin (1995-2017)",
+      "uom": ""
+    },
+    {
+      "seq": 1004,
+      "parameter": "Built by",
+      "parameterDescr": "Manufacturing sites/companies that produced the system under license or partnership. Source text: \"SABCA (1979-1985); Fokker (1979-1982); KAI (1994-2004); TUSAS (1987-2011)\".",
+      "parameterUomValue": "SABCA (1979-1985); Fokker (1979-1982); KAI (1994-2004); TUSAS (1987-2011)",
+      "classification": "U",
+      "parameterValue": "SABCA (1979-1985); Fokker (1979-1982); KAI (1994-2004); TUSAS (1987-2011)",
+      "uom": ""
+    },
+    {
+      "seq": 1005,
+      "parameter": "Status",
+      "parameterDescr": "Current operational status of the system. Source text: \"In service\".",
+      "parameterUomValue": "In service",
+      "classification": "U",
+      "parameterValue": "In service",
+      "uom": ""
+    },
+    {
+      "seq": 1006,
+      "parameter": "Primary users",
+      "parameterDescr": "Principal operator(s) of the system. Source text: \"United States Air Force; 25 other users\".",
+      "parameterUomValue": "United States Air Force; 25 other users",
+      "classification": "U",
+      "parameterValue": "United States Air Force; 25 other users",
+      "uom": ""
+    },
+    {
+      "seq": 1007,
+      "parameter": "Number built",
+      "parameterDescr": "Total number of units produced. Source text: \"4,604\".",
+      "parameterUomValue": "4604 units",
+      "classification": "U",
+      "parameterValue": "4604",
+      "uom": "units"
+    },
+    {
+      "seq": 1008,
+      "parameter": "Manufactured",
+      "parameterDescr": "Date range during which the system was in production. Source text: \"1973-2017\".",
+      "parameterUomValue": "1973-2017",
+      "classification": "U",
+      "parameterValue": "1973-2017",
+      "uom": ""
+    },
+    {
+      "seq": 1009,
+      "parameter": "Introduced",
+      "parameterDescr": "Date the system entered operational service. Source text: \"17 August 1978\".",
+      "parameterUomValue": "17 August 1978",
+      "classification": "U",
+      "parameterValue": "17 August 1978",
+      "uom": ""
+    },
+    {
+      "seq": 1010,
+      "parameter": "First flight",
+      "parameterDescr": "Date of the type's first flight. Source text: \"20 January 1974 (unplanned); 2 February 1974 (official)\".",
+      "parameterUomValue": "20 January 1974 (unplanned); 2 February 1974 (official)",
+      "classification": "U",
+      "parameterValue": "20 January 1974 (unplanned); 2 February 1974 (official)",
+      "uom": ""
+    },
+    {
+      "seq": 1011,
+      "parameter": "Developed into",
+      "parameterDescr": "Later systems derived from this design. Source text: \"Vought Model 1600; General Dynamics F-16XL; Mitsubishi F-2; Lockheed Martin F-16V Viper\".",
+      "parameterUomValue": "Vought Model 1600; General Dynamics F-16XL; Mitsubishi F-2; Lockheed Martin F-16V Viper",
+      "classification": "U",
+      "parameterValue": "Vought Model 1600; General Dynamics F-16XL; Mitsubishi F-2; Lockheed Martin F-16V Viper",
+      "uom": ""
+    },
+    {
+      "seq": 1012,
+      "parameter": "Powerplant",
+      "parameterDescr": "Engine(s) fitted and their type/thrust rating. Source text: \"Pratt & Whitney F100 or General Electric F110 afterburning turbofan\".",
+      "parameterUomValue": "Pratt & Whitney F100 or General Electric F110 afterburning turbofan",
+      "classification": "U",
+      "parameterValue": "Pratt & Whitney F100 or General Electric F110 afterburning turbofan",
+      "uom": ""
+    },
+    {
+      "seq": 1013,
+      "parameter": "Maximum speed",
+      "parameterDescr": "Top speed, expressed as a Mach number where the source gives one. Source text: \"Over Mach 2\".",
+      "parameterUomValue": "2 Mach",
+      "classification": "U",
+      "parameterValue": "2",
+      "uom": "Mach"
+    },
+    {
+      "seq": 1014,
+      "parameter": "Armament",
+      "parameterDescr": "Weapons the system is equipped to carry/fire. Source text: \"Internal 20 mm M61A1 Vulcan cannon; AIM-9 Sidewinder, AIM-7 Sparrow, AIM-120 AMRAAM air-to-air missiles; various air-to-ground missiles, rockets, and bombs on 9 hardpoints\".",
+      "parameterUomValue": "Internal 20 mm M61A1 Vulcan cannon; AIM-9 Sidewinder, AIM-7 Sparrow, AIM-120 AMRAAM air-to-air missiles; various air-to-ground missiles, rockets, and bombs on 9 hardpoints",
+      "classification": "U",
+      "parameterValue": "Internal 20 mm M61A1 Vulcan cannon; AIM-9 Sidewinder, AIM-7 Sparrow, AIM-120 AMRAAM air-to-air missiles; various air-to-ground missiles, rockets, and bombs on 9 hardpoints",
+      "uom": ""
+    }
+  ]
+}
