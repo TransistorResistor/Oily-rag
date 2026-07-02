@@ -42,8 +42,13 @@ from models_registry import MODELS, MODELS_BY_ID
 
 app = Flask(__name__)
 # Model used to derive the metadata filter (separate from the models under test).
-# Needs reliable JSON/schema adherence; a 4B model isn't enough on a large catalogue.
-FILTER_MODEL = "mistral-small"
+# Needs reliable JSON/schema adherence; a 4B model isn't enough on a large
+# catalogue. REVIEW_FINDINGS E2: this value now comes from ragkit.DEFAULTS (the
+# single shared defaults source -- see that dict's docstring comment for why
+# "a dedicated filter model" beat the CLI's old "reuse the answering model"),
+# not a second hard-coded literal here. Kept as a module-level name too since
+# it's referenced directly below and may be imported elsewhere.
+FILTER_MODEL = ragkit.DEFAULTS["filter_model"]
 # max_context_tokens caps how much retrieved text is packed into the prompt, so
 # large records can't blow the context window / cost. None here would mean
 # "unbounded"; we default to a sane cap in run_server/main.
@@ -69,10 +74,26 @@ FILTER_MODEL = "mistral-small"
 # min_rel (REVIEW_FINDINGS G3): a floor in [0,1] on retrieve()'s normalized
 # relevance score below which a candidate is dropped instead of padded into
 # k. 0.0 (default) preserves the pre-G3 always-fill-k behaviour exactly.
-CONFIG = {"db": "rag_test.db", "k": 4, "max_context_tokens": 3000,
-          "filter_min_count": 2, "filter_max_fields": 60, "two_pass": False,
-          "filter_mode": "auto", "field_select": "embed", "field_select_k": 15,
-          "min_rel": 0.0}
+#
+# REVIEW_FINDINGS E2: every key below except "db" now comes straight from
+# ragkit.DEFAULTS -- the single config source ragkit.answer's own parameter
+# defaults ALSO derive from -- so the CLI (`ragkit.py ask`) and this bench
+# agree on defaults unless a flag/CLI override says otherwise. See
+# ragkit.DEFAULTS' docstring comment for the per-key "which of the two old
+# values was kept, and why" rationale.
+CONFIG = {
+    "db": "rag_test.db",
+    "k": ragkit.DEFAULTS["k"],
+    "max_context_tokens": ragkit.DEFAULTS["max_context_tokens"],
+    "filter_min_count": ragkit.DEFAULTS["filter_min_count"],
+    "filter_max_fields": ragkit.DEFAULTS["filter_max_fields"],
+    "two_pass": ragkit.DEFAULTS["two_pass"],
+    "filter_mode": ragkit.DEFAULTS["filter_mode"],
+    "field_select": ragkit.DEFAULTS["field_select"],
+    "field_select_k": ragkit.DEFAULTS["field_select_k"],
+    "min_rel": ragkit.DEFAULTS["min_rel"],
+    "filter_model": FILTER_MODEL,
+}
 
 # --- shared retrieval state: loaded once, reused across requests --------------
 # Flask serves with threaded=True and sqlite connections aren't shareable across
@@ -127,16 +148,18 @@ def _select_filter_fields(con, query, catalogue):
     """Choose which fields the single-pass filter-extraction model sees for
     THIS query (REVIEW_FINDINGS A2). CONFIG["field_select"]:
       "embed"    -- ragkit.select_fields: query-relevance ranked top-K, union
-                    the partition fields (systemGroup/systemType/...). Falls
-                    back to None (i.e. "coverage") automatically if the db has
-                    no field_embeddings (old db / pre-A2 ingest).
+                    the partition fields (systemGroup/systemType/...).
       "coverage" -- None (only_fields left unset): catalogue_to_prompt's own
                     min_count/max_fields coverage-ordered pruning, unchanged
                     from before this phase.
+      None       -- "auto": resolved per-db by ragkit.resolve_field_select_mode
+                    (REVIEW_FINDINGS E2 -- the same auto-detect ragkit.answer
+                    uses, shared rather than reimplemented here so the two
+                    call sites can't disagree on what "auto" means).
     Not used for two_pass (extract_filter_2pass narrows by CATEGORY, a
     complementary mechanism -- see select_fields' docstring)."""
-    if (CONFIG.get("field_select", "embed") == "embed"
-            and ragkit.load_field_embeddings(con)):
+    mode = ragkit.resolve_field_select_mode(con, CONFIG.get("field_select"))
+    if mode == "embed":
         always = cat_mod.partition_fields(
             catalogue, min_count=CONFIG.get("filter_min_count", 1))
         return ragkit.select_fields(
@@ -163,16 +186,21 @@ def build_context(query, auto_filter, two_pass=None):
         # _select_filter_fields): either query-relevance ranked (embed, the
         # default) or the pre-A2 coverage-ordered pruning (filter_min_count/
         # filter_max_fields), so a 200+-field catalogue doesn't flood the prompt.
+        # CONFIG["filter_model"] (REVIEW_FINDINGS E2) -- falls back to the
+        # module-level FILTER_MODEL constant if somehow absent from CONFIG
+        # (e.g. a caller that replaced CONFIG wholesale rather than mutating
+        # it), so this can never silently pass model=None to the LLM call.
+        filter_model = CONFIG.get("filter_model", FILTER_MODEL)
         tp, ex_info = None, None
         if two_pass:
             raw, tp = ragkit.extract_filter_2pass(
                 query, catalogue, con, "openrouter",
-                model=FILTER_MODEL, base_url=None,
+                model=filter_model, base_url=None,
                 min_count=CONFIG.get("filter_min_count", 1))
         else:
             only_fields = _select_filter_fields(con, query, catalogue)
             raw, ex_info = ragkit.extract_filter_ex(
-                query, catalogue, "openrouter", model=FILTER_MODEL, base_url=None,
+                query, catalogue, "openrouter", model=filter_model, base_url=None,
                 only_fields=only_fields,
                 min_count=CONFIG.get("filter_min_count", 1),
                 max_fields=CONFIG.get("filter_max_fields"))
@@ -261,8 +289,11 @@ def api_context():
         contexts, prompt, finfo = build_context(query, auto_filter, two_pass=two_pass)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    # REVIEW_FINDINGS E3: the table-authority sentence only when a table is
+    # actually in THIS prompt (finfo["table"] is only set when build_context
+    # built one) -- see ragkit.system_prompt_for's docstring.
     return jsonify({
-        "system_prompt": ragkit.SYSTEM_PROMPT,
+        "system_prompt": ragkit.system_prompt_for(finfo.get("table")),
         "prompt": prompt,
         "filter": finfo,
         "sources": [{"rid": c["rid"], "title": c["title"], "text": c["text"]}
@@ -303,10 +334,15 @@ def api_compare():
     except Exception as e:
         return jsonify({"error": f"retrieval failed: {e}"}), 500
 
+    # REVIEW_FINDINGS E3: same table-presence check as api_context -- every
+    # model under test in this comparison sees the table-authority sentence
+    # exactly when there's actually a table in the shared prompt they all get.
+    system_prompt = ragkit.system_prompt_for(finfo.get("table"))
+
     # fan out to the selected models concurrently so side-by-side isn't serial
     results = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as ex:
-        futures = [ex.submit(_run_one, mid, ragkit.SYSTEM_PROMPT, prompt)
+        futures = [ex.submit(_run_one, mid, system_prompt, prompt)
                    for mid in model_ids]
         for fut in futures:
             results.append(fut.result())
@@ -315,7 +351,7 @@ def api_compare():
     results.sort(key=lambda r: order.get(r["model_id"], 99))
 
     return jsonify({
-        "system_prompt": ragkit.SYSTEM_PROMPT,
+        "system_prompt": system_prompt,
         "prompt": prompt,
         "filter": finfo,
         "sources": [{"rid": c["rid"], "title": c["title"], "text": c["text"]}
@@ -450,8 +486,16 @@ def warm_start():
 def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
                open_browser=True, filter_min_count=None, filter_max_fields=None,
                two_pass=None, filter_mode=None, field_select=None,
-               field_select_k=None, min_rel=None):
-    """Single entrypoint used by both this file's CLI and `ragkit.py serve`."""
+               field_select_k=None, min_rel=None, filter_model=None,
+               host="127.0.0.1"):
+    """Single entrypoint used by both this file's CLI and `ragkit.py serve`.
+
+    host (REVIEW_FINDINGS F1): defaults to 127.0.0.1 (local-only) rather than
+    the old hard-coded 0.0.0.0, which exposed this bench -- and, since every
+    generation call spends real OpenRouter credit, your API spend with it --
+    to anyone else on the LAN. Pass host="0.0.0.0" (or any other non-loopback
+    address) to opt in explicitly; doing so prints a warning below rather
+    than silently binding wide."""
     CONFIG["db"] = _resolve_db(db)
     CONFIG["k"] = k
     CONFIG["max_context_tokens"] = max_context_tokens
@@ -469,6 +513,8 @@ def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
         CONFIG["field_select_k"] = field_select_k
     if min_rel is not None:
         CONFIG["min_rel"] = min_rel
+    if filter_model is not None:
+        CONFIG["filter_model"] = filter_model
     url = f"http://localhost:{port}"
     print(f"RAG model bench → {url}   (db={CONFIG['db']})", file=sys.stderr)
     _check_api_key()
@@ -476,8 +522,15 @@ def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
     if open_browser:
         # fire after the socket is bound (app.run below); server is already warm
         threading.Timer(0.6, lambda: webbrowser.open(url)).start()
-    print(f"  ready — serving on {url}", file=sys.stderr)
-    app.run(host="0.0.0.0", port=port, threaded=True)
+    if host not in ("127.0.0.1", "localhost"):
+        print(f"  ! binding to {host}: this exposes the bench -- and your "
+              f"OpenRouter spend -- to the network, not just this machine "
+              f"(REVIEW_FINDINGS F1). Make sure that's actually what you want.",
+              file=sys.stderr)
+    print(f"  ready — serving on {url}"
+          + (f" (bound to {host})" if host not in ("127.0.0.1", "localhost") else ""),
+          file=sys.stderr)
+    app.run(host=host, port=port, threaded=True)
 
 
 def main():
