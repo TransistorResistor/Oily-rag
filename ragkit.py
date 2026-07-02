@@ -89,11 +89,13 @@ as additional text.
 """
 
 import argparse
+import difflib
 import glob
 import json
 import os
 import re
 import sqlite3
+import statistics
 import struct
 import sys
 import urllib.request
@@ -121,6 +123,15 @@ EMBED_DIM = 384
 # cross-encoder scores each (query, passage) pair jointly, which is markedly
 # more precise at picking the passages actually about the question.
 DEFAULT_RERANK_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+
+# The categorical field per-category numeric stats (REVIEW_FINDINGS A4) are
+# grouped by. "systemType" is the finest-grained broad partition field this
+# corpus has (Air-to-Air Missile / Main Battle Tank / ...) -- fine-grained
+# enough that a category's numeric spread (e.g. AAM range) is actually
+# coherent, unlike "systemGroup" (Weapon/Vehicle/...) which is still too
+# broad. A single named constant so ingest (which builds the stats) and
+# extract_filter_2pass (which reads them back) can't drift apart.
+CATEGORY_STAT_FIELD = "systemType"
 
 # --------------------------------------------------------------------------- #
 # Embedding                                                                    #
@@ -316,7 +327,53 @@ def init_db(con):
         "  parent_rid TEXT PRIMARY KEY, title TEXT, params_json TEXT, "
         "  fields_json TEXT)"
     )
+    # One row per CATALOGUE FIELD (not per record), holding an embedding of a
+    # short descriptor of the field (name + type + unit + example values) --
+    # REVIEW_FINDINGS A2 "catalogue-as-retrieval": at query time, select_fields
+    # ranks fields by cosine similarity to the query embedding instead of
+    # dumping all ~200+ fields into every filter-extraction prompt. Absent
+    # entirely for a db ingested before this phase; select_fields falls back to
+    # coverage order in that case (see load_field_embeddings).
+    con.execute(
+        "CREATE TABLE IF NOT EXISTS field_embeddings (field TEXT PRIMARY KEY, vec BLOB)"
+    )
     con.commit()
+
+
+def _field_descriptor(field, spec):
+    """A short text description of ONE catalogue field, built for embedding
+    (REVIEW_FINDINGS A2): the query-relevance signal for field SELECTION isn't
+    the field's stored VALUES, it's what the field means and what kind of
+    thing it holds, so a query like "small mass" can find the "Mass" field by
+    meaning even though it never says "Mass". Deliberately short (a handful of
+    words/examples, not the full catalogue entry) -- this is embedded once per
+    field at ingest, so it costs nothing per query, but a bloated descriptor
+    would still dilute the embedding with noise."""
+    t = spec.get("type")
+    parts = [field]
+    if t == "numeric":
+        u = spec.get("unit")
+        parts.append(f"numeric measurement{' in ' + u if u else ''}")
+        if spec.get("median") is not None:
+            parts.append(f"typical value around {spec['median']}")
+    elif t == "categorical":
+        vals = spec.get("values") or []
+        parts.append("categorical field")
+        if vals:
+            parts.append("values include " + ", ".join(str(v) for v in vals[:8]))
+    elif t == "multi_value":
+        vals = spec.get("values") or []
+        parts.append("multi-value list field")
+        if vals:
+            parts.append("elements include " + ", ".join(str(v) for v in vals[:8]))
+    elif t == "date":
+        parts.append("date field")
+    else:
+        parts.append("free text field")
+        ex = spec.get("examples") or []
+        if ex:
+            parts.append("e.g. " + "; ".join(str(e) for e in ex))
+    return " - ".join(parts)
 
 
 def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
@@ -329,6 +386,7 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     con.execute("DROP TABLE IF EXISTS records_fts")
     con.execute("DROP TABLE IF EXISTS records")
     con.execute("DROP TABLE IF EXISTS record_params")
+    con.execute("DROP TABLE IF EXISTS field_embeddings")
     init_db(con)
 
     records = list(load_records(src))
@@ -339,8 +397,13 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
 
     # Expand every record into passages, remembering which parent each came from.
     passages = []  # (passage_rid, parent_rid, title, passage_text)
+    # {parent_rid: {field: value}} -- kept around (not just written to
+    # record_params) so build_category_stats below can re-aggregate it without
+    # a second pass over the raw records or a round-trip through the db.
+    fields_by_parent = {}
     for parent_rid, title, text, raw, canon in records:
         typed, _units = record_model.typed_fields(canon)
+        fields_by_parent[parent_rid] = typed
         for j, chunk in enumerate(chunk_record(title, text)):
             passages.append((f"{parent_rid}/{j}", parent_rid, title, chunk))
         # Store the rich parametrics (value + unit + description, for the
@@ -382,6 +445,42 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
         "INSERT OR REPLACE INTO meta (key, value) VALUES ('import_dropped', ?)",
         (json.dumps(dropped),),
     )
+
+    # Catalogue-as-retrieval field embeddings (REVIEW_FINDINGS A2, ingest half):
+    # embed a short descriptor of each catalogue field (name + type + unit + a
+    # few example values/labels) so select_fields can rank fields by MEANING
+    # ("small mass" -> Mass, "long range" -> Range) at query time instead of
+    # every filter-extraction prompt showing all ~200+ fields. One row per
+    # field, not per record -- cheap even on a modest embedder.
+    if catalogue:
+        field_names = list(catalogue.keys())
+        descriptors = [_field_descriptor(f, catalogue[f]) for f in field_names]
+        field_vecs = embed(descriptors, embed_model)
+        for f, v in zip(field_names, field_vecs):
+            con.execute(
+                "INSERT OR REPLACE INTO field_embeddings (field, vec) VALUES (?,?)",
+                (f, pack(v)),
+            )
+        print(f"Field embeddings: {len(field_names)} catalogue fields embedded "
+              f"for query-time field selection.", file=sys.stderr)
+
+    # Per-category numeric stats (REVIEW_FINDINGS A4): global p5/p95 mixes a
+    # cartridge with a carrier; group the same percentile stats by
+    # CATEGORY_STAT_FIELD ("systemType") so a filter-extraction model shown the
+    # narrowed category (two-pass pass 2) calibrates "long range" against the
+    # ~8-110 km an AAM actually spans, not the corpus-wide 8-11,000 km. See
+    # catalogue.build_category_stats / catalogue_to_prompt's category_stats kwarg.
+    category_stats = {}
+    if CATEGORY_STAT_FIELD in catalogue:
+        category_stats = cat_mod.build_category_stats(
+            fields_by_parent, catalogue, CATEGORY_STAT_FIELD)
+    con.execute(
+        "INSERT OR REPLACE INTO meta (key, value) VALUES ('category_stats', ?)",
+        (json.dumps({"field": CATEGORY_STAT_FIELD, "stats": category_stats}),),
+    )
+    if category_stats:
+        print(f"Per-category numeric stats: {len(category_stats)} "
+              f"{CATEGORY_STAT_FIELD} value(s) covered.", file=sys.stderr)
 
     # Entity alias table (G1, ingest half): alias (full title / designation like
     # "F-16" / popular name / meaningful title word) -> [parent_rid, ...], for a
@@ -438,6 +537,119 @@ def load_aliases(con):
     return json.loads(row[0]) if row else {}
 
 
+def load_category_stats(con):
+    """{"field": <the CATEGORY_STAT_FIELD used at ingest, e.g. "systemType">,
+    "stats": {category_value: {numeric_field: {count,min,p5,median,p95,max}}}}
+    built at ingest by catalogue.build_category_stats (REVIEW_FINDINGS A4).
+    {} for a db ingested before this phase (or a catalogue with no
+    CATEGORY_STAT_FIELD -- e.g. a corpus with no systemType-like column)."""
+    row = con.execute(
+        "SELECT value FROM meta WHERE key='category_stats'").fetchone()
+    return json.loads(row[0]) if row else {}
+
+
+def load_field_embeddings(con):
+    """{field: np.ndarray(384,)} for every catalogue field embedded at ingest
+    (REVIEW_FINDINGS A2; see ingest()'s field_embeddings table / _field_
+    descriptor). {} for a db ingested before this phase -- select_fields treats
+    that as "no embeddings available" and falls back to coverage order."""
+    try:
+        rows = con.execute("SELECT field, vec FROM field_embeddings").fetchall()
+    except sqlite3.OperationalError:
+        return {}  # db predates the field_embeddings table entirely
+    return {field: unpack(vec) for field, vec in rows}
+
+
+# Common words too generic to count as a field "naming itself" in a query
+# (see _field_name_hit) -- "and"/"have"/"which" etc. would otherwise falsely
+# match against unrelated field names that happen to share one of these words.
+_FIELD_NAME_STOPWORDS = {
+    "and", "the", "of", "in", "on", "at", "for", "to", "a", "an", "or",
+    "with", "is", "are", "have", "has", "which", "what", "who", "how",
+    "does", "do", "this", "that", "its", "it", "as", "by",
+}
+
+
+def _field_name_hit(field, ql):
+    """True if a significant word of `field`'s NAME appears verbatim
+    (whole-word, case-insensitive) in `ql` (the already-lowercased query).
+    Used by select_fields as a lexical prior on top of embedding cosine (see
+    its docstring) -- e.g. a query literally containing "range"/"mass" should
+    never lose the "Range"/"Mass" fields to embedding dilution from other,
+    more verbose parts of the same query."""
+    words = [w for w in re.findall(r"[a-z0-9]+", field.lower())
+             if len(w) > 2 and w not in _FIELD_NAME_STOPWORDS]
+    return any(re.search(r"(?<![a-z0-9])" + re.escape(w) + r"(?![a-z0-9])", ql)
+              for w in words)
+
+
+def select_fields(con, query, catalogue, k=15, always=(),
+                  embed_model=DEFAULT_EMBED_MODEL):
+    """Pick the catalogue fields most relevant to `query` (REVIEW_FINDINGS A2
+    "catalogue-as-retrieval"): cosine-rank every embedded field descriptor
+    (see _field_descriptor/load_field_embeddings) against the query embedding,
+    take the top `k`, and UNION `always` (pass extract_filter_2pass's/
+    catalogue.partition_fields' broad category fields here, so systemGroup/
+    systemType/Country of origin are always offered even when the query's
+    wording doesn't happen to echo them).
+
+    Ranking is a small lexical+embedding fusion, not pure cosine: a field
+    whose OWN NAME is literally named in the query (_field_name_hit) --
+    "long range and small mass" names "Range"/"Mass" almost verbatim -- is
+    ranked ahead of pure-embedding matches. This matters in practice: a WHOLE-
+    QUERY sentence embedding is easily dominated by whichever part of the
+    query has the most shared vocabulary with OTHER field names (e.g. "air-
+    to-air missiles" pulling every armament-ish field name to the top of raw
+    cosine, burying "Range"/"Mass" well past a k=12 cutoff even though the
+    query names them outright). This is the same fusion spirit as retrieve()'s
+    vector+FTS RRF -- cheap exact-mention signal on top of the semantic one,
+    not a replacement for it (a query that DOESN'T name a field verbatim,
+    e.g. "long-range", still falls through to pure cosine).
+
+    This is a single-pass ALTERNATIVE to plain coverage-ordered pruning
+    (catalogue_to_prompt's min_count/max_fields) -- it narrows the field SPEC
+    shown to the model to the ~k fields the query is actually about instead of
+    every reasonably-populated field, which matters most for small models on
+    a large/heterogeneous catalogue. It is NOT a replacement for
+    extract_filter_2pass: two-pass narrows by CATEGORY (which corpus subset)
+    and recomputes coverage within it -- complementary, not redundant. (A
+    future single-pass extension: pass category_stats/category_value once a
+    category is otherwise known, e.g. from a pinned alias match -- not wired
+    here, see extract_filter_2pass for where that's currently plumbed.)
+
+    Falls back to the pre-A2 coverage-ordered top-k when the db has no
+    field_embeddings (load_field_embeddings returns {}) -- e.g. a db ingested
+    before this phase."""
+    always = [f for f in always if f in catalogue]
+    field_vecs = load_field_embeddings(con)
+    if not field_vecs:
+        # Same "top-k UNION always" shape as the embedding path below (just
+        # ranked by coverage instead of relevance), so callers get a
+        # consistently-sized spec regardless of which mode is active.
+        cov_order = sorted(catalogue, key=lambda f: -(catalogue[f].get("count") or 0))
+        picked = cov_order[:k]
+        for f in always:
+            if f not in picked:
+                picked.append(f)
+        return picked
+
+    qvec = embed([query], embed_model)[0]
+    fields = [f for f in field_vecs if f in catalogue]
+    if not fields:
+        return list(always)
+    mat = np.vstack([field_vecs[f] for f in fields])
+    sims = mat @ qvec  # both normalised -> cosine
+    sims_by_field = dict(zip(fields, (float(s) for s in sims)))
+    ql = (query or "").lower()
+    ranked = sorted(fields,
+                    key=lambda f: (-_field_name_hit(f, ql), -sims_by_field[f]))
+    picked = ranked[:k]
+    for f in always:
+        if f not in picked:
+            picked.append(f)
+    return picked
+
+
 def _ensure_current_schema(con):
     """Guard against querying a db built before the fields-de-duplication change
     (REVIEW_FINDINGS B2): typed filter fields used to live in a per-passage
@@ -482,6 +694,82 @@ def fts_query_string(q):
 # --------------------------------------------------------------------------- #
 # Metadata filtering (validated against the catalogue)                         #
 # --------------------------------------------------------------------------- #
+
+_TRAILING_PUNCT_RE = re.compile(r"[.,;:!?]+$")
+
+
+def _normalize_label(s):
+    """Casefold/whitespace/punctuation-normalize a label for tolerant
+    comparison (REVIEW_FINDINGS A3 fast path): "USA", " usa", "USA." and "Usa"
+    should all compare equal to each other before any fuzzy-matching cost is
+    paid. Deliberately narrow (no stemming/synonyms) -- this is step 1 of 3;
+    _LABEL_ABBREVIATIONS and difflib fuzzy matching in _map_label are the
+    fallbacks for labels that aren't literally the same string modulo
+    formatting."""
+    s = re.sub(r"\s+", " ", str(s).strip().casefold())
+    return _TRAILING_PUNCT_RE.sub("", s)
+
+
+# Common abbreviation -> full-name expansions for the country/entity labels
+# this domain actually uses. A SMALL model asked to fill "Country of origin"
+# very often emits the abbreviation ("USA", "UK", "USSR") rather than the
+# corpus's full-name label ("United States", "United Kingdom", "Soviet
+# Union") -- and unlike a typo or punctuation/case variant, an abbreviation
+# shares almost NO characters with its expansion (difflib.SequenceMatcher
+# gives "usa" vs. "united states" a ratio of ~0.37, far below any cutoff that
+# wouldn't also accept unrelated labels), so difflib genuinely cannot recover
+# this class on its own. A short, fixed lookup is the right (bounded, still
+# conservative -- exact keys only, no guessing) tool for it, tried BEFORE the
+# fuzzy fallback. Deliberately scoped to this catalogue's actual values
+# rather than an exhaustive world-country-code table.
+_LABEL_ABBREVIATIONS = {
+    "usa": "united states", "us": "united states",
+    "u.s.": "united states", "u.s.a.": "united states",
+    "uk": "united kingdom", "u.k.": "united kingdom",
+    "ussr": "soviet union", "cccp": "soviet union",
+    "prc": "china", "uae": "united arab emirates",
+    "rok": "south korea", "dprk": "north korea",
+    "frg": "west germany", "gdr": "east germany",
+}
+
+
+def _map_label(value, allowed, cutoff=0.85):
+    """Map a possibly-imprecise model-emitted label to a known catalogue label
+    (REVIEW_FINDINGS A3): a small model asked to fill in "Country of origin"
+    often emits "USA" when the catalogue's label is "United States", or just
+    varies case/whitespace/punctuation ("Usa", "U.S.A"). validate_filter used
+    to drop anything not an EXACT match, silently weakening the filter (the
+    constraint just vanishes) even though the intent was obvious.
+
+    Three tiers, cheapest and most-conservative first:
+      1. exact match (the caller should already fast-path this -- see below --
+         but it's harmless to re-check here);
+      2. normalize both sides (_normalize_label) and compare;
+      3. a known abbreviation expansion (_LABEL_ABBREVIATIONS) -- catches
+         acronyms difflib structurally can't (see that dict's docstring);
+      4. difflib.get_close_matches (stdlib, no network/model call) against the
+         NORMALIZED allowed set with a conservative cutoff, so only a
+         genuinely close label remaps -- an unrelated label (e.g. "France"
+         when the model meant something else entirely) is left for the
+         caller to drop, not silently coerced to the nearest thing.
+
+    Returns the canonical label (a member of `allowed`) or None if nothing is
+    close enough to trust."""
+    if value in allowed:
+        return value
+    norm_value = _normalize_label(value)
+    norm_to_canonical = {}
+    for a in allowed:
+        norm_to_canonical.setdefault(_normalize_label(a), a)
+    if norm_value in norm_to_canonical:
+        return norm_to_canonical[norm_value]
+    expanded = _LABEL_ABBREVIATIONS.get(norm_value)
+    if expanded and expanded in norm_to_canonical:
+        return norm_to_canonical[expanded]
+    close = difflib.get_close_matches(
+        norm_value, list(norm_to_canonical.keys()), n=1, cutoff=cutoff)
+    return norm_to_canonical[close[0]] if close else None
+
 
 def validate_filter(flt, catalogue):
     """Validate a filter dict against the catalogue. Returns (clean_filter, errors).
@@ -554,22 +842,47 @@ def validate_filter(flt, catalogue):
         elif t == "categorical":
             allowed = set(spec["values"])
             wanted = cond.get("in") or ([cond["eq"]] if "eq" in cond else [])
-            valid = [v for v in wanted if v in allowed]
-            invalid = [v for v in wanted if v not in allowed]
-            for v in invalid:
-                errors.append(f"{field}='{v}' not a known label, dropped")
+            # Exact matches are the fast path (REVIEW_FINDINGS A3): no fuzzy
+            # cost at all when the model already emitted a valid label, which
+            # is the common case. Only a label that ISN'T already valid pays
+            # for normalization/difflib, and only labels still unmapped after
+            # that get dropped.
+            valid, remapped = [], {}
+            for v in wanted:
+                if v in allowed:
+                    valid.append(v)
+                    continue
+                mapped = _map_label(v, allowed)
+                if mapped is not None:
+                    valid.append(mapped)
+                    remapped[v] = mapped
+                else:
+                    errors.append(f"{field}='{v}' not a known label, dropped")
             if valid:
-                clean[field] = {"type": "categorical", "in": valid}
+                entry = {"type": "categorical", "in": valid}
+                if remapped:
+                    entry["_remapped"] = remapped  # audit trail (mirrors numeric _converted)
+                clean[field] = entry
         elif t == "multi_value":
             allowed = set(spec["values"])
             wanted = cond.get("contains") or cond.get("in") or (
                 [cond["eq"]] if "eq" in cond else [])
-            valid = [v for v in wanted if v in allowed]
-            invalid = [v for v in wanted if v not in allowed]
-            for v in invalid:
-                errors.append(f"{field} contains '{v}' not a known element, dropped")
+            valid, remapped = [], {}
+            for v in wanted:
+                if v in allowed:
+                    valid.append(v)
+                    continue
+                mapped = _map_label(v, allowed)
+                if mapped is not None:
+                    valid.append(mapped)
+                    remapped[v] = mapped
+                else:
+                    errors.append(f"{field} contains '{v}' not a known element, dropped")
             if valid:
-                clean[field] = {"type": "multi_value", "contains": valid}
+                entry = {"type": "multi_value", "contains": valid}
+                if remapped:
+                    entry["_remapped"] = remapped
+                clean[field] = entry
         elif t == "date":
             c = {}
             for bound in ("date_from", "date_to"):
@@ -656,16 +969,25 @@ def extract_filter_2pass(query, catalogue, con, backend, model=None, base_url=No
     prunes far more than global coverage alone can.
 
     Returns (raw_filter, info): the merged *unvalidated* filter dict (same contract
-    as extract_filter) and a small diagnostics dict. Costs two LLM round-trips."""
+    as extract_filter) and a small diagnostics dict. Costs two LLM round-trips.
+
+    info also carries the parse/extraction outcome of BOTH passes
+    (REVIEW_FINDINGS A5 -- see extract_filter_ex): "pass1_extraction"/
+    "pass2_extraction" individually, plus a single "extraction" summarising
+    both ("parse_failed" if either pass failed to parse, else "ok" if either
+    produced a non-empty filter, else "empty") so a caller can read
+    info["extraction"] the same way regardless of whether it used the
+    single-pass or two-pass extractor."""
     info = {"two_pass": True}
     part = cat_mod.partition_fields(catalogue, min_count=min_count)
     info["pass1_fields"] = len(part)
 
     # ---- pass 1: which broad category / categories? ----
-    cat_raw = {}
+    cat_raw, pass1_status = {}, "empty"
     if part:
-        cat_raw = extract_filter(query, catalogue, backend, model, base_url,
-                                 only_fields=set(part))
+        cat_raw, ex1 = extract_filter_ex(query, catalogue, backend, model, base_url,
+                                         only_fields=set(part))
+        pass1_status = ex1["status"]
     cat_clean, _ = validate_filter(cat_raw, catalogue)
     info["pass1_filter"] = cat_clean
 
@@ -678,9 +1000,37 @@ def extract_filter_2pass(query, catalogue, con, backend, model=None, base_url=No
                             reverse=True)[:max_detail_fields])
     info["pass2_fields"] = len(detail)
 
+    # ---- category-scoped numeric stats (REVIEW_FINDINGS A4): once pass 1 has
+    # narrowed to exactly one CATEGORY_STAT_FIELD value, show pass 2 that
+    # category's own min/p5/median/p95/max instead of the corpus-wide spread
+    # (catalogue.build_category_stats / catalogue_to_prompt's category_stats
+    # kwarg) -- calibrates "long range" against the ~10-100km an AAM actually
+    # spans, not the 8-11,000km cartridge-to-carrier global range. A future
+    # single-pass extension could do the same once a category is otherwise
+    # pinned (e.g. via an alias match); not wired there yet -- see
+    # select_fields' docstring.
+    category_value = None
+    st_cond = cat_clean.get(CATEGORY_STAT_FIELD)
+    if (st_cond and st_cond.get("type") == "categorical"
+            and len(st_cond.get("in") or []) == 1):
+        category_value = st_cond["in"][0]
+    category_stats = None
+    if category_value:
+        cs = load_category_stats(con)
+        if cs.get("field") == CATEGORY_STAT_FIELD:
+            category_stats = cs.get("stats")
+    info["pass2_category"] = category_value
+
     # ---- pass 2: full filter over the narrowed, in-category field set ----
-    det_raw = extract_filter(query, catalogue, backend, model, base_url,
-                             only_fields=detail, min_count=min_count)
+    det_raw, ex2 = extract_filter_ex(
+        query, catalogue, backend, model, base_url,
+        only_fields=detail, min_count=min_count,
+        category_stats=category_stats, category_value=category_value)
+    info["pass1_extraction"] = pass1_status
+    info["pass2_extraction"] = ex2["status"]
+    statuses = {pass1_status, ex2["status"]}
+    info["extraction"] = ("parse_failed" if "parse_failed" in statuses else
+                          "ok" if "ok" in statuses else "empty")
     # merge: pass-2 wins on conflicts; keep any pass-1 category it didn't repeat
     merged = {**cat_raw, **det_raw}
     return merged, info
@@ -926,23 +1276,91 @@ def record_digest(con, query, clean_filter, embed_model=DEFAULT_EMBED_MODEL,
     return [{"rid": p, "title": t, "snippet": s} for p, (_sc, t, s) in ordered]
 
 
+# Tightened for REVIEW_FINDINGS A7: the old regex included bare "which| all|
+# over|under|above|below|each", which fired on plain single-entity factual
+# questions ("Which country designed the F-16?", "What is the range of X
+# over its lifetime?") and injected a full structured table for no reason
+# (token cost, see REVIEW_FINDINGS B1). This version only matches words that
+# genuinely imply reasoning across MULTIPLE records: superlatives (longest,
+# heaviest, ...), explicit comparison/ranking/listing/counting, and
+# aggregates (average/mean/median/total). A bare numeric comparison word
+# ("over"/"under"/"between") is deliberately NOT here -- a genuine numeric
+# constraint is instead caught structurally, via clean_filter carrying a
+# numeric field (see is_analytic_query below), not by guessing from wording.
 _ANALYTIC_RE = re.compile(
-    r"\b(compare|which|list|how many|number of|most|least|longest|shortest|"
-    r"highest|lowest|heaviest|lightest|fastest|slowest|largest|smallest|greatest|"
-    r"max(?:imum)?|min(?:imum)?|average|mean|sort|rank|top|over|under|above|below|"
-    r"more than|less than|greater|between|each|all)\b", re.I)
+    r"\b(compare|comparison|versus|vs|rank(?:ed|ing)?|sort(?:ed)?|"
+    r"list\s+(?:all|the|every)|how\s+many|number\s+of|count\s+of|"
+    r"most|least|longest|shortest|highest|lowest|heaviest|lightest|"
+    r"fastest|slowest|largest|smallest|greatest|"
+    r"average|mean|median|total|top\s*\d+)\b", re.I)
+
+# A stronger subset of the above: signals that are explicitly about MULTIPLE
+# records regardless of how many named entities appear in the query. Used to
+# override the single-named-entity suppression below -- "List all specs of
+# the AIM-120" should still get a table (it's an explicit "give me
+# everything" ask), even though only one entity is named.
+_MULTI_RECORD_RE = re.compile(
+    r"\b(compare|comparison|versus|vs|rank(?:ed|ing)?|"
+    r"list\s+(?:all|the|every)|how\s+many|number\s+of|count\s+of|each\s+of|"
+    r"all\s+the)\b", re.I)
 
 
-def is_analytic_query(query, clean_filter):
-    """Heuristic: does the question want to compare/aggregate across the matched
-    set (-> structured table), rather than a prose 'why/how' answer? True if the
-    filter constrains a numeric field, or the question uses comparison/aggregate
-    language."""
-    if clean_filter and any(
-            isinstance(c, dict) and c.get("type") == "numeric"
-            for c in clean_filter.values()):
-        return True
-    return bool(_ANALYTIC_RE.search(query or ""))
+def _matched_entities(query, aliases):
+    """The set of parent_rids named by ANY alias found in `query` (whole-word/
+    phrase, case-insensitive). Used by is_analytic_query to detect "this query
+    names exactly one known entity" (REVIEW_FINDINGS A7). Cheap: the alias
+    table is built once at ingest (record_model.build_alias_table); this is a
+    handful of regex scans over one short query string per call, not a corpus
+    scan, so it's fine at this corpus's scale (hundreds of aliases)."""
+    if not aliases or not query:
+        return set()
+    ql = query.lower()
+    matched = set()
+    for alias, rids in aliases.items():
+        if re.search(r"(?<![a-z0-9])" + re.escape(alias) + r"(?![a-z0-9])", ql):
+            matched.update(rids)
+    return matched
+
+
+def is_analytic_query(query, clean_filter, aliases=None):
+    """Heuristic: does the question want to compare/aggregate across the
+    matched set (-> structured table), rather than a prose 'why/how' answer
+    about one thing? True if the filter constrains a numeric field, or the
+    question uses comparison/superlative/aggregate language (see _ANALYTIC_RE)
+    -- UNLESS the query names exactly one known entity (via the alias table,
+    optional `aliases` kwarg -- ragkit.load_aliases) and isn't an explicit
+    multi-record ask (_MULTI_RECORD_RE), in which case it's almost always a
+    single-record factual lookup that a superlative-sounding word slipped
+    into, not a "reason across many records" question (REVIEW_FINDINGS A7).
+    `aliases` is optional (default None -> no suppression, matching the old
+    regex-only behaviour) so existing positional callers keep working.
+
+    >>> is_analytic_query("What is the range of the AIM-120?", {})
+    False
+    >>> is_analytic_query("Which country designed the F-16?", {})
+    False
+    >>> is_analytic_query("Tell me about the T-90", {})
+    False
+    >>> is_analytic_query("Which air-to-air missile has the longest range?", {})
+    True
+    >>> is_analytic_query("Compare the F-22 and F-35", {})
+    True
+    >>> is_analytic_query("List all US fighter aircraft", {})
+    True
+    >>> is_analytic_query("How many tanks weigh over 50 tonnes?", {})
+    True
+    """
+    numeric_filter = bool(clean_filter and any(
+        isinstance(c, dict) and c.get("type") == "numeric"
+        for c in clean_filter.values()))
+    signal = numeric_filter or bool(_ANALYTIC_RE.search(query or ""))
+    if not signal:
+        return False
+    if aliases:
+        entities = _matched_entities(query, aliases)
+        if len(entities) == 1 and not _MULTI_RECORD_RE.search(query or ""):
+            return False  # single-entity lookup, not a multi-record ask
+    return True
 
 
 def _table_columns(query, clean_filter, catalogue, param_union, max_cols=6):
@@ -1206,7 +1624,7 @@ def _anthropic_raw(system, user, model="claude-sonnet-4-6", max_tokens=1024,
 
 def _openai_raw(system, user, model, base_url="http://localhost:8000/v1",
                  api_key=None, extra_headers=None, timeout=HTTP_TIMEOUT,
-                 max_tokens=None):
+                 max_tokens=None, response_format=None):
     if not model:
         raise RuntimeError("model required for openai-compatible backend")
     key = api_key or os.environ.get("OPENAI_API_KEY", "none")
@@ -1221,6 +1639,15 @@ def _openai_raw(system, user, model, base_url="http://localhost:8000/v1",
     # fire), which is exactly how a small model hangs on a large filter spec.
     if max_tokens:
         payload["max_tokens"] = max_tokens
+    # Opt-in structured-decoding hint (REVIEW_FINDINGS A5): most OpenAI-
+    # compatible endpoints (and OpenRouter, for providers that support it)
+    # accept response_format={"type":"json_object"} to structurally bias/
+    # guarantee JSON output. Left as a plain pass-through (None by default --
+    # see extract_filter_ex's json_mode kwarg) since it can't be verified
+    # against a live endpoint in this offline environment, and a provider that
+    # doesn't support it may error on an unrecognised field.
+    if response_format:
+        payload["response_format"] = response_format
     body = json.dumps(payload).encode()
     headers = {"content-type": "application/json", "authorization": f"Bearer {key}"}
     headers.update(extra_headers or {})
@@ -1251,7 +1678,7 @@ OPENROUTER_ALIASES = {
 
 
 def _openrouter_raw(system, user, model, timeout=HTTP_TIMEOUT,
-                    max_tokens=OPENAI_MAX_TOKENS):
+                    max_tokens=OPENAI_MAX_TOKENS, response_format=None):
     model = OPENROUTER_ALIASES.get(model, model)
     key = os.environ.get("OPENROUTER_API_KEY")
     if not key:
@@ -1266,7 +1693,7 @@ def _openrouter_raw(system, user, model, timeout=HTTP_TIMEOUT,
     }
     return _openai_raw(system, user, model, base_url=OPENROUTER_BASE_URL,
                        api_key=key, extra_headers=extra, timeout=timeout,
-                       max_tokens=max_tokens)
+                       max_tokens=max_tokens, response_format=response_format)
 
 
 def gen_local(query, contexts, model="Qwen/Qwen2.5-1.5B-Instruct", digest=None,
@@ -1312,19 +1739,128 @@ def generate(query, contexts, backend, model=None, base_url=None, digest=None,
     raise RuntimeError(f"unknown backend {backend}")
 
 
-def extract_filter(query, catalogue, backend, model=None, base_url=None,
-                   only_fields=None, min_count=1, max_fields=None):
-    """Ask the LLM to emit a JSON filter grounded in the catalogue. Returns the
-    raw parsed dict (unvalidated) or {} on failure. In production you'd pair this
-    with grammar/schema-constrained decoding (vLLM guided decoding / llama.cpp
-    GBNF) built from the catalogue so the output is structurally guaranteed.
+def _dispatch_filter_llm(sys_p, user_p, backend, model, base_url, response_format=None):
+    """The per-backend dispatch extract_filter_ex needs twice (initial call +
+    one parse-error retry) -- factored out so the retry doesn't duplicate the
+    if/elif ladder. Raises RuntimeError for an unknown backend (extract_filter
+    used to just return {} silently; extract_filter_ex's caller catches this
+    and records it as a parse_failed with a clear reason instead)."""
+    if backend == "local":
+        return gen_local_raw(sys_p, user_p, model or "Qwen/Qwen2.5-1.5B-Instruct")
+    if backend == "anthropic":
+        return _anthropic_raw(sys_p, user_p, model or "claude-sonnet-4-6",
+                              max_tokens=FILTER_MAX_TOKENS)
+    if backend == "openrouter":
+        return _openrouter_raw(sys_p, user_p, model or OPENROUTER_DEFAULT_MODEL,
+                               max_tokens=FILTER_MAX_TOKENS,
+                               response_format=response_format)
+    if backend == "openai":
+        return _openai_raw(sys_p, user_p, model, base_url or "http://localhost:8000/v1",
+                           max_tokens=FILTER_MAX_TOKENS, response_format=response_format)
+    raise RuntimeError(f"unknown backend '{backend}'")
 
-    only_fields/min_count/max_fields shrink the field spec shown to the model (see
-    catalogue_to_prompt): present only these fields, drop fields with coverage below
-    min_count, and/or cap to the top max_fields by coverage. This keeps the prompt
-    small and the field choice tractable on a large catalogue."""
+
+def _first_balanced_json(text):
+    """Brace-matching scan (REVIEW_FINDINGS A5) for the first balanced {...}
+    block in `text`, string/escape-aware so a brace inside a quoted value
+    ("descr": "uses {braces}") doesn't throw off the depth count. Returns the
+    substring or None if no balanced block exists. Used as extract_filter_ex's
+    fallback when a model wraps its JSON in prose ("Here's the filter: {...}
+    let me know if you need anything else") that naive fence-stripping +
+    json.loads can't parse."""
+    start = text.find("{")
+    while start != -1:
+        depth = 0
+        in_str = False
+        esc = False
+        for i in range(start, len(text)):
+            c = text[i]
+            if in_str:
+                if esc:
+                    esc = False
+                elif c == "\\":
+                    esc = True
+                elif c == '"':
+                    in_str = False
+                continue
+            if c == '"':
+                in_str = True
+            elif c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+                if depth == 0:
+                    return text[start:i + 1]
+        start = text.find("{", start + 1)  # unbalanced from here; try the next '{'
+    return None
+
+
+def _parse_filter_json(raw):
+    """Parse a model's filter-JSON response robustly (REVIEW_FINDINGS A5).
+    Strips ```json fences, tries json.loads on the whole (fenced-stripped)
+    response first (the common case), and falls back to brace-matching the
+    first balanced {...} block for prose-wrapped responses. Returns
+    (parsed_or_None, error_str_or_None) -- error is only meaningful when
+    parsed is None."""
+    text = (raw or "").strip().replace("```json", "").replace("```", "").strip()
+    try:
+        return json.loads(text), None
+    except Exception as e:
+        err = str(e)
+    block = _first_balanced_json(text)
+    if block is not None:
+        try:
+            return json.loads(block), None
+        except Exception as e2:
+            err = str(e2)
+    return None, err
+
+
+def extract_filter_ex(query, catalogue, backend, model=None, base_url=None,
+                      only_fields=None, min_count=1, max_fields=None,
+                      category_stats=None, category_value=None,
+                      retry_on_parse_error=True, json_mode=False):
+    """Like extract_filter, but returns (raw_filter_dict, info) where `info`
+    distinguishes WHY the dict came back the way it did (REVIEW_FINDINGS A5).
+    extract_filter's plain {} return can't tell "the model said no filter
+    applies" from "the model's output didn't parse" -- those look identical to
+    every downstream caller, which is exactly the silent-failure problem A5
+    flags. info = {"status": "ok"|"empty"|"parse_failed", "attempts": 1|2,
+    "parse_error": <str, only set when status == "parse_failed">}:
+      "ok"           -- parsed a non-empty filter dict.
+      "empty"        -- parsed cleanly to {} (the model explicitly said "no
+                        filter applies" -- a real, trustworthy answer).
+      "parse_failed" -- both attempts (initial + one retry) failed to parse,
+                        or the LLM call itself raised. Callers (ragkit.answer,
+                        compare_server.build_context) surface this so the UI
+                        can say "filter extraction failed" instead of quietly
+                        behaving exactly like "empty".
+
+    Parsing (see _parse_filter_json/_first_balanced_json) is layered so a
+    response wrapped in prose still recovers:
+      1. strip ```json fences, try json.loads directly;
+      2. on failure, brace-match the first balanced {...} block and retry;
+      3. on failure, make ONE more LLM call (same backend/model) with the
+         parse error appended and an explicit "return ONLY valid JSON"
+         instruction, then repeat 1-2 on that response. Disable with
+         retry_on_parse_error=False.
+
+    only_fields/min_count/max_fields/category_stats/category_value pass
+    straight through to catalogue_to_prompt (see its docstring) -- this
+    function only adds parsing robustness + the retry + the status signal on
+    top of what extract_filter already did.
+
+    json_mode (opt-in, default OFF): when True and backend is openrouter/
+    openai, request response_format={"type":"json_object"} (see _openai_raw),
+    which structurally biases/guarantees JSON on providers that support it --
+    a real (if partial) instance of A5's schema-constrained-decoding
+    suggestion. Left default-off because this environment can't verify it
+    against a live endpoint (every provider's support/behaviour differs); flip
+    it on once you've confirmed your provider honours it."""
     spec = cat_mod.catalogue_to_prompt(
-        catalogue, only_fields=only_fields, min_count=min_count, max_fields=max_fields)
+        catalogue, only_fields=only_fields, min_count=min_count,
+        max_fields=max_fields, category_stats=category_stats,
+        category_value=category_value)
     sys_p = (
         "You convert a question into a JSON metadata filter. "
         "Output ONLY a JSON object, no prose. Use only the fields and values "
@@ -1339,33 +1875,65 @@ def extract_filter(query, catalogue, backend, model=None, base_url=None,
         "If no filter applies, output {}."
     )
     user_p = f"{spec}\n\nQuestion: {query}\n\nJSON filter:"
-    ctx = [{"rid": "_spec", "title": "filter spec", "text": user_p}]
+    fmt = ({"type": "json_object"}
+           if (json_mode and backend in ("openrouter", "openai")) else None)
+
+    info = {"attempts": 1}
     try:
-        if backend == "local":
-            raw = gen_local_raw(sys_p, user_p, model or "Qwen/Qwen2.5-1.5B-Instruct")
-        elif backend == "anthropic":
-            raw = _anthropic_raw(sys_p, user_p, model or "claude-sonnet-4-6",
-                                 max_tokens=FILTER_MAX_TOKENS)
-        elif backend == "openrouter":
-            raw = _openrouter_raw(sys_p, user_p, model or OPENROUTER_DEFAULT_MODEL,
-                                  max_tokens=FILTER_MAX_TOKENS)
-        elif backend == "openai":
-            raw = _openai_raw(sys_p, user_p, model,
-                              base_url or "http://localhost:8000/v1",
-                              max_tokens=FILTER_MAX_TOKENS)
-        else:
-            return {}
-        raw = raw.strip().replace("```json", "").replace("```", "").strip()
-        return json.loads(raw)
-    except Exception:
-        return {}
+        raw = _dispatch_filter_llm(sys_p, user_p, backend, model, base_url,
+                                   response_format=fmt)
+    except Exception as e:
+        info["status"] = "parse_failed"
+        info["parse_error"] = f"LLM call failed: {e}"
+        return {}, info
+
+    parsed, err = _parse_filter_json(raw)
+    if parsed is None and retry_on_parse_error:
+        info["attempts"] = 2
+        retry_user = (f"{user_p}\n\n(Your previous response could not be "
+                      f"parsed as JSON: {err}. Return ONLY valid JSON, no "
+                      f"prose, no code fences.)")
+        try:
+            raw2 = _dispatch_filter_llm(sys_p, retry_user, backend, model, base_url,
+                                       response_format=fmt)
+            parsed, err = _parse_filter_json(raw2)
+        except Exception as e:
+            err = f"retry LLM call failed: {e}"
+
+    if parsed is None:
+        info["status"] = "parse_failed"
+        info["parse_error"] = err
+        return {}, info
+    if not isinstance(parsed, dict):
+        info["status"] = "parse_failed"
+        info["parse_error"] = f"parsed JSON is not an object ({type(parsed).__name__})"
+        return {}, info
+    info["status"] = "ok" if parsed else "empty"
+    return parsed, info
+
+
+def extract_filter(query, catalogue, backend, model=None, base_url=None,
+                   only_fields=None, min_count=1, max_fields=None):
+    """Ask the LLM to emit a JSON filter grounded in the catalogue. Returns the
+    raw parsed dict (unvalidated) or {} on failure -- same contract as always,
+    kept so every existing caller (extract_filter_2pass's old behaviour,
+    compare_server, the CLI) needs zero changes. Delegates to extract_filter_ex
+    (REVIEW_FINDINGS A5: robust parsing + one parse-error retry) and discards
+    its `info` -- callers that want to know WHY an empty filter came back
+    ("no filter applies" vs. "the model's output didn't parse") should call
+    extract_filter_ex directly instead of this wrapper; see ragkit.answer and
+    compare_server.build_context for the pattern."""
+    parsed, _info = extract_filter_ex(
+        query, catalogue, backend, model, base_url,
+        only_fields=only_fields, min_count=min_count, max_fields=max_fields)
+    return parsed
 
 
 def answer(db_path, query, backend, model=None, base_url=None,
            embed_model=DEFAULT_EMBED_MODEL, k=4, filters=None,
            auto_filter=False, max_context_tokens=None,
            two_pass=False, filter_min_count=1, filter_max_fields=None,
-           filter_mode="hard"):
+           filter_mode="hard", field_select=None, field_select_k=15):
     """filters: an explicit filter dict (from UI/caller).
     auto_filter: if True and no explicit filters, ask the model to derive one.
     two_pass: use the broad-category-then-detail extractor (extract_filter_2pass).
@@ -1374,10 +1942,22 @@ def answer(db_path, query, backend, model=None, base_url=None,
     filter_mode: how the validated filter is applied at retrieval time --
     'hard' (gate), 'soft' (rank boost), or 'auto' (k-guard: hard only when the
     matched set is comfortably larger than k). See retrieve().
+    field_select/field_select_k (REVIEW_FINDINGS A2, single-pass only): 'embed'
+    ranks catalogue fields by query-embedding similarity (see select_fields)
+    and shows the filter-extraction model only the top field_select_k (UNION
+    the partition fields) instead of every coverage-pruned field; 'coverage'
+    keeps the pre-A2 behaviour (only_fields=None, catalogue_to_prompt's own
+    min_count/max_fields pruning). None (default) auto-picks 'embed' when the
+    db has field_embeddings (see load_field_embeddings), else 'coverage' --
+    so an old db (ingested before this phase) behaves exactly as before with
+    no config change needed. Doesn't apply to two_pass (see select_fields'
+    docstring for why that's a deliberate, not missing, choice).
     Returns (reply, contexts, filter_info)."""
     con = connect(db_path)
     catalogue = load_catalogue(con)
-    filter_info = {"applied": {}, "errors": [], "source": None, "fell_back": False}
+    aliases = load_aliases(con)
+    filter_info = {"applied": {}, "errors": [], "source": None, "fell_back": False,
+                  "extraction": None}
 
     raw_filter = filters
     if raw_filter is None and auto_filter and catalogue:
@@ -1386,10 +1966,21 @@ def answer(db_path, query, backend, model=None, base_url=None,
                 query, catalogue, con, backend, model, base_url,
                 min_count=filter_min_count)
             filter_info["two_pass"] = tp_info
+            filter_info["extraction"] = tp_info.get("extraction", "empty")
         else:
-            raw_filter = extract_filter(
+            only_fields = None
+            mode = field_select
+            if mode is None:
+                mode = "embed" if load_field_embeddings(con) else "coverage"
+            if mode == "embed" and load_field_embeddings(con):
+                always = cat_mod.partition_fields(catalogue, min_count=filter_min_count)
+                only_fields = select_fields(con, query, catalogue,
+                                            k=field_select_k, always=always)
+            raw_filter, ex_info = extract_filter_ex(
                 query, catalogue, backend, model, base_url,
+                only_fields=only_fields,
                 min_count=filter_min_count, max_fields=filter_max_fields)
+            filter_info["extraction"] = ex_info["status"]
         filter_info["source"] = "model"
     elif raw_filter is not None:
         filter_info["source"] = "explicit"
@@ -1434,7 +2025,7 @@ def answer(db_path, query, backend, model=None, base_url=None,
     digest, table = [], None
     matched = filter_info.get("matched_records")
     if clean and not filter_info["fell_back"] and matched:
-        if is_analytic_query(query, clean):
+        if is_analytic_query(query, clean, aliases=aliases):
             table = record_table(con, query, clean, catalogue=catalogue)
             if table:
                 filter_info["table"] = table
@@ -1500,6 +2091,11 @@ def main():
                     help="cap total retrieved context tokens")
     pa.add_argument("--show-catalogue", action="store_true",
                     help="print the field catalogue and exit")
+    pa.add_argument("--field-select", choices=("embed", "coverage"), default=None,
+                    help="single-pass filter-field selection: 'embed' (query-"
+                         "relevance ranked, REVIEW_FINDINGS A2) or 'coverage' "
+                         "(pre-A2 behaviour); default auto-picks 'embed' when "
+                         "the db has field_embeddings, else 'coverage'")
 
     ps = sub.add_parser("serve", help="launch the model-comparison web bench")
     ps.add_argument("--db", default="rag_test.db")
@@ -1522,7 +2118,7 @@ def main():
         reply, ctx, finfo = answer(
             a.db, a.query, a.backend, a.model, a.base_url, a.embed_model, a.k,
             filters=explicit, auto_filter=a.auto_filter,
-            max_context_tokens=a.max_context_tokens)
+            max_context_tokens=a.max_context_tokens, field_select=a.field_select)
         print(reply)
         print("\n--- retrieved ---", file=sys.stderr)
         for c in ctx:
@@ -1532,6 +2128,12 @@ def main():
                   file=sys.stderr)
         if finfo.get("errors"):
             print(f"--- filter notes: {finfo['errors']}", file=sys.stderr)
+        # extraction == "parse_failed" is otherwise indistinguishable from a
+        # legitimate "no filter applies" ("empty") -- surface it explicitly
+        # (REVIEW_FINDINGS A5) rather than silently answering as if unfiltered.
+        if finfo.get("extraction") == "parse_failed":
+            print("--- filter extraction FAILED to parse the model's response; "
+                  "treated as no filter", file=sys.stderr)
         if finfo.get("fell_back"):
             print("--- filter excluded all records; fell back to unfiltered",
                   file=sys.stderr)

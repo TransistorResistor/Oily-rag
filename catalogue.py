@@ -312,7 +312,62 @@ def partition_fields(catalogue, min_count=1, max_cardinality=40, limit=8):
     return [f for _, _, f in cands[:limit]]
 
 
-def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=None):
+def build_category_stats(fields_by_parent, catalogue, category_field, min_count=2):
+    """Per-`category_field` (typically "systemType") numeric summaries
+    (REVIEW_FINDINGS A4): the GLOBAL p5/p95 in the catalogue mixes wildly
+    different kinds of system under one field -- `Length` spans a cartridge
+    (0.838 m) to a carrier (332.8 m); `Range` spans 8-11,000 km across
+    missiles and ships. A filter-extraction model calibrating "long range"
+    against that global spread has no useful signal. Grouping the same
+    percentile stats by category first gives it a scale it can actually reason
+    with (an AAM's range is ~8-110 km, not 8-11,000).
+
+    `fields_by_parent`: {parent_rid: {field: value, ...}} -- the same typed
+    filter-fields dict ingest already computes per record (record_model.
+    typed_fields), so this is a re-aggregation, not a re-parse.
+    `catalogue`: used only to know which fields are numeric (so a categorical
+    field's values, e.g. designations, are never treated as numbers).
+
+    Returns {category_value: {field: {count, min, p5, median, p95, max}}}.
+    A (category, field) pair with fewer than `min_count` numeric values is
+    omitted -- 1-2 data points don't make a meaningful percentile range, and a
+    thin category is exactly where the global stat (still available as a
+    fallback -- see catalogue_to_prompt's category_stats kwarg) is fine."""
+    by_cat = {}   # category_value -> field -> [values...]
+    for fields in fields_by_parent.values():
+        cat_val = fields.get(category_field)
+        if cat_val is None or isinstance(cat_val, list):
+            continue  # unclassified or a multi-value category -- no single bucket
+        bucket = by_cat.setdefault(str(cat_val), {})
+        for field, spec in catalogue.items():
+            if spec.get("type") != "numeric":
+                continue
+            v = fields.get(field)
+            if isinstance(v, (int, float)) and not isinstance(v, bool):
+                bucket.setdefault(field, []).append(v)
+
+    out = {}
+    for cat_val, field_vals in by_cat.items():
+        entry = {}
+        for field, vals in field_vals.items():
+            if len(vals) < min_count:
+                continue
+            s = sorted(vals)
+            entry[field] = {
+                "count": len(s),
+                "min": s[0],
+                "p5": round(_percentile(s, 0.05), 4),
+                "median": round(statistics.median(s), 4),
+                "p95": round(_percentile(s, 0.95), 4),
+                "max": s[-1],
+            }
+        if entry:
+            out[cat_val] = entry
+    return out
+
+
+def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=None,
+                        category_stats=None, category_value=None):
     """Render the catalogue as a compact spec for the filter-extraction prompt.
 
     A large catalogue dumped verbatim bloats every filter-extraction prompt and
@@ -334,7 +389,23 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
     Backward-compatible: a catalogue built before `count` existed simply isn't
     pruned (its fields sort as coverage 0 but nothing is dropped when counts are
     absent).
+
+    category_stats/category_value (REVIEW_FINDINGS A4): when both are given --
+    category_stats is the {category_value: {field: {count,min,p5,median,p95,
+    max}}} dict built at ingest by build_category_stats, category_value is
+    e.g. "Air-to-Air Missile" once the query (or a two-pass pass-1 filter) has
+    narrowed the corpus to a single category -- a numeric field's line renders
+    that CATEGORY's own range/median instead of the global one, labelled with
+    the category and its count, e.g. "typical range 8-110 km for Air-to-Air
+    Missile [11 records]" instead of the corpus-wide 8-11,000 km. Any field
+    the category doesn't have enough data for (see build_category_stats'
+    min_count) silently falls back to the global stat, so this is purely
+    additive -- never a worse spec than before.
     """
+    cat_scope = None
+    if category_stats and category_value is not None:
+        cat_scope = category_stats.get(category_value)
+
     items = []
     for field, spec in catalogue.items():
         if only_fields is not None and field not in only_fields:
@@ -357,10 +428,19 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
                             f"records have a filterable value)")
         if t == "numeric":
             u = f" {spec['unit']}" if spec.get("unit") else ""
-            lines.append(
-                f"- {field}: numeric, typical range {spec['p5']}–{spec['p95']}{u} "
-                f"(median {spec['median']}){partial_note}; filter with min/max."
-            )
+            scoped = cat_scope.get(field) if cat_scope else None
+            if scoped:
+                lines.append(
+                    f"- {field}: numeric, typical range {scoped['p5']}"
+                    f"–{scoped['p95']}{u} (median {scoped['median']}) for "
+                    f"{category_value} [{scoped['count']} records]{partial_note}; "
+                    f"filter with min/max."
+                )
+            else:
+                lines.append(
+                    f"- {field}: numeric, typical range {spec['p5']}–{spec['p95']}{u} "
+                    f"(median {spec['median']}){partial_note}; filter with min/max."
+                )
         elif t == "categorical":
             lines.append(
                 f"- {field}: categorical, must be one of "

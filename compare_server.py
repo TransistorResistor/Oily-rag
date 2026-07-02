@@ -37,6 +37,7 @@ import webbrowser
 from flask import Flask, request, jsonify, Response
 
 import ragkit
+import catalogue as cat_mod
 from models_registry import MODELS, MODELS_BY_ID
 
 app = Flask(__name__)
@@ -58,9 +59,16 @@ FILTER_MODEL = "mistral-small"
 #           k, else soften -- so a narrow/spurious filter can't starve or misdirect
 #           retrieval. 'auto' is the safe default (differs from hard only in the
 #           small-match regime where a hard gate is fragile).
+# field_select / field_select_k (REVIEW_FINDINGS A2, single-pass only): 'embed'
+# ranks catalogue fields by query-embedding similarity (ragkit.select_fields) and
+# shows the filter-extraction model only the top field_select_k fields (union the
+# partition fields) instead of the full coverage-pruned spec; 'coverage' keeps the
+# pre-A2 behaviour. See _select_filter_fields below -- it also falls back to
+# 'coverage' automatically when the db has no field_embeddings (old db, or ingest
+# predates this phase), so 'embed' is a safe default either way.
 CONFIG = {"db": "rag_test.db", "k": 4, "max_context_tokens": 3000,
           "filter_min_count": 2, "filter_max_fields": 60, "two_pass": False,
-          "filter_mode": "auto"}
+          "filter_mode": "auto", "field_select": "embed", "field_select_k": 15}
 
 # --- shared retrieval state: loaded once, reused across requests --------------
 # Flask serves with threaded=True and sqlite connections aren't shareable across
@@ -70,6 +78,8 @@ CONFIG = {"db": "rag_test.db", "k": 4, "max_context_tokens": 3000,
 _local = threading.local()
 _catalogue_cache = {}
 _catalogue_lock = threading.Lock()
+_aliases_cache = {}
+_aliases_lock = threading.Lock()
 
 
 def get_conn():
@@ -94,6 +104,43 @@ def get_catalogue(con):
     return cat
 
 
+def get_aliases(con):
+    """The entity alias table (ragkit.load_aliases), cached like get_catalogue --
+    used to suppress is_analytic_query's table-injection on single-entity lookups
+    (REVIEW_FINDINGS A7)."""
+    db = CONFIG["db"]
+    al = _aliases_cache.get(db)
+    if al is None:
+        with _aliases_lock:
+            al = _aliases_cache.get(db)
+            if al is None:
+                al = ragkit.load_aliases(con)
+                _aliases_cache[db] = al
+    return al
+
+
+def _select_filter_fields(con, query, catalogue):
+    """Choose which fields the single-pass filter-extraction model sees for
+    THIS query (REVIEW_FINDINGS A2). CONFIG["field_select"]:
+      "embed"    -- ragkit.select_fields: query-relevance ranked top-K, union
+                    the partition fields (systemGroup/systemType/...). Falls
+                    back to None (i.e. "coverage") automatically if the db has
+                    no field_embeddings (old db / pre-A2 ingest).
+      "coverage" -- None (only_fields left unset): catalogue_to_prompt's own
+                    min_count/max_fields coverage-ordered pruning, unchanged
+                    from before this phase.
+    Not used for two_pass (extract_filter_2pass narrows by CATEGORY, a
+    complementary mechanism -- see select_fields' docstring)."""
+    if (CONFIG.get("field_select", "embed") == "embed"
+            and ragkit.load_field_embeddings(con)):
+        always = cat_mod.partition_fields(
+            catalogue, min_count=CONFIG.get("filter_min_count", 1))
+        return ragkit.select_fields(
+            con, query, catalogue, k=CONFIG.get("field_select_k", 15),
+            always=always)
+    return None
+
+
 def build_context(query, auto_filter, two_pass=None):
     """Run retrieval (+ optional model-driven filter) and return the contexts,
     the assembled prompt, and the filter info — the exact material a model sees."""
@@ -107,17 +154,21 @@ def build_context(query, auto_filter, two_pass=None):
         # Derive the filter with a model that reliably emits the JSON schema. A
         # 4B model produces malformed/duplicate-shape filters against a large
         # catalogue; mistral-small is the registry's filter-extraction pick.
-        # The spec is pruned/ordered by field coverage (filter_min_count/
-        # filter_max_fields) so a 200+-field catalogue doesn't flood the prompt.
-        tp = None
+        # Single-pass field selection (REVIEW_FINDINGS A2, see
+        # _select_filter_fields): either query-relevance ranked (embed, the
+        # default) or the pre-A2 coverage-ordered pruning (filter_min_count/
+        # filter_max_fields), so a 200+-field catalogue doesn't flood the prompt.
+        tp, ex_info = None, None
         if two_pass:
             raw, tp = ragkit.extract_filter_2pass(
                 query, catalogue, con, "openrouter",
                 model=FILTER_MODEL, base_url=None,
                 min_count=CONFIG.get("filter_min_count", 1))
         else:
-            raw = ragkit.extract_filter(
+            only_fields = _select_filter_fields(con, query, catalogue)
+            raw, ex_info = ragkit.extract_filter_ex(
                 query, catalogue, "openrouter", model=FILTER_MODEL, base_url=None,
+                only_fields=only_fields,
                 min_count=CONFIG.get("filter_min_count", 1),
                 max_fields=CONFIG.get("filter_max_fields"))
         if raw:
@@ -129,6 +180,14 @@ def build_context(query, auto_filter, two_pass=None):
             # filtered set isn't silently reduced to k with no signal.
             if clean:
                 filter_info["matched_records"] = ragkit.count_matches(con, clean)
+        # Surface the extraction outcome regardless of whether a filter
+        # resulted (REVIEW_FINDINGS A5): "parse_failed" is otherwise
+        # indistinguishable in the UI from a legitimate "no filter applies"
+        # ("empty") -- both single-pass (ex_info) and two-pass (tp) report it
+        # the same way, via info["status"]/info["extraction"] respectively.
+        filter_info["extraction"] = (
+            tp.get("extraction", "empty") if tp is not None
+            else (ex_info["status"] if ex_info is not None else "empty"))
 
     # Decide how the filter is applied. 'auto' (the k-guard) hard-gates only when
     # the matched set is comfortably larger than k, else softens to a rank boost so
@@ -153,7 +212,7 @@ def build_context(query, auto_filter, two_pass=None):
     digest, table = [], None
     matched = filter_info.get("matched_records")
     if clean and matched:
-        if ragkit.is_analytic_query(query, clean):
+        if ragkit.is_analytic_query(query, clean, aliases=get_aliases(con)):
             table = ragkit.record_table(con, query, clean, catalogue=catalogue)
             if table:
                 filter_info["table"] = table
@@ -325,6 +384,16 @@ def warm_start():
         cat = get_catalogue(con)
         print(f"  db ready: {n} passages, {len(cat)} catalogue fields",
               file=sys.stderr)
+        # Whether the A2/A4 ingest-time artifacts (field embeddings, per-
+        # category numeric stats) are present -- absent for a db ingested
+        # before this phase, in which case field selection silently falls
+        # back to coverage order (see _select_filter_fields/select_fields).
+        n_field_vecs = len(ragkit.load_field_embeddings(con))
+        n_cats = len(ragkit.load_category_stats(con).get("stats", {}))
+        print(f"  field selection: {n_field_vecs} field embeddings, "
+              f"{n_cats} category-stats bucket(s) "
+              f"({'embed' if n_field_vecs else 'coverage (no embeddings)'} "
+              f"mode active)", file=sys.stderr)
         # Echo the import diagnostics (structures not indexed as filter fields) so a
         # new/variant JSON shape's blind spots are loud even after ingest.
         row = con.execute(
@@ -355,7 +424,8 @@ def warm_start():
 
 def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
                open_browser=True, filter_min_count=None, filter_max_fields=None,
-               two_pass=None, filter_mode=None):
+               two_pass=None, filter_mode=None, field_select=None,
+               field_select_k=None):
     """Single entrypoint used by both this file's CLI and `ragkit.py serve`."""
     CONFIG["db"] = _resolve_db(db)
     CONFIG["k"] = k
@@ -368,6 +438,10 @@ def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
         CONFIG["two_pass"] = two_pass
     if filter_mode is not None:
         CONFIG["filter_mode"] = filter_mode
+    if field_select is not None:
+        CONFIG["field_select"] = field_select
+    if field_select_k is not None:
+        CONFIG["field_select_k"] = field_select_k
     url = f"http://localhost:{port}"
     print(f"RAG model bench → {url}   (db={CONFIG['db']})", file=sys.stderr)
     _check_api_key()
@@ -401,6 +475,16 @@ def main():
                    help="how a filter is applied: hard gate, soft rank-boost, fill "
                         "(eligible-first + top-up), or auto k-guard "
                         f"(default {CONFIG['filter_mode']})")
+    p.add_argument("--field-select", choices=("embed", "coverage"), default=None,
+                   help="single-pass filter-field selection: 'embed' (query-"
+                        "relevance ranked, REVIEW_FINDINGS A2) or 'coverage' "
+                        f"(pre-A2 pruning) (default {CONFIG['field_select']}; "
+                        "auto-falls back to coverage if the db has no "
+                        "field_embeddings)")
+    p.add_argument("--field-select-k", type=int, default=None,
+                   help="how many fields the 'embed' selector shows (plus the "
+                        f"always-included partition fields) (default "
+                        f"{CONFIG['field_select_k']})")
     args = p.parse_args()
     run_server(args.db, args.port, args.k,
                max_context_tokens=args.max_context_tokens or None,  # 0 -> uncapped
@@ -408,7 +492,9 @@ def main():
                filter_min_count=args.filter_min_count,
                filter_max_fields=args.filter_max_fields,
                two_pass=True if args.two_pass else None,
-               filter_mode=args.filter_mode)
+               filter_mode=args.filter_mode,
+               field_select=args.field_select,
+               field_select_k=args.field_select_k)
 
 
 # PAGE is defined in compare_server_page.py and injected at import time to keep
