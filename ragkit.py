@@ -111,6 +111,7 @@ os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 import numpy as np
 
 import catalogue as cat_mod
+import record_model
 import units as units_mod
 
 DEFAULT_EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # matches Clipper
@@ -170,130 +171,15 @@ def unpack(blob):
 
 
 # --------------------------------------------------------------------------- #
-# Record flattening                                                            #
+# Record loading (canonical model)                                            #
 # --------------------------------------------------------------------------- #
-
-STRUCTURAL_KEYS = {
-    "id", "title", "parameters", "params",           # ragkit-native shape
-    "modelID", "nomenclature", "descriptions", "parametrics", "media",  # pages_schema shape
-}
-
-
-def flatten_record(rec):
-    """Turn a record dict into a single searchable text block, preserving
-    parametric values/definitions and prose descriptions so both are
-    retrievable. Handles both the ragkit-native shape (flat text fields +
-    a "parameters" dict) and the pages_schema/schema-example.json shape
-    ("descriptions" list of {descrType, description} + "parametrics" list
-    of {parameter, parameterValue, uom, parameterDescr}) -- see the module
-    docstring."""
-    parts = []
-    title = rec.get("title") or rec.get("nomenclature")
-    if title:
-        parts.append(f"Title: {title}")
-
-    # free-text / unrecognised scalar fields (e.g. systemGroup, systemType,
-    # updatedDate for pages_schema records; any custom field otherwise)
-    for k, v in rec.items():
-        if k in STRUCTURAL_KEYS:
-            continue
-        if isinstance(v, str):
-            parts.append(f"{k}: {v}")
-        elif isinstance(v, (int, float, bool)):
-            parts.append(f"{k}: {v}")
-
-    # prose descriptions (pages_schema shape) -- one block per descrType
-    # (Overview/History/Design/Usage/Variants), so retrieval can surface the
-    # specific slice of an article that answers the question.
-    descriptions = rec.get("descriptions")
-    if isinstance(descriptions, list):
-        for d in descriptions:
-            if not isinstance(d, dict):
-                continue
-            text = d.get("description") or d.get("shortDescription")
-            if text:
-                parts.append(f"{d.get('descrType', 'Description')}: {text}")
-
-    # parametric block -- ragkit-native {name: {value, unit, definition}} dict
-    params = rec.get("parameters") or rec.get("params") or {}
-    if isinstance(params, dict):
-        for name, spec in params.items():
-            if isinstance(spec, dict):
-                value = spec.get("value", "")
-                unit = spec.get("unit", "")
-                definition = spec.get("definition", "")
-                line = f"Parameter {name} = {value}"
-                if unit:
-                    line += f" {unit}"
-                if definition:
-                    line += f" ({definition})"
-                parts.append(line)
-            else:
-                parts.append(f"Parameter {name} = {spec}")
-
-    # parametric block -- pages_schema {parameter, parameterValue, uom,
-    # parameterDescr} list. Same "Parameter X = ..." line shape as above so
-    # _truncate_to_tokens's "keep all Parameter lines" rule covers both.
-    parametrics = rec.get("parametrics")
-    if isinstance(parametrics, list):
-        for p in parametrics:
-            if not isinstance(p, dict):
-                continue
-            name = p.get("parameter")
-            if not name:
-                continue
-            value = p.get("parameterValue", "")
-            unit = p.get("uom", "")
-            definition = p.get("parameterDescr", "")
-            line = f"Parameter {name} = {value}"
-            if unit:
-                line += f" {unit}"
-            if definition:
-                line += f" ({definition})"
-            parts.append(line)
-
-    return "\n".join(parts)
-
-
-def extract_parametrics(rec):
-    """Return the FULL parametric fields of a record as
-    {name: {"value", "unit", "descr"}}, preserving the description/definition
-    (the 'comment or subtitle') that the typed `fields` column drops when it
-    coerces to a bare scalar. Handles both record shapes:
-      - ragkit-native  parameters/params: {name: {value, unit, definition}}
-      - pages_schema    parametrics[]:     {parameter, parameterValue, uom, parameterDescr}
-
-    FUTURE: duplicate parameters + subtitles. A record can legitimately list the
-    same `parameter` name more than once (e.g. a "Range" per variant, or a value
-    plus a qualifying subtitle/note as a separate row). This dict keeps last-wins,
-    so earlier duplicates and multi-subtitle rows are silently dropped. To do it
-    properly the table cell should hold a LIST of {value, unit, descr} per field
-    (rendered as stacked sub-rows), and the catalogue/filter should disambiguate
-    by variant. Tracked as a follow-up to the structured-table feature.
-    """
-    out = {}
-    params = rec.get("parameters") or rec.get("params") or {}
-    if isinstance(params, dict):
-        for name, spec in params.items():
-            if isinstance(spec, dict):
-                out[str(name)] = {
-                    "value": spec.get("value"),
-                    "unit": spec.get("unit"),
-                    "descr": spec.get("definition") or spec.get("description"),
-                }
-            else:
-                out[str(name)] = {"value": spec, "unit": None, "descr": None}
-    parametrics = rec.get("parametrics")
-    if isinstance(parametrics, list):
-        for p in parametrics:
-            if isinstance(p, dict) and p.get("parameter"):
-                out[str(p["parameter"])] = {
-                    "value": p.get("parameterValue"),
-                    "unit": p.get("uom"),
-                    "descr": p.get("parameterDescr"),
-                }
-    return out
-
+#
+# flatten_record() and extract_parametrics() used to live here, each
+# independently re-parsing the two record shapes with subtly different
+# coercion rules than catalogue.extract_fields (REVIEW_FINDINGS C1: three
+# parsers, three chances to diverge). record_model.py now parses a raw record
+# into the canonical model ONCE (see load_records below); record_model.to_text
+# and record_model.rich_params are the thin views that replace them.
 
 _SENT_SPLIT = re.compile(r"(?<=[.!?])\s+")
 
@@ -358,7 +244,15 @@ def chunk_record(title, text, target_chars=900, overlap_sentences=1):
 
 
 def load_records(path):
-    """Yield (record_id, title, text, raw_record) from a file or directory."""
+    """Yield (record_id, title, text, raw_record, canon_record) from a file or
+    directory. Each raw record is normalized into the canonical model (see
+    record_model.py) EXACTLY ONCE here -- every downstream consumer (embedding
+    text, rich params, typed fields) derives its view from this ONE `canon`
+    instead of re-parsing the raw JSON with its own coercion rules (the
+    three-parsers hazard record_model fixes; REVIEW_FINDINGS C1). Both `raw`
+    and `canon` are yielded: catalogue.build_catalogue still wants raw records
+    (it re-normalizes per-record itself -- see catalogue.py), everything else
+    in ingest() uses `canon`."""
     if os.path.isdir(path):
         files = sorted(glob.glob(os.path.join(path, "*.json")))
     else:
@@ -374,7 +268,8 @@ def load_records(path):
                 continue
             rid = str(rec.get("id") or rec.get("modelID") or f"{base}#{i}")
             title = rec.get("title") or rec.get("nomenclature") or rid
-            yield rid, title, flatten_record(rec), rec
+            canon = record_model.normalize_record(rec)
+            yield rid, title, record_model.to_text(canon), rec, canon
 
 
 # --------------------------------------------------------------------------- #
@@ -395,7 +290,6 @@ def init_db(con):
                parent_rid TEXT,        -- source record id, for grouping + citation
                title TEXT,
                text TEXT,              -- one passage of the record, not the whole thing
-               fields TEXT,            -- JSON of typed scalar fields for filtering
                embedding BLOB
            )"""
     )
@@ -410,12 +304,17 @@ def init_db(con):
     con.execute(
         "CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT)"
     )
-    # One row per source record holding its FULL parametric fields (value + unit
-    # + description), for the structured-table view. Keyed by parent_rid; the
-    # per-passage `fields` column keeps only coerced scalars for filtering.
+    # One row per source record holding BOTH its full rich parametric fields
+    # (value + unit + description, for the structured-table view) AND its typed
+    # filter-fields dict. Typed fields used to be duplicated onto every PASSAGE
+    # row (~45x more copies than records for this corpus -- REVIEW_FINDINGS B2);
+    # filtering is record-level anyway, so they now live ONCE here, keyed by
+    # parent_rid. See _record_fields_map / _ensure_current_schema below for the
+    # read side.
     con.execute(
         "CREATE TABLE IF NOT EXISTS record_params ("
-        "  parent_rid TEXT PRIMARY KEY, title TEXT, params_json TEXT)"
+        "  parent_rid TEXT PRIMARY KEY, title TEXT, params_json TEXT, "
+        "  fields_json TEXT)"
     )
     con.commit()
 
@@ -423,7 +322,10 @@ def init_db(con):
 def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     con = connect(db_path)
     # A record now expands into several passage rows, so rebuild cleanly rather
-    # than upserting by rid (old whole-doc rows would otherwise linger).
+    # than upserting by rid (old whole-doc rows would otherwise linger). This
+    # also means an OLD per-passage-`fields` db is always fully replaced by a
+    # re-ingest -- see _ensure_current_schema for what happens if one is instead
+    # opened directly for querying without re-ingesting.
     con.execute("DROP TABLE IF EXISTS records_fts")
     con.execute("DROP TABLE IF EXISTS records")
     con.execute("DROP TABLE IF EXISTS record_params")
@@ -433,34 +335,34 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     if not records:
         print("No records found.", file=sys.stderr)
         return
-    raws = [r for _, _, _, r in records]
+    raws = [r for _, _, _, r, _ in records]
 
     # Expand every record into passages, remembering which parent each came from.
-    passages = []  # (passage_rid, parent_rid, title, passage_text, fields_json)
-    for parent_rid, title, text, raw in records:
-        typed, _units = cat_mod.extract_fields(raw)
-        typed = cat_mod.normalize_stored_fields(typed)
-        fields_json = json.dumps(typed)
+    passages = []  # (passage_rid, parent_rid, title, passage_text)
+    for parent_rid, title, text, raw, canon in records:
+        typed, _units = record_model.typed_fields(canon)
         for j, chunk in enumerate(chunk_record(title, text)):
-            passages.append(
-                (f"{parent_rid}/{j}", parent_rid, title, chunk, fields_json))
-        # store the full parametric fields (value + unit + description) for the
-        # structured-table view, one row per source record.
+            passages.append((f"{parent_rid}/{j}", parent_rid, title, chunk))
+        # Store the rich parametrics (value + unit + description, for the
+        # structured-table view) AND the typed filter fields -- one row per
+        # source record, both derived from the SAME canonical record so they
+        # can't drift relative to each other (REVIEW_FINDINGS C1).
         con.execute(
-            "INSERT OR REPLACE INTO record_params (parent_rid, title, params_json) "
-            "VALUES (?,?,?)",
-            (parent_rid, title, json.dumps(extract_parametrics(raw))),
+            "INSERT OR REPLACE INTO record_params "
+            "(parent_rid, title, params_json, fields_json) VALUES (?,?,?,?)",
+            (parent_rid, title, json.dumps(record_model.rich_params(canon)),
+             json.dumps(typed)),
         )
 
     print(f"Embedding {len(passages)} passages from {len(records)} records "
           f"with {embed_model} ...", file=sys.stderr)
     vecs = embed([p[3] for p in passages], embed_model)
 
-    for (prid, parent_rid, title, chunk, fields_json), vec in zip(passages, vecs):
+    for (prid, parent_rid, title, chunk), vec in zip(passages, vecs):
         cur = con.execute(
-            "INSERT INTO records (rid, parent_rid, title, text, fields, embedding) "
-            "VALUES (?,?,?,?,?,?)",
-            (prid, parent_rid, title, chunk, fields_json, pack(vec)),
+            "INSERT INTO records (rid, parent_rid, title, text, embedding) "
+            "VALUES (?,?,?,?,?)",
+            (prid, parent_rid, title, chunk, pack(vec)),
         )
         con.execute("INSERT INTO records_fts(rowid, text) VALUES (?,?)",
                     (cur.lastrowid, chunk))
@@ -480,6 +382,21 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
         "INSERT OR REPLACE INTO meta (key, value) VALUES ('import_dropped', ?)",
         (json.dumps(dropped),),
     )
+
+    # Entity alias table (G1, ingest half): alias (full title / designation like
+    # "F-16" / popular name / meaningful title word) -> [parent_rid, ...], for a
+    # later retrieval phase to deterministically pin named-entity queries instead
+    # of relying solely on embeddings (weak at exact designations). Built once
+    # here and stored so it isn't re-derived per query.
+    aliases = record_model.build_alias_table(
+        [(parent_rid, title) for parent_rid, title, _text, _raw, _canon in records])
+    con.execute(
+        "INSERT OR REPLACE INTO meta (key, value) VALUES ('aliases', ?)",
+        (json.dumps(aliases),),
+    )
+    print(f"alias table: {len(aliases)} aliases for {len(records)} records",
+          file=sys.stderr)
+
     con.commit()
     n = con.execute("SELECT COUNT(*) FROM records").fetchone()[0]
     print(f"Done. {len(records)} records -> {n} passages indexed in {db_path}.",
@@ -490,25 +407,66 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
 
 def import_report(dropped, n_records):
     """Render the import-diagnostics summary: which JSON structures were NOT indexed
-    as filter fields, so blind spots in a new/variant schema surface immediately.
+    as filter fields (or were indexed with a caveat, e.g. a cross-record unit
+    conflict), so blind spots in a new/variant schema surface immediately.
     `dropped` is the dict populated by catalogue.build_catalogue."""
     if not dropped:
         return "Import OK: every field was indexed as a filter dimension or prose."
-    lines = [f"! Import diagnostics: {len(dropped)} field/structure(s) NOT indexed "
-             f"as filterable (searchable as prose only, or ignored):"]
+    lines = [f"! Import diagnostics: {len(dropped)} field/structure(s) NOT fully "
+             f"indexed as filterable (searchable as prose only, indexed with a "
+             f"caveat, or ignored):"]
     for path, info in sorted(dropped.items(), key=lambda kv: -kv[1]["count"]):
         ex = (f"  e.g. keys {info['example_keys']}"
               if info.get("example_keys") else "")
         lines.append(f"    - {path}: {info['reason']} "
                      f"[in {info['count']}/{n_records} record(s)]{ex}")
     lines.append("  To index one of these for filtering, add an adapter in "
-                 "catalogue._walk (see the 'list of objects' branch).")
+                 "record_model.py (see the 'list of objects' branch in "
+                 "_absorb_extras).")
     return "\n".join(lines)
 
 
 def load_catalogue(con):
     row = con.execute("SELECT value FROM meta WHERE key='catalogue'").fetchone()
     return json.loads(row[0]) if row else {}
+
+
+def load_aliases(con):
+    """The {alias_lowercase: [parent_rid, ...]} table built at ingest time (see
+    record_model.build_alias_table). {} for a db ingested before G1/this phase."""
+    row = con.execute("SELECT value FROM meta WHERE key='aliases'").fetchone()
+    return json.loads(row[0]) if row else {}
+
+
+def _ensure_current_schema(con):
+    """Guard against querying a db built before the fields-de-duplication change
+    (REVIEW_FINDINGS B2): typed filter fields used to live in a per-passage
+    `fields` column on `records`; they now live ONCE per record, in
+    `record_params.fields_json`. Reading an old db through the new code without
+    this check would surface as a confusing 'no such column: fields_json'
+    OperationalError deep inside a filter helper -- fail fast here instead, with
+    a message that says exactly what to do. A never-ingested (empty) db has no
+    record_params table at all yet, which is fine -- nothing to guard against."""
+    cols = {r[1] for r in con.execute("PRAGMA table_info(record_params)").fetchall()}
+    if cols and "fields_json" not in cols:
+        raise RuntimeError(
+            "this db was built before the fields-storage change (typed filter "
+            "fields now live once per record, not duplicated per passage); "
+            "re-ingest required (schema changed) -- run: "
+            "python ragkit.py ingest <src> --db <this db>"
+        )
+
+
+def _record_fields_map(con):
+    """{parent_rid: (title, fields_dict)} for every ingested record's typed
+    filter fields, read ONCE per record from record_params (REVIEW_FINDINGS B2)
+    instead of rescanning a copy duplicated onto every passage row. Shared by
+    _eligible_rowids/count_matches/field_coverage/record_table."""
+    _ensure_current_schema(con)
+    rows = con.execute(
+        "SELECT parent_rid, title, fields_json FROM record_params").fetchall()
+    return {parent_rid: (title, json.loads(fields_json) if fields_json else {})
+            for parent_rid, title, fields_json in rows}
 
 
 # --------------------------------------------------------------------------- #
@@ -626,18 +584,29 @@ def validate_filter(flt, catalogue):
     return clean, errors
 
 
-def _eligible_rowids(con, clean_filter):
-    """Apply the validated filter against stored typed fields (the 'fields' JSON
-    column). Returns a set of rowids that pass, or None if no filter."""
+def _eligible_parents(con, clean_filter):
+    """Which parent (source-record) rids pass the validated filter, reading each
+    record's typed fields ONCE from record_params (REVIEW_FINDINGS B2) instead of
+    rescanning a copy duplicated onto every passage row. None if no filter (all
+    records eligible) -- same "no filter" contract _eligible_rowids has for rowids."""
     if not clean_filter:
         return None
-    rows = con.execute("SELECT rowid, fields FROM records").fetchall()
-    eligible = set()
-    for rowid, fields_json in rows:
-        fields = json.loads(fields_json) if fields_json else {}
-        if _passes(fields, clean_filter):
-            eligible.add(rowid)
-    return eligible
+    fields_map = _record_fields_map(con)
+    return {parent_rid for parent_rid, (_title, fields) in fields_map.items()
+            if _passes(fields, clean_filter)}
+
+
+def _eligible_rowids(con, clean_filter):
+    """Passage-ROWID view of _eligible_parents, for retrieve()/record_digest's
+    restrict/eligible set -- retrieval operates over passage embeddings/FTS rows,
+    so that set must stay passage rowids even though eligibility itself is now a
+    per-record (not per-passage) computation. Returns None if no filter."""
+    eligible_parents = _eligible_parents(con, clean_filter)
+    if eligible_parents is None:
+        return None
+    rows = con.execute("SELECT rowid, parent_rid, rid FROM records").fetchall()
+    return {rowid for rowid, parent_rid, rid in rows
+            if (parent_rid or rid) in eligible_parents}
 
 
 def count_matches(con, clean_filter):
@@ -646,13 +615,7 @@ def count_matches(con, clean_filter):
     so a large filtered set isn't silently reduced to k with no signal."""
     if not clean_filter:
         return None
-    rows = con.execute("SELECT parent_rid, rid, fields FROM records").fetchall()
-    parents = set()
-    for parent_rid, rid, fields_json in rows:
-        fields = json.loads(fields_json) if fields_json else {}
-        if _passes(fields, clean_filter):
-            parents.add(parent_rid or rid)
-    return len(parents)
+    return len(_eligible_parents(con, clean_filter) or set())
 
 
 def field_coverage(con, clean_filter=None):
@@ -664,17 +627,16 @@ def field_coverage(con, clean_filter=None):
     restricted to a category (e.g. clean_filter = {systemGroup: Aircraft}) it tells
     the two-pass extractor which detail fields actually have data in that slice, so
     ship-only or gun-only parameters aren't offered for an aircraft question."""
-    rows = con.execute("SELECT parent_rid, rid, fields FROM records").fetchall()
+    fields_map = _record_fields_map(con)
+    eligible_parents = _eligible_parents(con, clean_filter) if clean_filter else None
     seen = {}   # field -> set(parent_rid)
-    for parent_rid, rid, fields_json in rows:
-        fields = json.loads(fields_json) if fields_json else {}
-        if clean_filter and not _passes(fields, clean_filter):
+    for parent_rid, (_title, fields) in fields_map.items():
+        if eligible_parents is not None and parent_rid not in eligible_parents:
             continue
-        parent = parent_rid or rid
         for f, v in fields.items():
             if v is None or v == "" or v == []:
                 continue
-            seen.setdefault(f, set()).add(parent)
+            seen.setdefault(f, set()).add(parent_rid)
     return {f: len(ps) for f, ps in seen.items()}
 
 
@@ -1017,21 +979,17 @@ def record_table(con, query, clean_filter, catalogue=None, limit=40, max_cols=6)
 
     FUTURE: a cell is currently a single {value, unit, descr}; duplicate
     parameters / multiple subtitles per field collapse to one (see
-    extract_parametrics). Next iteration: cells become lists so repeated
+    record_model.rich_params). Next iteration: cells become lists so repeated
     parameters and their subtitles are all shown (stacked sub-rows)."""
-    eligible = _eligible_rowids(con, clean_filter)
-    if not eligible:
+    eligible_parents = _eligible_parents(con, clean_filter)
+    if not eligible_parents:
         return None
     catalogue = catalogue if catalogue is not None else load_catalogue(con)
-    # one representative passage per parent -> title + scalar fields
-    reps = {}
-    for rowid, parent_rid, prid, title, fields_json in con.execute(
-            "SELECT rowid, parent_rid, rid, title, fields FROM records").fetchall():
-        if rowid not in eligible:
-            continue
-        parent = parent_rid or prid
-        if parent not in reps:
-            reps[parent] = (title, json.loads(fields_json) if fields_json else {})
+    # title + typed fields per matched parent, read once per record
+    # (REVIEW_FINDINGS B2) rather than from a representative passage row.
+    fields_map = _record_fields_map(con)
+    reps = {parent: fields_map[parent] for parent in eligible_parents
+            if parent in fields_map}
     if not reps:
         return None
     # rich parametrics per parent + the union of available param names
@@ -1114,7 +1072,7 @@ def _est_tokens(s):
 
 def _truncate_to_tokens(text, token_budget):
     """Truncate free-text but preserve parametric lines (high-value, tiny).
-    Parameter lines start with 'Parameter ' from flatten_record()."""
+    Parameter lines start with 'Parameter ' from record_model.to_text()."""
     if token_budget <= 0:
         token_budget = 64
     char_budget = token_budget * 4

@@ -3,21 +3,33 @@
 catalogue.py - build a "filter vocabulary" from a set of records.
 
 At ingest time we sample every record's structured fields and classify each
-field into one of: numeric, categorical, date, free_text. For each we compute a
-compact summary the LLM can be given (and that we can validate filters against):
+field into one of: numeric, categorical, date, multi_value, free_text. For each
+we compute a compact summary the LLM can be given (and that we can validate
+filters against):
 
   numeric     -> 5th/95th percentile range, median, unit
   categorical -> the full label set (capped)
   date        -> min/max span
+  multi_value -> the union of elements seen (membership/"contains" filtering)
   free_text   -> a flag + a couple of example snippets (filter via semantics)
 
 The catalogue does double duty: it informs the filter-extraction prompt AND is
 the source of truth the emitted filter is validated against before any SQL runs.
+
+Field parsing itself lives in record_model.py (the canonical record model);
+extract_fields() below is a thin wrapper over record_model.typed_fields() so
+this module no longer reimplements the shape-parsing/coercion rules that used
+to independently diverge from ragkit.py's own parsers (REVIEW_FINDINGS C1).
+What THIS module owns is turning a corpus of typed field values into a
+classified catalogue: majority-type classification (A1), cross-record unit
+reconciliation (C4), and the categorical/free_text heuristics.
 """
 
-import datetime as _dt
-import json
 import statistics
+from collections import Counter
+
+import record_model
+import units as units_mod
 
 # Heuristics ---------------------------------------------------------------- #
 CATEGORICAL_MAX_DISTINCT = 50       # more distinct values than this -> not categorical
@@ -29,164 +41,46 @@ CATEGORICAL_ABS_FLOOR = 20          # <= this many distinct short values -> cate
 FREE_TEXT_MIN_LEN = 40             # long strings lean free-text
 SAMPLE_EXAMPLES = 2                 # example snippets to show for free-text
 
-
-UNIT_KEYS = ("unit", "uom")        # unit-of-measure key aliases
-VALUE_KEYS = ("value", "val")      # value key aliases for param-shaped dicts
-_MULTIVALUE_PREFIX = "\x00multi\x00"   # internal marker for joined scalar lists
-
-
-def _is_param_dict(d):
-    """A param-shaped dict looks like {value/val: ..., unit/uom: ..., definition: ...}.
-    We treat any dict carrying a value key (optionally with a unit/uom) as one."""
-    if not isinstance(d, dict):
-        return False
-    return any(k in d for k in VALUE_KEYS)
-
-
-def _param_value_unit(d):
-    value = next((d[k] for k in VALUE_KEYS if k in d), None)
-    unit = next((d[k] for k in UNIT_KEYS if k in d), None)
-    return value, unit
+# Majority-type classification (REVIEW_FINDINGS A1): a field used to need ~80%
+# of its values to coerce cleanly to number/date or the WHOLE field degraded to
+# free_text -- silently losing a clean majority (e.g. "Maximum speed": 23/37
+# records give a clean Mach number, 14 are raw strings like "35 mph (56 km/h)";
+# 62% numeric used to fail the old 80% bar and drop all 37 to free_text).
+# MAJORITY_MIN is the bar to classify as numeric/date AT ALL, indexing the typed
+# subset; between MAJORITY_MIN and FULL_MIN the entry is additionally flagged
+# "partial" (with a typed_count) so a filter/UI consumer knows not every record
+# has a comparable value for it.
+MAJORITY_MIN = 0.5
+FULL_MIN = 0.8
 
 
 def extract_fields(rec, dropped=None):
-    """Pull typed, filterable scalar fields from a record dict, flattening nested
-    objects into dotted field names (e.g. specs.thermal.max_temp).
+    """Pull typed, filterable scalar fields from a record dict. Returns
+    ({field_name: value}, {field_name: unit}) -- same contract as always.
 
-    Returns ({field_name: value}, {field_name: unit}).
-    - Nested dicts are recursed with dotted keys.
-    - A param-shaped dict {value/val, unit/uom, definition} is collapsed to its
-      scalar value (unit captured separately) wherever it appears, not just under
-      a 'parameters' key.
-    - A "parametrics" list (the schema-example.json / pages_schema shape --
-      [{parameter, parameterValue, uom, parameterDescr, ...}, ...]) is walked
-      the same way: each row becomes a bare field named by `parameter`, valued
-      by `parameterValue` (coerced to float when `uom` is set, since that's
-      this pipeline's convention for "this is a numeric quantity"), unit `uom`.
-    - Scalar lists are joined into a single string so they classify as categorical
-      (filterable by membership); other lists of objects are skipped for now.
+    Thin wrapper: normalizes the record into the canonical model (record_model.
+    normalize_record) and takes its typed_fields() view, so nested dicts flatten
+    to dotted paths, the 'parameters'/'params' container stays transparent,
+    param-shaped dicts collapse to value+unit, dates/ranges normalize, and native
+    lists pass through -- all exactly as record_model documents (and identically
+    to how ragkit.py derives the same record's embedding text and rich params,
+    since it's the same canonical model -- REVIEW_FINDINGS C1).
 
-    `dropped`: optional dict; when provided, structures this walker cannot index as
-    filter fields (lists of objects, unrecognised param-list shapes, ...) are
-    recorded into it as {path: {reason, count, example_keys}} so ingest can report
-    them loudly instead of silently ignoring a new/variant JSON shape.
+    `dropped`: optional dict; structures that can't be indexed as filter fields
+    (prose descriptions, media, unrecognised list shapes) are recorded into it via
+    record_model.note_drop so ingest can report them loudly -- same contract as
+    before.
     """
-    out = {}
-    units = {}
-    _walk(rec, "", out, units, skip_keys=("id", "title", "modelID"), dropped=dropped)
-    return out, units
-
-
-def _note_drop(dropped, path, value):
-    """Record a structure that couldn't be indexed as a filter field, classifying
-    it so the import report can tell prose (fine) from a genuinely unhandled shape
-    (needs an adapter)."""
-    if dropped is None:
-        return
-    reason = "unsupported value; not indexed as a filter field"
-    example_keys = None
-    if isinstance(value, list) and value and all(isinstance(x, dict) for x in value):
-        first = value[0]
-        example_keys = sorted(first.keys())
-        if any(kk in first for kk in ("descrType", "description", "shortDescription")):
-            reason = "prose descriptions (searchable via semantic search, not filterable)"
-        elif any(kk in first for kk in ("parameter", "parameterValue", "parameterDescr")):
-            reason = ("looks like a parametric list but rows lack parameter/"
-                      "parameterValue; NOT indexed (add/adjust an adapter)")
-        else:
-            reason = "list of objects; NOT indexed as filter fields (needs an adapter)"
-    elif isinstance(value, list):
-        reason = "mixed/nested list; NOT indexed as filter fields (needs an adapter)"
-    entry = dropped.setdefault(
-        path, {"reason": reason, "count": 0, "example_keys": example_keys})
-    entry["count"] += 1
-    if entry.get("example_keys") is None and example_keys:
-        entry["example_keys"] = example_keys
-
-
-def _walk(node, prefix, out, units, skip_keys=(), dropped=None):
-    for k, v in node.items():
-        if prefix == "" and k in skip_keys:
-            continue
-        path = f"{prefix}.{k}" if prefix else k
-
-        # param-shaped dict -> collapse to value (+unit), don't recurse further
-        if _is_param_dict(v):
-            value, unit = _param_value_unit(v)
-            if value is not None:
-                out[path] = value
-                if unit:
-                    units[path] = unit
-            continue
-
-        # plain nested dict (incl. a 'parameters'/'params' container) -> recurse.
-        # The conventional 'parameters'/'params' container is transparent: its
-        # children keep their bare names (max_temp, not parameters.max_temp) so
-        # filter field names stay clean and match how users refer to them.
-        if isinstance(v, dict):
-            child_prefix = prefix if k in ("parameters", "params") else path
-            _walk(v, child_prefix, out, units, dropped=dropped)
-            continue
-
-        # scalar
-        if isinstance(v, (str, int, float, bool)):
-            out[path] = v
-            continue
-
-        # list
-        if isinstance(v, list):
-            if k == "parametrics" and _is_parametrics_list(v):
-                _walk_parametrics(v, out, units)
-                continue
-            scalars = [x for x in v if isinstance(x, (str, int, float, bool))]
-            if scalars and len(scalars) == len(v):
-                # scalar list -> join for visibility/embedding. Prefix marks it as
-                # a multi-value field so the catalogue won't present the joined
-                # string as a single clean categorical label. Proper per-element
-                # membership filtering is a later refinement.
-                out[path] = _MULTIVALUE_PREFIX + ", ".join(str(x) for x in scalars)
-                continue
-            # other lists of objects (e.g. "descriptions", "media"): not indexed as
-            # filter fields (would need indexed/aggregated paths). Recorded so the
-            # import report is loud about what a new/variant shape left on the table.
-            _note_drop(dropped, path, v)
-            continue
-
-        # anything else (None etc.) -- ignore, but note genuinely unexpected types
-        if v is not None:
-            _note_drop(dropped, path, v)
-
-
-def _is_parametrics_list(v):
-    return bool(v) and all(
-        isinstance(item, dict) and "parameter" in item and "parameterValue" in item
-        for item in v
-    )
-
-
-def _walk_parametrics(items, out, units):
-    for item in items:
-        name = item.get("parameter")
-        if not name:
-            continue
-        raw_value = item.get("parameterValue")
-        uom = item.get("uom") or None
-        value = raw_value
-        if uom and isinstance(raw_value, str):
-            try:
-                value = float(raw_value)
-            except (TypeError, ValueError):
-                value = raw_value
-        if value is None or value == "":
-            continue
-        # last one wins if the same parameter name repeats within a record,
-        # matching the dict-key semantics used everywhere else in this file
-        out[name] = value
-        if uom:
-            units[name] = uom
+    canon = record_model.normalize_record(rec, dropped=dropped)
+    return record_model.typed_fields(canon)
 
 
 def _is_date(s):
+    """Strict ISO-ish date check for FILTER BOUNDS (a date_from/date_to a model
+    or caller supplies), deliberately separate from record_model.is_date_like
+    (which fuzzy-parses the natural-language dates found IN the corpus, e.g. "15
+    December 2005"). A filter bound should be unambiguous, so this stays narrow."""
+    import datetime as _dt
     if not isinstance(s, str):
         return False
     for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y-%m", "%Y"):
@@ -199,6 +93,7 @@ def _is_date(s):
 
 
 def _parse_date(s):
+    import datetime as _dt
     for fmt in ("%Y-%m-%d", "%Y/%m/%d", "%Y-%m", "%Y"):
         try:
             return _dt.datetime.strptime(s, fmt).date()
@@ -219,30 +114,83 @@ def _percentile(sorted_vals, pct):
     return sorted_vals[lo] + (sorted_vals[hi] - sorted_vals[lo]) * frac
 
 
+def _reconcile_units(field, vals, units, dropped):
+    """When a field carries >=2 distinct units across records (REVIEW_FINDINGS
+    C4 -- the same field ingested with two different units used to silently keep
+    whichever unit was seen first), convert minority-unit VALUES into the
+    majority unit via units_mod.convert so the catalogue's numeric stats and
+    later filter comparisons are apples-to-apples. `units` is the list of units
+    aligned 1:1 with `vals` (None where a value carried no unit).
+
+    A value that can't be dimensionally converted (mismatched dimension, pint
+    unavailable) is left AS-IS and the field is noted in `dropped` with a clear
+    reason, rather than silently comparing mismatched magnitudes.
+
+    Returns (vals, majority_unit) -- vals is a new list (only the converted
+    entries differ from the input); majority_unit is None if no value carried a
+    unit at all."""
+    present = [u for u in units if u]
+    if not present:
+        return vals, None
+    counts = Counter(present)
+    majority_unit = counts.most_common(1)[0][0]
+    if len(counts) == 1:
+        return vals, majority_unit
+
+    out_vals = list(vals)
+    unconverted = 0
+    for i, (v, u) in enumerate(zip(vals, units)):
+        if not u or u == majority_unit:
+            continue
+        if not isinstance(v, (int, float)) or isinstance(v, bool):
+            continue  # nothing numeric to convert (shouldn't normally happen)
+        try:
+            out_vals[i] = units_mod.convert(v, u, majority_unit)
+        except units_mod.ConversionError:
+            unconverted += 1
+    if unconverted and dropped is not None:
+        others = sorted(set(counts) - {majority_unit})
+        dropped[field] = {
+            "reason": (
+                f"unit conflict: values also seen in {others} alongside the "
+                f"majority unit '{majority_unit}'; {unconverted} value(s) could "
+                f"not be dimensionally converted and are left in their original "
+                f"(non-canonical) unit -- the catalogue entry's unit is "
+                f"'{majority_unit}'"),
+            "count": unconverted, "example_keys": None,
+        }
+    return out_vals, majority_unit
+
+
 def build_catalogue(records, units_by_field=None, dropped=None):
     """records: iterable of dicts (raw records, NOT flattened text).
     Returns a catalogue dict: {field: {type, ...summary}}.
 
     `dropped`: optional dict; when provided, structures that couldn't be indexed as
     filter fields (via extract_fields) plus fields whose values stayed untypable
-    ('unknown') are recorded so ingest can print a loud import-diagnostics report."""
+    ('unknown') or hit a cross-record unit conflict are recorded so ingest can
+    print a loud import-diagnostics report."""
     units_by_field = units_by_field or {}
-    # collect all values per field
-    values = {}   # field -> list of raw values
-    field_units = {}
+    # collect all values per field, plus the unit (or None) that went with each
+    # value -- needed (not just one first-seen unit per field) so _reconcile_units
+    # can see every unit actually used, not just the first record's.
+    values = {}       # field -> [values...]
+    value_units = {}  # field -> [unit-or-None, ...], aligned 1:1 with values[field]
     for rec in records:
         fields, units = extract_fields(rec, dropped=dropped)
         for f, v in fields.items():
             if v is None:
                 continue
             values.setdefault(f, []).append(v)
-        for f, u in units.items():
-            field_units.setdefault(f, u)
-    field_units.update(units_by_field)
+            value_units.setdefault(f, []).append(units.get(f))
 
     catalogue = {}
     for field, vals in values.items():
-        catalogue[field] = _classify_field(field, vals, field_units.get(field))
+        vals, unit = _reconcile_units(field, vals, value_units.get(field, []),
+                                      dropped)
+        if field in units_by_field:
+            unit = units_by_field[field]
+        catalogue[field] = _classify_field(field, vals, unit)
         # a field with values that classified as 'unknown' is present but not
         # usefully filterable -- surface it in the import report too.
         if dropped is not None and catalogue[field].get("type") == "unknown":
@@ -254,25 +202,29 @@ def build_catalogue(records, units_by_field=None, dropped=None):
 
 def _classify_field(field, vals, unit):
     n = len(vals)
-    # multi-value (joined scalar list)? Detect the marker and surface the union
-    # of individual elements as the known value set, flagged as multi-value so
-    # callers know membership semantics (contains-any) apply, not exact-equality.
-    # `count` = how many records carry a value for this field (its coverage). It
-    # drives coverage-ordered pruning of the filter spec (most-populated fields
-    # first, near-empty ones dropped) — see catalogue_to_prompt.
-    if any(isinstance(v, str) and v.startswith(_MULTIVALUE_PREFIX) for v in vals):
+
+    # multi-value: record_model.typed_fields returns NATIVE lists for a scalar-
+    # list field (no join/sentinel round-trip -- REVIEW_FINDINGS C2 fix). A field
+    # is multi-value if ANY record's value for it is a list; the value set is the
+    # union of every list's elements (a stray non-list value in the same field
+    # -- shouldn't normally happen -- is folded in as a singleton element rather
+    # than silently dropped).
+    if any(isinstance(v, list) for v in vals):
         elements = set()
         for v in vals:
-            if isinstance(v, str) and v.startswith(_MULTIVALUE_PREFIX):
-                body = v[len(_MULTIVALUE_PREFIX):]
-                elements.update(e.strip() for e in body.split(",") if e.strip())
+            if isinstance(v, list):
+                elements.update(str(x).strip() for x in v if str(x).strip())
+            elif str(v).strip():
+                elements.add(str(v).strip())
         return {"type": "multi_value", "count": n, "values": sorted(elements)}
 
-    # numeric?
+    # numeric? Majority-type classification (REVIEW_FINDINGS A1): see the module
+    # docstring / MAJORITY_MIN and FULL_MIN. Stats (p5/p95/median/min/max) are
+    # computed over the clean numeric subset only.
     nums = [v for v in vals if isinstance(v, (int, float)) and not isinstance(v, bool)]
-    if nums and len(nums) >= max(1, int(0.8 * n)):
+    if nums and len(nums) >= max(1, int(MAJORITY_MIN * n)):
         s = sorted(nums)
-        return {
+        entry = {
             "type": "numeric",
             "count": n,
             "unit": unit,
@@ -282,17 +234,26 @@ def _classify_field(field, vals, unit):
             "min": s[0],
             "max": s[-1],
         }
-    # date?
+        if len(nums) < FULL_MIN * n:
+            entry["partial"] = True
+            entry["typed_count"] = len(nums)
+        return entry
+
+    # date? Same majority logic, using record_model's dateutil-backed date
+    # detection (accepts "15 December 2005", not just %Y-%m-%d) instead of the
+    # old strict ISO-only check -- so e.g. "Introduced"/"First flight" can
+    # classify as date instead of free_text.
     strs = [v for v in vals if isinstance(v, str)]
-    if strs and all(_is_date(v) for v in strs):
-        dates = [_parse_date(v) for v in strs]
-        return {
-            "type": "date",
-            "count": n,
-            "min": min(dates).isoformat(),
-            "max": max(dates).isoformat(),
-        }
-    # categorical vs free_text
+    date_like = [v for v in strs if record_model.is_date_like(v)]
+    if date_like and len(date_like) >= max(1, int(MAJORITY_MIN * n)):
+        dates = [record_model.to_iso(v) for v in date_like]
+        entry = {"type": "date", "count": n, "min": min(dates), "max": max(dates)}
+        if len(date_like) < FULL_MIN * n:
+            entry["partial"] = True
+            entry["typed_count"] = len(date_like)
+        return entry
+
+    # categorical vs free_text (unchanged heuristics)
     if strs:
         distinct = sorted(set(strs))
         avg_len = sum(len(x) for x in strs) / len(strs)
@@ -319,16 +280,11 @@ def _classify_field(field, vals, unit):
 
 
 def normalize_stored_fields(typed):
-    """Convert internal multi-value markers into real lists for storage and
-    filtering. Strips the marker so it never reaches embeddings/FTS/comparisons."""
-    out = {}
-    for k, v in typed.items():
-        if isinstance(v, str) and v.startswith(_MULTIVALUE_PREFIX):
-            body = v[len(_MULTIVALUE_PREFIX):]
-            out[k] = [e.strip() for e in body.split(",") if e.strip()]
-        else:
-            out[k] = v
-    return out
+    """Historically converted the multi-value sentinel-string marker into a real
+    list before storage (REVIEW_FINDINGS C2). record_model.typed_fields now
+    returns native lists directly, so there's nothing left to convert -- kept as
+    a passthrough so existing callers don't need to change."""
+    return typed
 
 
 def partition_fields(catalogue, min_count=1, max_cardinality=40, limit=8):
@@ -371,6 +327,10 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
         two-pass extractor to show only partition fields, then only in-category
         detail fields);
       - `max_fields`, when given, caps the spec to the top-N by coverage.
+    A numeric/date field classified "partial" (REVIEW_FINDINGS A1 -- not every
+    record has a comparable value) gets a short coverage note, e.g. "(23/37
+    records have a filterable value)", so the model knows a miss on this field
+    doesn't necessarily mean "no match".
     Backward-compatible: a catalogue built before `count` existed simply isn't
     pruned (its fields sort as coverage 0 but nothing is dropped when counts are
     absent).
@@ -391,11 +351,15 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
     lines = ["Filterable fields:"]
     for field, spec, _cnt in items:
         t = spec["type"]
+        partial_note = ""
+        if spec.get("partial"):
+            partial_note = (f" ({spec.get('typed_count')}/{spec.get('count')} "
+                            f"records have a filterable value)")
         if t == "numeric":
             u = f" {spec['unit']}" if spec.get("unit") else ""
             lines.append(
                 f"- {field}: numeric, typical range {spec['p5']}–{spec['p95']}{u} "
-                f"(median {spec['median']}); filter with min/max."
+                f"(median {spec['median']}){partial_note}; filter with min/max."
             )
         elif t == "categorical":
             lines.append(
@@ -404,8 +368,8 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
             )
         elif t == "date":
             lines.append(
-                f"- {field}: date, range {spec['min']} to {spec['max']}; "
-                f"filter with date_from/date_to."
+                f"- {field}: date, range {spec['min']} to {spec['max']}"
+                f"{partial_note}; filter with date_from/date_to."
             )
         elif t == "multi_value":
             lines.append(
@@ -423,6 +387,7 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
 
 if __name__ == "__main__":
     import sys
+    import json
     # quick manual run: python catalogue.py records/
     import ragkit  # reuse loader for raw records
     import glob, os
