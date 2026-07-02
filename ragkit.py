@@ -92,12 +92,14 @@ import argparse
 import difflib
 import glob
 import json
+import math
 import os
 import re
 import sqlite3
 import statistics
 import struct
 import sys
+import threading
 import urllib.request
 import urllib.error
 
@@ -669,16 +671,169 @@ def _ensure_current_schema(con):
         )
 
 
-def _record_fields_map(con):
-    """{parent_rid: (title, fields_dict)} for every ingested record's typed
-    filter fields, read ONCE per record from record_params (REVIEW_FINDINGS B2)
-    instead of rescanning a copy duplicated onto every passage row. Shared by
-    _eligible_rowids/count_matches/field_coverage/record_table."""
-    _ensure_current_schema(con)
+# --------------------------------------------------------------------------- #
+# Retrieval caching (REVIEW_FINDINGS D1)                                       #
+# --------------------------------------------------------------------------- #
+#
+# Every retrieve() call used to (a) load ALL passage embeddings from sqlite and
+# vstack them, (b) separately re-scan rowid/parent_rid/rid for _eligible_rowids
+# and the 'auto' filter-mode's matched-parent count, (c) issue one SELECT per
+# rerank candidate for its text, and (d) issue one more SELECT per output row
+# for its final text/title/parent -- 3-4 full table scans plus dozens of point
+# queries, PER QUERY, even though the corpus only changes on re-ingest.
+# _record_fields_map (record_params) had the same one-full-scan-per-call shape,
+# and is itself called several times within a single request (filtering, the
+# table, the digest).
+#
+# Both are cached here, in memory, keyed by db FILE PATH rather than by
+# sqlite3.Connection -- compare_server gives every worker thread its own
+# connection (threading.local), but they all read the same file, so a
+# path-keyed cache lets every thread share ONE copy instead of each rebuilding
+# its own. Invalidation is an mtime check on every access: ingest() rewrites
+# the file, which bumps its mtime, so a stale cache is detected and rebuilt on
+# the very next call -- no explicit "please invalidate" call is required for
+# the normal re-ingest-then-query flow. invalidate_caches() is the seam for
+# callers that want to force a reload without waiting on that check (e.g.
+# tests, or an in-process ingest immediately followed by a query on the same
+# mtime-resolution tick). Both caches are guarded by a lock since compare_server
+# serves threaded=True and multiple worker threads can race to build the same
+# entry; whichever thread wins the lock builds it once, the rest reuse it.
+
+_passage_cache = {}       # abs db path -> dict, see _build_passage_cache_entry
+_passage_cache_lock = threading.Lock()
+_fields_cache = {}        # abs db path -> (mtime, {parent_rid: (title, fields)})
+_fields_cache_lock = threading.Lock()
+
+
+def _db_path_of(con):
+    """The db FILE PATH backing `con`, for cache keys / mtime checks. PRAGMA
+    database_list's first row is always 'main'; its 3rd column is the absolute
+    path sqlite3 opened ('' for an anonymous/':memory:' db). Callers treat a
+    falsy result (or ':memory:') as 'don't cache' (see _cacheable) -- a single
+    shared key for every in-memory db would let unrelated ones collide."""
+    row = con.execute("PRAGMA database_list").fetchone()
+    return row[2] if row else None
+
+
+def _cache_key(db_path):
+    return os.path.abspath(db_path)
+
+
+def _cacheable(db_path):
+    return bool(db_path) and db_path != ":memory:"
+
+
+def _build_passage_cache_entry(con, mtime):
+    """One full pass over `records`, building every array/lookup retrieve()
+    needs so it never has to query per-row again for this db version."""
+    rows = con.execute(
+        "SELECT rowid, parent_rid, rid, title, text, embedding "
+        "FROM records").fetchall()
+    rowids = np.array([r[0] for r in rows], dtype=np.int64)
+    matrix = (np.vstack([unpack(r[5]) for r in rows]) if rows
+              else np.zeros((0, EMBED_DIM), dtype=np.float32))
+    return {
+        "rowids": rowids,                              # ndarray[int], row i <-> matrix[i]
+        "matrix": matrix,                               # ndarray[N, EMBED_DIM]
+        "parent": {r[0]: (r[1] or r[2]) for r in rows},  # rowid -> parent_rid (coalesced)
+        "rid": {r[0]: r[2] for r in rows},               # rowid -> passage rid
+        "title": {r[0]: r[3] for r in rows},             # rowid -> title
+        "text": {r[0]: r[4] for r in rows},              # rowid -> passage text
+        "mtime": mtime,
+    }
+
+
+def _load_passage_cache(con, db_path):
+    """{"rowids", "matrix", "parent", "rid", "title", "text", "mtime"} for
+    every passage row (REVIEW_FINDINGS D1) -- see the section docstring above
+    for the caching/invalidation contract. Not cached for an unresolvable or
+    ':memory:' path (_cacheable) -- built fresh on every call in that case,
+    i.e. the pre-caching behaviour, so an in-memory test db is always correct
+    (just not sped up)."""
+    try:
+        mtime = os.path.getmtime(db_path) if db_path else None
+    except OSError:
+        mtime = None
+    if not _cacheable(db_path):
+        return _build_passage_cache_entry(con, mtime)
+    key = _cache_key(db_path)
+    entry = _passage_cache.get(key)
+    if entry is not None and entry["mtime"] == mtime:
+        return entry
+    with _passage_cache_lock:
+        entry = _passage_cache.get(key)  # re-check: another thread may have refreshed it
+        if entry is not None and entry["mtime"] == mtime:
+            return entry
+        entry = _build_passage_cache_entry(con, mtime)
+        _passage_cache[key] = entry
+        return entry
+
+
+def invalidate_caches(db_path=None):
+    """Drop the passage + fields caches (REVIEW_FINDINGS D1's invalidation
+    seam). Both already self-invalidate on the NEXT call whenever the db
+    file's mtime has changed (covers a normal re-ingest), so this is only
+    needed by a caller that wants to force a reload without waiting on that
+    check. db_path=None clears every cached db; otherwise only that one."""
+    with _passage_cache_lock, _fields_cache_lock:
+        if db_path is None:
+            _passage_cache.clear()
+            _fields_cache.clear()
+        else:
+            key = _cache_key(db_path)
+            _passage_cache.pop(key, None)
+            _fields_cache.pop(key, None)
+
+
+def prime_caches(con):
+    """Populate the passage + fields caches for `con`'s db right now
+    (REVIEW_FINDINGS D1), so the FIRST real query after boot is instant
+    instead of paying the cold-scan cost on a user's click. Called by
+    compare_server.warm_start(); safe to call again later -- it's just an
+    mtime re-check that returns the already-cached entry when the db hasn't
+    changed."""
+    db_path = _db_path_of(con)
+    _load_passage_cache(con, db_path)
+    _record_fields_map(con)
+
+
+def _build_record_fields_map(con):
     rows = con.execute(
         "SELECT parent_rid, title, fields_json FROM record_params").fetchall()
     return {parent_rid: (title, json.loads(fields_json) if fields_json else {})
             for parent_rid, title, fields_json in rows}
+
+
+def _record_fields_map(con):
+    """{parent_rid: (title, fields_dict)} for every ingested record's typed
+    filter fields, read ONCE per record from record_params (REVIEW_FINDINGS B2)
+    instead of rescanning a copy duplicated onto every passage row. Shared by
+    _eligible_rowids/count_matches/field_coverage/record_table.
+
+    Memoized per db path (REVIEW_FINDINGS D1), invalidated on file mtime
+    change (see _load_passage_cache's docstring for why path-keyed rather
+    than connection-keyed) -- record_params is rescanned once per db
+    VERSION, not once per call, even though several calls typically happen
+    within a single request (filtering, the table, the digest)."""
+    _ensure_current_schema(con)
+    db_path = _db_path_of(con)
+    if not _cacheable(db_path):
+        return _build_record_fields_map(con)
+    try:
+        mtime = os.path.getmtime(db_path)
+    except OSError:
+        mtime = None
+    key = _cache_key(db_path)
+    cached = _fields_cache.get(key)
+    if cached is not None and cached[0] == mtime:
+        return cached[1]
+    with _fields_cache_lock:
+        cached = _fields_cache.get(key)
+        if cached is not None and cached[0] == mtime:
+            return cached[1]
+        result = _build_record_fields_map(con)
+        _fields_cache[key] = (mtime, result)
+        return result
 
 
 # --------------------------------------------------------------------------- #
@@ -913,13 +1068,19 @@ def _eligible_rowids(con, clean_filter):
     """Passage-ROWID view of _eligible_parents, for retrieve()/record_digest's
     restrict/eligible set -- retrieval operates over passage embeddings/FTS rows,
     so that set must stay passage rowids even though eligibility itself is now a
-    per-record (not per-passage) computation. Returns None if no filter."""
+    per-record (not per-passage) computation. Returns None if no filter.
+
+    Reads the rowid->parent map from the passage cache (REVIEW_FINDINGS D1)
+    instead of a dedicated 'SELECT rowid, parent_rid, rid FROM records' scan --
+    this doubles as the cache-warming call, since it runs first thing in
+    retrieve(), so retrieve()'s own _load_passage_cache call right after is
+    always a cheap hit for that request."""
     eligible_parents = _eligible_parents(con, clean_filter)
     if eligible_parents is None:
         return None
-    rows = con.execute("SELECT rowid, parent_rid, rid FROM records").fetchall()
-    return {rowid for rowid, parent_rid, rid in rows
-            if (parent_rid or rid) in eligible_parents}
+    cache = _load_passage_cache(con, _db_path_of(con))
+    return {rowid for rowid, parent in cache["parent"].items()
+            if parent in eligible_parents}
 
 
 def count_matches(con, clean_filter):
@@ -1086,7 +1247,71 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
              clean_filter=None, max_context_tokens=None, max_per_parent=1,
              rerank=True, rerank_pool=30, rerank_model=DEFAULT_RERANK_MODEL,
              filter_mode="hard", soft_boost=0.15, guard_min=None,
-             matched_parents=None):
+             matched_parents=None, pin_entities=None, min_rel=0.0):
+    """Hybrid vector + FTS5 retrieval, RRF-fused, optionally cross-encoder
+    reranked -- plus (REVIEW_FINDINGS G1/G2/G3) deterministic entity pinning,
+    balanced multi-entity comparisons, and relevance-floor adaptive packing.
+
+    pin_entities (G1 consume, default None): parent_rids to GUARANTEE appear
+    in the output (their single best-matching passage each), computed by the
+    CALLER via match_entities(query, load_aliases(con)) -- embeddings are the
+    weakest tool for exact designations ("AIM-120" vs "Slammer"), so a named
+    lookup shouldn't have to rely on ranking alone. An entity already ranked
+    in on its own merit is left alone (nothing to inject); one that isn't is
+    INJECTED before the k-slot assembly loop below (so it competes for a slot
+    like everything else -- respecting max_per_parent/k, see entity_cap) and,
+    only for that forced injection, bypasses the min_rel floor (the whole
+    point of pinning is that a correct match can score low on embedding/
+    rerank similarity -- an entity that already ranked in on its own merit
+    has no need for the exemption). An entity that fails an ACTIVE HARD
+    filter (filter_mode resolves to 'hard' and none of the entity's own
+    passages are in the eligible set) is SKIPPED entirely, not force-injected
+    -- pinning augments ranking, it must never bypass a validated filter
+    gate. Under 'soft'/'fill'/auto-resolved-to-'fill'/'off', the filter isn't
+    a hard gate, so pinning always proceeds.
+
+    When >=2 distinct entities in pin_entities are valid (REVIEW_FINDINGS
+    G2 -- a comparison, e.g. "Compare the F-22 and F-35"), no single one may
+    claim more than ceil(k / n_pinned) of the k slots, so whichever entity
+    ranks/embeds better can't fill every slot and starve the other side.
+    This applies whether or not each entity needed forced injection --
+    "Compare X and Y" typically has BOTH already ranked in (the query
+    literally names them), so the cap can't depend on injection having
+    fired, only on how many distinct named entities are genuinely in play.
+    At the library default max_per_parent=1 this is already a no-op (one
+    parent can never get more than 1 slot regardless of entity_cap), but it
+    matters once a caller raises max_per_parent for deeper per-entity
+    comparisons.
+
+    min_rel (G3, default 0.0): a floor in [0,1] on the NORMALIZED relevance
+    score (`rel` -- normalized RRF score, upgraded to normalized cross-
+    encoder score post-rerank; see _normalize_scores) below which a
+    (non-pinned) candidate is skipped rather than padded into the k slots.
+    k stays a MAX, not a target: with min_rel=0.0 (default) every candidate
+    clears the floor (the worst-scored candidate normalizes to exactly 0.0,
+    and the check is strict '<'), so behaviour is IDENTICAL to before this
+    floor existed -- exactly top-k, same as always. A caller that wants
+    adaptive packing (fewer than k when the tail is noise, or a strong
+    k-1/k passage kept where a weak one used to pad it out) passes a modest
+    floor (e.g. min_rel=0.2) instead of changing the default.
+
+    max_context_tokens (unchanged contract, REVIEW_FINDINGS B1): a SOFT,
+    passages-ONLY cap applied here via per-passage truncation
+    (_truncate_to_tokens, which always preserves 'Parameter ' lines). This is
+    NOT the global prompt budget -- a caller that also renders a table/digest
+    should drive the real, whole-prompt budget through build_prompt's own
+    max_context_tokens (see assemble_context), which allocates ONE budget
+    across passages/table/digest and is authoritative for what actually
+    reaches the model. Passing a cap here too is harmless (just a tighter,
+    passages-only pre-cap that assembly's budget then further respects) --
+    None (default) means retrieve() returns full-size passages, which is what
+    this phase's callers (ragkit.answer / compare_server.build_context) now
+    do, so ALL budgeting happens exactly once, in assembly.
+
+    Passage embeddings + metadata come from the in-memory cache built by
+    _load_passage_cache (REVIEW_FINDINGS D1) instead of a fresh full-table
+    scan plus N+1 point queries every call; see that function's docstring.
+    """
     # --- pre-retrieval metadata filter ---
     eligible = _eligible_rowids(con, clean_filter)  # None if no filter
 
@@ -1101,26 +1326,30 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     #   auto -> k-guard: hard-gate when the matched set is comfortably larger than k;
     #           otherwise 'fill', so a narrow match can't starve retrieval (returning
     #           fewer than k) yet its matches are never discarded.
+    cache = _load_passage_cache(con, _db_path_of(con))
     mode = "off" if eligible is None else filter_mode
     if mode == "auto":
         if matched_parents is None:
-            pr = con.execute("SELECT rowid, parent_rid, rid FROM records").fetchall()
-            matched_parents = len({(p or r) for (rid, p, r) in pr if rid in eligible})
+            matched_parents = len({p for rid, p in cache["parent"].items()
+                                   if rid in eligible})
         threshold = guard_min if guard_min is not None else k
         mode = "hard" if matched_parents > threshold else "fill"
     restrict = (mode == "hard")
 
     # --- vector side ---
     qvec = embed([query], embed_model)[0]
-    rows = con.execute("SELECT rowid, embedding FROM records").fetchall()
-    if not rows:
+    all_rowids, all_matrix = cache["rowids"], cache["matrix"]
+    if all_rowids.size == 0:
         return []
+    rowid_list = all_rowids.tolist()
     if restrict:
-        rows = [r for r in rows if r[0] in eligible]
-        if not rows:
+        mask = np.array([rid in eligible for rid in rowid_list], dtype=bool)
+        ids = [rid for rid, keep in zip(rowid_list, mask) if keep]
+        mat = all_matrix[mask]
+        if not ids:
             return []  # hard filter excluded everything; caller decides on fallback
-    ids = [r[0] for r in rows]
-    mat = np.vstack([unpack(r[1]) for r in rows])
+    else:
+        ids, mat = rowid_list, all_matrix
     sims = mat @ qvec  # both normalised -> cosine
     order = np.argsort(-sims)[:pool]
     vector_hits = [ids[i] for i in order]
@@ -1147,7 +1376,8 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     ranked = sorted(scores, key=scores.get, reverse=True)
 
     # Relevance in [0,1] per candidate: normalized RRF now, upgraded to normalized
-    # cross-encoder score after rerank. This is the basis the soft filter adds to.
+    # cross-encoder score after rerank. This is the basis the soft filter adds to,
+    # and (REVIEW_FINDINGS G3) the basis the min_rel floor gates on.
     rel = _normalize_scores({rid: scores[rid] for rid in ranked})
 
     # --- cross-encoder rerank over a wider candidate pool ---
@@ -1157,12 +1387,7 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     # if the reranker can't load (e.g. offline first run).
     if rerank and len(ranked) > 1:
         cand = ranked[:rerank_pool]
-        text_by_id = {}
-        for rid in cand:
-            r = con.execute("SELECT text FROM records WHERE rowid=?",
-                            (rid,)).fetchone()
-            if r:
-                text_by_id[rid] = r[0]
+        text_by_id = {rid: cache["text"][rid] for rid in cand if rid in cache["text"]}
         cand = [rid for rid in cand if rid in text_by_id]
         try:
             rk = get_reranker(rerank_model)
@@ -1201,10 +1426,58 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
         non = [r for r in ranked if r not in eligible]
         ranked = elig + non
 
+    # --- entity pinning (G1 consume) + balanced multi-entity split (G2) ---
+    pinned_rowid_set, pinned_parent_set, entity_cap = set(), set(), None
+    if pin_entities:
+        parent_to_rowids = {}
+        for rid, p in cache["parent"].items():
+            parent_to_rowids.setdefault(p, []).append(rid)
+        idx_of = {rid: i for i, rid in enumerate(rowid_list)}
+
+        def _best_rowid(rowids):
+            # The entity's own best-matching passage (highest cosine to the
+            # query) -- reuses qvec/all_matrix already in hand, no extra query.
+            return max(rowids, key=lambda rid: (float(all_matrix[idx_of[rid]] @ qvec)
+                                                if rid in idx_of else -1.0))
+
+        have_parents = {cache["parent"].get(rid) for rid in ranked}
+        pinned_rowids = []
+        # Every pin_entities parent that's VALID (has passages, and passes an
+        # active hard filter) counts toward the comparison split (G2) even if
+        # it didn't need forced injection below -- "Compare the F-22 and
+        # F-35" typically has BOTH already ranked in on their own merit (the
+        # query literally names them), so entity_cap must not depend on
+        # whether injection specifically fired, only on how many distinct
+        # named entities are genuinely in play.
+        valid_pinned_parents = []
+        for parent in pin_entities:
+            candidates = parent_to_rowids.get(parent, [])
+            if mode == "hard" and eligible is not None:
+                # A hard filter is an explicit gate; pinning augments ranking,
+                # it must never bypass a validated filter (don't weaken
+                # filter semantics). An entity that fails the active hard
+                # filter is skipped here, not force-injected.
+                candidates = [rid for rid in candidates if rid in eligible]
+            if not candidates:
+                continue  # unknown parent, or it fails the active hard filter
+            valid_pinned_parents.append(parent)
+            if parent in have_parents:
+                continue  # already ranked in on its own merit -- nothing to INJECT
+            pinned_rowids.append(_best_rowid(candidates))
+            have_parents.add(parent)
+        if pinned_rowids:
+            seen = set(pinned_rowids)
+            ranked = pinned_rowids + [rid for rid in ranked if rid not in seen]
+            pinned_rowid_set = seen
+        if len(valid_pinned_parents) >= 2:
+            pinned_parent_set = set(valid_pinned_parents)
+            entity_cap = math.ceil(k / len(pinned_parent_set))
+
     # --- assemble output: passage-level, diversified + cited by parent ---
     # Passages are retrieved individually (better matching on long docs, and a
     # hit is one bounded passage rather than a whole page), but we cap passages
-    # per source so one document can't monopolise the k slots, and we cite the
+    # per source so one document can't monopolise the k slots (tighter still,
+    # per pinned entity, for comparisons -- entity_cap above), and we cite the
     # parent record so citations stay record-level and readable.
     out = []
     used_tokens = 0
@@ -1212,16 +1485,18 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     for rowid in ranked:
         if len(out) >= k:
             break
-        row = con.execute(
-            "SELECT rid, parent_rid, title, text FROM records WHERE rowid=?",
-            (rowid,),
-        ).fetchone()
-        if not row:
+        if rowid not in cache["text"]:
             continue
-        passage_rid, parent_rid, title, text = row
-        parent = parent_rid or passage_rid
-        if per_parent.get(parent, 0) >= max_per_parent:
+        if (rowid not in pinned_rowid_set and min_rel > 0.0
+                and rel.get(rowid, 0.0) < min_rel):
+            continue  # G3: below the relevance floor -- don't pad in noise
+        parent = cache["parent"][rowid]
+        cap = max_per_parent
+        if entity_cap is not None and parent in pinned_parent_set:
+            cap = min(max_per_parent, entity_cap)
+        if per_parent.get(parent, 0) >= cap:
             continue
+        text = cache["text"][rowid]
         if max_context_tokens is not None:
             # rough token estimate ~ chars/4; truncate body, always keep params line
             block_tokens = _est_tokens(text)
@@ -1230,8 +1505,8 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
             text = _truncate_to_tokens(text, max_context_tokens - used_tokens)
             used_tokens += _est_tokens(text)
         per_parent[parent] = per_parent.get(parent, 0) + 1
-        out.append({"rid": parent, "passage": passage_rid,
-                    "title": title, "text": text})
+        out.append({"rid": parent, "passage": cache["rid"][rowid],
+                    "title": cache["title"][rowid], "text": text})
     return out
 
 
@@ -1251,27 +1526,32 @@ def record_digest(con, query, clean_filter, embed_model=DEFAULT_EMBED_MODEL,
     top-k full passages. Each entry is a record's single best-matching passage
     (extractive snippet) relative to the query. Cheap: bi-encoder cosine, best
     passage per parent. Returns list of {rid, title, snippet}, most-relevant
-    first, capped at `limit`, excluding parent rids in `exclude`."""
+    first, capped at `limit`, excluding parent rids in `exclude`.
+
+    Reads passage embeddings/metadata from the shared cache (REVIEW_FINDINGS
+    D1) instead of its own dedicated full-table scan -- this used to be one
+    of the 3-4 redundant full scans a single request could trigger (alongside
+    retrieve()'s own, now-cached, scan)."""
     eligible = _eligible_rowids(con, clean_filter)
     if not eligible:
         return []
     exclude = exclude or set()
     qvec = embed([query], embed_model)[0]
-    rows = con.execute(
-        "SELECT rowid, parent_rid, rid, title, text, embedding FROM records"
-    ).fetchall()
-    elig = [r for r in rows if r[0] in eligible]
-    if not elig:
+    cache = _load_passage_cache(con, _db_path_of(con))
+    idx_of = {rid: i for i, rid in enumerate(cache["rowids"].tolist())}
+    elig_rowids = [rid for rid in eligible if rid in idx_of]
+    if not elig_rowids:
         return []
-    sims = np.vstack([unpack(r[5]) for r in elig]) @ qvec
+    sims = cache["matrix"][[idx_of[rid] for rid in elig_rowids]] @ qvec
     best = {}  # parent -> (score, title, snippet)
-    for (rowid, parent_rid, prid, title, text, _emb), score in zip(elig, sims):
-        parent = parent_rid or prid
+    for rowid, score in zip(elig_rowids, sims):
+        parent = cache["parent"][rowid]
         if parent in exclude:
             continue
         score = float(score)
         if parent not in best or score > best[parent][0]:
-            best[parent] = (score, title, _snippet(text, snippet_chars))
+            best[parent] = (score, cache["title"][rowid],
+                            _snippet(cache["text"][rowid], snippet_chars))
     ordered = sorted(best.items(), key=lambda kv: -kv[1][0])[:limit]
     return [{"rid": p, "title": t, "snippet": s} for p, (_sc, t, s) in ordered]
 
@@ -1305,6 +1585,17 @@ _MULTI_RECORD_RE = re.compile(
     r"all\s+the)\b", re.I)
 
 
+def _alias_pattern(alias):
+    """Compile `alias` (expected already-lowercase) as a token-boundary-
+    anchored regex (REVIEW_FINDINGS G1): "f-16" must match in "the f-16
+    fighter" but NOT inside "f-160" or "af-16x" -- the (?<![a-z0-9])/
+    (?![a-z0-9]) anchors do that without a full tokenizer. Shared by
+    _matched_entities (is_analytic_query's single-entity suppression) and
+    match_entities (retrieval pinning) so the anchor logic can't drift
+    between the two call sites that both need it."""
+    return re.compile(r"(?<![a-z0-9])" + re.escape(alias) + r"(?![a-z0-9])")
+
+
 def _matched_entities(query, aliases):
     """The set of parent_rids named by ANY alias found in `query` (whole-word/
     phrase, case-insensitive). Used by is_analytic_query to detect "this query
@@ -1317,9 +1608,50 @@ def _matched_entities(query, aliases):
     ql = query.lower()
     matched = set()
     for alias, rids in aliases.items():
-        if re.search(r"(?<![a-z0-9])" + re.escape(alias) + r"(?![a-z0-9])", ql):
+        if _alias_pattern(alias).search(ql):
             matched.update(rids)
     return matched
+
+
+def match_entities(query, aliases):
+    """Which parent_rids are named by an alias in `query`, for deterministic
+    retrieval PINNING (REVIEW_FINDINGS G1 consume -- see retrieve()'s
+    pin_entities kwarg). Embeddings are the weakest tool for exact
+    designations ("AIM-120" vs "AIM-120 AMRAAM" vs "Slammer"), so a
+    named-entity query shouldn't have to rely on ranking alone to surface its
+    record -- this is the deterministic half of that, computed by the CALLER
+    (ragkit.answer / compare_server.build_context, which already have
+    load_aliases(con) in hand) and handed to retrieve() so the function stays
+    testable without a live db.
+
+    Longest-alias-first: aliases are tried longest to shortest, so a more
+    specific match (the full title, or a multi-word popular name) is recorded
+    -- and therefore PRIORITIZED in the returned order -- ahead of a shorter
+    alias that happens to also match. What actually PREVENTS a substring
+    false-hit ("f-16" firing inside "f-160") is the word-boundary anchor
+    (_alias_pattern), not the ordering -- the ordering is purely about which
+    genuine match wins priority when k is tight and not every pin fits.
+
+    Returns parent_rids in first-matched order, deduplicated (a dict's key
+    order is insertion order in Python 3.7+, so ties at the same alias length
+    fall back to the alias table's own order). [] if `aliases`/`query` is
+    falsy or nothing matches -- retrieve()'s pin_entities treats that the
+    same as "no pinning requested".
+
+    >>> match_entities("What is the range of the AIM-120?",
+    ...                {"aim-120": ["2006"], "f-16": ["2025"]})
+    ['2006']
+    """
+    if not aliases or not query:
+        return []
+    ql = query.lower()
+    rids = []
+    for alias in sorted(aliases.keys(), key=len, reverse=True):
+        if _alias_pattern(alias).search(ql):
+            for rid in aliases[alias]:
+                if rid not in rids:
+                    rids.append(rid)
+    return rids
 
 
 def is_analytic_query(query, clean_filter, aliases=None):
@@ -1455,33 +1787,242 @@ def record_table(con, query, clean_filter, catalogue=None, limit=40, max_cols=6)
     return {"columns": columns, "rows": rows[:limit], "total": len(reps)}
 
 
-def _render_table_text(table):
+def _render_table_text(table, token_budget=None):
     """Render the structured table for the prompt: one line per record, each
-    field as value + unit + (description), so the model sees the full field."""
+    field as value + unit + (description), so the model sees the full field.
+
+    token_budget (REVIEW_FINDINGS B1, optional): if given and the full render
+    exceeds it, shrink in two stages, cheapest/least-essential loss first:
+      1. drop every cell's `descr` text (often the biggest single chunk of a
+         table -- up to ~180 chars x 6 cols x 40 rows -- and the least
+         essential: the value+unit alone still answers most questions);
+      2. if STILL over budget, drop rows from the BOTTOM (rows are already
+         sorted by the numeric column, or title -- see record_table -- so a
+         "longest N" style question keeps its most relevant rows first).
+    The '(+N more not shown)' marker always reflects the TRUE number of rows
+    not rendered -- original total minus rows actually kept -- whether they
+    were excluded upstream (record_table's own `limit`) or dropped here for
+    budget, so the model is never told a false count. None (default,
+    unbounded) reproduces the exact pre-B1 render: full descriptions, every
+    row record_table returned."""
     cols = table["columns"]
-    lines = [f"Structured fields for all {table['total']} matched records "
-             f"(field=value unit (description)):"]
-    for r in table["rows"]:
-        segs = []
-        for col in cols:
-            c = r["cells"].get(col) or {}
-            if c.get("value") in (None, ""):
-                continue
-            seg = f"{col}={c['value']}"
-            if c.get("unit"):
-                seg += f" {c['unit']}"
-            descr = c.get("descr")
-            if descr:
-                # full descr is kept in the API/UI cell; cap it here so the
-                # in-prompt table stays token-bounded across many rows/columns.
-                if len(descr) > 180:
-                    descr = descr[:180].rstrip() + "…"
-                seg += f" ({descr})"
-            segs.append(seg)
-        lines.append(f"[{r['rid']}] {r['title']}: " + "; ".join(segs))
-    if table["total"] > len(table["rows"]):
-        lines.append(f"(+{table['total'] - len(table['rows'])} more not shown)")
-    return "\n".join(lines)
+
+    def render(rows, with_descr):
+        lines = [f"Structured fields for all {table['total']} matched records "
+                 f"(field=value unit (description)):"]
+        for r in rows:
+            segs = []
+            for col in cols:
+                c = r["cells"].get(col) or {}
+                if c.get("value") in (None, ""):
+                    continue
+                seg = f"{col}={c['value']}"
+                if c.get("unit"):
+                    seg += f" {c['unit']}"
+                descr = c.get("descr")
+                if descr and with_descr:
+                    # full descr is kept in the API/UI cell; cap it here so the
+                    # in-prompt table stays token-bounded across many rows/cols.
+                    if len(descr) > 180:
+                        descr = descr[:180].rstrip() + "…"
+                    seg += f" ({descr})"
+                segs.append(seg)
+            lines.append(f"[{r['rid']}] {r['title']}: " + "; ".join(segs))
+        if table["total"] > len(rows):
+            lines.append(f"(+{table['total'] - len(rows)} more not shown)")
+        return "\n".join(lines)
+
+    rows = table["rows"]
+    text = render(rows, with_descr=True)
+    if token_budget is None or _est_tokens(text) <= token_budget:
+        return text
+
+    # stage 1: drop descr text (cheapest content loss, usually the biggest saving)
+    text = render(rows, with_descr=False)
+    if _est_tokens(text) <= token_budget:
+        return text
+
+    # stage 2: binary-search the most rows (from the top, preserving sort
+    # order) that fit the budget without descr text. Always keep at least the
+    # top row -- the model should see SOMETHING concrete even under a very
+    # tight budget, rather than a table that's all header + "(+N more)".
+    lo, hi = 1, len(rows)
+    best = render(rows[:1], with_descr=False)
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        candidate = render(rows[:mid], with_descr=False)
+        if _est_tokens(candidate) <= token_budget:
+            best = candidate
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return best
+
+
+def _render_digest_text(digest, token_budget=None):
+    """Render the digest block for the prompt: one relevance-ranked snippet
+    per record beyond the top-k passages (see record_digest).
+
+    token_budget (REVIEW_FINDINGS B1, optional): if given and the full render
+    exceeds it, drop entries from the BOTTOM (digest is already relevance-
+    ordered) until it fits, appending a truthful '(+N more not shown)' note --
+    the unbounded render never carries one (record_digest's own `limit` is
+    the only cap today), so this note only appears when assembly itself had
+    to cut further. None (default, unbounded) reproduces the exact pre-B1
+    render."""
+    header = ("Additional records matching the same metadata filter (one "
+              "relevance snippet each; these are partial — note if a "
+              "snippet is insufficient to answer):")
+
+    def render(entries, n_dropped):
+        lines = [f"[{d['rid']}] {d['title']} — {d['snippet']}" for d in entries]
+        if n_dropped:
+            lines.append(f"(+{n_dropped} more not shown)")
+        return header + "\n" + "\n".join(lines)
+
+    text = render(digest, 0)
+    if token_budget is None or _est_tokens(text) <= token_budget:
+        return text
+
+    lo, hi = 1, len(digest)
+    best = render(digest[:1], len(digest) - 1)
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        candidate = render(digest[:mid], len(digest) - mid)
+        if _est_tokens(candidate) <= token_budget:
+            best = candidate
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return best
+
+
+def _pack_passages(contexts, token_budget=None):
+    """Render + pack passage blocks (REVIEW_FINDINGS B1's passage share of the
+    global budget) in the given order (already ranked/pinned/floored by
+    retrieve()) up to `token_budget`: per-passage truncation via
+    _truncate_to_tokens (always keeps 'Parameter ' lines -- see its
+    docstring), and once a passage doesn't fit even minimally truncated,
+    later ones are dropped entirely rather than emitted as useless empty
+    fragments (mirrors retrieve()'s own former inline loop, just running here
+    against the FULL passages retrieve() now returns to assembly).
+    token_budget=None (default) means unbounded -- every passage in full,
+    nothing truncated or dropped (today's pre-B1 behaviour)."""
+    blocks = [f"[{c['rid']}] {c['title']}\n{c['text']}" for c in contexts]
+    if token_budget is None:
+        return "\n\n---\n\n".join(blocks)
+    kept = []
+    used = 0
+    for block in blocks:
+        block_tokens = _est_tokens(block)
+        if used + block_tokens > token_budget:
+            if kept:
+                break  # budget hit and we already have at least one passage
+            # always keep at least the first passage, truncated as best we
+            # can -- _truncate_to_tokens floors token_budget<=0 to 64 itself.
+            block = _truncate_to_tokens(block, token_budget - used)
+            block_tokens = _est_tokens(block)
+        kept.append(block)
+        used += block_tokens
+    return "\n\n---\n\n".join(kept)
+
+
+def _allocate_budget(needs, weights, total):
+    """Water-fill `total` tokens across sections (REVIEW_FINDINGS B1's core
+    mechanic): each section's NOMINAL share is total*weights[section], but a
+    section that needs less than its share gives the difference back to the
+    pool, which is re-split (by weight) among the sections still short of
+    their (possibly-updated) share -- so unused budget is never wasted on a
+    section that doesn't need it (e.g. a short-passage / big-table query lets
+    the table use almost the whole budget instead of being capped at its
+    nominal 35%).
+
+    `needs` and `weights` are dicts keyed identically (one entry per
+    section); a section absent from the final corpus (e.g. no digest) should
+    still be passed with needs[section]=0, which fixes it to budget 0
+    immediately and frees its whole weight-share to the others on the very
+    first pass.
+
+    Converges in at most len(needs) passes: each pass either fixes at least
+    one more section's final budget (moving it from `remaining` to done) or
+    every remaining section gets exactly its current share and the loop
+    ends -- so it always terminates, and every fixed budget is <= that
+    section's own need (never over-allocated beyond what it can use).
+    Returns {section: tokens}."""
+    fixed = {}
+    remaining = dict(needs)
+    pool = total
+    while remaining:
+        w_sum = sum(weights[s] for s in remaining) or 1.0
+        share = {s: pool * (weights[s] / w_sum) for s in remaining}
+        satisfied = [s for s in remaining if needs[s] <= share[s]]
+        if not satisfied:
+            # nobody left is fully covered by their proportional share --
+            # everyone remaining gets exactly that share; done.
+            fixed.update(share)
+            break
+        for s in satisfied:
+            fixed[s] = needs[s]
+            pool -= needs[s]
+            del remaining[s]
+    return fixed
+
+
+def assemble_context(query, contexts, table=None, digest=None,
+                     max_context_tokens=None, alloc=(0.50, 0.35, 0.15)):
+    """THE B1 fix: build_prompt used to hand back full-size table/digest text
+    with NO budget at all -- only retrieve()'s passages were ever capped by
+    max_context_tokens (see retrieve()'s own, separate, passages-only cap).
+    A broad filter + analytic query could blow the configured budget 4-5x via
+    the table alone (up to ~40 rows x 6 cols x ~200-char descr each). This
+    function is the ONE place all three variable sections of the prompt
+    (passages / table / digest) are traded off against a SINGLE total budget.
+
+    Sections get a nominal share of `max_context_tokens` (`alloc` = passages/
+    table/digest weights, default 50/35/15 -- passages carry the actual prose
+    the model reasons over, so they get the largest default share; table/
+    digest are supplementary structure/breadth), but a section needing LESS
+    than its share gives the unused tokens back to the others via water-
+    filling (_allocate_budget) instead of wasting them.
+
+    Shrink order per section (cheapest/least-essential first) -- see each
+    render function's own docstring for the mechanics:
+      - table: drop descr text, then drop rows from the bottom
+        (_render_table_text).
+      - digest: drop entries from the bottom (_render_digest_text).
+      - passages: per-passage truncation (_truncate_to_tokens, via
+        _pack_passages), dropping whole passages from the bottom once even a
+        minimal truncation won't fit.
+
+    max_context_tokens=None (default) means unbounded: every section renders
+    in full, nothing is dropped or truncated -- the EXACT pre-B1-fix output,
+    so a caller that doesn't pass a budget sees zero behaviour change.
+
+    Returns (ctx_text, table_text_or_None, digest_text_or_None) -- the exact
+    text build_prompt slots into its output (block separators, headers, etc.
+    are unchanged from before this function existed; see _pack_passages/
+    _render_table_text/_render_digest_text)."""
+    table_text_full = _render_table_text(table) if (table and table.get("rows")) else None
+    digest_text_full = _render_digest_text(digest) if digest else None
+
+    if max_context_tokens is None:
+        return _pack_passages(contexts), table_text_full, digest_text_full
+
+    blocks = [f"[{c['rid']}] {c['title']}\n{c['text']}" for c in contexts]
+    needs = {
+        "passages": sum(_est_tokens(b) for b in blocks),
+        "table": _est_tokens(table_text_full) if table_text_full else 0,
+        "digest": _est_tokens(digest_text_full) if digest_text_full else 0,
+    }
+    weights = dict(zip(("passages", "table", "digest"), alloc))
+    budgets = _allocate_budget(needs, weights, max_context_tokens)
+
+    ctx_text = _pack_passages(contexts, budgets["passages"])
+    table_text = (_render_table_text(table, token_budget=budgets["table"])
+                  if table_text_full else None)
+    digest_text = (_render_digest_text(digest, token_budget=budgets["digest"])
+                  if digest_text_full else None)
+    return ctx_text, table_text, digest_text
 
 
 def _est_tokens(s):
@@ -1490,29 +2031,42 @@ def _est_tokens(s):
 
 def _truncate_to_tokens(text, token_budget):
     """Truncate free-text but preserve parametric lines (high-value, tiny).
-    Parameter lines start with 'Parameter ' from record_model.to_text()."""
+    Parameter lines start with 'Parameter ' from record_model.to_text().
+
+    REVIEW_FINDINGS D3 fix: the previous version appended a truncated
+    remainder FRAGMENT to `kept`, then rebuilt the output by re-filtering the
+    ORIGINAL lines for membership in `kept` -- since the fragment's text
+    differs from the original line (it's shorter, with a trailing '…'), it
+    could never match by value, so the fragment was silently dropped every
+    time a line needed truncating (not replaced by it -- lost outright, with
+    nothing in its place). That membership check was also O(n^2) and
+    conflated two identical lines into one slot. Fixed by tracking
+    {original_index: text} and re-assembling by sorted index, so a truncated
+    fragment keeps its place and its own identity regardless of whether an
+    identical line exists elsewhere in the text."""
     if token_budget <= 0:
         token_budget = 64
     char_budget = token_budget * 4
     if len(text) <= char_budget:
         return text
     lines = text.split("\n")
-    param_lines = [l for l in lines if l.startswith("Parameter ")]
-    other_lines = [l for l in lines if not l.startswith("Parameter ")]
-    # keep all param lines, then fill remaining budget with other lines
-    kept = list(param_lines)
-    budget_left = char_budget - sum(len(l) + 1 for l in kept)
-    for l in other_lines:
+    param_idx = [i for i, l in enumerate(lines) if l.startswith("Parameter ")]
+    other_idx = [i for i, l in enumerate(lines) if not l.startswith("Parameter ")]
+
+    # params are always kept whole, in full, regardless of budget
+    kept = {i: lines[i] for i in param_idx}
+    budget_left = char_budget - sum(len(t) + 1 for t in kept.values())
+    for i in other_idx:
+        l = lines[i]
         if budget_left <= 0:
             break
         if len(l) + 1 <= budget_left:
-            kept.append(l)
+            kept[i] = l
             budget_left -= len(l) + 1
         else:
-            kept.append(l[:budget_left].rstrip() + "…")
+            kept[i] = l[:budget_left].rstrip() + "…"
             break
-    # restore rough original ordering (title/text first, params after)
-    ordered = [l for l in lines if l in kept]
+    ordered = [kept[i] for i in sorted(kept)]  # restore original line order
     return "\n".join(ordered)
 
 
@@ -1527,26 +2081,33 @@ SYSTEM_PROMPT = (
 )
 
 
-def build_prompt(query, contexts, digest=None, table=None):
-    blocks = []
-    for c in contexts:
-        blocks.append(f"[{c['rid']}] {c['title']}\n{c['text']}")
-    ctx = "\n\n---\n\n".join(blocks)
-    parts = [f"Context records:\n\n{ctx}"]
+def build_prompt(query, contexts, digest=None, table=None, max_context_tokens=None):
+    """Assemble the final prompt text: context passages, optional structured
+    table (analytic queries), optional digest (roster of the rest of a large
+    filtered set), then the question.
+
+    max_context_tokens (REVIEW_FINDINGS B1, default None = unbounded, same as
+    before this kwarg existed): the ONE global budget covering every variable
+    part of this prompt (passages + table + digest combined), delegated to
+    assemble_context -- see its docstring for the allocation/shrink strategy.
+    This is the fix for the flagship context-budgeting bug: previously only
+    retrieve()'s passages were ever capped, so a broad filter + analytic
+    query's table/digest could blow the configured budget several times
+    over with nothing to stop it."""
+    ctx_text, table_text, digest_text = assemble_context(
+        query, contexts, table=table, digest=digest,
+        max_context_tokens=max_context_tokens)
+    parts = [f"Context records:\n\n{ctx_text}"]
     # Structured backbone: exact fields for every matched record (analytic
     # queries). Placed before the digest since it's the source of truth for
     # values; the top-k passages above give prose depth.
-    if table and table.get("rows"):
-        parts.append(_render_table_text(table))
+    if table_text:
+        parts.append(table_text)
     # When a metadata filter matched more records than fit in the top-k full
     # passages, append a compact roster of the rest (one relevance snippet each)
     # so the model can reason over the whole matched set, not just the top few.
-    if digest:
-        lines = [f"[{d['rid']}] {d['title']} — {d['snippet']}" for d in digest]
-        parts.append(
-            "Additional records matching the same metadata filter (one relevance "
-            "snippet each; these are partial — note if a snippet is insufficient "
-            "to answer):\n" + "\n".join(lines))
+    if digest_text:
+        parts.append(digest_text)
     parts.append(f"Question: {query}")
     return "\n\n".join(parts)
 
@@ -1697,45 +2258,58 @@ def _openrouter_raw(system, user, model, timeout=HTTP_TIMEOUT,
 
 
 def gen_local(query, contexts, model="Qwen/Qwen2.5-1.5B-Instruct", digest=None,
-              table=None):
+              table=None, max_context_tokens=None):
     return gen_local_raw(SYSTEM_PROMPT,
-                         build_prompt(query, contexts, digest, table), model)
+                         build_prompt(query, contexts, digest, table,
+                                      max_context_tokens), model)
 
 
 def gen_anthropic(query, contexts, model="claude-sonnet-4-6", digest=None,
-                  table=None):
+                  table=None, max_context_tokens=None):
     return _anthropic_raw(SYSTEM_PROMPT,
-                          build_prompt(query, contexts, digest, table), model)
+                          build_prompt(query, contexts, digest, table,
+                                       max_context_tokens), model)
 
 
-def gen_openrouter(query, contexts, model=None, digest=None, table=None):
+def gen_openrouter(query, contexts, model=None, digest=None, table=None,
+                   max_context_tokens=None):
     return _openrouter_raw(SYSTEM_PROMPT,
-                           build_prompt(query, contexts, digest, table),
+                           build_prompt(query, contexts, digest, table,
+                                        max_context_tokens),
                            model or OPENROUTER_DEFAULT_MODEL)
 
 
 def gen_openai(query, contexts, model, base_url="http://localhost:8000/v1",
-               digest=None, table=None):
+               digest=None, table=None, max_context_tokens=None):
     return _openai_raw(SYSTEM_PROMPT,
-                       build_prompt(query, contexts, digest, table),
+                       build_prompt(query, contexts, digest, table,
+                                    max_context_tokens),
                        model, base_url)
 
 
 def generate(query, contexts, backend, model=None, base_url=None, digest=None,
-             table=None):
+             table=None, max_context_tokens=None):
+    """max_context_tokens (REVIEW_FINDINGS B1) is the GLOBAL prompt budget --
+    passed straight through to build_prompt/assemble_context, which is the
+    only place passages/table/digest are traded off against ONE total. This
+    replaced retrieve()'s max_context_tokens as the authoritative cap; see
+    ragkit.answer for the caller-side change (retrieve() is now called
+    without a cap so it returns full-size passages for assembly to budget)."""
     if backend == "local":
         return gen_local(query, contexts, model or "Qwen/Qwen2.5-1.5B-Instruct",
-                         digest, table)
+                         digest, table, max_context_tokens)
     if backend == "anthropic":
         return gen_anthropic(query, contexts, model or "claude-sonnet-4-6",
-                             digest, table)
+                             digest, table, max_context_tokens)
     if backend == "openrouter":
-        return gen_openrouter(query, contexts, model, digest, table)
+        return gen_openrouter(query, contexts, model, digest, table,
+                              max_context_tokens)
     if backend == "openai":
         if not model:
             raise RuntimeError("--model required for openai backend")
         return gen_openai(query, contexts, model,
-                          base_url or "http://localhost:8000/v1", digest, table)
+                          base_url or "http://localhost:8000/v1", digest, table,
+                          max_context_tokens)
     raise RuntimeError(f"unknown backend {backend}")
 
 
@@ -1933,7 +2507,8 @@ def answer(db_path, query, backend, model=None, base_url=None,
            embed_model=DEFAULT_EMBED_MODEL, k=4, filters=None,
            auto_filter=False, max_context_tokens=None,
            two_pass=False, filter_min_count=1, filter_max_fields=None,
-           filter_mode="hard", field_select=None, field_select_k=15):
+           filter_mode="hard", field_select=None, field_select_k=15,
+           min_rel=0.0):
     """filters: an explicit filter dict (from UI/caller).
     auto_filter: if True and no explicit filters, ask the model to derive one.
     two_pass: use the broad-category-then-detail extractor (extract_filter_2pass).
@@ -1952,6 +2527,14 @@ def answer(db_path, query, backend, model=None, base_url=None,
     so an old db (ingested before this phase) behaves exactly as before with
     no config change needed. Doesn't apply to two_pass (see select_fields'
     docstring for why that's a deliberate, not missing, choice).
+    min_rel (REVIEW_FINDINGS G3, default 0.0 = no floor, current behaviour):
+    passed through to retrieve() -- see its docstring.
+
+    max_context_tokens (REVIEW_FINDINGS B1): the GLOBAL prompt budget -- now
+    applied once, in generate()/build_prompt/assemble_context, across
+    passages+table+digest together. retrieve() itself is called WITHOUT a
+    cap (full-size passages), so assembly has the real text to budget
+    against instead of double-truncating already-shortened passages.
     Returns (reply, contexts, filter_info)."""
     con = connect(db_path)
     catalogue = load_catalogue(con)
@@ -2003,18 +2586,24 @@ def answer(db_path, query, backend, model=None, base_url=None,
     if clean:
         filter_info["filter_mode"] = eff_mode
 
+    # Entity pinning (REVIEW_FINDINGS G1 consume): deterministic alias match
+    # computed once here (aliases already loaded above) and handed to
+    # retrieve() -- guarantees a named record surfaces even when embeddings/
+    # RRF rank it poorly (the common case for exact designations).
+    pin = match_entities(query, aliases)
+
     contexts = retrieve(con, query, k=k, embed_model=embed_model,
                         clean_filter=clean or None,
-                        max_context_tokens=max_context_tokens,
                         filter_mode=eff_mode,
-                        matched_parents=filter_info.get("matched_records"))
+                        matched_parents=filter_info.get("matched_records"),
+                        pin_entities=pin, min_rel=min_rel)
 
     # Empty-set fallback: if a filter excluded everything, retry unfiltered
     # rather than misleadingly answering "no information".
     if not contexts and clean:
         filter_info["fell_back"] = True
         contexts = retrieve(con, query, k=k, embed_model=embed_model,
-                            max_context_tokens=max_context_tokens)
+                            pin_entities=pin, min_rel=min_rel)
 
     if not contexts:
         return "No records indexed.", [], filter_info
@@ -2037,7 +2626,8 @@ def answer(db_path, query, backend, model=None, base_url=None,
                 filter_info["digest"] = digest
 
     reply = generate(query, contexts, backend, model, base_url,
-                     digest=digest, table=table)
+                     digest=digest, table=table,
+                     max_context_tokens=max_context_tokens)
     return reply, contexts, filter_info
 
 
@@ -2053,13 +2643,14 @@ def answer(db_path, query, backend, model=None, base_url=None,
 # (local / anthropic / openai), use `ragkit.py ask` on the CLI.
 
 
-def serve(db_path, port=8099, k=4, max_context_tokens=None, open_browser=True):
+def serve(db_path, port=8099, k=4, max_context_tokens=None, open_browser=True,
+          min_rel=None):
     # Imported lazily to avoid a circular import at module load (compare_server
     # imports ragkit) and to keep flask an optional dependency of the CLI.
     import compare_server
     compare_server.run_server(db_path, port=port, k=k,
                               max_context_tokens=max_context_tokens,
-                              open_browser=open_browser)
+                              open_browser=open_browser, min_rel=min_rel)
 
 
 # --------------------------------------------------------------------------- #
@@ -2088,7 +2679,8 @@ def main():
     pa.add_argument("--filter", help="explicit filter as JSON, e.g. "
                     "'{\"max_temp\":{\"min\":150},\"status\":{\"in\":[\"active\"]}}'")
     pa.add_argument("--max-context-tokens", type=int, default=None,
-                    help="cap total retrieved context tokens")
+                    help="cap total assembled prompt tokens (passages+table+"
+                         "digest combined -- REVIEW_FINDINGS B1)")
     pa.add_argument("--show-catalogue", action="store_true",
                     help="print the field catalogue and exit")
     pa.add_argument("--field-select", choices=("embed", "coverage"), default=None,
@@ -2096,15 +2688,24 @@ def main():
                          "relevance ranked, REVIEW_FINDINGS A2) or 'coverage' "
                          "(pre-A2 behaviour); default auto-picks 'embed' when "
                          "the db has field_embeddings, else 'coverage'")
+    pa.add_argument("--min-rel", type=float, default=0.0,
+                    help="relevance floor in [0,1] on normalized rerank/RRF "
+                         "score below which a candidate passage is dropped "
+                         "instead of padded into k (REVIEW_FINDINGS G3); "
+                         "0.0 (default) preserves the old always-fill-k behaviour")
 
     ps = sub.add_parser("serve", help="launch the model-comparison web bench")
     ps.add_argument("--db", default="rag_test.db")
     ps.add_argument("--port", type=int, default=8099)
     ps.add_argument("-k", type=int, default=4)
     ps.add_argument("--max-context-tokens", type=int, default=3000,
-                    help="cap on retrieved text packed into the prompt (0 = no cap)")
+                    help="cap on the assembled prompt's tokens -- passages+"
+                         "table+digest combined (0 = no cap; REVIEW_FINDINGS B1)")
     ps.add_argument("--no-open", action="store_true",
                     help="don't auto-open the browser")
+    ps.add_argument("--min-rel", type=float, default=None,
+                    help="relevance floor in [0,1] (REVIEW_FINDINGS G3); "
+                         "default 0.0 (no floor, current behaviour)")
 
     a = p.parse_args()
     if a.cmd == "ingest":
@@ -2118,7 +2719,8 @@ def main():
         reply, ctx, finfo = answer(
             a.db, a.query, a.backend, a.model, a.base_url, a.embed_model, a.k,
             filters=explicit, auto_filter=a.auto_filter,
-            max_context_tokens=a.max_context_tokens, field_select=a.field_select)
+            max_context_tokens=a.max_context_tokens, field_select=a.field_select,
+            min_rel=a.min_rel)
         print(reply)
         print("\n--- retrieved ---", file=sys.stderr)
         for c in ctx:
@@ -2140,7 +2742,7 @@ def main():
     elif a.cmd == "serve":
         serve(a.db, port=a.port, k=a.k,
               max_context_tokens=a.max_context_tokens or None,  # 0 -> uncapped
-              open_browser=not a.no_open)
+              open_browser=not a.no_open, min_rel=a.min_rel)
 
 
 if __name__ == "__main__":

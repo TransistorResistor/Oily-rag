@@ -66,9 +66,13 @@ FILTER_MODEL = "mistral-small"
 # pre-A2 behaviour. See _select_filter_fields below -- it also falls back to
 # 'coverage' automatically when the db has no field_embeddings (old db, or ingest
 # predates this phase), so 'embed' is a safe default either way.
+# min_rel (REVIEW_FINDINGS G3): a floor in [0,1] on retrieve()'s normalized
+# relevance score below which a candidate is dropped instead of padded into
+# k. 0.0 (default) preserves the pre-G3 always-fill-k behaviour exactly.
 CONFIG = {"db": "rag_test.db", "k": 4, "max_context_tokens": 3000,
           "filter_min_count": 2, "filter_max_fields": 60, "two_pass": False,
-          "filter_mode": "auto", "field_select": "embed", "field_select_k": 15}
+          "filter_mode": "auto", "field_select": "embed", "field_select_k": 15,
+          "min_rel": 0.0}
 
 # --- shared retrieval state: loaded once, reused across requests --------------
 # Flask serves with threaded=True and sqlite connections aren't shareable across
@@ -146,6 +150,7 @@ def build_context(query, auto_filter, two_pass=None):
     the assembled prompt, and the filter info — the exact material a model sees."""
     con = get_conn()
     catalogue = get_catalogue(con)
+    aliases = get_aliases(con)
     filter_info = {"applied": {}, "errors": [], "source": None}
     clean = None
     if two_pass is None:
@@ -200,10 +205,22 @@ def build_context(query, auto_filter, two_pass=None):
     if clean:
         filter_info["filter_mode"] = eff_mode
 
+    # Entity pinning (REVIEW_FINDINGS G1 consume): deterministic alias match
+    # (aliases already loaded above) handed to retrieve() so a named record
+    # ("the AIM-120", "the F-16") surfaces even when embeddings/RRF rank it
+    # poorly -- the common case for exact designations.
+    pin = ragkit.match_entities(query, aliases)
+
+    # max_context_tokens is intentionally NOT passed here (REVIEW_FINDINGS
+    # B1): retrieve() returns full-size passages, and build_prompt below is
+    # the ONE place the whole prompt (passages+table+digest) is budgeted, so
+    # passages aren't truncated twice against two different, uncoordinated
+    # caps.
     contexts = ragkit.retrieve(con, query, k=CONFIG["k"],
                                clean_filter=clean or None,
-                               max_context_tokens=CONFIG["max_context_tokens"],
-                               filter_mode=eff_mode, matched_parents=matched)
+                               filter_mode=eff_mode, matched_parents=matched,
+                               pin_entities=pin,
+                               min_rel=CONFIG.get("min_rel", 0.0))
 
     # Represent the fuller matched set beyond the top-k passages. Analytic
     # questions (compare / which has the most / numeric filter) get a structured
@@ -212,7 +229,7 @@ def build_context(query, auto_filter, two_pass=None):
     digest, table = [], None
     matched = filter_info.get("matched_records")
     if clean and matched:
-        if ragkit.is_analytic_query(query, clean, aliases=get_aliases(con)):
+        if ragkit.is_analytic_query(query, clean, aliases=aliases):
             table = ragkit.record_table(con, query, clean, catalogue=catalogue)
             if table:
                 filter_info["table"] = table
@@ -222,7 +239,8 @@ def build_context(query, auto_filter, two_pass=None):
             if digest:
                 filter_info["digest"] = digest
 
-    prompt = ragkit.build_prompt(query, contexts, digest=digest, table=table)
+    prompt = ragkit.build_prompt(query, contexts, digest=digest, table=table,
+                                 max_context_tokens=CONFIG["max_context_tokens"])
     return contexts, prompt, filter_info
 
 
@@ -404,6 +422,13 @@ def warm_start():
                   f"filterable — {', '.join(sorted(dropped)[:6])}"
                   f"{' …' if len(dropped) > 6 else ''} "
                   f"(re-run ingest to see full report)", file=sys.stderr)
+        # Prime the passage-embedding + record-fields caches (REVIEW_FINDINGS
+        # D1) now, at boot, so the FIRST real request doesn't pay for the
+        # cold full-table scan retrieve() would otherwise do on a user's click.
+        t_cache = time.time()
+        ragkit.prime_caches(con)
+        print(f"  retrieval caches primed in {time.time() - t_cache:.2f}s",
+              file=sys.stderr)
     verify_slugs()
     print("  loading embedder + reranker (one-time, ~15-25s cold)…",
           file=sys.stderr, flush=True)
@@ -425,7 +450,7 @@ def warm_start():
 def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
                open_browser=True, filter_min_count=None, filter_max_fields=None,
                two_pass=None, filter_mode=None, field_select=None,
-               field_select_k=None):
+               field_select_k=None, min_rel=None):
     """Single entrypoint used by both this file's CLI and `ragkit.py serve`."""
     CONFIG["db"] = _resolve_db(db)
     CONFIG["k"] = k
@@ -442,6 +467,8 @@ def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
         CONFIG["field_select"] = field_select
     if field_select_k is not None:
         CONFIG["field_select_k"] = field_select_k
+    if min_rel is not None:
+        CONFIG["min_rel"] = min_rel
     url = f"http://localhost:{port}"
     print(f"RAG model bench → {url}   (db={CONFIG['db']})", file=sys.stderr)
     _check_api_key()
@@ -485,6 +512,11 @@ def main():
                    help="how many fields the 'embed' selector shows (plus the "
                         f"always-included partition fields) (default "
                         f"{CONFIG['field_select_k']})")
+    p.add_argument("--min-rel", type=float, default=None,
+                   help="relevance floor in [0,1] on normalized rerank/RRF "
+                        "score below which a candidate passage is dropped "
+                        "instead of padded into k (REVIEW_FINDINGS G3) "
+                        f"(default {CONFIG['min_rel']}, i.e. no floor)")
     args = p.parse_args()
     run_server(args.db, args.port, args.k,
                max_context_tokens=args.max_context_tokens or None,  # 0 -> uncapped
@@ -494,7 +526,8 @@ def main():
                two_pass=True if args.two_pass else None,
                filter_mode=args.filter_mode,
                field_select=args.field_select,
-               field_select_k=args.field_select_k)
+               field_select_k=args.field_select_k,
+               min_rel=args.min_rel)
 
 
 # PAGE is defined in compare_server_page.py and injected at import time to keep
