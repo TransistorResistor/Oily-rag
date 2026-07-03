@@ -574,6 +574,20 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     print(f"alias table: {len(aliases)} aliases for {len(records)} records",
           file=sys.stderr)
 
+    # Embedder provenance (REVIEW_FINDINGS I7c): the vectors are only comparable
+    # to a query vector from the SAME model. Record which embedder (and its
+    # dimension) built this index so a query with a mismatched --embed-model is
+    # caught (_check_embed_model) instead of silently producing garbage cosine
+    # similarity. Dimension is stored for diagnostics / a future hard assert.
+    try:
+        dim = int(get_embedder(embed_model).get_sentence_embedding_dimension())
+    except Exception:
+        dim = None
+    con.execute(
+        "INSERT OR REPLACE INTO meta (key, value) VALUES ('embed_model', ?)",
+        (json.dumps({"model": embed_model, "dim": dim}),),
+    )
+
     con.commit()
     n = con.execute("SELECT COUNT(*) FROM records").fetchone()[0]
     print(f"Done. {len(records)} records -> {n} passages indexed in {db_path}.",
@@ -624,6 +638,34 @@ def load_category_stats(con):
     row = con.execute(
         "SELECT value FROM meta WHERE key='category_stats'").fetchone()
     return json.loads(row[0]) if row else {}
+
+
+_embed_model_warned = set()
+
+
+def _check_embed_model(con, embed_model):
+    """REVIEW_FINDINGS I7c: a db embedded with model A but queried with model B
+    lives in a different vector space, so every cosine similarity is meaningless
+    -- and nothing errors (matmul still runs when the dims happen to match, e.g.
+    two different 384-dim models). ingest() records the embedder name+dim in
+    meta['embed_model']; warn loudly (once per db+model pair, so a server loop
+    isn't spammed) when the query-time model disagrees. Silent for dbs ingested
+    before this key existed -- there's nothing to compare against."""
+    row = con.execute("SELECT value FROM meta WHERE key='embed_model'").fetchone()
+    if not row:
+        return  # db predates embedder-provenance tracking
+    try:
+        built = json.loads(row[0]).get("model")
+    except (ValueError, TypeError):
+        return
+    if built and built != embed_model:
+        key = (_db_path_of(con), built, embed_model)
+        if key not in _embed_model_warned:
+            _embed_model_warned.add(key)
+            print(f"  ! WARNING: index built with embed-model {built!r} but "
+                  f"querying with {embed_model!r} -- cosine similarity is "
+                  f"meaningless across models. Re-ingest, or query with the "
+                  f"matching --embed-model.", file=sys.stderr)
 
 
 def load_field_embeddings(con):
@@ -1447,6 +1489,7 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     restrict = (mode == "hard")
 
     # --- vector side ---
+    _check_embed_model(con, embed_model)  # REVIEW_FINDINGS I7c
     qvec = embed([query], embed_model)[0]
     all_rowids, all_matrix = cache["rowids"], cache["matrix"]
     if all_rowids.size == 0:
@@ -1465,15 +1508,37 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     vector_hits = [ids[i] for i in order]
 
     # --- keyword side ---
+    # When a hard filter restricts the candidate set, eligibility must be applied
+    # BEFORE the top-`pool` cut, not after (REVIEW_FINDINGS I1). FTS's global
+    # top-`pool` is dominated by ineligible passages under a selective filter, so
+    # filtering afterwards leaves the keyword channel with a handful of survivors
+    # (measured on the live db: 1-9 of 20) even though many eligible FTS matches
+    # exist deeper in the rank -- and RRF fusion silently degrades to vector-only
+    # exactly when a filter is active (the flagship use case). Grow the LIMIT
+    # geometrically until `pool` eligible hits are collected or FTS is exhausted,
+    # preserving rank order. The no-filter path is unchanged: one LIMIT-pool query.
+    keyword_hits = []
     try:
-        kw = con.execute(
-            "SELECT rowid FROM records_fts WHERE records_fts MATCH ? "
-            "ORDER BY rank LIMIT ?",
-            (fts_query_string(query), pool),
-        ).fetchall()
-        keyword_hits = [r[0] for r in kw]
+        fts_q = fts_query_string(query)
         if restrict:
-            keyword_hits = [r for r in keyword_hits if r in eligible]
+            limit = pool
+            while True:
+                kw = con.execute(
+                    "SELECT rowid FROM records_fts WHERE records_fts MATCH ? "
+                    "ORDER BY rank LIMIT ?",
+                    (fts_q, limit),
+                ).fetchall()
+                keyword_hits = [r[0] for r in kw if r[0] in eligible][:pool]
+                if len(keyword_hits) >= pool or len(kw) < limit:
+                    break  # enough eligible hits, or FTS matches exhausted
+                limit *= 4
+        else:
+            kw = con.execute(
+                "SELECT rowid FROM records_fts WHERE records_fts MATCH ? "
+                "ORDER BY rank LIMIT ?",
+                (fts_q, pool),
+            ).fetchall()
+            keyword_hits = [r[0] for r in kw]
     except sqlite3.OperationalError:
         keyword_hits = []
 
@@ -1935,7 +2000,10 @@ def _table_columns(query, clean_filter, catalogue, param_union, max_cols=6):
         add(f)
     ql = (query or "").lower()
     for f in catalogue:
-        if f.lower() in ql:
+        # Whole-word field-name match (REVIEW_FINDINGS I9): a raw substring test
+        # (`f.lower() in ql`) fires on "Mass" for "massive" and "Type" for
+        # "prototype"; reuse select_fields' word-boundary matcher instead.
+        if _field_name_hit(f, ql):
             add(f)
     for f in ("systemGroup", "systemType"):
         if f in catalogue:
