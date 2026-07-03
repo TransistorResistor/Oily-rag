@@ -150,6 +150,21 @@ Assessed against a truncated exemplar of the real production shape (verified emp
 - **H-h. Minor:** empty lists (`nomenclatureMarkings`, `parametricUrls`) are flagged as "mixed/nested list" noise in diagnostics; `media` now carries `caption`/`mimeType` (still fine as pass-through).
 
 ### Plan (recommended order)
+
+> **Status (2026-07-03): H1–H6 implemented and committed** (`71ef02e`), verified
+> by a 25-check exemplar probe, a 25-check end-to-end mini-corpus ingest
+> (relations table, reverse "Fitted to", any-variant numeric filtering, cover-name
+> pinning, admin demotion — all pass), and a full re-ingest + offline eval.
+> Eval note: offline hit-rate is now 27/28 (was 28/28) — analytic-01's R-77
+> slipped rank 4→5 in the *unfiltered* offline path after the constant
+> `updatedDate:` noise line was (intentionally) removed from every record's
+> first chunk; the production path applies a metadata filter to that query
+> class, which the new "Operated by"/multi-variant machinery serves directly.
+> Not gamed back on purpose. H7 (scale prep: dual-key category stats,
+> relevance-ordered table shrink, eval cases needing v2-shaped corpus data)
+> and H8's media-caption option remain open; H4(e) (budget-gated one-hop
+> digest expansion) is a hook on record_relations, not yet wired.
+
 1. **H1. Decode HTML entities at the adapter boundary.** `html.unescape()` applied once to every string field in `normalize_record` (both adapters) — descriptions, parameter values/descrs/comments, captions, titles. Single pass only (no loop — avoids over-decoding `&amp;amp;`). Trivial, do first; re-ingest required.
 2. **H2. Real parameter identity (fixes C3 + H-a/b/c).** Canonical params gain `base` (= `parameterOnly`, fallback: `parameter` with a trailing `" - N"` stripped), `qualifier` (= `parameterSubTitle` or `comments`), `component`, `component_descr`, `dtype` (= `dataType`, authoritative for coercion when present). Catalogue field name = `base` (qualify with component only on cross-component collision). `typed_fields` stores multi-valued numerics as value lists — a numeric filter matches if ANY variant matches; stats use per-record min/max. `to_text` renders `Parameter Engine Thrust [Max Emergency Power] = 120 kN (…)`; `rich_params`/table keep one row per variant with the qualifier merged into the name. Rows with `childModelID` are routed to relations (H4), not params.
 3. **H3. Proliferations adapter.** Derive multi-value filter fields — `Operated by (country)` (status ∈ Using-like), `Produced by (country)` (Production-like), `Region` — plus one prose section per record ("Proliferation: Country A — Using (Mil Org A); Country B — Production (Manufacturer A)") so organizations/status stay searchable and citable. Supersedes `countryList`/`regionList` (keep them only as fallback when `proliferations` is absent). Status vocabulary must be confirmed against real data (Ordered/Development/Retired?).
