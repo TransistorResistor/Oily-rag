@@ -191,6 +191,13 @@ def build_catalogue(records, units_by_field=None, dropped=None):
         if field in units_by_field:
             unit = units_by_field[field]
         catalogue[field] = _classify_field(field, vals, unit)
+        # Source-audit metadata (REVIEW_FINDINGS H6): still classified/stored --
+        # an explicit filter on it works -- but flagged so catalogue_to_prompt,
+        # partition_fields and field selection skip it by default (four
+        # 100%-coverage audit dates would otherwise dominate every
+        # coverage-ranked field list).
+        if field in record_model.ADMIN_FIELDS:
+            catalogue[field]["admin"] = True
         # a field with values that classified as 'unknown' is present but not
         # usefully filterable -- surface it in the import report too.
         if dropped is not None and catalogue[field].get("type") == "unknown":
@@ -202,6 +209,46 @@ def build_catalogue(records, units_by_field=None, dropped=None):
 
 def _classify_field(field, vals, unit):
     n = len(vals)
+
+    # numeric? Majority-type classification (REVIEW_FINDINGS A1): see the module
+    # docstring / MAJORITY_MIN and FULL_MIN. Stats (p5/p95/median/min/max) are
+    # computed over the clean numeric subset only.
+    #
+    # A record's value may itself be a LIST of numbers (variant rows sharing a
+    # parameter name -- REVIEW_FINDINGS H2): those records count toward the
+    # numeric majority when every variant is numeric, stats run over the
+    # flattened values, and the entry is flagged "multi" so consumers know a
+    # min/max filter passes when ANY variant matches (see ragkit._passes). This
+    # check runs BEFORE the string multi-value branch so numeric variant lists
+    # don't degrade into string-membership fields.
+    nums, rec_numeric, lists_present = [], 0, False
+    for v in vals:
+        elems = v if isinstance(v, list) else [v]
+        if isinstance(v, list):
+            lists_present = True
+        ns = [e for e in elems
+              if isinstance(e, (int, float)) and not isinstance(e, bool)]
+        nums.extend(ns)
+        if ns and len(ns) == len(elems):
+            rec_numeric += 1
+    if nums and rec_numeric >= max(1, int(MAJORITY_MIN * n)):
+        s = sorted(nums)
+        entry = {
+            "type": "numeric",
+            "count": n,
+            "unit": unit,
+            "p5": round(_percentile(s, 0.05), 4),
+            "p95": round(_percentile(s, 0.95), 4),
+            "median": round(statistics.median(s), 4),
+            "min": s[0],
+            "max": s[-1],
+        }
+        if lists_present:
+            entry["multi"] = True
+        if rec_numeric < FULL_MIN * n:
+            entry["partial"] = True
+            entry["typed_count"] = rec_numeric
+        return entry
 
     # multi-value: record_model.typed_fields returns NATIVE lists for a scalar-
     # list field (no join/sentinel round-trip -- REVIEW_FINDINGS C2 fix). A field
@@ -217,27 +264,6 @@ def _classify_field(field, vals, unit):
             elif str(v).strip():
                 elements.add(str(v).strip())
         return {"type": "multi_value", "count": n, "values": sorted(elements)}
-
-    # numeric? Majority-type classification (REVIEW_FINDINGS A1): see the module
-    # docstring / MAJORITY_MIN and FULL_MIN. Stats (p5/p95/median/min/max) are
-    # computed over the clean numeric subset only.
-    nums = [v for v in vals if isinstance(v, (int, float)) and not isinstance(v, bool)]
-    if nums and len(nums) >= max(1, int(MAJORITY_MIN * n)):
-        s = sorted(nums)
-        entry = {
-            "type": "numeric",
-            "count": n,
-            "unit": unit,
-            "p5": round(_percentile(s, 0.05), 4),
-            "p95": round(_percentile(s, 0.95), 4),
-            "median": round(statistics.median(s), 4),
-            "min": s[0],
-            "max": s[-1],
-        }
-        if len(nums) < FULL_MIN * n:
-            entry["partial"] = True
-            entry["typed_count"] = len(nums)
-        return entry
 
     # date? Same majority logic, using record_model's dateutil-backed date
     # detection (accepts "15 December 2005", not just %Y-%m-%d) instead of the
@@ -298,6 +324,8 @@ def partition_fields(catalogue, min_count=1, max_cardinality=40, limit=8):
     """
     cands = []
     for field, spec in catalogue.items():
+        if spec.get("admin"):
+            continue        # audit metadata never partitions the corpus (H6)
         if spec.get("type") not in ("categorical", "multi_value"):
             continue
         values = spec.get("values") or []
@@ -343,8 +371,11 @@ def build_category_stats(fields_by_parent, catalogue, category_field, min_count=
             if spec.get("type") != "numeric":
                 continue
             v = fields.get(field)
-            if isinstance(v, (int, float)) and not isinstance(v, bool):
-                bucket.setdefault(field, []).append(v)
+            # a numeric field's per-record value may be a list of variant
+            # values (REVIEW_FINDINGS H2) -- all variants contribute to stats
+            for x in (v if isinstance(v, list) else [v]):
+                if isinstance(x, (int, float)) and not isinstance(x, bool):
+                    bucket.setdefault(field, []).append(x)
 
     out = {}
     for cat_val, field_vals in by_cat.items():
@@ -410,6 +441,11 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
     for field, spec in catalogue.items():
         if only_fields is not None and field not in only_fields:
             continue
+        # admin/audit metadata (REVIEW_FINDINGS H6) is hidden from the default
+        # spec -- it's high-coverage noise for field selection -- but an
+        # explicit only_fields request for it still works (checked above).
+        if spec.get("admin") and only_fields is None:
+            continue
         cnt = spec.get("count")
         if min_count and cnt is not None and cnt < min_count:
             continue
@@ -426,6 +462,10 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
         if spec.get("partial"):
             partial_note = (f" ({spec.get('typed_count')}/{spec.get('count')} "
                             f"records have a filterable value)")
+        if spec.get("multi"):
+            # variant rows (H2): one record can carry several values; a min/max
+            # filter matches when ANY of them does
+            partial_note += " (a record may have several values; any may match)"
         if t == "numeric":
             u = f" {spec['unit']}" if spec.get("unit") else ""
             scoped = cat_scope.get(field) if cat_scope else None

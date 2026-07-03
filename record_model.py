@@ -16,19 +16,31 @@ Canonical record (a plain dict):
       "id":     str | None,                       # source id (modelID / id)
       "title":  str | None,                       # nomenclature / title
       "prose":  [(section_name, text), ...],      # searchable prose, order-kept
-      "params": [{"name","value","unit","descr"}, ...],  # LIST: dups + order kept
+      "params": [{"name","value","unit","descr",  # LIST: dups + order kept
+                  "qualifier","component","dtype"}, ...],
       "extras": {field: scalar | list},           # other typed fields; nested dicts
                                                    #   flatten to dotted paths
       "media":  [ ... ],                           # media objects, passed through
+      "relations": [{"child_id","child_name",...}],# system-to-system edges (H4)
+      "aliases": [str, ...],                       # curated alias/code names (H5)
     }
+
+    Exemplar-v2 additions (REVIEW_FINDINGS section H): params carry an optional
+    `qualifier` (parameterSubTitle / comments -- the label that distinguishes
+    variant rows of the same parameter), `component` and `dtype` (source's
+    authoritative type hint). Relationship rows inside parametrics[] and the
+    relations[] list both land in `relations`; proliferations[] becomes
+    membership-filterable "Operated by"/"Produced by" fields plus a prose
+    section; curated aliases[]/codes[] land in `aliases` for entity pinning.
+    All strings are HTML-entity-decoded exactly once on the way in (H1).
 
 Why `params` is a LIST: a record can legitimately repeat a parameter name (a
 "Range" per variant; a value plus a qualifying subtitle row). Keeping the list
-preserves them end-to-end -- fixing at the MODEL level the documented last-wins
-FUTURE note (REVIEW_FINDINGS C3). Consumers that genuinely need one value per
-name (the typed-fields dict for filtering, the record_params table row) collapse
-with an explicit, consistently-applied **last-wins** policy -- see
-collapse_params()/rich_params() and typed_fields().
+preserves them end-to-end (REVIEW_FINDINGS C3/H2): typed_fields() keeps every
+variant (a repeated name's value becomes a list; numeric filters match if ANY
+variant matches) and rich_params() stacks variants into one labelled cell.
+collapse_params() remains for callers that explicitly want one-value-per-name
+(last-wins).
 
 Value coercion is centralised in coerce_value() so every consumer coerces the
 same way: strip thousands-separator commas and return a float when a unit is
@@ -38,6 +50,7 @@ typed_fields() / normalize_typed_value() and the date helpers below.
 """
 
 import datetime as _dt
+import html as _html
 import re
 
 try:
@@ -60,14 +73,44 @@ _UNIT_KEYS = ("unit", "uom")       # unit-of-measure key aliases
 # `modelID` is that shape; everything else is treated as the ragkit-native shape.
 _PAGES_MARKERS = ("parametrics", "descriptions", "nomenclature", "modelID")
 
+# Source-audit metadata fields (REVIEW_FINDINGS H6): present on ~every record at
+# 100% coverage, so left un-demoted they dominate coverage-ranked field lists,
+# pull "when was X introduced"-style extraction onto updatedDate, and put URLs
+# into the embedding text. They stay STORED (typed_fields keeps them, so an
+# explicit filter on them still works) but are: omitted from to_text(), flagged
+# "admin" in the catalogue (see catalogue.build_catalogue), and excluded from
+# field selection / the default filter-prompt spec. "name" is here because the
+# pages-schema source duplicates the nomenclature into it.
+ADMIN_FIELDS = frozenset({
+    "releaseID", "reviewDate", "createdDate", "updatedDate", "versionDate",
+    "productLink", "aliasList", "name",
+})
+
 
 def _looks_like_pages_schema(raw):
     return any(k in raw for k in _PAGES_MARKERS)
 
 
+def _unescape_strings(x):
+    """Decode HTML entities in every string of a raw record, exactly ONCE (H1):
+    the production source HTML-escapes text fields (&#x27;, &amp;, ...), which
+    otherwise survive verbatim into embedding text, FTS tokens and prompts.
+    Deliberately a single pass -- a literal '&amp;amp;' in source decodes to
+    '&amp;', never recursively to '&'. Keys are decoded too (component/parameter
+    names can carry '&amp;', e.g. 'R&amp;D')."""
+    if isinstance(x, str):
+        return _html.unescape(x)
+    if isinstance(x, list):
+        return [_unescape_strings(i) for i in x]
+    if isinstance(x, dict):
+        return {(_html.unescape(k) if isinstance(k, str) else k):
+                _unescape_strings(v) for k, v in x.items()}
+    return x
+
+
 def _blank():
     return {"id": None, "title": None, "prose": [], "params": [],
-            "extras": {}, "media": []}
+            "extras": {}, "media": [], "relations": [], "aliases": []}
 
 
 def is_canonical(x):
@@ -154,12 +197,31 @@ def _extract_media(raw, canon, dropped):
     media = raw.get("media")
     if isinstance(media, list):
         canon["media"] = media
-        note_drop(dropped, "media", media)
+        if media:    # an empty list isn't a blind spot worth reporting
+            note_drop(dropped, "media", media)
+
+
+# A source `parameter` name arrives pre-suffixed when the record has several
+# variant rows of the same parameter ("Wing Sweep - 1", "Engine Thrust - 2").
+# Without stripping, every variant becomes its OWN catalogue field, fragmenting
+# the field space (REVIEW_FINDINGS H-b). `parameterOnly` is authoritative when
+# present; this regex is the fallback for rows that only carry `parameter`.
+_PARAM_SUFFIX_RE = re.compile(r"\s+-\s+\d+$")
 
 
 def _extract_parametrics(raw, canon, dropped):
-    """parametrics[] -> params. Rows that don't match the expected shape are
-    dropped with a clear reason rather than silently ignored."""
+    """parametrics[] -> params (or relations). Rows that don't match the expected
+    shape are dropped with a clear reason rather than silently ignored.
+
+    Exemplar-v2 (REVIEW_FINDINGS H2): the field identity is `parameterOnly`
+    (fallback: `parameter` with any " - N" variant suffix stripped); the row's
+    distinguishing label -- `parameterSubTitle` and/or `comments` ("Standard
+    configuration" vs "Overclocked/Emergency configuration") -- is kept as
+    `qualifier` so duplicate-name rows stay meaningfully distinct end-to-end
+    instead of collapsing last-wins (C3). `component`/`dataType` ride along.
+    A row carrying childModelID/childModel is a system-to-system EDGE, not a
+    value -- it routes to canon["relations"] (H4) so it can't masquerade as a
+    free-text field."""
     para = raw.get("parametrics")
     if not isinstance(para, list):
         return
@@ -167,15 +229,160 @@ def _extract_parametrics(raw, canon, dropped):
         note_drop(dropped, "parametrics", para)
         return
     for it in para:
-        name = it.get("parameter")
+        if it.get("childModelID") is not None or it.get("childModel"):
+            canon["relations"].append({
+                "child_id": it.get("childModelID"),
+                "child_name": it.get("childModel") or it.get("parameterValue"),
+                "component": it.get("componentOnly") or it.get("component"),
+                "relation_type": it.get("parameterOnly") or it.get("parameter"),
+            })
+            continue
+        name = it.get("parameterOnly") or it.get("parameter")
         if not name:
             continue
+        name = str(name)
+        if not it.get("parameterOnly"):
+            name = _PARAM_SUFFIX_RE.sub("", name)
+        subtitle = it.get("parameterSubTitle")
+        comments = it.get("comments")
+        if subtitle and comments:
+            qualifier = f"{subtitle}; {comments}"
+        else:
+            qualifier = subtitle or comments
         canon["params"].append({
-            "name": str(name),
+            "name": name,
             "value": it.get("parameterValue"),
             "unit": it.get("uom") or None,
             "descr": it.get("parameterDescr"),
+            "qualifier": str(qualifier) if qualifier not in (None, "") else None,
+            "component": it.get("componentOnly") or it.get("component") or None,
+            "dtype": it.get("dataType") or None,
         })
+
+
+def _extract_relations(raw, canon, dropped):
+    """relations[] -> canon["relations"] (REVIEW_FINDINGS H4). Each row is an
+    edge between this record (or one of its variant models) and another system;
+    both endpoints are kept because the edge is meaningful even when the child
+    record isn't in the corpus (the edge itself answers 'what engine powers X')."""
+    rel = raw.get("relations")
+    if not isinstance(rel, list):
+        return
+    for r in rel:
+        if not isinstance(r, dict):
+            continue
+        if r.get("childModel") is None and r.get("childModelID") is None:
+            continue
+        canon["relations"].append({
+            "child_id": r.get("childModelID"),
+            "child_name": r.get("childModel"),
+            "parent_id": r.get("parentModelID"),
+            "parent_name": r.get("parentModel"),
+            "component": r.get("parentComponent"),
+            "relation_type": r.get("relationType"),
+            "child_system_group": r.get("childSystemGroup"),
+            "child_system_type": r.get("childSystemType"),
+            "child_equip_code": r.get("childPrimaryEquipCode"),
+        })
+
+
+def _relations_prose(canon):
+    """One 'Related systems' prose segment per edge, so the edge is retrievable
+    (FTS + embedding) and citable even when the related record isn't ingested."""
+    segs = []
+    for r in canon["relations"]:
+        name = r.get("child_name")
+        if not name:
+            continue
+        bits = [b for b in (r.get("child_system_type"),
+                            f"{r['component']} component" if r.get("component")
+                            else None) if b]
+        segs.append(f"{name} ({'; '.join(bits)})" if bits else str(name))
+    return "; ".join(segs)
+
+
+# Status-word buckets for proliferations[] (REVIEW_FINDINGS H3). The source
+# vocabulary is open-ended (mostly "Using"/"Production", but also Retired /
+# Developing / Ordered / ...): a status matching neither bucket keeps its
+# country OUT of the two filter fields -- a retired operator is not an
+# operator -- but stays fully searchable via the Proliferation prose section.
+# "Developing" counts as producing: a country developing the system is its
+# (emerging) producer, which is what "who makes X" queries are after.
+_PROLIF_OPERATING_RE = re.compile(r"(?i)using|user|operat|service|deploy")
+_PROLIF_PRODUCING_RE = re.compile(r"(?i)produc|manufactur|develop|design|build")
+
+
+def _extract_proliferations(raw, canon, dropped):
+    """proliferations[] -> two membership-filterable country fields ("Operated
+    by (country)" / "Produced by (country)"), a "Proliferation region" field,
+    and one prose section retaining the full per-country detail (status +
+    organization). Returns True when consumed, so the adapter can skip the
+    flattened countryList/regionList/trigraphLists conveniences (they lose the
+    Using-vs-Production distinction this preserves)."""
+    prol = raw.get("proliferations")
+    if not isinstance(prol, list) or not prol:
+        return False
+    operators, producers, regions, segs = [], [], [], []
+    for p in prol:
+        if not isinstance(p, dict):
+            continue
+        country = p.get("country")
+        status = str(p.get("proliferation") or "").strip()
+        region = p.get("region")
+        org = p.get("organization")
+        if region:
+            regions.append(str(region))
+        if country and status:
+            if _PROLIF_OPERATING_RE.search(status):
+                operators.append(str(country))
+            if _PROLIF_PRODUCING_RE.search(status):
+                producers.append(str(country))
+        if country or status:
+            seg = str(country or "unknown country")
+            if status:
+                seg += f" - {status}"
+            if org:
+                seg += f" ({org})"
+            segs.append(seg)
+
+    def _uniq(xs):
+        return list(dict.fromkeys(xs))
+
+    if operators:
+        canon["extras"]["Operated by (country)"] = _uniq(operators)
+    if producers:
+        canon["extras"]["Produced by (country)"] = _uniq(producers)
+    if regions:
+        canon["extras"]["Proliferation region"] = _uniq(regions)
+    if segs:
+        canon["prose"].append(("Proliferation", "; ".join(segs)))
+    return True
+
+
+def _extract_alias_names(raw, canon):
+    """aliases[] (curated Common/Project/Cover names) + codes[] +
+    primaryEquipCode -> canon["aliases"] (REVIEW_FINDINGS H5), consumed at
+    ingest into the entity-pinning table. Cover names share no vocabulary with
+    the title -- exactly the lookups embedding retrieval fails on and pinning
+    wins. Also emits an 'Also known as' prose line so the names are findable
+    by FTS/embedding inside passages, not just via pinning."""
+    names = []
+    al = raw.get("aliases")
+    if isinstance(al, list):
+        for a in al:
+            if isinstance(a, dict) and a.get("alias"):
+                names.append(str(a["alias"]).strip())
+    codes = raw.get("codes")
+    if isinstance(codes, list):
+        for c in codes:
+            if isinstance(c, dict) and c.get("code"):
+                names.append(str(c["code"]).strip())
+    pec = raw.get("primaryEquipCode")
+    if pec is not None and str(pec).strip():
+        names.append(str(pec).strip())
+    canon["aliases"] = list(dict.fromkeys(n for n in names if n))
+    if canon["aliases"]:
+        canon["prose"].append(("Also known as", ", ".join(canon["aliases"])))
 
 
 def _absorb_extras(node, prefix, canon, dropped, skip_keys=()):
@@ -219,6 +426,8 @@ def _absorb_extras(node, prefix, canon, dropped, skip_keys=()):
 
         # list
         if isinstance(v, list):
+            if not v:
+                continue    # empty list: nothing to index, nothing to report
             scalars = [x for x in v if isinstance(x, (str, int, float, bool))]
             if scalars and len(scalars) == len(v):
                 canon["extras"][path] = scalars      # native multi-value list
@@ -235,22 +444,38 @@ def _absorb_extras(node, prefix, canon, dropped, skip_keys=()):
 # --------------------------------------------------------------------------- #
 
 def _adapt_pages_schema(raw, dropped):
-    """pages_schema / schema-example.json shape: modelID+nomenclature, prose in
-    descriptions[], structured facts in parametrics[], media[]. Any other scalar
-    (systemGroup, systemType, updatedDate, ...) is a typed extra field."""
+    """pages_schema / exemplar-v2 shape: modelID+nomenclature, prose in
+    descriptions[], structured facts in parametrics[], media[], plus the v2
+    structures: curated aliases[]/codes[], proliferations[], relations[]
+    (REVIEW_FINDINGS section H). Any other scalar (systemGroup, systemType,
+    updatedDate, ...) is a typed extra field."""
     canon = _blank()
     canon["id"] = raw.get("id") or raw.get("modelID")
     canon["title"] = raw.get("title") or raw.get("nomenclature")
     _extract_prose(raw, canon, dropped)
     _extract_media(raw, canon, dropped)
+    _extract_alias_names(raw, canon)
     _extract_parametrics(raw, canon, dropped)
+    _extract_relations(raw, canon, dropped)
+    has_prolif = _extract_proliferations(raw, canon, dropped)
+    if canon["relations"]:
+        rel_text = _relations_prose(canon)
+        if rel_text:
+            canon["prose"].append(("Related systems", rel_text))
     # Everything else -> extras. We DON'T skip 'nomenclature': the legacy field
     # walker indexed it as a field (it only skipped id/title/modelID), so keeping
     # it preserves catalogue field naming. to_text() omits it from the text since
     # it already leads as the Title header.
-    _absorb_extras(raw, "", canon, dropped,
-                   skip_keys=("id", "title", "modelID",
-                              "descriptions", "media", "parametrics"))
+    skip = ["id", "title", "modelID", "descriptions", "media", "parametrics"]
+    for k in ("relations", "aliases", "codes"):
+        if isinstance(raw.get(k), list):
+            skip.append(k)       # consumed above; a non-list shape stays LOUD
+    if has_prolif:
+        # countryList/regionList/trigraphLists are flattened conveniences of
+        # proliferations[] -- superseded by the structured fields just derived
+        # (they'd re-add the same countries WITHOUT the Using/Production split).
+        skip += ["proliferations", "countryList", "regionList", "trigraphLists"]
+    _absorb_extras(raw, "", canon, dropped, skip_keys=tuple(skip))
     return canon
 
 
@@ -295,6 +520,7 @@ def normalize_record(raw, dropped=None):
     catalogue.build_catalogue `dropped`."""
     if not isinstance(raw, dict):
         raise TypeError("record must be a dict")
+    raw = _unescape_strings(raw)     # H1: decode HTML entities exactly once
     if _looks_like_pages_schema(raw):
         return _adapt_pages_schema(raw, dropped)
     return _adapt_native(raw, dropped)
@@ -321,9 +547,11 @@ def to_text(canon):
         parts.append(f"Title: {canon['title']}")
     # top-level scalar extras as "key: value" lines (nested dotted paths and
     # multi-value lists are structured data, not prose, so they're not emitted --
-    # matching the legacy flatten_record scope)
+    # matching the legacy flatten_record scope). ADMIN_FIELDS (audit dates,
+    # productLink, ...) are omitted: they'd put URLs and always-identical dates
+    # into every record's embedding text (REVIEW_FINDINGS H6).
     for k, v in canon["extras"].items():
-        if "." in k or k in _TEXT_SKIP_EXTRAS:
+        if "." in k or k in _TEXT_SKIP_EXTRAS or k in ADMIN_FIELDS:
             continue
         if isinstance(v, (str, int, float, bool)):
             parts.append(f"{k}: {v}")
@@ -331,7 +559,12 @@ def to_text(canon):
         parts.append(f"{section}: {text}")
     for p in canon["params"]:
         value = "" if p["value"] is None else p["value"]
-        line = f"Parameter {p['name']} = {value}"
+        line = f"Parameter {p['name']}"
+        if p.get("qualifier"):
+            # variant label ("Max Emergency Power"; "Standard configuration") --
+            # without it, duplicate-name rows read as contradictory values (H2)
+            line += f" [{p['qualifier']}]"
+        line += f" = {value}"
         if p["unit"]:
             line += f" {p['unit']}"
         if p["descr"]:
@@ -344,12 +577,33 @@ def rich_params(canon):
     """The structured-table view (replaces ragkit.extract_parametrics): the full
     parametric fields as {name: {value, unit, descr}}, keeping raw values (so the
     table shows "4604", not "4604.0") and the record's description/subtitle.
-    Collapses duplicate names last-wins (documented policy; see module docstring)."""
+
+    Duplicate-name variant rows (REVIEW_FINDINGS H2/C3) STACK into one cell --
+    value becomes "100 (Standard configuration); 120 (Overclocked/Emergency
+    configuration)" -- so the table shows every variant under the CATALOGUE's
+    field name (record_table matches columns by that name) instead of silently
+    keeping only the last row. A single row's qualifier is folded into its value
+    the same way. Trade-off (documented in record_table's FUTURE note): a
+    stacked cell is a display string, so record_table's numeric column sort
+    sinks multi-variant rows; the honest full story beats a sortable half-truth."""
     canon = canon if is_canonical(canon) else normalize_record(canon)
-    out = {}
+    grouped = {}
     for p in canon["params"]:
-        out[p["name"]] = {"value": p["value"], "unit": p["unit"],
-                          "descr": p["descr"]}
+        grouped.setdefault(p["name"], []).append(p)
+    out = {}
+    for name, rows in grouped.items():
+        if len(rows) == 1 and not rows[0].get("qualifier"):
+            p = rows[0]
+            out[name] = {"value": p["value"], "unit": p["unit"],
+                         "descr": p["descr"]}
+            continue
+        segs = []
+        for p in rows:
+            v = "" if p["value"] is None else str(p["value"])
+            segs.append(f"{v} ({p['qualifier']})" if p.get("qualifier") else v)
+        out[name] = {"value": "; ".join(segs),
+                     "unit": next((p["unit"] for p in rows if p["unit"]), None),
+                     "descr": next((p["descr"] for p in rows if p["descr"]), None)}
     return out
 
 
@@ -368,11 +622,16 @@ def _strip_thousands(s):
     return _THOUSANDS_RE.sub("", s)
 
 
-def coerce_value(value, unit=None):
+def coerce_value(value, unit=None, force_numeric=False):
     """Centralised scalar coercion used by every consumer that needs a typed value.
     Strips thousands-separator commas and returns a float when a unit is present OR
     the (comma-stripped) string looks numeric; otherwise returns the value
-    unchanged. Non-strings pass through untouched."""
+    unchanged. Non-strings pass through untouched.
+
+    force_numeric (H2): the exemplar-v2 source carries an authoritative
+    dataType hint ("Number") -- when the caller passes it through, try the float
+    even without a unit or a numeric-looking string (still falls back to the raw
+    value if the source hint is wrong)."""
     if value is None or isinstance(value, bool):
         return value
     if isinstance(value, (int, float)):
@@ -381,7 +640,7 @@ def coerce_value(value, unit=None):
         return value
     s = value.strip()
     stripped = _strip_thousands(s)
-    if unit or _NUMERIC_RE.match(stripped):
+    if unit or force_numeric or _NUMERIC_RE.match(stripped):
         try:
             return float(stripped)
         except ValueError:
@@ -459,9 +718,11 @@ def parse_range(s):
     return None
 
 
-def normalize_typed_value(raw, unit):
+def normalize_typed_value(raw, unit, dtype=None):
     """Normalise ONE typed field value for filtering/classification:
       - a unit means "this is a quantity" -> numeric coercion, never a date;
+      - a source dataType hint (exemplar-v2, H2) is authoritative: "Number" ->
+        numeric coercion even unitless; "Date" -> ISO date when parseable;
       - otherwise a whole-value date -> ISO string;
       - a range value is kept as-is here (its from/to siblings are derived at the
         field level in typed_fields); everything else -> coerce_value.
@@ -470,6 +731,11 @@ def normalize_typed_value(raw, unit):
         return raw
     if unit:
         return coerce_value(raw, unit)
+    d = str(dtype).strip().lower() if dtype else ""
+    if d in ("number", "numeric", "integer", "int", "float", "decimal"):
+        return coerce_value(raw, None, force_numeric=True)
+    if d == "date" and isinstance(raw, str) and is_date_like(raw.strip()):
+        return to_iso(raw.strip())
     if isinstance(raw, str):
         s = raw.strip()
         if parse_range(s):
@@ -482,7 +748,17 @@ def normalize_typed_value(raw, unit):
 def typed_fields(canon):
     """The filter-field view (replaces catalogue.extract_fields): a record's typed
     scalar fields as ({field: value}, {field: unit}), with values coerced/date-
-    normalised consistently and duplicate param names collapsed last-wins.
+    normalised consistently.
+
+    Duplicate param names (variant rows -- REVIEW_FINDINGS H2/C3) keep EVERY
+    value: the field's value becomes a LIST, and a numeric filter passes when
+    ANY variant satisfies it (see ragkit._passes / catalogue._classify_field's
+    numeric-with-lists handling). The old last-wins collapse silently dropped
+    e.g. the standard-configuration value in favour of the emergency one.
+    A param name still overrides a same-named extra entirely (unchanged policy).
+
+    Relations (H4) contribute a membership-filterable "Fitted with" field: the
+    related child-system names.
 
     Range-valued fields (e.g. "In service" = "1980-present") additionally derive
     two typed date fields "<field> (from)" and "<field> (to)"; the original string
@@ -491,10 +767,7 @@ def typed_fields(canon):
     canon = canon if is_canonical(canon) else normalize_record(canon)
     out, units = {}, {}
 
-    def add(name, raw, unit):
-        if raw is None or raw == "":
-            return
-        out[name] = normalize_typed_value(raw, unit)
+    def norm(name, raw, unit, dtype=None):
         if unit:
             units[name] = unit
         # derive from/to date fields for range values (only when unitless strings)
@@ -504,18 +777,38 @@ def typed_fields(canon):
                 out[f"{name} (from)"] = rng[0]
                 if rng[1] is not None:
                     out[f"{name} (to)"] = rng[1]
+        return normalize_typed_value(raw, unit, dtype)
 
     for f, v in canon["extras"].items():
-        add(f, v, None)
-    for p in canon["params"]:            # after extras so params win on a clash
-        add(p["name"], p["value"], p["unit"])
+        if v is None or v == "":
+            continue
+        out[f] = norm(f, v, None)
+
+    grouped = {}                         # param base name -> [values...]
+    for p in canon["params"]:
+        if p["value"] is None or p["value"] == "":
+            continue
+        grouped.setdefault(p["name"], []).append(
+            norm(p["name"], p["value"], p["unit"], p.get("dtype")))
+    for name, vals in grouped.items():   # params win over a same-named extra
+        flat = []
+        for v in vals:
+            flat.extend(v) if isinstance(v, list) else flat.append(v)
+        out[name] = flat[0] if len(flat) == 1 else flat
+
+    rel_names = [r.get("child_name") for r in canon.get("relations") or []
+                 if r.get("child_name")]
+    if rel_names:
+        out["Fitted with"] = list(dict.fromkeys(str(n) for n in rel_names))
+
     return out, units
 
 
 def collapse_params(canon):
-    """Duplicate-name collapse helper (last-wins) exposed for callers that want the
-    policy without the full rich_params dict. Kept tiny + documented so the
-    last-wins policy is applied from ONE place."""
+    """Duplicate-name collapse helper (last-wins) exposed for callers that
+    explicitly want one value per name. NOTE: since H2, neither typed_fields()
+    nor rich_params() uses this -- both now PRESERVE variant rows; this is only
+    for a caller that consciously wants the lossy collapse."""
     out = {}
     for p in canon["params"]:
         out[p["name"]] = p
@@ -543,12 +836,19 @@ _ALIAS_GENERIC = {
 _DESIGNATION_RE = re.compile(r"\b[A-Za-z]{1,4}[-/ ]?\d+[A-Za-z0-9-]*\b")
 
 
-def build_alias_table(id_title_pairs):
+def build_alias_table(id_title_pairs, extra_aliases=None):
     """Build {alias_lowercase: [parent_rid, ...]} from each record's title, for
-    deterministic entity pinning at query time (a later phase consumes it -- this
-    phase only builds + stores it). Aliases come from: the full title; designation
-    tokens (F-16, AIM-120, Su-57); parenthesised and comma-separated popular names;
-    and meaningful title words (skipping stopwords + generic type words)."""
+    deterministic entity pinning at query time. Aliases come from: the full title;
+    designation tokens (F-16, AIM-120, Su-57); parenthesised and comma-separated
+    popular names; and meaningful title words (skipping stopwords + generic type
+    words).
+
+    extra_aliases (H5/H4): {rid: [name, ...]} of additional names to map to a
+    record -- the curated aliases[]/codes[] the source ships (cover names share
+    NO vocabulary with the title, exactly where title-derived aliasing and
+    embeddings both fail) and, from ingest, out-of-corpus related-system names
+    (so a query naming a component still pins the platform that carries it).
+    Designation tokens are mined from these too."""
     aliases = {}
 
     def add(alias, rid):
@@ -583,4 +883,10 @@ def build_alias_table(id_title_pairs):
             if len(wl) < 3 and not _DESIGNATION_RE.match(w):
                 continue
             add(w, rid)
+    for rid, names in (extra_aliases or {}).items():
+        for n in names:
+            n = str(n).strip()
+            add(n, rid)
+            for m in _DESIGNATION_RE.findall(n):
+                add(m, rid)
     return aliases

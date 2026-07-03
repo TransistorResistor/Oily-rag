@@ -330,6 +330,22 @@ def init_db(con):
         "  parent_rid TEXT PRIMARY KEY, title TEXT, params_json TEXT, "
         "  fields_json TEXT)"
     )
+    # One row per system-to-system EDGE (REVIEW_FINDINGS H4): the source's
+    # relations[] rows plus relationship rows embedded in parametrics[]
+    # (childModelID). Both endpoints are kept even when the child isn't an
+    # ingested record -- the edge itself answers "what engine powers X". The
+    # filterable views of this data ("Fitted with"/"Fitted to") live in the
+    # normal typed-fields path; this table is the queryable provenance/graph
+    # (and the hook for a future one-hop digest expansion, H4e/G4).
+    con.execute(
+        "CREATE TABLE IF NOT EXISTS record_relations ("
+        "  parent_rid TEXT,"
+        "  child_model_id TEXT, child_name TEXT,"
+        "  rel_parent_model_id TEXT, rel_parent_name TEXT,"
+        "  component TEXT, relation_type TEXT,"
+        "  child_system_group TEXT, child_system_type TEXT,"
+        "  child_equip_code TEXT)"
+    )
     # One row per CATALOGUE FIELD (not per record), holding an embedding of a
     # short descriptor of the field (name + type + unit + example values) --
     # REVIEW_FINDINGS A2 "catalogue-as-retrieval": at query time, select_fields
@@ -390,6 +406,7 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     con.execute("DROP TABLE IF EXISTS records")
     con.execute("DROP TABLE IF EXISTS record_params")
     con.execute("DROP TABLE IF EXISTS field_embeddings")
+    con.execute("DROP TABLE IF EXISTS record_relations")
     init_db(con)
 
     records = list(load_records(src))
@@ -397,6 +414,46 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
         print("No records found.", file=sys.stderr)
         return
     raws = [r for _, _, _, r, _ in records]
+
+    # Relations + curated aliases, first pass (REVIEW_FINDINGS H4/H5): walk every
+    # record's canonical edges/aliases BEFORE the per-record storage loop so the
+    # REVERSE edges ("Fitted to": which ingested records carry this one as a
+    # component) can be folded into each record's typed fields as it's stored.
+    rid_set = {parent_rid for parent_rid, *_ in records}
+    extra_aliases = {}      # rid -> [curated alias/code names + edge names]
+    rev_fitted_to = {}      # child_rid -> [titles of records fitted with it]
+    n_edges = 0
+    for parent_rid, title, _text, _raw, canon in records:
+        for r in canon.get("relations") or []:
+            con.execute(
+                "INSERT INTO record_relations (parent_rid, child_model_id, "
+                "child_name, rel_parent_model_id, rel_parent_name, component, "
+                "relation_type, child_system_group, child_system_type, "
+                "child_equip_code) VALUES (?,?,?,?,?,?,?,?,?,?)",
+                (parent_rid,
+                 None if r.get("child_id") is None else str(r["child_id"]),
+                 r.get("child_name"),
+                 None if r.get("parent_id") is None else str(r["parent_id"]),
+                 r.get("parent_name"), r.get("component"),
+                 r.get("relation_type"), r.get("child_system_group"),
+                 r.get("child_system_type"), r.get("child_equip_code")))
+            n_edges += 1
+            cid = None if r.get("child_id") is None else str(r["child_id"])
+            cname = r.get("child_name")
+            if cid is not None and cid in rid_set:
+                rev_fitted_to.setdefault(cid, []).append(title)
+            elif cname:
+                # out-of-corpus child: its name aliases to THIS record, so a
+                # query naming the component still pins the system carrying it.
+                # (An in-corpus child pins via its own record's aliases.)
+                extra_aliases.setdefault(parent_rid, []).append(str(cname))
+        curated = canon.get("aliases") or []
+        if curated:
+            extra_aliases.setdefault(parent_rid, []).extend(curated)
+    if n_edges:
+        print(f"Relations: {n_edges} edge(s) from {len(rid_set)} records "
+              f"({len(rev_fitted_to)} record(s) gain a reverse 'Fitted to').",
+              file=sys.stderr)
 
     # Expand every record into passages, remembering which parent each came from.
     passages = []  # (passage_rid, parent_rid, title, passage_text)
@@ -406,6 +463,9 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     fields_by_parent = {}
     for parent_rid, title, text, raw, canon in records:
         typed, _units = record_model.typed_fields(canon)
+        if parent_rid in rev_fitted_to:
+            # reverse edge (H4): membership-filterable "which records carry me"
+            typed["Fitted to"] = sorted(set(rev_fitted_to[parent_rid]))
         fields_by_parent[parent_rid] = typed
         for j, chunk in enumerate(chunk_record(title, text)):
             passages.append((f"{parent_rid}/{j}", parent_rid, title, chunk))
@@ -440,6 +500,15 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     # rather than silently missing from filtering later.
     dropped = {}
     catalogue = cat_mod.build_catalogue(raws, dropped=dropped)
+    # "Fitted to" is corpus-derived (reverse relations, H4), so build_catalogue
+    # -- which classifies per-record raw fields -- can't see it; classify it
+    # here from the same values just written into fields_json.
+    if rev_fitted_to:
+        catalogue["Fitted to"] = {
+            "type": "multi_value",
+            "count": len(rev_fitted_to),
+            "values": sorted({t for ts in rev_fitted_to.values() for t in ts}),
+        }
     con.execute(
         "INSERT OR REPLACE INTO meta (key, value) VALUES ('catalogue', ?)",
         (json.dumps(catalogue),),
@@ -456,7 +525,9 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     # every filter-extraction prompt showing all ~200+ fields. One row per
     # field, not per record -- cheap even on a modest embedder.
     if catalogue:
-        field_names = list(catalogue.keys())
+        # admin/audit fields (REVIEW_FINDINGS H6) are never offered to field
+        # selection, so don't spend embeddings on them
+        field_names = [f for f in catalogue if not catalogue[f].get("admin")]
         descriptors = [_field_descriptor(f, catalogue[f]) for f in field_names]
         field_vecs = embed(descriptors, embed_model)
         for f, v in zip(field_names, field_vecs):
@@ -490,8 +561,12 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     # later retrieval phase to deterministically pin named-entity queries instead
     # of relying solely on embeddings (weak at exact designations). Built once
     # here and stored so it isn't re-derived per query.
+    # extra_aliases (H5/H4): curated source aliases[]/codes[] -- cover names
+    # share no vocabulary with the title, exactly where title-derived aliasing
+    # fails -- plus out-of-corpus related-system names collected above.
     aliases = record_model.build_alias_table(
-        [(parent_rid, title) for parent_rid, title, _text, _raw, _canon in records])
+        [(parent_rid, title) for parent_rid, title, _text, _raw, _canon in records],
+        extra_aliases=extra_aliases)
     con.execute(
         "INSERT OR REPLACE INTO meta (key, value) VALUES ('aliases', ?)",
         (json.dumps(aliases),),
@@ -629,7 +704,8 @@ def select_fields(con, query, catalogue, k=15, always=(),
         # Same "top-k UNION always" shape as the embedding path below (just
         # ranked by coverage instead of relevance), so callers get a
         # consistently-sized spec regardless of which mode is active.
-        cov_order = sorted(catalogue, key=lambda f: -(catalogue[f].get("count") or 0))
+        cov_order = sorted((f for f in catalogue if not catalogue[f].get("admin")),
+                           key=lambda f: -(catalogue[f].get("count") or 0))
         picked = cov_order[:k]
         for f in always:
             if f not in picked:
@@ -637,7 +713,10 @@ def select_fields(con, query, catalogue, k=15, always=(),
         return picked
 
     qvec = embed([query], embed_model)[0]
-    fields = [f for f in field_vecs if f in catalogue]
+    # (admin fields are already absent from field_embeddings on a current db --
+    # see ingest -- the catalogue-side check covers dbs embedded before H6)
+    fields = [f for f in field_vecs
+              if f in catalogue and not catalogue[f].get("admin")]
     if not fields:
         return list(always)
     mat = np.vstack([field_vecs[f] for f in fields])
@@ -1219,35 +1298,45 @@ def extract_filter_2pass(query, catalogue, con, backend, model=None, base_url=No
 
 
 def _passes(fields, clean_filter):
+    # A record's value for a field may be a LIST of variant values
+    # (REVIEW_FINDINGS H2 -- subtitle/comment-qualified parameter rows): every
+    # branch below treats a list as "pass if ANY variant satisfies the
+    # condition", which is the honest reading of "Engine Thrust min 100 kN"
+    # against a record whose thrust is [100, 120] depending on configuration.
     for field, cond in clean_filter.items():
         val = fields.get(field)
         if val is None:
             return False
+        vals = val if isinstance(val, list) else [val]
         t = cond["type"]
         if t == "numeric":
-            try:
-                v = float(val)
-            except (TypeError, ValueError):
+            nums = []
+            for x in vals:
+                try:
+                    nums.append(float(x))
+                except (TypeError, ValueError):
+                    continue
+            if not nums:
                 return False
-            if "min" in cond and v < cond["min"]:
-                return False
-            if "max" in cond and v > cond["max"]:
+            lo, hi = cond.get("min"), cond.get("max")
+            if not any((lo is None or v >= lo) and (hi is None or v <= hi)
+                       for v in nums):
                 return False
         elif t == "categorical":
-            if val not in cond["in"]:
+            if not set(map(str, vals)) & set(map(str, cond["in"])):
                 return False
         elif t == "multi_value":
-            # val is a list; pass if it contains ANY of the requested elements
-            have = set(val) if isinstance(val, list) else {val}
-            if not have & set(cond["contains"]):
+            # pass if the value list contains ANY of the requested elements
+            if not set(map(str, vals)) & set(map(str, cond["contains"])):
                 return False
         elif t == "date":
-            d = cat_mod._parse_date(str(val))
-            if d is None:
+            ds = [d for d in (cat_mod._parse_date(str(x)) for x in vals) if d]
+            if not ds:
                 return False
-            if "date_from" in cond and d < cat_mod._parse_date(cond["date_from"]):
-                return False
-            if "date_to" in cond and d > cat_mod._parse_date(cond["date_to"]):
+            lo = cat_mod._parse_date(cond["date_from"]) if "date_from" in cond else None
+            hi = cat_mod._parse_date(cond["date_to"]) if "date_to" in cond else None
+            if not any((lo is None or d >= lo) and (hi is None or d <= hi)
+                       for d in ds):
                 return False
     return True
 
@@ -1748,10 +1837,13 @@ def record_table(con, query, clean_filter, catalogue=None, limit=40, max_cols=6)
     numeric column so 'longest/most' reads top-down. Returns
     {columns, rows:[{rid,title,cells:{col:{value,unit,descr}}}], total} or None.
 
-    FUTURE: a cell is currently a single {value, unit, descr}; duplicate
-    parameters / multiple subtitles per field collapse to one (see
-    record_model.rich_params). Next iteration: cells become lists so repeated
-    parameters and their subtitles are all shown (stacked sub-rows)."""
+    Duplicate parameters / subtitled variants (REVIEW_FINDINGS H2): a cell is
+    still a single {value, unit, descr}, but record_model.rich_params now STACKS
+    variant rows into the value string ("100 (Standard configuration); 120
+    (Overclocked/Emergency configuration)") under the catalogue's field name, so
+    nothing is silently dropped. Known trade-off: a stacked value isn't
+    float()-able, so the numeric column sort sinks multi-variant rows;
+    FUTURE: sort on the max variant / render stacked sub-rows."""
     eligible_parents = _eligible_parents(con, clean_filter)
     if not eligible_parents:
         return None
