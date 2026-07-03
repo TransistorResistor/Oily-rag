@@ -178,6 +178,52 @@ All of H1–H6 land in `record_model.py` adapters plus small query-side extensio
 
 ---
 
+## I. Retrieval architecture review (added 2026-07-03)
+
+Whole-pipeline architectural pass over the query path: ingest (canonical model → passage chunking → FTS5 + MiniLM embeddings + typed fields/relations/aliases) → query (filter extraction → validation → hybrid retrieve with RRF fusion → cross-encoder rerank → filter modes → entity pinning → table/digest → water-fill budgeted assembly).
+
+**Verdict: the architecture is sound and appropriately sized.** The load-bearing decisions are right for the constraints (low–mid tier LLMs, small context windows, schema flexibility): one canonical parse with per-shape adapters; hybrid dense+sparse retrieval fused with RRF and reranked by a cross-encoder (the standard, evidence-backed stack); the propose→validate→audit-trail pattern for LLM-derived filters (the model never gets to invent fields or labels — the right trust boundary for small models); filter modes (`auto`/`fill`) that defend against spurious filters instead of trusting them; deterministic alias pinning to cover embeddings' known blind spot (exact designations); record-level filtering with passage-level retrieval and record-level citation; one global token budget with principled shrink orders; loud ingest diagnostics. Brute-force in-memory cosine is the **correct** choice at this scale — do not add a vector DB until the passage count demands it (see I7). The findings below are gaps *within* a sensible architecture, not reasons to change it.
+
+### I1. Hard filters starve the FTS channel — fusion silently degrades to vector-only (verified)
+The vector channel masks ineligible passages **before** its top-`pool` cut (`ragkit.py:1455-1462`); the keyword channel takes FTS's top-`pool` **first** and filters after (`ragkit.py:1468-1477`). Measured on the live db (hard filter on `systemType`, `pool=20`): *Air-to-Air Missile* → **1/20** FTS candidates survive (62 eligible FTS matches exist deeper in the rank); *Fighter Aircraft* → **4/20** (1,020 available). So exactly when a filter is active — the flagship use case — RRF fusion is effectively vector-only, and the keyword channel's contribution (exact designations, rare terms) is lost.
+**Action:** filter FTS results *before* the pool cut: either fetch unlimited/larger `LIMIT` and filter until `pool` eligible hits are collected, or push eligibility into SQL (temp table of eligible rowids joined in the FTS query). Cheap, isolated fix in `retrieve()`.
+
+### I2. The query orchestration is written twice and has already drifted
+`ragkit.answer()` and `compare_server.build_context()` each hand-roll the same ~80-line pipeline (extract → validate → resolve mode → pin → retrieve → table/digest → assemble). They already disagree: the empty-set fallback (filter excluded everything → retry unfiltered) exists only in `answer()` (`ragkit.py:2854`); the bench has none (`compare_server.py:247-272`). Currently masked because the bench's `auto` mode can't produce an empty result, but any config change (e.g. exposing `filter_mode=hard` in the UI) surfaces it. E2 unified the *defaults*; the *logic* is still duplicated.
+**Action:** extract one `run_query_pipeline(con, query, config) -> (contexts, table, digest, filter_info)` in ragkit; both entry points become thin wrappers (bench keeps its prompt-preview return shape).
+
+### I3. Structured answering is filter-gated; pinned-entity queries can't reach it
+`record_table`/`record_digest` only fire when a *validated filter* matched (`answer()`/`build_context` both gate on `clean`). But the most common query class — a named lookup ("what is the range of X?") — carries no filter: it gets exactly **one** passage for the pinned record (`max_per_parent=1`, pin injects the single best-cosine passage), and if that's a prose chunk rather than the right parameter chunk, the asked-for value simply isn't in the prompt. Same gap for comparisons: "Compare X and Y" (no filter) gets balanced passages but no table, even though both records' typed fields sit ready in `record_params`.
+**Action:** when entities are pinned, (a) attach the pinned record's parameter passage when the query names a catalogue field (`_field_name_hit` infrastructure exists) — this is G4, elevated; (b) for multi-entity pins, synthesize a mini-table from `record_params` for just the pinned records (machinery exists; only the gate changes). Retrieval hit-rate eval can't see this gap — only answer-stage eval can (see I8).
+
+### I4. Parameter passages become grab-bags at production parameter counts
+`chunk_record` packs `Parameter` lines into ~1,350-char chunks **in input order** (`ragkit.py:244-254`). At ~100 params/record (production shape), that's ~8–10 param chunks each mixing a dozen unrelated parameters: the embedding averages over unrelated content (weaker matching), the reranker sees 1 relevant line among 12, and a hit dumps a dozen irrelevant param lines into the prompt.
+**Action:** group param lines by `component`/theme at chunking (the canonical params already carry `component`), so a chunk is "the propulsion parameters" rather than "params 13–25". Complements I3(a).
+
+### I5. Query understanding is fragmented across independent mechanisms
+Filter extraction (LLM), `is_analytic_query` (regex+aliases), `match_entities` (alias table), field selection (embeddings), and the table/digest decision each interpret the query independently and don't share what they learn — e.g. a pinned entity's `systemType` never seeds category-scoped stats for single-pass extraction (noted as unwired in `select_fields`' docstring), and intent classification is still regex-only (A7's fold-into-extraction proposal remains open).
+**Action:** a small "query plan" step that runs the deterministic signals first (aliases → entities + their categories; field-name hits) and passes them into the one extraction call (which also returns intent). Deterministic bits stay authoritative; the LLM fills the rest. Detailed pathways in `query-pathways.md` (P1/P5).
+
+### I6. Mixed score scales in the relevance vector (latent)
+After rerank, `rel` holds normalized cross-encoder scores for the top-30 and normalized-RRF scores for the tail (`ragkit.py:1491,1511`), and `soft` mode adds a flat `soft_boost=0.15` on top (`:1519`) — three incomparable scales in one number. Harmless today (`min_rel=0.0` default, `soft` non-default), but the G3 floor and soft mode both gate on it, so enabling either applies thresholds across incomparable values.
+**Action (when G3/soft are actually used):** floor on cross-encoder scores only (tail candidates below the rerank pool are by construction below the floor), and make `soft` a rank-based bump rather than a score addition. Document until then.
+
+### I7. Scale cliffs and embedding provenance
+Fine now; know where the edges are. (a) Passage cache: ~1.6 KB/passage for vectors + text — ~2.8k passages ≈ 5 MB today; production records are similar word-counts so growth is linear in record count; brute-force matmul stays fast to ~100k+ passages, RAM and mtime-triggered full rebuilds hit first — move to `sqlite-vec` only then (D1 unchanged). (b) `match_entities` runs one regex per alias per query (`ragkit.py:1759`) — fine at 167 aliases, sluggish at ~10k+ (curated aliases × production corpus); switch to one compiled alternation or Aho-Corasick then. (c) **The db never records which embedder built it** (`meta` stores catalogue/aliases/stats only): querying with a different `--embed-model` than ingest silently produces garbage cosine similarity. Store the model name + dim in `meta` at ingest; assert (or at least warn) at query time. Cheapest insurance in this list.
+
+### I8. Eval measures too little of the machinery it protects
+The offline eval scores top-k *hit-rate* only: it can't see per-channel health (I1 would have been visible as "FTS contributes 0 under filters"), rank movement (the 27/28 R-77 regression took a manual db diff to localize), whether a hit came from pinning or ranking, or whether the *right passage type* was retrieved (I3).
+**Action:** extend `eval.py` with per-case diagnostics that are all cheap and offline: MRR alongside hit-rate; vector-only / FTS-only / fused ablation per case; a `pinned` flag on each hit; passage-kind (prose/param) of the hit. Gold *filter* cases for the v2 shape stay blocked on real corpus data (H7).
+
+### I9. Minor
+`_table_columns` matches field names by raw substring (`f.lower() in ql`, `ragkit.py:1820`) — "Mass" matches "massive", "Type" matches "prototype"; reuse `_field_name_hit`'s word-boundary matching.
+
+**Recommended order:** I1 (verified correctness bug, small fix) → I7c (one-line insurance) → I3+I4 (the biggest answer-quality lever for the production shape; pairs with G4) → I2 (before any new query-path feature doubles the drift surface) → I8 (so the above are measurable) → I5 (larger consolidation, best done alongside the filter-generation pathways in `query-pathways.md`) → I6/I9 opportunistically.
+
+**Filter-generation deep dive:** production data-shape sensitivities of the filter-extraction path (partition/categorical cardinality cliffs at ~50 entry types, unbounded value enumerations, compound labels, title-valued relation fields) and improvement pathways live in **`query-pathways.md`** (same folder), written alongside this review.
+
+---
+
 ## Major improvements (proposed now — recommended order)
 
 1. **Global prompt token budgeter** (B1) — prevents the worst small-model failure (blown context) with a mechanical change to `build_prompt` and its callers.
