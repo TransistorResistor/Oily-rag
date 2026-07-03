@@ -250,6 +250,17 @@ def build_context(query, auto_filter, two_pass=None):
                                pin_entities=pin,
                                min_rel=CONFIG.get("min_rel", 0.0))
 
+    shown = {c["rid"] for c in contexts}
+    # One-hop expansion (REVIEW_FINDINGS I3/H4e): pull in the in-corpus records
+    # linked to the entities the query NAMES (the pins) so a question spanning a
+    # record and its related systems has the linked records' own text in
+    # context, not just the seed's single pinned passage. Mirrors ragkit.answer
+    # (the CLI path) so the bench and the CLI don't drift (REVIEW_FINDINGS I2).
+    related = (ragkit.related_records(con, query, pin, exclude=shown)
+               if pin else [])
+    if related:
+        filter_info["related"] = related
+
     # Represent the fuller matched set beyond the top-k passages. Analytic
     # questions (compare / which has the most / numeric filter) get a structured
     # table with the exact fields incl. descriptions; other queries get a
@@ -262,12 +273,15 @@ def build_context(query, auto_filter, two_pass=None):
             if table:
                 filter_info["table"] = table
         if not table and matched > len(contexts):
-            shown = {c["rid"] for c in contexts}
-            digest = ragkit.record_digest(con, query, clean, exclude=shown)
+            # exclude both the shown passages AND the related block so a record
+            # isn't listed in two supplementary sections at once.
+            digest = ragkit.record_digest(
+                con, query, clean, exclude=shown | {r["rid"] for r in related})
             if digest:
                 filter_info["digest"] = digest
 
     prompt = ragkit.build_prompt(query, contexts, digest=digest, table=table,
+                                 related=related,
                                  max_context_tokens=CONFIG["max_context_tokens"])
     return contexts, prompt, filter_info
 

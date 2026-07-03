@@ -1629,6 +1629,15 @@ def _snippet(text, n=200):
     return (body[:n].rstrip() + "…") if len(body) > n else body
 
 
+def _passage_body(text):
+    """A passage's body with the redundant 'Title:' header line dropped but
+    LINE STRUCTURE preserved (unlike _snippet, which collapses to one line) --
+    so 'Parameter X = N' lines stay on their own lines and _truncate_to_tokens
+    can recognise and keep them when the related-systems block is budgeted."""
+    return (text.split("\n", 1)[1].strip()
+            if text.startswith("Title:") and "\n" in text else text.strip())
+
+
 def record_digest(con, query, clean_filter, embed_model=DEFAULT_EMBED_MODEL,
                   limit=24, snippet_chars=200, exclude=None):
     """For a filtered set larger than k, return a compact one-line-per-record
@@ -1664,6 +1673,114 @@ def record_digest(con, query, clean_filter, embed_model=DEFAULT_EMBED_MODEL,
                             _snippet(cache["text"][rowid], snippet_chars))
     ordered = sorted(best.items(), key=lambda kv: -kv[1][0])[:limit]
     return [{"rid": p, "title": t, "snippet": s} for p, (_sc, t, s) in ordered]
+
+
+def related_records(con, query, seed_parents, embed_model=DEFAULT_EMBED_MODEL,
+                    limit=6, exclude=None):
+    """One-hop expansion over record_relations (REVIEW_FINDINGS I3 / H4e):
+    given seed record rids -- typically the entities the query NAMES (the alias
+    pins), the records most likely to be central to it -- return the IN-CORPUS
+    records they're linked to, each as query-relevant content (best passage +
+    its parameters) plus a note saying how it links to the seed.
+
+    This is what lets a question SPAN a record and its related records'
+    parameters ("how far do the F-22's missiles reach", "what does the radar on
+    the Rafale detect at") rather than riding on the seed's single pinned
+    passage: the linked missile/radar record is pulled in with its own text, so
+    its parameters are actually in context. Relations name the neighbour; this
+    fetches the neighbour's content.
+
+    Both edge directions are followed. A seed that is an edge's parent reaches
+    the child it is fitted with (fighter -> its missiles/radar); a seed that is
+    an edge's child reaches the platforms fitted with it (missile -> the
+    fighters that carry it). Only neighbours that are themselves ingested
+    records are returned -- an out-of-corpus child is already folded in as an
+    alias on its carrying record at ingest, so there is nothing more to expand
+    to.
+
+    Returns [{rid, title, text, note}], most query-relevant first, capped at
+    `limit`, excluding the seeds themselves and any rid in `exclude` (the
+    already-shown top-k contexts, so a linked record that ALSO surfaced as a
+    passage isn't shown twice). [] when there are no seeds, no edges, or no
+    in-corpus neighbours -- so a relation-less / pre-H4 db is a silent no-op
+    and this whole feature costs nothing there."""
+    if not seed_parents:
+        return []
+    seeds = list(dict.fromkeys(seed_parents))  # dedup, preserve pin order
+    seed_set = set(seeds)
+    fields_map = _record_fields_map(con)
+    corpus_rids = set(fields_map)
+    title_of = {rid: fields_map[rid][0] for rid in fields_map}
+
+    # In-corpus one-hop neighbours + an ordered set of "<relation> <seed>"
+    # link labels per neighbour (a neighbour can link to more than one seed).
+    placeholders = ",".join("?" * len(seeds))
+    rows = con.execute(
+        "SELECT parent_rid, child_model_id, rel_parent_model_id, relation_type "
+        "FROM record_relations "
+        f"WHERE parent_rid IN ({placeholders}) "
+        f"OR child_model_id IN ({placeholders}) "
+        f"OR rel_parent_model_id IN ({placeholders})",
+        seeds * 3).fetchall()
+    exclude = set(exclude or ())
+    neighbours = {}  # neighbour_rid -> {label: None}  (ordered, deduped)
+    for p, c, rp, rt in rows:
+        other = c if c is not None else rp  # the system on the far end from parent_rid
+        rt_txt = (rt or "linked to").strip()
+        # seed is the edge's parent -> neighbour is the far end (its component/child)
+        if p in seed_set and other in corpus_rids and other not in seed_set \
+                and other not in exclude:
+            neighbours.setdefault(other, {})[f"{rt_txt}: {title_of[p]}"] = None
+        # seed is the far end -> neighbour is the parent record that carries it
+        if other in seed_set and p in corpus_rids and p not in seed_set \
+                and p not in exclude:
+            neighbours.setdefault(p, {})[f"{rt_txt}: {title_of[other]}"] = None
+    if not neighbours:
+        return []
+
+    # Represent each neighbour by its query-relevant content. Scored by the SAME
+    # bi-encoder cosine record_digest uses (shared passage cache, one matmul over
+    # just the neighbours' passages). But chunk_record isolates a record's
+    # PARAMETERS into their own passage(s) (ragkit.py chunk_record), and a
+    # natural-language question embeds closer to prose than to "Parameter X = N",
+    # so the single best-cosine passage would systematically leave the linked
+    # record's numbers behind -- exactly the parameters a spanning question needs.
+    # So each neighbour carries its best-matching passage AND, when that passage
+    # holds no parameter lines, its most query-relevant parameter passage too;
+    # the budgeter's param-preserving truncation then keeps those numbers.
+    qvec = embed([query], embed_model)[0]
+    cache = _load_passage_cache(con, _db_path_of(con))
+    idx_of = {rid: i for i, rid in enumerate(cache["rowids"].tolist())}
+    per_neighbour = {}  # neighbour_rid -> list of (score, rowid)
+    for rowid, parent in cache["parent"].items():
+        if parent in neighbours and rowid in idx_of:
+            per_neighbour.setdefault(parent, []).append(rowid)
+    if not per_neighbour:
+        return []
+
+    def _has_param(rowid):
+        return any(l.startswith("Parameter ")
+                   for l in cache["text"][rowid].split("\n"))
+
+    built = []  # (best_score, rid, title, text)
+    for parent, rowids in per_neighbour.items():
+        scored = sorted(
+            ((float(cache["matrix"][idx_of[r]] @ qvec), r) for r in rowids),
+            key=lambda sr: -sr[0])
+        best_score, best_rid = scored[0]
+        bodies = [_passage_body(cache["text"][best_rid])]
+        if not _has_param(best_rid):
+            # richest available parameter passage (highest cosine among those
+            # that actually carry parameter lines), so the numbers are present
+            param_rid = next((r for _s, r in scored if _has_param(r)), None)
+            if param_rid is not None:
+                bodies.append(_passage_body(cache["text"][param_rid]))
+        built.append((best_score, parent, cache["title"][best_rid],
+                      "\n".join(bodies)))
+    built.sort(key=lambda b: -b[0])
+    return [{"rid": p, "title": t, "text": txt,
+             "note": "; ".join(neighbours[p].keys())}
+            for _sc, p, t, txt in built[:limit]]
 
 
 # Tightened for REVIEW_FINDINGS A7: the old regex included bare "which| all|
@@ -2010,6 +2127,50 @@ def _render_digest_text(digest, token_budget=None):
     return best
 
 
+def _render_related_text(related, token_budget=None):
+    """Render the one-hop 'Related systems' block (see related_records): the
+    in-corpus records linked to the query's named entities, each as a small
+    content block headed by how it links (e.g. "Fitted with: F-22 Raptor") so
+    the model can tell a linked record from a top-k passage and cite it
+    correctly. Unlike the digest (one prose snippet each, pure breadth), these
+    carry the linked record's actual passage/parameter text -- they're meant to
+    ANSWER a spanning question, not just signal the record exists.
+
+    token_budget (REVIEW_FINDINGS B1, optional): greedy pack in relevance order
+    -- each block is added whole while it fits; the first that doesn't is
+    param-preservingly truncated (_truncate_to_tokens keeps 'Parameter ' lines,
+    so the linked numbers survive) and later blocks are dropped with a truthful
+    '(+N more)' note. None (default) renders every block in full."""
+    header = ("Related systems linked to the record(s) you asked about (use "
+              "these for details the linked record carries — cite the linked "
+              "record's id):")
+
+    def block(r):
+        return f"[{r['rid']}] {r['title']} ({r['note']})\n{r['text']}"
+
+    if token_budget is None:
+        return header + "\n\n" + "\n\n".join(block(r) for r in related)
+
+    kept, used, dropped = [], _est_tokens(header), 0
+    for i, r in enumerate(related):
+        b = block(r)
+        bt = _est_tokens(b)
+        if used + bt <= token_budget:
+            kept.append(b)
+            used += bt
+        elif not kept:
+            # never emit an empty block; keep the top one, truncated (params first)
+            kept.append(_truncate_to_tokens(b, token_budget - used))
+            dropped = len(related) - 1
+            break
+        else:
+            dropped = len(related) - i
+            break
+    if dropped:
+        kept.append(f"(+{dropped} more linked record(s) not shown)")
+    return header + "\n\n" + "\n\n".join(kept)
+
+
 def _pack_passages(contexts, token_budget=None):
     """Render + pack passage blocks (REVIEW_FINDINGS B1's passage share of the
     global budget) in the given order (already ranked/pinned/floored by
@@ -2081,8 +2242,8 @@ def _allocate_budget(needs, weights, total):
     return fixed
 
 
-def assemble_context(query, contexts, table=None, digest=None,
-                     max_context_tokens=None, alloc=(0.50, 0.35, 0.15)):
+def assemble_context(query, contexts, table=None, digest=None, related=None,
+                     max_context_tokens=None, alloc=(0.50, 0.35, 0.15, 0.15)):
     """THE B1 fix: build_prompt used to hand back full-size table/digest text
     with NO budget at all -- only retrieve()'s passages were ever capped by
     max_context_tokens (see retrieve()'s own, separate, passages-only cap).
@@ -2092,17 +2253,24 @@ def assemble_context(query, contexts, table=None, digest=None,
     (passages / table / digest) are traded off against a SINGLE total budget.
 
     Sections get a nominal share of `max_context_tokens` (`alloc` = passages/
-    table/digest weights, default 50/35/15 -- passages carry the actual prose
-    the model reasons over, so they get the largest default share; table/
-    digest are supplementary structure/breadth), but a section needing LESS
-    than its share gives the unused tokens back to the others via water-
-    filling (_allocate_budget) instead of wasting them.
+    table/digest/related weights, default 50/35/15/15 -- passages carry the
+    actual prose the model reasons over, so they get the largest default share;
+    table/digest/related are supplementary structure/breadth/graph-expansion),
+    but a section needing LESS than its share gives the unused tokens back to
+    the others via water-filling (_allocate_budget) instead of wasting them.
+    Because an ABSENT section is passed with need=0, it is fixed to budget 0 and
+    dropped before it can affect the others' ratios -- so with no `related`
+    (need 0) the remaining three keep their exact 50/35/15 split and output is
+    byte-for-byte the pre-related behaviour; the fourth weight only ever bites
+    when related content is actually present.
 
     Shrink order per section (cheapest/least-essential first) -- see each
     render function's own docstring for the mechanics:
       - table: drop descr text, then drop rows from the bottom
         (_render_table_text).
       - digest: drop entries from the bottom (_render_digest_text).
+      - related: greedy-pack blocks in relevance order, param-preservingly
+        truncate the first that overflows, drop the rest (_render_related_text).
       - passages: per-passage truncation (_truncate_to_tokens, via
         _pack_passages), dropping whole passages from the bottom once even a
         minimal truncation won't fit.
@@ -2111,23 +2279,27 @@ def assemble_context(query, contexts, table=None, digest=None,
     in full, nothing is dropped or truncated -- the EXACT pre-B1-fix output,
     so a caller that doesn't pass a budget sees zero behaviour change.
 
-    Returns (ctx_text, table_text_or_None, digest_text_or_None) -- the exact
-    text build_prompt slots into its output (block separators, headers, etc.
-    are unchanged from before this function existed; see _pack_passages/
-    _render_table_text/_render_digest_text)."""
+    Returns (ctx_text, table_text_or_None, digest_text_or_None,
+    related_text_or_None) -- the exact text build_prompt slots into its output
+    (block separators, headers, etc. are unchanged from before this function
+    existed; see _pack_passages/_render_table_text/_render_digest_text/
+    _render_related_text)."""
     table_text_full = _render_table_text(table) if (table and table.get("rows")) else None
     digest_text_full = _render_digest_text(digest) if digest else None
+    related_text_full = _render_related_text(related) if related else None
 
     if max_context_tokens is None:
-        return _pack_passages(contexts), table_text_full, digest_text_full
+        return (_pack_passages(contexts), table_text_full, digest_text_full,
+                related_text_full)
 
     blocks = [f"[{c['rid']}] {c['title']}\n{c['text']}" for c in contexts]
     needs = {
         "passages": sum(_est_tokens(b) for b in blocks),
         "table": _est_tokens(table_text_full) if table_text_full else 0,
         "digest": _est_tokens(digest_text_full) if digest_text_full else 0,
+        "related": _est_tokens(related_text_full) if related_text_full else 0,
     }
-    weights = dict(zip(("passages", "table", "digest"), alloc))
+    weights = dict(zip(("passages", "table", "digest", "related"), alloc))
     budgets = _allocate_budget(needs, weights, max_context_tokens)
 
     ctx_text = _pack_passages(contexts, budgets["passages"])
@@ -2135,7 +2307,9 @@ def assemble_context(query, contexts, table=None, digest=None,
                   if table_text_full else None)
     digest_text = (_render_digest_text(digest, token_budget=budgets["digest"])
                   if digest_text_full else None)
-    return ctx_text, table_text, digest_text
+    related_text = (_render_related_text(related, token_budget=budgets["related"])
+                    if related_text_full else None)
+    return ctx_text, table_text, digest_text, related_text
 
 
 def _est_tokens(s):
@@ -2225,21 +2399,23 @@ def system_prompt_for(table):
     return SYSTEM_PROMPT_WITH_TABLE if table else SYSTEM_PROMPT
 
 
-def build_prompt(query, contexts, digest=None, table=None, max_context_tokens=None):
+def build_prompt(query, contexts, digest=None, table=None, max_context_tokens=None,
+                 related=None):
     """Assemble the final prompt text: context passages, optional structured
     table (analytic queries), optional digest (roster of the rest of a large
-    filtered set), then the question.
+    filtered set), optional related-systems block (one-hop expansion of the
+    query's named entities -- see related_records), then the question.
 
     max_context_tokens (REVIEW_FINDINGS B1, default None = unbounded, same as
     before this kwarg existed): the ONE global budget covering every variable
-    part of this prompt (passages + table + digest combined), delegated to
-    assemble_context -- see its docstring for the allocation/shrink strategy.
-    This is the fix for the flagship context-budgeting bug: previously only
-    retrieve()'s passages were ever capped, so a broad filter + analytic
-    query's table/digest could blow the configured budget several times
-    over with nothing to stop it."""
-    ctx_text, table_text, digest_text = assemble_context(
-        query, contexts, table=table, digest=digest,
+    part of this prompt (passages + table + digest + related combined),
+    delegated to assemble_context -- see its docstring for the allocation/shrink
+    strategy. This is the fix for the flagship context-budgeting bug: previously
+    only retrieve()'s passages were ever capped, so a broad filter + analytic
+    query's table/digest could blow the configured budget several times over
+    with nothing to stop it."""
+    ctx_text, table_text, digest_text, related_text = assemble_context(
+        query, contexts, table=table, digest=digest, related=related,
         max_context_tokens=max_context_tokens)
     parts = [f"Context records:\n\n{ctx_text}"]
     # Structured backbone: exact fields for every matched record (analytic
@@ -2252,6 +2428,14 @@ def build_prompt(query, contexts, digest=None, table=None, max_context_tokens=No
     # so the model can reason over the whole matched set, not just the top few.
     if digest_text:
         parts.append(digest_text)
+    # One-hop graph expansion (REVIEW_FINDINGS I3/H4e): the in-corpus records
+    # linked to the query's named entities (a named fighter's missiles/radar),
+    # so a question spanning a record and its related systems has the linked
+    # records' own text in context, not just the seed's single passage. Last of
+    # the variable sections so the positions of passages/table/digest -- and
+    # thus the output when there's no related block -- are exactly as before.
+    if related_text:
+        parts.append(related_text)
     parts.append(f"Question: {query}")
     return "\n\n".join(parts)
 
@@ -2493,58 +2677,62 @@ def _openrouter_raw(system, user, model, timeout=HTTP_TIMEOUT,
 
 
 def gen_local(query, contexts, model="Qwen/Qwen2.5-1.5B-Instruct", digest=None,
-              table=None, max_context_tokens=None):
+              table=None, max_context_tokens=None, related=None):
     return gen_local_raw(system_prompt_for(table),
                          build_prompt(query, contexts, digest, table,
-                                      max_context_tokens), model)
+                                      max_context_tokens, related=related), model)
 
 
 def gen_anthropic(query, contexts, model="claude-sonnet-4-6", digest=None,
-                  table=None, max_context_tokens=None):
+                  table=None, max_context_tokens=None, related=None):
     return _anthropic_raw(system_prompt_for(table),
                           build_prompt(query, contexts, digest, table,
-                                       max_context_tokens), model)
+                                       max_context_tokens, related=related), model)
 
 
 def gen_openrouter(query, contexts, model=None, digest=None, table=None,
-                   max_context_tokens=None):
+                   max_context_tokens=None, related=None):
     return _openrouter_raw(system_prompt_for(table),
                            build_prompt(query, contexts, digest, table,
-                                        max_context_tokens),
+                                        max_context_tokens, related=related),
                            model or OPENROUTER_DEFAULT_MODEL)
 
 
 def gen_openai(query, contexts, model, base_url="http://localhost:8000/v1",
-               digest=None, table=None, max_context_tokens=None):
+               digest=None, table=None, max_context_tokens=None, related=None):
     return _openai_raw(system_prompt_for(table),
                        build_prompt(query, contexts, digest, table,
-                                    max_context_tokens),
+                                    max_context_tokens, related=related),
                        model, base_url)
 
 
 def generate(query, contexts, backend, model=None, base_url=None, digest=None,
-             table=None, max_context_tokens=None):
+             table=None, max_context_tokens=None, related=None):
     """max_context_tokens (REVIEW_FINDINGS B1) is the GLOBAL prompt budget --
     passed straight through to build_prompt/assemble_context, which is the
-    only place passages/table/digest are traded off against ONE total. This
-    replaced retrieve()'s max_context_tokens as the authoritative cap; see
+    only place passages/table/digest/related are traded off against ONE total.
+    This replaced retrieve()'s max_context_tokens as the authoritative cap; see
     ragkit.answer for the caller-side change (retrieve() is now called
-    without a cap so it returns full-size passages for assembly to budget)."""
+    without a cap so it returns full-size passages for assembly to budget).
+
+    related (REVIEW_FINDINGS I3/H4e, default None): the one-hop related-systems
+    block (see related_records), passed through untouched -- None/[] is a no-op
+    and reproduces the exact pre-expansion prompt."""
     if backend == "local":
         return gen_local(query, contexts, model or "Qwen/Qwen2.5-1.5B-Instruct",
-                         digest, table, max_context_tokens)
+                         digest, table, max_context_tokens, related=related)
     if backend == "anthropic":
         return gen_anthropic(query, contexts, model or "claude-sonnet-4-6",
-                             digest, table, max_context_tokens)
+                             digest, table, max_context_tokens, related=related)
     if backend == "openrouter":
         return gen_openrouter(query, contexts, model, digest, table,
-                              max_context_tokens)
+                              max_context_tokens, related=related)
     if backend == "openai":
         if not model:
             raise RuntimeError("--model required for openai backend")
         return gen_openai(query, contexts, model,
                           base_url or "http://localhost:8000/v1", digest, table,
-                          max_context_tokens)
+                          max_context_tokens, related=related)
     raise RuntimeError(f"unknown backend {backend}")
 
 
@@ -2784,10 +2972,12 @@ def answer(db_path, query, backend, model=None, base_url=None,
 
     max_context_tokens (REVIEW_FINDINGS B1): the GLOBAL prompt budget -- now
     applied once, in generate()/build_prompt/assemble_context, across
-    passages+table+digest together. retrieve() itself is called WITHOUT a
-    cap (full-size passages), so assembly has the real text to budget
+    passages+table+digest+related together. retrieve() itself is called WITHOUT
+    a cap (full-size passages), so assembly has the real text to budget
     against instead of double-truncating already-shortened passages.
-    Returns (reply, contexts, filter_info)."""
+    Returns (reply, contexts, filter_info) -- filter_info carries the one-hop
+    'related' block (REVIEW_FINDINGS I3/H4e) when the query names linked
+    entities, so callers/UI can surface it alongside the digest/table."""
     con = connect(db_path)
     catalogue = load_catalogue(con)
     aliases = load_aliases(con)
@@ -2859,6 +3049,19 @@ def answer(db_path, query, backend, model=None, base_url=None,
     if not contexts:
         return "No records indexed.", [], filter_info
 
+    shown = {c["rid"] for c in contexts}
+    # One-hop expansion (REVIEW_FINDINGS I3/H4e): pull in the in-corpus records
+    # linked to the entities the query NAMES (the pins), so a question spanning
+    # a record and its related systems ("how far do the F-22's missiles reach")
+    # has the linked records' own text in context, not just the seed's single
+    # pinned passage. Seeded from pins (deterministic, high-precision), excluding
+    # records already shown as top-k passages. No-op when nothing is pinned or
+    # the corpus carries no relations.
+    related = related_records(con, query, pin, embed_model=embed_model,
+                              exclude=shown) if pin else []
+    if related:
+        filter_info["related"] = related
+
     # Represent the fuller matched set beyond the top-k passages. Analytic
     # questions get a structured table (exact fields incl. descriptions);
     # otherwise a snippet-per-record digest for prose breadth.
@@ -2870,14 +3073,15 @@ def answer(db_path, query, backend, model=None, base_url=None,
             if table:
                 filter_info["table"] = table
         if not table and matched > len(contexts):
-            shown = {c["rid"] for c in contexts}
+            # exclude both the shown passages AND the related block, so a record
+            # isn't listed in two supplementary sections at once.
             digest = record_digest(con, query, clean, embed_model=embed_model,
-                                   exclude=shown)
+                                   exclude=shown | {r["rid"] for r in related})
             if digest:
                 filter_info["digest"] = digest
 
     reply = generate(query, contexts, backend, model, base_url,
-                     digest=digest, table=table,
+                     digest=digest, table=table, related=related,
                      max_context_tokens=max_context_tokens)
     return reply, contexts, filter_info
 
