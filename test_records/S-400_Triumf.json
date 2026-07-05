@@ -1,0 +1,378 @@
+{
+  "modelID": 1010,
+  "nomenclature": "S-400 Triumf",
+  "systemGroup": "Weapon",
+  "systemType": "Surface-to-Air Missile System",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "S-400",
+  "aliases": [
+    {
+      "alias": "SA-21 Growler"
+    },
+    {
+      "alias": "Triumf"
+    },
+    {
+      "alias": "S-400 Triumph"
+    }
+  ],
+  "codes": [
+    {
+      "code": "S-400"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The S-400 Triumf (NATO reporting name SA-21 Growler) is a long-range, all-altitude, all-weather air defense system developed and manufactured by Russia&#x27;s Almaz-Antey company. The system entered service with the Russian Air Force in 2005 and has since become Russia&#x27;s primary surface-to-air missile system. The S-400 combines search and acquisition radar, command post, power supply, and guided missiles on mobile or stationary platforms, capable of engaging aircraft, cruise missiles, and ballistic missiles.",
+      "shortDescription": "Long-range Russian surface-to-air missile system with multi-target engagement capability.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The S-400 system consists of a command post, a 92N2A/92N2E radar, and transporter-erector-launcher (TEL) vehicles carrying missiles. The 92N2 radar provides search and track functions using a phased-array antenna. The system employs four missile types with different ranges and profiles: the 40N6 ultra-long-range missile, 48N6 long-range missile, 9M96 medium-range missile, and 9M96DM variant. The modular architecture allows rapid deployment, redeployment, and integration of updated components. Mobile versions use truck platforms enabling worldwide deployment.",
+      "shortDescription": "Mobile/stationary air defense system with phased-array radar and four missile variants.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101001,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-400 Missile System"
+    },
+    {
+      "seq": 2,
+      "mediaID": 101002,
+      "url": "https://example.com/documents/s400-system-overview.pdf",
+      "mimeType": "application/pdf",
+      "title": "S-400 Triumf System Overview",
+      "caption": "Comprehensive system overview and technical data for the S-400 surface-to-air missile system"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People&#x27;s Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1012,
+      "childModel": "40N6",
+      "parentModelID": 1010,
+      "parentModel": "S-400 Triumf",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "40N6"
+    },
+    {
+      "childModelID": 1013,
+      "childModel": "48N6M",
+      "parentModelID": 1010,
+      "parentModel": "S-400 Triumf",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "48N6M"
+    },
+    {
+      "childModelID": 1014,
+      "childModel": "9M96",
+      "parentModelID": 1010,
+      "parentModel": "S-400 Triumf",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "9M96"
+    },
+    {
+      "childModelID": 1015,
+      "childModel": "9M96DM",
+      "parentModelID": 1010,
+      "parentModel": "S-400 Triumf",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "9M96DM"
+    },
+    {
+      "childModelID": 1016,
+      "childModel": "91N6E Big Bird",
+      "parentModelID": 1010,
+      "parentModel": "S-400 Triumf",
+      "parentComponent": "Sensors",
+      "relationType": "PARENT",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "91N6E"
+    },
+    {
+      "childModelID": 1017,
+      "childModel": "92N6E Grave Stone",
+      "parentModelID": 1010,
+      "parentModel": "S-400 Triumf",
+      "parentComponent": "Sensors",
+      "relationType": "PARENT",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "92N6E"
+    },
+    {
+      "childModelID": 1018,
+      "childModel": "96L6E Cheese Board",
+      "parentModelID": 1010,
+      "parentModel": "S-400 Triumf",
+      "parentComponent": "Sensors",
+      "relationType": "PARENT",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "96L6E"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Mobile surface-to-air missile system",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2005",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Missile types",
+      "parameter": "Missile types",
+      "parameterValue": "40N6, 48N6M, 9M96, 9M96DM",
+      "uom": "",
+      "parameterDescr": "Missile types employed by the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 1",
+      "parameterSubTitle": "40N6 missile",
+      "parameterValue": "400",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "comments": "Ultra-long-range variant for high-altitude targets; estimated operational range",
+      "parameterUomValue": "400 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 2",
+      "parameterSubTitle": "48N6M missile",
+      "parameterValue": "250",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "comments": "Long-range primary air defense missile",
+      "parameterUomValue": "250 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 3",
+      "parameterSubTitle": "9M96 missile",
+      "parameterValue": "120",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "comments": "Medium-range variant for close and medium-range defense",
+      "parameterUomValue": "120 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "6",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be engaged simultaneously",
+      "dataType": "Number",
+      "comments": "Using multiple TEL units in integrated fire unit; can be networked for higher capacity",
+      "component": "Performance"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "600",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range of the integrated search radar",
+      "dataType": "Number",
+      "comments": "92N2A radar detection range for fighter-sized targets at altitude; estimated",
+      "parameterUomValue": "600 km",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "5",
+      "uom": "min",
+      "parameterDescr": "Time required to bring the system into action",
+      "dataType": "Number",
+      "comments": "From stop position to fully operational and radar active; mobile variant",
+      "parameterUomValue": "5 min",
+      "component": "Operations"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Operating altitude range",
+      "parameter": "Operating altitude range",
+      "parameterValue": "0 to 27000",
+      "uom": "m",
+      "parameterDescr": "Altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "0 to 27000 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum target speed",
+      "parameter": "Maximum target speed",
+      "parameterValue": "2100",
+      "uom": "m/s",
+      "parameterDescr": "Maximum speed of targets that can be engaged",
+      "dataType": "Number",
+      "comments": "Capability for supersonic targets; speed conversion 2100 m/s = Mach 6+ at altitude",
+      "parameterUomValue": "2100 m/s",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Operating temperature range",
+      "parameter": "Operating temperature range",
+      "parameterValue": "-50 to +60",
+      "uom": "°C",
+      "parameterDescr": "Ambient temperature envelope for safe operation",
+      "dataType": "Number",
+      "parameterUomValue": "-50 to +60 °C",
+      "component": "Environmental"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Mobile platform",
+      "parameter": "Mobile platform",
+      "parameterValue": "Volvo/KAMAZ 8x8 truck; Ural-based variants",
+      "uom": "",
+      "parameterDescr": "Vehicle platform for mobile deployment",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "System unit cost",
+      "parameter": "System unit cost",
+      "parameterValue": "300000000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost for a complete system",
+      "dataType": "Number",
+      "comments": "Estimated cost for a complete 8-TEL battalion configuration; international sales prices vary",
+      "parameterUomValue": "300000000 USD",
+      "component": null
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "Phased-array (92N2A/92N2E variant)",
+      "uom": "",
+      "parameterDescr": "Type and configuration of the search and acquisition radar",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Network capability",
+      "parameter": "Network capability",
+      "parameterValue": "Command post networking; integration with external targeting sources",
+      "uom": "",
+      "parameterDescr": "Integration and communication capability with external systems",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

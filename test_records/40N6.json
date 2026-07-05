@@ -1,0 +1,265 @@
+{
+  "modelID": 1012,
+  "nomenclature": "40N6",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "40N6",
+  "aliases": [
+    {
+      "alias": "40N6E"
+    }
+  ],
+  "codes": [
+    {
+      "code": "40N6E"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 40N6 is an ultra-long-range surface-to-air missile developed by Russia's Almaz-Antey for use with the S-400 Triumf air defense system. Introduced in service around 2017–2018, the 40N6 significantly extends the engagement envelope of the S-400, capable of engaging high-altitude aircraft, AWACS platforms, and cruise missiles at ranges exceeding 380 kilometers. The missile employs active radar homing in the terminal phase, allowing autonomous target engagement without continuous radar guidance from the launch platform.",
+      "shortDescription": "Ultra-long-range surface-to-air missile with active radar terminal homing for the S-400 system.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 40N6 features a streamlined cylindrical body optimized for extended-range flight at high altitude. Propulsion is provided by a solid-fuel rocket motor enabling transonic to supersonic cruise speed. The missile is equipped with semi-active or active radar homing guidance, allowing it to engage targets at extreme ranges. Its relatively large launch weight of approximately 1,893 kg and the sophisticated guidance system enable multi-role capability against fixed-wing aircraft, rotary-wing platforms, and airborne early-warning systems. The warhead is a directed-fragmentation type optimized for high-altitude interception.",
+      "shortDescription": "Large solid-fuel SAM with active radar terminal homing and high-altitude engagement capability.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101201,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-400 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1010,
+      "childModel": "S-400 Triumf",
+      "parentModelID": 1012,
+      "parentModel": "40N6",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-400"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Ultra-long-range surface-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2018",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "comments": "Estimated; operational deployment with Russian forces",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "6.5",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "6.5 m",
+      "comments": "estimated",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0.55",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "0.55 m",
+      "comments": "estimated",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1893",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "1893 kg",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "150",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "150 kg",
+      "comments": "estimated",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "Directed-fragmentation blast warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Radar proximity fuze; contact fuze",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "400",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "parameterUomValue": "400 km",
+      "comments": "Operational range for high-altitude targets",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "3.5",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "parameterUomValue": "3.5 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Inertial mid-course guidance; active radar terminal homing",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "30",
+      "uom": "km",
+      "parameterDescr": "Maximum altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "30 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Maximum target speed",
+      "parameter": "Maximum target speed",
+      "parameterValue": "4800",
+      "uom": "m/s",
+      "parameterDescr": "Maximum speed of targets that can be engaged",
+      "dataType": "Number",
+      "parameterUomValue": "4800 m/s",
+      "component": "Performance"
+    }
+  ]
+}

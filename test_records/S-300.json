@@ -1,0 +1,314 @@
+{
+  "modelID": 1011,
+  "nomenclature": "S-300",
+  "systemGroup": "Weapon",
+  "systemType": "Surface-to-Air Missile System",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "S-300",
+  "aliases": [
+    {
+      "alias": "SA-10 Grumble"
+    },
+    {
+      "alias": "SA-20 Gargoyle"
+    },
+    {
+      "alias": "S-300PMU"
+    },
+    {
+      "alias": "S-300PMU-2 Favorit"
+    }
+  ],
+  "codes": [
+    {
+      "code": "S-300PMU-2"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The S-300 is a long-range, all-altitude, all-weather surface-to-air missile system developed by the Soviet Union&#x27;s NPO Almaz (Almaz-Antey). The system has been in continuous service since 1978 and remains one of the most widely deployed air defense systems globally. The S-300 combines search and acquisition radar, command post, power supply, and guided missiles on mobile or stationary platforms, capable of engaging aircraft, cruise missiles, and ballistic missiles. Later variants such as the S-300PMU-2 Favorit represent the apex of the S-300 family, sharing components with the more recent S-400 system.",
+      "shortDescription": "Long-range Soviet/Russian surface-to-air missile system with integrated search and engagement radars.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The S-300 system employs the 48N6M and 9M96 missiles paired with dedicated search, acquisition, and engagement radars: the 64N6E Big Bird surveillance radar provides long-range target detection, the 30N6E Flap Lid radar handles engagement and missile guidance, and the 96L6E Cheese Board radar provides supplementary coverage. The modular architecture supports mobile deployment on MAZ-7910 8x8 truck platforms, enabling rapid redeployment and worldwide power projection. The system&#x27;s phased-array radars deliver simultaneous multi-target engagement capability against high-altitude and high-speed targets.",
+      "shortDescription": "Mobile/stationary air defense system with 64N6E, 30N6E, and 96L6E radars and 48N6/9M96 missiles.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101101,
+      "url": "https://en.wikipedia.org/wiki/S-300_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-300 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "Bulgaria",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bulgarian Air Force"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People&#x27;s Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Air Force"
+    },
+    {
+      "country": "Vietnam",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Vietnam People&#x27;s Army Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1013,
+      "childModel": "48N6M",
+      "parentModelID": 1011,
+      "parentModel": "S-300",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "48N6M"
+    },
+    {
+      "childModelID": 1014,
+      "childModel": "9M96",
+      "parentModelID": 1011,
+      "parentModel": "S-300",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "9M96"
+    },
+    {
+      "childModelID": 1019,
+      "childModel": "64N6E Big Bird",
+      "parentModelID": 1011,
+      "parentModel": "S-300",
+      "parentComponent": "Sensors",
+      "relationType": "PARENT",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "64N6E"
+    },
+    {
+      "childModelID": 1020,
+      "childModel": "30N6E Flap Lid",
+      "parentModelID": 1011,
+      "parentModel": "S-300",
+      "parentComponent": "Sensors",
+      "relationType": "PARENT",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "30N6E"
+    },
+    {
+      "childModelID": 1018,
+      "childModel": "96L6E Cheese Board",
+      "parentModelID": 1011,
+      "parentModel": "S-300",
+      "parentComponent": "Sensors",
+      "relationType": "PARENT",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "96L6E"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Mobile/stationary surface-to-air missile system",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia/USSR",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "1978",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Missile types",
+      "parameter": "Missile types",
+      "parameterValue": "48N6, 9M96, 5V55",
+      "uom": "",
+      "parameterDescr": "Missile types employed by the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "200",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "comments": "S-300PMU-2 Favorit variant; ranges vary by missile type from 47 km to 150+ km for earlier variants",
+      "parameterUomValue": "200 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "300",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range of the integrated search radar",
+      "dataType": "Number",
+      "comments": "64N6E Big Bird surveillance radar detection range for fighter-sized targets; estimated",
+      "parameterUomValue": "300 km",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "6",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be engaged simultaneously",
+      "dataType": "Number",
+      "comments": "Up to 12 missiles can be allocated across 6 different targets in integrated fire units",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "30",
+      "uom": "min",
+      "parameterDescr": "Time required to bring the system into action",
+      "dataType": "Number",
+      "comments": "S-300PMU-2 upgraded variant; original models required approximately 60 minutes",
+      "parameterUomValue": "30 min",
+      "component": "Operations"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Operating altitude range",
+      "parameter": "Operating altitude range",
+      "parameterValue": "25 to 27000",
+      "uom": "m",
+      "parameterDescr": "Altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "25 to 27000 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Maximum target speed",
+      "parameter": "Maximum target speed",
+      "parameterValue": "2800",
+      "uom": "m/s",
+      "parameterDescr": "Maximum speed of targets that can be engaged",
+      "dataType": "Number",
+      "comments": "Later S-300 variants; approximately Mach 8+ at altitude; ballistic missile variants up to 4500 m/s",
+      "parameterUomValue": "2800 m/s",
+      "component": "Performance"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Operating temperature range",
+      "parameter": "Operating temperature range",
+      "parameterValue": "-50 to +50",
+      "uom": "°C",
+      "parameterDescr": "Ambient temperature envelope for safe operation",
+      "dataType": "Number",
+      "parameterUomValue": "-50 to +50 °C",
+      "component": "Environmental"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Mobile platform",
+      "parameter": "Mobile platform",
+      "parameterValue": "MAZ-7910 8x8 truck; MT-T tracked transporter",
+      "uom": "",
+      "parameterDescr": "Vehicle platform for mobile deployment",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "Phased-array (64N6E, 30N6E, 96L6E)",
+      "uom": "",
+      "parameterDescr": "Type and configuration of the search and engagement radars",
+      "dataType": "Text",
+      "component": "Sensors"
+    }
+  ]
+}

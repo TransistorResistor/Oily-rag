@@ -1,0 +1,316 @@
+{
+  "modelID": 1002,
+  "nomenclature": "AIM-120 AMRAAM",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "AIM-120D",
+  "aliases": [
+    {
+      "alias": "AMRAAM"
+    },
+    {
+      "alias": "SLAMRAAM"
+    },
+    {
+      "alias": "AIM-120"
+    }
+  ],
+  "codes": [
+    {
+      "code": "AIM-120C"
+    },
+    {
+      "code": "AIM-120D"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The AIM-120 Advanced Medium-Range Air-to-Air Missile (AMRAAM) is an American beyond-visual-range air-to-air missile capable of all-weather day-and-night operations. It uses active radar homing in the terminal phase of flight, allowing the launching aircraft to disengage after firing. The AMRAAM entered service in 1991 and is operated by the United States and over 40 allied nations. The current production variant, the AIM-120D, offers significantly extended range and improved guidance compared to earlier variants.",
+      "shortDescription": "Active-radar-homing beyond-visual-range air-to-air missile operated by the US and 40+ allies.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The AIM-120 has a cylindrical body with four delta control fins at the rear and four fixed fins at mid-body. Propulsion is a single-stage solid-fuel rocket motor. Guidance is inertial with mid-course uplink correction and active radar homing in the terminal phase; the launch aircraft can provide updates via datalink but need not continue to illuminate the target. The AIM-120D variant adds a two-way datalink, GPS-aided inertial navigation and a 50% increase in range over the AIM-120C-7. Warhead is a high-explosive blast-fragmentation type.",
+      "shortDescription": "Cylindrical airframe with active radar terminal homing and solid-fuel rocket motor.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The AMRAAM has been used in combat by multiple air forces and has the highest kill record of any air-to-air missile in the post-Cold War era. It is the primary beyond-visual-range weapon for F-22, F-35, F-15, F-16, F/A-18, Eurofighter Typhoon, Gripen, and many other Western aircraft. Surface-launched versions (NASAMS, SLAMRAAM) extend the missile to ground-based air defense roles.",
+      "shortDescription": "Primary BVR weapon for most Western aircraft; also deployed in ground-based NASAMS launchers.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100201,
+      "url": "https://en.wikipedia.org/wiki/AIM-120_AMRAAM",
+      "mimeType": "text/html",
+      "title": "Wikipedia: AIM-120 AMRAAM"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "USAF / USN / USMC"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "RTX (Raytheon)"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Air Force"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Luftwaffe"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Air Self-Defense Force"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Air Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Royal Australian Air Force"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Norwegian Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1021,
+      "childModel": "NASAMS",
+      "parentModelID": 1002,
+      "parentModel": "AIM-120 AMRAAM",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "NASAMS"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Active radar homing beyond-visual-range air-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "RTX (Raytheon Missiles &amp; Defense)",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "AIM-120D in production; earlier variants in service since 1991",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "1991",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "3.66",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "3.66 m",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0.178",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "0.178 m",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "152",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "comments": "AIM-120D variant",
+      "parameterUomValue": "152 kg",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "18",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "18 kg",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "WDU-33/B blast-fragmentation",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Active radar proximity fuze; contact fuze",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 1",
+      "parameterValue": "105",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "parameterSubTitle": "AIM-120C-7",
+      "dataType": "Number",
+      "parameterUomValue": "105 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 2",
+      "parameterValue": "180",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "parameterSubTitle": "AIM-120D",
+      "dataType": "Number",
+      "comments": "Approximately 50% increase over the C-7; estimated, exact figure classified",
+      "parameterUomValue": "180 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "4",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "comments": "Approximate",
+      "parameterUomValue": "4 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Inertial navigation with datalink mid-course update; active radar terminal homing",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "F-22 Raptor; F-35 Lightning II; F-15 Eagle; F-16 Fighting Falcon; F/A-18 Super Hornet; Eurofighter Typhoon; Gripen",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1800000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "comments": "AIM-120D, FY2022 dollars",
+      "parameterUomValue": "1800000 USD",
+      "component": null
+    }
+  ]
+}

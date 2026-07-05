@@ -1,0 +1,316 @@
+{
+  "modelID": 1021,
+  "nomenclature": "NASAMS",
+  "systemGroup": "Weapon",
+  "systemType": "Surface-to-Air Missile System",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "NASAMS",
+  "aliases": [
+    {
+      "alias": "National Advanced Surface-to-Air Missile System"
+    },
+    {
+      "alias": "NASAMS 2"
+    },
+    {
+      "alias": "NASAMS 3"
+    }
+  ],
+  "codes": [
+    {
+      "code": "NASAMS"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The NASAMS (National Advanced Surface-to-Air Missile System) is a mobile, ground-based air defense system developed jointly by Kongsberg Defence & Aerospace (Norway) and U.S. partners. The system integrates air-to-air missiles (AIM-120 AMRAAM, AIM-9X Sidewinder) adapted for ground launch in the surface-to-air role. NASAMS entered service in the Norwegian Air Force in 1997 and has since been adopted by numerous NATO and allied nations. The system combines the AN/MPQ-64 Sentinel radar with mobile launcher vehicles, providing rapid-response capability for air defense across a wide altitude envelope.",
+      "shortDescription": "Norwegian-American mobile ground-based air defense system firing adapted air-to-air missiles.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The NASAMS system consists of a command post, the AN/MPQ-64 Sentinel phased-array radar, and transporter-launcher vehicles equipped with six-round missile canisters. The platform fires multiple variants of the AIM-120 AMRAAM missile, including the extended-range AMRAAM-ER, and integrates the AIM-9X Sidewinder for close-range engagement. A typical battery comprises up to four firing units with three launchers each, one radar unit, a command center, and an electro-optical sensor vehicle. The modular architecture allows for rapid deployment on truck platforms and integration with NATO air defense networks.",
+      "shortDescription": "Mobile system with AN/MPQ-64 radar and launcher vehicles firing AMRAAM and Sidewinder missiles.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 102101,
+      "url": "https://en.wikipedia.org/wiki/NASAMS",
+      "mimeType": "text/html",
+      "title": "Wikipedia: NASAMS"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Norwegian Air Force"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "United States Air Force"
+    },
+    {
+      "country": "Ukraine",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Ukrainian Armed Forces"
+    },
+    {
+      "country": "Netherlands",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Netherlands Air Force"
+    },
+    {
+      "country": "Finland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Finnish Air Force"
+    },
+    {
+      "country": "Spain",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Spanish Air Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Royal Australian Air Force"
+    },
+    {
+      "country": "Kongsberg Defence & Aerospace",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Kongsberg Defence & Aerospace (Norway)"
+    },
+    {
+      "country": "Raytheon",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Raytheon Missiles & Fire Control"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1002,
+      "childModel": "AIM-120 AMRAAM",
+      "parentModelID": 1021,
+      "parentModel": "NASAMS",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "AIM-120D"
+    },
+    {
+      "childModelID": 1007,
+      "childModel": "AIM-9X Sidewinder",
+      "parentModelID": 1021,
+      "parentModel": "NASAMS",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "AIM-9X"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Mobile surface-to-air missile system",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Norway; United States",
+      "uom": "",
+      "parameterDescr": "Countries in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kongsberg Defence & Aerospace; Raytheon Missiles & Fire Control",
+      "uom": "",
+      "parameterDescr": "Primary manufacturers and prime contractors",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "1997",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "AIM-120 AMRAAM; AIM-9 Sidewinder; AMRAAM-ER",
+      "uom": "",
+      "parameterDescr": "Missile types employed by the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 1",
+      "parameterSubTitle": "AIM-120 AMRAAM standard",
+      "parameterValue": "25",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "comments": "Standard AMRAAM variant for medium-range air defense",
+      "parameterUomValue": "25 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 2",
+      "parameterSubTitle": "AMRAAM-ER extended range",
+      "parameterValue": "50",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the extended-range variant",
+      "dataType": "Number",
+      "comments": "Extended-range AMRAAM for long-range engagement capability",
+      "parameterUomValue": "50 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 3",
+      "parameterSubTitle": "AIM-9X Sidewinder short-range",
+      "parameterValue": "10",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range for close-range engagement",
+      "dataType": "Number",
+      "comments": "Short-range variant for close-in air defense in NASAMS 3",
+      "parameterUomValue": "10 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "System effective range",
+      "parameter": "System effective range",
+      "parameterValue": "40 to 60",
+      "uom": "km",
+      "parameterDescr": "Overall system engagement range depending on missile variant employed",
+      "dataType": "Number",
+      "comments": "Combines AMRAAM standard and extended-range capabilities; target dependent",
+      "parameterUomValue": "40-60 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "120",
+      "uom": "km",
+      "dataType": "Number",
+      "parameterDescr": "Maximum detection range of the integrated search radar",
+      "comments": "AN/MPQ-64 Sentinel phased-array radar in NASAMS 2 configuration",
+      "parameterUomValue": "120 km",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "AN/MPQ-64 Sentinel phased-array",
+      "uom": "",
+      "parameterDescr": "Type and configuration of the search and acquisition radar",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Launcher configuration",
+      "parameter": "Launcher configuration",
+      "parameterValue": "Six-round missile canisters per vehicle; up to four firing units per battery",
+      "uom": "",
+      "parameterDescr": "Launcher vehicle configuration and battery composition",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Operating altitude range",
+      "parameter": "Operating altitude range",
+      "parameterValue": "0 to 35700",
+      "uom": "m",
+      "parameterDescr": "Altitude envelope for target engagement",
+      "dataType": "Number",
+      "comments": "NASAMS capable of engaging targets at 21-35.7 km altitude range",
+      "parameterUomValue": "0 to 35700 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "10",
+      "uom": "min",
+      "parameterDescr": "Time required to bring the system into action",
+      "dataType": "Number",
+      "comments": "From stop position to fully operational radar active; mobile variant",
+      "parameterUomValue": "10 min",
+      "component": "Operations"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Battery composition",
+      "parameter": "Battery composition",
+      "parameterValue": "One radar unit; one command center; one electro-optical sensor vehicle; up to four three-launcher firing units",
+      "uom": "",
+      "parameterDescr": "Standard battery organization and component breakdown",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Network capability",
+      "parameter": "Network capability",
+      "parameterValue": "NATO air defense network integration; command post networking",
+      "uom": "",
+      "parameterDescr": "Integration and communication capability with external systems",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

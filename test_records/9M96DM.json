@@ -1,0 +1,281 @@
+{
+  "modelID": 1015,
+  "nomenclature": "9M96DM",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "9M96DM",
+  "aliases": [
+    {
+      "alias": "9M96D"
+    },
+    {
+      "alias": "9M96DM"
+    }
+  ],
+  "codes": [
+    {
+      "code": "9M96D"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 9M96DM is an extended-range variant and improved development of the 9M96 medium-range air defense missile, specifically integrated with the S-400 Triumf system. Introduced in the mid-2000s, the 9M96DM extends the effective engagement envelope to 150 kilometers while maintaining the compact form factor that enables quad-packing in a single launch tube. The missile enhances high-altitude interception capability and provides improved guidance through advanced active radar homing. Like its predecessor, the 9M96DM employs gas-dynamic thrust-vector control for high-maneuverability terminal-phase engagement.",
+      "shortDescription": "Extended-range variant of the 9M96 with improved high-altitude capability and enhanced guidance.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 9M96DM retains the compact airframe architecture of the baseline 9M96 but incorporates performance enhancements through improved propulsion and guidance algorithms. The solid-fuel rocket motor is optimized for extended-range cruise while maintaining subsonic and transonic flight profiles to reduce energy signature and extend endurance. Enhanced active radar homing guidance provides improved track stability and terminal-phase accuracy. The gas-dynamic control system, employing lateral thrusters, delivers exceptional maneuverability for engagement of targets executing evasive maneuvers. The warhead remains a pre-fragmented anti-aircraft type, optimized for aerial threats. Quad-packing capability is maintained, allowing four 9M96DM missiles to occupy a single launch tube on the S-400 TEL.",
+      "shortDescription": "Improved compact SAM with extended range, active radar homing, and thrust-vector control.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101501,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-400 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Fakel Design Bureau"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1010,
+      "childModel": "S-400 Triumf",
+      "parentModelID": 1015,
+      "parentModel": "9M96DM",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-400"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Extended-range agile surface-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Fakel Design Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2006",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "comments": "Estimated; introduced as improved variant after baseline 9M96",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "4.2",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "4.2 m",
+      "comments": "estimated; slightly longer than baseline 9M96 for improved range",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0.165",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "0.165 m",
+      "comments": "estimated; maintains baseline diameter for quad-pack compatibility",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "230",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "230 kg",
+      "comments": "estimated; slight increase over baseline 9M96 due to enhanced propulsion",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "60",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "60 kg",
+      "comments": "estimated",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "Pre-fragmented anti-aircraft warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Radar proximity fuze; contact fuze",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "150",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "parameterUomValue": "150 km",
+      "comments": "Extended-range variant; 25% greater range than baseline 9M96",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "3.2",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "parameterUomValue": "3.2 Mach",
+      "comments": "estimated; improved over baseline variant",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Active radar homing with datalink mid-course updates",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "Gas-dynamic thrust-vector control with lateral thrusters",
+      "uom": "",
+      "parameterDescr": "Aerodynamic control and maneuvering system",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Launcher configuration",
+      "parameter": "Launcher configuration",
+      "parameterValue": "Four missiles per launch tube",
+      "uom": "",
+      "parameterDescr": "Number of missiles that can be packaged in a single launch tube",
+      "parameterSubTitle": "Quad-packing arrangement",
+      "dataType": "Number",
+      "component": null
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "30",
+      "uom": "km",
+      "parameterDescr": "Maximum altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "30 km",
+      "comments": "Enhanced high-altitude capability compared to baseline 9M96",
+      "component": "Performance"
+    }
+  ]
+}

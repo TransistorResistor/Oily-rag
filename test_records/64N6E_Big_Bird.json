@@ -1,0 +1,220 @@
+{
+  "modelID": 1019,
+  "nomenclature": "64N6E Big Bird",
+  "systemGroup": "Sensors",
+  "systemType": "Air Defense Radar",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "64N6E",
+  "aliases": [
+    {
+      "alias": "Big Bird"
+    },
+    {
+      "alias": "64N6"
+    }
+  ],
+  "codes": [
+    {
+      "code": "64N6E"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 64N6E Big Bird is the primary long-range surveillance and acquisition radar of the S-300PMU series air defense system. Developed by Russian design bureaus, this radar provides target search and detection over vast distances, typically achieving detection ranges of approximately 300 kilometers against fighter-sized targets. The 64N6E serves as the system&#x27;s outer sentinel, identifying and tracking multiple airborne threats simultaneously to enable coordinated engagement by the fire-control radars and missile elements.",
+      "shortDescription": "Long-range surveillance/acquisition radar for the S-300 system with ~300 km detection range.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 64N6E employs a phased-array antenna design enabling rapid beam steering and simultaneous multi-target detection and tracking. The radar operates in the metric waveband with frequency-agile characteristics to reduce susceptibility to electronic countermeasures. The system is typically mounted on a MAZ-7910 truck platform for mobile deployment, incorporating command and control interfaces for network-centric warfare integration. The radar supports track-while-scan operating modes and provides target classification and altitude determination to support air defense engagement decisions.",
+      "shortDescription": "Phased-array surveillance radar with metric-band operation and mobile truck-based deployment.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101901,
+      "url": "https://en.wikipedia.org/wiki/S-300_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-300 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "Bulgaria",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bulgarian Air Force"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People&#x27;s Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Vietnam",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Vietnam People&#x27;s Army Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1011,
+      "childModel": "S-300",
+      "parentModelID": 1019,
+      "parentModel": "64N6E Big Bird",
+      "parentComponent": "Sensors",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-300"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Phased-array surveillance and acquisition radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the radar system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia/USSR",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "System",
+      "parameter": "System",
+      "parameterValue": "S-300PMU / S-300PMU-2",
+      "uom": "",
+      "parameterDescr": "Parent air defense system this radar is integrated with",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "300",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range against fighter-sized reference targets",
+      "dataType": "Number",
+      "comments": "Estimated detection range at altitude for fighter-sized aircraft; actual range depends on target RCS and altitude",
+      "parameterUomValue": "300 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operating frequency band",
+      "parameter": "Operating frequency band",
+      "parameterValue": "Metric waveband",
+      "uom": "",
+      "parameterDescr": "Radio-frequency band of operation",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Antenna type",
+      "parameter": "Antenna type",
+      "parameterValue": "Phased-array with frequency agility",
+      "uom": "",
+      "parameterDescr": "Antenna technology and configuration",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "10",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be tracked simultaneously",
+      "dataType": "Number",
+      "comments": "In track-while-scan mode; estimated based on system architecture",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "Track-while-scan (TWS); range-while-search; target classification",
+      "uom": "",
+      "parameterDescr": "Available operating modes",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Mobile platform",
+      "parameter": "Mobile platform",
+      "parameterValue": "MAZ-7910 8x8 truck chassis",
+      "uom": "",
+      "parameterDescr": "Vehicle platform for mobile deployment",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "NATO reporting name",
+      "parameter": "NATO reporting name",
+      "parameterValue": "Big Bird",
+      "uom": "",
+      "parameterDescr": "NATO designation for the radar system",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

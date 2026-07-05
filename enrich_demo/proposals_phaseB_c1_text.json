@@ -1,0 +1,279 @@
+[
+  {
+    "proposal_id": "f6b03d7ad332a053",
+    "type": "conflict",
+    "record_id": "1022",
+    "record": "Python-5",
+    "field": "Maximum range",
+    "value": "35 km",
+    "db_value": "20 km",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "35 km": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "Python-5 Extended Engagement Range Claim",
+        "doc_path": "testdocs\\conflict_python5_range.pdf",
+        "quote": "The Python-5 has a maximum range of 35 km in its latest production configuration.",
+        "value": "35 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "e47d102312570b62",
+    "type": "conflict",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Deployment time",
+    "value": "8 minutes",
+    "db_value": "5 min",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "8 minutes": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "S-400 Battery Emplacement Assessment",
+        "doc_path": "testdocs\\conflict_s400_deploytime.pdf",
+        "quote": "A field assessment of the S-400 Triumf air defence system reports a deployment time of 8 minutes from convoy halt to radar-active status for the mobile surface-to-air missile battery.",
+        "value": "8 minutes"
+      }
+    ]
+  },
+  {
+    "proposal_id": "973b2e8d59ba69b7",
+    "type": "gap_fill",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Maximum altitude",
+    "value": "30 km",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 2,
+    "value_distribution": {
+      "30 km": 1,
+      "98000 ft": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "Analyst Note: S-400 Engagement Ceiling (1/2)",
+        "doc_path": "testdocs\\corrob_s400_altitude_a.pdf",
+        "quote": "the S-400 Triumf surface\u2013to\u2013air missile system can engage aerial targets at a maximum altitude of 30 km",
+        "value": "30 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "34d9a19cf8b99629",
+    "type": "gap_fill",
+    "record_id": "1011",
+    "record": "S-300",
+    "field": "Detection range",
+    "value": "300 km",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "300 km": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "S-300 Acquisition Radar Detection Envelope",
+        "doc_path": "testdocs\\gapfill_s300_detection.pdf",
+        "quote": "detection range of 300 km against fighter-sized targets at altitude",
+        "value": "300 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "0b54a2f63861a265",
+    "type": "gap_fill",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "alias",
+    "value": "40R6",
+    "db_value": "s-400, s-400 triumph, sa-21 growler, triumf",
+    "qualifier": "sometimes",
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "40R6": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "Naming Conventions of the S-400 Air Defence System",
+        "doc_path": "testdocs\\gapfill_s400_alias.pdf",
+        "quote": "The S-400 Triumf surface-to-air missile system is, at the complete system level, sometimes designated the 40R6 in Russian service documentation.",
+        "value": "40R6"
+      }
+    ]
+  },
+  {
+    "proposal_id": "815f90ea468e079b",
+    "type": "gap_fill",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Operated by (country)",
+    "value": "Belarus",
+    "db_value": "China, India, Russia, Turkey",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "Belarus": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "Belarus Confirmed as New S-400 Operator",
+        "doc_path": "testdocs\\gapfill_s400_belarus.pdf",
+        "quote": "Belarus was confirmed as a new operator of the Russian S-400 Triumf long-range surface-to-air missile system.",
+        "value": "Belarus"
+      }
+    ]
+  },
+  {
+    "proposal_id": "476eb699aa4d1380",
+    "type": "conflict",
+    "record_id": "1011",
+    "record": "S-300",
+    "field": "Maximum range",
+    "value": "250 km",
+    "db_value": "200 km",
+    "qualifier": "up to",
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "250 km": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "S-300 Reach and Readiness (Preliminary)",
+        "doc_path": "testdocs\\hedged_s300.pdf",
+        "quote": "the S-300 surface-to-air missile system can reportedly engage targets at ranges of up to 250 km",
+        "value": "250 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "70738f790dc8d17a",
+    "type": "relation",
+    "record_id": "1004",
+    "record": "Lockheed Martin F-35 Lightning II",
+    "field": "relation",
+    "value": "Lockheed Martin F-35 Lightning II <-> AIM-9X Sidewinder",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "Lockheed Martin F-35 Lightning II <-> AIM-9X Sidewinder": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "F-35 Cleared to Carry AIM-9X Short-Range Missile",
+        "doc_path": "testdocs\\relation_f35_aim9x.pdf",
+        "quote": "The F-35 Lightning II is now cleared to carry the AIM-9X Sidewinder short-range air-to-air missile for within-visual-range engagements.",
+        "value": "Lockheed Martin F-35 Lightning II <-> AIM-9X Sidewinder"
+      }
+    ]
+  },
+  {
+    "proposal_id": "0208873cac05fe8b",
+    "type": "gap_fill",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Maximum altitude",
+    "value": "98000 ft",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 2,
+    "value_distribution": {
+      "30 km": 1,
+      "98000 ft": 1
+    },
+    "first_run": 2,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "Analyst Note: S-400 Engagement Ceiling (2/2)",
+        "doc_path": "testdocs\\corrob_s400_altitude_b.pdf",
+        "quote": "the S-400 air defence system has an engagement ceiling of roughly 98,000 ft",
+        "value": "98000 ft"
+      }
+    ]
+  },
+  {
+    "proposal_id": "7ef93df4a2d43337",
+    "type": "gap_fill",
+    "record_id": "1022",
+    "record": "Python-5",
+    "field": "Operated by (country)",
+    "value": "Vietnam",
+    "db_value": "India, Israel, Turkey",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "Vietnam": 1
+    },
+    "first_run": 2,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "Vietnam Acquires Python-5 Air-to-Air Missiles",
+        "doc_path": "testdocs\\python5_vietnam.pdf",
+        "quote": "Vietnam has been reported as a new operator of the Israeli Python-5 short-range air-to-air missile",
+        "value": "Vietnam"
+      }
+    ]
+  },
+  {
+    "proposal_id": "f10cbfce7bc94445",
+    "type": "gap_fill",
+    "record_id": "1025",
+    "record": "SPYDER",
+    "field": "Operated by (country)",
+    "value": "Poland",
+    "db_value": "Azerbaijan, Czech Republic, Ethiopia, Georgia, India, Israel, Kenya, Morocco, Philippines, Singapore, United Arab Emirates, Vietnam",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "Poland": 1
+    },
+    "first_run": 2,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "Poland Evaluates SPYDER Point-Defence System",
+        "doc_path": "testdocs\\spyder_poland.pdf",
+        "quote": "Poland has been named as a new operator of the SPYDER surface-to-air missile system",
+        "value": "Poland"
+      }
+    ]
+  }
+]

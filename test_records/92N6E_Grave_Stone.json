@@ -1,0 +1,208 @@
+{
+  "modelID": 1017,
+  "nomenclature": "92N6E Grave Stone",
+  "systemGroup": "Sensors",
+  "systemType": "Air Defense Radar",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "92N6E",
+  "aliases": [
+    {
+      "alias": "Grave Stone"
+    },
+    {
+      "alias": "92N6"
+    }
+  ],
+  "codes": [
+    {
+      "code": "92N6E"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 92N6E Grave Stone is a multi-function radar serving as the primary fire-control and engagement radar for the S-400 air-defense system. Designed and manufactured by Almaz-Antey, the 92N6E provides simultaneous search, track, and missile-guidance functions to enable rapid target engagement. The radar operates in conjunction with the 91N6E panoramic radar, receiving pre-screened target data and refining tracks for handoff to the missile-guidance channels. Its X- and L-band phased-array architecture delivers the precision required for engagement of maneuvering targets across the entire altitude spectrum.",
+      "shortDescription": "Multi-function fire-control radar providing tracking and missile guidance for the S-400.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 92N6E employs separate X-band and L-band antenna elements to provide complementary performance characteristics: X-band delivers fine-resolution target tracking and missile guidance, while L-band provides robust search and track-while-scan capability. The radar uses phased-array beam steering to enable rapid target handoff and continuous missile guidance without mechanical antenna movement. The signal processor integrates automatic target detection, track initiation, and multi-target engagement algorithms to maintain simultaneous engagement channels. The modular design permits integration with the command post and distributed deployment across multiple fire units networked through the S-400 tactical command system.",
+      "shortDescription": "Dual-band phased-array radar with X-band engagement and L-band search capability.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101701,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-400 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Armed Forces"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1010,
+      "childModel": "S-400 Triumf",
+      "parentModelID": 1017,
+      "parentModel": "92N6E Grave Stone",
+      "parentComponent": "Sensors",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-400"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Multi-function phased-array fire-control radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Function",
+      "parameter": "Function",
+      "parameterValue": "Fire-control and engagement with missile guidance",
+      "uom": "",
+      "parameterDescr": "Primary operational function in the air-defense system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "X-band and L-band",
+      "uom": "",
+      "parameterDescr": "Operating radio-frequency bands for fire-control and search functions",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "340",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range for fighter-sized airborne targets",
+      "dataType": "Number",
+      "comments": "Multi-functional detection and engagement range; from Wikipedia",
+      "parameterUomValue": "340 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "20",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be tracked simultaneously",
+      "dataType": "Number",
+      "comments": "Export variant specification; domestic capability may differ",
+      "component": "Performance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Antenna configuration",
+      "parameter": "Antenna configuration",
+      "parameterValue": "Dual phased-array: X-band fine-track and L-band search/track",
+      "uom": "",
+      "parameterDescr": "Antenna technology and configuration for multi-function operation",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Beam steering",
+      "parameter": "Beam steering",
+      "parameterValue": "Electronic phased-array beam steering without mechanical antenna rotation",
+      "uom": "",
+      "parameterDescr": "Antenna beam control methodology for rapid target handoff",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Engagement capability",
+      "parameter": "Engagement capability",
+      "parameterValue": "Simultaneous multi-target missile guidance and tracking",
+      "uom": "",
+      "parameterDescr": "Number of simultaneous missile-guidance channels available",
+      "dataType": "Text",
+      "component": "Performance"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Platform",
+      "parameter": "Platform",
+      "parameterValue": "Mobile TEL or stationary installation",
+      "uom": "",
+      "parameterDescr": "Deployment platform for the radar system",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

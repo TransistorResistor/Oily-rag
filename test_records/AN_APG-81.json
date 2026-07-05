@@ -1,0 +1,269 @@
+{
+  "modelID": 1009,
+  "nomenclature": "AN/APG-81 Radar",
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "AN/APG-81",
+  "aliases": [
+    {"alias": "APG-81"},
+    {"alias": "AN/APG-81(V)1"}
+  ],
+  "codes": [
+    {"code": "APG81V1"}
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The AN/APG-81 is an active electronically scanned array (AESA) fire-control radar developed for the Lockheed Martin F-35 Lightning II. Designed by Northrop Grumman, the APG-81 provides all-weather air-to-air and air-to-ground target acquisition and tracking for all F-35 variants. The radar&#x27;s advanced signal processing and electronic steering capability enable simultaneous multi-target engagement while maintaining a low probability of intercept (LPI) signature.",
+      "shortDescription": "AESA fire-control radar for the F-35 with integrated air-to-air and air-to-ground capability.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The APG-81 employs a flat active electronically scanned array (AESA) antenna integrated into the F-35&#x27;s nose. The antenna uses thousands of small phased-array elements to electronically steer the beam without mechanical movement, enabling rapid target acquisition across a wide search volume. The radar operates in X-band and uses advanced algorithms for track-while-scan (TWS) and synthetic aperture radar (SAR) ground mapping. Integration with the F-35&#x27;s sensor fusion system allows the radar to coordinate detections with infrared and electronic warfare sensors.",
+      "shortDescription": "Flat AESA antenna with electronic beam steering and integrated sensor fusion.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100901,
+      "url": "https://en.wikipedia.org/wiki/AN/APG-81",
+      "mimeType": "text/html",
+      "title": "Wikipedia: AN/APG-81"
+    },
+    {
+      "seq": 2,
+      "mediaID": 100902,
+      "url": "https://example.com/documents/apg81-technical-summary.pdf",
+      "mimeType": "application/pdf",
+      "title": "AN/APG-81 Technical Summary",
+      "caption": "Technical summary and performance characteristics of the AN/APG-81 AESA radar for the F-35"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "United States Air Force"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "United States Navy"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "United States Marine Corps"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Northrop Grumman"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1004,
+      "childModel": "Lockheed Martin F-35 Lightning II",
+      "relationType": "Fitted to",
+      "parentComponent": "Avionics",
+      "childSystemGroup": "Aircraft",
+      "childSystemType": "Fighter Aircraft",
+      "childPrimaryEquipCode": "F-35A"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Active Electronically Scanned Array (AESA) fire-control radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northrop Grumman",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2011",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Platform",
+      "parameter": "Platform",
+      "parameterValue": "F-35 Lightning II",
+      "uom": "",
+      "parameterDescr": "Platform the system is fitted to",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "X-band",
+      "uom": "",
+      "parameterDescr": "Operating radio-frequency band",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range - 1",
+      "parameterSubTitle": "1 m² target (legacy reference)",
+      "parameterValue": "165",
+      "uom": "km",
+      "parameterDescr": "Estimated detection range against a reference target",
+      "dataType": "Number",
+      "comments": "Estimated against a 1 m² target (RCS); actual range varies with target aspect and altitude",
+      "parameterUomValue": "165 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range - 2",
+      "parameterSubTitle": "Fighter-sized target",
+      "parameterValue": "215",
+      "uom": "km",
+      "parameterDescr": "Estimated detection range against a reference target",
+      "dataType": "Number",
+      "comments": "Against a fighter-sized target (estimated 3-5 m² RCS) in track-while-scan mode",
+      "parameterUomValue": "215 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Azimuth coverage",
+      "parameter": "Azimuth coverage",
+      "parameterValue": "120",
+      "uom": "deg",
+      "parameterDescr": "Total azimuth field of regard",
+      "dataType": "Number",
+      "comments": "Plus/minus 60 degrees from nose",
+      "parameterUomValue": "120 deg",
+      "component": "Performance"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Elevation coverage",
+      "parameter": "Elevation coverage",
+      "parameterValue": "100",
+      "uom": "deg",
+      "parameterDescr": "Total elevation field of regard",
+      "dataType": "Number",
+      "parameterUomValue": "100 deg",
+      "component": "Performance"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "32",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be tracked simultaneously",
+      "dataType": "Number",
+      "comments": "In track-while-scan (TWS) air-to-air mode; processing load dependent",
+      "component": "Performance"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "4",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be engaged simultaneously",
+      "dataType": "Number",
+      "comments": "Limited by aircraft&#x27;s missile guidance system; coordinated with weapons load",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Antenna",
+      "parameter": "Antenna",
+      "parameterValue": "Flat plate AESA; integrated into F-35 nose; passive electronically steered",
+      "uom": "",
+      "parameterDescr": "Antenna technology and configuration",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Modes",
+      "parameter": "Modes",
+      "parameterValue": "Air-to-air (track-while-scan); air-to-ground (SAR mapping); ground moving target indication (GMTI); weather-avoidance; electronic attack support",
+      "uom": "",
+      "parameterDescr": "Available operating modes",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "32",
+      "uom": "kW",
+      "parameterDescr": "Typical peak electrical power draw",
+      "dataType": "Number",
+      "comments": "Estimated; varies with operational mode and duty cycle",
+      "parameterUomValue": "32 kW",
+      "component": "Electrical"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Total weight",
+      "parameter": "Total weight",
+      "parameterValue": "385",
+      "uom": "kg",
+      "parameterDescr": "Total system weight including antenna and processors",
+      "dataType": "Number",
+      "parameterUomValue": "385 kg",
+      "component": "Dimensions"
+    }
+  ]
+}

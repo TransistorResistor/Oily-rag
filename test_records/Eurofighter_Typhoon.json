@@ -1,0 +1,365 @@
+{
+  "modelID": 1006,
+  "nomenclature": "Eurofighter Typhoon",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "EF-2000",
+  "aliases": [
+    {"alias": "Typhoon"},
+    {"alias": "EF2000"}
+  ],
+  "codes": [
+    {"code": "EF-2000"}
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The Eurofighter Typhoon is a European-multinational, single-seat, twin-engine, all-weather multi-role fighter aircraft developed by Eurofighter GmbH as a collaborative effort between the United Kingdom, Germany, Italy, and Spain. The aircraft entered service in 2003 and has become the primary air defense fighter for these nations, with additional exports to Austria and Saudi Arabia. The Typhoon combines canard-delta wing design, advanced digital avionics, and integrated sensor fusion to provide air superiority and ground attack capabilities.",
+      "shortDescription": "European multinational fourth-generation multi-role fighter developed by UK, Germany, Italy, Spain.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The Eurofighter features a canard-delta wing planform with a highly integrated avionics suite. The airframe is constructed primarily from carbon-fiber composites and aluminum-lithium alloys to minimize weight while maximizing strength. Two EuroJet EJ200 augmented turbofan engines provide supersonic cruise capability without afterburner. The aircraft is equipped with the Captor AESA radar for air-to-air and air-to-ground operations, supplemented by the IRIS-T infrared search and track system. The Typhoon&amp;rsquo;s open architecture allows for continuous software and hardware upgrades, supporting integration of new weapons and sensors throughout its operational life.",
+      "shortDescription": "Canard-delta design with EJ200 turbofan engines, Captor AESA radar, and composite airframe construction.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The Typhoon is operated by the Royal Air Force, German Air Force, Italian Air Force, Spanish Air Force, Austrian Air Force, and Royal Saudi Air Force. The aircraft has been extensively upgraded through several tranches, with Tranche 3 aircraft introducing enhanced electronic warfare, data link, and weapons capability. The platform has seen operational deployment in training missions and air defense operations across Europe and the Middle East. Production is shared among Eurofighter partner nations, with final assembly occurring in multiple countries.",
+      "shortDescription": "Operated by six nations; continuous upgrades throughout operational service; production shared among partner countries.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100601,
+      "url": "https://en.wikipedia.org/wiki/Eurofighter_Typhoon",
+      "mimeType": "text/html",
+      "title": "Wikipedia: Eurofighter Typhoon"
+    },
+    {
+      "seq": 2,
+      "mediaID": 100602,
+      "url": "https://example.com/documents/Eurofighter_Typhoon_Overview.pdf",
+      "mimeType": "application/pdf",
+      "title": "Eurofighter Typhoon Overview",
+      "caption": "Comprehensive technical and operational overview of the Eurofighter Typhoon platform"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Western Europe",
+      "organization": "Royal Air Force"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Western Europe",
+      "organization": "German Air Force"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Southern Europe",
+      "organization": "Italian Air Force"
+    },
+    {
+      "country": "Spain",
+      "proliferation": "Using",
+      "region": "Western Europe",
+      "organization": "Spanish Air Force"
+    },
+    {
+      "country": "Austria",
+      "proliferation": "Using",
+      "region": "Central Europe",
+      "organization": "Austrian Air Force"
+    },
+    {
+      "country": "Saudi Arabia",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Royal Saudi Air Force"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Production",
+      "region": "Western Europe",
+      "organization": "BAE Systems"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Production",
+      "region": "Western Europe",
+      "organization": "Airbus Defence and Space"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Production",
+      "region": "Southern Europe",
+      "organization": "Leonardo"
+    },
+    {
+      "country": "Spain",
+      "proliferation": "Production",
+      "region": "Western Europe",
+      "organization": "Airbus Defence and Space"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1002,
+      "childModel": "AIM-120 AMRAAM",
+      "relationType": "Fitted with",
+      "parentComponent": "Armament",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Air-to-Air Missile",
+      "childPrimaryEquipCode": "AIM-120D"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Multi-role air superiority fighter",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Europe (UK, Germany, Italy, Spain)",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Eurofighter GmbH (BAE Systems, Airbus, Leonardo)",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "In service since 2003; Tranche 3 production ongoing",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2003",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "1",
+      "uom": "",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Number built",
+      "parameter": "Number built",
+      "parameterValue": "670",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced",
+      "dataType": "Number",
+      "parameterUomValue": "670 units",
+      "comments": "Approximate total through 2026; includes all tranches",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "15.96",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "15.96 m",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "10.95",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "parameterUomValue": "10.95 m",
+      "component": null
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "5.28",
+      "uom": "m",
+      "parameterDescr": "Overall height of the system",
+      "dataType": "Number",
+      "parameterUomValue": "5.28 m",
+      "component": null
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight",
+      "parameterValue": "11000",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "parameterUomValue": "11000 kg",
+      "component": null
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "23500",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "parameterUomValue": "23500 kg",
+      "component": null
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "2 x EuroJet EJ200 augmented turbofan",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "2.0",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "comments": "With afterburner at altitude",
+      "parameterUomValue": "2.0 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 1",
+      "parameterValue": "925",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "parameterSubTitle": "Air-to-air configuration",
+      "dataType": "Number",
+      "parameterUomValue": "925 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 2",
+      "parameterValue": "610",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "parameterSubTitle": "Low-level strike configuration",
+      "dataType": "Number",
+      "parameterUomValue": "610 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "3790",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled ferry range",
+      "dataType": "Number",
+      "parameterUomValue": "3790 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "19500",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "parameterUomValue": "19500 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Guns",
+      "parameter": "Guns",
+      "parameterValue": "1 x 27 mm Mauser BK-27 cannon, 150 rounds",
+      "uom": "",
+      "parameterDescr": "Gun armament fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Internal weapons bays",
+      "parameter": "Internal weapons bays",
+      "parameterValue": "6x AIM-120 AMRAAM + 2x IRIS-T (air-to-air); 2x KEPD 350 Taurus (air-to-ground)",
+      "uom": "",
+      "parameterDescr": "Weapons carried internally",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1021,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "Captor AESA",
+      "uom": "",
+      "parameterDescr": "Fire-control radar designation",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1022,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "95000000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "comments": "FY2020 dollars; varies by tranche",
+      "parameterUomValue": "95000000 USD",
+      "component": null
+    }
+  ]
+}

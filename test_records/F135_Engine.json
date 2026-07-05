@@ -1,0 +1,269 @@
+{
+  "modelID": 1008,
+  "nomenclature": "Pratt &amp; Whitney F135",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Turbofan Engine",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "F135-PW-100",
+  "aliases": [
+    {"alias": "F135"},
+    {"alias": "JSF119"},
+    {"alias": "F135-PW"}
+  ],
+  "codes": [
+    {"code": "F135-PW-100", "isPrimary": "Y"}
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The Pratt &amp; Whitney F135 is an afterburning turbofan jet engine developed for the Lockheed Martin F-35 Lightning II multirole fighter. Designed specifically for the F-35&#x27;s supersonic operations and high maneuverability requirements, the F135 powers all variants of the F-35 (F-35A, F-35B, and F-35C). The engine features a single-stage high-pressure ratio compressor, large bypass ratio for fuel efficiency, and integrated health management systems.",
+      "shortDescription": "Afterburning turbofan engine for the F-35 Lightning II fighter aircraft.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The F135 employs a low-bypass-ratio turbofan architecture with three low-pressure compressor stages and a single high-pressure compressor stage. The engine incorporates advanced cooling techniques for the high-pressure turbine and uses titanium and nickel-based superalloy materials for enhanced temperature and stress resistance. A full authority digital engine control (FADEC) system manages all engine operations automatically, optimizing performance across the flight envelope. The engine operates at a turbine inlet temperature of approximately 1,700 K.",
+      "shortDescription": "Advanced turbofan with FADEC, titanium/superalloy construction, and high turbine inlet temperature.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100801,
+      "url": "https://en.wikipedia.org/wiki/Pratt_%26_Whitney_F135",
+      "mimeType": "text/html",
+      "title": "Wikipedia: Pratt & Whitney F135"
+    },
+    {
+      "seq": 2,
+      "mediaID": 100802,
+      "url": "https://example.com/documents/f135-engine-specification.pdf",
+      "mimeType": "application/pdf",
+      "title": "F135 Engine Specification Sheet",
+      "caption": "Technical specification and performance data for the Pratt &amp; Whitney F135 turbofan engine"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Pratt &amp; Whitney"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "United States Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1004,
+      "childModel": "Lockheed Martin F-35 Lightning II",
+      "relationType": "Fitted to",
+      "parentComponent": "Propulsion",
+      "childSystemGroup": "Aircraft",
+      "childSystemType": "Fighter Aircraft",
+      "childPrimaryEquipCode": "F-35A"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Afterburning turbofan",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Pratt &amp; Whitney",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2008",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Platform",
+      "parameter": "Platform",
+      "parameterValue": "F-35 Lightning II",
+      "uom": "",
+      "parameterDescr": "Platform the system is fitted to",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "1.82",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "1.82 m",
+      "component": "Dimensions"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0.73",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "0.73 m",
+      "component": "Dimensions"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "981",
+      "uom": "kg",
+      "parameterDescr": "Weight of the engine without operating fluids",
+      "dataType": "Number",
+      "parameterUomValue": "981 kg",
+      "component": "Dimensions"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust - 1",
+      "parameterSubTitle": "With afterburner",
+      "parameterValue": "190",
+      "uom": "kN",
+      "parameterDescr": "Rated engine thrust",
+      "dataType": "Number",
+      "parameterUomValue": "190 kN",
+      "component": "Performance"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust - 2",
+      "parameterSubTitle": "Military power (dry thrust)",
+      "parameterValue": "125",
+      "uom": "kN",
+      "parameterDescr": "Rated engine thrust",
+      "dataType": "Number",
+      "comments": "Thrust without afterburner for sustained operations",
+      "parameterUomValue": "125 kN",
+      "component": "Performance"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Bypass ratio",
+      "parameter": "Bypass ratio",
+      "parameterValue": "0.86",
+      "uom": "",
+      "parameterDescr": "Ratio of bypass air mass flow to core air mass flow",
+      "dataType": "Number",
+      "component": "Performance"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Compressor pressure ratio",
+      "parameter": "Compressor pressure ratio",
+      "parameterValue": "26.5",
+      "uom": "",
+      "parameterDescr": "Overall pressure rise across all compressor stages",
+      "dataType": "Number",
+      "comments": "Manufacturer estimate; may vary with altitude and temperature",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Turbine inlet temperature",
+      "parameter": "Turbine inlet temperature",
+      "parameterValue": "1700",
+      "uom": "K",
+      "parameterDescr": "Maximum operating temperature at turbine inlet",
+      "dataType": "Number",
+      "parameterUomValue": "1700 K",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Fuel consumption",
+      "parameter": "Fuel consumption",
+      "parameterValue": "1.32",
+      "uom": "kg/(N·s)",
+      "parameterDescr": "Specific fuel consumption at cruise conditions",
+      "dataType": "Number",
+      "comments": "At military power; estimated cruise condition",
+      "parameterUomValue": "1.32 kg/(N·s)",
+      "component": "Performance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Operating temperature range",
+      "parameter": "Operating temperature range",
+      "parameterValue": "-57 to +60",
+      "uom": "°C",
+      "parameterDescr": "Ambient temperature envelope for safe operation",
+      "dataType": "Number",
+      "parameterUomValue": "-57 to +60 °C",
+      "component": "Environmental"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "35000000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "comments": "Estimated 2020 cost; flyaway cost excludes development",
+      "parameterUomValue": "35000000 USD",
+      "component": null
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "Full Authority Digital Engine Control (FADEC)",
+      "uom": "",
+      "parameterDescr": "Engine management and control architecture",
+      "dataType": "Text",
+      "component": "Systems"
+    }
+  ]
+}

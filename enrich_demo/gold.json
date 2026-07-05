@@ -1,0 +1,227 @@
+[
+  {
+    "doc_id": "gapfill_s400_belarus",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "S-400 Triumf",
+        "field": "Operated by (country)",
+        "value": "Belarus"
+      }
+    ]
+  },
+  {
+    "doc_id": "gapfill_s300_detection",
+    "batch": 1,
+    "trust": "normal",
+    "noise": true,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "S-300",
+        "field": "Detection range",
+        "value": "300 km"
+      }
+    ]
+  },
+  {
+    "doc_id": "gapfill_s400_alias",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "S-400 Triumf",
+        "field": "alias",
+        "value": "40R6"
+      }
+    ]
+  },
+  {
+    "doc_id": "conflict_s400_deploytime",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "conflict",
+        "record": "S-400 Triumf",
+        "field": "Deployment time",
+        "value": "8 min",
+        "db": "5"
+      }
+    ]
+  },
+  {
+    "doc_id": "conflict_python5_range",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "conflict",
+        "record": "Python-5",
+        "field": "Maximum range",
+        "value": "35 km",
+        "db": "20"
+      }
+    ]
+  },
+  {
+    "doc_id": "corrob_s400_altitude_a",
+    "batch": 1,
+    "trust": "low",
+    "noise": true,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "S-400 Triumf",
+        "field": "Maximum altitude",
+        "value": "30 km",
+        "corroborated": true,
+        "surfaces_in_batch": 2
+      }
+    ]
+  },
+  {
+    "doc_id": "corrob_s400_altitude_b",
+    "batch": 2,
+    "trust": "low",
+    "noise": true,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "S-400 Triumf",
+        "field": "Maximum altitude",
+        "value": "98,000 ft",
+        "corroborated": true,
+        "surfaces_in_batch": 2
+      }
+    ]
+  },
+  {
+    "doc_id": "distractor_python_lang",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "gold": []
+  },
+  {
+    "doc_id": "distractor_derby_horse",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "gold": []
+  },
+  {
+    "doc_id": "unlinked_patriot",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "gold": []
+  },
+  {
+    "doc_id": "hedged_s300",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "conflict",
+        "record": "S-300",
+        "field": "Maximum range",
+        "value": "250 km",
+        "db": "200",
+        "qualifier_expected": true
+      },
+      {
+        "type": "park",
+        "park_reason": "incomplete",
+        "record": "S-300",
+        "field": "Deployment time"
+      }
+    ]
+  },
+  {
+    "doc_id": "relation_f35_aim9x",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "relation",
+        "record": "Lockheed Martin F-35 Lightning II",
+        "other": "AIM-9X Sidewinder"
+      }
+    ]
+  },
+  {
+    "doc_id": "python5_vietnam",
+    "batch": 2,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "Python-5",
+        "field": "Operated by (country)",
+        "value": "Vietnam"
+      }
+    ]
+  },
+  {
+    "doc_id": "rerun_s400_belarus",
+    "batch": 3,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": true,
+    "gold": []
+  },
+  {
+    "doc_id": "spyder_poland",
+    "batch": 2,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "SPYDER",
+        "field": "Operated by (country)",
+        "value": "Poland"
+      }
+    ]
+  }
+]

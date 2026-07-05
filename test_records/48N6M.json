@@ -1,0 +1,300 @@
+{
+  "modelID": 1013,
+  "nomenclature": "48N6M",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "48N6M",
+  "aliases": [
+    {
+      "alias": "48N6"
+    },
+    {
+      "alias": "48N6DM"
+    },
+    {
+      "alias": "48N6E2"
+    }
+  ],
+  "codes": [
+    {
+      "code": "48N6DM"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 48N6M is a long-range surface-to-air missile developed by Russia's Almaz-Antey, serving as the primary interceptor for both the S-300 (later variants) and S-400 air defense systems. Introduced in the early 1990s, the 48N6 family has become one of the most widely deployed Russian air defense missiles, capable of engaging aircraft, helicopters, and cruise missiles at ranges up to 250 kilometers. The missile employs semi-active radar guidance with track-via-missile mode, allowing the launch system to guide multiple missiles simultaneously against different targets.",
+      "shortDescription": "Long-range semi-active radar guided SAM employed by S-300 and S-400 systems.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 48N6M features a cylindrical body with delta control fins at the rear and mid-body configuration optimized for stability and range. Propulsion consists of a two-stage solid-fuel rocket motor enabling sustained cruise at transonic speeds and terminal phase acceleration. Guidance is primarily semi-active radar homing with track-via-missile capability, allowing the launch platform to illuminate the target while the missile provides guidance corrections via transmitted signals. The warhead is a high-explosive directed-fragmentation type tailored for aerial targets. Multiple variants (48N6, 48N6DM, 48N6E2) represent incremental improvements in range, guidance precision, and high-altitude engagement capability.",
+      "shortDescription": "Two-stage SAM with semi-active radar guidance and multi-target engagement capability.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101301,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-400 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Air Force"
+    },
+    {
+      "country": "Belarus",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Belarusian Air Force"
+    },
+    {
+      "country": "Vietnam",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Vietnam People's Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1010,
+      "childModel": "S-400 Triumf",
+      "parentModelID": 1013,
+      "parentModel": "48N6M",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-400"
+    },
+    {
+      "childModelID": 1011,
+      "childModel": "S-300",
+      "parentModelID": 1013,
+      "parentModel": "48N6M",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-300"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Long-range surface-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "Continuous production and upgrade variants",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "1992",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "comments": "Original 48N6; improved variants introduced subsequently",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "6.0",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "6.0 m",
+      "comments": "estimated",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0.508",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "0.508 m",
+      "comments": "estimated",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1800",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "1800 kg",
+      "comments": "estimated for 48N6DM variant",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "120",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "120 kg",
+      "comments": "estimated",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "High-explosive directed-fragmentation warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Radar proximity fuze; contact fuze",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Two-stage solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "250",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "parameterSubTitle": "48N6DM variant",
+      "dataType": "Number",
+      "parameterUomValue": "250 km",
+      "comments": "Long-range engagement capability; improvement over original 48N6",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "2.8",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "parameterUomValue": "2.8 Mach",
+      "comments": "estimated",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Semi-active radar homing with track-via-missile mode",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "35",
+      "uom": "km",
+      "parameterDescr": "Maximum altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "35 km",
+      "comments": "High-altitude interception capability",
+      "component": "Performance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Maximum target speed",
+      "parameter": "Maximum target speed",
+      "parameterValue": "3000",
+      "uom": "m/s",
+      "parameterDescr": "Maximum speed of targets that can be engaged",
+      "dataType": "Number",
+      "parameterUomValue": "3000 m/s",
+      "comments": "estimated",
+      "component": "Performance"
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "modelID": 1005,
+  "nomenclature": "Sukhoi Su-57",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "Su-57",
+  "aliases": [
+    {"alias": "Felon"},
+    {"alias": "T-50"},
+    {"alias": "PAK FA"}
+  ],
+  "codes": [
+    {"code": "Su-57"}
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The Sukhoi Su-57, known by NATO reporting name Felon, is a fifth-generation, single-seat, twin-engine stealth tactical fighter aircraft developed by Sukhoi for the Russian Aerospace Forces. It is Russia&#x27;s first operational stealth fighter and incorporates advanced avionics, supercruise capability, and integrated systems. The Su-57 entered limited service in 2020 and represents Russia&amp;rsquo;s response to Western fifth-generation fighters. Development began in the 1990s as part of the PAK FA (Prospective Airborne Complex of Frontline Aviation) program.",
+      "shortDescription": "Russian fifth-generation stealth air superiority fighter developed by Sukhoi.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The Su-57 features a delta-canard wing configuration with blended-body fuselage design optimized for low radar cross-section. The airframe incorporates radar-absorbent materials and shaped surfaces to reduce detectability. Two Saturn AL-41F1S turbofan engines with 3D thrust vectoring provide supercruise capability and enhanced maneuverability. The aircraft employs an integrated avionics suite including the N036 Sh-25M AESA radar and passive phased array antenna system. Internal weapons bays house air-to-air and air-to-ground ordnance, maintaining low observability during combat operations.",
+      "shortDescription": "Delta-canard stealth airframe with 3D vectored thrust and integrated avionics.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The Su-57 is operated by the Russian Aerospace Forces in limited numbers following deployment to Syria in 2019. The aircraft has seen combat employment in support of Russian military operations. Production is conducted by Sukhoi and United Aircraft Corporation, with ongoing delivery to Russian forces. International interest in the platform has included inquiries from India (joint HAL/Sukhoi development program) and several other nations, though foreign sales remain limited due to export restrictions and international sanctions.",
+      "shortDescription": "Operated by Russian Aerospace Forces with limited production; potential export variants under development.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100501,
+      "url": "https://en.wikipedia.org/wiki/Sukhoi_Su-57",
+      "mimeType": "text/html",
+      "title": "Wikipedia: Sukhoi Su-57"
+    },
+    {
+      "seq": 2,
+      "mediaID": 100502,
+      "url": "https://example.com/documents/Su-57_Technical_Factsheet.pdf",
+      "mimeType": "application/pdf",
+      "title": "Su-57 Technical Fact Sheet",
+      "caption": "Technical overview and performance characteristics of the Su-57 fighter"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Eastern Europe",
+      "organization": "Russian Aerospace Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Eastern Europe",
+      "organization": "Sukhoi / United Aircraft Corporation"
+    }
+  ],
+  "relations": [],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Air superiority fighter",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Sukhoi / United Aircraft Corporation",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "Limited production; entered service 2020",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2020",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "comments": "Initial operational capability achieved January 2020",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "1",
+      "uom": "",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Number built",
+      "parameter": "Number built",
+      "parameterValue": "12",
+      "uom": "units",
+      "parameterDescr": "Total number of units produced",
+      "dataType": "Number",
+      "parameterUomValue": "12 units",
+      "comments": "As of mid-2026; estimated production rate",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "19.95",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "19.95 m",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "14.00",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "parameterUomValue": "14.00 m",
+      "component": null
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "4.69",
+      "uom": "m",
+      "parameterDescr": "Overall height of the system",
+      "dataType": "Number",
+      "parameterUomValue": "4.69 m",
+      "component": null
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight",
+      "parameterValue": "18000",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "parameterUomValue": "18000 kg",
+      "component": null
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "35000",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "parameterUomValue": "35000 kg",
+      "component": null
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "2 x Saturn AL-41F1S augmented turbofan with 3D thrust vectoring",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "2.0",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "comments": "With afterburner at altitude; estimated",
+      "parameterUomValue": "2.0 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Supercruise speed",
+      "parameter": "Supercruise speed",
+      "parameterValue": "1.6",
+      "uom": "Mach",
+      "parameterDescr": "Sustained supersonic cruise speed without afterburner",
+      "dataType": "Number",
+      "parameterUomValue": "1.6 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 1",
+      "parameterValue": "1000",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "parameterSubTitle": "Internal fuel",
+      "dataType": "Number",
+      "parameterUomValue": "1000 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 2",
+      "parameterValue": "1450",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "parameterSubTitle": "With external fuel tanks",
+      "dataType": "Number",
+      "parameterUomValue": "1450 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "3400",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled ferry range",
+      "dataType": "Number",
+      "parameterUomValue": "3400 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "20000",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "parameterUomValue": "20000 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Guns",
+      "parameter": "Guns",
+      "parameterValue": "1 x 30 mm GSh-30-1 cannon, 150 rounds",
+      "uom": "",
+      "parameterDescr": "Gun armament fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1021,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "N036 Sh-25M AESA",
+      "uom": "",
+      "parameterDescr": "Fire-control radar designation",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1022,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "85000000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "comments": "Estimated; currency equivalent as of 2026",
+      "parameterUomValue": "85000000 USD",
+      "component": null
+    }
+  ]
+}

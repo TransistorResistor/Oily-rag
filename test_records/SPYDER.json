@@ -1,0 +1,347 @@
+{
+  "modelID": 1025,
+  "nomenclature": "SPYDER",
+  "systemGroup": "Weapon",
+  "systemType": "Surface-to-Air Missile System",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "SPYDER",
+  "aliases": [
+    {
+      "alias": "Surface-to-air PYthon and DERby"
+    },
+    {
+      "alias": "SPYDER-SR"
+    },
+    {
+      "alias": "SPYDER-MR"
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPYDER"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The SPYDER (Surface-to-air PYthon and DERby) is an Israeli ground-based air defense system developed by Rafael Advanced Defense Systems and Israel Aerospace Industries. The system fires the Python-5 infrared-homing and Derby active-radar-homing air-to-air missiles in the surface-to-air role, providing flexible air defense against aircraft and unmanned aerial vehicles. SPYDER is available in multiple variants including short-range (SR), medium-range (MR), extended-range (ER), and long-range (LR) configurations, with the all-in-one variant integrating radar, command/control, and launcher systems on a single mobile vehicle. The system has been in production since 2005 and is operated by multiple nations including India, Singapore, Czech Republic, Vietnam, and others.",
+      "shortDescription": "Israeli ground-based air defense system firing Python-5 and Derby missiles with multiple range variants.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The SPYDER system combines integrated radar, command post, and launcher platforms in a modular architecture enabling rapid deployment. The SPYDER-SR variant uses inclined, rotatable launchers with the EL/M-2106 ATAR radar for detection ranges of 70-110 km against fighter-sized targets. The SPYDER-MR variant employs vertical launch systems and the EL/M-2084 MMR radar capable of detecting targets at 250 km with processing capacity for 1,200 targets simultaneously. The Python-5 missile provides infrared guidance with a 40 km range, while the Derby missile offers active radar homing with an 80 km range. Mobile platforms enable deployment on standard 8x8 or 6x6 truck configurations for worldwide rapid deployment.",
+      "shortDescription": "Modular ground-based air defense with rotatable or vertical launchers, integrated radar systems, and dual-missile armament.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 102501,
+      "url": "https://en.wikipedia.org/wiki/SPYDER",
+      "mimeType": "text/html",
+      "title": "Wikipedia: SPYDER"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Israel Defense Force"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Production",
+      "region": "Asia",
+      "organization": "Rafael Advanced Defense Systems; Israel Aerospace Industries"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Czech Republic",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Czech Armed Forces"
+    },
+    {
+      "country": "Vietnam",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Vietnam People's Armed Forces"
+    },
+    {
+      "country": "Azerbaijan",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Azerbaijan Armed Forces"
+    },
+    {
+      "country": "Georgia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Georgian Armed Forces"
+    },
+    {
+      "country": "Morocco",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "Royal Moroccan Armed Forces"
+    },
+    {
+      "country": "Kenya",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "Kenya Defense Forces"
+    },
+    {
+      "country": "Ethiopia",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "Ethiopian National Defense Force"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "Philippines",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Philippine Armed Forces"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1022,
+      "childModel": "Python-5",
+      "parentModelID": 1025,
+      "parentModel": "SPYDER",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "Python-5"
+    },
+    {
+      "childModelID": 1023,
+      "childModel": "Derby",
+      "parentModelID": 1025,
+      "parentModel": "SPYDER",
+      "parentComponent": "Armament",
+      "relationType": "PARENT",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Aircraft Missile",
+      "childPrimaryEquipCode": "Derby"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Mobile ground-based air defense system",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rafael Advanced Defense Systems; Israel Aerospace Industries",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Israel",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2005",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "Python-5; Derby",
+      "uom": "",
+      "parameterDescr": "Missiles employed by the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 1",
+      "parameterSubTitle": "Python-5 missile",
+      "parameterValue": "40",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "parameterUomValue": "40 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 2",
+      "parameterSubTitle": "Derby missile",
+      "parameterValue": "80",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "parameterUomValue": "80 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operating altitude range",
+      "parameter": "Operating altitude range - Python-5",
+      "parameterValue": "0 to 9000",
+      "uom": "m",
+      "parameterDescr": "Altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "0 to 9000 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Operating altitude range",
+      "parameter": "Operating altitude range - Derby",
+      "parameterValue": "0 to 16000",
+      "uom": "m",
+      "parameterDescr": "Altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "0 to 16000 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar",
+      "parameter": "Radar - SR variant",
+      "parameterSubTitle": "SPYDER-SR",
+      "parameterValue": "EL/M-2106 ATAR",
+      "uom": "",
+      "parameterDescr": "Type and configuration of the search and acquisition radar",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Radar",
+      "parameter": "Radar - MR variant",
+      "parameterSubTitle": "SPYDER-MR",
+      "parameterValue": "EL/M-2084 MMR",
+      "uom": "",
+      "parameterDescr": "Type and configuration of the search and acquisition radar",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range - SR",
+      "parameterSubTitle": "EL/M-2106 ATAR",
+      "parameterValue": "70 to 110",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range of the integrated search radar",
+      "dataType": "Number",
+      "comments": "Fighter-sized target detection at altitude",
+      "parameterUomValue": "70 to 110 km",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range - MR",
+      "parameterSubTitle": "EL/M-2084 MMR",
+      "parameterValue": "250",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range of the integrated search radar",
+      "dataType": "Number",
+      "parameterUomValue": "250 km",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Radar target processing",
+      "parameter": "Radar target processing",
+      "parameterValue": "1200",
+      "uom": "simultaneous targets",
+      "parameterDescr": "Number of simultaneous targets that can be processed by the radar",
+      "dataType": "Number",
+      "comments": "EL/M-2084 MMR radar capacity",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Launcher type",
+      "parameter": "Launcher type - SR variant",
+      "parameterValue": "Inclined rotatable launcher",
+      "uom": "",
+      "parameterDescr": "Launcher configuration and type",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Launcher type",
+      "parameter": "Launcher type - MR variant",
+      "parameterValue": "Vertical launch system",
+      "uom": "",
+      "parameterDescr": "Launcher configuration and type",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Mobile platform",
+      "parameter": "Mobile platform",
+      "parameterValue": "8x8 or 6x6 truck configurations",
+      "uom": "",
+      "parameterDescr": "Vehicle platform for mobile deployment",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

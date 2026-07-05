@@ -1,0 +1,179 @@
+[
+  {
+    "proposal_id": "3f72467473b2be72",
+    "type": "gap_fill",
+    "record_id": "1002",
+    "record": "AIM-120 AMRAAM",
+    "field": "Maximum altitude",
+    "value": "20 km",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 2,
+    "value_distribution": {
+      "20 km": 1,
+      "65000 ft": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "Analyst Estimate: AMRAAM Engagement Ceiling (1/2)",
+        "doc_path": "testdocs2\\corrob_amraam_ceiling_a.pdf",
+        "quote": "the AIM-120 20 km ceiling figure",
+        "value": "20 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "2901219adeb3d1f9",
+    "type": "gap_fill",
+    "record_id": "1006",
+    "record": "Eurofighter Typhoon",
+    "field": "Operated by (country)",
+    "value": "Kuwait",
+    "db_value": "Austria, Germany, Italy, Saudi Arabia, Spain, United Kingdom",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "Kuwait": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "Kuwait Declares Eurofighter Typhoon Squadron Operational",
+        "doc_path": "testdocs2\\gapfill_typhoon_operator.pdf",
+        "quote": "Kuwait has declared its first Eurofighter Typhoon squadron operational, becoming a new operator of the multi-role fighter aircraft.",
+        "value": "Kuwait"
+      }
+    ]
+  },
+  {
+    "proposal_id": "39db6f2e787cf1d0",
+    "type": "relation",
+    "record_id": "1004",
+    "record": "Lockheed Martin F-35 Lightning II",
+    "field": "relation",
+    "value": "Lockheed Martin F-35 Lightning II <-> ASRAAM",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "Lockheed Martin F-35 Lightning II <-> ASRAAM": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "Lockheed Martin and MBDA Confirm F-35 / ASRAAM",
+        "doc_path": "testdocs2\\integration_f35_asraam.pdf",
+        "quote": "The F-35 has been cleared to carry and employ the infrared-guided ASRAAM from its external wing stations",
+        "value": "Lockheed Martin F-35 Lightning II <-> ASRAAM"
+      }
+    ]
+  },
+  {
+    "proposal_id": "e47d102312570b62",
+    "type": "conflict",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Deployment time",
+    "value": "8 min",
+    "db_value": "5 min",
+    "qualifier": "convoy halt to active",
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "8 min": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "S-400 Triumf - Consolidated Specification Sheet",
+        "doc_path": "testdocs2\\table_s400_spec.pdf",
+        "quote": "Deploy Time 8 min",
+        "value": "8 min"
+      }
+    ]
+  },
+  {
+    "proposal_id": "973b2e8d59ba69b7",
+    "type": "gap_fill",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Maximum altitude",
+    "value": "30 km",
+    "db_value": null,
+    "qualifier": "assessed maximum",
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "30 km": 1
+    },
+    "first_run": 1,
+    "is_new": false,
+    "sources": [
+      {
+        "doc_title": "S-400 Triumf - Consolidated Specification Sheet",
+        "doc_path": "testdocs2\\table_s400_spec.pdf",
+        "quote": "Engagement Ceiling 30 km",
+        "value": "30 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "975f3a3071b5bba4",
+    "type": "gap_fill",
+    "record_id": "1002",
+    "record": "AIM-120 AMRAAM",
+    "field": "Maximum altitude",
+    "value": "65000 ft",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 2,
+    "value_distribution": {
+      "20 km": 1,
+      "65000 ft": 1
+    },
+    "first_run": 2,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "Analyst Estimate: AMRAAM Engagement Ceiling (2/2)",
+        "doc_path": "testdocs2\\corrob_amraam_ceiling_b.pdf",
+        "quote": "Separate open-source reporting puts the engagement ceiling of the AIM-120 AMRAAM air\u2013to\u2013air missile at approximately 65,000 ft",
+        "value": "65000 ft"
+      }
+    ]
+  },
+  {
+    "proposal_id": "4cc49f89eaaf9d4c",
+    "type": "gap_fill",
+    "record_id": "1005",
+    "record": "Sukhoi Su-57",
+    "field": "Operated by (country)",
+    "value": "Algeria",
+    "db_value": "Russia",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "Algeria": 1
+    },
+    "first_run": 2,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "Algeria Reported as Su-57 Export Customer",
+        "doc_path": "testdocs2\\gapfill_su57_operator.pdf",
+        "quote": "Algeria would make it the first foreign operator of the Russian combat aircraft.",
+        "value": "Algeria"
+      }
+    ]
+  }
+]

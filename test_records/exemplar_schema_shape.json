@@ -1,0 +1,256 @@
+{
+  "_comment": "Exemplar v3 (2026-07-04). Corrections over the root exemplar_schema_shape.json: (1) parameterDescr is the FIXED data-dictionary definition of the parameter as defined in the schema -- it states what the parameter represents and is identical for every row of that parameter, in every record. Per-entry context, caveats or limitations on the supplied value belong in parameterSubTitle and/or comments, never in parameterDescr. (2) The LOV dataType (a value drawn from a controlled list) is shown, absent from the earlier exemplar. (3) media[] rows may be PDFs, identifiable by mimeType.",
+
+  "modelID": "000000",
+  "releaseID": 0,
+  "name": "Generic Platform X",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter",
+  "nomenclature": "Generic Platform X",
+  "primaryEquipCode": "ABCDE",
+  "reviewDate": "2000-01-01T00:00:00Z",
+  "createdDate": "2000-01-01",
+  "updatedDate": "2026-01-01",
+  "versionDate": "2025-01-01",
+  "productLink": "https://example.com.au/platform/000000",
+
+  "aliasList": "ALIAS1, ALIAS2, ALIAS3",
+  "aliases": [
+    {
+      "alias": "ALIAS1",
+      "type": "Common Name",
+      "urls": null
+    },
+    {
+      "alias": "ALIAS2",
+      "type": "Project Name",
+      "urls": null
+    },
+    {
+      "alias": "ALIAS3",
+      "type": "Cover Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "XXXXX",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "description": "General overview of Generic Platform X, detailing its origin and primary purpose.\n More data here&#x27;s",
+      "shortDescription": "General overview of Generic Platform X.",
+      "descrType": "Overview",
+      "sources": null,
+      "urls": null
+    },
+    {
+      "description": "Technical details regarding the power and energy systems.",
+      "descrType": "Systems",
+      "sources": null,
+      "urls": null
+    }
+  ],
+  "trigraphLists": [
+    {
+      "trigraphList": "GEN, ABC"
+    }
+  ],
+  "regionList": "Region A, Region B",
+  "countryList": "Country A, Country B",
+  "proliferations": [
+    {
+      "country": "Country A",
+      "trigraph": "GEN",
+      "region": "Region A",
+      "proliferation": "Using",
+      "organization": "Mil Org A",
+      "sources": null,
+      "urls": null
+    },
+    {
+      "country": "Country B",
+      "trigraph": "ABC",
+      "region": "Region B",
+      "proliferation": "Production",
+      "organization": "Manufacturer A",
+      "sources": null,
+      "urls": null
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 93039,
+      "url": "https://example.com.au/images/000000",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "caption": "Caption of Image",
+      "title": "Title Of Image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 93040,
+      "url": "https://example.com.au/documents/000000/technical-summary.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "caption": "Technical summary document for Generic Platform X",
+      "title": "Generic Platform X Technical Summary"
+    }
+  ],
+  "parametrics": [
+    {
+      "componentOnly": "SubModel: Component A",
+      "parameterOnly": "Relationship Classification",
+      "component": "SubModel: Component A",
+      "parameter": "Relationship Classification",
+      "componentDescr": "Classification of relationship",
+      "parameterValue": "Component A Model",
+      "childModel": "Component A Model",
+      "childModelID": 111111
+    },
+    {
+      "componentOnly": "General",
+      "parameterOnly": "Operational Status",
+      "component": "General",
+      "parameter": "Operational Status",
+      "componentDescr": "General system information",
+      "parameterDescr": "Current life-cycle status of the system",
+      "parameterValue": "In Service",
+      "dataType": "LOV",
+      "comments": "Value drawn from the controlled status list (e.g. In Development, In Production, In Service, Retired)"
+    },
+    {
+      "componentOnly": "General",
+      "parameterOnly": "Country of Origin",
+      "component": "General",
+      "parameter": "Country of Origin",
+      "componentDescr": "General system information",
+      "parameterDescr": "Country in which the system was designed",
+      "parameterValue": "Country A",
+      "dataType": "LOV"
+    },
+    {
+      "componentOnly": "Performance Metrics",
+      "parameterOnly": "Max Value",
+      "component": "Performance Metrics",
+      "parameter": "Max Value",
+      "componentDescr": "General Performance Data",
+      "parameterDescr": "The maximum rated operating value",
+      "parameterValue": "100",
+      "dataType": "Number",
+      "uom": "unit",
+      "comments": "Standard configuration",
+      "parameterUomValue": "100 unit"
+    },
+    {
+      "componentOnly": "Performance Metrics",
+      "parameterOnly": "Max Value",
+      "component": "Performance Metrics",
+      "parameter": "Max Value",
+      "componentDescr": "General Performance Data",
+      "parameterDescr": "The maximum rated operating value",
+      "parameterValue": "120",
+      "dataType": "Number",
+      "uom": "unit",
+      "comments": "Overclocked/Emergency configuration; not sustainable beyond 5 minutes",
+      "parameterUomValue": "120 unit"
+    },
+    {
+      "componentOnly": "Dimensions",
+      "parameterOnly": "Length",
+      "component": "Dimensions",
+      "parameter": "Length",
+      "componentDescr": "Physical Dimensions",
+      "parameterDescr": "Total length of the platform",
+      "parameterValue": "10",
+      "dataType": "Number",
+      "uom": "m",
+      "parameterUomValue": "10 m"
+    },
+    {
+      "componentOnly": "Dimensions",
+      "parameterOnly": "Wing Sweep",
+      "parameterSubTitle": "1",
+      "component": "Dimensions",
+      "parameter": "Wing Sweep - 1",
+      "componentDescr": "Physical Dimensions",
+      "parameterDescr": "Wing sweep angle",
+      "parameterValue": "19.5",
+      "dataType": "Number",
+      "uom": "deg",
+      "comments": "Wings fully forward",
+      "parameterUomValue": "19.5 deg"
+    },
+    {
+      "componentOnly": "Dimensions",
+      "parameterOnly": "Wing Sweep",
+      "parameterSubTitle": "2",
+      "component": "Dimensions",
+      "parameter": "Wing Sweep - 2",
+      "componentDescr": "Physical Dimensions",
+      "parameterDescr": "Wing sweep angle",
+      "parameterValue": "21.0",
+      "dataType": "Number",
+      "uom": "deg",
+      "comments": "Wings fully swept; estimated value",
+      "parameterUomValue": "21.0 deg"
+    },
+    {
+      "componentOnly": "Propulsion",
+      "parameterOnly": "Engine Thrust",
+      "parameterSubTitle": "Max Emergency Power",
+      "component": "Propulsion",
+      "parameter": "Engine Thrust - 1",
+      "componentDescr": "Engine Performance",
+      "parameterDescr": "Rated engine thrust",
+      "parameterValue": "120",
+      "dataType": "Number",
+      "uom": "kN",
+      "parameterUomValue": "120 kN"
+    },
+    {
+      "componentOnly": "Propulsion",
+      "parameterOnly": "Engine Thrust",
+      "parameterSubTitle": "Typical Operation",
+      "component": "Propulsion",
+      "parameter": "Engine Thrust - 2",
+      "componentDescr": "Engine Performance",
+      "parameterDescr": "Rated engine thrust",
+      "parameterValue": "98",
+      "dataType": "Number",
+      "uom": "kN",
+      "comments": "Manufacturer figure; not independently verified",
+      "parameterUomValue": "98 kN"
+    },
+    {
+      "componentOnly": "Propulsion",
+      "parameterOnly": "Propulsion Type",
+      "component": "Propulsion",
+      "parameter": "Propulsion Type",
+      "componentDescr": "Engine Performance",
+      "parameterDescr": "Class of propulsion system fitted",
+      "parameterValue": "Turbofan",
+      "dataType": "LOV"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "subComponentID": 1001,
+      "childModelID": 600001,
+      "childModel": "Generic Engine Model-1",
+      "parentModelID": 999999,
+      "parentModel": "Generic Platform X-100",
+      "parentComponent": "Propulsion",
+      "parentModelComponentID": 12451,
+      "threat": "Needs Assignment",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbo-Prop",
+      "childPrimaryEquipCode": "YYYY",
+      "relationType": "PARENT"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "modelID": 1016,
+  "nomenclature": "91N6E Big Bird",
+  "systemGroup": "Sensors",
+  "systemType": "Air Defense Radar",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "91N6E",
+  "aliases": [
+    {
+      "alias": "Big Bird"
+    },
+    {
+      "alias": "91N6"
+    }
+  ],
+  "codes": [
+    {
+      "code": "91N6E"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 91N6E Big Bird is a long-range panoramic surveillance radar system integrated into the S-400 Triumf air-defense complex. Developed by Almaz-Antey, this phased-array radar provides initial target acquisition and air-picture development over extended ranges. The 91N6E operates continuously to detect and classify airborne targets at all altitudes, feeding target data to the command post and engagement radars. Its panoramic search capability ensures persistent coverage across the defended sector, establishing the foundation for the layered air-defense architecture.",
+      "shortDescription": "Long-range panoramic surveillance radar for the S-400 air-defense system.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 91N6E uses a mechanically or electronically scanned phased-array antenna to provide 360-degree or sector panoramic coverage. The radar employs pulse-Doppler signal processing to detect moving targets against ground clutter and weather interference. The system integrates automatic target detection, tracking initiation, and track-maintenance algorithms to hand off tracks to the fire-control radar. Operating in conjunction with the 92N6E engagement radar, the 91N6E establishes target tracks that are automatically distributed across the integrated air-defense network. The radar's modular architecture permits rapid deployment and integration with command-and-control systems.",
+      "shortDescription": "Phased-array panoramic radar with pulse-Doppler processing for 360-degree coverage.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101601,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-400 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Armed Forces"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1010,
+      "childModel": "S-400 Triumf",
+      "parentModelID": 1016,
+      "parentModel": "91N6E Big Bird",
+      "parentComponent": "Sensors",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-400"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Phased-array panoramic surveillance radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Function",
+      "parameter": "Function",
+      "parameterValue": "Acquisition and surveillance",
+      "uom": "",
+      "parameterDescr": "Primary operational function in the air-defense system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "L-band / S-band",
+      "uom": "",
+      "parameterDescr": "Operating radio-frequency band",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "340",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range for fighter-sized airborne targets",
+      "dataType": "Number",
+      "comments": "Against fighter-sized targets; jamming-resistant design; from Wikipedia",
+      "parameterUomValue": "340 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "360",
+      "uom": "deg",
+      "parameterDescr": "Full panoramic azimuth coverage",
+      "dataType": "Number",
+      "parameterUomValue": "360 deg",
+      "component": "Performance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Antenna",
+      "parameter": "Antenna",
+      "parameterValue": "Phased-array with mechanical or electronic scanning",
+      "uom": "",
+      "parameterDescr": "Antenna technology and configuration",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Signal processing",
+      "parameter": "Signal processing",
+      "parameterValue": "Pulse-Doppler with automatic detection and tracking",
+      "uom": "",
+      "parameterDescr": "Signal processing methodology and capabilities",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Platform",
+      "parameter": "Platform",
+      "parameterValue": "Mobile TEL or stationary installation",
+      "uom": "",
+      "parameterDescr": "Deployment platform for the radar system",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

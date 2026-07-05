@@ -1,0 +1,288 @@
+{
+  "modelID": 1014,
+  "nomenclature": "9M96",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "9M96",
+  "aliases": [
+    {
+      "alias": "9M96E"
+    }
+  ],
+  "codes": [
+    {
+      "alias": "9M96E"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 9M96 is a medium-range, agile surface-to-air missile developed by Russia's Fakel design bureau for integration with both S-300 (PMU variants) and S-400 air defense systems. Introduced in 2005, the 9M96 provides short- to medium-range air defense against aircraft, helicopters, cruise missiles, and tactical ballistic missiles. A unique feature is quad-packing—four missiles can be loaded into a single launch tube, allowing a single TEL to carry up to 16 missiles (four tubes × four missiles). The missile employs active radar homing and gas-dynamic lateral thrusters for high maneuverability in the endgame phase.",
+      "shortDescription": "Agile medium-range SAM with active radar homing and gas-dynamic control; quad-packable.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 9M96 features a compact, streamlined airframe optimized for packaging density and agility. Propulsion is provided by a solid-fuel rocket motor enabling high acceleration and sustained supersonic cruise. The unique gas-dynamic control system employs lateral thrusters to achieve extreme maneuverability in the terminal phase, enabling engagement of highly maneuverable targets and defense against evasive tactics. Guidance is active radar homing in terminal phase, with datalink updates during the cruise phase. The warhead is a pre-fragmented anti-aircraft type. The compact size permits four missiles to be contained and launched from a single tube, significantly increasing the defensive firepower of individual launch platforms without increasing platform dimensions.",
+      "shortDescription": "Compact agile SAM with active radar homing and gas-dynamic control; four-per-tube launcher configuration.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 101401,
+      "url": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-400 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Fakel Design Bureau"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1010,
+      "childModel": "S-400 Triumf",
+      "parentModelID": 1014,
+      "parentModel": "9M96",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-400"
+    },
+    {
+      "childModelID": 1011,
+      "childModel": "S-300",
+      "parentModelID": 1014,
+      "parentModel": "9M96",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-300"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Medium-range agile surface-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Fakel Design Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2005",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "3.8",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "3.8 m",
+      "comments": "estimated",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0.165",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "0.165 m",
+      "comments": "estimated",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "190",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "190 kg",
+      "comments": "estimated; compact design enables quad-packing",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "50",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "50 kg",
+      "comments": "estimated",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "Pre-fragmented anti-aircraft warhead",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Radar proximity fuze; contact fuze",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "120",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "parameterUomValue": "120 km",
+      "comments": "Medium-range defensive coverage; typical engagement envelope 40-120 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "3",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "parameterUomValue": "3 Mach",
+      "comments": "estimated",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Active radar homing; gas-dynamic lateral thrusters for terminal guidance",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "Gas-dynamic thrust-vector control with lateral thrusters",
+      "uom": "",
+      "parameterDescr": "Aerodynamic control and maneuvering system",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Launcher configuration",
+      "parameter": "Launcher configuration",
+      "parameterValue": "Four missiles per launch tube",
+      "uom": "",
+      "parameterDescr": "Number of missiles that can be packaged in a single launch tube",
+      "parameterSubTitle": "Quad-packing arrangement",
+      "dataType": "Number",
+      "component": null
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "25",
+      "uom": "km",
+      "parameterDescr": "Maximum altitude envelope for target engagement",
+      "dataType": "Number",
+      "parameterUomValue": "25 km",
+      "comments": "estimated",
+      "component": "Performance"
+    }
+  ]
+}

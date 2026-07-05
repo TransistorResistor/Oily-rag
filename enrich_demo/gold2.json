@@ -1,0 +1,174 @@
+[
+  {
+    "doc_id": "table_s400_spec",
+    "batch": 1,
+    "trust": "normal",
+    "noise": true,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": [
+      {
+        "type": "conflict",
+        "record": "S-400 Triumf",
+        "field": "Deployment time",
+        "value": "8 min",
+        "db": "5"
+      },
+      {
+        "type": "gap_fill",
+        "record": "S-400 Triumf",
+        "field": "Maximum altitude",
+        "value": "30 km"
+      }
+    ]
+  },
+  {
+    "doc_id": "table_missile_compare",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": []
+  },
+  {
+    "doc_id": "integration_f35_asraam",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": [
+      {
+        "type": "relation",
+        "record": "Lockheed Martin F-35 Lightning II",
+        "other": "ASRAAM"
+      }
+    ]
+  },
+  {
+    "doc_id": "redherring_procurement",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": []
+  },
+  {
+    "doc_id": "redherring_units",
+    "batch": 1,
+    "trust": "normal",
+    "noise": true,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": []
+  },
+  {
+    "doc_id": "distractor_derby_football",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": []
+  },
+  {
+    "doc_id": "unlinked_s350",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": []
+  },
+  {
+    "doc_id": "gapfill_typhoon_operator",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "Eurofighter Typhoon",
+        "field": "Operated by (country)",
+        "value": "Kuwait"
+      }
+    ]
+  },
+  {
+    "doc_id": "corrob_amraam_ceiling_a",
+    "batch": 1,
+    "trust": "low",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "AIM-120 AMRAAM",
+        "field": "Maximum altitude",
+        "value": "20 km",
+        "corroborated": true,
+        "surfaces_in_batch": 2
+      }
+    ]
+  },
+  {
+    "doc_id": "corrob_amraam_ceiling_b",
+    "batch": 2,
+    "trust": "low",
+    "noise": true,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "AIM-120 AMRAAM",
+        "field": "Maximum altitude",
+        "value": "65,000 ft",
+        "corroborated": true,
+        "surfaces_in_batch": 2
+      }
+    ]
+  },
+  {
+    "doc_id": "gapfill_su57_operator",
+    "batch": 2,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "Sukhoi Su-57",
+        "field": "Operated by (country)",
+        "value": "Algeria"
+      }
+    ]
+  },
+  {
+    "doc_id": "rerun_typhoon_kuwait",
+    "batch": 3,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": true,
+    "has_table": false,
+    "gold": []
+  }
+]

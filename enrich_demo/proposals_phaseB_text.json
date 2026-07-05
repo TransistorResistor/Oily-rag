@@ -1,0 +1,52 @@
+[
+  {
+    "proposal_id": "e47d102312570b62",
+    "type": "conflict",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Deployment time",
+    "value": "8 min",
+    "db_value": "5 min",
+    "qualifier": "convoy halt to active",
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "8 min": 1
+    },
+    "first_run": 1,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "S-400 Triumf - Consolidated Specification Sheet",
+        "doc_path": "testdocs2\\table_s400_spec.pdf",
+        "quote": "Deploy Time 8 min",
+        "value": "8 min"
+      }
+    ]
+  },
+  {
+    "proposal_id": "973b2e8d59ba69b7",
+    "type": "gap_fill",
+    "record_id": "1010",
+    "record": "S-400 Triumf",
+    "field": "Maximum altitude",
+    "value": "30 km",
+    "db_value": null,
+    "qualifier": "assessed maximum",
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "30 km": 1
+    },
+    "first_run": 1,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "S-400 Triumf - Consolidated Specification Sheet",
+        "doc_path": "testdocs2\\table_s400_spec.pdf",
+        "quote": "Engagement Ceiling 30 km",
+        "value": "30 km"
+      }
+    ]
+  }
+]

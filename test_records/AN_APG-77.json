@@ -1,0 +1,183 @@
+{
+  "modelID": 1003,
+  "nomenclature": "AN/APG-77 Radar",
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "AN/APG-77",
+  "aliases": [
+    {"alias": "APG-77"},
+    {"alias": "AN/APG-77(V)1"}
+  ],
+  "codes": [
+    {"code": "APG-77V1"}
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The AN/APG-77 is an active electronically scanned array (AESA) fire-control radar developed for the F-22 Raptor. Designed by Northrop Grumman, it provides all-weather air-to-air and air-to-ground target acquisition. The radar&#x27;s low-probability-of-intercept (LPI) design minimises emissions that could be detected by enemy radar warning receivers. The upgraded AN/APG-77(V)1 variant adds synthetic aperture radar (SAR) ground mapping and ground moving target indication (GMTI) modes.",
+      "shortDescription": "AESA fire-control radar for the F-22 Raptor with low-probability-of-intercept design.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The APG-77 uses a gallium arsenide monolithic microwave integrated circuit (MMIC) transmit/receive (T/R) module array. The antenna is tilted slightly rearward to reduce frontal radar cross-section. The radar can change frequency more than 1,000 times per second to reduce interception probability. It has simultaneous multi-target track-while-scan capability in both air-to-air and air-to-ground modes. The radar&#x27;s emissions can also be focused to overload enemy sensors, providing a rudimentary electronic attack capability.",
+      "shortDescription": "GaAs T/R module array with LPI frequency agility and electronic attack capability.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100301,
+      "url": "https://en.wikipedia.org/wiki/AN/APG-77",
+      "mimeType": "text/html",
+      "title": "Wikipedia: AN/APG-77"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "United States Air Force"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Northrop Grumman"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Active Electronically Scanned Array (AESA) fire-control radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northrop Grumman",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Platform",
+      "parameter": "Platform",
+      "parameterValue": "F-22 Raptor",
+      "uom": "",
+      "parameterDescr": "Platform the system is fitted to",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "X-band",
+      "uom": "",
+      "parameterDescr": "Operating radio-frequency band",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range - 1",
+      "parameterValue": "193",
+      "uom": "km",
+      "parameterDescr": "Estimated detection range against a reference target",
+      "parameterSubTitle": "1 m² target",
+      "dataType": "Number",
+      "comments": "Estimated; approx 125 mi against a 1 m² target at altitude",
+      "parameterUomValue": "193 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range - 2",
+      "parameterValue": "400",
+      "uom": "km",
+      "parameterDescr": "Estimated detection range against a reference target",
+      "parameterSubTitle": "High-gain narrow beam",
+      "dataType": "Number",
+      "comments": "Narrow-beam (high-gain) search mode against larger targets; estimated",
+      "parameterUomValue": "400 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Azimuth coverage",
+      "parameter": "Azimuth coverage",
+      "parameterValue": "120",
+      "uom": "deg",
+      "parameterDescr": "Total azimuth field of regard",
+      "dataType": "Number",
+      "comments": "Plus/minus 60 degrees",
+      "parameterUomValue": "120 deg",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "100",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be tracked simultaneously",
+      "dataType": "Number",
+      "comments": "In track-while-scan mode",
+      "component": "Performance"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Antenna",
+      "parameter": "Antenna",
+      "parameterValue": "AESA with GaAs MMIC T/R modules; antenna tilted rearward for stealth",
+      "uom": "",
+      "parameterDescr": "Antenna technology and configuration",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Modes",
+      "parameter": "Modes",
+      "parameterValue": "Track-while-scan (TWS); range-while-search; SAR ground mapping (V)1; GMTI (V)1; electronic attack",
+      "uom": "",
+      "parameterDescr": "Available operating modes",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

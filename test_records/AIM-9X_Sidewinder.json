@@ -1,0 +1,276 @@
+{
+  "modelID": 1007,
+  "nomenclature": "AIM-9X Sidewinder",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "AIM-9X",
+  "aliases": [
+    {
+      "alias": "Sidewinder"
+    },
+    {
+      "alias": "AIM-9X Block II"
+    }
+  ],
+  "codes": [
+    {
+      "code": "AIM-9X"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The AIM-9X Sidewinder is a short-range, supersonic, infrared homing air-to-air missile developed by Raytheon Technologies for use by the United States Air Force, Navy, and Marine Corps. The AIM-9X represents the latest generation of the Sidewinder family, which has been in continuous evolution since the 1950s. The missile features all-aspect targeting capability, enhanced target acquisition and lock-on range, and improved decoy rejection through its advanced imaging infrared seeker. The AIM-9X entered service in 2003 and has become the primary short-range air defense weapon for U.S. and allied forces.",
+      "shortDescription": "Advanced short-range infrared air-to-air missile with all-aspect targeting and imaging seeker.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The AIM-9X employs an advanced imaging infrared seeker with two-color detection to provide superior countermeasure rejection and target identification. The missile&#x27;s guidance system combines proportional navigation with active and passive terminal guidance modes. A solid-rocket motor provides rapid acceleration to supersonic speed, enabling engagement of high-performance targets. The fuzing system employs both passive RF proximity and impact detonation modes for reliable warhead initiation. Integration with the aircraft&amp;rsquo;s fire-control system allows rapid acquisition, lock-on, and launch, with minimal pilot workload. Block II upgrades enhance off-boresight launch capability and cue-from-lockon functionality.",
+      "shortDescription": "Solid-rocket powered, imaging infrared seeker with advanced guidance and dual-mode fuzing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The AIM-9X is operationally deployed on F-22 Raptors, F-35 Lightning IIs, F-16 Fighting Falcons, F/A-18 Super Hornets, and other allied aircraft. The missile has seen operational employment in Middle Eastern air campaigns and remains the primary close-range air combat weapon for U.S. forces. Allied nations including the United Kingdom, Australia, Canada, and other NATO members operate compatible variants. Production is conducted by Raytheon Technologies with ongoing sustainment and upgrade programs. The missile continues to undergo modernization to address emerging threats and improve operational effectiveness.",
+      "shortDescription": "Operationally deployed on U.S. and allied fighter aircraft; primary short-range air combat weapon.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100701,
+      "url": "https://en.wikipedia.org/wiki/AIM-9_Sidewinder",
+      "mimeType": "text/html",
+      "title": "Wikipedia: AIM-9 Sidewinder"
+    },
+    {
+      "seq": 2,
+      "mediaID": 100702,
+      "url": "https://example.com/documents/AIM-9X_Technical_Brief.pdf",
+      "mimeType": "application/pdf",
+      "title": "AIM-9X Sidewinder Technical Brief",
+      "caption": "Technical characteristics and operational capabilities of the AIM-9X Block II missile"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "U.S. Air Force, Navy, Marine Corps"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Raytheon Technologies"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Western Europe",
+      "organization": "Royal Air Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Royal Australian Air Force"
+    },
+    {
+      "country": "Canada",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "Canadian Armed Forces"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1021,
+      "childModel": "NASAMS",
+      "parentModelID": 1007,
+      "parentModel": "AIM-9X Sidewinder",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "NASAMS"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Short-range air-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Raytheon Technologies",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "In service since 2003; Block II production ongoing",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2003",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "86",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "86 kg",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "127",
+      "uom": "mm",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "127 mm",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "Fragmentation with shaped-charge and detonating cord fuzing",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "11",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "11 kg",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Dual-mode proximity and impact fuzing",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 1",
+      "parameterValue": "25",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "parameterSubTitle": "Typical employment",
+      "dataType": "Number",
+      "parameterUomValue": "25 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 2",
+      "parameterValue": "45",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "parameterSubTitle": "All-aspect imaging seeker at altitude",
+      "dataType": "Number",
+      "comments": "Maximum theoretical range; operationally limited by rules of engagement and tactical doctrine",
+      "parameterUomValue": "45 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Imaging infrared seeker with passive radio frequency terminal guidance",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "F-22 Raptor, F-35 Lightning II, F-16 Fighting Falcon, F/A-18 Super Hornet, allied fighter aircraft",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "280000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "comments": "FY2024 dollars; flyaway cost exclusive of development",
+      "parameterUomValue": "280000 USD",
+      "component": null
+    }
+  ]
+}

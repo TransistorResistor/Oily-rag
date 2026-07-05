@@ -1,0 +1,263 @@
+{
+  "modelID": 1023,
+  "nomenclature": "Derby",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "Derby",
+  "aliases": [
+    {
+      "alias": "I-Derby"
+    },
+    {
+      "alias": "I-Derby ER"
+    },
+    {
+      "alias": "Alto"
+    }
+  ],
+  "codes": [
+    {
+      "code": "Derby"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The Derby is a medium-range, beyond-visual-range active-radar-homing air-to-air missile developed by Rafael Advanced Defense Systems of Israel. It is a fire-and-forget weapon utilizing continuous-wave radar guidance, enabling multiple simultaneous engagements without requiring the launching aircraft to maintain radar lock. The Derby is larger and longer-range than its sister weapon, the Python-5, serving as the primary beyond-visual-range interceptor for the SPYDER ground-based air defense system and Israeli fighter aircraft. The missile combines proven radar-guidance technology with a high-impulse rocket motor to deliver beyond-visual-range capability to multiple launch platforms.",
+      "shortDescription": "Israeli active-radar-homing beyond-visual-range AAM for fire-and-forget engagements.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The Derby employs an active-radar seeker for autonomous target acquisition and terminal guidance, allowing launches without sustained illumination from the parent aircraft. The missile is an enlarged derivative of the Python-4 airframe with an active-radar seeker package. It is powered by a solid-fuel rocket motor achieving Mach 4 speeds. The warhead is a high-explosive fragmentation type with 23 kg of explosive material and proximity fuzing. The larger diameter (160 mm) and length (3.62 m) compared to the Python-5 provide increased fuel capacity and extended range. Integration with SPYDER provides networked engagement capability with cooperative fire control across multiple air defense units.",
+      "shortDescription": "Enlarged Python variant with active-radar seeker and extended-range solid-fuel motor.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The Derby serves as the beyond-visual-range component of the SPYDER integrated air defense system, working in concert with the short-range Python-5. It is operationally employed by Israeli Air Force fighter aircraft including F-15 and F-16 variants equipped with active-radar fire-control systems. The SPYDER ground-based platform, combining both Derby and Python missiles, has been exported to multiple nations for tactical air defense roles. The Derby&rsquo;s fire-and-forget capability and extended range make it suitable for protecting airspace against stand-off air threats including cruise missiles and aircraft operating at medium altitudes.",
+      "shortDescription": "Primary BVR interceptor for Israeli fighters and SPYDER ground-based air defense system.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 102301,
+      "url": "https://en.wikipedia.org/wiki/Derby_(missile)",
+      "mimeType": "text/html",
+      "title": "Wikipedia: Derby (missile)"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Air Force"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Rafael Advanced Defense Systems"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Air Force"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Western Asia",
+      "organization": "Turkish Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1025,
+      "childModel": "SPYDER",
+      "parentModelID": 1023,
+      "parentModel": "Derby",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "SPYDER"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Active-radar-homing beyond-visual-range air-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Israel",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rafael Advanced Defense Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "In service with Israeli forces and SPYDER air defense systems; ongoing production",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "1995",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "comments": "Estimated; exact operational date classified",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "118",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "118 kg",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "3.62",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "3.62 m",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "160",
+      "uom": "mm",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "160 mm",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "High-explosive fragmentation with proximity fuse",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "23",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "23 kg",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Active radar proximity fuse",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "4",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "parameterUomValue": "4 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "50",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "comments": "Active-radar guided beyond-visual-range engagements",
+      "parameterUomValue": "50 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Active radar homing with fire-and-forget autonomous terminal guidance",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "F-15 Eagle; F-16 Fighting Falcon; SPYDER air defense system",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

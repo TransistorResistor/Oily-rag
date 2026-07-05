@@ -1,0 +1,267 @@
+{
+  "modelID": 1022,
+  "nomenclature": "Python-5",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "Python-5",
+  "aliases": [
+    {
+      "alias": "Python 5"
+    }
+  ],
+  "codes": [
+    {
+      "code": "Python-5"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The Python-5 is a short-range, air-to-air missile developed by Rafael Advanced Defense Systems of Israel. It represents the fifth generation of the Python missile family, featuring advanced imaging-infrared seeker technology with imaging and electro-optical guidance capabilities. The Python-5 is an all-aspect missile capable of high off-boresight launch, with a lock-on-after-launch capability allowing engagements up to 100 degrees off the aircraft&#x27;s boresight. The missile entered public view at the 2003 Paris Air Show and has since become a key armament for Israeli aircraft and the primary interceptor in the SPYDER ground-based air defense system.",
+      "shortDescription": "Israeli all-aspect imaging-infrared short-range AAM with lock-on-after-launch capability.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The Python-5 employs an advanced imaging infrared seeker with integrated electro-optical homing guidance, providing superior target discrimination and countermeasure rejection. The missile is powered by a solid-fuel rocket motor, achieving Mach 4 speeds and enabling rapid intercepts of high-performance targets. The airframe features delta control fins for agility in dogfight engagements. The warhead is a fragmentation type with proximity detonation. The missile&rsquo;s lock-on-after-launch capability allows pilots to disengage after launch, reducing their exposure during multiple simultaneous engagements. The compact diameter of 160 mm enables carriage on lightweight combat aircraft and integration into vehicle-mounted defense systems.",
+      "shortDescription": "Solid-rocket powered, imaging infrared seeker with full-sphere targeting and lock-on-after-launch.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The Python-5 is operationally deployed by the Israeli Air Force on fighter jets including the F-15, F-16, and Gripen variants. The missile has seen combat employment during the 2006 Lebanon War and subsequent operations. It serves as the primary short-range interceptor component of the SPYDER integrated air defense system, providing point defense for tactical and strategic assets. The missile has been confirmed effective against unmanned aerial vehicles in operational employment. Export variants have been adopted by allied air forces in multiple regions.",
+      "shortDescription": "Primary short-range interceptor for Israeli Air Force fighters and SPYDER ground-based system.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 102201,
+      "url": "https://en.wikipedia.org/wiki/Python_(missile)",
+      "mimeType": "text/html",
+      "title": "Wikipedia: Python (missile)"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Air Force"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Rafael Advanced Defense Systems"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Air Force"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Western Asia",
+      "organization": "Turkish Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1025,
+      "childModel": "SPYDER",
+      "parentModelID": 1022,
+      "parentModel": "Python-5",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "SPYDER"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Short-range all-aspect air-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Israel",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rafael Advanced Defense Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "In service since 2003; continues in production for Israeli and export customers",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2003",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "105",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "105 kg",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "3.1",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "3.1 m",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "160",
+      "uom": "mm",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "160 mm",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "Fragmentation with imaging infrared guidance and electro-optical seeker",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "11",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "11 kg",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Proximity fuze with impact backup",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "4",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "parameterUomValue": "4 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "20",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "comments": "Documented minimum; actual range may be greater",
+      "parameterUomValue": "20 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Off-boresight launch angle",
+      "parameter": "Off-boresight launch angle",
+      "parameterValue": "100",
+      "uom": "degrees",
+      "parameterDescr": "Maximum angle from aircraft centerline for lock-on-after-launch capability",
+      "dataType": "Number",
+      "parameterUomValue": "100 degrees",
+      "component": "Performance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Imaging infrared with electro-optical homing and lock-on-after-launch",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "F-15 Eagle; F-16 Fighting Falcon; Gripen; SPYDER air defense system",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

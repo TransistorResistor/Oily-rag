@@ -1,0 +1,235 @@
+{
+  "modelID": 1020,
+  "nomenclature": "30N6E Flap Lid",
+  "systemGroup": "Sensors",
+  "systemType": "Air Defense Radar",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "30N6E",
+  "aliases": [
+    {
+      "alias": "Flap Lid"
+    },
+    {
+      "alias": "Tomb Stone"
+    },
+    {
+      "alias": "30N6"
+    }
+  ],
+  "codes": [
+    {
+      "code": "30N6E"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The 30N6E Flap Lid is the engagement and fire-control radar of the S-300 air defense system, responsible for target tracking, missile guidance, and illumination of airborne threats. Operating with a detection range of approximately 200 kilometers, the 30N6E combines search, track, and engagement functions to provide continuous radar-guided missile engagement against high-speed and high-altitude aircraft. The radar operates in tandem with the 64N6E Big Bird surveillance radar and 96L6E Cheese Board supplementary radar to create a layered air defense architecture.",
+      "shortDescription": "Fire-control/engagement radar for S-300 with ~200 km detection range and missile guidance capability.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The 30N6E employs a phased-array antenna mounted on a rotating turret, enabling 360-degree azimuth coverage and continuous target illumination during engagement. The radar uses frequency agility and electronic beam steering to counter jamming and electronic warfare threats. Mounted on a MAZ-7910 truck platform, the system is fully mobile and integrates with the S-300 command post and transporter-erector-launcher units through secure data links. The design supports simultaneous engagement of multiple targets through multi-channel missile guidance, enabling coordinated fire from different launch platforms within an air defense battalion.",
+      "shortDescription": "Phased-array engagement radar with 360-degree coverage and multi-channel missile guidance capability.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 102001,
+      "url": "https://en.wikipedia.org/wiki/S-300_missile_system",
+      "mimeType": "text/html",
+      "title": "Wikipedia: S-300 Missile System"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Almaz-Antey"
+    },
+    {
+      "country": "Bulgaria",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bulgarian Air Force"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People&#x27;s Liberation Army Air Force"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Vietnam",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "Vietnam People&#x27;s Army Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1011,
+      "childModel": "S-300",
+      "parentModelID": 1020,
+      "parentModel": "30N6E Flap Lid",
+      "parentComponent": "Sensors",
+      "relationType": "CHILD",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Surface-to-Air Missile System",
+      "childPrimaryEquipCode": "S-300"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Phased-array fire-control and engagement radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the radar system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Almaz-Antey",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia/USSR",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "System",
+      "parameter": "System",
+      "parameterValue": "S-300PMU / S-300PMU-2",
+      "uom": "",
+      "parameterDescr": "Parent air defense system this radar is integrated with",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "200",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range for engagement radar against fighter-sized targets",
+      "dataType": "Number",
+      "comments": "Estimated detection range for engagement and fire control; varies with target RCS and altitude",
+      "parameterUomValue": "200 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operating frequency band",
+      "parameter": "Operating frequency band",
+      "parameterValue": "X-band",
+      "uom": "",
+      "parameterDescr": "Radio-frequency band of operation",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Antenna type",
+      "parameter": "Antenna type",
+      "parameterValue": "Phased-array with 360-degree azimuth coverage",
+      "uom": "",
+      "parameterDescr": "Antenna technology and configuration",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Azimuth coverage",
+      "parameter": "Azimuth coverage",
+      "parameterValue": "360",
+      "uom": "deg",
+      "parameterDescr": "Total azimuth field of regard",
+      "dataType": "Number",
+      "comments": "Full 360-degree rotating turret provides continuous coverage",
+      "parameterUomValue": "360 deg",
+      "component": "Performance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "6",
+      "uom": "",
+      "parameterDescr": "Number of targets that can be engaged simultaneously",
+      "dataType": "Number",
+      "comments": "Multi-channel missile guidance supporting 6 concurrent engagements",
+      "component": "Performance"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "Target search; track-while-scan (TWS); missile illumination; engagement",
+      "uom": "",
+      "parameterDescr": "Available operating modes",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Mobile platform",
+      "parameter": "Mobile platform",
+      "parameterValue": "MAZ-7910 8x8 truck chassis",
+      "uom": "",
+      "parameterDescr": "Vehicle platform for mobile deployment",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "NATO reporting name",
+      "parameter": "NATO reporting name",
+      "parameterValue": "Flap Lid / Tomb Stone",
+      "uom": "",
+      "parameterDescr": "NATO designation for the radar system",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "modelID": 1024,
+  "nomenclature": "ASRAAM",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Aircraft Missile",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "AIM-132",
+  "aliases": [
+    {
+      "alias": "AIM-132"
+    },
+    {
+      "alias": "AIM-132 ASRAAM"
+    },
+    {
+      "alias": "Advanced Short Range Air-to-Air Missile"
+    }
+  ],
+  "codes": [
+    {
+      "code": "AIM-132"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The ASRAAM (Advanced Short Range Air-to-Air Missile), designated AIM-132 in allied service, is a within-visual-range infrared-guided air-to-air missile developed by MBDA UK. Introduced to service in 1998, it serves as the primary short-range air combat weapon for the Royal Air Force Eurofighter Typhoon and United Kingdom F-35 Lightning II variants. The missile features a dual-burn, high-impulse solid rocket motor that delivers extended range for its class, comparable to or exceeding some medium-range systems. The imaging infrared seeker with 128&#215;128 focal plane array provides superior target discrimination and countermeasure rejection. Block 6 variants use domestically-developed MBDA UK seekers to avoid ITAR restrictions.",
+      "shortDescription": "British imaging-infrared short-range AAM with extended range and high-performance rocket motor.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The ASRAAM employs a 128&#215;128 element imaging infrared focal plane array seeker for precision target discrimination and advanced decoy rejection. The dual-burn, high-impulse solid rocket motor provides rapid acceleration and extended range; the two-stage burn profile optimizes performance across the flight envelope. The missile is powered by one of the largest rocket motors fitted to any within-visual-range air-to-air missile, giving it enhanced stand-off capability. The warhead is a 10 kg blast-fragmentation type with laser proximity and contact fuzes. The compact 166 mm motor diameter enables efficient carriage on tactical fighter aircraft. The ASRAAM has a derived surface-launched variant, CAMM/Land Ceptor, demonstrating the modular missile architecture.",
+      "shortDescription": "Dual-burn rocket motor with imaging infrared seeker and laser proximity fuzing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The ASRAAM is operationally deployed on RAF Eurofighter Typhoon squadrons and UK F-35B Lightning II carrier aircraft. Allied air forces including India operate the missile on Jaguar aircraft. Ukraine operates the ground-based Raven air defense system equipped with ASRAAM. The missile has seen operational employment in Middle Eastern air campaigns. MBDA continues production and development of Block 6 variants featuring UK-designed seekers. The derived surface-launched CAMM/Land Ceptor system provides short-range ground-based air defense for tactical and strategic protection.",
+      "shortDescription": "Primary short-range AAM for RAF Eurofighter Typhoon and UK F-35; also ground-launched in Raven and CAMM systems.",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 102401,
+      "url": "https://en.wikipedia.org/wiki/ASRAAM",
+      "mimeType": "text/html",
+      "title": "Wikipedia: ASRAAM"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Air Force"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "MBDA UK"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Air Force"
+    },
+    {
+      "country": "Ukraine",
+      "proliferation": "Using",
+      "region": "Eastern Europe",
+      "organization": "Ukrainian Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1006,
+      "childModel": "Eurofighter Typhoon",
+      "parentModelID": 1024,
+      "parentModel": "ASRAAM",
+      "parentComponent": "Armament",
+      "relationType": "CHILD",
+      "childSystemGroup": "Aircraft",
+      "childSystemType": "Fighter Aircraft",
+      "childPrimaryEquipCode": "Typhoon"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Within-visual-range imaging-infrared air-to-air missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Kingdom",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "MBDA UK",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "In service since 1998; Block 6 production ongoing with UK-designed seekers",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "1998",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "88",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "parameterUomValue": "88 kg",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "2.9",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "dataType": "Number",
+      "parameterUomValue": "2.9 m",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Motor diameter",
+      "parameter": "Motor diameter",
+      "parameterValue": "166",
+      "uom": "mm",
+      "parameterDescr": "Rocket motor body diameter",
+      "dataType": "Number",
+      "parameterUomValue": "166 mm",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead",
+      "parameter": "Warhead",
+      "parameterValue": "Blast-fragmentation with laser proximity and contact fuses",
+      "uom": "",
+      "parameterDescr": "Warhead type and designation",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "10",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "parameterUomValue": "10 kg",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Detonation mechanism",
+      "parameter": "Detonation mechanism",
+      "parameterValue": "Laser proximity fuse with contact backup",
+      "uom": "",
+      "parameterDescr": "Fuzing method used to initiate the warhead",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Dual-burn high-impulse solid rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "Text",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "3",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "comments": "Exceeds Mach 3",
+      "parameterUomValue": "3+ Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 1",
+      "parameterValue": "25",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "parameterSubTitle": "Air-to-air employment",
+      "dataType": "Number",
+      "comments": "Extended range for within-visual-range class",
+      "parameterUomValue": "25 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 2",
+      "parameterValue": "15",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "parameterSubTitle": "Surface-launched CAMM/Land Ceptor variant",
+      "dataType": "Number",
+      "parameterUomValue": "15 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "Imaging infrared focal plane array seeker with 128 x 128 elements",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "Eurofighter Typhoon; F-35 Lightning II; Jaguar; Raven air defense system; CAMM/Land Ceptor ground platform",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": null
+    }
+  ]
+}

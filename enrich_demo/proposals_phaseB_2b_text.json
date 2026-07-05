@@ -1,0 +1,77 @@
+[
+  {
+    "proposal_id": "689a3c6f53c7680e",
+    "type": "conflict",
+    "record_id": "1023",
+    "record": "Derby",
+    "field": "Maximum range",
+    "value": "37 km",
+    "db_value": "50 km",
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "37 km": 1
+    },
+    "first_run": 1,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "Derby (I-Derby) Air-to-Air Missile - Reference Card",
+        "doc_path": "testdocs2b\\tbl2b_dual_unit.pdf",
+        "quote": "Derby 37 / 20",
+        "value": "37 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "70d6ee0aeb13f926",
+    "type": "gap_fill",
+    "record_id": "1021",
+    "record": "NASAMS",
+    "field": "Maximum altitude",
+    "value": "21 km",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "21 km": 1
+    },
+    "first_run": 1,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "NASAMS - Assessed Performance Summary",
+        "doc_path": "testdocs2b\\tbl2b_header_units.pdf",
+        "quote": "NASAMS assessed figures (units in header) System Radar Detection Range (km) Maximum Altitude (km) Deployment Time (min) NASAMS 120 21 10",
+        "value": "21 km"
+      }
+    ]
+  },
+  {
+    "proposal_id": "d58d3167755f5db1",
+    "type": "gap_fill",
+    "record_id": "1011",
+    "record": "S-300",
+    "field": "Maximum altitude",
+    "value": "27 km",
+    "db_value": null,
+    "qualifier": null,
+    "n_sources": 1,
+    "cluster_sources": 1,
+    "value_distribution": {
+      "27 km": 1
+    },
+    "first_run": 1,
+    "is_new": true,
+    "sources": [
+      {
+        "doc_title": "S-300 Air Defence System - Parameter Register",
+        "doc_path": "testdocs2b\\tbl2b_units_col.pdf",
+        "quote": "Maximum Altitude\n27 km",
+        "value": "27 km"
+      }
+    ]
+  }
+]

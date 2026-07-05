@@ -1,0 +1,418 @@
+{
+  "modelID": 1004,
+  "nomenclature": "Lockheed Martin F-35 Lightning II",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "updatedDate": "2026-07-04",
+  "primaryEquipCode": "F-35A",
+  "aliases": [
+    {"alias": "Lightning II"},
+    {"alias": "JSF"},
+    {"alias": "F-35A"},
+    {"alias": "F-35B"},
+    {"alias": "F-35C"}
+  ],
+  "codes": [
+    {"code": "JSF"}
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "The Lockheed Martin F-35 Lightning II is a family of single-engine, all-weather stealth multirole combat aircraft produced in three variants: the conventional takeoff and landing F-35A, the short take-off and vertical-landing F-35B, and the carrier-based F-35C. The Joint Strike Fighter (JSF) programme aimed to replace a wide range of legacy aircraft across the US armed services and allied nations with a common, affordable, low-observable platform. More than 1,000 aircraft have been delivered to the US and partner nations.",
+      "shortDescription": "Stealth multirole fighter family in three variants (A/B/C) for USAF, USMC, USN and allied nations.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Design",
+      "description": "The F-35 uses a blended-wing-body airframe with a single Pratt &amp; Whitney F135 turbofan. Internal weapons bays carry four AIM-120 AMRAAMs plus two AIM-9X Sidewinders in the air-to-air configuration. The AN/APG-81 AESA radar, DAS (distributed aperture system), and EOTS (electro-optical targeting system) provide sensor fusion. The F-35B variant uses a Rolls-Royce LiftSystem driven by the engine to achieve STOVL capability. All variants incorporate extensive composite construction and edge-aligned airframe shaping for low observability.",
+      "shortDescription": "Single F135 turbofan with internal weapons bays, AN/APG-81 AESA radar and full sensor fusion.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Usage",
+      "description": "The F-35 is in service with the USAF, USMC, USN, UK, Australia, Netherlands, Norway, Italy, Japan, South Korea, Israel, Singapore, Belgium, Denmark, Finland, Poland, Switzerland and Canada. It has seen combat with Israel and the United States. The F-35A is the standard variant for land-based operations; the F-35B serves the USMC and UK aboard amphibious assault ships; the F-35C equips USN carrier air wings. The aircraft is expected to be the backbone of Western air power into the 2060s.",
+      "shortDescription": "Operated by 17+ nations; in combat with Israel and the US; USAF, USMC, USN and partner-nation service.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Variants",
+      "description": "F-35A: conventional takeoff and landing (CTOL) for air forces. F-35B: short take-off and vertical-landing (STOVL) for marines and carriers without catapults. F-35C: carrier-based with larger folding wings and reinforced landing gear for catapult launches and arrested landings.",
+      "shortDescription": "Three variants: F-35A (CTOL), F-35B (STOVL), F-35C (carrier).",
+      "classification": "U"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 100401,
+      "url": "https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II",
+      "mimeType": "text/html",
+      "title": "Wikipedia: F-35 Lightning II"
+    },
+    {
+      "seq": 2,
+      "mediaID": 100402,
+      "url": "https://media.defense.gov/factsheets/F-35A_Lightning_II_Fact_Sheet.pdf",
+      "mimeType": "application/pdf",
+      "title": "F-35A Lightning II Fact Sheet",
+      "caption": "USAF fact sheet covering F-35A mission, characteristics and programme history"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "USAF / USMC / USN"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Lockheed Martin Aeronautics"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Air Force / Royal Navy"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Royal Australian Air Force"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Air Self-Defense Force"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Air Force"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Air Force (Adir)"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Norwegian Air Force"
+    },
+    {
+      "country": "Netherlands",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Royal Netherlands Air Force"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Aeronautica Militare / Marina Militare"
+    },
+    {
+      "country": "Canada",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "Royal Canadian Air Force"
+    }
+  ],
+  "relations": [
+    {
+      "childModelID": 1002,
+      "childModel": "AIM-120 AMRAAM",
+      "relationType": "Fitted with",
+      "parentComponent": "Armament",
+      "childSystemGroup": "Weapon",
+      "childSystemType": "Air-to-Air Missile",
+      "childPrimaryEquipCode": "AIM-120D"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Stealth multirole combat aircraft",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": null
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Lockheed Martin Aeronautics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": null
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "comments": "In full-rate production concurrently",
+      "component": null
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Introduced",
+      "parameter": "Introduced",
+      "parameterValue": "2015",
+      "uom": "",
+      "parameterDescr": "Date the system entered operational service",
+      "dataType": "Date",
+      "comments": "USMC F-35B initial operational capability July 2015",
+      "component": null
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "1",
+      "uom": "",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": null
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length - 1",
+      "parameterValue": "15.67",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "parameterSubTitle": "F-35A/B",
+      "dataType": "Number",
+      "parameterUomValue": "15.67 m",
+      "component": null
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Length",
+      "parameter": "Length - 2",
+      "parameterValue": "15.70",
+      "uom": "m",
+      "parameterDescr": "Overall length of the system",
+      "parameterSubTitle": "F-35C",
+      "dataType": "Number",
+      "parameterUomValue": "15.70 m",
+      "component": null
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan - 1",
+      "parameterValue": "10.67",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "parameterSubTitle": "F-35A/B",
+      "dataType": "Number",
+      "parameterUomValue": "10.67 m",
+      "component": null
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan - 2",
+      "parameterValue": "13.11",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "parameterSubTitle": "F-35C",
+      "dataType": "Number",
+      "comments": "Larger folding wing for carrier operations",
+      "parameterUomValue": "13.11 m",
+      "component": null
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight - 1",
+      "parameterValue": "13290",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "parameterSubTitle": "F-35A",
+      "dataType": "Number",
+      "parameterUomValue": "13290 kg",
+      "component": null
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight - 1",
+      "parameterValue": "31800",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "parameterSubTitle": "F-35A",
+      "dataType": "Number",
+      "parameterUomValue": "31800 kg",
+      "component": null
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "1 x Pratt &amp; Whitney F135-PW-100 augmented turbofan",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "comments": "F-35B adds Rolls-Royce LiftSystem for STOVL",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.6",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the system",
+      "dataType": "Number",
+      "comments": "At altitude",
+      "parameterUomValue": "1.6 Mach",
+      "component": "Performance"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 1",
+      "parameterValue": "1080",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "parameterSubTitle": "F-35A internal fuel",
+      "dataType": "Number",
+      "parameterUomValue": "1080 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 2",
+      "parameterValue": "833",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "parameterSubTitle": "F-35B STOVL",
+      "dataType": "Number",
+      "comments": "STOVL configuration reduces internal fuel capacity",
+      "parameterUomValue": "833 km",
+      "component": "Performance"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "18288",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "comments": "60,000 ft",
+      "parameterUomValue": "18288 m",
+      "component": "Performance"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Guns",
+      "parameter": "Guns - 1",
+      "parameterValue": "1x 25 mm GAU-22/A rotary cannon (internal), 182 rounds",
+      "uom": "",
+      "parameterDescr": "Gun armament fitted",
+      "parameterSubTitle": "F-35A (internal)",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Guns",
+      "parameter": "Guns - 2",
+      "parameterValue": "1x 25 mm GAU-22/A rotary cannon (external gun pod option)",
+      "uom": "",
+      "parameterDescr": "Gun armament fitted",
+      "parameterSubTitle": "F-35B/C (external pod)",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Internal weapons bays",
+      "parameter": "Internal weapons bays",
+      "parameterValue": "4x AIM-120 AMRAAM or 2x AIM-120 + 2x 900 kg JDAM (standard loadout)",
+      "uom": "",
+      "parameterDescr": "Weapons carried internally",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1021,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "AN/APG-81 AESA",
+      "uom": "",
+      "parameterDescr": "Fire-control radar designation",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1022,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost - 1",
+      "parameterValue": "80000000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "parameterSubTitle": "F-35A",
+      "dataType": "Number",
+      "comments": "FY2024 dollars, flyaway",
+      "parameterUomValue": "80000000 USD",
+      "component": null
+    },
+    {
+      "seq": 1023,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost - 2",
+      "parameterValue": "108000000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "parameterSubTitle": "F-35B",
+      "dataType": "Number",
+      "comments": "FY2024 dollars, flyaway",
+      "parameterUomValue": "108000000 USD",
+      "component": null
+    },
+    {
+      "seq": 1024,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost - 3",
+      "parameterValue": "94000000",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "parameterSubTitle": "F-35C",
+      "dataType": "Number",
+      "comments": "FY2024 dollars, flyaway",
+      "parameterUomValue": "94000000 USD",
+      "component": null
+    }
+  ]
+}

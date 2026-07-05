@@ -1,0 +1,74 @@
+[
+  {
+    "doc_id": "tbl2b_header_units",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "NASAMS",
+        "field": "Maximum altitude",
+        "value": "21 km"
+      }
+    ]
+  },
+  {
+    "doc_id": "tbl2b_dual_unit",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": [
+      {
+        "type": "conflict",
+        "record": "Derby",
+        "field": "Maximum range",
+        "value": "37 km",
+        "db": "50"
+      }
+    ]
+  },
+  {
+    "doc_id": "tbl2b_units_col",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "S-300",
+        "field": "Maximum altitude",
+        "value": "27 km"
+      }
+    ]
+  },
+  {
+    "doc_id": "tbl2b_dual_trap",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": []
+  },
+  {
+    "doc_id": "tbl2b_header_noncat",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": []
+  }
+]
