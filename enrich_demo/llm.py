@@ -12,9 +12,13 @@ to surface cheap-model extraction quirks. Override with --model.
 
 import json
 import os
-import urllib.request
+import sys
 
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _REPO not in sys.path:
+    sys.path.insert(0, _REPO)
+import llm_provider  # noqa: E402
+
 DEFAULT_MODEL = "google/gemma-3-4b-it"
 
 # short aliases -> OpenRouter slugs (subset of models_registry)
@@ -47,20 +51,6 @@ USER_TMPL = (
     "Document text:\n\"\"\"\n{text}\n\"\"\"\n\n"
     "Return the claims JSON now."
 )
-
-
-def _load_key():
-    if os.environ.get("OPENROUTER_API_KEY"):
-        return os.environ["OPENROUTER_API_KEY"]
-    envf = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                        "key.env")
-    if os.path.exists(envf):
-        for line in open(envf):
-            if line.strip().startswith("OPENROUTER_API_KEY="):
-                k = line.strip().split("=", 1)[1]
-                os.environ["OPENROUTER_API_KEY"] = k
-                return k
-    raise RuntimeError("OPENROUTER_API_KEY not set and key.env missing")
 
 
 def _first_balanced_json(text):
@@ -109,30 +99,16 @@ def extract_claims(title, text, model=DEFAULT_MODEL, timeout=90,
                    max_tokens=1500):
     """One LLM call. Returns (claims_list, usage_dict, raw_response, error)."""
     slug = ALIASES.get(model, model)
-    key = _load_key()
-    payload = {
-        "model": slug,
-        "messages": [{"role": "system", "content": SYSTEM},
-                     {"role": "user",
-                      "content": USER_TMPL.format(title=title, text=text)}],
-        "temperature": 0.1,
-        "max_tokens": max_tokens,
-        "response_format": {"type": "json_object"},
-    }
-    body = json.dumps(payload).encode()
-    req = urllib.request.Request(
-        OPENROUTER_URL, data=body,
-        headers={"content-type": "application/json",
-                 "authorization": f"Bearer {key}",
-                 "X-Title": "ragkit-enrich-demo"})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        data = json.load(resp)
-    raw = data["choices"][0]["message"]["content"]
-    usage = data.get("usage", {}) or {}
-    parsed = _parse(raw)
+    # LLM swap point -> see repo-root llm_provider.py.
+    raw_text, usage = llm_provider.chat_with_usage(
+        SYSTEM, USER_TMPL.format(title=title, text=text), slug,
+        max_tokens=max_tokens, temperature=0.1, timeout=timeout,
+        response_format={"type": "json_object"},
+        extra_headers={"X-Title": "ragkit-enrich-demo"})
+    parsed = _parse(raw_text)
     if parsed is None:
-        return [], usage, raw, "unparseable JSON"
+        return [], usage, raw_text, "unparseable JSON"
     claims = parsed.get("claims") if isinstance(parsed, dict) else None
     if not isinstance(claims, list):
-        return [], usage, raw, "no claims array"
-    return claims, usage, raw, None
+        return [], usage, raw_text, "no claims array"
+    return claims, usage, raw_text, None

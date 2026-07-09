@@ -29,8 +29,13 @@ class ConversionError(Exception):
 
 # Aliases for unit spellings this dataset/pipeline uses that pint doesn't
 # recognize under the same name out of the box.
+# "nm" is aliased here deliberately: pint's own registry parses it as
+# nanometer (SI prefix n + m), but every "nm" in this defense-specs domain
+# (missile/radar range) means nautical mile -- without this alias, convert()
+# silently returns a value ~1e12x too small instead of failing.
 _ALIASES = {
     "nmi": "nautical_mile",
+    "nm": "nautical_mile",
     "kn": "knot",
     "kts": "knot",
     "deg": "degree",

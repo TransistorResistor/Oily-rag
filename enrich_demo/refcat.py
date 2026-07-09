@@ -31,6 +31,24 @@ if _REPO not in sys.path:
 import record_model  # noqa: E402
 import units  # noqa: E402
 
+_UNIT_SPELL = {
+    "minute": "min", "minutes": "min", "min": "min", "mins": "min",
+    "second": "s", "seconds": "s", "sec": "s", "secs": "s", "s": "s",
+    "hour": "h", "hours": "h", "hr": "h", "hrs": "h", "h": "h",
+    "kilometer": "km", "kilometers": "km", "kilometre": "km",
+    "kilometres": "km", "km": "km", "kms": "km",
+    "meter": "m", "meters": "m", "metre": "m", "metres": "m", "m": "m",
+    "kilogram": "kg", "kilograms": "kg", "kg": "kg", "kgs": "kg",
+    "nauticalmile": "nm", "nauticalmiles": "nm", "nmi": "nm", "nm": "nm",
+    "mile": "mi", "miles": "mi", "mi": "mi", "foot": "ft",
+    "feet": "ft", "ft": "ft", "mach": "mach",
+}
+
+
+def _unit_key(unit):
+    key = re.sub(r"[\s._]", "", (unit or "").strip().lower())
+    return _UNIT_SPELL.get(key, key)
+
 REF_DIR = os.path.join(_REPO, "test_records")
 
 # --------------------------------------------------------------------------- #
@@ -359,6 +377,8 @@ class RefCatalogue:
             return "gap", norm_val, norm_unit, None
         # compare against every existing variant value
         db_reprs = []
+        compared = False
+        incomparable = False
         for (dval, dunit) in dv:
             dnum = _canon_num(dval)
             db_reprs.append(f"{dval}"
@@ -368,14 +388,17 @@ class RefCatalogue:
                     return "match", norm_val, norm_unit, "; ".join(db_reprs)
                 continue
             cmpv = norm_val
-            if norm_unit and dunit and units.normalize_unit(norm_unit) != \
-                    units.normalize_unit(dunit):
+            if norm_unit and dunit and _unit_key(norm_unit) != _unit_key(dunit):
                 try:
                     cmpv = units.convert(norm_val, norm_unit, dunit)
                 except units.ConversionError:
-                    pass
+                    incomparable = True
+                    continue
+            compared = True
             if abs(cmpv - dnum) <= max(1e-6, abs(dnum) * 0.02):   # 2% tolerance
                 return "match", norm_val, norm_unit, "; ".join(db_reprs)
+        if incomparable and not compared:
+            return "incomparable", norm_val, norm_unit, "; ".join(db_reprs)
         return "conflict", norm_val, norm_unit, "; ".join(db_reprs)
 
     # ---- entity linking helpers ------------------------------------------- #

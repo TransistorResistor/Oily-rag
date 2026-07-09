@@ -150,6 +150,15 @@ def _clean_value_unit(value_raw, unit_raw):
         if not u:
             u = lead
         v = num
+        return v, u
+    m3 = re.match(
+        r"^\s*([A-Za-z]+)\s+([-+]?\d[\d,]*(?:\.\d+)?)\s+"
+        r"(thousand|million|billion|trillion)\s*$", v, re.IGNORECASE)
+    if m3:
+        lead, num, scale = m3.groups()
+        if not u:
+            u = f"{lead} {scale}"
+        v = num
     return v, u
 
 
@@ -601,10 +610,10 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
 
     # cross-unit incomparability guard: when the DB holds a value to compare
     # against but the doc unit differs from the field's canonical unit AND cannot
-    # be converted (pint unavailable here), do NOT compare raw magnitudes -- that
-    # mixes units (e.g. 20 nm vs 50 km -> spurious conflict). Park as incomplete
-    # so only the canonical-unit sibling of a decomposed dual value surfaces. An
-    # ABSENT field still gap-fills (no DB value -> guard skipped).
+    # be converted, do NOT compare raw magnitudes -- that mixes units (e.g. 20 nm
+    # vs 50 km -> spurious conflict). Park as incomplete so only the
+    # canonical-unit sibling of a decomposed dual value surfaces. An ABSENT field
+    # still gap-fills (no DB value -> guard skipped).
     canon_unit = rc.field_unit(field)
     if unit_raw and canon_unit and rc.db_values(mid, field) \
             and not _can_convert(unit_raw, canon_unit):
@@ -615,6 +624,12 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
                 "db_value": None}
 
     verdict, nval, nunit, dbrepr = rc.compare_numeric(value_raw, unit_raw, field, mid)
+    if verdict == "incomparable":
+        return {"proposal_type": None, "park_reason": "incomplete",
+                "status_hint": "parked", "canon_field": field,
+                "value_disp": f"{value_raw} {unit_raw}".strip(),
+                "target_value": None, "value_norm": nval, "unit_norm": nunit,
+                "db_value": dbrepr}
     if verdict == "match":
         return {"proposal_type": None, "park_reason": None,
                 "status_hint": "dropped", "drop": "already_present",
@@ -631,6 +646,7 @@ def process_document(doc, ctx, claims, rc, con, run_id, model):
     """Turn one document's extracted claims into stored claim rows."""
     rows = []
     seen_fps = set()
+    seen_values = {}    # partial_fp -> [{'value_norm','unit_norm'}, ...] this doc
     for claim in claims:
         # markdown-table extractions sometimes carry the attribute as a dynamic
         # JSON key ({"Maximum Altitude (km)":"21"}); recover attribute/value.
@@ -730,6 +746,23 @@ def process_document(doc, ctx, claims, rc, con, run_id, model):
             continue
         seen_fps.add(full_fp)
 
+        # same-document restatement in a different unit (e.g. a table row split
+        # into a '37 km' claim and a separately-extracted '20 nm' claim for the
+        # same field): once units are convertible, both independently classify
+        # against the DB and would otherwise emit two proposals for one fact.
+        # Dedup on PROVEN agreement only -- an unconvertible pair stays separate
+        # (indeterminate is not evidence they're the same statement).
+        if ptype in ("gap_fill", "conflict"):
+            prior_list = seen_values.setdefault(partial_fp, [])
+            this_val = {"value_norm": res.get("value_norm"),
+                        "unit_norm": res.get("unit_norm")}
+            if any(_corroboration_relation(this_val, prior) == "agree"
+                   for prior in prior_list):
+                base.update(status="dropped", park_reason="dup_in_run")
+                rows.append(base)
+                continue
+            prior_list.append(this_val)
+
         # suppression ledger
         if state_mod.is_rejected(con, full_fp):
             base.update(status="rejected", park_reason="rejected")
@@ -749,23 +782,62 @@ def process_document(doc, ctx, claims, rc, con, run_id, model):
     return rows
 
 
+def _corroboration_relation(target, other):
+    """Return agree, conflict, or indeterminate for two normalized values."""
+    av, bv = target["value_norm"], other["value_norm"]
+    au, bu = target["unit_norm"] or "", other["unit_norm"] or ""
+    if av is None or bv is None:
+        return "indeterminate"
+    av, bv = float(av), float(bv)
+    if not au and not bu:
+        comparable = bv
+    elif not au or not bu:
+        return "indeterminate"
+    elif refcat_mod._unit_key(au) == refcat_mod._unit_key(bu):
+        comparable = bv
+    else:
+        try:
+            comparable = refcat_mod.units.convert(bv, bu, au)
+        except refcat_mod.units.ConversionError:
+            return "indeterminate"
+    tolerance = max(1e-6, abs(av) * 0.02)
+    return "agree" if abs(comparable - av) <= tolerance else "conflict"
+
+
 def graduation_pass(con):
-    """Pure-SQL re-check of parked 'uncorroborated' claims: if a claim's
-    partial_fp now has >= CORROBORATION_THRESHOLD distinct source docs among
-    non-dropped/non-rejected claims, surface the whole cluster. No LLM, no doc
-    re-read."""
-    clusters = con.execute(
-        "SELECT partial_fp, COUNT(DISTINCT doc_id) n FROM claims "
-        "WHERE partial_fp IS NOT NULL AND status IN ('surfaced','parked') "
-        "AND park_reason IS NOT 'unmapped' GROUP BY partial_fp").fetchall()
+    """Re-check parked low-trust claims without an LLM or document re-read.
+
+    Claims cluster by record+field (`partial_fp`). Same/convertible units either
+    agree within the numeric comparator's 2% tolerance or demonstrably conflict.
+    Unconvertible cross-unit pairs are indeterminate and deliberately count as
+    support: we give them the benefit of the doubt (pint may be unavailable, or
+    the pair may simply use unit families pint can't relate) and let the report
+    expose both unit/value variants to the reviewer. Demonstrable same-unit (or
+    convertible) conflicts never corroborate each other.
+    """
+    rows = con.execute(
+        "SELECT claim_id,doc_id,partial_fp,value_norm,unit_norm,status,park_reason "
+        "FROM claims WHERE partial_fp IS NOT NULL "
+        "AND status IN ('surfaced','parked') "
+        "AND (park_reason IS NULL OR park_reason <> 'unmapped')").fetchall()
+    clusters = {}
+    for row in rows:
+        clusters.setdefault(row["partial_fp"], []).append(row)
     graduated = 0
-    for row in clusters:
-        if row["n"] >= CORROBORATION_THRESHOLD:
-            cur = con.execute(
-                "UPDATE claims SET status='surfaced', park_reason=NULL "
-                "WHERE partial_fp=? AND status='parked' "
-                "AND park_reason='uncorroborated'", (row["partial_fp"],))
-            graduated += cur.rowcount
+    for claims in clusters.values():
+        for target in claims:
+            if target["status"] != "parked" \
+                    or target["park_reason"] != "uncorroborated":
+                continue
+            supporting_docs = {
+                other["doc_id"] for other in claims
+                if _corroboration_relation(target, other) != "conflict"
+            }
+            if len(supporting_docs) >= CORROBORATION_THRESHOLD:
+                cur = con.execute(
+                    "UPDATE claims SET status='surfaced', park_reason=NULL "
+                    "WHERE claim_id=?", (target["claim_id"],))
+                graduated += cur.rowcount
     con.commit()
     return graduated
 
@@ -778,35 +850,46 @@ def run_batch(folder, con, rc, model=llm_mod.DEFAULT_MODEL, only=None,
     summary dict."""
     run_id = state_mod.start_run(con, model, note)
     only = set(only) if only else None
-    processed, skipped = [], []
+    processed, skipped, failed = [], [], []
     llm_calls = ptok = ctok = 0
-    for doc in provider.iter_documents(folder, render=render):
-        if only is not None and doc["doc_id"] not in only:
-            continue
-        seen = state_mod.already_seen(con, doc["content_hash"])
-        if seen:
-            skipped.append(doc["doc_id"])
+    graduated = 0
+    try:
+        for doc in provider.iter_documents(folder, render=render):
+            if only is not None and doc["doc_id"] not in only:
+                continue
+            seen = state_mod.already_seen(con, doc["content_hash"])
+            if seen:
+                skipped.append(doc["doc_id"])
+                if verbose:
+                    print(f"  skip (already processed): {doc['doc_id']}")
+                continue
+            llm_calls += 1
+            try:
+                claims, usage, raw, err = llm_mod.extract_claims(
+                    doc["title"], doc["text"], model=model)
+            except Exception as exc:
+                failed.append(doc["doc_id"])
+                print(f"  ERROR {doc['doc_id']}: {exc}")
+                continue
+            ptok += usage.get("prompt_tokens", 0) or 0
+            ctok += usage.get("completion_tokens", 0) or 0
+            ctx = DocContext(rc, doc["text"])
+            rows = process_document(doc, ctx, claims, rc, con, run_id, model)
+            state_mod.record_doc(con, doc["doc_id"], doc["path"], doc["title"],
+                                 doc["content_hash"], doc["date"], run_id, model,
+                                 len(claims))
+            processed.append(doc["doc_id"])
             if verbose:
-                print(f"  skip (already processed): {doc['doc_id']}")
-            continue
-        claims, usage, raw, err = llm_mod.extract_claims(
-            doc["title"], doc["text"], model=model)
-        llm_calls += 1
-        ptok += usage.get("prompt_tokens", 0) or 0
-        ctok += usage.get("completion_tokens", 0) or 0
-        ctx = DocContext(rc, doc["text"])
-        rows = process_document(doc, ctx, claims, rc, con, run_id, model)
-        state_mod.record_doc(con, doc["doc_id"], doc["path"], doc["title"],
-                             doc["content_hash"], doc["date"], run_id, model,
-                             len(claims))
-        processed.append(doc["doc_id"])
-        if verbose:
-            surf = sum(1 for r in rows if r["status"] == "surfaced")
-            print(f"  processed {doc['doc_id']}: {len(claims)} claims, "
-                  f"{surf} surfaced ({'LOW-TRUST' if ctx.low_trust else 'normal'}"
-                  f"{'' if err is None else '; ERR:'+err})")
-    graduated = graduation_pass(con)
-    state_mod.finish_run(con, run_id, len(processed), llm_calls, ptok, ctok)
+                surf = sum(1 for r in rows if r["status"] == "surfaced")
+                print(f"  processed {doc['doc_id']}: {len(claims)} claims, "
+                      f"{surf} surfaced ("
+                      f"{'LOW-TRUST' if ctx.low_trust else 'normal'}"
+                      f"{'' if err is None else '; ERR:'+err})")
+        graduated = graduation_pass(con)
+    finally:
+        state_mod.finish_run(con, run_id, len(processed), llm_calls, ptok, ctok,
+                             len(failed))
     return {"run_id": run_id, "processed": processed, "skipped": skipped,
+            "failed": failed, "error_count": len(failed),
             "llm_calls": llm_calls, "prompt_tokens": ptok,
             "completion_tokens": ctok, "graduated": graduated}

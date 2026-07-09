@@ -19,10 +19,10 @@ DEFAULT_DB = os.path.join(os.path.dirname(os.path.abspath(__file__)),
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS docs_seen (
-    doc_id       TEXT PRIMARY KEY,
+    doc_id       TEXT,
     path         TEXT,
     title        TEXT,
-    content_hash TEXT UNIQUE,
+    content_hash TEXT PRIMARY KEY,
     doc_date     TEXT,
     first_run    INTEGER,
     llm_model    TEXT,
@@ -69,15 +69,43 @@ CREATE TABLE IF NOT EXISTS runs (
     prompt_tokens INTEGER,
     completion_tokens INTEGER,
     model        TEXT,
-    note         TEXT
+    note         TEXT,
+    error_count  INTEGER NOT NULL DEFAULT 0
 );
 """
+
+
+def _migrate(con):
+    """Apply the small backward-compatible schema changes used here."""
+    docs_info = con.execute("PRAGMA table_info(docs_seen)").fetchall()
+    pk = next((row[1] for row in docs_info if row[5]), None)
+    if docs_info and pk != "content_hash":
+        con.execute("ALTER TABLE docs_seen RENAME TO docs_seen_old")
+        con.execute("""
+            CREATE TABLE docs_seen (
+                doc_id TEXT, path TEXT, title TEXT,
+                content_hash TEXT PRIMARY KEY, doc_date TEXT,
+                first_run INTEGER, llm_model TEXT, n_claims INTEGER
+            )
+        """)
+        con.execute("""
+            INSERT OR IGNORE INTO docs_seen
+                (doc_id,path,title,content_hash,doc_date,first_run,llm_model,n_claims)
+            SELECT doc_id,path,title,content_hash,doc_date,first_run,llm_model,n_claims
+            FROM docs_seen_old
+        """)
+        con.execute("DROP TABLE docs_seen_old")
+    run_cols = {row[1] for row in con.execute("PRAGMA table_info(runs)")}
+    if "error_count" not in run_cols:
+        con.execute("ALTER TABLE runs ADD COLUMN error_count INTEGER NOT NULL DEFAULT 0")
+    con.commit()
 
 
 def connect(path=DEFAULT_DB):
     con = sqlite3.connect(path)
     con.row_factory = sqlite3.Row
     con.executescript(SCHEMA)
+    _migrate(con)
     return con
 
 
@@ -90,10 +118,10 @@ def start_run(con, model, note=""):
     return cur.lastrowid
 
 
-def finish_run(con, run_id, docs, llm_calls, ptok, ctok):
+def finish_run(con, run_id, docs, llm_calls, ptok, ctok, error_count=0):
     con.execute("UPDATE runs SET docs=?,llm_calls=?,prompt_tokens=?,"
-                "completion_tokens=? WHERE run_id=?",
-                (docs, llm_calls, ptok, ctok, run_id))
+                "completion_tokens=?,error_count=? WHERE run_id=?",
+                (docs, llm_calls, ptok, ctok, error_count, run_id))
     con.commit()
 
 
@@ -106,8 +134,11 @@ def already_seen(con, content_hash):
 def record_doc(con, doc_id, path, title, content_hash, doc_date, run_id,
                model, n_claims):
     con.execute(
-        "INSERT OR REPLACE INTO docs_seen(doc_id,path,title,content_hash,"
-        "doc_date,first_run,llm_model,n_claims) VALUES(?,?,?,?,?,?,?,?)",
+        "INSERT INTO docs_seen(doc_id,path,title,content_hash,doc_date,first_run,"
+        "llm_model,n_claims) VALUES(?,?,?,?,?,?,?,?) "
+        "ON CONFLICT(content_hash) DO UPDATE SET doc_id=excluded.doc_id, "
+        "path=excluded.path,title=excluded.title,doc_date=excluded.doc_date, "
+        "llm_model=excluded.llm_model,n_claims=excluded.n_claims",
         (doc_id, path, title, content_hash, doc_date, run_id, model, n_claims))
     con.commit()
 

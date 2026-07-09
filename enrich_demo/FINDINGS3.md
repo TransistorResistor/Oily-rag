@@ -161,3 +161,86 @@ the cross-unit incomparability guard is load-bearing, not cosmetic).
 
 Total Phase B LLM spend (all iterations, incl. discarded pre-fix runs): well
 under **$0.01** (~$0.001) on `gemma-3-4b`.
+
+## Robustness fixes (2026-07-05)
+
+Five follow-up defects were fixed without changing the extraction contract:
+
+1. `docs_seen` now uses `content_hash` as its primary identity. `connect()`
+   migrates the old `doc_id`-primary-key table in place, so text and markdown
+   hashes for the same PDF coexist and either render is skipped on a later run.
+2. Low-trust graduation clusters on `partial_fp`, then compares each claim's
+   normalized value/unit pair. Same or convertible units must agree within 2%;
+   demonstrable conflicts do not corroborate. An unconvertible cross-unit pair
+   is `INDETERMINATE` and deliberately counts as support: with pint unavailable
+   this gives equivalent km/ft reports the benefit of the doubt while the report
+   exposes both values to the reviewer. If conversion becomes available, those
+   pairs automatically resolve to `AGREE` or `CONFLICT`. NULL `park_reason`
+   surfaced rows remain eligible and `unmapped` rows remain excluded.
+3. `run_batch` catches hosted-LLM exceptions per document, reports and counts
+   them in `runs.error_count`, leaves the failed document unseen for retry, and
+   finalizes the run in `finally` while continuing with later documents.
+4. `RefCatalogue.compare_numeric` now returns `incomparable` when a claim unit
+   cannot be reconciled with a specific stored value's unit; the pipeline parks
+   that outcome instead of comparing raw magnitudes. Spelling-equivalent units
+   such as `minutes` / `min` still compare normally.
+5. `_clean_value_unit` now handles a currency scale after a unit-first value:
+   `USD 300 million` becomes value `300`, unit `USD million`.
+
+Targeted offline coverage is in `test_fixes.py` (5/5 passing). An external gate
+run after the first, over-strict `full_fp` implementation exposed the cross-unit
+regression: Corpus 1 reached P=1.00/R=0.90 and Corpus 2 P=1.00/R=0.83 because
+their km/ft corroboration pairs did not graduate; Corpus 2b remained clean at
+P=1.00/R=1.00/0 FP. The pairwise AGREE/CONFLICT/INDETERMINATE refinement above
+addresses that cause; all three gates were then re-run fresh and pass
+(`verify2_c1.db` / `verify2_c2.db` / `verify_2b.db`, per-DB proposals files kept).
+
+| fresh text-mode gate | model | latest status |
+|---|---|---|
+| Corpus 1 (batches 1+2, pre-rejection) | `gemma-3-4b` | **P=1.00 / R=1.00 (10/10) / 0 FP**, corroboration pair graduated in batch 2 |
+| Corpus 2 | `gemma-3-4b` | **P=1.00 / R=1.00 (6/6) / 0 FP**, AMRAAM pair graduated in batch 2 |
+| Corpus 2b | `gemma-3-4b` | **P=1.00 / R=1.00 (3/3) / 0 FP** |
+
+## Pint restored + two bugs it uncovered (2026-07-05, later same day)
+
+The shared Anaconda env's `pint` import was silently dying three layers down
+(`pint` -> `dask.array` -> `np.round_`, removed in NumPy 2.0 -- an
+`AttributeError`, not the `ImportError` pint's own guard expects, so it
+propagated up and killed the whole import). Upgraded `dask` 2022.7.0 ->
+2026.6.0, which uncovered the same pattern one layer further down (`dask` ->
+`xarray` -> `np.unicode_`, also removed); upgraded `xarray` 2022.11.0 ->
+2025.6.1. `units.convert` is no longer a guaranteed-raise; real conversion is
+live. Re-ran all three gates fresh to check nothing depended on that
+assumption, and it found two real bugs, both fixed same session:
+
+1. **`nm` silently parsed as nanometer, not nautical mile.** `units.py`'s
+   `_ALIASES` mapped `nmi` -> `nautical_mile` but not the bare `nm` spelling
+   this domain actually uses throughout (`pipeline.py`'s own `_UNIT_SPELL`
+   table treats `nm` as the canonical nautical-mile key). Pint's registry
+   parses unaliased `nm` as nanometer, so `convert(20, 'nm', 'km')` silently
+   returned `2e-11` instead of `~37.04` -- no exception, so nothing caught it.
+   Fixed by adding `"nm": "nautical_mile"` to `_ALIASES`.
+2. **Same-document unit-restatement no longer deduped.** `tbl2b_dual_unit`
+   states Derby's range as two independent claims, "37 km" and "20 nm" (the
+   same fact in two units). With pint truly unavailable, the cross-unit
+   incomparability guard used to park the second claim as a side effect (it
+   couldn't prove `nm`<->`km`, so it parked rather than compare) -- that
+   guard was accidentally doing within-document dedup, not just
+   correctness-guarding. With real conversion the guard no longer fires, both
+   claims independently reach `compare_numeric`, and both correctly disagree
+   with the DB -- producing two "conflict" proposals for one fact instead of
+   one. Fixed with an explicit dedup in `process_document`: claims for the
+   same `partial_fp` (record+field) whose normalized values provably `agree`
+   (via `_corroboration_relation`, reusing yesterday's tolerance logic) drop
+   the second as `dup_in_run`. Indeterminate (unconvertible) pairs are left
+   separate on purpose -- can't prove they're the same statement, so don't
+   silently merge them.
+
+All three gates re-verified fresh after both fixes: Corpus 1 10/10, Corpus 2
+6/6, Corpus 2b 3/3, all P=1.00/R=1.00/0 FP. `test_fixes.py` still 5/5. Offline
+RAG retrieval eval unaffected (27/28, unrelated code path). One gold case
+(`gapfill_s300_detection`) was independently confirmed to be **flaky at the
+LLM-sampling layer** (gemma-3-4b sometimes emits only the child-radar-attributed
+duplicate claim and drops the system-level one the gold case needs, roughly
+1-in-4 samples) -- not a regression, resampled 3/3 clean before settling on the
+representative run above.

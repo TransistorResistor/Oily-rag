@@ -38,6 +38,7 @@ def cmd_run(args):
                           note=args.note, render=args.render)
     print(f"\nRun {summ['run_id']}: processed {len(summ['processed'])} docs, "
           f"skipped {len(summ['skipped'])} (already seen), "
+          f"failed {summ['error_count']}, "
           f"{summ['llm_calls']} LLM calls, "
           f"{summ['prompt_tokens']}+{summ['completion_tokens']} tokens, "
           f"graduated {summ['graduated']} parked claim(s).")
