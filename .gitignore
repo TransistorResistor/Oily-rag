@@ -12,3 +12,21 @@ __pycache__/
 
 # bulk archives
 files.zip
+
+# portable offline/runtime bundles (generated locally; too large for git)
+.hf-cache/
+offline_bundle/
+
+# per-run eval evidence (scratch; conclusions live in REVIEW_FINDINGS.md)
+hosted_answer_gate_*.json
+hosted_answer_gate_*.jsonl
+large_eval_report*.json
+large_eval_targeted_subset.json
+enrich_demo/proposals_pint_*.json
+enrich_demo/proposals_verify*.json
+
+# generated inspection snapshot (rebuild with build_catalogue_snapshot.py)
+catalogue_snapshot/
+
+# throwaway working files
+tmp_*
