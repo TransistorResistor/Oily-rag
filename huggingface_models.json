@@ -1,0 +1,24 @@
+{
+  "required": [
+    {
+      "role": "embedding",
+      "repo_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "purpose": "384-dimensional passage and query embeddings"
+    },
+    {
+      "role": "reranking",
+      "repo_id": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "revision": "c5ee24cb16019beea0893ab7796b1df96625c6b8",
+      "purpose": "cross-encoder reranking of retrieval candidates"
+    }
+  ],
+  "optional": [
+    {
+      "role": "local_generation",
+      "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "main",
+      "purpose": "optional local answer generation; not needed for ingest, retrieval, context preview, or enrichment review"
+    }
+  ]
+}
