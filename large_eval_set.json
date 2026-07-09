@@ -1,0 +1,1758 @@
+{
+  "version": 1,
+  "created": "2026-07-08",
+  "notes": "Gold set for large-test-corpus. Generated from the corpus contents by generate_large_eval_set.py; expected_rids are ANY-OF unless required_rids is present.",
+  "source_corpus": "large-test-corpus",
+  "cases": [
+    {
+      "id": "large-lookup-01",
+      "class": "lookup",
+      "query": "What is ADX00205?",
+      "expected_rids": [
+        "900205"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Air Defense Systems / Medium-Range SAM System lookup for ADX-00205 Medium-Range-D7; modelID 900205."
+    },
+    {
+      "id": "large-lookup-02",
+      "class": "lookup",
+      "query": "What is ADX00269?",
+      "expected_rids": [
+        "900269"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Air Defense Systems / Long-Range SAM System lookup for ADX-00269 Long-Range-C4; modelID 900269."
+    },
+    {
+      "id": "large-lookup-03",
+      "class": "lookup",
+      "query": "What is AX00005?",
+      "expected_rids": [
+        "900005"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Aircraft / Fighter Aircraft lookup for AX-00005 Fighter-A3; modelID 900005."
+    },
+    {
+      "id": "large-lookup-04",
+      "class": "lookup",
+      "query": "What is AX00055?",
+      "expected_rids": [
+        "900055"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Aircraft / Transport Aircraft lookup for AX-00055 Transport-A5; modelID 900055."
+    },
+    {
+      "id": "large-lookup-05",
+      "class": "lookup",
+      "query": "What is CEX00808?",
+      "expected_rids": [
+        "900808"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "C4ISR and Electronic Warfare / Data Link lookup for CEX-00808 Data-B3; modelID 900808."
+    },
+    {
+      "id": "large-lookup-06",
+      "class": "lookup",
+      "query": "What is CEX00848?",
+      "expected_rids": [
+        "900848"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "C4ISR and Electronic Warfare / Communications System lookup for CEX-00848 Communications-B5; modelID 900848."
+    },
+    {
+      "id": "large-lookup-07",
+      "class": "lookup",
+      "query": "What is GVX00476?",
+      "expected_rids": [
+        "900476"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Ground Vehicles / Armored Personnel Carrier lookup for GVX-00476 Armored-C6; modelID 900476."
+    },
+    {
+      "id": "large-lookup-08",
+      "class": "lookup",
+      "query": "What is GVX00434?",
+      "expected_rids": [
+        "900434"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Ground Vehicles / Infantry Fighting Vehicle lookup for GVX-00434 Infantry-B3; modelID 900434."
+    },
+    {
+      "id": "large-lookup-09",
+      "class": "lookup",
+      "query": "What is MX00104?",
+      "expected_rids": [
+        "900104"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Missiles / Air-to-Air Missile lookup for MX-00104 Air-to-Air-D7; modelID 900104."
+    },
+    {
+      "id": "large-lookup-10",
+      "class": "lookup",
+      "query": "What is MX00184?",
+      "expected_rids": [
+        "900184"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Missiles / Surface-to-Air Missile lookup for MX-00184 Surface-to-Air-C3; modelID 900184."
+    },
+    {
+      "id": "large-lookup-11",
+      "class": "lookup",
+      "query": "What is NVX00527?",
+      "expected_rids": [
+        "900527"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Naval Platforms / Frigate lookup for NVX-00527 Frigate-H5; modelID 900527."
+    },
+    {
+      "id": "large-lookup-12",
+      "class": "lookup",
+      "query": "What is NVX00591?",
+      "expected_rids": [
+        "900591"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Naval Platforms / Patrol Vessel lookup for NVX-00591 Patrol-C5; modelID 900591."
+    },
+    {
+      "id": "large-lookup-13",
+      "class": "lookup",
+      "query": "What is PPX00732?",
+      "expected_rids": [
+        "900732"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Power and Propulsion Systems / Rocket Motor lookup for PPX-00732 Rocket-D2; modelID 900732."
+    },
+    {
+      "id": "large-lookup-14",
+      "class": "lookup",
+      "query": "What is PPX00766?",
+      "expected_rids": [
+        "900766"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Power and Propulsion Systems / Gas Turbine lookup for PPX-00766 Gas-A3; modelID 900766."
+    },
+    {
+      "id": "large-lookup-15",
+      "class": "lookup",
+      "query": "What is SX00375?",
+      "expected_rids": [
+        "900375"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Sensors / EO/IR Sensor lookup for SX-00375 EO/IR-C7; modelID 900375."
+    },
+    {
+      "id": "large-lookup-16",
+      "class": "lookup",
+      "query": "What is SX00355?",
+      "expected_rids": [
+        "900355"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Sensors / EO/IR Sensor lookup for SX-00355 EO/IR-E9; modelID 900355."
+    },
+    {
+      "id": "large-lookup-17",
+      "class": "lookup",
+      "query": "What is SPX00997?",
+      "expected_rids": [
+        "900997"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Space Systems / Navigation Satellite lookup for SPX-00997 Navigation-B2; modelID 900997."
+    },
+    {
+      "id": "large-lookup-18",
+      "class": "lookup",
+      "query": "What is SPX00926?",
+      "expected_rids": [
+        "900926"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Space Systems / Navigation Satellite lookup for SPX-00926 Navigation-C9; modelID 900926."
+    },
+    {
+      "id": "large-lookup-19",
+      "class": "lookup",
+      "query": "What is WCX00657?",
+      "expected_rids": [
+        "900657"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Weapons and Components / Torpedo lookup for WCX-00657 Torpedo-F4; modelID 900657."
+    },
+    {
+      "id": "large-lookup-20",
+      "class": "lookup",
+      "query": "What is WCX00675?",
+      "expected_rids": [
+        "900675"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Weapons and Components / Warhead lookup for WCX-00675 Warhead-C6; modelID 900675."
+    },
+    {
+      "id": "large-parametric-01",
+      "class": "parametric",
+      "query": "What is the maximum speed of AX00069?",
+      "expected_rids": [
+        "900069"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "1.51"
+      ],
+      "notes": "AX-00069 Transport-B3 (AX00069) Maximum speed = 1.51 Mach."
+    },
+    {
+      "id": "large-parametric-02",
+      "class": "parametric",
+      "query": "What is the maximum speed of AX00034?",
+      "expected_rids": [
+        "900034"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "1.605"
+      ],
+      "notes": "AX-00034 Bomber-H4 (AX00034) Maximum speed = 1.605 Mach."
+    },
+    {
+      "id": "large-parametric-03",
+      "class": "parametric",
+      "query": "What is the unit cost of AX00006?",
+      "expected_rids": [
+        "900006"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "172869426"
+      ],
+      "notes": "AX-00006 Transport-H5 (AX00006) Unit cost = 172869426 USD."
+    },
+    {
+      "id": "large-parametric-04",
+      "class": "parametric",
+      "query": "What is the weight of MX00142?",
+      "expected_rids": [
+        "900142"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "864"
+      ],
+      "notes": "MX-00142 Air-to-Air-C7 (MX00142) Weight = 864 kg."
+    },
+    {
+      "id": "large-parametric-05",
+      "class": "parametric",
+      "query": "What is the weight of MX00124?",
+      "expected_rids": [
+        "900124"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "601"
+      ],
+      "notes": "MX-00124 Air-to-Air-G4 (MX00124) Weight = 601 kg."
+    },
+    {
+      "id": "large-parametric-06",
+      "class": "parametric",
+      "query": "What is the maximum speed of MX00115?",
+      "expected_rids": [
+        "900115"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "2.062"
+      ],
+      "notes": "MX-00115 Anti-Ship-B9 (MX00115) Maximum speed = 2.062 Mach."
+    },
+    {
+      "id": "large-parametric-07",
+      "class": "parametric",
+      "query": "What is the radar detection range of ADX00298?",
+      "expected_rids": [
+        "900298"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "109"
+      ],
+      "notes": "ADX-00298 Long-Range-E5 (ADX00298) Radar detection range = 109 km."
+    },
+    {
+      "id": "large-parametric-08",
+      "class": "parametric",
+      "query": "What is the deployment time of ADX00263?",
+      "expected_rids": [
+        "900263"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "35.17"
+      ],
+      "notes": "ADX-00263 C-RAM-B5 (ADX00263) Deployment time = 35.17 min."
+    },
+    {
+      "id": "large-parametric-09",
+      "class": "parametric",
+      "query": "What is the radar detection range of ADX00257?",
+      "expected_rids": [
+        "900257"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "547"
+      ],
+      "notes": "ADX-00257 SHORAD-E9 (ADX00257) Radar detection range = 547 km."
+    },
+    {
+      "id": "large-parametric-10",
+      "class": "parametric",
+      "query": "What is the power consumption of SX00357?",
+      "expected_rids": [
+        "900357"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "129"
+      ],
+      "notes": "SX-00357 Air-E8 (SX00357) Power consumption = 129 kW."
+    },
+    {
+      "id": "large-parametric-11",
+      "class": "parametric",
+      "query": "What is the detection range of SX00337?",
+      "expected_rids": [
+        "900337"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "428"
+      ],
+      "notes": "SX-00337 Electronic-H1 (SX00337) Detection range = 428 km."
+    },
+    {
+      "id": "large-parametric-12",
+      "class": "parametric",
+      "query": "What is the power consumption of SX00332?",
+      "expected_rids": [
+        "900332"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "127"
+      ],
+      "notes": "SX-00332 Aircraft-F9 (SX00332) Power consumption = 127 kW."
+    },
+    {
+      "id": "large-parametric-13",
+      "class": "parametric",
+      "query": "What is the operational range of GVX00413?",
+      "expected_rids": [
+        "900413"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "342"
+      ],
+      "notes": "GVX-00413 Self-Propelled-G2 (GVX00413) Operational range = 342 km."
+    },
+    {
+      "id": "large-parametric-14",
+      "class": "parametric",
+      "query": "What is the combat weight of GVX00458?",
+      "expected_rids": [
+        "900458"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "51825"
+      ],
+      "notes": "GVX-00458 Self-Propelled-E8 (GVX00458) Combat weight = 51825 kg."
+    },
+    {
+      "id": "large-parametric-15",
+      "class": "parametric",
+      "query": "What is the road speed of GVX00497?",
+      "expected_rids": [
+        "900497"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "71.08"
+      ],
+      "notes": "GVX-00497 Armored-E9 (GVX00497) Road speed = 71.08 km/h."
+    },
+    {
+      "id": "large-parametric-16",
+      "class": "parametric",
+      "query": "What is the displacement of NVX00540?",
+      "expected_rids": [
+        "900540"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "45002"
+      ],
+      "notes": "NVX-00540 Aircraft-C3 (NVX00540) Displacement = 45002 t."
+    },
+    {
+      "id": "large-parametric-17",
+      "class": "parametric",
+      "query": "What is the maximum sea speed of NVX00576?",
+      "expected_rids": [
+        "900576"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "28.72"
+      ],
+      "notes": "NVX-00576 Patrol-E9 (NVX00576) Maximum sea speed = 28.72 kn."
+    },
+    {
+      "id": "large-parametric-18",
+      "class": "parametric",
+      "query": "What is the operational range of NVX00599?",
+      "expected_rids": [
+        "900599"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "8181.3"
+      ],
+      "notes": "NVX-00599 Aircraft-H2 (NVX00599) Operational range = 8181.3 nmi."
+    },
+    {
+      "id": "large-parametric-19",
+      "class": "parametric",
+      "query": "What is the weight of WCX00647?",
+      "expected_rids": [
+        "900647"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "865"
+      ],
+      "notes": "WCX-00647 Proximity-B2 (WCX00647) Weight = 865 kg."
+    },
+    {
+      "id": "large-parametric-20",
+      "class": "parametric",
+      "query": "What is the effective range of WCX00648?",
+      "expected_rids": [
+        "900648"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "111"
+      ],
+      "notes": "WCX-00648 Rocket-E5 (WCX00648) Effective range = 111 km."
+    },
+    {
+      "id": "large-parametric-21",
+      "class": "parametric",
+      "query": "What is the effective range of WCX00691?",
+      "expected_rids": [
+        "900691"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "76"
+      ],
+      "notes": "WCX-00691 Proximity-E3 (WCX00691) Effective range = 76 km."
+    },
+    {
+      "id": "large-parametric-22",
+      "class": "parametric",
+      "query": "What is the length of PPX00720?",
+      "expected_rids": [
+        "900720"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "7"
+      ],
+      "notes": "PPX-00720 Diesel-B5 (PPX00720) Length = 7 m."
+    },
+    {
+      "id": "large-parametric-23",
+      "class": "parametric",
+      "query": "What is the dry weight of PPX00799?",
+      "expected_rids": [
+        "900799"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "6285"
+      ],
+      "notes": "PPX-00799 Rocket-B8 (PPX00799) Dry weight = 6285 kg."
+    },
+    {
+      "id": "large-parametric-24",
+      "class": "parametric",
+      "query": "What is the dry weight of PPX00733?",
+      "expected_rids": [
+        "900733"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "1029"
+      ],
+      "notes": "PPX-00733 Turbofan-D9 (PPX00733) Dry weight = 1029 kg."
+    },
+    {
+      "id": "large-parametric-25",
+      "class": "parametric",
+      "query": "What is the bandwidth of CEX00858?",
+      "expected_rids": [
+        "900858"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "1059.2"
+      ],
+      "notes": "CEX-00858 Data-D7 (CEX00858) Bandwidth = 1059.2 Mbps."
+    },
+    {
+      "id": "large-parametric-26",
+      "class": "parametric",
+      "query": "What is the node capacity of CEX00821?",
+      "expected_rids": [
+        "900821"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "1890"
+      ],
+      "notes": "CEX-00821 Battle-H2 (CEX00821) Node capacity = 1890 nodes."
+    },
+    {
+      "id": "large-parametric-27",
+      "class": "parametric",
+      "query": "What is the bandwidth of CEX00883?",
+      "expected_rids": [
+        "900883"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "1635.5"
+      ],
+      "notes": "CEX-00883 Jammer-D5 (CEX00883) Bandwidth = 1635.5 Mbps."
+    },
+    {
+      "id": "large-parametric-28",
+      "class": "parametric",
+      "query": "What is the orbital altitude of SPX00927?",
+      "expected_rids": [
+        "900927"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "12257"
+      ],
+      "notes": "SPX-00927 Launch-H4 (SPX00927) Orbital altitude = 12257 km."
+    },
+    {
+      "id": "large-parametric-29",
+      "class": "parametric",
+      "query": "What is the orbital altitude of SPX00995?",
+      "expected_rids": [
+        "900995"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "16746"
+      ],
+      "notes": "SPX-00995 Communications-G5 (SPX00995) Orbital altitude = 16746 km."
+    },
+    {
+      "id": "large-parametric-30",
+      "class": "parametric",
+      "query": "What is the design life of SPX00978?",
+      "expected_rids": [
+        "900978"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [
+        "10.11"
+      ],
+      "notes": "SPX-00978 Navigation-G1 (SPX00978) Design life = 10.11 years."
+    },
+    {
+      "id": "large-comparison-01",
+      "class": "comparison",
+      "query": "Compare AX00036 and AX00094 by maximum speed.",
+      "expected_rids": [],
+      "required_rids": [
+        "900036",
+        "900094"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900036 (AX00036) and 900094 (AX00094) in context; comparison field Maximum speed."
+    },
+    {
+      "id": "large-comparison-02",
+      "class": "comparison",
+      "query": "Compare MX00184 and MX00104 by maximum range.",
+      "expected_rids": [],
+      "required_rids": [
+        "900184",
+        "900104"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900184 (MX00184) and 900104 (MX00104) in context; comparison field Maximum range."
+    },
+    {
+      "id": "large-comparison-03",
+      "class": "comparison",
+      "query": "Compare ADX00281 and ADX00203 by maximum range.",
+      "expected_rids": [],
+      "required_rids": [
+        "900281",
+        "900203"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900281 (ADX00281) and 900203 (ADX00203) in context; comparison field Maximum range."
+    },
+    {
+      "id": "large-comparison-04",
+      "class": "comparison",
+      "query": "Compare SX00386 and SX00380 by detection range.",
+      "expected_rids": [],
+      "required_rids": [
+        "900386",
+        "900380"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900386 (SX00386) and 900380 (SX00380) in context; comparison field Detection range."
+    },
+    {
+      "id": "large-comparison-05",
+      "class": "comparison",
+      "query": "Compare GVX00436 and GVX00430 by combat weight.",
+      "expected_rids": [],
+      "required_rids": [
+        "900436",
+        "900430"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900436 (GVX00436) and 900430 (GVX00430) in context; comparison field Combat weight."
+    },
+    {
+      "id": "large-comparison-06",
+      "class": "comparison",
+      "query": "Compare NVX00552 and NVX00572 by displacement.",
+      "expected_rids": [],
+      "required_rids": [
+        "900552",
+        "900572"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900552 (NVX00552) and 900572 (NVX00572) in context; comparison field Displacement."
+    },
+    {
+      "id": "large-comparison-07",
+      "class": "comparison",
+      "query": "Compare WCX00636 and WCX00644 by weight.",
+      "expected_rids": [],
+      "required_rids": [
+        "900636",
+        "900644"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900636 (WCX00636) and 900644 (WCX00644) in context; comparison field Weight."
+    },
+    {
+      "id": "large-comparison-08",
+      "class": "comparison",
+      "query": "Compare PPX00790 and PPX00706 by maximum thrust.",
+      "expected_rids": [],
+      "required_rids": [
+        "900790",
+        "900706"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900790 (PPX00790) and 900706 (PPX00706) in context; comparison field Maximum thrust."
+    },
+    {
+      "id": "large-comparison-09",
+      "class": "comparison",
+      "query": "Compare CEX00823 and CEX00826 by node capacity.",
+      "expected_rids": [],
+      "required_rids": [
+        "900823",
+        "900826"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900823 (CEX00823) and 900826 (CEX00826) in context; comparison field Node capacity."
+    },
+    {
+      "id": "large-comparison-10",
+      "class": "comparison",
+      "query": "Compare SPX00947 and SPX00992 by launch mass.",
+      "expected_rids": [],
+      "required_rids": [
+        "900947",
+        "900992"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Requires both 900947 (SPX00947) and 900992 (SPX00992) in context; comparison field Launch mass."
+    },
+    {
+      "id": "large-relation-01",
+      "class": "comparison",
+      "query": "How is CEX00894 related to SX00369?",
+      "expected_rids": [],
+      "required_rids": [
+        "900369",
+        "900894"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Data Link; parent 900369 (SX00369) child 900894 (CEX00894)."
+    },
+    {
+      "id": "large-relation-02",
+      "class": "comparison",
+      "query": "How is MX00177 related to ADX00253?",
+      "expected_rids": [],
+      "required_rids": [
+        "900253",
+        "900177"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Radar; parent 900253 (ADX00253) child 900177 (MX00177)."
+    },
+    {
+      "id": "large-relation-03",
+      "class": "comparison",
+      "query": "How is SX00384 related to ADX00213?",
+      "expected_rids": [],
+      "required_rids": [
+        "900213",
+        "900384"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Radar; parent 900213 (ADX00213) child 900384 (SX00384)."
+    },
+    {
+      "id": "large-relation-04",
+      "class": "comparison",
+      "query": "How is SX00343 related to ADX00286?",
+      "expected_rids": [],
+      "required_rids": [
+        "900286",
+        "900343"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Command Post; parent 900286 (ADX00286) child 900343 (SX00343)."
+    },
+    {
+      "id": "large-relation-05",
+      "class": "comparison",
+      "query": "How is CEX00834 related to SX00384?",
+      "expected_rids": [],
+      "required_rids": [
+        "900384",
+        "900834"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Data Link; parent 900384 (SX00384) child 900834 (CEX00834)."
+    },
+    {
+      "id": "large-relation-06",
+      "class": "comparison",
+      "query": "How is PPX00742 related to MX00195?",
+      "expected_rids": [],
+      "required_rids": [
+        "900195",
+        "900742"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Warhead; parent 900195 (MX00195) child 900742 (PPX00742)."
+    },
+    {
+      "id": "large-relation-07",
+      "class": "comparison",
+      "query": "How is CEX00884 related to SX00331?",
+      "expected_rids": [],
+      "required_rids": [
+        "900331",
+        "900884"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Data Link; parent 900331 (SX00331) child 900884 (CEX00884)."
+    },
+    {
+      "id": "large-relation-08",
+      "class": "comparison",
+      "query": "How is CEX00862 related to SPX00941?",
+      "expected_rids": [],
+      "required_rids": [
+        "900941",
+        "900862"
+      ],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Relation edge via Communications; parent 900941 (SPX00941) child 900862 (CEX00862)."
+    },
+    {
+      "id": "large-analytic-01-fighter-aircraft",
+      "class": "analytic",
+      "query": "List fighter aircraft records.",
+      "expected_rids": [
+        "900001",
+        "900004",
+        "900005",
+        "900008",
+        "900009",
+        "900014",
+        "900023",
+        "900025",
+        "900028",
+        "900029",
+        "900038",
+        "900046",
+        "900060",
+        "900062",
+        "900066",
+        "900070",
+        "900085",
+        "900087",
+        "900094",
+        "900095",
+        "900100"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemType": {
+          "in": [
+            "Fighter Aircraft"
+          ]
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "21 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-02-sam-systems",
+      "class": "analytic",
+      "query": "Which long-range SAM systems are in the corpus?",
+      "expected_rids": [
+        "900201",
+        "900206",
+        "900207",
+        "900215",
+        "900219",
+        "900230",
+        "900236",
+        "900243",
+        "900246",
+        "900248",
+        "900249",
+        "900252",
+        "900254",
+        "900255",
+        "900269",
+        "900271",
+        "900292",
+        "900298",
+        "900299"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemType": {
+          "in": [
+            "Long-Range SAM System"
+          ]
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "19 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-03-aam",
+      "class": "analytic",
+      "query": "Which air-to-air missile records are in the corpus?",
+      "expected_rids": [
+        "900102",
+        "900104",
+        "900118",
+        "900121",
+        "900124",
+        "900127",
+        "900128",
+        "900130",
+        "900132",
+        "900134",
+        "900138",
+        "900139",
+        "900142",
+        "900157",
+        "900158",
+        "900162",
+        "900170",
+        "900171",
+        "900179",
+        "900181",
+        "900182",
+        "900186",
+        "900187",
+        "900188",
+        "900192",
+        "900200"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemType": {
+          "in": [
+            "Air-to-Air Missile"
+          ]
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "26 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-04-air-defense-radars",
+      "class": "analytic",
+      "query": "List air defense radars.",
+      "expected_rids": [
+        "900304",
+        "900305",
+        "900307",
+        "900308",
+        "900317",
+        "900320",
+        "900321",
+        "900328",
+        "900335",
+        "900339",
+        "900349",
+        "900356",
+        "900357",
+        "900358",
+        "900365",
+        "900369",
+        "900373",
+        "900384",
+        "900389",
+        "900394",
+        "900399",
+        "900400"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemType": {
+          "in": [
+            "Air Defense Radar"
+          ]
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "22 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-05-india-operators",
+      "class": "analytic",
+      "query": "Which systems are operated by India?",
+      "expected_rids": [
+        "900002",
+        "900009",
+        "900012",
+        "900017",
+        "900018",
+        "900019",
+        "900040",
+        "900043",
+        "900049",
+        "900055",
+        "900058",
+        "900063",
+        "900081",
+        "900092",
+        "900105",
+        "900112",
+        "900113",
+        "900121",
+        "900125",
+        "900132",
+        "900136",
+        "900139",
+        "900140",
+        "900143",
+        "900145",
+        "900146",
+        "900152",
+        "900155",
+        "900163",
+        "900166",
+        "900168",
+        "900183",
+        "900185",
+        "900190",
+        "900191",
+        "900194",
+        "900214",
+        "900256",
+        "900261",
+        "900262"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "Operated by (country)": {
+          "contains": [
+            "India"
+          ]
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "40 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-06-projected",
+      "class": "analytic",
+      "query": "Which records have projected fielding in the next 0 to 5 years?",
+      "expected_rids": [
+        "900001",
+        "900003",
+        "900005",
+        "900009",
+        "900015",
+        "900024",
+        "900033",
+        "900034",
+        "900041",
+        "900042",
+        "900043",
+        "900044",
+        "900045",
+        "900046",
+        "900049",
+        "900051",
+        "900056",
+        "900057",
+        "900059",
+        "900064",
+        "900066",
+        "900069",
+        "900070",
+        "900071",
+        "900078",
+        "900080",
+        "900083",
+        "900090",
+        "900093",
+        "900094",
+        "900095",
+        "900096",
+        "900102",
+        "900106",
+        "900108",
+        "900109",
+        "900111",
+        "900112",
+        "900113",
+        "900116"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "Fielding status": {
+          "contains": [
+            "Projected"
+          ]
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "40 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-07-in-production",
+      "class": "analytic",
+      "query": "Which missile records are in production?",
+      "expected_rids": [
+        "900102",
+        "900104",
+        "900105",
+        "900107",
+        "900112",
+        "900113",
+        "900116",
+        "900117",
+        "900118",
+        "900120",
+        "900127",
+        "900132",
+        "900134",
+        "900144",
+        "900147",
+        "900149",
+        "900154",
+        "900156",
+        "900163",
+        "900165",
+        "900169",
+        "900173",
+        "900175",
+        "900181",
+        "900189",
+        "900191",
+        "900196",
+        "900197"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Missiles"
+          ]
+        },
+        "Status": {
+          "in": [
+            "In Production"
+          ]
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "28 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-08-modern-aircraft",
+      "class": "analytic",
+      "query": "Which aircraft entered service after 2015?",
+      "expected_rids": [
+        "900002",
+        "900010",
+        "900013",
+        "900014",
+        "900015",
+        "900016",
+        "900022",
+        "900028",
+        "900035",
+        "900036",
+        "900040",
+        "900049",
+        "900053",
+        "900054",
+        "900057",
+        "900067",
+        "900075",
+        "900077",
+        "900078",
+        "900079",
+        "900084",
+        "900087",
+        "900088",
+        "900090",
+        "900091",
+        "900097",
+        "900099",
+        "900100"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Aircraft"
+          ]
+        },
+        "serviceEntryYear": {
+          "min": 2015
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "28 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-09-long-range-missiles",
+      "class": "analytic",
+      "query": "Which missiles have maximum range over 1000 km?",
+      "expected_rids": [
+        "900101",
+        "900102",
+        "900104",
+        "900106",
+        "900107",
+        "900109",
+        "900110",
+        "900111",
+        "900112",
+        "900114",
+        "900116",
+        "900118",
+        "900121",
+        "900122",
+        "900123",
+        "900126",
+        "900127",
+        "900128",
+        "900129",
+        "900131",
+        "900133",
+        "900136",
+        "900138",
+        "900139",
+        "900140",
+        "900142",
+        "900143",
+        "900144",
+        "900145",
+        "900147",
+        "900148",
+        "900149",
+        "900151",
+        "900153",
+        "900156",
+        "900159",
+        "900160",
+        "900161",
+        "900162",
+        "900163"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Missiles"
+          ]
+        },
+        "Maximum range": {
+          "min": 1000,
+          "unit": "km"
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "40 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-10-cheap-sensors",
+      "class": "analytic",
+      "query": "Which sensors cost less than $5 million?",
+      "expected_rids": [
+        "900363"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Sensors"
+          ]
+        },
+        "Unit cost": {
+          "max": 5000000,
+          "unit": "USD"
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "1 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-11-fast-naval",
+      "class": "analytic",
+      "query": "Which naval platforms exceed 30 knots?",
+      "expected_rids": [
+        "900508",
+        "900513",
+        "900531",
+        "900543",
+        "900544",
+        "900546",
+        "900547",
+        "900550",
+        "900551",
+        "900559",
+        "900561",
+        "900570",
+        "900579",
+        "900582",
+        "900589",
+        "900594",
+        "900595",
+        "900599"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Naval Platforms"
+          ]
+        },
+        "Maximum sea speed": {
+          "min": 30,
+          "unit": "kn"
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "18 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-12-heavy-ground",
+      "class": "analytic",
+      "query": "Which ground vehicles weigh over 60000 kg?",
+      "expected_rids": [
+        "900401",
+        "900471",
+        "900478",
+        "900487"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Ground Vehicles"
+          ]
+        },
+        "Combat weight": {
+          "min": 60000,
+          "unit": "kg"
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "4 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-13-high-satellites",
+      "class": "analytic",
+      "query": "Which space systems operate above 20000 km altitude?",
+      "expected_rids": [
+        "900901",
+        "900902",
+        "900903",
+        "900905",
+        "900910",
+        "900913",
+        "900916",
+        "900919",
+        "900920",
+        "900923",
+        "900924",
+        "900925",
+        "900932",
+        "900933",
+        "900935",
+        "900936",
+        "900937",
+        "900938",
+        "900941",
+        "900942",
+        "900951",
+        "900952",
+        "900953",
+        "900954",
+        "900958",
+        "900959",
+        "900961",
+        "900963",
+        "900964",
+        "900965",
+        "900968",
+        "900970",
+        "900971",
+        "900972",
+        "900979",
+        "900982",
+        "900984",
+        "900987",
+        "900989",
+        "900992"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Space Systems"
+          ]
+        },
+        "Orbital altitude": {
+          "min": 20000,
+          "unit": "km"
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "40 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-14-high-node-c4",
+      "class": "analytic",
+      "query": "Which C4ISR systems support more than 1000 nodes?",
+      "expected_rids": [
+        "900804",
+        "900805",
+        "900806",
+        "900807",
+        "900808",
+        "900809",
+        "900811",
+        "900812",
+        "900813",
+        "900814",
+        "900815",
+        "900816",
+        "900817",
+        "900819",
+        "900820",
+        "900821",
+        "900822",
+        "900823",
+        "900824",
+        "900825",
+        "900826",
+        "900827",
+        "900828",
+        "900829",
+        "900830",
+        "900831",
+        "900832",
+        "900834",
+        "900835",
+        "900836",
+        "900837",
+        "900838",
+        "900839",
+        "900840",
+        "900841",
+        "900843",
+        "900844",
+        "900846",
+        "900847",
+        "900848"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "C4ISR and Electronic Warfare"
+          ]
+        },
+        "Node capacity": {
+          "min": 1000,
+          "unit": "nodes"
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "40 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-analytic-15-powerful-engines",
+      "class": "analytic",
+      "query": "Which propulsion systems have maximum thrust above 150 kN?",
+      "expected_rids": [
+        "900706",
+        "900707",
+        "900709",
+        "900710",
+        "900718",
+        "900723",
+        "900724",
+        "900728",
+        "900735",
+        "900742",
+        "900743",
+        "900744",
+        "900750",
+        "900752",
+        "900755",
+        "900756",
+        "900760",
+        "900761",
+        "900762",
+        "900766",
+        "900773",
+        "900778",
+        "900781",
+        "900782",
+        "900784",
+        "900788",
+        "900790",
+        "900797"
+      ],
+      "required_rids": [],
+      "expected_filter": {
+        "systemGroup": {
+          "in": [
+            "Power and Propulsion Systems"
+          ]
+        },
+        "Maximum thrust": {
+          "min": 150,
+          "unit": "kN"
+        }
+      },
+      "expected_answer_contains": [],
+      "notes": "28 matching records shown/capped to first 40 IDs."
+    },
+    {
+      "id": "large-prose-01",
+      "class": "prose",
+      "query": "What is the integration purpose of ADX00266?",
+      "expected_rids": [
+        "900266"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-02",
+      "class": "prose",
+      "query": "What is the integration purpose of AX00005?",
+      "expected_rids": [
+        "900005"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-03",
+      "class": "prose",
+      "query": "What is the integration purpose of CEX00831?",
+      "expected_rids": [
+        "900831"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-04",
+      "class": "prose",
+      "query": "What is the integration purpose of GVX00474?",
+      "expected_rids": [
+        "900474"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-05",
+      "class": "prose",
+      "query": "What is the integration purpose of MX00183?",
+      "expected_rids": [
+        "900183"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-06",
+      "class": "prose",
+      "query": "What is the integration purpose of NVX00595?",
+      "expected_rids": [
+        "900595"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-07",
+      "class": "prose",
+      "query": "What is the integration purpose of PPX00743?",
+      "expected_rids": [
+        "900743"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-08",
+      "class": "prose",
+      "query": "What is the integration purpose of SX00344?",
+      "expected_rids": [
+        "900344"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-09",
+      "class": "prose",
+      "query": "What is the integration purpose of SPX00924?",
+      "expected_rids": [
+        "900924"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-prose-10",
+      "class": "prose",
+      "query": "What is the integration purpose of WCX00612?",
+      "expected_rids": [
+        "900612"
+      ],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets the synthetic Integration description section."
+    },
+    {
+      "id": "large-negative-01",
+      "class": "negative",
+      "query": "What is the reactor output of the fictional Atlantis-class cruiser?",
+      "expected_rids": [],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "No matching record should exist in the generated large-test-corpus."
+    },
+    {
+      "id": "large-negative-02",
+      "class": "negative",
+      "query": "How many Iron Dome batteries are in this synthetic corpus?",
+      "expected_rids": [],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "No matching record should exist in the generated large-test-corpus."
+    },
+    {
+      "id": "large-negative-03",
+      "class": "negative",
+      "query": "What is the crew complement of the B-2 Spirit bomber?",
+      "expected_rids": [],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "No matching record should exist in the generated large-test-corpus."
+    },
+    {
+      "id": "large-negative-04",
+      "class": "negative",
+      "query": "Which record describes the Lunar Spear hypersonic glider?",
+      "expected_rids": [],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "No matching record should exist in the generated large-test-corpus."
+    },
+    {
+      "id": "large-negative-05",
+      "class": "negative",
+      "query": "What is the range of the non-existent QZ-999 missile?",
+      "expected_rids": [],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "No matching record should exist in the generated large-test-corpus."
+    }
+  ]
+}

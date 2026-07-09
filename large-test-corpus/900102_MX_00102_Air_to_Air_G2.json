@@ -1,0 +1,284 @@
+{
+  "modelID": 900102,
+  "releaseID": 1,
+  "name": "MX-00102 Air-to-Air-G2",
+  "systemGroup": "Missiles",
+  "systemType": "Air-to-Air Missile",
+  "nomenclature": "MX-00102 Air-to-Air-G2",
+  "primaryEquipCode": "MX00102",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2008-01-01",
+  "updatedDate": "2026-06-23",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900102",
+  "aliasList": "MX00102, MX-00102",
+  "aliases": [
+    {
+      "alias": "MX00102",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00102",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00102",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00102 Air-to-Air-G2 is a synthetic air-to-air missile record in the Missiles group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic air-to-air missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00102 Air-to-Air-G2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 2008,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001021,
+      "url": "https://example.invalid/images/900102.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00102 Air-to-Air-G2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001022,
+      "url": "https://example.invalid/docs/900102.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00102 Air-to-Air-G2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northbridge Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "738",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "738 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "1618",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1618 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "2.91",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2.91 Mach"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "terrain-contour matching",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "520",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "520 kg"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1809915",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1809915 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "20",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "20 km"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Minimum range",
+      "parameter": "Minimum range",
+      "parameterValue": "20",
+      "uom": "km",
+      "parameterDescr": "Minimum effective engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "20 km"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "vertical launch cell",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": "Integration"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Air-to-Air Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Turkey",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900383,
+      "childModel": "SX-00383 Electronic-B8",
+      "parentModelID": 900102,
+      "parentModel": "MX-00102 Air-to-Air-G2",
+      "parentComponent": "Warhead",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Electronic Support Sensor",
+      "childPrimaryEquipCode": "SX00383"
+    }
+  ]
+}

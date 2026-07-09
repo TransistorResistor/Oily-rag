@@ -1,0 +1,248 @@
+{
+  "modelID": 900222,
+  "releaseID": 1,
+  "name": "ADX-00222 SHORAD-C6",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "SHORAD System",
+  "nomenclature": "ADX-00222 SHORAD-C6",
+  "primaryEquipCode": "ADX00222",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-01-19",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900222",
+  "aliasList": "ADX00222, ADX-00222",
+  "aliases": [
+    {
+      "alias": "ADX00222",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00222",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00222",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00222 SHORAD-C6 is a synthetic shorad system record in the Air Defense Systems group. It is attributed to United Arab Emirates and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic shorad system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00222 SHORAD-C6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "IOC Year",
+      "proliferation": 1980,
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Asterion Defence"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002221,
+      "url": "https://example.invalid/images/900222.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00222 SHORAD-C6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002222,
+      "url": "https://example.invalid/docs/900222.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00222 SHORAD-C6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "China",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "SHORAD System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "161",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "161 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "29.78",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "29.78 min"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "22",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "22 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Battery vehicles",
+      "parameter": "Battery vehicles",
+      "parameterValue": "11",
+      "uom": "vehicles",
+      "parameterDescr": "Typical number of major vehicles per battery",
+      "dataType": "Number",
+      "component": "Logistics",
+      "parameterUomValue": "11 vehicles"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "7",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "7 km"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "314",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "314 km"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "206",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "206 targets"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Launcher configuration",
+      "parameter": "Launcher configuration",
+      "parameterValue": "vertical launch cells",
+      "uom": "",
+      "parameterDescr": "Launcher vehicle or cell arrangement",
+      "dataType": "Text",
+      "component": "Launcher"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "mixed missile battery",
+      "uom": "",
+      "parameterDescr": "Interceptor missiles used by the system",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "AESA surveillance radar",
+      "uom": "",
+      "parameterDescr": "Primary search or engagement radar type",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "System unit cost",
+      "parameter": "System unit cost",
+      "parameterValue": "534994696",
+      "uom": "USD",
+      "parameterDescr": "Approximate battery cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "534994696 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

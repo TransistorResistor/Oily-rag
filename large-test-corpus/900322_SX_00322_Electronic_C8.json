@@ -1,0 +1,281 @@
+{
+  "modelID": 900322,
+  "releaseID": 1,
+  "name": "SX-00322 Electronic-C8",
+  "systemGroup": "Sensors",
+  "systemType": "Electronic Support Sensor",
+  "nomenclature": "SX-00322 Electronic-C8",
+  "primaryEquipCode": "SX00322",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2017-01-01",
+  "updatedDate": "2026-05-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900322",
+  "aliasList": "SX00322, SX-00322",
+  "aliases": [
+    {
+      "alias": "SX00322",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00322",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00322",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00322 Electronic-C8 is a synthetic electronic support sensor record in the Sensors group. It is attributed to India and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic electronic support sensor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00322 Electronic-C8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "type": "IOC Year",
+      "proliferation": 2018,
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    },
+    {
+      "country": "Turkey",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003221,
+      "url": "https://example.invalid/images/900322.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00322 Electronic-C8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003222,
+      "url": "https://example.invalid/docs/900322.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00322 Electronic-C8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Japan",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Electronic Support Sensor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "816",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "816 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "X-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "250.5",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "250.5 deg"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "808",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "808 targets"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "174",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "174 kW"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "16661293",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "16661293 USD"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "GMTI",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Processing"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Elevation coverage",
+      "parameter": "Elevation coverage",
+      "parameterValue": "61.97",
+      "uom": "deg",
+      "parameterDescr": "Elevation coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "61.97 deg"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Instrumented range",
+      "parameter": "Instrumented range",
+      "parameterValue": "236",
+      "uom": "km",
+      "parameterDescr": "Maximum instrumented range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "236 km"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Antenna type",
+      "parameter": "Antenna type",
+      "parameterValue": "staring EO/IR turret",
+      "uom": "",
+      "parameterDescr": "Antenna architecture",
+      "dataType": "Text",
+      "component": "Antenna"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900881,
+      "childModel": "CEX-00881 Data-C5",
+      "parentModelID": 900322,
+      "parentModel": "SX-00322 Electronic-C8",
+      "parentComponent": "Data Link",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Data Link",
+      "childPrimaryEquipCode": "CEX00881"
+    }
+  ]
+}

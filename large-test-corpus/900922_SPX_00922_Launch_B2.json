@@ -1,0 +1,197 @@
+{
+  "modelID": 900922,
+  "releaseID": 1,
+  "name": "SPX-00922 Launch-B2",
+  "systemGroup": "Space Systems",
+  "systemType": "Launch Vehicle",
+  "nomenclature": "SPX-00922 Launch-B2",
+  "primaryEquipCode": "SPX00922",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2003-01-01",
+  "updatedDate": "2026-02-21",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900922",
+  "aliasList": "SPX00922, SPX-00922",
+  "aliases": [
+    {
+      "alias": "SPX00922",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00922",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00922",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00922 Launch-B2 is a synthetic launch vehicle record in the Space Systems group. It is attributed to United Arab Emirates and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic launch vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00922 Launch-B2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "IOC Year",
+      "proliferation": 2013,
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Northbridge Systems"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009221,
+      "url": "https://example.invalid/images/900922.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00922 Launch-B2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009222,
+      "url": "https://example.invalid/docs/900922.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00922 Launch-B2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northbridge Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Launch Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "12775",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "12775 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "11.39",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "11.39 years"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "28",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "28 kW"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "39.26",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "39.26 h"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Dry mass",
+      "parameter": "Dry mass",
+      "parameterValue": "767",
+      "uom": "kg",
+      "parameterDescr": "Mass excluding propellant",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "767 kg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

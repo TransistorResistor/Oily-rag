@@ -1,0 +1,260 @@
+{
+  "modelID": 900577,
+  "releaseID": 1,
+  "name": "NVX-00577 Frigate-H3",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Frigate",
+  "nomenclature": "NVX-00577 Frigate-H3",
+  "primaryEquipCode": "NVX00577",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2022-01-01",
+  "updatedDate": "2026-05-06",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900577",
+  "aliasList": "NVX00577, NVX-00577",
+  "aliases": [
+    {
+      "alias": "NVX00577",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00577",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00577",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00577 Frigate-H3 is a synthetic frigate record in the Naval Platforms group. It is attributed to Russia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic frigate fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00577 Frigate-H3 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "type": "IOC Year",
+      "proliferation": 1999,
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe, Asia",
+      "organization": "Orion Naval Group"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005771,
+      "url": "https://example.invalid/images/900577.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00577 Frigate-H3 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005772,
+      "url": "https://example.invalid/docs/900577.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00577 Frigate-H3 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Frigate",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement - 1",
+      "parameterValue": "52095.7",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "52095.7 t",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement - 2",
+      "parameterValue": "41412.1",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "41412.1 t",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "116",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "116 m",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "22.45",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "22.45 kn",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "6926.8",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "6926.8 nmi",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "1009",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "1009 crew",
+      "comments": "Estimated from open technical reporting"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900882,
+      "childModel": "CEX-00882 Jammer-B5",
+      "parentModelID": 900577,
+      "parentModel": "NVX-00577 Frigate-H3",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Jammer",
+      "childPrimaryEquipCode": "CEX00882"
+    },
+    {
+      "childModelID": 900118,
+      "childModel": "MX-00118 Air-to-Air-F5",
+      "parentModelID": 900577,
+      "parentModel": "NVX-00577 Frigate-H3",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Air-to-Air Missile",
+      "childPrimaryEquipCode": "MX00118"
+    },
+    {
+      "childModelID": 900622,
+      "childModel": "WCX-00622 Proximity-H1",
+      "parentModelID": 900577,
+      "parentModel": "NVX-00577 Frigate-H3",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Proximity Fuze",
+      "childPrimaryEquipCode": "WCX00622"
+    }
+  ]
+}

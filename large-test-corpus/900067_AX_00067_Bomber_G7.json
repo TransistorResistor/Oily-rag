@@ -1,0 +1,203 @@
+{
+  "modelID": 900067,
+  "releaseID": 1,
+  "name": "AX-00067 Bomber-G7",
+  "systemGroup": "Aircraft",
+  "systemType": "Bomber",
+  "nomenclature": "AX-00067 Bomber-G7",
+  "primaryEquipCode": "AX00067",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2010-01-01",
+  "updatedDate": "2026-02-14",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900067",
+  "aliasList": "AX00067, AX-00067",
+  "aliases": [
+    {
+      "alias": "AX00067",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00067",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00067",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00067 Bomber-G7 is a synthetic bomber record in the Aircraft group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic bomber fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00067 Bomber-G7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 2019,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Orion Naval Group"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000671,
+      "url": "https://example.invalid/images/900067.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00067 Bomber-G7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000672,
+      "url": "https://example.invalid/docs/900067.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00067 Bomber-G7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Bomber",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "26",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "26 m"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.189",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.189 Mach"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "18269",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "18269 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "2014",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2014 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "150315795",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "150315795 USD"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "5",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "5 crew"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "43999",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "43999 kg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

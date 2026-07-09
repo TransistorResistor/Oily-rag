@@ -1,0 +1,287 @@
+{
+  "modelID": 900274,
+  "releaseID": 1,
+  "name": "ADX-00274 Medium-Range-F8",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "Medium-Range SAM System",
+  "nomenclature": "ADX-00274 Medium-Range-F8",
+  "primaryEquipCode": "ADX00274",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2004-01-01",
+  "updatedDate": "2026-06-28",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900274",
+  "aliasList": "ADX00274, ADX-00274",
+  "aliases": [
+    {
+      "alias": "ADX00274",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00274",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00274",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00274 Medium-Range-F8 is a synthetic medium-range sam system record in the Air Defense Systems group. It is attributed to United States and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic medium-range sam system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00274 Medium-Range-F8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 2012,
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002741,
+      "url": "https://example.invalid/images/900274.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00274 Medium-Range-F8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002742,
+      "url": "https://example.invalid/docs/900274.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00274 Medium-Range-F8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "China",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Medium-Range SAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "175",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "175 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "29.52",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "29.52 min"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "40",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "40 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "PESA engagement radar",
+      "uom": "",
+      "parameterDescr": "Primary search or engagement radar type",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "System unit cost",
+      "parameter": "System unit cost",
+      "parameterValue": "245275798",
+      "uom": "USD",
+      "parameterDescr": "Approximate battery cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "245275798 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "169",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "169 targets"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "207",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "207 km"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Launcher configuration",
+      "parameter": "Launcher configuration",
+      "parameterValue": "vertical launch cells",
+      "uom": "",
+      "parameterDescr": "Launcher vehicle or cell arrangement",
+      "dataType": "Text",
+      "component": "Launcher"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Battery vehicles",
+      "parameter": "Battery vehicles",
+      "parameterValue": "10",
+      "uom": "vehicles",
+      "parameterDescr": "Typical number of major vehicles per battery",
+      "dataType": "Number",
+      "component": "Logistics",
+      "parameterUomValue": "10 vehicles"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900175,
+      "childModel": "MX-00175 Anti-Ship-F9",
+      "parentModelID": 900274,
+      "parentModel": "ADX-00274 Medium-Range-F8",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Ship Missile",
+      "childPrimaryEquipCode": "MX00175"
+    },
+    {
+      "childModelID": 900152,
+      "childModel": "MX-00152 Anti-Ship-C2",
+      "parentModelID": 900274,
+      "parentModel": "ADX-00274 Medium-Range-F8",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Ship Missile",
+      "childPrimaryEquipCode": "MX00152"
+    },
+    {
+      "childModelID": 900348,
+      "childModel": "SX-00348 Sonar-G7",
+      "parentModelID": 900274,
+      "parentModel": "ADX-00274 Medium-Range-F8",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Sonar",
+      "childPrimaryEquipCode": "SX00348"
+    }
+  ]
+}

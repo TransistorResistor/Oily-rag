@@ -1,0 +1,197 @@
+{
+  "modelID": 900122,
+  "releaseID": 1,
+  "name": "MX-00122 Anti-Ship-G5",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Ship Missile",
+  "nomenclature": "MX-00122 Anti-Ship-G5",
+  "primaryEquipCode": "MX00122",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2011-01-01",
+  "updatedDate": "2026-03-09",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900122",
+  "aliasList": "MX00122, MX-00122",
+  "aliases": [
+    {
+      "alias": "MX00122",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00122",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00122",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00122 Anti-Ship-G5 is a synthetic anti-ship missile record in the Missiles group. It is attributed to Poland and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic anti-ship missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00122 Anti-Ship-G5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "type": "IOC Year",
+      "proliferation": 2011,
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Norwegian Armed Forces"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001221,
+      "url": "https://example.invalid/images/900122.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00122 Anti-Ship-G5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001222,
+      "url": "https://example.invalid/docs/900122.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00122 Anti-Ship-G5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Norway",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Nordic Signal Works",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Anti-Ship Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "8",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "8 m"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "1059",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1059 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "4.205",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "4.205 Mach"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "inertial navigation with datalink",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Minimum range",
+      "parameter": "Minimum range",
+      "parameterValue": "7",
+      "uom": "km",
+      "parameterDescr": "Minimum effective engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "7 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "16",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "16 km"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

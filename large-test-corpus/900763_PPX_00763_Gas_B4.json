@@ -1,0 +1,220 @@
+{
+  "modelID": 900763,
+  "releaseID": 1,
+  "name": "PPX-00763 Gas-B4",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Gas Turbine",
+  "nomenclature": "PPX-00763 Gas-B4",
+  "primaryEquipCode": "PPX00763",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2005-01-01",
+  "updatedDate": "2026-02-03",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900763",
+  "aliasList": "PPX00763, PPX-00763",
+  "aliases": [
+    {
+      "alias": "PPX00763",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00763",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00763",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00763 Gas-B4 is a synthetic gas turbine record in the Power and Propulsion Systems group. It is attributed to France and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic gas turbine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00763 Gas-B4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "France",
+      "type": "IOC Year",
+      "proliferation": 1998,
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007631,
+      "url": "https://example.invalid/images/900763.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00763 Gas-B4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007632,
+      "url": "https://example.invalid/docs/900763.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00763 Gas-B4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Japan",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Gas Turbine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "6156",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "6156 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "1",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "1 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "30020543",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "30020543 USD"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust",
+      "parameterValue": "126.3",
+      "uom": "kN",
+      "parameterDescr": "Maximum rated thrust",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "126.3 kN"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Bypass ratio",
+      "parameter": "Bypass ratio",
+      "parameterValue": "7.116",
+      "uom": "ratio",
+      "parameterDescr": "Engine bypass ratio",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "7.116 ratio"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Specific fuel consumption",
+      "parameter": "Specific fuel consumption",
+      "parameterValue": "0.001",
+      "uom": "kg/(N*s)",
+      "parameterDescr": "Specific fuel consumption",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "0.001 kg/(N*s)"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

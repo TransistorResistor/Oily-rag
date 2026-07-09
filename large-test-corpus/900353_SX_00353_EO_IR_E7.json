@@ -1,0 +1,244 @@
+{
+  "modelID": 900353,
+  "releaseID": 1,
+  "name": "SX-00353 EO/IR-E7",
+  "systemGroup": "Sensors",
+  "systemType": "EO/IR Sensor",
+  "nomenclature": "SX-00353 EO/IR-E7",
+  "primaryEquipCode": "SX00353",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2017-01-01",
+  "updatedDate": "2026-01-18",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900353",
+  "aliasList": "SX00353, SX-00353",
+  "aliases": [
+    {
+      "alias": "SX00353",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00353",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00353",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00353 EO/IR-E7 is a synthetic eo/ir sensor record in the Sensors group. It is attributed to United Kingdom and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic eo/ir sensor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00353 EO/IR-E7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "IOC Year",
+      "proliferation": 1986,
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003531,
+      "url": "https://example.invalid/images/900353.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00353 EO/IR-E7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003532,
+      "url": "https://example.invalid/docs/900353.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00353 EO/IR-E7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Kingdom",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Vector Propulsion",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "EO/IR Sensor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "430",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "430 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "X-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "287.1",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "287.1 deg"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "485",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "485 targets"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "8492853",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "8492853 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Total weight",
+      "parameter": "Total weight",
+      "parameterValue": "6924",
+      "uom": "kg",
+      "parameterDescr": "Installed system weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "6924 kg"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "176",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "176 kW"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "passive detection",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Processing"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Instrumented range",
+      "parameter": "Instrumented range",
+      "parameterValue": "360",
+      "uom": "km",
+      "parameterDescr": "Maximum instrumented range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "360 km"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Elevation coverage",
+      "parameter": "Elevation coverage",
+      "parameterValue": "67.58",
+      "uom": "deg",
+      "parameterDescr": "Elevation coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "67.58 deg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

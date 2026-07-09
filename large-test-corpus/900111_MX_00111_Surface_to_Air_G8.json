@@ -1,0 +1,314 @@
+{
+  "modelID": 900111,
+  "releaseID": 1,
+  "name": "MX-00111 Surface-to-Air-G8",
+  "systemGroup": "Missiles",
+  "systemType": "Surface-to-Air Missile",
+  "nomenclature": "MX-00111 Surface-to-Air-G8",
+  "primaryEquipCode": "MX00111",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2015-01-01",
+  "updatedDate": "2026-01-15",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900111",
+  "aliasList": "MX00111, MX-00111",
+  "aliases": [
+    {
+      "alias": "MX00111",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00111",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00111",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00111 Surface-to-Air-G8 is a synthetic surface-to-air missile record in the Missiles group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic surface-to-air missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00111 Surface-to-Air-G8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 1996,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001111,
+      "url": "https://example.invalid/images/900111.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00111 Surface-to-Air-G8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001112,
+      "url": "https://example.invalid/docs/900111.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00111 Surface-to-Air-G8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Sweden",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Surface-to-Air Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "6",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "6 m",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "1330",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1330 km",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "2.087",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2.087 Mach",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "active radar homing",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "158",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "158 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Minimum range",
+      "parameter": "Minimum range - 1",
+      "parameterValue": "22",
+      "uom": "km",
+      "parameterDescr": "Minimum effective engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "22 km",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Minimum range",
+      "parameter": "Minimum range - 2",
+      "parameterValue": "17",
+      "uom": "km",
+      "parameterDescr": "Minimum effective engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "17 km",
+      "parameterSubTitle": "Block II",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Turbojet",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1315",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "1315 kg",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "16",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "16 km",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "4387242",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "4387242 USD",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "vertical launch cell",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": "Integration",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "1",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "1 m",
+      "comments": "Value varies by installation and support package"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

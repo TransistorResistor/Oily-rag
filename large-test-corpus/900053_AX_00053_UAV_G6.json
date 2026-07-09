@@ -1,0 +1,417 @@
+{
+  "modelID": 900053,
+  "releaseID": 1,
+  "name": "AX-00053 UAV-G6",
+  "systemGroup": "Aircraft",
+  "systemType": "UAV",
+  "nomenclature": "AX-00053 UAV-G6",
+  "primaryEquipCode": "AX00053",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2013-01-01",
+  "updatedDate": "2026-01-03",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900053",
+  "aliasList": "AX00053, AX-00053",
+  "aliases": [
+    {
+      "alias": "AX00053",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00053",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00053",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00053 UAV-G6 is a synthetic uav record in the Aircraft group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic uav fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00053 UAV-G6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 2025,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Production",
+      "region": "Africa",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000531,
+      "url": "https://example.invalid/images/900053.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00053 UAV-G6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000532,
+      "url": "https://example.invalid/docs/900053.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00053 UAV-G6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Italy",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Nordic Signal Works",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "UAV",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "25",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "25 m",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.809",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.809 Mach",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "11121",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "11121 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 1",
+      "parameterValue": "675",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "675 km",
+      "parameterSubTitle": "Block I",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range - 2",
+      "parameterValue": "3334",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3334 km",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "37917171",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "37917171 USD",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "piston engine",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "component": "Propulsion",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "34",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "34 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Datalink",
+      "parameter": "Datalink",
+      "parameterValue": "national tactical data link",
+      "uom": "",
+      "parameterDescr": "Primary tactical datalink",
+      "dataType": "Text",
+      "component": "Avionics",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "maritime search radar",
+      "uom": "",
+      "parameterDescr": "Fire-control or surveillance radar designation",
+      "dataType": "Text",
+      "component": "Avionics",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range - 1",
+      "parameterValue": "10159",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "10159 km",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range - 2",
+      "parameterValue": "6922",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "6922 km",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "11",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "11 m",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Payload",
+      "parameter": "Payload",
+      "parameterValue": "20590",
+      "uom": "kg",
+      "parameterDescr": "Maximum external or internal payload",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "20590 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "5",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "5 crew",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight - 1",
+      "parameterValue": "93170",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "93170 kg",
+      "parameterSubTitle": "Block I",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1021,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight - 2",
+      "parameterValue": "82775",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "82775 kg",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1022,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight - 1",
+      "parameterValue": "228465",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "228465 kg",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1023,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight - 2",
+      "parameterValue": "310975",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "310975 kg",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1024,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed - 1",
+      "parameterValue": "924.6",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "924.6 km/h",
+      "parameterSubTitle": "Block II",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1025,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed - 2",
+      "parameterValue": "786.8",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "786.8 km/h",
+      "parameterSubTitle": "Block II",
+      "comments": "Applies to baseline production lot"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900685,
+      "childModel": "WCX-00685 Torpedo-A3",
+      "parentModelID": 900053,
+      "parentModel": "AX-00053 UAV-G6",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Torpedo",
+      "childPrimaryEquipCode": "WCX00685"
+    }
+  ]
+}

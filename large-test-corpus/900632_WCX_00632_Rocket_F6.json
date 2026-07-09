@@ -1,0 +1,221 @@
+{
+  "modelID": 900632,
+  "releaseID": 1,
+  "name": "WCX-00632 Rocket-F6",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Rocket Artillery",
+  "nomenclature": "WCX-00632 Rocket-F6",
+  "primaryEquipCode": "WCX00632",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2014-01-01",
+  "updatedDate": "2026-03-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900632",
+  "aliasList": "WCX00632, WCX-00632",
+  "aliases": [
+    {
+      "alias": "WCX00632",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00632",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00632",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00632 Rocket-F6 is a synthetic rocket artillery record in the Weapons and Components group. It is attributed to Israel and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic rocket artillery fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00632 Rocket-F6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "type": "IOC Year",
+      "proliferation": 2011,
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006321,
+      "url": "https://example.invalid/images/900632.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00632 Rocket-F6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006322,
+      "url": "https://example.invalid/docs/900632.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00632 Rocket-F6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Rocket Artillery",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "926",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "926 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "108",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "108 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1351346",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1351346 USD"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Fuzing mode",
+      "parameter": "Fuzing mode",
+      "parameterValue": "contact",
+      "uom": "",
+      "parameterDescr": "Fuzing or initiation mode",
+      "dataType": "Text",
+      "component": "Warhead"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Guidance",
+      "parameter": "Guidance",
+      "parameterValue": "Acoustic",
+      "uom": "",
+      "parameterDescr": "Guidance class",
+      "dataType": "LOV",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Kingdom",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Muzzle velocity",
+      "parameter": "Muzzle velocity",
+      "parameterValue": "1472.3",
+      "uom": "m/s",
+      "parameterDescr": "Projectile muzzle velocity",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1472.3 m/s"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "5",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "5 m"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Explosive mass",
+      "parameter": "Explosive mass",
+      "parameterValue": "219",
+      "uom": "kg",
+      "parameterDescr": "Explosive fill mass",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "219 kg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

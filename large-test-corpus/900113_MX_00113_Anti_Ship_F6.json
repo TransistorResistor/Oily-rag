@@ -1,0 +1,266 @@
+{
+  "modelID": 900113,
+  "releaseID": 1,
+  "name": "MX-00113 Anti-Ship-F6",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Ship Missile",
+  "nomenclature": "MX-00113 Anti-Ship-F6",
+  "primaryEquipCode": "MX00113",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2009-01-01",
+  "updatedDate": "2026-03-19",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900113",
+  "aliasList": "MX00113, MX-00113",
+  "aliases": [
+    {
+      "alias": "MX00113",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00113",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00113",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00113 Anti-Ship-F6 is a synthetic anti-ship missile record in the Missiles group. It is attributed to Brazil and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic anti-ship missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00113 Anti-Ship-F6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "type": "IOC Year",
+      "proliferation": 2026,
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001131,
+      "url": "https://example.invalid/images/900113.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00113 Anti-Ship-F6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001132,
+      "url": "https://example.invalid/docs/900113.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00113 Anti-Ship-F6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Anti-Ship Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "410",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "410 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "360",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "360 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.787",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.787 Mach"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "terrain-contour matching",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Minimum range",
+      "parameter": "Minimum range",
+      "parameterValue": "26",
+      "uom": "km",
+      "parameterDescr": "Minimum effective engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "26 km"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "truck launcher",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": "Integration"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "3544324",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "3544324 USD"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "6",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "6 m"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "18",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "18 km"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Turbojet",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "493",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "493 kg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

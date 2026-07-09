@@ -1,0 +1,154 @@
+{
+  "modelID": 900688,
+  "releaseID": 1,
+  "name": "WCX-00688 Warhead-F4",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Warhead",
+  "nomenclature": "WCX-00688 Warhead-F4",
+  "primaryEquipCode": "WCX00688",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2005-01-01",
+  "updatedDate": "2026-06-18",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900688",
+  "aliasList": "WCX00688, WCX-00688",
+  "aliases": [
+    {
+      "alias": "WCX00688",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00688",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00688",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00688 Warhead-F4 is a synthetic warhead record in the Weapons and Components group. It is attributed to China and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic warhead fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00688 Warhead-F4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "type": "IOC Year",
+      "proliferation": 2005,
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "proliferation": "Production",
+      "region": "Asia",
+      "organization": "Helios Electronics"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006881,
+      "url": "https://example.invalid/images/900688.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00688 Warhead-F4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006882,
+      "url": "https://example.invalid/docs/900688.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00688 Warhead-F4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Warhead",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1209",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "1209 kg"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "112",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "112 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1121316",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1121316 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

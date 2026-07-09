@@ -1,0 +1,343 @@
+{
+  "modelID": 900006,
+  "releaseID": 1,
+  "name": "AX-00006 Transport-H5",
+  "systemGroup": "Aircraft",
+  "systemType": "Transport Aircraft",
+  "nomenclature": "AX-00006 Transport-H5",
+  "primaryEquipCode": "AX00006",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-05-11",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900006",
+  "aliasList": "AX00006, AX-00006",
+  "aliases": [
+    {
+      "alias": "AX00006",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00006",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00006",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00006 Transport-H5 is a synthetic transport aircraft record in the Aircraft group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic transport aircraft fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00006 Transport-H5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 1986,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Maritime Systems Bureau"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000061,
+      "url": "https://example.invalid/images/900006.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00006 Transport-H5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000062,
+      "url": "https://example.invalid/docs/900006.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00006 Transport-H5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Sweden",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northbridge Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Transport Aircraft",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "25",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "25 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.428",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.428 Mach"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "15720",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "15720 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "3374",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3374 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "172869426",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "172869426 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "maritime search radar",
+      "uom": "",
+      "parameterDescr": "Fire-control or surveillance radar designation",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Datalink",
+      "parameter": "Datalink",
+      "parameterValue": "Link-16 compatible",
+      "uom": "",
+      "parameterDescr": "Primary tactical datalink",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight",
+      "parameterValue": "85022",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "85022 kg"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3 crew"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "9685",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "9685 km"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "diesel-electric hybrid",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Payload",
+      "parameter": "Payload",
+      "parameterValue": "22205",
+      "uom": "kg",
+      "parameterDescr": "Maximum external or internal payload",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "22205 kg"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "190605",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "190605 kg"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed",
+      "parameterValue": "913.3",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "913.3 km/h"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "10",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "10 m"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "53",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "53 m"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900717,
+      "childModel": "PPX-00717 Turbofan-H1",
+      "parentModelID": 900006,
+      "parentModel": "AX-00006 Transport-H5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbofan Engine",
+      "childPrimaryEquipCode": "PPX00717"
+    },
+    {
+      "childModelID": 900337,
+      "childModel": "SX-00337 Electronic-H1",
+      "parentModelID": 900006,
+      "parentModel": "AX-00006 Transport-H5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Electronic Support Sensor",
+      "childPrimaryEquipCode": "SX00337"
+    },
+    {
+      "childModelID": 900667,
+      "childModel": "WCX-00667 Torpedo-G8",
+      "parentModelID": 900006,
+      "parentModel": "AX-00006 Transport-H5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Torpedo",
+      "childPrimaryEquipCode": "WCX00667"
+    }
+  ]
+}

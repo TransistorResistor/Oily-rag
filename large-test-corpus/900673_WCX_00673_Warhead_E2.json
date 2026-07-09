@@ -1,0 +1,251 @@
+{
+  "modelID": 900673,
+  "releaseID": 1,
+  "name": "WCX-00673 Warhead-E2",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Warhead",
+  "nomenclature": "WCX-00673 Warhead-E2",
+  "primaryEquipCode": "WCX00673",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-06-06",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900673",
+  "aliasList": "WCX00673, WCX-00673",
+  "aliases": [
+    {
+      "alias": "WCX00673",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00673",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00673",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00673 Warhead-E2 is a synthetic warhead record in the Weapons and Components group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic warhead fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00673 Warhead-E2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 1998,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Production",
+      "region": "Africa",
+      "organization": "Ardent Missiles"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006731,
+      "url": "https://example.invalid/images/900673.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00673 Warhead-E2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006732,
+      "url": "https://example.invalid/docs/900673.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00673 Warhead-E2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Nordic Signal Works",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Warhead",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "63",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "63 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "795025",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "795025 USD"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Explosive mass",
+      "parameter": "Explosive mass",
+      "parameterValue": "353",
+      "uom": "kg",
+      "parameterDescr": "Explosive fill mass",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "353 kg"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Muzzle velocity",
+      "parameter": "Muzzle velocity",
+      "parameterValue": "842.2",
+      "uom": "m/s",
+      "parameterDescr": "Projectile muzzle velocity",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "842.2 m/s"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Guidance",
+      "parameter": "Guidance",
+      "parameterValue": "GPS/INS",
+      "uom": "",
+      "parameterDescr": "Guidance class",
+      "dataType": "LOV",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1310",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "1310 kg"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Fuzing mode",
+      "parameter": "Fuzing mode",
+      "parameterValue": "delayed impact",
+      "uom": "",
+      "parameterDescr": "Fuzing or initiation mode",
+      "dataType": "Text",
+      "component": "Warhead"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

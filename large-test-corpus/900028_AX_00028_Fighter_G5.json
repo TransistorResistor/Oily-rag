@@ -1,0 +1,272 @@
+{
+  "modelID": 900028,
+  "releaseID": 1,
+  "name": "AX-00028 Fighter-G5",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "AX-00028 Fighter-G5",
+  "primaryEquipCode": "AX00028",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2008-01-01",
+  "updatedDate": "2026-06-12",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900028",
+  "aliasList": "AX00028, AX-00028",
+  "aliases": [
+    {
+      "alias": "AX00028",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00028",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00028",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00028 Fighter-G5 is a synthetic fighter aircraft record in the Aircraft group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic fighter aircraft fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00028 Fighter-G5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 2018,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Production",
+      "region": "Africa",
+      "organization": "Northbridge Systems"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000281,
+      "url": "https://example.invalid/images/900028.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00028 Fighter-G5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000282,
+      "url": "https://example.invalid/docs/900028.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00028 Fighter-G5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Israel",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rheinmetall Atlas",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Fighter Aircraft",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "24",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "24 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "0.991",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "0.991 Mach"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "13541",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "13541 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "2727",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2727 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "70913834",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "70913834 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "328434",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "328434 kg"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3 crew"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Datalink",
+      "parameter": "Datalink",
+      "parameterValue": "satellite relay",
+      "uom": "",
+      "parameterDescr": "Primary tactical datalink",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "maritime search radar",
+      "uom": "",
+      "parameterDescr": "Fire-control or surveillance radar designation",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed",
+      "parameterValue": "780.3",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "780.3 km/h"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "11",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "11 m"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Payload",
+      "parameter": "Payload",
+      "parameterValue": "24469",
+      "uom": "kg",
+      "parameterDescr": "Maximum external or internal payload",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "24469 kg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900661,
+      "childModel": "WCX-00661 Naval-A4",
+      "parentModelID": 900028,
+      "parentModel": "AX-00028 Fighter-G5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Naval Gun",
+      "childPrimaryEquipCode": "WCX00661"
+    }
+  ]
+}

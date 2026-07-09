@@ -1,0 +1,197 @@
+{
+  "modelID": 900142,
+  "releaseID": 1,
+  "name": "MX-00142 Air-to-Air-C7",
+  "systemGroup": "Missiles",
+  "systemType": "Air-to-Air Missile",
+  "nomenclature": "MX-00142 Air-to-Air-C7",
+  "primaryEquipCode": "MX00142",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2015-01-01",
+  "updatedDate": "2026-05-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900142",
+  "aliasList": "MX00142, MX-00142",
+  "aliases": [
+    {
+      "alias": "MX00142",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00142",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00142",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00142 Air-to-Air-C7 is a synthetic air-to-air missile record in the Missiles group. It is attributed to Singapore and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic air-to-air missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00142 Air-to-Air-C7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "IOC Year",
+      "proliferation": 2000,
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Mitsuba Aerospace"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001421,
+      "url": "https://example.invalid/images/900142.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00142 Air-to-Air-C7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001422,
+      "url": "https://example.invalid/docs/900142.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00142 Air-to-Air-C7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "5",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "5 m"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "864",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "864 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "1891",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1891 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "3.288",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3.288 Mach"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "active radar homing",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Dual-pulse rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "364",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "364 kg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900702,
+      "childModel": "PPX-00702 Gas-F9",
+      "parentModelID": 900142,
+      "parentModel": "MX-00142 Air-to-Air-C7",
+      "parentComponent": "Seeker",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Gas Turbine",
+      "childPrimaryEquipCode": "PPX00702"
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "modelID": 900879,
+  "releaseID": 1,
+  "name": "CEX-00879 Communications-H1",
+  "systemGroup": "C4ISR and Electronic Warfare",
+  "systemType": "Communications System",
+  "nomenclature": "CEX-00879 Communications-H1",
+  "primaryEquipCode": "CEX00879",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2009-01-01",
+  "updatedDate": "2026-04-20",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900879",
+  "aliasList": "CEX00879, CEX-00879",
+  "aliases": [
+    {
+      "alias": "CEX00879",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "CEX-00879",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "CEX00879",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "CEX-00879 Communications-H1 is a synthetic communications system record in the C4ISR and Electronic Warfare group. It is attributed to United Kingdom and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic communications system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "CEX-00879 Communications-H1 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "IOC Year",
+      "proliferation": 2005,
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Orion Naval Group"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9008791,
+      "url": "https://example.invalid/images/900879.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "CEX-00879 Communications-H1 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9008792,
+      "url": "https://example.invalid/docs/900879.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "CEX-00879 Communications-H1 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Australia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "106",
+      "uom": "km",
+      "parameterDescr": "Operational communications or jamming range",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "106 km"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Bandwidth",
+      "parameter": "Bandwidth",
+      "parameterValue": "472.5",
+      "uom": "Mbps",
+      "parameterDescr": "Nominal data throughput",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "472.5 Mbps"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "349",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "349 kW"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency low",
+      "parameter": "Frequency low",
+      "parameterValue": "4411.0",
+      "uom": "MHz",
+      "parameterDescr": "Lower operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "4411.0 MHz"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Encryption",
+      "parameter": "Encryption",
+      "parameterValue": "frequency hopping",
+      "uom": "",
+      "parameterDescr": "Encryption or waveform security mode",
+      "dataType": "Text",
+      "component": "Security"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Node capacity",
+      "parameter": "Node capacity",
+      "parameterValue": "2588",
+      "uom": "nodes",
+      "parameterDescr": "Maximum network participants",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "2588 nodes"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "stand-in jamming",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Operations"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Communications System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "42036096",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "42036096 USD"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Frequency high",
+      "parameter": "Frequency high",
+      "parameterValue": "24995.8",
+      "uom": "MHz",
+      "parameterDescr": "Upper operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "24995.8 MHz"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northbridge Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

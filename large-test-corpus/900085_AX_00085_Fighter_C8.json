@@ -1,0 +1,268 @@
+{
+  "modelID": 900085,
+  "releaseID": 1,
+  "name": "AX-00085 Fighter-C8",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "AX-00085 Fighter-C8",
+  "primaryEquipCode": "AX00085",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2000-01-01",
+  "updatedDate": "2026-07-03",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900085",
+  "aliasList": "AX00085, AX-00085",
+  "aliases": [
+    {
+      "alias": "AX00085",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00085",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00085",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00085 Fighter-C8 is a synthetic fighter aircraft record in the Aircraft group. It is attributed to Russia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic fighter aircraft fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00085 Fighter-C8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "type": "IOC Year",
+      "proliferation": 1980,
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe, Asia",
+      "organization": "Nordic Signal Works"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000851,
+      "url": "https://example.invalid/images/900085.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00085 Fighter-C8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000852,
+      "url": "https://example.invalid/docs/900085.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00085 Fighter-C8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Israel",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Fighter Aircraft",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "21",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "21 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "2.551",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2.551 Mach"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "11365",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "11365 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "3350",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3350 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "199522125",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "199522125 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight",
+      "parameterValue": "51949",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "51949 kg"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "AESA fire-control radar",
+      "uom": "",
+      "parameterDescr": "Fire-control or surveillance radar designation",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Payload",
+      "parameter": "Payload",
+      "parameterValue": "27595",
+      "uom": "kg",
+      "parameterDescr": "Maximum external or internal payload",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "27595 kg"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "8357",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "8357 km"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "31",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "31 m"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "157747",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "157747 kg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

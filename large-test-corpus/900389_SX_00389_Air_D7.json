@@ -1,0 +1,246 @@
+{
+  "modelID": 900389,
+  "releaseID": 1,
+  "name": "SX-00389 Air-D7",
+  "systemGroup": "Sensors",
+  "systemType": "Air Defense Radar",
+  "nomenclature": "SX-00389 Air-D7",
+  "primaryEquipCode": "SX00389",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2017-01-01",
+  "updatedDate": "2026-03-14",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900389",
+  "aliasList": "SX00389, SX-00389",
+  "aliases": [
+    {
+      "alias": "SX00389",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00389",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00389",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00389 Air-D7 is a synthetic air defense radar record in the Sensors group. It is attributed to United Kingdom and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic air defense radar fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00389 Air-D7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "IOC Year",
+      "proliferation": 2012,
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Asterion Defence"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003891,
+      "url": "https://example.invalid/images/900389.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00389 Air-D7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003892,
+      "url": "https://example.invalid/docs/900389.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00389 Air-D7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Sweden",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Vector Propulsion",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Air Defense Radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "X-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage - 1",
+      "parameterValue": "218.4",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "218.4 deg",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage - 2",
+      "parameterValue": "201.0",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "201.0 deg",
+      "parameterSubTitle": "Block I",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "831",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "831 targets",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Total weight",
+      "parameter": "Total weight",
+      "parameterValue": "7617",
+      "uom": "kg",
+      "parameterDescr": "Installed system weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "7617 kg",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Instrumented range",
+      "parameter": "Instrumented range - 1",
+      "parameterValue": "907",
+      "uom": "km",
+      "parameterDescr": "Maximum instrumented range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "907 km",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Instrumented range",
+      "parameter": "Instrumented range - 2",
+      "parameterValue": "591",
+      "uom": "km",
+      "parameterDescr": "Maximum instrumented range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "591 km",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

@@ -1,0 +1,276 @@
+{
+  "modelID": 900962,
+  "releaseID": 1,
+  "name": "SPX-00962 Navigation-H2",
+  "systemGroup": "Space Systems",
+  "systemType": "Navigation Satellite",
+  "nomenclature": "SPX-00962 Navigation-H2",
+  "primaryEquipCode": "SPX00962",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2004-01-01",
+  "updatedDate": "2026-07-12",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900962",
+  "aliasList": "SPX00962, SPX-00962",
+  "aliases": [
+    {
+      "alias": "SPX00962",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00962",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00962",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00962 Navigation-H2 is a synthetic navigation satellite record in the Space Systems group. It is attributed to Russia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic navigation satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00962 Navigation-H2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "type": "IOC Year",
+      "proliferation": 2022,
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Production",
+      "region": "Europe, Asia",
+      "organization": "Vector Propulsion"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009621,
+      "url": "https://example.invalid/images/900962.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00962 Navigation-H2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009622,
+      "url": "https://example.invalid/docs/900962.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00962 Navigation-H2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northbridge Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Navigation Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "16622",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "16622 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "18651",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "18651 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "13.32",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "13.32 years"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "29",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "29 kW"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Dry mass",
+      "parameter": "Dry mass",
+      "parameterValue": "9020",
+      "uom": "kg",
+      "parameterDescr": "Mass excluding propellant",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "9020 kg"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "signals intelligence package",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination",
+      "parameterValue": "56.82",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "56.82 deg"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "383197254",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "383197254 USD"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate",
+      "parameterValue": "4503.0",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "4503.0 Mbps"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "41.27",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "41.27 h"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900384,
+      "childModel": "SX-00384 Air-G1",
+      "parentModelID": 900962,
+      "parentModel": "SPX-00962 Navigation-H2",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "SX00384"
+    }
+  ]
+}

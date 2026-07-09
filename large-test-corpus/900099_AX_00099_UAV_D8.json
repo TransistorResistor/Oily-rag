@@ -1,0 +1,238 @@
+{
+  "modelID": 900099,
+  "releaseID": 1,
+  "name": "AX-00099 UAV-D8",
+  "systemGroup": "Aircraft",
+  "systemType": "UAV",
+  "nomenclature": "AX-00099 UAV-D8",
+  "primaryEquipCode": "AX00099",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2022-01-01",
+  "updatedDate": "2026-03-18",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900099",
+  "aliasList": "AX00099, AX-00099",
+  "aliases": [
+    {
+      "alias": "AX00099",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00099",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00099",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00099 UAV-D8 is a synthetic uav record in the Aircraft group. It is attributed to Brazil and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic uav fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00099 UAV-D8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "type": "IOC Year",
+      "proliferation": 2019,
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000991,
+      "url": "https://example.invalid/images/900099.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00099 UAV-D8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000992,
+      "url": "https://example.invalid/docs/900099.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00099 UAV-D8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "France",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "UAV",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "24",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "24 m",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.653",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.653 Mach",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "18911",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "18911 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "96209581",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "96209581 USD",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "1321",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1321 km",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed",
+      "parameterValue": "664.8",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "664.8 km/h",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight - 1",
+      "parameterValue": "103557",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "103557 kg",
+      "parameterSubTitle": "Block II",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight - 2",
+      "parameterValue": "87940",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "87940 kg",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "1802",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1802 km",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Datalink",
+      "parameter": "Datalink",
+      "parameterValue": "national tactical data link",
+      "uom": "",
+      "parameterDescr": "Primary tactical datalink",
+      "dataType": "Text",
+      "component": "Avionics",
+      "comments": "Value varies by installation and support package"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

@@ -1,0 +1,209 @@
+{
+  "modelID": 900581,
+  "releaseID": 1,
+  "name": "NVX-00581 Frigate-H8",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Frigate",
+  "nomenclature": "NVX-00581 Frigate-H8",
+  "primaryEquipCode": "NVX00581",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2001-01-01",
+  "updatedDate": "2026-07-10",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900581",
+  "aliasList": "NVX00581, NVX-00581",
+  "aliases": [
+    {
+      "alias": "NVX00581",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00581",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00581",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00581 Frigate-H8 is a synthetic frigate record in the Naval Platforms group. It is attributed to Sweden and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic frigate fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00581 Frigate-H8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "IOC Year",
+      "proliferation": 1982,
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005811,
+      "url": "https://example.invalid/images/900581.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00581 Frigate-H8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005812,
+      "url": "https://example.invalid/docs/900581.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00581 Frigate-H8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Frigate",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "29318.9",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "29318.9 t"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "124",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "124 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "26.19",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "26.19 kn"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "6876.5",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "6876.5 nmi"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "2730",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "2730 crew"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900727,
+      "childModel": "PPX-00727 Rocket-C5",
+      "parentModelID": 900581,
+      "parentModel": "NVX-00581 Frigate-H8",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Rocket Motor",
+      "childPrimaryEquipCode": "PPX00727"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "modelID": 900830,
+  "releaseID": 1,
+  "name": "CEX-00830 Battle-B3",
+  "systemGroup": "C4ISR and Electronic Warfare",
+  "systemType": "Battle Management System",
+  "nomenclature": "CEX-00830 Battle-B3",
+  "primaryEquipCode": "CEX00830",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2020-01-01",
+  "updatedDate": "2026-02-28",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900830",
+  "aliasList": "CEX00830, CEX-00830",
+  "aliases": [
+    {
+      "alias": "CEX00830",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "CEX-00830",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "CEX00830",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "CEX-00830 Battle-B3 is a synthetic battle management system record in the C4ISR and Electronic Warfare group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic battle management system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "CEX-00830 Battle-B3 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 2010,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Vector Propulsion"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9008301,
+      "url": "https://example.invalid/images/900830.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "CEX-00830 Battle-B3 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9008302,
+      "url": "https://example.invalid/docs/900830.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "CEX-00830 Battle-B3 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Arab Emirates",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Battle Management System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Node capacity",
+      "parameter": "Node capacity",
+      "parameterValue": "1524",
+      "uom": "nodes",
+      "parameterDescr": "Maximum network participants",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1524 nodes"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "575",
+      "uom": "km",
+      "parameterDescr": "Operational communications or jamming range",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "575 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Bandwidth",
+      "parameter": "Bandwidth",
+      "parameterValue": "609.3",
+      "uom": "Mbps",
+      "parameterDescr": "Nominal data throughput",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "609.3 Mbps"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "220",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "220 kW"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "satellite backhaul",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Operations"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Encryption",
+      "parameter": "Encryption",
+      "parameterValue": "AES-class encryption",
+      "uom": "",
+      "parameterDescr": "Encryption or waveform security mode",
+      "dataType": "Text",
+      "component": "Security"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "63042717",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "63042717 USD"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Frequency low",
+      "parameter": "Frequency low",
+      "parameterValue": "2610.2",
+      "uom": "MHz",
+      "parameterDescr": "Lower operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "2610.2 MHz"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

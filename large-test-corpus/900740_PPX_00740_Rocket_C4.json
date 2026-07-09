@@ -1,0 +1,256 @@
+{
+  "modelID": 900740,
+  "releaseID": 1,
+  "name": "PPX-00740 Rocket-C4",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Rocket Motor",
+  "nomenclature": "PPX-00740 Rocket-C4",
+  "primaryEquipCode": "PPX00740",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2021-01-01",
+  "updatedDate": "2026-05-07",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900740",
+  "aliasList": "PPX00740, PPX-00740",
+  "aliases": [
+    {
+      "alias": "PPX00740",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00740",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00740",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00740 Rocket-C4 is a synthetic rocket motor record in the Power and Propulsion Systems group. It is attributed to Singapore and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic rocket motor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00740 Rocket-C4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "IOC Year",
+      "proliferation": 2013,
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007401,
+      "url": "https://example.invalid/images/900740.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00740 Rocket-C4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007402,
+      "url": "https://example.invalid/docs/900740.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00740 Rocket-C4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Rocket Motor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust",
+      "parameterValue": "131.2",
+      "uom": "kN",
+      "parameterDescr": "Maximum rated thrust",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "131.2 kN"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "7",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "7 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "3981",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "3981 kg"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Germany",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operating temperature high",
+      "parameter": "Operating temperature high",
+      "parameterValue": "71.62",
+      "uom": "degC",
+      "parameterDescr": "Maximum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "71.62 degC"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Bypass ratio",
+      "parameter": "Bypass ratio",
+      "parameterValue": "6.61",
+      "uom": "ratio",
+      "parameterDescr": "Engine bypass ratio",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "6.61 ratio"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "24500435",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "24500435 USD"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Power output",
+      "parameter": "Power output",
+      "parameterValue": "16443",
+      "uom": "kW",
+      "parameterDescr": "Shaft or electrical power output",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "16443 kW"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Operating temperature low",
+      "parameter": "Operating temperature low",
+      "parameterValue": "-41.74",
+      "uom": "degC",
+      "parameterDescr": "Minimum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "-41.74 degC"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Specific fuel consumption",
+      "parameter": "Specific fuel consumption",
+      "parameterValue": "0.001",
+      "uom": "kg/(N*s)",
+      "parameterDescr": "Specific fuel consumption",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "0.001 kg/(N*s)"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "hydromechanical governor",
+      "uom": "",
+      "parameterDescr": "Engine control system",
+      "dataType": "Text",
+      "component": "Controls"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

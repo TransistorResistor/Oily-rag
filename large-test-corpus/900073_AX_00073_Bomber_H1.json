@@ -1,0 +1,206 @@
+{
+  "modelID": 900073,
+  "releaseID": 1,
+  "name": "AX-00073 Bomber-H1",
+  "systemGroup": "Aircraft",
+  "systemType": "Bomber",
+  "nomenclature": "AX-00073 Bomber-H1",
+  "primaryEquipCode": "AX00073",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2013-01-01",
+  "updatedDate": "2026-02-06",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900073",
+  "aliasList": "AX00073, AX-00073",
+  "aliases": [
+    {
+      "alias": "AX00073",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00073",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00073",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00073 Bomber-H1 is a synthetic bomber record in the Aircraft group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic bomber fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00073 Bomber-H1 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 2002,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Production",
+      "region": "Oceania",
+      "organization": "Vector Propulsion"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000731,
+      "url": "https://example.invalid/images/900073.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00073 Bomber-H1 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000732,
+      "url": "https://example.invalid/docs/900073.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00073 Bomber-H1 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Bomber",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "28",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "28 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.956",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.956 Mach",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "14865",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "14865 m",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "3634",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3634 km",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "286065",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "286065 kg",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "turboprop",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "component": "Propulsion",
+      "comments": "Export configuration may differ"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

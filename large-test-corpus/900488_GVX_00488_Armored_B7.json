@@ -1,0 +1,358 @@
+{
+  "modelID": 900488,
+  "releaseID": 1,
+  "name": "GVX-00488 Armored-B7",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Armored Personnel Carrier",
+  "nomenclature": "GVX-00488 Armored-B7",
+  "primaryEquipCode": "GVX00488",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2009-01-01",
+  "updatedDate": "2026-03-26",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900488",
+  "aliasList": "GVX00488, GVX-00488",
+  "aliases": [
+    {
+      "alias": "GVX00488",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00488",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00488",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00488 Armored-B7 is a synthetic armored personnel carrier record in the Ground Vehicles group. It is attributed to China and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic armored personnel carrier fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00488 Armored-B7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "type": "IOC Year",
+      "proliferation": 1984,
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004881,
+      "url": "https://example.invalid/images/900488.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00488 Armored-B7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004882,
+      "url": "https://example.invalid/docs/900488.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00488 Armored-B7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Northbridge Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "54134",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "54134 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed - 1",
+      "parameterValue": "83.71",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "83.71 km/h",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed - 2",
+      "parameterValue": "70.76",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "70.76 km/h",
+      "parameterSubTitle": "Block II",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "788",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "788 km",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "30 mm autocannon",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers - 1",
+      "parameterValue": "10",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "10 personnel",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers - 2",
+      "parameterValue": "5",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "5 personnel",
+      "parameterSubTitle": "Block II",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Armored Personnel Carrier",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Armor equivalent",
+      "parameter": "Armor equivalent - 1",
+      "parameterValue": "683.9",
+      "uom": "mm RHAe",
+      "parameterDescr": "Approximate frontal protection equivalent",
+      "dataType": "Number",
+      "component": "Protection",
+      "parameterUomValue": "683.9 mm RHAe",
+      "parameterSubTitle": "Block II",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Armor equivalent",
+      "parameter": "Armor equivalent - 2",
+      "parameterValue": "273.3",
+      "uom": "mm RHAe",
+      "parameterDescr": "Approximate frontal protection equivalent",
+      "dataType": "Number",
+      "component": "Protection",
+      "parameterUomValue": "273.3 mm RHAe",
+      "parameterSubTitle": "Block I",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "4",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "4 crew",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Engine power",
+      "parameter": "Engine power - 1",
+      "parameterValue": "505.0",
+      "uom": "hp",
+      "parameterDescr": "Engine output",
+      "dataType": "Number",
+      "component": "Propulsion",
+      "parameterUomValue": "505.0 hp",
+      "parameterSubTitle": "Block I",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Engine power",
+      "parameter": "Engine power - 2",
+      "parameterValue": "878.4",
+      "uom": "hp",
+      "parameterDescr": "Engine output",
+      "dataType": "Number",
+      "component": "Propulsion",
+      "parameterUomValue": "878.4 hp",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Width",
+      "parameter": "Width",
+      "parameterValue": "4",
+      "uom": "m",
+      "parameterDescr": "Overall width",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "4 m",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "7471575",
+      "uom": "USD",
+      "parameterDescr": "Approximate vehicle unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "7471575 USD",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "5",
+      "uom": "m",
+      "parameterDescr": "Hull length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "5 m",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m",
+      "comments": "Estimated from open technical reporting"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

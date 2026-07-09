@@ -1,0 +1,250 @@
+{
+  "modelID": 900792,
+  "releaseID": 1,
+  "name": "PPX-00792 Gas-H9",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Gas Turbine",
+  "nomenclature": "PPX-00792 Gas-H9",
+  "primaryEquipCode": "PPX00792",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2008-01-01",
+  "updatedDate": "2026-03-25",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900792",
+  "aliasList": "PPX00792, PPX-00792",
+  "aliases": [
+    {
+      "alias": "PPX00792",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00792",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00792",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00792 Gas-H9 is a synthetic gas turbine record in the Power and Propulsion Systems group. It is attributed to United States and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic gas turbine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00792 Gas-H9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 2025,
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Northbridge Systems"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007921,
+      "url": "https://example.invalid/images/900792.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00792 Gas-H9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007922,
+      "url": "https://example.invalid/docs/900792.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00792 Gas-H9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Japan",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Gas Turbine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust",
+      "parameterValue": "88.2",
+      "uom": "kN",
+      "parameterDescr": "Maximum rated thrust",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "88.2 kN"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "7692",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "7692 kg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "5",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "5 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operating temperature low",
+      "parameter": "Operating temperature low",
+      "parameterValue": "-21.82",
+      "uom": "degC",
+      "parameterDescr": "Minimum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "-21.82 degC"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Operating temperature high",
+      "parameter": "Operating temperature high",
+      "parameterValue": "66.07",
+      "uom": "degC",
+      "parameterDescr": "Maximum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "66.07 degC"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "hydromechanical governor",
+      "uom": "",
+      "parameterDescr": "Engine control system",
+      "dataType": "Text",
+      "component": "Controls"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Specific fuel consumption",
+      "parameter": "Specific fuel consumption",
+      "parameterValue": "0.001",
+      "uom": "kg/(N*s)",
+      "parameterDescr": "Specific fuel consumption",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "0.001 kg/(N*s)"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Power output",
+      "parameter": "Power output",
+      "parameterValue": "34949",
+      "uom": "kW",
+      "parameterDescr": "Shaft or electrical power output",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "34949 kW"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Bypass ratio",
+      "parameter": "Bypass ratio",
+      "parameterValue": "5.363",
+      "uom": "ratio",
+      "parameterDescr": "Engine bypass ratio",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "5.363 ratio"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "23561594",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "23561594 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

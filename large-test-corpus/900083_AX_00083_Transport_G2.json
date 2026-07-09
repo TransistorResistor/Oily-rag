@@ -1,0 +1,247 @@
+{
+  "modelID": 900083,
+  "releaseID": 1,
+  "name": "AX-00083 Transport-G2",
+  "systemGroup": "Aircraft",
+  "systemType": "Transport Aircraft",
+  "nomenclature": "AX-00083 Transport-G2",
+  "primaryEquipCode": "AX00083",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2002-01-01",
+  "updatedDate": "2026-04-05",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900083",
+  "aliasList": "AX00083, AX-00083",
+  "aliases": [
+    {
+      "alias": "AX00083",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00083",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00083",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00083 Transport-G2 is a synthetic transport aircraft record in the Aircraft group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic transport aircraft fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00083 Transport-G2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 1983,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Production",
+      "region": "Oceania",
+      "organization": "Helios Electronics"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000831,
+      "url": "https://example.invalid/images/900083.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00083 Transport-G2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000832,
+      "url": "https://example.invalid/docs/900083.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00083 Transport-G2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "France",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rheinmetall Atlas",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Transport Aircraft",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "20",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "20 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "17748",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "17748 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "2552",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2552 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "150837982",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "150837982 USD"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "9409",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "9409 km"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "175140",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "175140 kg"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "38",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "38 m"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Datalink",
+      "parameter": "Datalink",
+      "parameterValue": "satellite relay",
+      "uom": "",
+      "parameterDescr": "Primary tactical datalink",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed",
+      "parameterValue": "678.1",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "678.1 km/h"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

@@ -1,0 +1,299 @@
+{
+  "modelID": 900990,
+  "releaseID": 1,
+  "name": "SPX-00990 Launch-B2",
+  "systemGroup": "Space Systems",
+  "systemType": "Launch Vehicle",
+  "nomenclature": "SPX-00990 Launch-B2",
+  "primaryEquipCode": "SPX00990",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2007-01-01",
+  "updatedDate": "2026-02-11",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900990",
+  "aliasList": "SPX00990, SPX-00990",
+  "aliases": [
+    {
+      "alias": "SPX00990",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00990",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00990",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00990 Launch-B2 is a synthetic launch vehicle record in the Space Systems group. It is attributed to Poland and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic launch vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00990 Launch-B2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "type": "IOC Year",
+      "proliferation": 1989,
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Vector Propulsion"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009901,
+      "url": "https://example.invalid/images/900990.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00990 Launch-B2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009902,
+      "url": "https://example.invalid/docs/900990.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00990 Launch-B2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Launch Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "14495",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "14495 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "14962",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "14962 km",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "9.335",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "9.335 years",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power - 1",
+      "parameterValue": "25",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "25 kW",
+      "parameterSubTitle": "Block II",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power - 2",
+      "parameterValue": "30",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "30 kW",
+      "parameterSubTitle": "Block II",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "281478706",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "281478706 USD",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "signals intelligence package",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination - 1",
+      "parameterValue": "41.24",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "41.24 deg",
+      "parameterSubTitle": "Block I",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination - 2",
+      "parameterValue": "25.89",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "25.89 deg",
+      "parameterSubTitle": "Block I",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Norway",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Dry mass",
+      "parameter": "Dry mass",
+      "parameterValue": "5411",
+      "uom": "kg",
+      "parameterDescr": "Mass excluding propellant",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "5411 kg",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "57.96",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "57.96 h",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate",
+      "parameterValue": "4075.1",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "4075.1 Mbps",
+      "comments": "Value varies by installation and support package"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900814,
+      "childModel": "CEX-00814 Communications-E4",
+      "parentModelID": 900990,
+      "parentModel": "SPX-00990 Launch-B2",
+      "parentComponent": "Communications",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Communications System",
+      "childPrimaryEquipCode": "CEX00814"
+    }
+  ]
+}

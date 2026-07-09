@@ -1,0 +1,291 @@
+{
+  "modelID": 900417,
+  "releaseID": 1,
+  "name": "GVX-00417 Self-Propelled-H8",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Self-Propelled Artillery",
+  "nomenclature": "GVX-00417 Self-Propelled-H8",
+  "primaryEquipCode": "GVX00417",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2008-01-01",
+  "updatedDate": "2026-06-13",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900417",
+  "aliasList": "GVX00417, GVX-00417",
+  "aliases": [
+    {
+      "alias": "GVX00417",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00417",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00417",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00417 Self-Propelled-H8 is a synthetic self-propelled artillery record in the Ground Vehicles group. It is attributed to United Kingdom and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic self-propelled artillery fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00417 Self-Propelled-H8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "IOC Year",
+      "proliferation": 2010,
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004171,
+      "url": "https://example.invalid/images/900417.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00417 Self-Propelled-H8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004172,
+      "url": "https://example.invalid/docs/900417.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00417 Self-Propelled-H8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Poland",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "45694",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "45694 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "77.43",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "77.43 km/h"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "681",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "681 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "120 mm smoothbore gun",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Width",
+      "parameter": "Width",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall width",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "4",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "4 crew"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "9686853",
+      "uom": "USD",
+      "parameterDescr": "Approximate vehicle unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "9686853 USD"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers",
+      "parameterValue": "11",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "11 personnel"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "9",
+      "uom": "m",
+      "parameterDescr": "Hull length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "9 m"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Self-Propelled Artillery",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Engine power",
+      "parameter": "Engine power",
+      "parameterValue": "1283.9",
+      "uom": "hp",
+      "parameterDescr": "Engine output",
+      "dataType": "Number",
+      "component": "Propulsion",
+      "parameterUomValue": "1283.9 hp"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Armor equivalent",
+      "parameter": "Armor equivalent",
+      "parameterValue": "272.0",
+      "uom": "mm RHAe",
+      "parameterDescr": "Approximate frontal protection equivalent",
+      "dataType": "Number",
+      "component": "Protection",
+      "parameterUomValue": "272.0 mm RHAe"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900717,
+      "childModel": "PPX-00717 Turbofan-H1",
+      "parentModelID": 900417,
+      "parentModel": "GVX-00417 Self-Propelled-H8",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbofan Engine",
+      "childPrimaryEquipCode": "PPX00717"
+    }
+  ]
+}

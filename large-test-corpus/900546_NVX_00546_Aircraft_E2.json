@@ -1,0 +1,267 @@
+{
+  "modelID": 900546,
+  "releaseID": 1,
+  "name": "NVX-00546 Aircraft-E2",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Aircraft Carrier",
+  "nomenclature": "NVX-00546 Aircraft-E2",
+  "primaryEquipCode": "NVX00546",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2006-01-01",
+  "updatedDate": "2026-03-14",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900546",
+  "aliasList": "NVX00546, NVX-00546",
+  "aliases": [
+    {
+      "alias": "NVX00546",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00546",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00546",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00546 Aircraft-E2 is a synthetic aircraft carrier record in the Naval Platforms group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic aircraft carrier fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00546 Aircraft-E2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 1987,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Production",
+      "region": "Oceania",
+      "organization": "Helios Electronics"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005461,
+      "url": "https://example.invalid/images/900546.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00546 Aircraft-E2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005462,
+      "url": "https://example.invalid/docs/900546.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00546 Aircraft-E2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Aircraft Carrier",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "220",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "220 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "32.04",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "32.04 kn"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "6941.3",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "6941.3 nmi"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "2615",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "2615 crew"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "9697384800",
+      "uom": "USD",
+      "parameterDescr": "Approximate ship cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "9697384800 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Main gun",
+      "parameter": "Main gun",
+      "parameterValue": "none",
+      "uom": "",
+      "parameterDescr": "Principal gun armament",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "77696.7",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "77696.7 t"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Radar suite",
+      "parameter": "Radar suite",
+      "parameterValue": "navigation radar set",
+      "uom": "",
+      "parameterDescr": "Primary radar suite",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Vertical launch cells",
+      "parameter": "Vertical launch cells",
+      "parameterValue": "60",
+      "uom": "cells",
+      "parameterDescr": "Number of VLS cells",
+      "dataType": "Number",
+      "component": "Armament",
+      "parameterUomValue": "60 cells"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Beam",
+      "parameter": "Beam",
+      "parameterValue": "41",
+      "uom": "m",
+      "parameterDescr": "Maximum beam",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "41 m"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Draft",
+      "parameter": "Draft",
+      "parameterValue": "8",
+      "uom": "m",
+      "parameterDescr": "Draft at full load",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "8 m"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900175,
+      "childModel": "MX-00175 Anti-Ship-F9",
+      "parentModelID": 900546,
+      "parentModel": "NVX-00546 Aircraft-E2",
+      "parentComponent": "Mission Systems",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Ship Missile",
+      "childPrimaryEquipCode": "MX00175"
+    }
+  ]
+}

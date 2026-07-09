@@ -1,0 +1,374 @@
+{
+  "modelID": 900926,
+  "releaseID": 1,
+  "name": "SPX-00926 Navigation-C9",
+  "systemGroup": "Space Systems",
+  "systemType": "Navigation Satellite",
+  "nomenclature": "SPX-00926 Navigation-C9",
+  "primaryEquipCode": "SPX00926",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2003-01-01",
+  "updatedDate": "2026-05-02",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900926",
+  "aliasList": "SPX00926, SPX-00926",
+  "aliases": [
+    {
+      "alias": "SPX00926",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00926",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00926",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00926 Navigation-C9 is a synthetic navigation satellite record in the Space Systems group. It is attributed to United Kingdom and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic navigation satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00926 Navigation-C9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "IOC Year",
+      "proliferation": 1996,
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009261,
+      "url": "https://example.invalid/images/900926.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00926 Navigation-C9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009262,
+      "url": "https://example.invalid/docs/900926.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00926 Navigation-C9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Navigation Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass - 1",
+      "parameterValue": "873",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "873 kg",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass - 2",
+      "parameterValue": "6339",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "6339 kg",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "18080",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "18080 km",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "10.09",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "10.09 years",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Dry mass",
+      "parameter": "Dry mass",
+      "parameterValue": "9478",
+      "uom": "kg",
+      "parameterDescr": "Mass excluding propellant",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "9478 kg",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate - 1",
+      "parameterValue": "3301.1",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "3301.1 Mbps",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate - 2",
+      "parameterValue": "8240.9",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "8240.9 Mbps",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "communications repeater",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination - 1",
+      "parameterValue": "61.45",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "61.45 deg",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination - 2",
+      "parameterValue": "15.9",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "15.9 deg",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost - 1",
+      "parameterValue": "533725109",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "533725109 USD",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost - 2",
+      "parameterValue": "256473706",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "256473706 USD",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "53.98",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "53.98 h",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power - 1",
+      "parameterValue": "25",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "25 kW",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power - 2",
+      "parameterValue": "13",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "13 kW",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Estimated from open technical reporting"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900702,
+      "childModel": "PPX-00702 Gas-F9",
+      "parentModelID": 900926,
+      "parentModel": "SPX-00926 Navigation-C9",
+      "parentComponent": "Payload",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Gas Turbine",
+      "childPrimaryEquipCode": "PPX00702"
+    },
+    {
+      "childModelID": 900787,
+      "childModel": "PPX-00787 Turbofan-A2",
+      "parentModelID": 900926,
+      "parentModel": "SPX-00926 Navigation-C9",
+      "parentComponent": "Payload",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbofan Engine",
+      "childPrimaryEquipCode": "PPX00787"
+    },
+    {
+      "childModelID": 900728,
+      "childModel": "PPX-00728 Turbofan-A9",
+      "parentModelID": 900926,
+      "parentModel": "SPX-00926 Navigation-C9",
+      "parentComponent": "Payload",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbofan Engine",
+      "childPrimaryEquipCode": "PPX00728"
+    },
+    {
+      "childModelID": 900369,
+      "childModel": "SX-00369 Air-B2",
+      "parentModelID": 900926,
+      "parentModel": "SPX-00926 Navigation-C9",
+      "parentComponent": "Payload",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "SX00369"
+    }
+  ]
+}

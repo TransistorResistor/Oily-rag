@@ -1,0 +1,285 @@
+{
+  "modelID": 900614,
+  "releaseID": 1,
+  "name": "WCX-00614 Rocket-H7",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Rocket Artillery",
+  "nomenclature": "WCX-00614 Rocket-H7",
+  "primaryEquipCode": "WCX00614",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2007-01-01",
+  "updatedDate": "2026-05-23",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900614",
+  "aliasList": "WCX00614, WCX-00614",
+  "aliases": [
+    {
+      "alias": "WCX00614",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00614",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00614",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00614 Rocket-H7 is a synthetic rocket artillery record in the Weapons and Components group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic rocket artillery fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00614 Rocket-H7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 2000,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Production",
+      "region": "Africa",
+      "organization": "Nordic Signal Works"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006141,
+      "url": "https://example.invalid/images/900614.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00614 Rocket-H7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006142,
+      "url": "https://example.invalid/docs/900614.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00614 Rocket-H7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Rocket Artillery",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1933",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "1933 kg",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "1",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "1 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range - 1",
+      "parameterValue": "116",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "116 km",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range - 2",
+      "parameterValue": "71",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "71 km",
+      "parameterSubTitle": "Block II",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1133023",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1133023 USD",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Explosive mass",
+      "parameter": "Explosive mass",
+      "parameterValue": "203",
+      "uom": "kg",
+      "parameterDescr": "Explosive fill mass",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "203 kg",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Muzzle velocity",
+      "parameter": "Muzzle velocity",
+      "parameterValue": "893.2",
+      "uom": "m/s",
+      "parameterDescr": "Projectile muzzle velocity",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "893.2 m/s",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Fuzing mode",
+      "parameter": "Fuzing mode",
+      "parameterValue": "contact",
+      "uom": "",
+      "parameterDescr": "Fuzing or initiation mode",
+      "dataType": "Text",
+      "component": "Warhead",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "5",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "5 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Guidance",
+      "parameter": "Guidance",
+      "parameterValue": "GPS/INS",
+      "uom": "",
+      "parameterDescr": "Guidance class",
+      "dataType": "LOV",
+      "component": "Guidance",
+      "comments": "Export configuration may differ"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

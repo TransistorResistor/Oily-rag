@@ -1,0 +1,253 @@
+{
+  "modelID": 900590,
+  "releaseID": 1,
+  "name": "NVX-00590 Submarine-H5",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Submarine",
+  "nomenclature": "NVX-00590 Submarine-H5",
+  "primaryEquipCode": "NVX00590",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2016-01-01",
+  "updatedDate": "2026-03-27",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900590",
+  "aliasList": "NVX00590, NVX-00590",
+  "aliases": [
+    {
+      "alias": "NVX00590",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00590",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00590",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00590 Submarine-H5 is a synthetic submarine record in the Naval Platforms group. It is attributed to Sweden and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic submarine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00590 Submarine-H5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "IOC Year",
+      "proliferation": 2011,
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005901,
+      "url": "https://example.invalid/images/900590.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00590 Submarine-H5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005902,
+      "url": "https://example.invalid/docs/900590.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00590 Submarine-H5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Arab Emirates",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Submarine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "59667.4",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "59667.4 t",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "230",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "230 m",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "24.89",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "24.89 kn",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3718",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3718 crew",
+      "comments": "Applies to baseline production lot"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900160,
+      "childModel": "MX-00160 Cruise-H4",
+      "parentModelID": 900590,
+      "parentModel": "NVX-00590 Submarine-H5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Cruise Missile",
+      "childPrimaryEquipCode": "MX00160"
+    },
+    {
+      "childModelID": 900778,
+      "childModel": "PPX-00778 Turbofan-H5",
+      "parentModelID": 900590,
+      "parentModel": "NVX-00590 Submarine-H5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbofan Engine",
+      "childPrimaryEquipCode": "PPX00778"
+    },
+    {
+      "childModelID": 900767,
+      "childModel": "PPX-00767 Rocket-C9",
+      "parentModelID": 900590,
+      "parentModel": "NVX-00590 Submarine-H5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Rocket Motor",
+      "childPrimaryEquipCode": "PPX00767"
+    },
+    {
+      "childModelID": 900663,
+      "childModel": "WCX-00663 Proximity-C1",
+      "parentModelID": 900590,
+      "parentModel": "NVX-00590 Submarine-H5",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Proximity Fuze",
+      "childPrimaryEquipCode": "WCX00663"
+    }
+  ]
+}

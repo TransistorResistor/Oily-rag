@@ -1,0 +1,172 @@
+{
+  "modelID": 900383,
+  "releaseID": 1,
+  "name": "SX-00383 Electronic-B8",
+  "systemGroup": "Sensors",
+  "systemType": "Electronic Support Sensor",
+  "nomenclature": "SX-00383 Electronic-B8",
+  "primaryEquipCode": "SX00383",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2011-01-01",
+  "updatedDate": "2026-06-14",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900383",
+  "aliasList": "SX00383, SX-00383",
+  "aliases": [
+    {
+      "alias": "SX00383",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00383",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00383",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00383 Electronic-B8 is a synthetic electronic support sensor record in the Sensors group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic electronic support sensor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00383 Electronic-B8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 2000,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003831,
+      "url": "https://example.invalid/images/900383.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00383 Electronic-B8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003832,
+      "url": "https://example.invalid/docs/900383.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00383 Electronic-B8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Electronic Support Sensor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "VHF",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "158.1",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "158.1 deg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "785",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "785 targets"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "low-altitude search",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Processing"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Antenna type",
+      "parameter": "Antenna type",
+      "parameterValue": "staring EO/IR turret",
+      "uom": "",
+      "parameterDescr": "Antenna architecture",
+      "dataType": "Text",
+      "component": "Antenna"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

@@ -1,0 +1,186 @@
+{
+  "modelID": 900753,
+  "releaseID": 1,
+  "name": "PPX-00753 Gas-A9",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Gas Turbine",
+  "nomenclature": "PPX-00753 Gas-A9",
+  "primaryEquipCode": "PPX00753",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2023-01-01",
+  "updatedDate": "2026-03-17",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900753",
+  "aliasList": "PPX00753, PPX-00753",
+  "aliases": [
+    {
+      "alias": "PPX00753",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00753",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00753",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00753 Gas-A9 is a synthetic gas turbine record in the Power and Propulsion Systems group. It is attributed to India and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic gas turbine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00753 Gas-A9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "type": "IOC Year",
+      "proliferation": 2021,
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Production",
+      "region": "South Asia",
+      "organization": "Helios Electronics"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007531,
+      "url": "https://example.invalid/images/900753.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00753 Gas-A9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007532,
+      "url": "https://example.invalid/docs/900753.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00753 Gas-A9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Singapore",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Gas Turbine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust",
+      "parameterValue": "109.0",
+      "uom": "kN",
+      "parameterDescr": "Maximum rated thrust",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "109.0 kN"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "8260",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "8260 kg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "6",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "6 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

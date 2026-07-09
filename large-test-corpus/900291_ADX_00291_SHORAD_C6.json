@@ -1,0 +1,225 @@
+{
+  "modelID": 900291,
+  "releaseID": 1,
+  "name": "ADX-00291 SHORAD-C6",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "SHORAD System",
+  "nomenclature": "ADX-00291 SHORAD-C6",
+  "primaryEquipCode": "ADX00291",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2016-01-01",
+  "updatedDate": "2026-07-02",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900291",
+  "aliasList": "ADX00291, ADX-00291",
+  "aliases": [
+    {
+      "alias": "ADX00291",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00291",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00291",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00291 SHORAD-C6 is a synthetic shorad system record in the Air Defense Systems group. It is attributed to China and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic shorad system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00291 SHORAD-C6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "type": "IOC Year",
+      "proliferation": 1984,
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002911,
+      "url": "https://example.invalid/images/900291.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00291 SHORAD-C6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002912,
+      "url": "https://example.invalid/docs/900291.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00291 SHORAD-C6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Australia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "SHORAD System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "324",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "324 km"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "326",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "326 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "14.38",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "14.38 min"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "28",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "28 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Battery vehicles",
+      "parameter": "Battery vehicles",
+      "parameterValue": "17",
+      "uom": "vehicles",
+      "parameterDescr": "Typical number of major vehicles per battery",
+      "dataType": "Number",
+      "component": "Logistics",
+      "parameterUomValue": "17 vehicles"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "System unit cost",
+      "parameter": "System unit cost",
+      "parameterValue": "607774473",
+      "uom": "USD",
+      "parameterDescr": "Approximate battery cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "607774473 USD"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "153",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "153 targets"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900131,
+      "childModel": "MX-00131 Cruise-F2",
+      "parentModelID": 900291,
+      "parentModel": "ADX-00291 SHORAD-C6",
+      "parentComponent": "Interceptor",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Cruise Missile",
+      "childPrimaryEquipCode": "MX00131"
+    }
+  ]
+}

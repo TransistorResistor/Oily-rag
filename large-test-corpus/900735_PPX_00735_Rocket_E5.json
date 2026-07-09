@@ -1,0 +1,263 @@
+{
+  "modelID": 900735,
+  "releaseID": 1,
+  "name": "PPX-00735 Rocket-E5",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Rocket Motor",
+  "nomenclature": "PPX-00735 Rocket-E5",
+  "primaryEquipCode": "PPX00735",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2006-01-01",
+  "updatedDate": "2026-06-17",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900735",
+  "aliasList": "PPX00735, PPX-00735",
+  "aliases": [
+    {
+      "alias": "PPX00735",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00735",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00735",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00735 Rocket-E5 is a synthetic rocket motor record in the Power and Propulsion Systems group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic rocket motor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00735 Rocket-E5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 2023,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Mitsuba Aerospace"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007351,
+      "url": "https://example.invalid/images/900735.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00735 Rocket-E5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007352,
+      "url": "https://example.invalid/docs/900735.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00735 Rocket-E5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Poland",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Rocket Motor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "9168",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "9168 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Power output",
+      "parameter": "Power output",
+      "parameterValue": "36922",
+      "uom": "kW",
+      "parameterDescr": "Shaft or electrical power output",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "36922 kW"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "digital turbine controller",
+      "uom": "",
+      "parameterDescr": "Engine control system",
+      "dataType": "Text",
+      "component": "Controls"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Bypass ratio",
+      "parameter": "Bypass ratio",
+      "parameterValue": "6.235",
+      "uom": "ratio",
+      "parameterDescr": "Engine bypass ratio",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "6.235 ratio"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "19565884",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "19565884 USD"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Operating temperature high",
+      "parameter": "Operating temperature high",
+      "parameterValue": "63.09",
+      "uom": "degC",
+      "parameterDescr": "Maximum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "63.09 degC"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust",
+      "parameterValue": "153.3",
+      "uom": "kN",
+      "parameterDescr": "Maximum rated thrust",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "153.3 kN"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Operating temperature low",
+      "parameter": "Operating temperature low",
+      "parameterValue": "-39.56",
+      "uom": "degC",
+      "parameterDescr": "Minimum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "-39.56 degC"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

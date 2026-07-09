@@ -1,0 +1,291 @@
+{
+  "modelID": 900138,
+  "releaseID": 1,
+  "name": "MX-00138 Air-to-Air-E4",
+  "systemGroup": "Missiles",
+  "systemType": "Air-to-Air Missile",
+  "nomenclature": "MX-00138 Air-to-Air-E4",
+  "primaryEquipCode": "MX00138",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2005-01-01",
+  "updatedDate": "2026-06-04",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900138",
+  "aliasList": "MX00138, MX-00138",
+  "aliases": [
+    {
+      "alias": "MX00138",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00138",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00138",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00138 Air-to-Air-E4 is a synthetic air-to-air missile record in the Missiles group. It is attributed to Sweden and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic air-to-air missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00138 Air-to-Air-E4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "IOC Year",
+      "proliferation": 2006,
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Ardent Missiles"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001381,
+      "url": "https://example.invalid/images/900138.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00138 Air-to-Air-E4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001382,
+      "url": "https://example.invalid/docs/900138.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00138 Air-to-Air-E4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Singapore",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Air-to-Air Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "4",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "4 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1120",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "1120 kg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "1259",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1259 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.482",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.482 Mach"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "imaging infrared seeker",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "277",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "277 kg"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "24",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "24 km"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "vertical launch cell",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": "Integration"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Minimum range",
+      "parameter": "Minimum range",
+      "parameterValue": "3",
+      "uom": "km",
+      "parameterDescr": "Minimum effective engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3 km"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1886983",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1886983 USD"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Solid-fuel rocket motor",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

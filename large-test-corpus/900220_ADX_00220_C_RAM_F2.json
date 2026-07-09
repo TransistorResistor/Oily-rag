@@ -1,0 +1,264 @@
+{
+  "modelID": 900220,
+  "releaseID": 1,
+  "name": "ADX-00220 C-RAM-F2",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "C-RAM System",
+  "nomenclature": "ADX-00220 C-RAM-F2",
+  "primaryEquipCode": "ADX00220",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2023-01-01",
+  "updatedDate": "2026-07-06",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900220",
+  "aliasList": "ADX00220, ADX-00220",
+  "aliases": [
+    {
+      "alias": "ADX00220",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00220",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00220",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00220 C-RAM-F2 is a synthetic c-ram system record in the Air Defense Systems group. It is attributed to Brazil and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic c-ram system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00220 C-RAM-F2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "type": "IOC Year",
+      "proliferation": 2007,
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Production",
+      "region": "South America",
+      "organization": "Helios Electronics"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Norwegian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002201,
+      "url": "https://example.invalid/images/900220.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00220 C-RAM-F2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002202,
+      "url": "https://example.invalid/docs/900220.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00220 C-RAM-F2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "188",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "188 km"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "601",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "601 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "50.27",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "50.27 min"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "200",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "200 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "12",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "12 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "long-range missile",
+      "uom": "",
+      "parameterDescr": "Interceptor missiles used by the system",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "C-RAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "21",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "21 targets"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "System unit cost",
+      "parameter": "System unit cost",
+      "parameterValue": "681971042",
+      "uom": "USD",
+      "parameterDescr": "Approximate battery cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "681971042 USD"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "PESA engagement radar",
+      "uom": "",
+      "parameterDescr": "Primary search or engagement radar type",
+      "dataType": "Text",
+      "component": "Sensors"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900181,
+      "childModel": "MX-00181 Air-to-Air-C7",
+      "parentModelID": 900220,
+      "parentModel": "ADX-00220 C-RAM-F2",
+      "parentComponent": "Interceptor",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Air-to-Air Missile",
+      "childPrimaryEquipCode": "MX00181"
+    }
+  ]
+}

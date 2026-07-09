@@ -1,0 +1,266 @@
+{
+  "modelID": 900206,
+  "releaseID": 1,
+  "name": "ADX-00206 Long-Range-D7",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "Long-Range SAM System",
+  "nomenclature": "ADX-00206 Long-Range-D7",
+  "primaryEquipCode": "ADX00206",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-04-15",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900206",
+  "aliasList": "ADX00206, ADX-00206",
+  "aliases": [
+    {
+      "alias": "ADX00206",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00206",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00206",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00206 Long-Range-D7 is a synthetic long-range sam system record in the Air Defense Systems group. It is attributed to United Kingdom and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic long-range sam system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00206 Long-Range-D7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "IOC Year",
+      "proliferation": 1988,
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002061,
+      "url": "https://example.invalid/images/900206.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00206 Long-Range-D7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002062,
+      "url": "https://example.invalid/docs/900206.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00206 Long-Range-D7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Long-Range SAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "223",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "223 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "348",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "348 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "19.25",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "19.25 min"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "20",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "20 targets"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "System unit cost",
+      "parameter": "System unit cost",
+      "parameterValue": "674065370",
+      "uom": "USD",
+      "parameterDescr": "Approximate battery cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "674065370 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Launcher configuration",
+      "parameter": "Launcher configuration",
+      "parameterValue": "vertical launch cells",
+      "uom": "",
+      "parameterDescr": "Launcher vehicle or cell arrangement",
+      "dataType": "Text",
+      "component": "Launcher"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "PESA engagement radar",
+      "uom": "",
+      "parameterDescr": "Primary search or engagement radar type",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "145",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "145 targets"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "mixed missile battery",
+      "uom": "",
+      "parameterDescr": "Interceptor missiles used by the system",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Battery vehicles",
+      "parameter": "Battery vehicles",
+      "parameterValue": "7",
+      "uom": "vehicles",
+      "parameterDescr": "Typical number of major vehicles per battery",
+      "dataType": "Number",
+      "component": "Logistics",
+      "parameterUomValue": "7 vehicles"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "20",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "20 km"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

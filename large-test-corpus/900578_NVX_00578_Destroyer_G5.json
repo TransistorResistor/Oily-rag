@@ -1,0 +1,265 @@
+{
+  "modelID": 900578,
+  "releaseID": 1,
+  "name": "NVX-00578 Destroyer-G5",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Destroyer",
+  "nomenclature": "NVX-00578 Destroyer-G5",
+  "primaryEquipCode": "NVX00578",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2001-01-01",
+  "updatedDate": "2026-05-02",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900578",
+  "aliasList": "NVX00578, NVX-00578",
+  "aliases": [
+    {
+      "alias": "NVX00578",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00578",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00578",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00578 Destroyer-G5 is a synthetic destroyer record in the Naval Platforms group. It is attributed to Israel and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic destroyer fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00578 Destroyer-G5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "type": "IOC Year",
+      "proliferation": 2011,
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Kestrel Dynamics"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005781,
+      "url": "https://example.invalid/images/900578.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00578 Destroyer-G5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005782,
+      "url": "https://example.invalid/docs/900578.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00578 Destroyer-G5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Africa",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Destroyer",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "16535.5",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "16535.5 t",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "163",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "163 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "24.77",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "24.77 kn",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range - 1",
+      "parameterValue": "6018.9",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "6018.9 nmi",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range - 2",
+      "parameterValue": "8000.5",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "8000.5 nmi",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Crew",
+      "parameter": "Crew - 1",
+      "parameterValue": "2339",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "2339 crew",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Crew",
+      "parameter": "Crew - 2",
+      "parameterValue": "4061",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "4061 crew",
+      "parameterSubTitle": "Block I",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900798,
+      "childModel": "PPX-00798 Rocket-C7",
+      "parentModelID": 900578,
+      "parentModel": "NVX-00578 Destroyer-G5",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Rocket Motor",
+      "childPrimaryEquipCode": "PPX00798"
+    }
+  ]
+}

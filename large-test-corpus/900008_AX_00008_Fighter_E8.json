@@ -1,0 +1,227 @@
+{
+  "modelID": 900008,
+  "releaseID": 1,
+  "name": "AX-00008 Fighter-E8",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "AX-00008 Fighter-E8",
+  "primaryEquipCode": "AX00008",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2010-01-01",
+  "updatedDate": "2026-05-27",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900008",
+  "aliasList": "AX00008, AX-00008",
+  "aliases": [
+    {
+      "alias": "AX00008",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00008",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00008",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00008 Fighter-E8 is a synthetic fighter aircraft record in the Aircraft group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic fighter aircraft fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00008 Fighter-E8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 1992,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Production",
+      "region": "Oceania",
+      "organization": "Rheinmetall Atlas"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Norwegian Armed Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000081,
+      "url": "https://example.invalid/images/900008.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00008 Fighter-E8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000082,
+      "url": "https://example.invalid/docs/900008.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00008 Fighter-E8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Fighter Aircraft",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "16",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "16 m",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.478",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.478 Mach",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling - 1",
+      "parameterValue": "11645",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "11645 m",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling - 2",
+      "parameterValue": "11943",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "11943 m",
+      "parameterSubTitle": "Block I",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "2175",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2175 km",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "127866363",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "127866363 USD",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900837,
+      "childModel": "CEX-00837 Data-D5",
+      "parentModelID": 900008,
+      "parentModel": "AX-00008 Fighter-E8",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Data Link",
+      "childPrimaryEquipCode": "CEX00837"
+    }
+  ]
+}

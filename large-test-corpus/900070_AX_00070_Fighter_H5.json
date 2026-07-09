@@ -1,0 +1,378 @@
+{
+  "modelID": 900070,
+  "releaseID": 1,
+  "name": "AX-00070 Fighter-H5",
+  "systemGroup": "Aircraft",
+  "systemType": "Fighter Aircraft",
+  "nomenclature": "AX-00070 Fighter-H5",
+  "primaryEquipCode": "AX00070",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2008-01-01",
+  "updatedDate": "2026-07-18",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900070",
+  "aliasList": "AX00070, AX-00070",
+  "aliases": [
+    {
+      "alias": "AX00070",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00070",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00070",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00070 Fighter-H5 is a synthetic fighter aircraft record in the Aircraft group. It is attributed to Singapore and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic fighter aircraft fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00070 Fighter-H5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "IOC Year",
+      "proliferation": 1991,
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Orion Naval Group"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000701,
+      "url": "https://example.invalid/images/900070.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00070 Fighter-H5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000702,
+      "url": "https://example.invalid/docs/900070.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00070 Fighter-H5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Fighter Aircraft",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "36",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "36 m",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "2.535",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2.535 Mach",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling - 1",
+      "parameterValue": "18593",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "18593 m",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling - 2",
+      "parameterValue": "13212",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "13212 m",
+      "parameterSubTitle": "Block II",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "1809",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1809 km",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "122788687",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "122788687 USD",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "12",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "12 m",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight - 1",
+      "parameterValue": "105225",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "105225 kg",
+      "parameterSubTitle": "Block I",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight - 2",
+      "parameterValue": "87844",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "87844 kg",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "113496",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "113496 kg",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "maritime search radar",
+      "uom": "",
+      "parameterDescr": "Fire-control or surveillance radar designation",
+      "dataType": "Text",
+      "component": "Avionics",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "turbofan",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "component": "Propulsion",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Payload",
+      "parameter": "Payload",
+      "parameterValue": "32672",
+      "uom": "kg",
+      "parameterDescr": "Maximum external or internal payload",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "32672 kg",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "11283",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "11283 km",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Crew",
+      "parameter": "Crew - 1",
+      "parameterValue": "6",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "6 crew",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Crew",
+      "parameter": "Crew - 2",
+      "parameterValue": "4",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "4 crew",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1021,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed",
+      "parameterValue": "677.8",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "677.8 km/h",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1022,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "33",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "33 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1023,
+      "parameterOnly": "Datalink",
+      "parameter": "Datalink",
+      "parameterValue": "national tactical data link",
+      "uom": "",
+      "parameterDescr": "Primary tactical datalink",
+      "dataType": "Text",
+      "component": "Avionics",
+      "comments": "Estimated from open technical reporting"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

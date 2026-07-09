@@ -1,0 +1,250 @@
+{
+  "modelID": 900734,
+  "releaseID": 1,
+  "name": "PPX-00734 Diesel-D4",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Diesel Engine",
+  "nomenclature": "PPX-00734 Diesel-D4",
+  "primaryEquipCode": "PPX00734",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2015-01-01",
+  "updatedDate": "2026-02-25",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900734",
+  "aliasList": "PPX00734, PPX-00734",
+  "aliases": [
+    {
+      "alias": "PPX00734",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00734",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00734",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00734 Diesel-D4 is a synthetic diesel engine record in the Power and Propulsion Systems group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic diesel engine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00734 Diesel-D4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 2023,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007341,
+      "url": "https://example.invalid/images/900734.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00734 Diesel-D4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007342,
+      "url": "https://example.invalid/docs/900734.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00734 Diesel-D4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Diesel Engine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust",
+      "parameterValue": "132.5",
+      "uom": "kN",
+      "parameterDescr": "Maximum rated thrust",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "132.5 kN"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "4638",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "4638 kg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "7",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "7 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "digital turbine controller",
+      "uom": "",
+      "parameterDescr": "Engine control system",
+      "dataType": "Text",
+      "component": "Controls"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Operating temperature low",
+      "parameter": "Operating temperature low",
+      "parameterValue": "-45.96",
+      "uom": "degC",
+      "parameterDescr": "Minimum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "-45.96 degC"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Specific fuel consumption",
+      "parameter": "Specific fuel consumption",
+      "parameterValue": "0.001",
+      "uom": "kg/(N*s)",
+      "parameterDescr": "Specific fuel consumption",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "0.001 kg/(N*s)"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "14217808",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "14217808 USD"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Operating temperature high",
+      "parameter": "Operating temperature high",
+      "parameterValue": "58.17",
+      "uom": "degC",
+      "parameterDescr": "Maximum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "58.17 degC"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Power output",
+      "parameter": "Power output",
+      "parameterValue": "23598",
+      "uom": "kW",
+      "parameterDescr": "Shaft or electrical power output",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "23598 kW"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Bypass ratio",
+      "parameter": "Bypass ratio",
+      "parameterValue": "2.569",
+      "uom": "ratio",
+      "parameterDescr": "Engine bypass ratio",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2.569 ratio"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

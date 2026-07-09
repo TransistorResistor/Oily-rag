@@ -1,0 +1,189 @@
+{
+  "modelID": 900928,
+  "releaseID": 1,
+  "name": "SPX-00928 Navigation-B8",
+  "systemGroup": "Space Systems",
+  "systemType": "Navigation Satellite",
+  "nomenclature": "SPX-00928 Navigation-B8",
+  "primaryEquipCode": "SPX00928",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2006-01-01",
+  "updatedDate": "2026-04-27",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900928",
+  "aliasList": "SPX00928, SPX-00928",
+  "aliases": [
+    {
+      "alias": "SPX00928",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00928",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00928",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00928 Navigation-B8 is a synthetic navigation satellite record in the Space Systems group. It is attributed to Sweden and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic navigation satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00928 Navigation-B8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "IOC Year",
+      "proliferation": 2004,
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009281,
+      "url": "https://example.invalid/images/900928.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00928 Navigation-B8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009282,
+      "url": "https://example.invalid/docs/900928.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00928 Navigation-B8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Poland",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Navigation Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "8174",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "8174 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "10001",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "10001 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "10.75",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "10.75 years"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "21",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "21 kW"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination",
+      "parameterValue": "37.93",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "37.93 deg"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "electro-optical imager",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

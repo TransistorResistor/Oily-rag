@@ -1,0 +1,195 @@
+{
+  "modelID": 900425,
+  "releaseID": 1,
+  "name": "GVX-00425 Infantry-E9",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Infantry Fighting Vehicle",
+  "nomenclature": "GVX-00425 Infantry-E9",
+  "primaryEquipCode": "GVX00425",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2016-01-01",
+  "updatedDate": "2026-05-20",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900425",
+  "aliasList": "GVX00425, GVX-00425",
+  "aliases": [
+    {
+      "alias": "GVX00425",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00425",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00425",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00425 Infantry-E9 is a synthetic infantry fighting vehicle record in the Ground Vehicles group. It is attributed to Russia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic infantry fighting vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00425 Infantry-E9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "type": "IOC Year",
+      "proliferation": 1986,
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004251,
+      "url": "https://example.invalid/images/900425.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00425 Infantry-E9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004252,
+      "url": "https://example.invalid/docs/900425.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00425 Infantry-E9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "China",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Infantry Fighting Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "52778",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "52778 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "54.57",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "54.57 km/h"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "439",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "439 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "heavy machine gun",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "5",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "5 crew"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "9452626",
+      "uom": "USD",
+      "parameterDescr": "Approximate vehicle unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "9452626 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

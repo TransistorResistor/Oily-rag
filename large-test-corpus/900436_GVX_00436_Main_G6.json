@@ -1,0 +1,225 @@
+{
+  "modelID": 900436,
+  "releaseID": 1,
+  "name": "GVX-00436 Main-G6",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Main Battle Tank",
+  "nomenclature": "GVX-00436 Main-G6",
+  "primaryEquipCode": "GVX00436",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2018-01-01",
+  "updatedDate": "2026-02-05",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900436",
+  "aliasList": "GVX00436, GVX-00436",
+  "aliases": [
+    {
+      "alias": "GVX00436",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00436",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00436",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00436 Main-G6 is a synthetic main battle tank record in the Ground Vehicles group. It is attributed to Singapore and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic main battle tank fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00436 Main-G6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "IOC Year",
+      "proliferation": 1989,
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Kestrel Dynamics"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004361,
+      "url": "https://example.invalid/images/900436.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00436 Main-G6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004362,
+      "url": "https://example.invalid/docs/900436.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00436 Main-G6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "China",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Vector Propulsion",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Main Battle Tank",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "27522",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "27522 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "80.29",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "80.29 km/h"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "580",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "580 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "10",
+      "uom": "m",
+      "parameterDescr": "Hull length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "10 m"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3 crew"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers",
+      "parameterValue": "6",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "6 personnel"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900394,
+      "childModel": "SX-00394 Air-C4",
+      "parentModelID": 900436,
+      "parentModel": "GVX-00436 Main-G6",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "SX00394"
+    }
+  ]
+}

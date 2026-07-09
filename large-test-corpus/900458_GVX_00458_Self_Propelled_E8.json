@@ -1,0 +1,330 @@
+{
+  "modelID": 900458,
+  "releaseID": 1,
+  "name": "GVX-00458 Self-Propelled-E8",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Self-Propelled Artillery",
+  "nomenclature": "GVX-00458 Self-Propelled-E8",
+  "primaryEquipCode": "GVX00458",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2007-01-01",
+  "updatedDate": "2026-02-09",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900458",
+  "aliasList": "GVX00458, GVX-00458",
+  "aliases": [
+    {
+      "alias": "GVX00458",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00458",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00458",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00458 Self-Propelled-E8 is a synthetic self-propelled artillery record in the Ground Vehicles group. It is attributed to Poland and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic self-propelled artillery fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00458 Self-Propelled-E8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "type": "IOC Year",
+      "proliferation": 2002,
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Kestrel Dynamics"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004581,
+      "url": "https://example.invalid/images/900458.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00458 Self-Propelled-E8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004582,
+      "url": "https://example.invalid/docs/900458.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00458 Self-Propelled-E8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Self-Propelled Artillery",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "51825",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "51825 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "103.1",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "103.1 km/h"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "heavy machine gun",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Armor equivalent",
+      "parameter": "Armor equivalent",
+      "parameterValue": "709.6",
+      "uom": "mm RHAe",
+      "parameterDescr": "Approximate frontal protection equivalent",
+      "dataType": "Number",
+      "component": "Protection",
+      "parameterUomValue": "709.6 mm RHAe"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "2502895",
+      "uom": "USD",
+      "parameterDescr": "Approximate vehicle unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "2502895 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Width",
+      "parameter": "Width",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Overall width",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers",
+      "parameterValue": "10",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "10 personnel"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "8",
+      "uom": "m",
+      "parameterDescr": "Hull length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "8 m"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "579",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "579 km"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Engine power",
+      "parameter": "Engine power",
+      "parameterValue": "923.8",
+      "uom": "hp",
+      "parameterDescr": "Engine output",
+      "dataType": "Number",
+      "component": "Propulsion",
+      "parameterUomValue": "923.8 hp"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3 crew"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900131,
+      "childModel": "MX-00131 Cruise-F2",
+      "parentModelID": 900458,
+      "parentModel": "GVX-00458 Self-Propelled-E8",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Cruise Missile",
+      "childPrimaryEquipCode": "MX00131"
+    },
+    {
+      "childModelID": 900870,
+      "childModel": "CEX-00870 Battle-D1",
+      "parentModelID": 900458,
+      "parentModel": "GVX-00458 Self-Propelled-E8",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Battle Management System",
+      "childPrimaryEquipCode": "CEX00870"
+    },
+    {
+      "childModelID": 900390,
+      "childModel": "SX-00390 Aircraft-G8",
+      "parentModelID": 900458,
+      "parentModel": "GVX-00458 Self-Propelled-E8",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Aircraft Radar",
+      "childPrimaryEquipCode": "SX00390"
+    },
+    {
+      "childModelID": 900353,
+      "childModel": "SX-00353 EO/IR-E7",
+      "parentModelID": 900458,
+      "parentModel": "GVX-00458 Self-Propelled-E8",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "EO/IR Sensor",
+      "childPrimaryEquipCode": "SX00353"
+    }
+  ]
+}

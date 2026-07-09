@@ -1,0 +1,203 @@
+{
+  "modelID": 900357,
+  "releaseID": 1,
+  "name": "SX-00357 Air-E8",
+  "systemGroup": "Sensors",
+  "systemType": "Air Defense Radar",
+  "nomenclature": "SX-00357 Air-E8",
+  "primaryEquipCode": "SX00357",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2000-01-01",
+  "updatedDate": "2026-05-28",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900357",
+  "aliasList": "SX00357, SX-00357",
+  "aliases": [
+    {
+      "alias": "SX00357",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00357",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00357",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00357 Air-E8 is a synthetic air defense radar record in the Sensors group. It is attributed to Brazil and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic air defense radar fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00357 Air-E8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "type": "IOC Year",
+      "proliferation": 2012,
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Production",
+      "region": "South America",
+      "organization": "Mitsuba Aerospace"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Norwegian Armed Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003571,
+      "url": "https://example.invalid/images/900357.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00357 Air-E8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003572,
+      "url": "https://example.invalid/docs/900357.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00357 Air-E8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Air Defense Radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "702",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "702 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "S-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "123.9",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "123.9 deg"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "129",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "129 kW"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "465",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "465 targets"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

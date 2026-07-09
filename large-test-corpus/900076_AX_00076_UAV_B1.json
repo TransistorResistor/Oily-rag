@@ -1,0 +1,333 @@
+{
+  "modelID": 900076,
+  "releaseID": 1,
+  "name": "AX-00076 UAV-B1",
+  "systemGroup": "Aircraft",
+  "systemType": "UAV",
+  "nomenclature": "AX-00076 UAV-B1",
+  "primaryEquipCode": "AX00076",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2008-01-01",
+  "updatedDate": "2026-05-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900076",
+  "aliasList": "AX00076, AX-00076",
+  "aliases": [
+    {
+      "alias": "AX00076",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00076",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00076",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00076 UAV-B1 is a synthetic uav record in the Aircraft group. It is attributed to Brazil and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic uav fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00076 UAV-B1 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "type": "IOC Year",
+      "proliferation": 2014,
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Production",
+      "region": "South America",
+      "organization": "Rheinmetall Atlas"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000761,
+      "url": "https://example.invalid/images/900076.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00076 UAV-B1 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000762,
+      "url": "https://example.invalid/docs/900076.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00076 UAV-B1 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "UAV",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "26",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "26 m"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "1.44",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.44 Mach"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "2223",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2223 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "97198080",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "97198080 USD"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Payload",
+      "parameter": "Payload",
+      "parameterValue": "30239",
+      "uom": "kg",
+      "parameterDescr": "Maximum external or internal payload",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "30239 kg"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Radar",
+      "parameter": "Radar",
+      "parameterValue": "AESA fire-control radar",
+      "uom": "",
+      "parameterDescr": "Fire-control or surveillance radar designation",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Service ceiling",
+      "parameter": "Service ceiling",
+      "parameterValue": "15631",
+      "uom": "m",
+      "parameterDescr": "Maximum operational altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "15631 m"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Ferry range",
+      "parameter": "Ferry range",
+      "parameterValue": "8472",
+      "uom": "km",
+      "parameterDescr": "Maximum unrefuelled transfer range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "8472 km"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Max takeoff weight",
+      "parameter": "Max takeoff weight",
+      "parameterValue": "228491",
+      "uom": "kg",
+      "parameterDescr": "Maximum certified takeoff weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "228491 kg"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Powerplant",
+      "parameter": "Powerplant",
+      "parameterValue": "diesel-electric hybrid",
+      "uom": "",
+      "parameterDescr": "Engine type, model and quantity",
+      "dataType": "Text",
+      "component": "Propulsion"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "5",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "5 crew"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Wingspan",
+      "parameter": "Wingspan",
+      "parameterValue": "40",
+      "uom": "m",
+      "parameterDescr": "Distance between the wingtips",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "40 m"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Cruise speed",
+      "parameter": "Cruise speed",
+      "parameterValue": "682.9",
+      "uom": "km/h",
+      "parameterDescr": "Economical cruise speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "682.9 km/h"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Empty weight",
+      "parameter": "Empty weight",
+      "parameterValue": "89643",
+      "uom": "kg",
+      "parameterDescr": "Weight without fuel, payload or crew",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "89643 kg"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Datalink",
+      "parameter": "Datalink",
+      "parameterValue": "satellite relay",
+      "uom": "",
+      "parameterDescr": "Primary tactical datalink",
+      "dataType": "Text",
+      "component": "Avionics"
+    },
+    {
+      "seq": 1020,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "10",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "10 m"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900680,
+      "childModel": "WCX-00680 Proximity-A2",
+      "parentModelID": 900076,
+      "parentModel": "AX-00076 UAV-B1",
+      "parentComponent": "Mission Systems",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Proximity Fuze",
+      "childPrimaryEquipCode": "WCX00680"
+    }
+  ]
+}

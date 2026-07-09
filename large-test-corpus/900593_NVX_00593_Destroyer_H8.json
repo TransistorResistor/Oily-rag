@@ -1,0 +1,290 @@
+{
+  "modelID": 900593,
+  "releaseID": 1,
+  "name": "NVX-00593 Destroyer-H8",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Destroyer",
+  "nomenclature": "NVX-00593 Destroyer-H8",
+  "primaryEquipCode": "NVX00593",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2018-01-01",
+  "updatedDate": "2026-06-27",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900593",
+  "aliasList": "NVX00593, NVX-00593",
+  "aliases": [
+    {
+      "alias": "NVX00593",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00593",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00593",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00593 Destroyer-H8 is a synthetic destroyer record in the Naval Platforms group. It is attributed to Poland and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic destroyer fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00593 Destroyer-H8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "type": "IOC Year",
+      "proliferation": 1991,
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Asterion Defence"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005931,
+      "url": "https://example.invalid/images/900593.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00593 Destroyer-H8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005932,
+      "url": "https://example.invalid/docs/900593.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00593 Destroyer-H8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rheinmetall Atlas",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Destroyer",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement - 1",
+      "parameterValue": "32563.2",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "32563.2 t",
+      "parameterSubTitle": "Block II",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement - 2",
+      "parameterValue": "68323.9",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "68323.9 t",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "287",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "287 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "25.71",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "25.71 kn",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3376",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3376 crew",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "8349.5",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "8349.5 nmi",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Draft",
+      "parameter": "Draft",
+      "parameterValue": "6",
+      "uom": "m",
+      "parameterDescr": "Draft at full load",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "6 m",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Main gun",
+      "parameter": "Main gun",
+      "parameterValue": "none",
+      "uom": "",
+      "parameterDescr": "Principal gun armament",
+      "dataType": "Text",
+      "component": "Armament",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Vertical launch cells",
+      "parameter": "Vertical launch cells",
+      "parameterValue": "30",
+      "uom": "cells",
+      "parameterDescr": "Number of VLS cells",
+      "dataType": "Number",
+      "component": "Armament",
+      "parameterUomValue": "30 cells",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Radar suite",
+      "parameter": "Radar suite",
+      "parameterValue": "navigation radar set",
+      "uom": "",
+      "parameterDescr": "Primary radar suite",
+      "dataType": "Text",
+      "component": "Sensors",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Beam",
+      "parameter": "Beam",
+      "parameterValue": "45",
+      "uom": "m",
+      "parameterDescr": "Maximum beam",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "45 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "8173620871",
+      "uom": "USD",
+      "parameterDescr": "Approximate ship cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "8173620871 USD",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900362,
+      "childModel": "SX-00362 EO/IR-F2",
+      "parentModelID": 900593,
+      "parentModel": "NVX-00593 Destroyer-H8",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "EO/IR Sensor",
+      "childPrimaryEquipCode": "SX00362"
+    }
+  ]
+}

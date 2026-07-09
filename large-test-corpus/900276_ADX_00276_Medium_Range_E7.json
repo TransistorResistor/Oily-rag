@@ -1,0 +1,201 @@
+{
+  "modelID": 900276,
+  "releaseID": 1,
+  "name": "ADX-00276 Medium-Range-E7",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "Medium-Range SAM System",
+  "nomenclature": "ADX-00276 Medium-Range-E7",
+  "primaryEquipCode": "ADX00276",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2007-01-01",
+  "updatedDate": "2026-04-07",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900276",
+  "aliasList": "ADX00276, ADX-00276",
+  "aliases": [
+    {
+      "alias": "ADX00276",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00276",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00276",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00276 Medium-Range-E7 is a synthetic medium-range sam system record in the Air Defense Systems group. It is attributed to United States and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic medium-range sam system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00276 Medium-Range-E7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 2009,
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Norwegian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002761,
+      "url": "https://example.invalid/images/900276.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00276 Medium-Range-E7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002762,
+      "url": "https://example.invalid/docs/900276.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00276 Medium-Range-E7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Germany",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Medium-Range SAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "548",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "548 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "30.9",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "30.9 min"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "37",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "37 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "10",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "10 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "long-range missile",
+      "uom": "",
+      "parameterDescr": "Interceptor missiles used by the system",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Battery vehicles",
+      "parameter": "Battery vehicles",
+      "parameterValue": "6",
+      "uom": "vehicles",
+      "parameterDescr": "Typical number of major vehicles per battery",
+      "dataType": "Number",
+      "component": "Logistics",
+      "parameterUomValue": "6 vehicles"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

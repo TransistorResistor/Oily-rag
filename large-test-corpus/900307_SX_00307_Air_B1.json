@@ -1,0 +1,226 @@
+{
+  "modelID": 900307,
+  "releaseID": 1,
+  "name": "SX-00307 Air-B1",
+  "systemGroup": "Sensors",
+  "systemType": "Air Defense Radar",
+  "nomenclature": "SX-00307 Air-B1",
+  "primaryEquipCode": "SX00307",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2001-01-01",
+  "updatedDate": "2026-06-20",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900307",
+  "aliasList": "SX00307, SX-00307",
+  "aliases": [
+    {
+      "alias": "SX00307",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00307",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00307",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00307 Air-B1 is a synthetic air defense radar record in the Sensors group. It is attributed to Germany and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic air defense radar fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00307 Air-B1 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "type": "IOC Year",
+      "proliferation": 2023,
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Orion Naval Group"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003071,
+      "url": "https://example.invalid/images/900307.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00307 Air-B1 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003072,
+      "url": "https://example.invalid/docs/900307.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00307 Air-B1 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Singapore",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Air Defense Radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "VHF",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "163.2",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "163.2 deg",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked - 1",
+      "parameterValue": "941",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "941 targets",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked - 2",
+      "parameterValue": "359",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "359 targets",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Total weight",
+      "parameter": "Total weight",
+      "parameterValue": "2571",
+      "uom": "kg",
+      "parameterDescr": "Installed system weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "2571 kg",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "109",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "109 kW",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

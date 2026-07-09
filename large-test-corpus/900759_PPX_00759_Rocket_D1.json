@@ -1,0 +1,256 @@
+{
+  "modelID": 900759,
+  "releaseID": 1,
+  "name": "PPX-00759 Rocket-D1",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Rocket Motor",
+  "nomenclature": "PPX-00759 Rocket-D1",
+  "primaryEquipCode": "PPX00759",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2014-01-01",
+  "updatedDate": "2026-07-15",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900759",
+  "aliasList": "PPX00759, PPX-00759",
+  "aliases": [
+    {
+      "alias": "PPX00759",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00759",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00759",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00759 Rocket-D1 is a synthetic rocket motor record in the Power and Propulsion Systems group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic rocket motor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00759 Rocket-D1 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 2003,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Production",
+      "region": "Oceania",
+      "organization": "Nordic Signal Works"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007591,
+      "url": "https://example.invalid/images/900759.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00759 Rocket-D1 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007592,
+      "url": "https://example.invalid/docs/900759.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00759 Rocket-D1 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Rocket Motor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum thrust",
+      "parameter": "Maximum thrust",
+      "parameterValue": "148.3",
+      "uom": "kN",
+      "parameterDescr": "Maximum rated thrust",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "148.3 kN"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "5826",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "5826 kg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "5",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "5 m"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Bypass ratio",
+      "parameter": "Bypass ratio",
+      "parameterValue": "5.181",
+      "uom": "ratio",
+      "parameterDescr": "Engine bypass ratio",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "5.181 ratio"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Control system",
+      "parameter": "Control system",
+      "parameterValue": "FADEC",
+      "uom": "",
+      "parameterDescr": "Engine control system",
+      "dataType": "Text",
+      "component": "Controls"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Specific fuel consumption",
+      "parameter": "Specific fuel consumption",
+      "parameterValue": "0.001",
+      "uom": "kg/(N*s)",
+      "parameterDescr": "Specific fuel consumption",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "0.001 kg/(N*s)"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Operating temperature high",
+      "parameter": "Operating temperature high",
+      "parameterValue": "57.42",
+      "uom": "degC",
+      "parameterDescr": "Maximum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "57.42 degC"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "15421613",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "15421613 USD"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Power output",
+      "parameter": "Power output",
+      "parameterValue": "34142",
+      "uom": "kW",
+      "parameterDescr": "Shaft or electrical power output",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "34142 kW"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Operating temperature low",
+      "parameter": "Operating temperature low",
+      "parameterValue": "-27.76",
+      "uom": "degC",
+      "parameterDescr": "Minimum operating temperature",
+      "dataType": "Number",
+      "component": "Environment",
+      "parameterUomValue": "-27.76 degC"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

@@ -1,0 +1,207 @@
+{
+  "modelID": 900032,
+  "releaseID": 1,
+  "name": "AX-00032 Transport-H2",
+  "systemGroup": "Aircraft",
+  "systemType": "Transport Aircraft",
+  "nomenclature": "AX-00032 Transport-H2",
+  "primaryEquipCode": "AX00032",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2015-01-01",
+  "updatedDate": "2026-07-17",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900032",
+  "aliasList": "AX00032, AX-00032",
+  "aliases": [
+    {
+      "alias": "AX00032",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "AX-00032",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "AX00032",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "AX-00032 Transport-H2 is a synthetic transport aircraft record in the Aircraft group. It is attributed to United Arab Emirates and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic transport aircraft fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "AX-00032 Transport-H2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "IOC Year",
+      "proliferation": 2009,
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Ardent Missiles"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9000321,
+      "url": "https://example.invalid/images/900032.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "AX-00032 Transport-H2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9000322,
+      "url": "https://example.invalid/docs/900032.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "AX-00032 Transport-H2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "40",
+      "uom": "m",
+      "parameterDescr": "Overall length of the aircraft",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "40 m"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "0.997",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed at altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "0.997 Mach"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Combat range",
+      "parameter": "Combat range",
+      "parameterValue": "3699",
+      "uom": "km",
+      "parameterDescr": "Range on a representative combat mission",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3699 km"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "90543970",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit flyaway cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "90543970 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900167,
+      "childModel": "MX-00167 Cruise-G4",
+      "parentModelID": 900032,
+      "parentModel": "AX-00032 Transport-H2",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Cruise Missile",
+      "childPrimaryEquipCode": "MX00167"
+    },
+    {
+      "childModelID": 900694,
+      "childModel": "WCX-00694 Naval-A6",
+      "parentModelID": 900032,
+      "parentModel": "AX-00032 Transport-H2",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Naval Gun",
+      "childPrimaryEquipCode": "WCX00694"
+    },
+    {
+      "childModelID": 900714,
+      "childModel": "PPX-00714 Turbofan-H7",
+      "parentModelID": 900032,
+      "parentModel": "AX-00032 Transport-H2",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbofan Engine",
+      "childPrimaryEquipCode": "PPX00714"
+    },
+    {
+      "childModelID": 900659,
+      "childModel": "WCX-00659 Warhead-F3",
+      "parentModelID": 900032,
+      "parentModel": "AX-00032 Transport-H2",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Warhead",
+      "childPrimaryEquipCode": "WCX00659"
+    }
+  ]
+}

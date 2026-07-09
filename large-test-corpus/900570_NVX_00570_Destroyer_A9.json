@@ -1,0 +1,185 @@
+{
+  "modelID": 900570,
+  "releaseID": 1,
+  "name": "NVX-00570 Destroyer-A9",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Destroyer",
+  "nomenclature": "NVX-00570 Destroyer-A9",
+  "primaryEquipCode": "NVX00570",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-01-10",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900570",
+  "aliasList": "NVX00570, NVX-00570",
+  "aliases": [
+    {
+      "alias": "NVX00570",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00570",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00570",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00570 Destroyer-A9 is a synthetic destroyer record in the Naval Platforms group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic destroyer fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00570 Destroyer-A9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 1996,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Mitsuba Aerospace"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005701,
+      "url": "https://example.invalid/images/900570.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00570 Destroyer-A9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005702,
+      "url": "https://example.invalid/docs/900570.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00570 Destroyer-A9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Nordic Signal Works",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Destroyer",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "78338.5",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "78338.5 t"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "126",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "126 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "31.09",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "31.09 kn"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "11090.6",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "11090.6 nmi"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3037",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3037 crew"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

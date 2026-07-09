@@ -1,0 +1,187 @@
+{
+  "modelID": 900682,
+  "releaseID": 1,
+  "name": "WCX-00682 Torpedo-F3",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Torpedo",
+  "nomenclature": "WCX-00682 Torpedo-F3",
+  "primaryEquipCode": "WCX00682",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-04-26",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900682",
+  "aliasList": "WCX00682, WCX-00682",
+  "aliases": [
+    {
+      "alias": "WCX00682",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00682",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00682",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00682 Torpedo-F3 is a synthetic torpedo record in the Weapons and Components group. It is attributed to China and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic torpedo fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00682 Torpedo-F3 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "type": "IOC Year",
+      "proliferation": 1989,
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006821,
+      "url": "https://example.invalid/images/900682.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00682 Torpedo-F3 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006822,
+      "url": "https://example.invalid/docs/900682.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00682 Torpedo-F3 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Israel",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Torpedo",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1730",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "1730 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "85",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "85 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1940893",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1940893 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

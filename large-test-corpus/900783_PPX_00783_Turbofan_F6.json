@@ -1,0 +1,202 @@
+{
+  "modelID": 900783,
+  "releaseID": 1,
+  "name": "PPX-00783 Turbofan-F6",
+  "systemGroup": "Power and Propulsion Systems",
+  "systemType": "Turbofan Engine",
+  "nomenclature": "PPX-00783 Turbofan-F6",
+  "primaryEquipCode": "PPX00783",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2004-01-01",
+  "updatedDate": "2026-02-23",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900783",
+  "aliasList": "PPX00783, PPX-00783",
+  "aliases": [
+    {
+      "alias": "PPX00783",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "PPX-00783",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "PPX00783",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "PPX-00783 Turbofan-F6 is a synthetic turbofan engine record in the Power and Propulsion Systems group. It is attributed to Norway and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic turbofan engine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "PPX-00783 Turbofan-F6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Norway",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Norwegian Armed Forces"
+    },
+    {
+      "country": "Norway",
+      "type": "IOC Year",
+      "proliferation": 1985,
+      "region": "Europe",
+      "organization": "Norwegian Armed Forces"
+    },
+    {
+      "country": "Norway",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Kestrel Dynamics"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9007831,
+      "url": "https://example.invalid/images/900783.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "PPX-00783 Turbofan-F6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9007832,
+      "url": "https://example.invalid/docs/900783.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "PPX-00783 Turbofan-F6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Vector Propulsion",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Turbofan Engine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Dry weight",
+      "parameter": "Dry weight",
+      "parameterValue": "4925",
+      "uom": "kg",
+      "parameterDescr": "Dry installed weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "4925 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length - 1",
+      "parameterValue": "6",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "6 m",
+      "parameterSubTitle": "Block II",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length - 2",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "1",
+      "uom": "m",
+      "parameterDescr": "Maximum diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "1 m",
+      "comments": "Estimated from open technical reporting"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

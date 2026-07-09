@@ -1,0 +1,318 @@
+{
+  "modelID": 900283,
+  "releaseID": 1,
+  "name": "ADX-00283 C-RAM-B3",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "C-RAM System",
+  "nomenclature": "ADX-00283 C-RAM-B3",
+  "primaryEquipCode": "ADX00283",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2005-01-01",
+  "updatedDate": "2026-03-16",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900283",
+  "aliasList": "ADX00283, ADX-00283",
+  "aliases": [
+    {
+      "alias": "ADX00283",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00283",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00283",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00283 C-RAM-B3 is a synthetic c-ram system record in the Air Defense Systems group. It is attributed to Singapore and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic c-ram system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00283 C-RAM-B3 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "IOC Year",
+      "proliferation": 2025,
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Kestrel Dynamics"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002831,
+      "url": "https://example.invalid/images/900283.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00283 C-RAM-B3 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002832,
+      "url": "https://example.invalid/docs/900283.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00283 C-RAM-B3 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "C-RAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "335",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "335 km"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "199",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "199 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "46.53",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "46.53 min"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "40",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "40 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Battery vehicles",
+      "parameter": "Battery vehicles",
+      "parameterValue": "6",
+      "uom": "vehicles",
+      "parameterDescr": "Typical number of major vehicles per battery",
+      "dataType": "Number",
+      "component": "Logistics",
+      "parameterUomValue": "6 vehicles"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "38",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "38 km"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "205",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "205 targets"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "AESA surveillance radar",
+      "uom": "",
+      "parameterDescr": "Primary search or engagement radar type",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Launcher configuration",
+      "parameter": "Launcher configuration",
+      "parameterValue": "truck-mounted canisters",
+      "uom": "",
+      "parameterDescr": "Launcher vehicle or cell arrangement",
+      "dataType": "Text",
+      "component": "Launcher"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "System unit cost",
+      "parameter": "System unit cost",
+      "parameterValue": "305274183",
+      "uom": "USD",
+      "parameterDescr": "Approximate battery cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "305274183 USD"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "mixed missile battery",
+      "uom": "",
+      "parameterDescr": "Interceptor missiles used by the system",
+      "dataType": "Text",
+      "component": "Armament"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900310,
+      "childModel": "SX-00310 EO/IR-H9",
+      "parentModelID": 900283,
+      "parentModel": "ADX-00283 C-RAM-B3",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "EO/IR Sensor",
+      "childPrimaryEquipCode": "SX00310"
+    },
+    {
+      "childModelID": 900817,
+      "childModel": "CEX-00817 Communications-F6",
+      "parentModelID": 900283,
+      "parentModel": "ADX-00283 C-RAM-B3",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Communications System",
+      "childPrimaryEquipCode": "CEX00817"
+    },
+    {
+      "childModelID": 900309,
+      "childModel": "SX-00309 Electronic-H9",
+      "parentModelID": 900283,
+      "parentModel": "ADX-00283 C-RAM-B3",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Electronic Support Sensor",
+      "childPrimaryEquipCode": "SX00309"
+    },
+    {
+      "childModelID": 900146,
+      "childModel": "MX-00146 Surface-to-Air-C6",
+      "parentModelID": 900283,
+      "parentModel": "ADX-00283 C-RAM-B3",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Surface-to-Air Missile",
+      "childPrimaryEquipCode": "MX00146"
+    }
+  ]
+}

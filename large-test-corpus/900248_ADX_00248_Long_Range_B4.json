@@ -1,0 +1,171 @@
+{
+  "modelID": 900248,
+  "releaseID": 1,
+  "name": "ADX-00248 Long-Range-B4",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "Long-Range SAM System",
+  "nomenclature": "ADX-00248 Long-Range-B4",
+  "primaryEquipCode": "ADX00248",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2008-01-01",
+  "updatedDate": "2026-07-12",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900248",
+  "aliasList": "ADX00248, ADX-00248",
+  "aliases": [
+    {
+      "alias": "ADX00248",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00248",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00248",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00248 Long-Range-B4 is a synthetic long-range sam system record in the Air Defense Systems group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic long-range sam system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00248 Long-Range-B4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 1980,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Production",
+      "region": "Africa",
+      "organization": "Asterion Defence"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002481,
+      "url": "https://example.invalid/images/900248.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00248 Long-Range-B4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002482,
+      "url": "https://example.invalid/docs/900248.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00248 Long-Range-B4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Long-Range SAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "112",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "112 km"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "185",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "185 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "44",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "44 targets"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900122,
+      "childModel": "MX-00122 Anti-Ship-G5",
+      "parentModelID": 900248,
+      "parentModel": "ADX-00248 Long-Range-B4",
+      "parentComponent": "Interceptor",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Ship Missile",
+      "childPrimaryEquipCode": "MX00122"
+    }
+  ]
+}

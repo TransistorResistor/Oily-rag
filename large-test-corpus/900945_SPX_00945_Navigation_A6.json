@@ -1,0 +1,200 @@
+{
+  "modelID": 900945,
+  "releaseID": 1,
+  "name": "SPX-00945 Navigation-A6",
+  "systemGroup": "Space Systems",
+  "systemType": "Navigation Satellite",
+  "nomenclature": "SPX-00945 Navigation-A6",
+  "primaryEquipCode": "SPX00945",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2023-01-01",
+  "updatedDate": "2026-03-03",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900945",
+  "aliasList": "SPX00945, SPX-00945",
+  "aliases": [
+    {
+      "alias": "SPX00945",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00945",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00945",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00945 Navigation-A6 is a synthetic navigation satellite record in the Space Systems group. It is attributed to Germany and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic navigation satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00945 Navigation-A6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "type": "IOC Year",
+      "proliferation": 2005,
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Maritime Systems Bureau"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009451,
+      "url": "https://example.invalid/images/900945.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00945 Navigation-A6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009452,
+      "url": "https://example.invalid/docs/900945.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00945 Navigation-A6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Vector Propulsion",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Navigation Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "18382",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "18382 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "10786",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "10786 km",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "11.25",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "11.25 years",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "19",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "19 kW",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900322,
+      "childModel": "SX-00322 Electronic-C8",
+      "parentModelID": 900945,
+      "parentModel": "SPX-00945 Navigation-A6",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Electronic Support Sensor",
+      "childPrimaryEquipCode": "SX00322"
+    }
+  ]
+}

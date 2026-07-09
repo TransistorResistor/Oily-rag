@@ -1,0 +1,207 @@
+{
+  "modelID": 900834,
+  "releaseID": 1,
+  "name": "CEX-00834 Jammer-F3",
+  "systemGroup": "C4ISR and Electronic Warfare",
+  "systemType": "Jammer",
+  "nomenclature": "CEX-00834 Jammer-F3",
+  "primaryEquipCode": "CEX00834",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2011-01-01",
+  "updatedDate": "2026-05-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900834",
+  "aliasList": "CEX00834, CEX-00834",
+  "aliases": [
+    {
+      "alias": "CEX00834",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "CEX-00834",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "CEX00834",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "CEX-00834 Jammer-F3 is a synthetic jammer record in the C4ISR and Electronic Warfare group. It is attributed to United Arab Emirates and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic jammer fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "CEX-00834 Jammer-F3 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "IOC Year",
+      "proliferation": 1995,
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Asterion Defence"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9008341,
+      "url": "https://example.invalid/images/900834.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "CEX-00834 Jammer-F3 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9008342,
+      "url": "https://example.invalid/docs/900834.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "CEX-00834 Jammer-F3 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Vector Propulsion",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Jammer",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Node capacity",
+      "parameter": "Node capacity",
+      "parameterValue": "1554",
+      "uom": "nodes",
+      "parameterDescr": "Maximum network participants",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1554 nodes",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "386",
+      "uom": "km",
+      "parameterDescr": "Operational communications or jamming range",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "386 km",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Bandwidth",
+      "parameter": "Bandwidth",
+      "parameterValue": "1419.1",
+      "uom": "Mbps",
+      "parameterDescr": "Nominal data throughput",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1419.1 Mbps",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "364",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "364 kW",
+      "comments": "Export configuration may differ"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

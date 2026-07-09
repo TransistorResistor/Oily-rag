@@ -1,0 +1,191 @@
+{
+  "modelID": 900359,
+  "releaseID": 1,
+  "name": "SX-00359 Sonar-D5",
+  "systemGroup": "Sensors",
+  "systemType": "Sonar",
+  "nomenclature": "SX-00359 Sonar-D5",
+  "primaryEquipCode": "SX00359",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2007-01-01",
+  "updatedDate": "2026-01-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900359",
+  "aliasList": "SX00359, SX-00359",
+  "aliases": [
+    {
+      "alias": "SX00359",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00359",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00359",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00359 Sonar-D5 is a synthetic sonar record in the Sensors group. It is attributed to Italy and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic sonar fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00359 Sonar-D5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "type": "IOC Year",
+      "proliferation": 1989,
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Vector Propulsion"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003591,
+      "url": "https://example.invalid/images/900359.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00359 Sonar-D5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003592,
+      "url": "https://example.invalid/docs/900359.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00359 Sonar-D5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Sonar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "699",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "699 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "143.5",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "143.5 deg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "623",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "623 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "Ku-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

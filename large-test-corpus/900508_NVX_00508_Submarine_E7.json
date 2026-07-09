@@ -1,0 +1,311 @@
+{
+  "modelID": 900508,
+  "releaseID": 1,
+  "name": "NVX-00508 Submarine-E7",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Submarine",
+  "nomenclature": "NVX-00508 Submarine-E7",
+  "primaryEquipCode": "NVX00508",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2014-01-01",
+  "updatedDate": "2026-04-01",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900508",
+  "aliasList": "NVX00508, NVX-00508",
+  "aliases": [
+    {
+      "alias": "NVX00508",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00508",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00508",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00508 Submarine-E7 is a synthetic submarine record in the Naval Platforms group. It is attributed to Sweden and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic submarine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00508 Submarine-E7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "IOC Year",
+      "proliferation": 2023,
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005081,
+      "url": "https://example.invalid/images/900508.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00508 Submarine-E7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005082,
+      "url": "https://example.invalid/docs/900508.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00508 Submarine-E7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Submarine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "55331.0",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "55331.0 t",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Length",
+      "parameter": "Length - 1",
+      "parameterValue": "237",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "237 m",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length - 2",
+      "parameterValue": "215",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "215 m",
+      "parameterSubTitle": "Block II",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed - 1",
+      "parameterValue": "27.36",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "27.36 kn",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed - 2",
+      "parameterValue": "31.82",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "31.82 kn",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "7789.4",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "7789.4 nmi",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "722",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "722 crew",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Vertical launch cells",
+      "parameter": "Vertical launch cells",
+      "parameterValue": "96",
+      "uom": "cells",
+      "parameterDescr": "Number of VLS cells",
+      "dataType": "Number",
+      "component": "Armament",
+      "parameterUomValue": "96 cells",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Draft",
+      "parameter": "Draft",
+      "parameterValue": "9",
+      "uom": "m",
+      "parameterDescr": "Draft at full load",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "9 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Beam",
+      "parameter": "Beam",
+      "parameterValue": "20",
+      "uom": "m",
+      "parameterDescr": "Maximum beam",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "20 m",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "10467525273",
+      "uom": "USD",
+      "parameterDescr": "Approximate ship cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "10467525273 USD",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Radar suite",
+      "parameter": "Radar suite",
+      "parameterValue": "3D air-search radar",
+      "uom": "",
+      "parameterDescr": "Primary radar suite",
+      "dataType": "Text",
+      "component": "Sensors",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Norway",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Main gun",
+      "parameter": "Main gun",
+      "parameterValue": "127 mm naval gun",
+      "uom": "",
+      "parameterDescr": "Principal gun armament",
+      "dataType": "Text",
+      "component": "Armament",
+      "comments": "Applies to baseline production lot"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

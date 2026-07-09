@@ -1,0 +1,174 @@
+{
+  "modelID": 900148,
+  "releaseID": 1,
+  "name": "MX-00148 Cruise-F6",
+  "systemGroup": "Missiles",
+  "systemType": "Cruise Missile",
+  "nomenclature": "MX-00148 Cruise-F6",
+  "primaryEquipCode": "MX00148",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-06-28",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900148",
+  "aliasList": "MX00148, MX-00148",
+  "aliases": [
+    {
+      "alias": "MX00148",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00148",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00148",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00148 Cruise-F6 is a synthetic cruise missile record in the Missiles group. It is attributed to China and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic cruise missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00148 Cruise-F6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "type": "IOC Year",
+      "proliferation": 2018,
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001481,
+      "url": "https://example.invalid/images/900148.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00148 Cruise-F6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001482,
+      "url": "https://example.invalid/docs/900148.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00148 Cruise-F6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Cruise Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "2066",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "2066 kg",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 1",
+      "parameterValue": "1830",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1830 km",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range - 2",
+      "parameterValue": "1578",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1578 km",
+      "parameterSubTitle": "Block II",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900339,
+      "childModel": "SX-00339 Air-C9",
+      "parentModelID": 900148,
+      "parentModel": "MX-00148 Cruise-F6",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "SX00339"
+    }
+  ]
+}

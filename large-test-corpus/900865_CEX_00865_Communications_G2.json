@@ -1,0 +1,260 @@
+{
+  "modelID": 900865,
+  "releaseID": 1,
+  "name": "CEX-00865 Communications-G2",
+  "systemGroup": "C4ISR and Electronic Warfare",
+  "systemType": "Communications System",
+  "nomenclature": "CEX-00865 Communications-G2",
+  "primaryEquipCode": "CEX00865",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2016-01-01",
+  "updatedDate": "2026-06-27",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900865",
+  "aliasList": "CEX00865, CEX-00865",
+  "aliases": [
+    {
+      "alias": "CEX00865",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "CEX-00865",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "CEX00865",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "CEX-00865 Communications-G2 is a synthetic communications system record in the C4ISR and Electronic Warfare group. It is attributed to China and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic communications system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "CEX-00865 Communications-G2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "type": "IOC Year",
+      "proliferation": 1982,
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "China",
+      "proliferation": "Production",
+      "region": "Asia",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9008651,
+      "url": "https://example.invalid/images/900865.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "CEX-00865 Communications-G2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9008652,
+      "url": "https://example.invalid/docs/900865.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "CEX-00865 Communications-G2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Communications System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Node capacity",
+      "parameter": "Node capacity - 1",
+      "parameterValue": "604",
+      "uom": "nodes",
+      "parameterDescr": "Maximum network participants",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "604 nodes",
+      "parameterSubTitle": "Block II",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Node capacity",
+      "parameter": "Node capacity - 2",
+      "parameterValue": "1819",
+      "uom": "nodes",
+      "parameterDescr": "Maximum network participants",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1819 nodes",
+      "parameterSubTitle": "Block II",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "332",
+      "uom": "km",
+      "parameterDescr": "Operational communications or jamming range",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "332 km",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Bandwidth",
+      "parameter": "Bandwidth",
+      "parameterValue": "1246.8",
+      "uom": "Mbps",
+      "parameterDescr": "Nominal data throughput",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1246.8 Mbps",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "153",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "153 kW",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Frequency high",
+      "parameter": "Frequency high",
+      "parameterValue": "18928.5",
+      "uom": "MHz",
+      "parameterDescr": "Upper operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "18928.5 MHz",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Encryption",
+      "parameter": "Encryption",
+      "parameterValue": "frequency hopping",
+      "uom": "",
+      "parameterDescr": "Encryption or waveform security mode",
+      "dataType": "Text",
+      "component": "Security",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "network relay",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Operations",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Frequency low",
+      "parameter": "Frequency low",
+      "parameterValue": "4085.8",
+      "uom": "MHz",
+      "parameterDescr": "Lower operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "4085.8 MHz",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "India",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

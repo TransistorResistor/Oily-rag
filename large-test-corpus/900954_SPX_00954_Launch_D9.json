@@ -1,0 +1,186 @@
+{
+  "modelID": 900954,
+  "releaseID": 1,
+  "name": "SPX-00954 Launch-D9",
+  "systemGroup": "Space Systems",
+  "systemType": "Launch Vehicle",
+  "nomenclature": "SPX-00954 Launch-D9",
+  "primaryEquipCode": "SPX00954",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2025-01-01",
+  "updatedDate": "2026-06-07",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900954",
+  "aliasList": "SPX00954, SPX-00954",
+  "aliases": [
+    {
+      "alias": "SPX00954",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00954",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00954",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00954 Launch-D9 is a synthetic launch vehicle record in the Space Systems group. It is attributed to India and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic launch vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00954 Launch-D9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "type": "IOC Year",
+      "proliferation": 1983,
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009541,
+      "url": "https://example.invalid/images/900954.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00954 Launch-D9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009542,
+      "url": "https://example.invalid/docs/900954.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00954 Launch-D9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Kingdom",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Launch Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "21944",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "21944 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "25447",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "25447 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "13.55",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "13.55 years"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "26",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "26 kW"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900870,
+      "childModel": "CEX-00870 Battle-D1",
+      "parentModelID": 900954,
+      "parentModel": "SPX-00954 Launch-D9",
+      "parentComponent": "Payload",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Battle Management System",
+      "childPrimaryEquipCode": "CEX00870"
+    }
+  ]
+}

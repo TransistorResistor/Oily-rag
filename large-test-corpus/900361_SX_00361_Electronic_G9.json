@@ -1,0 +1,181 @@
+{
+  "modelID": 900361,
+  "releaseID": 1,
+  "name": "SX-00361 Electronic-G9",
+  "systemGroup": "Sensors",
+  "systemType": "Electronic Support Sensor",
+  "nomenclature": "SX-00361 Electronic-G9",
+  "primaryEquipCode": "SX00361",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2011-01-01",
+  "updatedDate": "2026-01-16",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900361",
+  "aliasList": "SX00361, SX-00361",
+  "aliases": [
+    {
+      "alias": "SX00361",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00361",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00361",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00361 Electronic-G9 is a synthetic electronic support sensor record in the Sensors group. It is attributed to India and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic electronic support sensor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00361 Electronic-G9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "type": "IOC Year",
+      "proliferation": 1980,
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Production",
+      "region": "South Asia",
+      "organization": "Kestrel Dynamics"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003611,
+      "url": "https://example.invalid/images/900361.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00361 Electronic-G9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003612,
+      "url": "https://example.invalid/docs/900361.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00361 Electronic-G9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Arab Emirates",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Electronic Support Sensor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "480",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "480 km",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "L-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "572",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "572 targets",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Instrumented range",
+      "parameter": "Instrumented range",
+      "parameterValue": "1052",
+      "uom": "km",
+      "parameterDescr": "Maximum instrumented range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1052 km",
+      "comments": "Export configuration may differ"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

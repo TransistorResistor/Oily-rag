@@ -1,0 +1,246 @@
+{
+  "modelID": 900893,
+  "releaseID": 1,
+  "name": "CEX-00893 Jammer-D4",
+  "systemGroup": "C4ISR and Electronic Warfare",
+  "systemType": "Jammer",
+  "nomenclature": "CEX-00893 Jammer-D4",
+  "primaryEquipCode": "CEX00893",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2020-01-01",
+  "updatedDate": "2026-03-06",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900893",
+  "aliasList": "CEX00893, CEX-00893",
+  "aliases": [
+    {
+      "alias": "CEX00893",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "CEX-00893",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "CEX00893",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "CEX-00893 Jammer-D4 is a synthetic jammer record in the C4ISR and Electronic Warfare group. It is attributed to Brazil and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic jammer fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "CEX-00893 Jammer-D4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "type": "IOC Year",
+      "proliferation": 2007,
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Production",
+      "region": "South America",
+      "organization": "Ardent Missiles"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9008931,
+      "url": "https://example.invalid/images/900893.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "CEX-00893 Jammer-D4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9008932,
+      "url": "https://example.invalid/docs/900893.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "CEX-00893 Jammer-D4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Jammer",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Node capacity",
+      "parameter": "Node capacity",
+      "parameterValue": "1761",
+      "uom": "nodes",
+      "parameterDescr": "Maximum network participants",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1761 nodes"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "780",
+      "uom": "km",
+      "parameterDescr": "Operational communications or jamming range",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "780 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Bandwidth",
+      "parameter": "Bandwidth",
+      "parameterValue": "1078.7",
+      "uom": "Mbps",
+      "parameterDescr": "Nominal data throughput",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1078.7 Mbps"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "88",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "88 kW"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Frequency high",
+      "parameter": "Frequency high",
+      "parameterValue": "13159.6",
+      "uom": "MHz",
+      "parameterDescr": "Upper operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "13159.6 MHz"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Encryption",
+      "parameter": "Encryption",
+      "parameterValue": "national waveform",
+      "uom": "",
+      "parameterDescr": "Encryption or waveform security mode",
+      "dataType": "Text",
+      "component": "Security"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "network relay",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Operations"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Frequency low",
+      "parameter": "Frequency low",
+      "parameterValue": "4879.9",
+      "uom": "MHz",
+      "parameterDescr": "Lower operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "4879.9 MHz"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "90753669",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "90753669 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

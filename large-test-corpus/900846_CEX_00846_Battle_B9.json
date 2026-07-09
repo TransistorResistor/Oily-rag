@@ -1,0 +1,227 @@
+{
+  "modelID": 900846,
+  "releaseID": 1,
+  "name": "CEX-00846 Battle-B9",
+  "systemGroup": "C4ISR and Electronic Warfare",
+  "systemType": "Battle Management System",
+  "nomenclature": "CEX-00846 Battle-B9",
+  "primaryEquipCode": "CEX00846",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2002-01-01",
+  "updatedDate": "2026-03-25",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900846",
+  "aliasList": "CEX00846, CEX-00846",
+  "aliases": [
+    {
+      "alias": "CEX00846",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "CEX-00846",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "CEX00846",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "CEX-00846 Battle-B9 is a synthetic battle management system record in the C4ISR and Electronic Warfare group. It is attributed to Italy and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic battle management system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "CEX-00846 Battle-B9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "type": "IOC Year",
+      "proliferation": 1995,
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Maritime Systems Bureau"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9008461,
+      "url": "https://example.invalid/images/900846.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "CEX-00846 Battle-B9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9008462,
+      "url": "https://example.invalid/docs/900846.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "CEX-00846 Battle-B9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Germany",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Battle Management System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Node capacity",
+      "parameter": "Node capacity",
+      "parameterValue": "1516",
+      "uom": "nodes",
+      "parameterDescr": "Maximum network participants",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1516 nodes"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "869",
+      "uom": "km",
+      "parameterDescr": "Operational communications or jamming range",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "869 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Bandwidth",
+      "parameter": "Bandwidth",
+      "parameterValue": "1634.0",
+      "uom": "Mbps",
+      "parameterDescr": "Nominal data throughput",
+      "dataType": "Number",
+      "component": "Networking",
+      "parameterUomValue": "1634.0 Mbps"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Encryption",
+      "parameter": "Encryption",
+      "parameterValue": "line-of-sight relay",
+      "uom": "",
+      "parameterDescr": "Encryption or waveform security mode",
+      "dataType": "Text",
+      "component": "Security"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Frequency high",
+      "parameter": "Frequency high",
+      "parameterValue": "29885.6",
+      "uom": "MHz",
+      "parameterDescr": "Upper operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "29885.6 MHz"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Frequency low",
+      "parameter": "Frequency low",
+      "parameterValue": "4031.6",
+      "uom": "MHz",
+      "parameterDescr": "Lower operating frequency",
+      "dataType": "Number",
+      "component": "RF",
+      "parameterUomValue": "4031.6 MHz"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "satellite backhaul",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Operations"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "99517441",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "99517441 USD"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "419",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "419 kW"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

@@ -1,0 +1,231 @@
+{
+  "modelID": 900137,
+  "releaseID": 1,
+  "name": "MX-00137 Surface-to-Air-H2",
+  "systemGroup": "Missiles",
+  "systemType": "Surface-to-Air Missile",
+  "nomenclature": "MX-00137 Surface-to-Air-H2",
+  "primaryEquipCode": "MX00137",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2003-01-01",
+  "updatedDate": "2026-06-23",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900137",
+  "aliasList": "MX00137, MX-00137",
+  "aliases": [
+    {
+      "alias": "MX00137",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00137",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00137",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00137 Surface-to-Air-H2 is a synthetic surface-to-air missile record in the Missiles group. It is attributed to Japan and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic surface-to-air missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00137 Surface-to-Air-H2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "type": "IOC Year",
+      "proliferation": 2014,
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001371,
+      "url": "https://example.invalid/images/900137.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00137 Surface-to-Air-H2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001372,
+      "url": "https://example.invalid/docs/900137.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00137 Surface-to-Air-H2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Arab Emirates",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Surface-to-Air Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length - 1",
+      "parameterValue": "7",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "7 m",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Length",
+      "parameter": "Length - 2",
+      "parameterValue": "4",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "4 m",
+      "parameterSubTitle": "Block II",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "996",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "996 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "871",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "871 km",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "3.161",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3.161 Mach",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "active radar homing",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900628,
+      "childModel": "WCX-00628 Warhead-G6",
+      "parentModelID": 900137,
+      "parentModel": "MX-00137 Surface-to-Air-H2",
+      "parentComponent": "Seeker",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Warhead",
+      "childPrimaryEquipCode": "WCX00628"
+    }
+  ]
+}

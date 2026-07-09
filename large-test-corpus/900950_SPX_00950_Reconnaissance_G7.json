@@ -1,0 +1,207 @@
+{
+  "modelID": 900950,
+  "releaseID": 1,
+  "name": "SPX-00950 Reconnaissance-G7",
+  "systemGroup": "Space Systems",
+  "systemType": "Reconnaissance Satellite",
+  "nomenclature": "SPX-00950 Reconnaissance-G7",
+  "primaryEquipCode": "SPX00950",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2007-01-01",
+  "updatedDate": "2026-06-05",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900950",
+  "aliasList": "SPX00950, SPX-00950",
+  "aliases": [
+    {
+      "alias": "SPX00950",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00950",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00950",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00950 Reconnaissance-G7 is a synthetic reconnaissance satellite record in the Space Systems group. It is attributed to Italy and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic reconnaissance satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00950 Reconnaissance-G7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "type": "IOC Year",
+      "proliferation": 2016,
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009501,
+      "url": "https://example.invalid/images/900950.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00950 Reconnaissance-G7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009502,
+      "url": "https://example.invalid/docs/900950.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00950 Reconnaissance-G7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Israel",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Reconnaissance Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "19343",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "19343 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "8.188",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "8.188 years"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "19",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "19 kW"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate",
+      "parameterValue": "6156.6",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "6156.6 Mbps"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "19.91",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "19.91 h"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "electro-optical imager",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900872,
+      "childModel": "CEX-00872 Jammer-C9",
+      "parentModelID": 900950,
+      "parentModel": "SPX-00950 Reconnaissance-G7",
+      "parentComponent": "Communications",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Jammer",
+      "childPrimaryEquipCode": "CEX00872"
+    }
+  ]
+}

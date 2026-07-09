@@ -1,0 +1,269 @@
+{
+  "modelID": 900292,
+  "releaseID": 1,
+  "name": "ADX-00292 Long-Range-A4",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "Long-Range SAM System",
+  "nomenclature": "ADX-00292 Long-Range-A4",
+  "primaryEquipCode": "ADX00292",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2015-01-01",
+  "updatedDate": "2026-02-01",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900292",
+  "aliasList": "ADX00292, ADX-00292",
+  "aliases": [
+    {
+      "alias": "ADX00292",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00292",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00292",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00292 Long-Range-A4 is a synthetic long-range sam system record in the Air Defense Systems group. It is attributed to Israel and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic long-range sam system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00292 Long-Range-A4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "type": "IOC Year",
+      "proliferation": 1993,
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Turkey",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Turkish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002921,
+      "url": "https://example.invalid/images/900292.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00292 Long-Range-A4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002922,
+      "url": "https://example.invalid/docs/900292.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00292 Long-Range-A4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Singapore",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Long-Range SAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "341",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "341 km"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "428",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "428 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "32.52",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "32.52 min"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "19",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "19 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "176",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "176 targets"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Missiles employed",
+      "parameter": "Missiles employed",
+      "parameterValue": "mixed missile battery",
+      "uom": "",
+      "parameterDescr": "Interceptor missiles used by the system",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "PESA engagement radar",
+      "uom": "",
+      "parameterDescr": "Primary search or engagement radar type",
+      "dataType": "Text",
+      "component": "Sensors"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900334,
+      "childModel": "SX-00334 EO/IR-G4",
+      "parentModelID": 900292,
+      "parentModel": "ADX-00292 Long-Range-A4",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "EO/IR Sensor",
+      "childPrimaryEquipCode": "SX00334"
+    },
+    {
+      "childModelID": 900184,
+      "childModel": "MX-00184 Surface-to-Air-C3",
+      "parentModelID": 900292,
+      "parentModel": "ADX-00292 Long-Range-A4",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Surface-to-Air Missile",
+      "childPrimaryEquipCode": "MX00184"
+    },
+    {
+      "childModelID": 900825,
+      "childModel": "CEX-00825 Data-C9",
+      "parentModelID": 900292,
+      "parentModel": "ADX-00292 Long-Range-A4",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Data Link",
+      "childPrimaryEquipCode": "CEX00825"
+    },
+    {
+      "childModelID": 900875,
+      "childModel": "CEX-00875 Battle-H7",
+      "parentModelID": 900292,
+      "parentModel": "ADX-00292 Long-Range-A4",
+      "parentComponent": "Radar",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Battle Management System",
+      "childPrimaryEquipCode": "CEX00875"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "modelID": 900178,
+  "releaseID": 1,
+  "name": "MX-00178 Anti-Ship-A9",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Ship Missile",
+  "nomenclature": "MX-00178 Anti-Ship-A9",
+  "primaryEquipCode": "MX00178",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2024-01-01",
+  "updatedDate": "2026-06-26",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900178",
+  "aliasList": "MX00178, MX-00178",
+  "aliases": [
+    {
+      "alias": "MX00178",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00178",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00178",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00178 Anti-Ship-A9 is a synthetic anti-ship missile record in the Missiles group. It is attributed to United States and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic anti-ship missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00178 Anti-Ship-A9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 1981,
+      "region": "North America",
+      "organization": "US Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001781,
+      "url": "https://example.invalid/images/900178.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00178 Anti-Ship-A9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001782,
+      "url": "https://example.invalid/docs/900178.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00178 Anti-Ship-A9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Vector Propulsion",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Anti-Ship Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "4",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "4 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "1384",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "1384 kg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "1721",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1721 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed",
+      "parameterValue": "3.07",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "3.07 Mach"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "active radar homing",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "285",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "285 kg"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "25",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "25 km"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900652,
+      "childModel": "WCX-00652 Proximity-D5",
+      "parentModelID": 900178,
+      "parentModel": "MX-00178 Anti-Ship-A9",
+      "parentComponent": "Seeker",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Proximity Fuze",
+      "childPrimaryEquipCode": "WCX00652"
+    },
+    {
+      "childModelID": 900777,
+      "childModel": "PPX-00777 Diesel-A7",
+      "parentModelID": 900178,
+      "parentModel": "MX-00178 Anti-Ship-A9",
+      "parentComponent": "Seeker",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Diesel Engine",
+      "childPrimaryEquipCode": "PPX00777"
+    }
+  ]
+}

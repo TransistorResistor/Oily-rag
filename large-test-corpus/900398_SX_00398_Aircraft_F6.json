@@ -1,0 +1,253 @@
+{
+  "modelID": 900398,
+  "releaseID": 1,
+  "name": "SX-00398 Aircraft-F6",
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "SX-00398 Aircraft-F6",
+  "primaryEquipCode": "SX00398",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2002-01-01",
+  "updatedDate": "2026-03-23",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900398",
+  "aliasList": "SX00398, SX-00398",
+  "aliases": [
+    {
+      "alias": "SX00398",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00398",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00398",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00398 Aircraft-F6 is a synthetic aircraft radar record in the Sensors group. It is attributed to Israel and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic aircraft radar fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00398 Aircraft-F6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "type": "IOC Year",
+      "proliferation": 1999,
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Orion Naval Group"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003981,
+      "url": "https://example.invalid/images/900398.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00398 Aircraft-F6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003982,
+      "url": "https://example.invalid/docs/900398.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00398 Aircraft-F6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Russia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Aircraft Radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "674",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "674 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "C-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "173.1",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "173.1 deg"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "1076",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "1076 targets"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "track-while-scan",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Processing"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Elevation coverage",
+      "parameter": "Elevation coverage",
+      "parameterValue": "49.47",
+      "uom": "deg",
+      "parameterDescr": "Elevation coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "49.47 deg"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "17346495",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "17346495 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900879,
+      "childModel": "CEX-00879 Communications-H1",
+      "parentModelID": 900398,
+      "parentModel": "SX-00398 Aircraft-F6",
+      "parentComponent": "Data Link",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Communications System",
+      "childPrimaryEquipCode": "CEX00879"
+    },
+    {
+      "childModelID": 900881,
+      "childModel": "CEX-00881 Data-C5",
+      "parentModelID": 900398,
+      "parentModel": "SX-00398 Aircraft-F6",
+      "parentComponent": "Data Link",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Data Link",
+      "childPrimaryEquipCode": "CEX00881"
+    }
+  ]
+}

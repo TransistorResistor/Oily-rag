@@ -1,0 +1,304 @@
+{
+  "modelID": 900540,
+  "releaseID": 1,
+  "name": "NVX-00540 Aircraft-C3",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Aircraft Carrier",
+  "nomenclature": "NVX-00540 Aircraft-C3",
+  "primaryEquipCode": "NVX00540",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2006-01-01",
+  "updatedDate": "2026-06-06",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900540",
+  "aliasList": "NVX00540, NVX-00540",
+  "aliases": [
+    {
+      "alias": "NVX00540",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00540",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00540",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00540 Aircraft-C3 is a synthetic aircraft carrier record in the Naval Platforms group. It is attributed to United States and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic aircraft carrier fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00540 Aircraft-C3 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 2003,
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005401,
+      "url": "https://example.invalid/images/900540.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00540 Aircraft-C3 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005402,
+      "url": "https://example.invalid/docs/900540.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00540 Aircraft-C3 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Singapore",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Aircraft Carrier",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement - 1",
+      "parameterValue": "45002.0",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "45002.0 t",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement - 2",
+      "parameterValue": "73773.0",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "73773.0 t",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "217",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "217 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "25.75",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "25.75 kn",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "9339.7",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "9339.7 nmi",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Crew",
+      "parameter": "Crew - 1",
+      "parameterValue": "3324",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3324 crew",
+      "parameterSubTitle": "Naval variant",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Crew",
+      "parameter": "Crew - 2",
+      "parameterValue": "3288",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3288 crew",
+      "parameterSubTitle": "Block I",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Radar suite",
+      "parameter": "Radar suite",
+      "parameterValue": "3D air-search radar",
+      "uom": "",
+      "parameterDescr": "Primary radar suite",
+      "dataType": "Text",
+      "component": "Sensors",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Draft",
+      "parameter": "Draft",
+      "parameterValue": "9",
+      "uom": "m",
+      "parameterDescr": "Draft at full load",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "9 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Beam",
+      "parameter": "Beam",
+      "parameterValue": "60",
+      "uom": "m",
+      "parameterDescr": "Maximum beam",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "60 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Main gun",
+      "parameter": "Main gun",
+      "parameterValue": "127 mm naval gun",
+      "uom": "",
+      "parameterDescr": "Principal gun armament",
+      "dataType": "Text",
+      "component": "Armament",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Vertical launch cells",
+      "parameter": "Vertical launch cells",
+      "parameterValue": "62",
+      "uom": "cells",
+      "parameterDescr": "Number of VLS cells",
+      "dataType": "Number",
+      "component": "Armament",
+      "parameterUomValue": "62 cells",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "4436178017",
+      "uom": "USD",
+      "parameterDescr": "Approximate ship cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "4436178017 USD",
+      "comments": "Applies to baseline production lot"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

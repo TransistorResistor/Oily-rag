@@ -1,0 +1,266 @@
+{
+  "modelID": 900374,
+  "releaseID": 1,
+  "name": "SX-00374 Aircraft-C5",
+  "systemGroup": "Sensors",
+  "systemType": "Aircraft Radar",
+  "nomenclature": "SX-00374 Aircraft-C5",
+  "primaryEquipCode": "SX00374",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2001-01-01",
+  "updatedDate": "2026-05-17",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900374",
+  "aliasList": "SX00374, SX-00374",
+  "aliases": [
+    {
+      "alias": "SX00374",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00374",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00374",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00374 Aircraft-C5 is a synthetic aircraft radar record in the Sensors group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic aircraft radar fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00374 Aircraft-C5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 1986,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Kestrel Dynamics"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003741,
+      "url": "https://example.invalid/images/900374.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00374 Aircraft-C5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003742,
+      "url": "https://example.invalid/docs/900374.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00374 Aircraft-C5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Arab Emirates",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Aircraft Radar",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "365",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "365 km"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "X-band",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "276.2",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "276.2 deg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "1177",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "1177 targets"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Antenna type",
+      "parameter": "Antenna type",
+      "parameterValue": "staring EO/IR turret",
+      "uom": "",
+      "parameterDescr": "Antenna architecture",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "179",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "179 kW"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Instrumented range",
+      "parameter": "Instrumented range",
+      "parameterValue": "993",
+      "uom": "km",
+      "parameterDescr": "Maximum instrumented range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "993 km"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "23120133",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "23120133 USD"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Total weight",
+      "parameter": "Total weight",
+      "parameterValue": "5926",
+      "uom": "kg",
+      "parameterDescr": "Installed system weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "5926 kg"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Elevation coverage",
+      "parameter": "Elevation coverage",
+      "parameterValue": "63.77",
+      "uom": "deg",
+      "parameterDescr": "Elevation coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "63.77 deg"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "track-while-scan",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Processing"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

@@ -1,0 +1,289 @@
+{
+  "modelID": 900966,
+  "releaseID": 1,
+  "name": "SPX-00966 Launch-B6",
+  "systemGroup": "Space Systems",
+  "systemType": "Launch Vehicle",
+  "nomenclature": "SPX-00966 Launch-B6",
+  "primaryEquipCode": "SPX00966",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2023-01-01",
+  "updatedDate": "2026-07-28",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900966",
+  "aliasList": "SPX00966, SPX-00966",
+  "aliases": [
+    {
+      "alias": "SPX00966",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00966",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00966",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00966 Launch-B6 is a synthetic launch vehicle record in the Space Systems group. It is attributed to India and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic launch vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00966 Launch-B6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "type": "IOC Year",
+      "proliferation": 2007,
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Production",
+      "region": "South Asia",
+      "organization": "Ardent Missiles"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009661,
+      "url": "https://example.invalid/images/900966.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00966 Launch-B6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009662,
+      "url": "https://example.invalid/docs/900966.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00966 Launch-B6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "France",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "9979",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "9979 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "13758",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "13758 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "4.813",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "4.813 years"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "13",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "13 kW"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination",
+      "parameterValue": "72.81",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "72.81 deg"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Launch Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Dry mass",
+      "parameter": "Dry mass",
+      "parameterValue": "8286",
+      "uom": "kg",
+      "parameterDescr": "Mass excluding propellant",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "8286 kg"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "325788743",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "325788743 USD"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "25.94",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "25.94 h"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate",
+      "parameterValue": "3227.2",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "3227.2 Mbps"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "electro-optical imager",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900369,
+      "childModel": "SX-00369 Air-B2",
+      "parentModelID": 900966,
+      "parentModel": "SPX-00966 Launch-B6",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "SX00369"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "modelID": 900930,
+  "releaseID": 1,
+  "name": "SPX-00930 Navigation-C8",
+  "systemGroup": "Space Systems",
+  "systemType": "Navigation Satellite",
+  "nomenclature": "SPX-00930 Navigation-C8",
+  "primaryEquipCode": "SPX00930",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2014-01-01",
+  "updatedDate": "2026-04-03",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900930",
+  "aliasList": "SPX00930, SPX-00930",
+  "aliases": [
+    {
+      "alias": "SPX00930",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00930",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00930",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00930 Navigation-C8 is a synthetic navigation satellite record in the Space Systems group. It is attributed to United States and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic navigation satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00930 Navigation-C8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 1996,
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Mitsuba Aerospace"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009301,
+      "url": "https://example.invalid/images/900930.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00930 Navigation-C8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009302,
+      "url": "https://example.invalid/docs/900930.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00930 Navigation-C8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Helios Electronics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Navigation Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "9926",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "9926 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "11.87",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "11.87 years"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "2",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "2 kW"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

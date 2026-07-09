@@ -1,0 +1,174 @@
+{
+  "modelID": 900631,
+  "releaseID": 1,
+  "name": "WCX-00631 Proximity-G7",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Proximity Fuze",
+  "nomenclature": "WCX-00631 Proximity-G7",
+  "primaryEquipCode": "WCX00631",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2003-01-01",
+  "updatedDate": "2026-07-24",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900631",
+  "aliasList": "WCX00631, WCX-00631",
+  "aliases": [
+    {
+      "alias": "WCX00631",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00631",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00631",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00631 Proximity-G7 is a synthetic proximity fuze record in the Weapons and Components group. It is attributed to United Arab Emirates and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic proximity fuze fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00631 Proximity-G7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "IOC Year",
+      "proliferation": 1995,
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "Brazil",
+      "proliferation": "Using",
+      "region": "South America",
+      "organization": "Brazilian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006311,
+      "url": "https://example.invalid/images/900631.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00631 Proximity-G7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006312,
+      "url": "https://example.invalid/docs/900631.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00631 Proximity-G7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "France",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Nordic Signal Works",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "341",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "341 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "121",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "121 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1343655",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1343655 USD"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Fuzing mode",
+      "parameter": "Fuzing mode",
+      "parameterValue": "programmable airburst",
+      "uom": "",
+      "parameterDescr": "Fuzing or initiation mode",
+      "dataType": "Text",
+      "component": "Warhead"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

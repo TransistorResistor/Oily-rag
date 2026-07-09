@@ -1,0 +1,183 @@
+{
+  "modelID": 900624,
+  "releaseID": 1,
+  "name": "WCX-00624 Torpedo-A2",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Torpedo",
+  "nomenclature": "WCX-00624 Torpedo-A2",
+  "primaryEquipCode": "WCX00624",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2006-01-01",
+  "updatedDate": "2026-06-09",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900624",
+  "aliasList": "WCX00624, WCX-00624",
+  "aliases": [
+    {
+      "alias": "WCX00624",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00624",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00624",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00624 Torpedo-A2 is a synthetic torpedo record in the Weapons and Components group. It is attributed to France and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic torpedo fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00624 Torpedo-A2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "France",
+      "type": "IOC Year",
+      "proliferation": 2018,
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "France",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Asterion Defence"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006241,
+      "url": "https://example.invalid/images/900624.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00624 Torpedo-A2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006242,
+      "url": "https://example.invalid/docs/900624.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00624 Torpedo-A2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "France",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Kestrel Dynamics",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Torpedo",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "356",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "356 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "140",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "140 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1097074",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1097074 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

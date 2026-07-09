@@ -1,0 +1,280 @@
+{
+  "modelID": 900240,
+  "releaseID": 1,
+  "name": "ADX-00240 C-RAM-H7",
+  "systemGroup": "Air Defense Systems",
+  "systemType": "C-RAM System",
+  "nomenclature": "ADX-00240 C-RAM-H7",
+  "primaryEquipCode": "ADX00240",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2022-01-01",
+  "updatedDate": "2026-04-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900240",
+  "aliasList": "ADX00240, ADX-00240",
+  "aliases": [
+    {
+      "alias": "ADX00240",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "ADX-00240",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "ADX00240",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "ADX-00240 C-RAM-H7 is a synthetic c-ram system record in the Air Defense Systems group. It is attributed to United States and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic c-ram system fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "ADX-00240 C-RAM-H7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United States",
+      "proliferation": "Using",
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 2007,
+      "region": "North America",
+      "organization": "US Armed Forces"
+    },
+    {
+      "country": "United States",
+      "proliferation": "Production",
+      "region": "North America",
+      "organization": "Rheinmetall Atlas"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9002401,
+      "url": "https://example.invalid/images/900240.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "ADX-00240 C-RAM-H7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9002402,
+      "url": "https://example.invalid/docs/900240.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "ADX-00240 C-RAM-H7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Norway",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Maritime Systems Bureau",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "C-RAM System",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "358",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "358 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Radar detection range",
+      "parameter": "Radar detection range",
+      "parameterValue": "383",
+      "uom": "km",
+      "parameterDescr": "Maximum radar detection range",
+      "dataType": "Number",
+      "component": "Sensors",
+      "parameterUomValue": "383 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Deployment time",
+      "parameter": "Deployment time",
+      "parameterValue": "38.65",
+      "uom": "min",
+      "parameterDescr": "Time required to emplace and become operational",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "38.65 min"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Radar type",
+      "parameter": "Radar type",
+      "parameterValue": "PESA engagement radar",
+      "uom": "",
+      "parameterDescr": "Primary search or engagement radar type",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "133",
+      "uom": "targets",
+      "parameterDescr": "Number of targets tracked at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "133 targets"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Battery vehicles",
+      "parameter": "Battery vehicles",
+      "parameterValue": "7",
+      "uom": "vehicles",
+      "parameterDescr": "Typical number of major vehicles per battery",
+      "dataType": "Number",
+      "component": "Logistics",
+      "parameterUomValue": "7 vehicles"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude",
+      "parameterValue": "21",
+      "uom": "km",
+      "parameterDescr": "Maximum engagement altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "21 km"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Simultaneous targets engaged",
+      "parameter": "Simultaneous targets engaged",
+      "parameterValue": "30",
+      "uom": "targets",
+      "parameterDescr": "Number of targets engaged at once",
+      "dataType": "Number",
+      "component": "Fire Control",
+      "parameterUomValue": "30 targets"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900179,
+      "childModel": "MX-00179 Air-to-Air-H1",
+      "parentModelID": 900240,
+      "parentModel": "ADX-00240 C-RAM-H7",
+      "parentComponent": "Interceptor",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Air-to-Air Missile",
+      "childPrimaryEquipCode": "MX00179"
+    },
+    {
+      "childModelID": 900123,
+      "childModel": "MX-00123 Anti-Ship-B9",
+      "parentModelID": 900240,
+      "parentModel": "ADX-00240 C-RAM-H7",
+      "parentComponent": "Interceptor",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Anti-Ship Missile",
+      "childPrimaryEquipCode": "MX00123"
+    },
+    {
+      "childModelID": 900177,
+      "childModel": "MX-00177 Cruise-G9",
+      "parentModelID": 900240,
+      "parentModel": "ADX-00240 C-RAM-H7",
+      "parentComponent": "Interceptor",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Cruise Missile",
+      "childPrimaryEquipCode": "MX00177"
+    },
+    {
+      "childModelID": 900352,
+      "childModel": "SX-00352 Electronic-C8",
+      "parentModelID": 900240,
+      "parentModel": "ADX-00240 C-RAM-H7",
+      "parentComponent": "Interceptor",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Electronic Support Sensor",
+      "childPrimaryEquipCode": "SX00352"
+    }
+  ]
+}

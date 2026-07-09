@@ -1,0 +1,207 @@
+{
+  "modelID": 900526,
+  "releaseID": 1,
+  "name": "NVX-00526 Destroyer-D6",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Destroyer",
+  "nomenclature": "NVX-00526 Destroyer-D6",
+  "primaryEquipCode": "NVX00526",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2010-01-01",
+  "updatedDate": "2026-03-11",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900526",
+  "aliasList": "NVX00526, NVX-00526",
+  "aliases": [
+    {
+      "alias": "NVX00526",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00526",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00526",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00526 Destroyer-D6 is a synthetic destroyer record in the Naval Platforms group. It is attributed to Israel and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic destroyer fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00526 Destroyer-D6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "type": "IOC Year",
+      "proliferation": 1991,
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Vector Propulsion"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005261,
+      "url": "https://example.invalid/images/900526.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00526 Destroyer-D6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005262,
+      "url": "https://example.invalid/docs/900526.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00526 Destroyer-D6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Germany",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Destroyer",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "42048.2",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "42048.2 t"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "194",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "194 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "2149.0",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2149.0 nmi"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "2137",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "2137 crew"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "8275536775",
+      "uom": "USD",
+      "parameterDescr": "Approximate ship cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "8275536775 USD"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Vertical launch cells",
+      "parameter": "Vertical launch cells",
+      "parameterValue": "41",
+      "uom": "cells",
+      "parameterDescr": "Number of VLS cells",
+      "dataType": "Number",
+      "component": "Armament",
+      "parameterUomValue": "41 cells"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Main gun",
+      "parameter": "Main gun",
+      "parameterValue": "none",
+      "uom": "",
+      "parameterDescr": "Principal gun armament",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Beam",
+      "parameter": "Beam",
+      "parameterValue": "7",
+      "uom": "m",
+      "parameterDescr": "Maximum beam",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "7 m"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

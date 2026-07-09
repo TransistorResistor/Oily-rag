@@ -1,0 +1,254 @@
+{
+  "modelID": 900368,
+  "releaseID": 1,
+  "name": "SX-00368 EO/IR-G9",
+  "systemGroup": "Sensors",
+  "systemType": "EO/IR Sensor",
+  "nomenclature": "SX-00368 EO/IR-G9",
+  "primaryEquipCode": "SX00368",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2022-01-01",
+  "updatedDate": "2026-04-23",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900368",
+  "aliasList": "SX00368, SX-00368",
+  "aliases": [
+    {
+      "alias": "SX00368",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SX-00368",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SX00368",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SX-00368 EO/IR-G9 is a synthetic eo/ir sensor record in the Sensors group. It is attributed to Italy and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic eo/ir sensor fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SX-00368 EO/IR-G9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Italy",
+      "type": "IOC Year",
+      "proliferation": 1992,
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9003681,
+      "url": "https://example.invalid/images/900368.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SX-00368 EO/IR-G9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9003682,
+      "url": "https://example.invalid/docs/900368.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SX-00368 EO/IR-G9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Singapore",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "EO/IR Sensor",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Detection range",
+      "parameter": "Detection range",
+      "parameterValue": "259",
+      "uom": "km",
+      "parameterDescr": "Maximum detection range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "259 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Coverage",
+      "parameter": "Coverage",
+      "parameterValue": "213.8",
+      "uom": "deg",
+      "parameterDescr": "Azimuth coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "213.8 deg"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Simultaneous targets tracked",
+      "parameter": "Simultaneous targets tracked",
+      "parameterValue": "638",
+      "uom": "targets",
+      "parameterDescr": "Targets tracked concurrently",
+      "dataType": "Number",
+      "component": "Processing",
+      "parameterUomValue": "638 targets"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Instrumented range",
+      "parameter": "Instrumented range",
+      "parameterValue": "618",
+      "uom": "km",
+      "parameterDescr": "Maximum instrumented range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "618 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Power consumption",
+      "parameter": "Power consumption",
+      "parameterValue": "130",
+      "uom": "kW",
+      "parameterDescr": "Electrical power consumption",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "130 kW"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Frequency band",
+      "parameter": "Frequency band",
+      "parameterValue": "VHF",
+      "uom": "",
+      "parameterDescr": "Operating frequency band",
+      "dataType": "LOV",
+      "component": "RF"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "50885647",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "50885647 USD"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Operating modes",
+      "parameter": "Operating modes",
+      "parameterValue": "passive detection",
+      "uom": "",
+      "parameterDescr": "Principal operating modes",
+      "dataType": "Text",
+      "component": "Processing"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Antenna type",
+      "parameter": "Antenna type",
+      "parameterValue": "PESA",
+      "uom": "",
+      "parameterDescr": "Antenna architecture",
+      "dataType": "Text",
+      "component": "Antenna"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Total weight",
+      "parameter": "Total weight",
+      "parameterValue": "8845",
+      "uom": "kg",
+      "parameterDescr": "Installed system weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "8845 kg"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Elevation coverage",
+      "parameter": "Elevation coverage",
+      "parameterValue": "75.97",
+      "uom": "deg",
+      "parameterDescr": "Elevation coverage",
+      "dataType": "Number",
+      "component": "Antenna",
+      "parameterUomValue": "75.97 deg"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

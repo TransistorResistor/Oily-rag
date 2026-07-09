@@ -1,0 +1,297 @@
+{
+  "modelID": 900952,
+  "releaseID": 1,
+  "name": "SPX-00952 Communications-B4",
+  "systemGroup": "Space Systems",
+  "systemType": "Communications Satellite",
+  "nomenclature": "SPX-00952 Communications-B4",
+  "primaryEquipCode": "SPX00952",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2009-01-01",
+  "updatedDate": "2026-02-25",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900952",
+  "aliasList": "SPX00952, SPX-00952",
+  "aliases": [
+    {
+      "alias": "SPX00952",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00952",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00952",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00952 Communications-B4 is a synthetic communications satellite record in the Space Systems group. It is attributed to Germany and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic communications satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00952 Communications-B4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "type": "IOC Year",
+      "proliferation": 1989,
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009521,
+      "url": "https://example.invalid/images/900952.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00952 Communications-B4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009522,
+      "url": "https://example.invalid/docs/900952.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00952 Communications-B4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Germany",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Communications Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "10703",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "10703 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "27562",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "27562 km"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "8",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "8 kW"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Dry mass",
+      "parameter": "Dry mass",
+      "parameterValue": "13011",
+      "uom": "kg",
+      "parameterDescr": "Mass excluding propellant",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "13011 kg"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate",
+      "parameterValue": "8228.8",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "8228.8 Mbps"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "signals intelligence package",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "222849814",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "222849814 USD"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "73.62",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "73.62 h"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination",
+      "parameterValue": "45.18",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "45.18 deg"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "9.142",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "9.142 years"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900760,
+      "childModel": "PPX-00760 Gas-B8",
+      "parentModelID": 900952,
+      "parentModel": "SPX-00952 Communications-B4",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Gas Turbine",
+      "childPrimaryEquipCode": "PPX00760"
+    },
+    {
+      "childModelID": 900365,
+      "childModel": "SX-00365 Air-F9",
+      "parentModelID": 900952,
+      "parentModel": "SPX-00952 Communications-B4",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "SX00365"
+    },
+    {
+      "childModelID": 900354,
+      "childModel": "SX-00354 EO/IR-F4",
+      "parentModelID": 900952,
+      "parentModel": "SPX-00952 Communications-B4",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "EO/IR Sensor",
+      "childPrimaryEquipCode": "SX00354"
+    },
+    {
+      "childModelID": 900714,
+      "childModel": "PPX-00714 Turbofan-H7",
+      "parentModelID": 900952,
+      "parentModel": "SPX-00952 Communications-B4",
+      "parentComponent": "Propulsion",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Turbofan Engine",
+      "childPrimaryEquipCode": "PPX00714"
+    }
+  ]
+}

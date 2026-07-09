@@ -1,0 +1,181 @@
+{
+  "modelID": 900434,
+  "releaseID": 1,
+  "name": "GVX-00434 Infantry-B3",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Infantry Fighting Vehicle",
+  "nomenclature": "GVX-00434 Infantry-B3",
+  "primaryEquipCode": "GVX00434",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2021-01-01",
+  "updatedDate": "2026-06-08",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900434",
+  "aliasList": "GVX00434, GVX-00434",
+  "aliases": [
+    {
+      "alias": "GVX00434",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00434",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00434",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00434 Infantry-B3 is a synthetic infantry fighting vehicle record in the Ground Vehicles group. It is attributed to Sweden and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic infantry fighting vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00434 Infantry-B3 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "IOC Year",
+      "proliferation": 2018,
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004341,
+      "url": "https://example.invalid/images/900434.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00434 Infantry-B3 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004342,
+      "url": "https://example.invalid/docs/900434.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00434 Infantry-B3 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Japan",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Infantry Fighting Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "91.32",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "91.32 km/h"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "386",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "386 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "120 mm smoothbore gun",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

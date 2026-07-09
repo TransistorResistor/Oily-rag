@@ -1,0 +1,215 @@
+{
+  "modelID": 900414,
+  "releaseID": 1,
+  "name": "GVX-00414 Main-B2",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Main Battle Tank",
+  "nomenclature": "GVX-00414 Main-B2",
+  "primaryEquipCode": "GVX00414",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2018-01-01",
+  "updatedDate": "2026-06-04",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900414",
+  "aliasList": "GVX00414, GVX-00414",
+  "aliases": [
+    {
+      "alias": "GVX00414",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00414",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00414",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00414 Main-B2 is a synthetic main battle tank record in the Ground Vehicles group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic main battle tank fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00414 Main-B2 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 2001,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Production",
+      "region": "Africa",
+      "organization": "Rheinmetall Atlas"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004141,
+      "url": "https://example.invalid/images/900414.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00414 Main-B2 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004142,
+      "url": "https://example.invalid/docs/900414.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00414 Main-B2 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United Kingdom",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Asterion Defence",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Main Battle Tank",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "22768",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "22768 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "99.12",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "99.12 km/h"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "577",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "577 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "120 mm smoothbore gun",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "5589400",
+      "uom": "USD",
+      "parameterDescr": "Approximate vehicle unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "5589400 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900134,
+      "childModel": "MX-00134 Air-to-Air-C8",
+      "parentModelID": 900414,
+      "parentModel": "GVX-00414 Main-B2",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Air-to-Air Missile",
+      "childPrimaryEquipCode": "MX00134"
+    }
+  ]
+}

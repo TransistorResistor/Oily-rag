@@ -1,0 +1,210 @@
+{
+  "modelID": 900667,
+  "releaseID": 1,
+  "name": "WCX-00667 Torpedo-G8",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Torpedo",
+  "nomenclature": "WCX-00667 Torpedo-G8",
+  "primaryEquipCode": "WCX00667",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2021-01-01",
+  "updatedDate": "2026-01-06",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900667",
+  "aliasList": "WCX00667, WCX-00667",
+  "aliases": [
+    {
+      "alias": "WCX00667",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00667",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00667",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00667 Torpedo-G8 is a synthetic torpedo record in the Weapons and Components group. It is attributed to Germany and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic torpedo fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00667 Torpedo-G8 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "type": "IOC Year",
+      "proliferation": 2024,
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Singapore",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Singapore",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Singapore Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006671,
+      "url": "https://example.invalid/images/900667.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00667 Torpedo-G8 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006672,
+      "url": "https://example.invalid/docs/900667.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00667 Torpedo-G8 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Australia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Torpedo",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "881",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "881 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "1400534",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "1400534 USD"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Guidance",
+      "parameter": "Guidance",
+      "parameterValue": "Unguided",
+      "uom": "",
+      "parameterDescr": "Guidance class",
+      "dataType": "LOV",
+      "component": "Guidance"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "112",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "112 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Muzzle velocity",
+      "parameter": "Muzzle velocity",
+      "parameterValue": "1032.2",
+      "uom": "m/s",
+      "parameterDescr": "Projectile muzzle velocity",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1032.2 m/s"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

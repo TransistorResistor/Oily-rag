@@ -1,0 +1,262 @@
+{
+  "modelID": 900696,
+  "releaseID": 1,
+  "name": "WCX-00696 Proximity-D7",
+  "systemGroup": "Weapons and Components",
+  "systemType": "Proximity Fuze",
+  "nomenclature": "WCX-00696 Proximity-D7",
+  "primaryEquipCode": "WCX00696",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2005-01-01",
+  "updatedDate": "2026-07-16",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900696",
+  "aliasList": "WCX00696, WCX-00696",
+  "aliases": [
+    {
+      "alias": "WCX00696",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "WCX-00696",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "WCX00696",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "WCX-00696 Proximity-D7 is a synthetic proximity fuze record in the Weapons and Components group. It is attributed to South Africa and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic proximity fuze fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "WCX-00696 Proximity-D7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "type": "IOC Year",
+      "proliferation": 2017,
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Production",
+      "region": "Africa",
+      "organization": "Mitsuba Aerospace"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9006961,
+      "url": "https://example.invalid/images/900696.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "WCX-00696 Proximity-D7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9006962,
+      "url": "https://example.invalid/docs/900696.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "WCX-00696 Proximity-D7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Mitsuba Aerospace",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Proximity Fuze",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Weight",
+      "parameter": "Weight",
+      "parameterValue": "253",
+      "uom": "kg",
+      "parameterDescr": "Component or munition weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "253 kg",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter - 1",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m",
+      "parameterSubTitle": "Block I",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter - 2",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body or calibre diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Effective range",
+      "parameter": "Effective range",
+      "parameterValue": "58",
+      "uom": "km",
+      "parameterDescr": "Effective range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "58 km",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost - 1",
+      "parameterValue": "962608",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "962608 USD",
+      "parameterSubTitle": "Block I",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost - 2",
+      "parameterValue": "953365",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "953365 USD",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Guidance",
+      "parameter": "Guidance",
+      "parameterValue": "Laser",
+      "uom": "",
+      "parameterDescr": "Guidance class",
+      "dataType": "LOV",
+      "component": "Guidance",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Explosive mass",
+      "parameter": "Explosive mass",
+      "parameterValue": "173",
+      "uom": "kg",
+      "parameterDescr": "Explosive fill mass",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "173 kg",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Fuzing mode",
+      "parameter": "Fuzing mode",
+      "parameterValue": "contact",
+      "uom": "",
+      "parameterDescr": "Fuzing or initiation mode",
+      "dataType": "Text",
+      "component": "Warhead",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Muzzle velocity",
+      "parameter": "Muzzle velocity",
+      "parameterValue": "1468.9",
+      "uom": "m/s",
+      "parameterDescr": "Projectile muzzle velocity",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1468.9 m/s",
+      "comments": "Export configuration may differ"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

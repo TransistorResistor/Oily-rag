@@ -1,0 +1,274 @@
+{
+  "modelID": 900552,
+  "releaseID": 1,
+  "name": "NVX-00552 Submarine-G4",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Submarine",
+  "nomenclature": "NVX-00552 Submarine-G4",
+  "primaryEquipCode": "NVX00552",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2003-01-01",
+  "updatedDate": "2026-04-09",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900552",
+  "aliasList": "NVX00552, NVX-00552",
+  "aliases": [
+    {
+      "alias": "NVX00552",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00552",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00552",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00552 Submarine-G4 is a synthetic submarine record in the Naval Platforms group. It is attributed to United Arab Emirates and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic submarine fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00552 Submarine-G4 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "type": "IOC Year",
+      "proliferation": 2005,
+      "region": "Middle East",
+      "organization": "UAE Armed Forces"
+    },
+    {
+      "country": "United Arab Emirates",
+      "proliferation": "Production",
+      "region": "Middle East",
+      "organization": "Kestrel Dynamics"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005521,
+      "url": "https://example.invalid/images/900552.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00552 Submarine-G4 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005522,
+      "url": "https://example.invalid/docs/900552.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00552 Submarine-G4 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "France",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Submarine",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "49189.0",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "49189.0 t"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "19.49",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "19.49 kn"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "9591.2",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "9591.2 nmi"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "2421",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "2421 crew"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "8062087234",
+      "uom": "USD",
+      "parameterDescr": "Approximate ship cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "8062087234 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Vertical launch cells",
+      "parameter": "Vertical launch cells",
+      "parameterValue": "84",
+      "uom": "cells",
+      "parameterDescr": "Number of VLS cells",
+      "dataType": "Number",
+      "component": "Armament",
+      "parameterUomValue": "84 cells"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Main gun",
+      "parameter": "Main gun",
+      "parameterValue": "76 mm naval gun",
+      "uom": "",
+      "parameterDescr": "Principal gun armament",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Radar suite",
+      "parameter": "Radar suite",
+      "parameterValue": "navigation radar set",
+      "uom": "",
+      "parameterDescr": "Primary radar suite",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "112",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "112 m"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Beam",
+      "parameter": "Beam",
+      "parameterValue": "29",
+      "uom": "m",
+      "parameterDescr": "Maximum beam",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "29 m"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Draft",
+      "parameter": "Draft",
+      "parameterValue": "7",
+      "uom": "m",
+      "parameterDescr": "Draft at full load",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "7 m"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

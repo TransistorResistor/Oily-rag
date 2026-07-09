@@ -1,0 +1,207 @@
+{
+  "modelID": 900482,
+  "releaseID": 1,
+  "name": "GVX-00482 Infantry-C9",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Infantry Fighting Vehicle",
+  "nomenclature": "GVX-00482 Infantry-C9",
+  "primaryEquipCode": "GVX00482",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2016-01-01",
+  "updatedDate": "2026-01-28",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900482",
+  "aliasList": "GVX00482, GVX-00482",
+  "aliases": [
+    {
+      "alias": "GVX00482",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00482",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00482",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00482 Infantry-C9 is a synthetic infantry fighting vehicle record in the Ground Vehicles group. It is attributed to Germany and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic infantry fighting vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00482 Infantry-C9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "type": "IOC Year",
+      "proliferation": 1995,
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004821,
+      "url": "https://example.invalid/images/900482.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00482 Infantry-C9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004822,
+      "url": "https://example.invalid/docs/900482.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00482 Infantry-C9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Norway",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rheinmetall Atlas",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Infantry Fighting Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "43061",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "43061 kg"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "50.73",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "50.73 km/h"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "835",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "835 km"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "heavy machine gun",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900842,
+      "childModel": "CEX-00842 Battle-A6",
+      "parentModelID": 900482,
+      "parentModel": "GVX-00482 Infantry-C9",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Battle Management System",
+      "childPrimaryEquipCode": "CEX00842"
+    },
+    {
+      "childModelID": 900625,
+      "childModel": "WCX-00625 Naval-F3",
+      "parentModelID": 900482,
+      "parentModel": "GVX-00482 Infantry-C9",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Naval Gun",
+      "childPrimaryEquipCode": "WCX00625"
+    },
+    {
+      "childModelID": 900646,
+      "childModel": "WCX-00646 Naval-H6",
+      "parentModelID": 900482,
+      "parentModel": "GVX-00482 Infantry-C9",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Weapons and Components",
+      "childSystemType": "Naval Gun",
+      "childPrimaryEquipCode": "WCX00646"
+    }
+  ]
+}

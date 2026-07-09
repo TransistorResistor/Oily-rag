@@ -1,0 +1,308 @@
+{
+  "modelID": 900923,
+  "releaseID": 1,
+  "name": "SPX-00923 Communications-D9",
+  "systemGroup": "Space Systems",
+  "systemType": "Communications Satellite",
+  "nomenclature": "SPX-00923 Communications-D9",
+  "primaryEquipCode": "SPX00923",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2016-01-01",
+  "updatedDate": "2026-05-05",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900923",
+  "aliasList": "SPX00923, SPX-00923",
+  "aliases": [
+    {
+      "alias": "SPX00923",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00923",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00923",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00923 Communications-D9 is a synthetic communications satellite record in the Space Systems group. It is attributed to South Korea and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic communications satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00923 Communications-D9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "type": "IOC Year",
+      "proliferation": 2026,
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Northbridge Systems"
+    },
+    {
+      "country": "Poland",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    },
+    {
+      "country": "Poland",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "Polish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009231,
+      "url": "https://example.invalid/images/900923.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00923 Communications-D9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009232,
+      "url": "https://example.invalid/docs/900923.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00923 Communications-D9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Nordic Signal Works",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Communications Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass - 1",
+      "parameterValue": "14606",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "14606 kg",
+      "parameterSubTitle": "Block I",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass - 2",
+      "parameterValue": "8186",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "8186 kg",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude - 1",
+      "parameterValue": "17749",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "17749 km",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude - 2",
+      "parameterValue": "33689",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "33689 km",
+      "parameterSubTitle": "Block I",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "9.402",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "9.402 years",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "13",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "13 kW",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "45.31",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "45.31 h",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination - 1",
+      "parameterValue": "52.26",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "52.26 deg",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination - 2",
+      "parameterValue": "42.96",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "42.96 deg",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate",
+      "parameterValue": "3590.6",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "3590.6 Mbps",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "communications repeater",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "289508047",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "289508047 USD",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Dry mass",
+      "parameter": "Dry mass",
+      "parameterValue": "14526",
+      "uom": "kg",
+      "parameterDescr": "Mass excluding propellant",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "14526 kg",
+      "comments": "Applies to baseline production lot"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

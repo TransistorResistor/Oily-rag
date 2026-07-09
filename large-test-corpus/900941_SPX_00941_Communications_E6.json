@@ -1,0 +1,234 @@
+{
+  "modelID": 900941,
+  "releaseID": 1,
+  "name": "SPX-00941 Communications-E6",
+  "systemGroup": "Space Systems",
+  "systemType": "Communications Satellite",
+  "nomenclature": "SPX-00941 Communications-E6",
+  "primaryEquipCode": "SPX00941",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2010-01-01",
+  "updatedDate": "2026-07-09",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900941",
+  "aliasList": "SPX00941, SPX-00941",
+  "aliases": [
+    {
+      "alias": "SPX00941",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "SPX-00941",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "SPX00941",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "SPX-00941 Communications-E6 is a synthetic communications satellite record in the Space Systems group. It is attributed to Japan and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic communications satellite fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "SPX-00941 Communications-E6 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "type": "IOC Year",
+      "proliferation": 1996,
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9009411,
+      "url": "https://example.invalid/images/900941.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "SPX-00941 Communications-E6 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9009412,
+      "url": "https://example.invalid/docs/900941.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "SPX-00941 Communications-E6 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Brazil",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Praxis Land Systems",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Design life",
+      "parameter": "Design life",
+      "parameterValue": "6.908",
+      "uom": "years",
+      "parameterDescr": "Planned operational life",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "6.908 years"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Payload power",
+      "parameter": "Payload power",
+      "parameterValue": "22",
+      "uom": "kW",
+      "parameterDescr": "Payload electrical power",
+      "dataType": "Number",
+      "component": "Power",
+      "parameterUomValue": "22 kW"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Sensor payload",
+      "parameter": "Sensor payload",
+      "parameterValue": "SAR radar",
+      "uom": "",
+      "parameterDescr": "Primary payload type",
+      "dataType": "Text",
+      "component": "Payload"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Launch mass",
+      "parameter": "Launch mass",
+      "parameterValue": "10610",
+      "uom": "kg",
+      "parameterDescr": "Mass at launch",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "10610 kg"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Orbital altitude",
+      "parameter": "Orbital altitude",
+      "parameterValue": "28416",
+      "uom": "km",
+      "parameterDescr": "Representative operating altitude",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "28416 km"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "202436981",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit or launch cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "202436981 USD"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Communications Satellite",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Revisit time",
+      "parameter": "Revisit time",
+      "parameterValue": "51.02",
+      "uom": "h",
+      "parameterDescr": "Nominal revisit interval",
+      "dataType": "Number",
+      "component": "Operations",
+      "parameterUomValue": "51.02 h"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Inclination",
+      "parameter": "Inclination",
+      "parameterValue": "44.2",
+      "uom": "deg",
+      "parameterDescr": "Orbital inclination",
+      "dataType": "Number",
+      "component": "Orbit",
+      "parameterUomValue": "44.2 deg"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Downlink rate",
+      "parameter": "Downlink rate",
+      "parameterValue": "3731.4",
+      "uom": "Mbps",
+      "parameterDescr": "Maximum downlink data rate",
+      "dataType": "Number",
+      "component": "Communications",
+      "parameterUomValue": "3731.4 Mbps"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900862,
+      "childModel": "CEX-00862 Communications-A7",
+      "parentModelID": 900941,
+      "parentModel": "SPX-00941 Communications-E6",
+      "parentComponent": "Communications",
+      "relationType": "Fitted with",
+      "childSystemGroup": "C4ISR and Electronic Warfare",
+      "childSystemType": "Communications System",
+      "childPrimaryEquipCode": "CEX00862"
+    }
+  ]
+}

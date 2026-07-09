@@ -1,0 +1,306 @@
+{
+  "modelID": 900510,
+  "releaseID": 1,
+  "name": "NVX-00510 Destroyer-B5",
+  "systemGroup": "Naval Platforms",
+  "systemType": "Destroyer",
+  "nomenclature": "NVX-00510 Destroyer-B5",
+  "primaryEquipCode": "NVX00510",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2009-01-01",
+  "updatedDate": "2026-05-19",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900510",
+  "aliasList": "NVX00510, NVX-00510",
+  "aliases": [
+    {
+      "alias": "NVX00510",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "NVX-00510",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "NVX00510",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "NVX-00510 Destroyer-B5 is a synthetic destroyer record in the Naval Platforms group. It is attributed to Japan and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic destroyer fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "NVX-00510 Destroyer-B5 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "type": "IOC Year",
+      "proliferation": 1991,
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Production",
+      "region": "Asia-Pacific",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "India",
+      "proliferation": "Using",
+      "region": "South Asia",
+      "organization": "Indian Armed Forces"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9005101,
+      "url": "https://example.invalid/images/900510.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "NVX-00510 Destroyer-B5 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9005102,
+      "url": "https://example.invalid/docs/900510.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "NVX-00510 Destroyer-B5 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "South Korea",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rheinmetall Atlas",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Destroyer",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Displacement",
+      "parameter": "Displacement",
+      "parameterValue": "25000.7",
+      "uom": "t",
+      "parameterDescr": "Full-load displacement",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "25000.7 t"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "33",
+      "uom": "m",
+      "parameterDescr": "Overall ship length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "33 m"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum sea speed",
+      "parameter": "Maximum sea speed",
+      "parameterValue": "29.5",
+      "uom": "kn",
+      "parameterDescr": "Maximum ship speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "29.5 kn"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "7973.0",
+      "uom": "nmi",
+      "parameterDescr": "Range at economical speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "7973.0 nmi"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "2981",
+      "uom": "crew",
+      "parameterDescr": "Crew complement",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "2981 crew"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Production",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Vertical launch cells",
+      "parameter": "Vertical launch cells",
+      "parameterValue": "51",
+      "uom": "cells",
+      "parameterDescr": "Number of VLS cells",
+      "dataType": "Number",
+      "component": "Armament",
+      "parameterUomValue": "51 cells"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Main gun",
+      "parameter": "Main gun",
+      "parameterValue": "127 mm naval gun",
+      "uom": "",
+      "parameterDescr": "Principal gun armament",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Draft",
+      "parameter": "Draft",
+      "parameterValue": "9",
+      "uom": "m",
+      "parameterDescr": "Draft at full load",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "9 m"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Beam",
+      "parameter": "Beam",
+      "parameterValue": "47",
+      "uom": "m",
+      "parameterDescr": "Maximum beam",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "47 m"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Radar suite",
+      "parameter": "Radar suite",
+      "parameterValue": "multifunction AESA radar",
+      "uom": "",
+      "parameterDescr": "Primary radar suite",
+      "dataType": "Text",
+      "component": "Sensors"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "8097925241",
+      "uom": "USD",
+      "parameterDescr": "Approximate ship cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "8097925241 USD"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900146,
+      "childModel": "MX-00146 Surface-to-Air-C6",
+      "parentModelID": 900510,
+      "parentModel": "NVX-00510 Destroyer-B5",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Surface-to-Air Missile",
+      "childPrimaryEquipCode": "MX00146"
+    },
+    {
+      "childModelID": 900759,
+      "childModel": "PPX-00759 Rocket-D1",
+      "parentModelID": 900510,
+      "parentModel": "NVX-00510 Destroyer-B5",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Rocket Motor",
+      "childPrimaryEquipCode": "PPX00759"
+    },
+    {
+      "childModelID": 900367,
+      "childModel": "SX-00367 EO/IR-H8",
+      "parentModelID": 900510,
+      "parentModel": "NVX-00510 Destroyer-B5",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "EO/IR Sensor",
+      "childPrimaryEquipCode": "SX00367"
+    },
+    {
+      "childModelID": 900167,
+      "childModel": "MX-00167 Cruise-G4",
+      "parentModelID": 900510,
+      "parentModel": "NVX-00510 Destroyer-B5",
+      "parentComponent": "Sensors",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Cruise Missile",
+      "childPrimaryEquipCode": "MX00167"
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "modelID": 900115,
+  "releaseID": 1,
+  "name": "MX-00115 Anti-Ship-B9",
+  "systemGroup": "Missiles",
+  "systemType": "Anti-Ship Missile",
+  "nomenclature": "MX-00115 Anti-Ship-B9",
+  "primaryEquipCode": "MX00115",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2002-01-01",
+  "updatedDate": "2026-03-19",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900115",
+  "aliasList": "MX00115, MX-00115",
+  "aliases": [
+    {
+      "alias": "MX00115",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "MX-00115",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "MX00115",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "MX-00115 Anti-Ship-B9 is a synthetic anti-ship missile record in the Missiles group. It is attributed to France and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic anti-ship missile fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "MX-00115 Anti-Ship-B9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "France",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "France",
+      "type": "IOC Year",
+      "proliferation": 1998,
+      "region": "Europe",
+      "organization": "French Armed Forces"
+    },
+    {
+      "country": "France",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Maritime Systems Bureau"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9001151,
+      "url": "https://example.invalid/images/900115.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "MX-00115 Anti-Ship-B9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9001152,
+      "url": "https://example.invalid/docs/900115.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "MX-00115 Anti-Ship-B9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Australia",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Anti-Ship Missile",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Weight",
+      "parameter": "Weight - 1",
+      "parameterValue": "2632",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "2632 kg",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Weight",
+      "parameter": "Weight - 2",
+      "parameterValue": "642",
+      "uom": "kg",
+      "parameterDescr": "Launch weight of the munition",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "642 kg",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Maximum range",
+      "parameter": "Maximum range",
+      "parameterValue": "516",
+      "uom": "km",
+      "parameterDescr": "Maximum effective range of the weapon",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "516 km",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Guidance system",
+      "parameter": "Guidance system",
+      "parameterValue": "inertial navigation with datalink",
+      "uom": "",
+      "parameterDescr": "Guidance method employed across flight phases",
+      "dataType": "Text",
+      "component": "Guidance",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "2",
+      "uom": "m",
+      "parameterDescr": "Overall missile length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "2 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "Retired",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Propellant",
+      "parameter": "Propellant",
+      "parameterValue": "Turbojet",
+      "uom": "",
+      "parameterDescr": "Class of propulsion system fitted",
+      "dataType": "LOV",
+      "component": "Propulsion",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Minimum range",
+      "parameter": "Minimum range",
+      "parameterValue": "18",
+      "uom": "km",
+      "parameterDescr": "Minimum effective engagement range",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "18 km",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Diameter",
+      "parameter": "Diameter",
+      "parameterValue": "0",
+      "uom": "m",
+      "parameterDescr": "Body diameter",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "0 m",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude - 1",
+      "parameterValue": "25",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "25 km",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Maximum altitude",
+      "parameter": "Maximum altitude - 2",
+      "parameterValue": "18",
+      "uom": "km",
+      "parameterDescr": "Maximum intercept altitude",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "18 km",
+      "parameterSubTitle": "Block II",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Warhead weight",
+      "parameter": "Warhead weight",
+      "parameterValue": "366",
+      "uom": "kg",
+      "parameterDescr": "Mass of the warhead",
+      "dataType": "Number",
+      "component": "Warhead",
+      "parameterUomValue": "366 kg",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed - 1",
+      "parameterValue": "2.062",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "2.062 Mach",
+      "parameterSubTitle": "Block I",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Maximum speed",
+      "parameter": "Maximum speed - 2",
+      "parameterValue": "1.745",
+      "uom": "Mach",
+      "parameterDescr": "Maximum speed of the missile",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "1.745 Mach",
+      "parameterSubTitle": "Export configuration",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1018,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "2588014",
+      "uom": "USD",
+      "parameterDescr": "Approximate unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "2588014 USD",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1019,
+      "parameterOnly": "Launch platform",
+      "parameter": "Launch platform",
+      "parameterValue": "fighter aircraft",
+      "uom": "",
+      "parameterDescr": "Platforms cleared to employ this weapon",
+      "dataType": "Text",
+      "component": "Integration",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900722,
+      "childModel": "PPX-00722 Rocket-G3",
+      "parentModelID": 900115,
+      "parentModel": "MX-00115 Anti-Ship-B9",
+      "parentComponent": "Warhead",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Power and Propulsion Systems",
+      "childSystemType": "Rocket Motor",
+      "childPrimaryEquipCode": "PPX00722"
+    },
+    {
+      "childModelID": 900303,
+      "childModel": "SX-00303 EO/IR-A8",
+      "parentModelID": 900115,
+      "parentModel": "MX-00115 Anti-Ship-B9",
+      "parentComponent": "Warhead",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "EO/IR Sensor",
+      "childPrimaryEquipCode": "SX00303"
+    },
+    {
+      "childModelID": 900349,
+      "childModel": "SX-00349 Air-G9",
+      "parentModelID": 900115,
+      "parentModel": "MX-00115 Anti-Ship-B9",
+      "parentComponent": "Warhead",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Sensors",
+      "childSystemType": "Air Defense Radar",
+      "childPrimaryEquipCode": "SX00349"
+    }
+  ]
+}

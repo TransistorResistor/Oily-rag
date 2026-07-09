@@ -1,0 +1,309 @@
+{
+  "modelID": 900487,
+  "releaseID": 1,
+  "name": "GVX-00487 Main-C9",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Main Battle Tank",
+  "nomenclature": "GVX-00487 Main-C9",
+  "primaryEquipCode": "GVX00487",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2016-01-01",
+  "updatedDate": "2026-07-10",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900487",
+  "aliasList": "GVX00487, GVX-00487",
+  "aliases": [
+    {
+      "alias": "GVX00487",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00487",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00487",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00487 Main-C9 is a synthetic main battle tank record in the Ground Vehicles group. It is attributed to Germany and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic main battle tank fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00487 Main-C9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Germany",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "type": "IOC Year",
+      "proliferation": 2012,
+      "region": "Europe",
+      "organization": "Bundeswehr"
+    },
+    {
+      "country": "Germany",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "South Africa",
+      "proliferation": "Using",
+      "region": "Africa",
+      "organization": "South African National Defence Force"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004871,
+      "url": "https://example.invalid/images/900487.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00487 Main-C9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004872,
+      "url": "https://example.invalid/docs/900487.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00487 Main-C9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Service",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Japan",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Rheinmetall Atlas",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Main Battle Tank",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "63247",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "63247 kg",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "55.19",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "55.19 km/h",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "562",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "562 km",
+      "comments": "Applies to baseline production lot"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "155 mm howitzer",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "4",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "4 m",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Engine power",
+      "parameter": "Engine power",
+      "parameterValue": "834.1",
+      "uom": "hp",
+      "parameterDescr": "Engine output",
+      "dataType": "Number",
+      "component": "Propulsion",
+      "parameterUomValue": "834.1 hp",
+      "comments": "Manufacturer stated value; not independently verified"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Width",
+      "parameter": "Width",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall width",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers - 1",
+      "parameterValue": "9",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "9 personnel",
+      "parameterSubTitle": "Standard configuration",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers - 2",
+      "parameterValue": "6",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "6 personnel",
+      "parameterSubTitle": "High-performance setting",
+      "comments": "Value varies by installation and support package"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "3733806",
+      "uom": "USD",
+      "parameterDescr": "Approximate vehicle unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "3733806 USD",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1015,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "6",
+      "uom": "m",
+      "parameterDescr": "Hull length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "6 m",
+      "comments": "Estimated from open technical reporting"
+    },
+    {
+      "seq": 1016,
+      "parameterOnly": "Armor equivalent",
+      "parameter": "Armor equivalent",
+      "parameterValue": "359.9",
+      "uom": "mm RHAe",
+      "parameterDescr": "Approximate frontal protection equivalent",
+      "dataType": "Number",
+      "component": "Protection",
+      "parameterUomValue": "359.9 mm RHAe",
+      "comments": "Export configuration may differ"
+    },
+    {
+      "seq": 1017,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "4",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "4 crew",
+      "comments": "Manufacturer stated value; not independently verified"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}

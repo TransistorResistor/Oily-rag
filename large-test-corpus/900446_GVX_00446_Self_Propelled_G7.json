@@ -1,0 +1,282 @@
+{
+  "modelID": 900446,
+  "releaseID": 1,
+  "name": "GVX-00446 Self-Propelled-G7",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Self-Propelled Artillery",
+  "nomenclature": "GVX-00446 Self-Propelled-G7",
+  "primaryEquipCode": "GVX00446",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2013-01-01",
+  "updatedDate": "2026-01-26",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900446",
+  "aliasList": "GVX00446, GVX-00446",
+  "aliases": [
+    {
+      "alias": "GVX00446",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00446",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00446",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00446 Self-Propelled-G7 is a synthetic self-propelled artillery record in the Ground Vehicles group. It is attributed to Sweden and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic self-propelled artillery fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00446 Self-Propelled-G7 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "IOC Year",
+      "proliferation": 1982,
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Production",
+      "region": "Europe",
+      "organization": "Maritime Systems Bureau"
+    },
+    {
+      "country": "Italy",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Italian Armed Forces"
+    },
+    {
+      "country": "Japan",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Japan Self-Defense Forces"
+    },
+    {
+      "country": "Israel",
+      "proliferation": "Using",
+      "region": "Middle East",
+      "organization": "Israeli Defense Forces"
+    },
+    {
+      "country": "Russia",
+      "proliferation": "Using",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    },
+    {
+      "country": "Russia",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe, Asia",
+      "organization": "Russian Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004461,
+      "url": "https://example.invalid/images/900446.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00446 Self-Propelled-G7 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004462,
+      "url": "https://example.invalid/docs/900446.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00446 Self-Propelled-G7 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Status",
+      "parameter": "Status",
+      "parameterValue": "In Development",
+      "uom": "",
+      "parameterDescr": "Current life-cycle status of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "Italy",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Self-Propelled Artillery",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "36318",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "36318 kg"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "49.47",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "49.47 km/h"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "526",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "526 km"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "4",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "4 crew"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Unit cost",
+      "parameter": "Unit cost",
+      "parameterValue": "8052227",
+      "uom": "USD",
+      "parameterDescr": "Approximate vehicle unit cost",
+      "dataType": "Number",
+      "component": "Cost",
+      "parameterUomValue": "8052227 USD"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Orion Naval Group",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "9",
+      "uom": "m",
+      "parameterDescr": "Hull length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "9 m"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Engine power",
+      "parameter": "Engine power",
+      "parameterValue": "751.8",
+      "uom": "hp",
+      "parameterDescr": "Engine output",
+      "dataType": "Number",
+      "component": "Propulsion",
+      "parameterUomValue": "751.8 hp"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1013,
+      "parameterOnly": "Armor equivalent",
+      "parameter": "Armor equivalent",
+      "parameterValue": "395.0",
+      "uom": "mm RHAe",
+      "parameterDescr": "Approximate frontal protection equivalent",
+      "dataType": "Number",
+      "component": "Protection",
+      "parameterUomValue": "395.0 mm RHAe"
+    },
+    {
+      "seq": 1014,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "30 mm autocannon",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": [
+    {
+      "childModelID": 900184,
+      "childModel": "MX-00184 Surface-to-Air-C3",
+      "parentModelID": 900446,
+      "parentModel": "GVX-00446 Self-Propelled-G7",
+      "parentComponent": "Armament",
+      "relationType": "Fitted with",
+      "childSystemGroup": "Missiles",
+      "childSystemType": "Surface-to-Air Missile",
+      "childPrimaryEquipCode": "MX00184"
+    }
+  ]
+}

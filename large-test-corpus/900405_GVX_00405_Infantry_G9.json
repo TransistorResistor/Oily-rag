@@ -1,0 +1,256 @@
+{
+  "modelID": 900405,
+  "releaseID": 1,
+  "name": "GVX-00405 Infantry-G9",
+  "systemGroup": "Ground Vehicles",
+  "systemType": "Infantry Fighting Vehicle",
+  "nomenclature": "GVX-00405 Infantry-G9",
+  "primaryEquipCode": "GVX00405",
+  "reviewDate": "2026-07-08",
+  "createdDate": "2014-01-01",
+  "updatedDate": "2026-06-18",
+  "versionDate": "2026-07-08",
+  "productLink": "https://example.invalid/synthetic/900405",
+  "aliasList": "GVX00405, GVX-00405",
+  "aliases": [
+    {
+      "alias": "GVX00405",
+      "type": "Primary Code",
+      "urls": null
+    },
+    {
+      "alias": "GVX-00405",
+      "type": "Short Name",
+      "urls": null
+    }
+  ],
+  "codes": [
+    {
+      "code": "GVX00405",
+      "isPrimary": "Y"
+    }
+  ],
+  "descriptions": [
+    {
+      "descrType": "Overview",
+      "description": "GVX-00405 Infantry-G9 is a synthetic infantry fighting vehicle record in the Ground Vehicles group. It is attributed to Australia and is intended for retrieval, filtering, proliferation, and relationship-scale testing. Values are plausible dummy engineering figures, not real-world intelligence.",
+      "shortDescription": "Synthetic infantry fighting vehicle fixture for large corpus testing.",
+      "classification": "U"
+    },
+    {
+      "descrType": "Integration",
+      "description": "GVX-00405 Infantry-G9 uses a pages-schema style record with typed parametrics, IOC-year proliferation rows, and optional parent-child integration edges. Some rows deliberately include comments or subtitles to exercise variant handling.",
+      "classification": "U"
+    }
+  ],
+  "proliferations": [
+    {
+      "country": "Australia",
+      "proliferation": "Using",
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "type": "IOC Year",
+      "proliferation": 2004,
+      "region": "Oceania",
+      "organization": "Australian Defence Force"
+    },
+    {
+      "country": "Australia",
+      "proliferation": "Production",
+      "region": "Oceania",
+      "organization": "Praxis Land Systems"
+    },
+    {
+      "country": "China",
+      "proliferation": "Using",
+      "region": "Asia",
+      "organization": "People's Liberation Army"
+    },
+    {
+      "country": "South Korea",
+      "proliferation": "Using",
+      "region": "Asia-Pacific",
+      "organization": "Republic of Korea Armed Forces"
+    },
+    {
+      "country": "United Kingdom",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "United Kingdom",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "UK Ministry of Defence"
+    },
+    {
+      "country": "Sweden",
+      "proliferation": "Using",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    },
+    {
+      "country": "Sweden",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Europe",
+      "organization": "Swedish Armed Forces"
+    }
+  ],
+  "media": [
+    {
+      "seq": 1,
+      "mediaID": 9004051,
+      "url": "https://example.invalid/images/900405.png",
+      "mimeType": "image/png",
+      "type": "MEDIA",
+      "title": "GVX-00405 Infantry-G9 reference image"
+    },
+    {
+      "seq": 2,
+      "mediaID": 9004052,
+      "url": "https://example.invalid/docs/900405.pdf",
+      "mimeType": "application/pdf",
+      "type": "MEDIA",
+      "title": "GVX-00405 Infantry-G9 technical summary",
+      "caption": "Synthetic PDF media row for indexing-pipeline tests"
+    }
+  ],
+  "parametrics": [
+    {
+      "seq": 1001,
+      "parameterOnly": "Country of origin",
+      "parameter": "Country of origin",
+      "parameterValue": "United States",
+      "uom": "",
+      "parameterDescr": "Country in which the system was designed",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1002,
+      "parameterOnly": "Manufacturer",
+      "parameter": "Manufacturer",
+      "parameterValue": "Ardent Missiles",
+      "uom": "",
+      "parameterDescr": "Primary manufacturer or prime contractor",
+      "dataType": "Text",
+      "component": "General"
+    },
+    {
+      "seq": 1003,
+      "parameterOnly": "Type",
+      "parameter": "Type",
+      "parameterValue": "Infantry Fighting Vehicle",
+      "uom": "",
+      "parameterDescr": "Primary role classification of the system",
+      "dataType": "LOV",
+      "component": "General"
+    },
+    {
+      "seq": 1004,
+      "parameterOnly": "Operational range",
+      "parameter": "Operational range",
+      "parameterValue": "540",
+      "uom": "km",
+      "parameterDescr": "Road range on internal fuel",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "540 km"
+    },
+    {
+      "seq": 1005,
+      "parameterOnly": "Main armament",
+      "parameter": "Main armament",
+      "parameterValue": "heavy machine gun",
+      "uom": "",
+      "parameterDescr": "Primary weapon fitted",
+      "dataType": "Text",
+      "component": "Armament"
+    },
+    {
+      "seq": 1006,
+      "parameterOnly": "Height",
+      "parameter": "Height",
+      "parameterValue": "3",
+      "uom": "m",
+      "parameterDescr": "Overall height",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "3 m"
+    },
+    {
+      "seq": 1007,
+      "parameterOnly": "Crew",
+      "parameter": "Crew",
+      "parameterValue": "3",
+      "uom": "crew",
+      "parameterDescr": "Number of crew members",
+      "dataType": "Number",
+      "component": "General",
+      "parameterUomValue": "3 crew"
+    },
+    {
+      "seq": 1008,
+      "parameterOnly": "Combat weight",
+      "parameter": "Combat weight",
+      "parameterValue": "55113",
+      "uom": "kg",
+      "parameterDescr": "Loaded combat weight",
+      "dataType": "Number",
+      "component": "Mass",
+      "parameterUomValue": "55113 kg"
+    },
+    {
+      "seq": 1009,
+      "parameterOnly": "Length",
+      "parameter": "Length",
+      "parameterValue": "8",
+      "uom": "m",
+      "parameterDescr": "Hull length",
+      "dataType": "Number",
+      "component": "Dimensions",
+      "parameterUomValue": "8 m"
+    },
+    {
+      "seq": 1010,
+      "parameterOnly": "Armor equivalent",
+      "parameter": "Armor equivalent",
+      "parameterValue": "785.3",
+      "uom": "mm RHAe",
+      "parameterDescr": "Approximate frontal protection equivalent",
+      "dataType": "Number",
+      "component": "Protection",
+      "parameterUomValue": "785.3 mm RHAe"
+    },
+    {
+      "seq": 1011,
+      "parameterOnly": "Passengers",
+      "parameter": "Passengers",
+      "parameterValue": "11",
+      "uom": "personnel",
+      "parameterDescr": "Dismounts carried",
+      "dataType": "Number",
+      "component": "Payload",
+      "parameterUomValue": "11 personnel"
+    },
+    {
+      "seq": 1012,
+      "parameterOnly": "Road speed",
+      "parameter": "Road speed",
+      "parameterValue": "104.9",
+      "uom": "km/h",
+      "parameterDescr": "Maximum road speed",
+      "dataType": "Number",
+      "component": "Performance",
+      "parameterUomValue": "104.9 km/h"
+    }
+  ],
+  "parametricUrls": [],
+  "relations": []
+}
