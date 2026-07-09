@@ -53,6 +53,8 @@ import datetime as _dt
 import html as _html
 import re
 
+import units as units_mod
+
 try:
     # dateutil parses the human date formats the corpus actually uses
     # ("15 December 2005", "September 1991") that datetime.strptime can't.
@@ -310,6 +312,94 @@ def _relations_prose(canon):
 # (emerging) producer, which is what "who makes X" queries are after.
 _PROLIF_OPERATING_RE = re.compile(r"(?i)using|user|operat|service|deploy")
 _PROLIF_PRODUCING_RE = re.compile(r"(?i)produc|manufactur|develop|design|build")
+_SERVICE_YEAR_FIELD = "serviceEntryYear"
+_SERVICE_YEAR_RE = re.compile(
+    r"(?i)\b(?:FY\s*)?(19[3-9]\d|20[0-2]\d|203[0-5])\b"
+)
+_SERVICE_KEYWORD_RE = re.compile(
+    r"(?i)\b("
+    r"entered\s+service|entered\s+limited\s+service|in\s+service\s+since|"
+    r"introduced(?:\s+to\s+service)?|IOC|initial\s+operational\s+capability|"
+    r"declared\s+operational|fielded"
+    r")\b"
+)
+
+
+def _prolif_type(row):
+    for k, v in row.items():
+        if str(k).lower() == "type":
+            return str(v or "").strip()
+    return ""
+
+
+def _parse_service_year(value):
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        year = value
+    elif isinstance(value, float) and value.is_integer():
+        year = int(value)
+    else:
+        m = _SERVICE_YEAR_RE.search(str(value or ""))
+        if not m:
+            return None
+        year = int(m.group(1))
+    return year if 1930 <= year <= 2035 else None
+
+
+def _mine_service_year_from_prose(canon):
+    """Conservative fallback for service-entry years in prose.
+
+    A year must share a clause with an in-service/IOC keyword. Multiple distinct
+    years are accepted only when one is clearly nearest to a keyword.
+    """
+    candidates = []
+    text = " ".join(
+        str(t) for section, t in canon.get("prose", [])
+        if t and str(section).lower() != "proliferation"
+    )
+    for clause in re.split(r"[\.;\n]", text):
+        years = [(int(m.group(1)), m.start())
+                 for m in _SERVICE_YEAR_RE.finditer(clause)]
+        keys = [m.start() for m in _SERVICE_KEYWORD_RE.finditer(clause)]
+        if not years or not keys:
+            continue
+        for year, ypos in years:
+            dist = min(abs(ypos - kpos) for kpos in keys)
+            candidates.append((dist, year))
+    if not candidates:
+        return None
+    years = {year for _dist, year in candidates}
+    if len(years) == 1:
+        return next(iter(years))
+    ranked = sorted(candidates)
+    return ranked[0][1] if ranked[1][0] - ranked[0][0] >= 8 else None
+
+
+def _note_service_year_conflict(dropped, structured_year, prose_year):
+    if dropped is None:
+        return
+    path = f"{_SERVICE_YEAR_FIELD}.prose_conflict"
+    entry = dropped.setdefault(path, {
+        "reason": (
+            f"structured {_SERVICE_YEAR_FIELD}={structured_year} disagrees "
+            f"with prose-mined service year {prose_year}; structured value kept"
+        ),
+        "count": 0,
+        "example_keys": None,
+    })
+    entry["count"] += 1
+
+
+def _apply_service_year_from_prose(canon, dropped):
+    prose_year = _mine_service_year_from_prose(canon)
+    if prose_year is None:
+        return
+    structured_year = canon["extras"].get(_SERVICE_YEAR_FIELD)
+    if structured_year is None:
+        canon["extras"][_SERVICE_YEAR_FIELD] = prose_year
+    elif structured_year != prose_year:
+        _note_service_year_conflict(dropped, structured_year, prose_year)
 
 
 def _extract_proliferations(raw, canon, dropped):
@@ -323,6 +413,8 @@ def _extract_proliferations(raw, canon, dropped):
     if not isinstance(prol, list) or not prol:
         return False
     operators, producers, regions, segs = [], [], [], []
+    ioc_years = []
+    fielding_status = []
     for p in prol:
         if not isinstance(p, dict):
             continue
@@ -330,17 +422,34 @@ def _extract_proliferations(raw, canon, dropped):
         status = str(p.get("proliferation") or "").strip()
         region = p.get("region")
         org = p.get("organization")
+        row_type = _prolif_type(p)
+        row_type_norm = row_type.lower()
         if region:
             regions.append(str(region))
-        if country and status:
+        if row_type_norm:
+            if "ioc" in row_type_norm:
+                year = _parse_service_year(status)
+                if year is not None:
+                    ioc_years.append(year)
+                    if country:
+                        operators.append(str(country))
+            elif row_type_norm == "projected fielding":
+                fielding_status.append("Projected")
+        elif country and status:
             if _PROLIF_OPERATING_RE.search(status):
                 operators.append(str(country))
             if _PROLIF_PRODUCING_RE.search(status):
                 producers.append(str(country))
         if country or status:
             seg = str(country or "unknown country")
+            if row_type:
+                seg += f" - {row_type}"
             if status:
-                seg += f" - {status}"
+                sep = " " if row_type else " - "
+                if row_type_norm == "projected fielding":
+                    seg += f" ({status})"
+                else:
+                    seg += f"{sep}{status}"
             if org:
                 seg += f" ({org})"
             segs.append(seg)
@@ -354,6 +463,10 @@ def _extract_proliferations(raw, canon, dropped):
         canon["extras"]["Produced by (country)"] = _uniq(producers)
     if regions:
         canon["extras"]["Proliferation region"] = _uniq(regions)
+    if ioc_years:
+        canon["extras"][_SERVICE_YEAR_FIELD] = min(ioc_years)
+    if fielding_status:
+        canon["extras"]["Fielding status"] = _uniq(fielding_status)
     if segs:
         canon["prose"].append(("Proliferation", "; ".join(segs)))
     return True
@@ -458,6 +571,7 @@ def _adapt_pages_schema(raw, dropped):
     _extract_parametrics(raw, canon, dropped)
     _extract_relations(raw, canon, dropped)
     has_prolif = _extract_proliferations(raw, canon, dropped)
+    _apply_service_year_from_prose(canon, dropped)
     if canon["relations"]:
         rel_text = _relations_prose(canon)
         if rel_text:
@@ -505,6 +619,7 @@ def _adapt_native(raw, dropped):
                          "descr": None})
     _extract_prose(raw, canon, dropped)
     _extract_media(raw, canon, dropped)
+    _apply_service_year_from_prose(canon, dropped)
     _absorb_extras(raw, "", canon, dropped,
                    skip_keys=("id", "title", "modelID", "parameters", "params",
                               "descriptions", "media"))
@@ -616,10 +731,114 @@ def rich_params(canon):
 # free text like "one, two".
 _THOUSANDS_RE = re.compile(r"(?<=\d),(?=\d{3}(\D|$))")
 _NUMERIC_RE = re.compile(r"^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$")
+_NUMERIC_INTERVAL_TO_RE = re.compile(
+    r"^\s*([+-]?(?:\d+(?:,\d{3})*|\d+)(?:\.\d*)?|\.\d+)\s+to\s+"
+    r"([+-]?(?:\d+(?:,\d{3})*|\d+)(?:\.\d*)?|\.\d+)\s*$",
+    re.I,
+)
+_COMMENT_RANGE_RE = re.compile(
+    r"(?<![\w.-])([+-]?(?:\d+(?:,\d{3})*|\d+)(?:\.\d*)?|\.\d+)\s*"
+    r"(to|-|â€“)\s*"
+    r"([+-]?(?:\d+(?:,\d{3})*|\d+)(?:\.\d*)?|\.\d+)"
+    r"(?:\s*([A-Za-z][A-Za-z0-9/%^.-]*))?(?![\w.-])",
+    re.I,
+)
 
 
 def _strip_thousands(s):
     return _THOUSANDS_RE.sub("", s)
+
+
+def _to_float_token(s):
+    return float(_strip_thousands(str(s).strip()))
+
+
+def parse_numeric_interval(value):
+    """Parse quantity-context interval strings of the form 'N to N'.
+
+    Hyphen/en-dash forms are intentionally excluded here because those collide
+    with dates, negative values, and prose. Comment mining below can accept dash
+    ranges only when a nominal value sits inside the range.
+    """
+    if not isinstance(value, str):
+        return None
+    m = _NUMERIC_INTERVAL_TO_RE.match(value)
+    if not m:
+        return None
+    lo, hi = _to_float_token(m.group(1)), _to_float_token(m.group(2))
+    if lo > hi:
+        lo, hi = hi, lo
+    return {"lo": lo, "hi": hi}
+
+
+def is_numeric_interval(value):
+    return (isinstance(value, dict)
+            and set(value) >= {"lo", "hi"}
+            and isinstance(value.get("lo"), (int, float))
+            and isinstance(value.get("hi"), (int, float)))
+
+
+def _mine_comment_interval(comment, row_unit, nominal):
+    """Strictly mine a single numeric interval from parameter comments.
+
+    'to' ranges are accepted in quantity context. Dash/en-dash ranges are
+    accepted only when the scalar nominal value is inside the interval; that
+    rejects year spans and incidental prose ranges on numeric parameters.
+    """
+    if not comment or nominal is None or isinstance(nominal, bool):
+        return None
+    try:
+        nominal_f = float(nominal)
+    except (TypeError, ValueError):
+        return None
+    matches = list(_COMMENT_RANGE_RE.finditer(str(comment)))
+    if len(matches) != 1:
+        return None
+    m = matches[0]
+    lo, hi = _to_float_token(m.group(1)), _to_float_token(m.group(3))
+    if lo > hi:
+        lo, hi = hi, lo
+    stated_unit = m.group(4)
+    if stated_unit and row_unit:
+        try:
+            lo = units_mod.convert(lo, stated_unit, row_unit)
+            hi = units_mod.convert(hi, stated_unit, row_unit)
+        except units_mod.ConversionError:
+            return None
+    elif stated_unit and not row_unit:
+        return None
+    if m.group(2).lower() != "to" and not (lo <= nominal_f <= hi):
+        return None
+    return {"lo": lo, "hi": hi}
+
+
+def _split_compound_country_value(name, value):
+    """Return atomic country labels for common compound country strings.
+
+    Curated and production-shaped inputs often contain values such as
+    'Norway; United States', 'Russia/USSR', or 'Europe (UK, Germany, Italy)'.
+    Keeping those as one categorical label makes user filters brittle. This is
+    deliberately scoped to country-like fields; region fields remain their own
+    vocabulary.
+    """
+    if "country" not in str(name).lower() or not isinstance(value, str):
+        return None
+    s = value.strip()
+    if not s:
+        return None
+    parts = []
+    paren = re.findall(r"\(([^)]*)\)", s)
+    base = re.sub(r"\([^)]*\)", "", s)
+    for chunk in [base] + paren:
+        for part in re.split(r"\s*(?:;|/|,|\band\b)\s*", chunk):
+            part = part.strip()
+            if part:
+                parts.append(part)
+    seen = []
+    for p in parts:
+        if p and p not in seen:
+            seen.append(p)
+    return seen if len(seen) > 1 else None
 
 
 def coerce_value(value, unit=None, force_numeric=False):
@@ -729,9 +948,15 @@ def normalize_typed_value(raw, unit, dtype=None):
     Native lists (multi-value) pass through unchanged."""
     if isinstance(raw, list):
         return raw
+    d = str(dtype).strip().lower() if dtype else ""
+    numeric_context = bool(unit) or d in (
+        "number", "numeric", "integer", "int", "float", "decimal")
+    if numeric_context and isinstance(raw, str):
+        interval = parse_numeric_interval(raw.strip())
+        if interval:
+            return interval
     if unit:
         return coerce_value(raw, unit)
-    d = str(dtype).strip().lower() if dtype else ""
     if d in ("number", "numeric", "integer", "int", "float", "decimal"):
         return coerce_value(raw, None, force_numeric=True)
     if d == "date" and isinstance(raw, str) and is_date_like(raw.strip()):
@@ -770,6 +995,9 @@ def typed_fields(canon):
     def norm(name, raw, unit, dtype=None):
         if unit:
             units[name] = unit
+        split_country = _split_compound_country_value(name, raw)
+        if split_country:
+            return split_country
         # derive from/to date fields for range values (only when unitless strings)
         if not unit and isinstance(raw, str):
             rng = parse_range(raw.strip())
@@ -788,8 +1016,15 @@ def typed_fields(canon):
     for p in canon["params"]:
         if p["value"] is None or p["value"] == "":
             continue
-        grouped.setdefault(p["name"], []).append(
-            norm(p["name"], p["value"], p["unit"], p.get("dtype")))
+        normalized = norm(p["name"], p["value"], p["unit"], p.get("dtype"))
+        grouped.setdefault(p["name"], []).append(normalized)
+        comment_interval = None
+        if p.get("unit") or str(p.get("dtype") or "").strip().lower() in (
+                "number", "numeric", "integer", "int", "float", "decimal"):
+            comment_interval = _mine_comment_interval(
+                p.get("qualifier"), p.get("unit"), normalized)
+        if comment_interval:
+            grouped[p["name"]].append(comment_interval)
     for name, vals in grouped.items():   # params win over a same-named extra
         flat = []
         for v in vals:
@@ -802,6 +1037,16 @@ def typed_fields(canon):
         out["Fitted with"] = list(dict.fromkeys(str(n) for n in rel_names))
 
     return out, units
+
+
+def field_dtypes(canon):
+    """Best-effort source dataType hints per canonical parameter field."""
+    canon = canon if is_canonical(canon) else normalize_record(canon)
+    out = {}
+    for p in canon["params"]:
+        if p.get("dtype"):
+            out.setdefault(p["name"], set()).add(str(p["dtype"]).strip().lower())
+    return out
 
 
 def collapse_params(canon):

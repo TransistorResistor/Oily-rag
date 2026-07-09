@@ -55,6 +55,13 @@
       "proliferation": "Using",
       "region": "North America",
       "organization": "United States Air Force"
+    },
+    {
+      "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 2005,
+      "region": "North America",
+      "organization": "United States Air Force"
     }
   ],
   "relations": [

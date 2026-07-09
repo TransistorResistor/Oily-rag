@@ -71,6 +71,26 @@
       "urls": null
     },
     {
+      "country": "Country A",
+      "trigraph": "GEN",
+      "region": "Region A",
+      "type": "IOC Year",
+      "proliferation": 2019,
+      "organization": "Mil Org A",
+      "sources": null,
+      "urls": null
+    },
+    {
+      "country": "Country C",
+      "trigraph": "XYZ",
+      "region": "Region C",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "organization": "Future Mil Org C",
+      "sources": null,
+      "urls": null
+    },
+    {
       "country": "Country B",
       "trigraph": "ABC",
       "region": "Region B",

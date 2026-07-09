@@ -25,6 +25,7 @@ classified catalogue: majority-type classification (A1), cross-record unit
 reconciliation (C4), and the categorical/free_text heuristics.
 """
 
+import math
 import statistics
 from collections import Counter
 
@@ -139,13 +140,27 @@ def _reconcile_units(field, vals, units, dropped):
 
     out_vals = list(vals)
     unconverted = 0
+    def convert_value(v, from_unit):
+        if isinstance(v, list):
+            return [convert_value(x, from_unit) for x in v]
+        if record_model.is_numeric_interval(v):
+            return {
+                "lo": units_mod.convert(v["lo"], from_unit, majority_unit),
+                "hi": units_mod.convert(v["hi"], from_unit, majority_unit),
+            }
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            return units_mod.convert(v, from_unit, majority_unit)
+        return v
+
     for i, (v, u) in enumerate(zip(vals, units)):
         if not u or u == majority_unit:
             continue
-        if not isinstance(v, (int, float)) or isinstance(v, bool):
+        if (not isinstance(v, (int, float)) or isinstance(v, bool)) \
+                and not record_model.is_numeric_interval(v) \
+                and not isinstance(v, list):
             continue  # nothing numeric to convert (shouldn't normally happen)
         try:
-            out_vals[i] = units_mod.convert(v, u, majority_unit)
+            out_vals[i] = convert_value(v, u)
         except units_mod.ConversionError:
             unconverted += 1
     if unconverted and dropped is not None:
@@ -176,13 +191,18 @@ def build_catalogue(records, units_by_field=None, dropped=None):
     # can see every unit actually used, not just the first record's.
     values = {}       # field -> [values...]
     value_units = {}  # field -> [unit-or-None, ...], aligned 1:1 with values[field]
+    field_dtypes = {} # field -> set(dtype hints)
     for rec in records:
-        fields, units = extract_fields(rec, dropped=dropped)
+        canon = record_model.normalize_record(rec, dropped=dropped)
+        fields, units = record_model.typed_fields(canon)
+        dtypes = record_model.field_dtypes(canon)
         for f, v in fields.items():
             if v is None:
                 continue
             values.setdefault(f, []).append(v)
             value_units.setdefault(f, []).append(units.get(f))
+            if f in dtypes:
+                field_dtypes.setdefault(f, set()).update(dtypes[f])
 
     catalogue = {}
     for field, vals in values.items():
@@ -190,7 +210,8 @@ def build_catalogue(records, units_by_field=None, dropped=None):
                                       dropped)
         if field in units_by_field:
             unit = units_by_field[field]
-        catalogue[field] = _classify_field(field, vals, unit)
+        catalogue[field] = _classify_field(
+            field, vals, unit, dtypes=field_dtypes.get(field))
         # Source-audit metadata (REVIEW_FINDINGS H6): still classified/stored --
         # an explicit filter on it works -- but flagged so catalogue_to_prompt,
         # partition_fields and field selection skip it by default (four
@@ -207,8 +228,32 @@ def build_catalogue(records, units_by_field=None, dropped=None):
     return catalogue
 
 
-def _classify_field(field, vals, unit):
+def _numeric_points(value):
+    if record_model.is_numeric_interval(value):
+        return [float(value["lo"]), float(value["hi"])]
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return [float(value)]
+    return []
+
+
+def _classify_lov_field(vals):
+    elements = set()
+    for v in vals:
+        seq = v if isinstance(v, list) else [v]
+        for x in seq:
+            if x is None or x == "":
+                continue
+            if record_model.is_numeric_interval(x):
+                continue
+            elements.add(str(x).strip())
+    return {"type": "categorical", "count": len(vals), "values": sorted(elements)}
+
+
+def _classify_field(field, vals, unit, dtypes=None):
     n = len(vals)
+    dtype_set = {str(d).strip().lower() for d in (dtypes or set())}
+    if "lov" in dtype_set:
+        return _classify_lov_field(vals)
 
     # numeric? Majority-type classification (REVIEW_FINDINGS A1): see the module
     # docstring / MAJORITY_MIN and FULL_MIN. Stats (p5/p95/median/min/max) are
@@ -221,17 +266,24 @@ def _classify_field(field, vals, unit):
     # min/max filter passes when ANY variant matches (see ragkit._passes). This
     # check runs BEFORE the string multi-value branch so numeric variant lists
     # don't degrade into string-membership fields.
-    nums, rec_numeric, lists_present = [], 0, False
+    nums, rec_numeric, lists_present, intervals_present = [], 0, False, False
     for v in vals:
         elems = v if isinstance(v, list) else [v]
         if isinstance(v, list):
             lists_present = True
-        ns = [e for e in elems
-              if isinstance(e, (int, float)) and not isinstance(e, bool)]
+        ns = []
+        numeric_elems = 0
+        for e in elems:
+            pts = _numeric_points(e)
+            if pts:
+                ns.extend(pts)
+                numeric_elems += 1
+                if record_model.is_numeric_interval(e):
+                    intervals_present = True
         nums.extend(ns)
-        if ns and len(ns) == len(elems):
+        if numeric_elems and numeric_elems == len(elems):
             rec_numeric += 1
-    if nums and rec_numeric >= max(1, int(MAJORITY_MIN * n)):
+    if nums and rec_numeric >= max(1, math.ceil(MAJORITY_MIN * n)):
         s = sorted(nums)
         entry = {
             "type": "numeric",
@@ -245,6 +297,8 @@ def _classify_field(field, vals, unit):
         }
         if lists_present:
             entry["multi"] = True
+        if intervals_present:
+            entry["intervals"] = True
         if rec_numeric < FULL_MIN * n:
             entry["partial"] = True
             entry["typed_count"] = rec_numeric
@@ -271,7 +325,7 @@ def _classify_field(field, vals, unit):
     # classify as date instead of free_text.
     strs = [v for v in vals if isinstance(v, str)]
     date_like = [v for v in strs if record_model.is_date_like(v)]
-    if date_like and len(date_like) >= max(1, int(MAJORITY_MIN * n)):
+    if date_like and len(date_like) >= max(1, math.ceil(MAJORITY_MIN * n)):
         dates = [record_model.to_iso(v) for v in date_like]
         entry = {"type": "date", "count": n, "min": min(dates), "max": max(dates)}
         if len(date_like) < FULL_MIN * n:
@@ -374,8 +428,8 @@ def build_category_stats(fields_by_parent, catalogue, category_field, min_count=
             # a numeric field's per-record value may be a list of variant
             # values (REVIEW_FINDINGS H2) -- all variants contribute to stats
             for x in (v if isinstance(v, list) else [v]):
-                if isinstance(x, (int, float)) and not isinstance(x, bool):
-                    bucket.setdefault(field, []).append(x)
+                for point in _numeric_points(x):
+                    bucket.setdefault(field, []).append(point)
 
     out = {}
     for cat_val, field_vals in by_cat.items():
@@ -469,17 +523,20 @@ def catalogue_to_prompt(catalogue, only_fields=None, min_count=1, max_fields=Non
         if t == "numeric":
             u = f" {spec['unit']}" if spec.get("unit") else ""
             scoped = cat_scope.get(field) if cat_scope else None
+            alias_note = (" (entered service / IOC / fielded)"
+                          if field == "serviceEntryYear" else "")
             if scoped:
                 lines.append(
                     f"- {field}: numeric, typical range {scoped['p5']}"
                     f"–{scoped['p95']}{u} (median {scoped['median']}) for "
                     f"{category_value} [{scoped['count']} records]{partial_note}; "
-                    f"filter with min/max."
+                    f"filter with min/max{alias_note}."
                 )
             else:
                 lines.append(
                     f"- {field}: numeric, typical range {spec['p5']}–{spec['p95']}{u} "
-                    f"(median {spec['median']}){partial_note}; filter with min/max."
+                    f"(median {spec['median']}){partial_note}; filter with min/max"
+                    f"{alias_note}."
                 )
         elif t == "categorical":
             lines.append(

@@ -89,6 +89,7 @@ as additional text.
 """
 
 import argparse
+import datetime as _dt
 import difflib
 import glob
 import json
@@ -118,6 +119,7 @@ import catalogue as cat_mod
 import models_registry
 import record_model
 import units as units_mod
+import llm_provider
 
 DEFAULT_EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # matches Clipper
 EMBED_DIM = 384
@@ -126,6 +128,10 @@ EMBED_DIM = 384
 # cross-encoder scores each (query, passage) pair jointly, which is markedly
 # more precise at picking the passages actually about the question.
 DEFAULT_RERANK_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+
+
+def _env_true(name):
+    return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
 
 # The categorical field per-category numeric stats (REVIEW_FINDINGS A4) are
 # grouped by. "systemType" is the finest-grained broad partition field this
@@ -284,6 +290,64 @@ def load_records(path):
             title = rec.get("title") or rec.get("nomenclature") or rid
             canon = record_model.normalize_record(rec)
             yield rid, title, record_model.to_text(canon), rec, canon
+
+
+def _convert_numeric_value_to_unit(value, from_unit, to_unit):
+    if record_model.is_numeric_interval(value):
+        return {
+            "lo": units_mod.convert(value["lo"], from_unit, to_unit),
+            "hi": units_mod.convert(value["hi"], from_unit, to_unit),
+        }
+    return units_mod.convert(value, from_unit, to_unit)
+
+
+def _canonicalize_stored_fields(fields, field_units, catalogue, dropped=None):
+    """Convert per-record numeric filter values into catalogue canonical units.
+
+    catalogue._reconcile_units() fixes aggregate stats, but filters compare
+    against record_params.fields_json. Those stored values must be converted too
+    or a catalogue unit of metres can coexist with stored millimetre magnitudes.
+    """
+    out = {}
+    for field, value in fields.items():
+        spec = catalogue.get(field) or {}
+        if spec.get("type") != "numeric":
+            out[field] = value
+            continue
+        from_unit = field_units.get(field)
+        to_unit = spec.get("unit")
+        if not from_unit or not to_unit:
+            out[field] = value
+            continue
+        if units_mod.normalize_unit(from_unit) == units_mod.normalize_unit(to_unit):
+            out[field] = value
+            continue
+
+        def convert_one(v):
+            if ((isinstance(v, (int, float)) and not isinstance(v, bool))
+                    or record_model.is_numeric_interval(v)):
+                return _convert_numeric_value_to_unit(v, from_unit, to_unit)
+            return v
+
+        try:
+            if isinstance(value, list):
+                out[field] = [convert_one(v) for v in value]
+            else:
+                out[field] = convert_one(value)
+        except units_mod.ConversionError as e:
+            out[field] = value
+            if dropped is not None:
+                key = f"{field}.stored_unit_conflict"
+                entry = dropped.setdefault(key, {
+                    "reason": (
+                        f"stored value could not be converted from {from_unit} "
+                        f"to catalogue unit {to_unit}: {e}"
+                    ),
+                    "count": 0,
+                    "example_keys": None,
+                })
+                entry["count"] += 1
+    return out
 
 
 # --------------------------------------------------------------------------- #
@@ -461,24 +525,18 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
     # record_params) so build_category_stats below can re-aggregate it without
     # a second pass over the raw records or a round-trip through the db.
     fields_by_parent = {}
+    units_by_parent = {}
+    params_by_parent = {}
     for parent_rid, title, text, raw, canon in records:
         typed, _units = record_model.typed_fields(canon)
         if parent_rid in rev_fitted_to:
             # reverse edge (H4): membership-filterable "which records carry me"
             typed["Fitted to"] = sorted(set(rev_fitted_to[parent_rid]))
         fields_by_parent[parent_rid] = typed
+        units_by_parent[parent_rid] = _units
+        params_by_parent[parent_rid] = record_model.rich_params(canon)
         for j, chunk in enumerate(chunk_record(title, text)):
             passages.append((f"{parent_rid}/{j}", parent_rid, title, chunk))
-        # Store the rich parametrics (value + unit + description, for the
-        # structured-table view) AND the typed filter fields -- one row per
-        # source record, both derived from the SAME canonical record so they
-        # can't drift relative to each other (REVIEW_FINDINGS C1).
-        con.execute(
-            "INSERT OR REPLACE INTO record_params "
-            "(parent_rid, title, params_json, fields_json) VALUES (?,?,?,?)",
-            (parent_rid, title, json.dumps(record_model.rich_params(canon)),
-             json.dumps(typed)),
-        )
 
     print(f"Embedding {len(passages)} passages from {len(records)} records "
           f"with {embed_model} ...", file=sys.stderr)
@@ -509,6 +567,21 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
             "count": len(rev_fitted_to),
             "values": sorted({t for ts in rev_fitted_to.values() for t in ts}),
         }
+
+    # Store rich parametrics and canonical-unit typed filter fields once per
+    # record. The conversion must happen after the catalogue chooses each
+    # numeric field's canonical unit.
+    for parent_rid, title, _text, _raw, _canon in records:
+        canonical_fields = _canonicalize_stored_fields(
+            fields_by_parent[parent_rid], units_by_parent.get(parent_rid, {}),
+            catalogue, dropped=dropped)
+        fields_by_parent[parent_rid] = canonical_fields
+        con.execute(
+            "INSERT OR REPLACE INTO record_params "
+            "(parent_rid, title, params_json, fields_json) VALUES (?,?,?,?)",
+            (parent_rid, title, json.dumps(params_by_parent[parent_rid]),
+             json.dumps(canonical_fields)),
+        )
     con.execute(
         "INSERT OR REPLACE INTO meta (key, value) VALUES ('catalogue', ?)",
         (json.dumps(catalogue),),
@@ -701,6 +774,47 @@ def _field_name_hit(field, ql):
              if len(w) > 2 and w not in _FIELD_NAME_STOPWORDS]
     return any(re.search(r"(?<![a-z0-9])" + re.escape(w) + r"(?![a-z0-9])", ql)
               for w in words)
+
+
+def _phrase_hit(phrase, ql):
+    norm = _normalize_field_name(phrase)
+    if not norm:
+        return False
+    pattern = r"(?<![a-z0-9])" + r"\W+".join(map(re.escape, norm.split())) + r"(?![a-z0-9])"
+    return bool(re.search(pattern, ql))
+
+
+def query_field_intents(query, catalogue, field_aliases=None):
+    """Best-effort field intent resolver for direct single-record lookups.
+
+    Unlike _field_name_hit, this prefers full field/alias phrases over single
+    shared words so "maximum range" selects Maximum range rather than every
+    field containing the word "range". Returns all fields tied for best score.
+    """
+    if not query or not catalogue:
+        return []
+    ql = query.lower()
+    aliases = field_aliases or load_field_aliases()
+    scores = {}
+    norm_to_field = {}
+    for f in catalogue:
+        norm_to_field.setdefault(_normalize_field_name(f), f)
+        if _phrase_hit(f, ql):
+            scores[f] = max(scores.get(f, 0), 4)
+    for alias, target in aliases.items():
+        field = target if target in catalogue else norm_to_field.get(_normalize_field_name(target))
+        if field and _phrase_hit(alias, ql):
+            scores[field] = max(scores.get(field, 0), 4 if alias == _normalize_field_name(field) else 3)
+    if not scores:
+        # Narrow fallback: only use word hits if exactly one field matches.
+        hits = [f for f in catalogue if _field_name_hit(f, ql)]
+        return hits if len(hits) == 1 else []
+    best = max(scores.values())
+    tied = [f for f, score in scores.items() if score == best]
+    if len(tied) > 1:
+        max_words = max(len(_normalize_field_name(f).split()) for f in tied)
+        tied = [f for f in tied if len(_normalize_field_name(f).split()) == max_words]
+    return tied
 
 
 def select_fields(con, query, catalogue, k=15, always=(),
@@ -984,8 +1098,100 @@ def _record_fields_map(con):
 
 def fts_query_string(q):
     # FTS5 MATCH wants bare terms OR'd; strip punctuation, drop empties
-    terms = re.findall(r"[A-Za-z0-9_]+", q)
+    terms = re.findall(r"[A-Za-z0-9_]+", expand_domain_abbreviations(q))
     return " OR ".join(terms) if terms else q
+
+
+_DOMAIN_ABBREVIATIONS = {
+    "aam": "air to air missile",
+    "sam": "surface to air missile",
+    "ir": "infrared",
+    "bvr": "beyond visual range",
+    "ew": "electronic warfare",
+    "aesa": "active electronically scanned array",
+    "sarh": "semi active radar homing",
+    "arh": "active radar homing",
+}
+
+
+def expand_domain_abbreviations(query):
+    if not query:
+        return query
+    ql = query.lower()
+    additions = []
+    for abbr, expansion in _DOMAIN_ABBREVIATIONS.items():
+        if re.search(r"(?<![a-z0-9])" + re.escape(abbr) + r"(?![a-z0-9])", ql):
+            additions.append(expansion)
+    return query + (" " + " ".join(additions) if additions else "")
+
+
+def abbreviation_glossary_for_query(query):
+    if not query:
+        return ""
+    ql = query.lower()
+    lines = []
+    for abbr, expansion in _DOMAIN_ABBREVIATIONS.items():
+        if re.search(r"(?<![a-z0-9])" + re.escape(abbr) + r"(?![a-z0-9])", ql):
+            lines.append(f"{abbr.upper()} = {expansion}")
+    return "\n".join(lines)
+
+
+_CLASS_FIELD_HINTS = [
+    ("missile", re.compile(r"\bmissiles?\b", re.I), "systemGroup", "Missiles"),
+    ("sensor/radar", re.compile(r"\bsensors?\b|\bradars?\b", re.I), "systemGroup", "Sensors"),
+    ("aircraft/fighter", re.compile(r"\baircraft\b|\bfighters?\b", re.I), "systemGroup", "Aircraft"),
+    ("ground vehicle/tank", re.compile(r"\bground vehicles?\b|\barmou?red\b|\btanks?\b", re.I),
+     "systemGroup", "Ground Vehicles"),
+    ("naval/ship", re.compile(r"\bnaval\b|\bships?\b|\bvessels?\b", re.I),
+     "systemGroup", "Naval Platforms"),
+]
+
+_NATIONALITY_HINTS = {
+    "russian": "Russia",
+    "french": "France",
+    "german": "Germany",
+    "british": "United Kingdom",
+    "uk": "United Kingdom",
+    "us": "United States",
+    "u.s.": "United States",
+    "american": "United States",
+    "chinese": "China",
+    "indian": "India",
+    "israeli": "Israel",
+    "south korean": "South Korea",
+    "korean": "South Korea",
+}
+
+
+def filter_extraction_hints(query, catalogue):
+    """Deterministic hints for recurring ambiguous filter wording.
+
+    These are advisory prompt lines only; validate_filter remains the trust
+    boundary. The goal is to steer small models toward the canonical fields
+    already present in the shown catalogue.
+    """
+    if not query or not catalogue:
+        return ""
+    hints = []
+    q = query or ""
+    for label, pattern, field, value in _CLASS_FIELD_HINTS:
+        spec = catalogue.get(field) or {}
+        if pattern.search(q) and value in (spec.get("values") or []):
+            hints.append(f"- Wording like '{label}' should usually add {field}={value}.")
+    ql = q.lower()
+    if not re.search(r"\b(operated by|operator|user|using|in service with)\b", ql):
+        origin_values = set((catalogue.get("Country of origin") or {}).get("values") or [])
+        for adj, country in _NATIONALITY_HINTS.items():
+            if country in origin_values and re.search(
+                    r"(?<![a-z0-9])" + re.escape(adj) + r"(?![a-z0-9])", ql):
+                hints.append(
+                    f"- Nationality adjective '{adj}' should usually map to "
+                    f"Country of origin={country}, not operator fields."
+                )
+                break
+    if re.search(r"\bweigh|weight|heavy|heaviest\b", ql) and "Combat weight" in catalogue:
+        hints.append("- For vehicle weight questions, prefer Combat weight over generic Weight.")
+    return "\n".join(hints)
 
 
 # --------------------------------------------------------------------------- #
@@ -993,6 +1199,25 @@ def fts_query_string(q):
 # --------------------------------------------------------------------------- #
 
 _TRAILING_PUNCT_RE = re.compile(r"[.,;:!?]+$")
+_FIELD_NAME_ALIASES = {
+    "range": "Maximum range",
+    "max range": "Maximum range",
+    "maximum effective range": "Maximum range",
+    "operated by": "Operated by (country)",
+    "operator": "Operated by (country)",
+    "operators": "Operated by (country)",
+    "produced by": "Produced by (country)",
+    "producer": "Produced by (country)",
+    "producers": "Produced by (country)",
+    "detection range": "Detection range",
+    "radar detection range": "Radar Detection Range",
+    "power consumption": "Power Consumption",
+    "fielding status": "Fielding status",
+    "entered service": "serviceEntryYear",
+    "in service year": "serviceEntryYear",
+    "ioc": "serviceEntryYear",
+}
+DEFAULT_FIELD_ALIAS_FILE = "field_aliases.json"
 
 
 def _normalize_label(s):
@@ -1005,6 +1230,52 @@ def _normalize_label(s):
     formatting."""
     s = re.sub(r"\s+", " ", str(s).strip().casefold())
     return _TRAILING_PUNCT_RE.sub("", s)
+
+
+def _normalize_field_name(s):
+    return " ".join(re.findall(r"[a-z0-9]+", str(s).lower()))
+
+
+def load_field_aliases(path=None):
+    """Return normalized query aliases -> canonical field names.
+
+    Optional JSON lets deployments add domain wording without re-ingesting:
+
+      {"Maximum range": ["range", "reach"], "radar range": "Detection range"}
+
+    Both canonical->aliases and alias->canonical shapes are accepted. Missing
+    files are ignored so the default CLI/UI path stays zero-config.
+    """
+    aliases = {_normalize_field_name(k): v for k, v in _FIELD_NAME_ALIASES.items()}
+    path = path or os.environ.get("RAGKIT_FIELD_ALIASES") or DEFAULT_FIELD_ALIAS_FILE
+    if not path or not os.path.exists(path):
+        return aliases
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    for key, value in (data or {}).items():
+        if isinstance(value, list):
+            canonical = str(key)
+            for alias in value:
+                aliases[_normalize_field_name(alias)] = canonical
+        elif isinstance(value, str):
+            aliases[_normalize_field_name(key)] = value
+    return aliases
+
+
+def _map_field_name(field, catalogue, cutoff=0.88):
+    if field in catalogue:
+        return field
+    norm = _normalize_field_name(field)
+    norm_to_field = {}
+    for f in catalogue:
+        norm_to_field.setdefault(_normalize_field_name(f), f)
+    if norm in norm_to_field:
+        return norm_to_field[norm]
+    alias = load_field_aliases().get(norm)
+    if alias in catalogue:
+        return alias
+    close = difflib.get_close_matches(norm, list(norm_to_field), n=1, cutoff=cutoff)
+    return norm_to_field[close[0]] if close else None
 
 
 # Common abbreviation -> full-name expansions for the country/entity labels
@@ -1027,6 +1298,7 @@ _LABEL_ABBREVIATIONS = {
     "prc": "china", "uae": "united arab emirates",
     "rok": "south korea", "dprk": "north korea",
     "frg": "west germany", "gdr": "east germany",
+    "european": "europe",
 }
 
 
@@ -1083,10 +1355,11 @@ def validate_filter(flt, catalogue):
     clean, errors = {}, []
     if not isinstance(flt, dict):
         return {}, ["filter is not an object"]
-    for field, cond in flt.items():
-        spec = catalogue.get(field)
+    for raw_field, cond in flt.items():
+        field = _map_field_name(raw_field, catalogue)
+        spec = catalogue.get(field) if field else None
         if spec is None:
-            errors.append(f"unknown field '{field}' dropped")
+            errors.append(f"unknown field '{raw_field}' dropped")
             continue
         if not isinstance(cond, dict):
             # The filter-extraction model is asked for {"field": {"in": [...]}}
@@ -1135,6 +1408,8 @@ def validate_filter(flt, catalogue):
             entry = {"type": "numeric", **c}
             if converted:
                 entry["_converted"] = converted  # audit trail
+            if field != raw_field:
+                entry["_field_remapped"] = raw_field
             clean[field] = entry
         elif t == "categorical":
             allowed = set(spec["values"])
@@ -1159,6 +1434,8 @@ def validate_filter(flt, catalogue):
                 entry = {"type": "categorical", "in": valid}
                 if remapped:
                     entry["_remapped"] = remapped  # audit trail (mirrors numeric _converted)
+                if field != raw_field:
+                    entry["_field_remapped"] = raw_field
                 clean[field] = entry
         elif t == "multi_value":
             allowed = set(spec["values"])
@@ -1179,6 +1456,8 @@ def validate_filter(flt, catalogue):
                 entry = {"type": "multi_value", "contains": valid}
                 if remapped:
                     entry["_remapped"] = remapped
+                if field != raw_field:
+                    entry["_field_remapped"] = raw_field
                 clean[field] = entry
         elif t == "date":
             c = {}
@@ -1188,7 +1467,10 @@ def validate_filter(flt, catalogue):
                 elif bound in cond:
                     errors.append(f"{field}.{bound} not a valid date, dropped")
             if c:
-                clean[field] = {"type": "date", **c}
+                entry = {"type": "date", **c}
+                if field != raw_field:
+                    entry["_field_remapped"] = raw_field
+                clean[field] = entry
         else:
             errors.append(f"field '{field}' is {t}, not value-filterable; dropped")
     return clean, errors
@@ -1232,6 +1514,36 @@ def count_matches(con, clean_filter):
     if not clean_filter:
         return None
     return len(_eligible_parents(con, clean_filter) or set())
+
+
+def corpus_record_count(con):
+    try:
+        return con.execute("SELECT COUNT(*) FROM record_params").fetchone()[0]
+    except sqlite3.OperationalError:
+        return 0
+
+
+def is_degenerate_filter(con, clean_filter, catalogue, matched_records=None):
+    if not clean_filter:
+        return False, None
+    for field, cond in clean_filter.items():
+        spec = catalogue.get(field) or {}
+        if cond.get("type") == "categorical":
+            allowed = set(map(str, spec.get("values") or []))
+            wanted = set(map(str, cond.get("in") or []))
+            if allowed and wanted >= allowed:
+                return True, f"{field} enumerates every known label"
+        elif cond.get("type") == "multi_value":
+            allowed = set(map(str, spec.get("values") or []))
+            wanted = set(map(str, cond.get("contains") or []))
+            if allowed and wanted >= allowed:
+                return True, f"{field} enumerates every known element"
+    if matched_records is None:
+        matched_records = count_matches(con, clean_filter)
+    total = corpus_record_count(con)
+    if total and matched_records == total:
+        return True, "filter matches every record"
+    return False, None
 
 
 def field_coverage(con, clean_filter=None):
@@ -1339,6 +1651,17 @@ def extract_filter_2pass(query, catalogue, con, backend, model=None, base_url=No
     return merged, info
 
 
+def _numeric_value_matches(value, lo, hi):
+    if record_model.is_numeric_interval(value):
+        v_lo, v_hi = float(value["lo"]), float(value["hi"])
+        return (lo is None or v_hi >= lo) and (hi is None or v_lo <= hi)
+    try:
+        v = float(value)
+    except (TypeError, ValueError):
+        return False
+    return (lo is None or v >= lo) and (hi is None or v <= hi)
+
+
 def _passes(fields, clean_filter):
     # A record's value for a field may be a LIST of variant values
     # (REVIEW_FINDINGS H2 -- subtitle/comment-qualified parameter rows): every
@@ -1352,17 +1675,8 @@ def _passes(fields, clean_filter):
         vals = val if isinstance(val, list) else [val]
         t = cond["type"]
         if t == "numeric":
-            nums = []
-            for x in vals:
-                try:
-                    nums.append(float(x))
-                except (TypeError, ValueError):
-                    continue
-            if not nums:
-                return False
             lo, hi = cond.get("min"), cond.get("max")
-            if not any((lo is None or v >= lo) and (hi is None or v <= hi)
-                       for v in nums):
+            if not any(_numeric_value_matches(x, lo, hi) for x in vals):
                 return False
         elif t == "categorical":
             if not set(map(str, vals)) & set(map(str, cond["in"])):
@@ -1464,6 +1778,10 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     _load_passage_cache (REVIEW_FINDINGS D1) instead of a fresh full-table
     scan plus N+1 point queries every call; see that function's docstring.
     """
+    # A constrained/offline deployment can explicitly disable the optional
+    # cross-encoder while retaining MiniLM vector + FTS/RRF retrieval.
+    rerank = rerank and not _env_true("RAGKIT_DISABLE_RERANK")
+
     # --- pre-retrieval metadata filter ---
     eligible = _eligible_rowids(con, clean_filter)  # None if no filter
 
@@ -1615,7 +1933,6 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
             return max(rowids, key=lambda rid: (float(all_matrix[idx_of[rid]] @ qvec)
                                                 if rid in idx_of else -1.0))
 
-        have_parents = {cache["parent"].get(rid) for rid in ranked}
         pinned_rowids = []
         # Every pin_entities parent that's VALID (has passages, and passes an
         # active hard filter) counts toward the comparison split (G2) even if
@@ -1636,10 +1953,14 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
             if not candidates:
                 continue  # unknown parent, or it fails the active hard filter
             valid_pinned_parents.append(parent)
-            if parent in have_parents:
-                continue  # already ranked in on its own merit -- nothing to INJECT
+            # Reserve one best passage for every valid pin in the FINAL output.
+            # A parent merely appearing somewhere in ranked candidates is not
+            # enough: at k=4 it can sit at rank 8 and be lost. Moving the best
+            # rowid for each valid pin to the front protects exact-code lookups
+            # from both embedding weakness and cross-encoder demotion while the
+            # normal per-parent cap below prevents duplicates from crowding out
+            # the rest of the result set.
             pinned_rowids.append(_best_rowid(candidates))
-            have_parents.add(parent)
         if pinned_rowids:
             seen = set(pinned_rowids)
             ranked = pinned_rowids + [rid for rid in ranked if rid not in seen]
@@ -1701,6 +2022,132 @@ def _passage_body(text):
     can recognise and keep them when the related-systems block is budgeted."""
     return (text.split("\n", 1)[1].strip()
             if text.startswith("Title:") and "\n" in text else text.strip())
+
+
+def _has_parameter_lines(text):
+    return any(line.startswith("Parameter ") for line in text.split("\n"))
+
+
+def _rank_parent_passages(con, query, parents,
+                          embed_model=DEFAULT_EMBED_MODEL):
+    """Return the shared passage cache and cosine-ranked rowids per parent."""
+    parent_set = set(parents or ())
+    if not parent_set:
+        return None, {}
+    qvec = embed([query], embed_model)[0]
+    cache = _load_passage_cache(con, _db_path_of(con))
+    idx_of = {rid: i for i, rid in enumerate(cache["rowids"].tolist())}
+    per_parent = {}
+    for rowid, parent in cache["parent"].items():
+        if parent in parent_set and rowid in idx_of:
+            score = float(cache["matrix"][idx_of[rowid]] @ qvec)
+            per_parent.setdefault(parent, []).append((score, rowid))
+    for scored in per_parent.values():
+        scored.sort(key=lambda item: -item[0])
+    return cache, per_parent
+
+
+def pinned_parameter_passages(con, query, seed_parents, catalogue,
+                              contexts=None,
+                              embed_model=DEFAULT_EMBED_MODEL):
+    """Attach each named record's best parameter passage on field-named asks.
+
+    This is the same-record half of REVIEW_FINDINGS I3. It is a strict no-op
+    unless a catalogue field name occurs in the query, and never duplicates a
+    passage already selected by retrieve(). Returned rows have retrieve()'s
+    context shape, so assemble_context budgets them in its existing passages
+    section without a separate, uncoordinated token allowance.
+    """
+    if not seed_parents or not catalogue:
+        return []
+    ql = (query or "").lower()
+    named_fields = [field for field in catalogue if _field_name_hit(field, ql)]
+    if not named_fields:
+        return []
+    existing = {(c["rid"], c["passage"]) for c in (contexts or ())}
+    cache, ranked = _rank_parent_passages(
+        con, query, seed_parents, embed_model=embed_model)
+    if cache is None:
+        return []
+    out = []
+    for parent in dict.fromkeys(seed_parents):
+        scored = ranked.get(parent, ())
+        # Prefer a parameter passage that actually carries a field named by the
+        # query. Pure whole-query cosine can otherwise prefer an unrelated prose-
+        # valued parameter (I4 explains why large parameter chunks are noisy).
+        prefixes = tuple(f"Parameter {field} =" for field in named_fields)
+        param = next((rowid for _score, rowid in scored
+                      if any(line.startswith(prefixes)
+                             for line in cache["text"][rowid].split("\n"))), None)
+        if param is None:
+            param = next((rowid for _score, rowid in scored
+                          if _has_parameter_lines(cache["text"][rowid])), None)
+        if param is None or (parent, cache["rid"][param]) in existing:
+            continue
+        out.append({"rid": parent, "passage": cache["rid"][param],
+                    "title": cache["title"][param],
+                    "text": cache["text"][param],
+                    "section": "pinned_parameters"})
+    return out
+
+
+def _format_direct_value(value, unit=None):
+    if isinstance(value, list):
+        text = ", ".join(map(str, value))
+    elif isinstance(value, dict):
+        text = json.dumps(value, sort_keys=True)
+    else:
+        text = "" if value is None else str(value)
+    if unit and text and not re.search(rf"(?<![A-Za-z]){re.escape(str(unit))}(?![A-Za-z])", text):
+        text = f"{text} {unit}"
+    return text
+
+
+def direct_parameter_answer(con, query, catalogue=None, aliases=None,
+                            field_aliases=None):
+    """Deterministic answer for exact named-record field lookups.
+
+    This handles the failure class where retrieval contains the right record
+    and parameter, but the hosted model answers from a neighbouring record or
+    misses the value. It is intentionally narrow: one named entity, one field
+    intent, and an actual stored value in record_params.
+    """
+    catalogue = catalogue if catalogue is not None else load_catalogue(con)
+    aliases = aliases if aliases is not None else load_aliases(con)
+    pins = match_entities(query, aliases)
+    if len(pins) != 1:
+        return None
+    fields = query_field_intents(query, catalogue, field_aliases=field_aliases)
+    if len(fields) != 1:
+        return None
+    field = fields[0]
+    rid = pins[0]
+    row = con.execute(
+        "SELECT title, params_json, fields_json FROM record_params WHERE parent_rid=?",
+        (rid,)).fetchone()
+    if not row:
+        return None
+    title, params_json, fields_json = row
+    params = json.loads(params_json) if params_json else {}
+    fields_json = json.loads(fields_json) if fields_json else {}
+    if field in params:
+        cell = params[field] or {}
+        value = _format_direct_value(cell.get("value"), cell.get("unit"))
+    elif field in fields_json:
+        value = _format_direct_value(
+            fields_json[field], (catalogue.get(field) or {}).get("unit"))
+    else:
+        return None
+    if not value:
+        return None
+    verb = "values are" if ";" in value or "," in value else "is"
+    return {
+        "reply": f"{title} {field} {verb} {value}. [{rid}]",
+        "rid": rid,
+        "title": title,
+        "field": field,
+        "value": value,
+    }
 
 
 def record_digest(con, query, clean_filter, embed_model=DEFAULT_EMBED_MODEL,
@@ -1813,31 +2260,20 @@ def related_records(con, query, seed_parents, embed_model=DEFAULT_EMBED_MODEL,
     # So each neighbour carries its best-matching passage AND, when that passage
     # holds no parameter lines, its most query-relevant parameter passage too;
     # the budgeter's param-preserving truncation then keeps those numbers.
-    qvec = embed([query], embed_model)[0]
-    cache = _load_passage_cache(con, _db_path_of(con))
-    idx_of = {rid: i for i, rid in enumerate(cache["rowids"].tolist())}
-    per_neighbour = {}  # neighbour_rid -> list of (score, rowid)
-    for rowid, parent in cache["parent"].items():
-        if parent in neighbours and rowid in idx_of:
-            per_neighbour.setdefault(parent, []).append(rowid)
+    cache, per_neighbour = _rank_parent_passages(
+        con, query, neighbours, embed_model=embed_model)
     if not per_neighbour:
         return []
 
-    def _has_param(rowid):
-        return any(l.startswith("Parameter ")
-                   for l in cache["text"][rowid].split("\n"))
-
     built = []  # (best_score, rid, title, text)
-    for parent, rowids in per_neighbour.items():
-        scored = sorted(
-            ((float(cache["matrix"][idx_of[r]] @ qvec), r) for r in rowids),
-            key=lambda sr: -sr[0])
+    for parent, scored in per_neighbour.items():
         best_score, best_rid = scored[0]
         bodies = [_passage_body(cache["text"][best_rid])]
-        if not _has_param(best_rid):
+        if not _has_parameter_lines(cache["text"][best_rid]):
             # richest available parameter passage (highest cosine among those
             # that actually carry parameter lines), so the numbers are present
-            param_rid = next((r for _s, r in scored if _has_param(r)), None)
+            param_rid = next((r for _s, r in scored
+                              if _has_parameter_lines(cache["text"][r])), None)
             if param_rid is not None:
                 bodies.append(_passage_body(cache["text"][param_rid]))
         built.append((best_score, parent, cache["title"][best_rid],
@@ -1846,6 +2282,62 @@ def related_records(con, query, seed_parents, embed_model=DEFAULT_EMBED_MODEL,
     return [{"rid": p, "title": t, "text": txt,
              "note": "; ".join(neighbours[p].keys())}
             for _sc, p, t, txt in built[:limit]]
+
+
+_RELATION_QUERY_RE = re.compile(
+    r"\b(fitted with|fitted to|carried by|carries|carry|integrated with|"
+    r"related to|relation|relationship|linked to|component|components|"
+    r"equipped with)\b", re.I)
+
+
+def relation_evidence(con, query, seed_parents, limit=12):
+    """Deterministic relation rows involving query-named records."""
+    if not seed_parents or not _RELATION_QUERY_RE.search(query or ""):
+        return []
+    seeds = list(dict.fromkeys(seed_parents))
+    fields_map = _record_fields_map(con)
+    title_of = {rid: fields_map[rid][0] for rid in fields_map}
+    placeholders = ",".join("?" * len(seeds))
+    rows = con.execute(
+        "SELECT parent_rid, child_model_id, child_name, rel_parent_model_id, "
+        "rel_parent_name, component, relation_type, child_system_group, "
+        "child_system_type, child_equip_code FROM record_relations "
+        f"WHERE parent_rid IN ({placeholders}) "
+        f"OR child_model_id IN ({placeholders}) "
+        f"OR rel_parent_model_id IN ({placeholders})",
+        seeds * 3).fetchall()
+    out = []
+    seen = set()
+    seed_set = set(seeds)
+    for p, child_id, child_name, rel_parent_id, rel_parent_name, component, rt, cgroup, ctype, ceq in rows:
+        far_id = child_id if child_id is not None else rel_parent_id
+        parent_title = title_of.get(str(p), str(p))
+        far_key = None if far_id is None else str(far_id)
+        far_title = title_of.get(far_key, child_name or rel_parent_name or far_key or "")
+        if p in seed_set:
+            relation = rt or "Related to"
+        elif far_key in seed_set:
+            relation = f"{rt or 'Related to'} (reverse)"
+        else:
+            continue
+        key = (str(p), far_key, relation, component)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({
+            "parent_rid": str(p),
+            "parent_title": parent_title,
+            "child_rid": far_key,
+            "child_title": far_title,
+            "relation_type": relation,
+            "component": component,
+            "child_system_group": cgroup,
+            "child_system_type": ctype,
+            "child_equip_code": ceq,
+        })
+        if len(out) >= limit:
+            break
+    return out
 
 
 # Tightened for REVIEW_FINDINGS A7: the old regex included bare "which| all|
@@ -1946,6 +2438,27 @@ def match_entities(query, aliases):
     return rids
 
 
+_DESIGNATION_RE = re.compile(
+    r"(?<![A-Za-z0-9])([A-Z]{1,6}[- ]?\d{2,5}[A-Z0-9-]*)(?![A-Za-z0-9])"
+)
+
+
+def unmatched_designations(query, aliases):
+    """Exact-looking codes in the query that do not match the alias table."""
+    if not query:
+        return []
+    found = []
+    for m in _DESIGNATION_RE.finditer(query):
+        tok = m.group(1).strip()
+        if tok and tok not in found:
+            found.append(tok)
+    if not found:
+        return []
+    if match_entities(query, aliases):
+        return []
+    return found
+
+
 def is_analytic_query(query, clean_filter, aliases=None):
     """Heuristic: does the question want to compare/aggregate across the
     matched set (-> structured table), rather than a prose 'why/how' answer
@@ -2015,8 +2528,40 @@ def _table_columns(query, clean_filter, catalogue, param_union, max_cols=6):
     return cols[:max_cols]
 
 
-def record_table(con, query, clean_filter, catalogue=None, limit=40, max_cols=6):
-    """Structured view of the filtered set: one row per matched record, columns
+_LOW_SORT_RE = re.compile(r"\b(lowest|least|smallest|shortest|lightest|"
+                          r"slowest|under|below|less than|ascending)\b", re.I)
+
+
+def _cell_numeric_values(value):
+    if record_model.is_numeric_interval(value):
+        return [float(value["lo"]), float(value["hi"])]
+    if isinstance(value, list):
+        vals = []
+        for v in value:
+            vals.extend(_cell_numeric_values(v))
+        return vals
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return [float(value)]
+    vals = []
+    for m in re.finditer(r"(?<![A-Za-z0-9.])[+-]?\d+(?:,\d{3})*(?:\.\d+)?", str(value or "")):
+        try:
+            vals.append(float(m.group(0).replace(",", "")))
+        except ValueError:
+            pass
+    return vals
+
+
+def _numeric_sort_value(cell, ascending=False):
+    vals = _cell_numeric_values((cell or {}).get("value"))
+    if not vals:
+        return None
+    return min(vals) if ascending else max(vals)
+
+
+def record_table(con, query, clean_filter, catalogue=None, limit=40, max_cols=6,
+                 parent_rids=None):
+    """Structured view of the filtered set (or explicit `parent_rids`): one row
+    per matched record, columns
     chosen from the filter + query + defaults, each CELL carrying the FULL field
     (value + unit + description) rather than just the value. Sorted by the first
     numeric column so 'longest/most' reads top-down. Returns
@@ -2029,7 +2574,8 @@ def record_table(con, query, clean_filter, catalogue=None, limit=40, max_cols=6)
     nothing is silently dropped. Known trade-off: a stacked value isn't
     float()-able, so the numeric column sort sinks multi-variant rows;
     FUTURE: sort on the max variant / render stacked sub-rows."""
-    eligible_parents = _eligible_parents(con, clean_filter)
+    eligible_parents = (set(parent_rids) if parent_rids is not None
+                        else _eligible_parents(con, clean_filter))
     if not eligible_parents:
         return None
     catalogue = catalogue if catalogue is not None else load_catalogue(con)
@@ -2074,11 +2620,12 @@ def record_table(con, query, clean_filter, catalogue=None, limit=40, max_cols=6)
     num_col = next((c for c in columns
                     if (catalogue.get(c) or {}).get("type") == "numeric"), None)
     if num_col:
+        ascending = bool(_LOW_SORT_RE.search(query or ""))
         def _key(r):
-            try:
-                return -float(r["cells"][num_col]["value"])
-            except (TypeError, ValueError):
+            v = _numeric_sort_value(r["cells"][num_col], ascending=ascending)
+            if v is None:
                 return float("inf")  # missing values sink to the bottom
+            return v if ascending else -v
         rows.sort(key=_key)
     else:
         rows.sort(key=lambda r: r["title"])
@@ -2239,6 +2786,41 @@ def _render_related_text(related, token_budget=None):
     return header + "\n\n" + "\n\n".join(kept)
 
 
+def _render_relation_evidence_text(relations, token_budget=None):
+    header = ("Authoritative relation evidence from the structured relation "
+              "table (use this block for relationship facts):")
+
+    def line(r):
+        bits = [
+            f"[{r['parent_rid']}] {r['parent_title']}",
+            f"{r.get('relation_type') or 'Related to'}",
+            (f"[{r['child_rid']}] " if r.get("child_rid") else "") + str(r.get("child_title") or ""),
+        ]
+        extras = []
+        if r.get("component"):
+            extras.append(f"component={r['component']}")
+        if r.get("child_system_type"):
+            extras.append(f"child role/type={r['child_system_type']}")
+        if r.get("child_equip_code"):
+            extras.append(f"child code={r['child_equip_code']}")
+        return " | ".join(bits) + (f" ({'; '.join(extras)})" if extras else "")
+
+    rows = [line(r) for r in relations]
+    if token_budget is not None:
+        kept = []
+        used = _est_tokens(header)
+        for i, row in enumerate(rows):
+            rt = _est_tokens(row)
+            if used + rt > token_budget and kept:
+                kept.append(f"(+{len(rows) - i} more relation row(s) not shown)")
+                break
+            kept.append(row)
+            used += rt
+    else:
+        kept = rows
+    return header + "\n" + "\n".join(kept)
+
+
 def _pack_passages(contexts, token_budget=None):
     """Render + pack passage blocks (REVIEW_FINDINGS B1's passage share of the
     global budget) in the given order (already ranked/pinned/floored by
@@ -2250,7 +2832,16 @@ def _pack_passages(contexts, token_budget=None):
     against the FULL passages retrieve() now returns to assembly).
     token_budget=None (default) means unbounded -- every passage in full,
     nothing truncated or dropped (today's pre-B1 behaviour)."""
-    blocks = [f"[{c['rid']}] {c['title']}\n{c['text']}" for c in contexts]
+    param_contexts = [c for c in contexts if c.get("section") == "pinned_parameters"]
+    other_contexts = [c for c in contexts if c.get("section") != "pinned_parameters"]
+    blocks = []
+    for c in param_contexts:
+        blocks.append(
+            "Authoritative parameters for the named record "
+            "(prefer these for exact field values):\n"
+            f"[{c['rid']}] {c['title']}\n{c['text']}"
+        )
+    blocks.extend(f"[{c['rid']}] {c['title']}\n{c['text']}" for c in other_contexts)
     if token_budget is None:
         return "\n\n---\n\n".join(blocks)
     kept = []
@@ -2311,7 +2902,8 @@ def _allocate_budget(needs, weights, total):
 
 
 def assemble_context(query, contexts, table=None, digest=None, related=None,
-                     max_context_tokens=None, alloc=(0.50, 0.35, 0.15, 0.15)):
+                     relations=None, max_context_tokens=None,
+                     alloc=(0.45, 0.30, 0.12, 0.08, 0.05)):
     """THE B1 fix: build_prompt used to hand back full-size table/digest text
     with NO budget at all -- only retrieve()'s passages were ever capped by
     max_context_tokens (see retrieve()'s own, separate, passages-only cap).
@@ -2355,10 +2947,11 @@ def assemble_context(query, contexts, table=None, digest=None, related=None,
     table_text_full = _render_table_text(table) if (table and table.get("rows")) else None
     digest_text_full = _render_digest_text(digest) if digest else None
     related_text_full = _render_related_text(related) if related else None
+    relations_text_full = _render_relation_evidence_text(relations) if relations else None
 
     if max_context_tokens is None:
         return (_pack_passages(contexts), table_text_full, digest_text_full,
-                related_text_full)
+                related_text_full, relations_text_full)
 
     blocks = [f"[{c['rid']}] {c['title']}\n{c['text']}" for c in contexts]
     needs = {
@@ -2366,8 +2959,9 @@ def assemble_context(query, contexts, table=None, digest=None, related=None,
         "table": _est_tokens(table_text_full) if table_text_full else 0,
         "digest": _est_tokens(digest_text_full) if digest_text_full else 0,
         "related": _est_tokens(related_text_full) if related_text_full else 0,
+        "relations": _est_tokens(relations_text_full) if relations_text_full else 0,
     }
-    weights = dict(zip(("passages", "table", "digest", "related"), alloc))
+    weights = dict(zip(("passages", "table", "digest", "related", "relations"), alloc))
     budgets = _allocate_budget(needs, weights, max_context_tokens)
 
     ctx_text = _pack_passages(contexts, budgets["passages"])
@@ -2377,7 +2971,9 @@ def assemble_context(query, contexts, table=None, digest=None, related=None,
                   if digest_text_full else None)
     related_text = (_render_related_text(related, token_budget=budgets["related"])
                     if related_text_full else None)
-    return ctx_text, table_text, digest_text, related_text
+    relations_text = (_render_relation_evidence_text(
+        relations, token_budget=budgets["relations"]) if relations_text_full else None)
+    return ctx_text, table_text, digest_text, related_text, relations_text
 
 
 def _est_tokens(s):
@@ -2432,7 +3028,9 @@ def _truncate_to_tokens(text, token_budget):
 SYSTEM_PROMPT = (
     "You answer strictly from the provided context records. "
     "Cite the record id(s) you used in square brackets. "
-    "If the answer is not in the context, say you don't have that information."
+    "If the answer is not in the context, say you don't have that information. "
+    "When an authoritative parameters block is included for a named record, "
+    "prefer that block for exact field values over other retrieved records."
 )
 
 # REVIEW_FINDINGS E3: when build_prompt includes a structured fields table
@@ -2452,7 +3050,8 @@ SYSTEM_PROMPT = (
 SYSTEM_PROMPT_WITH_TABLE = (
     SYSTEM_PROMPT + " When a structured fields table is included below, treat "
     "it as the authoritative source for exact field values -- prefer it over "
-    "any conflicting figure mentioned in the prose passages."
+    "any conflicting figure mentioned in the prose passages. If the table is "
+    "ranked or sorted, preserve its row order in your answer."
 )
 
 
@@ -2468,7 +3067,7 @@ def system_prompt_for(table):
 
 
 def build_prompt(query, contexts, digest=None, table=None, max_context_tokens=None,
-                 related=None):
+                 related=None, relations=None):
     """Assemble the final prompt text: context passages, optional structured
     table (analytic queries), optional digest (roster of the rest of a large
     filtered set), optional related-systems block (one-hop expansion of the
@@ -2482,9 +3081,9 @@ def build_prompt(query, contexts, digest=None, table=None, max_context_tokens=No
     only retrieve()'s passages were ever capped, so a broad filter + analytic
     query's table/digest could blow the configured budget several times over
     with nothing to stop it."""
-    ctx_text, table_text, digest_text, related_text = assemble_context(
+    ctx_text, table_text, digest_text, related_text, relations_text = assemble_context(
         query, contexts, table=table, digest=digest, related=related,
-        max_context_tokens=max_context_tokens)
+        relations=relations, max_context_tokens=max_context_tokens)
     parts = [f"Context records:\n\n{ctx_text}"]
     # Structured backbone: exact fields for every matched record (analytic
     # queries). Placed before the digest since it's the source of truth for
@@ -2496,6 +3095,8 @@ def build_prompt(query, contexts, digest=None, table=None, max_context_tokens=No
     # so the model can reason over the whole matched set, not just the top few.
     if digest_text:
         parts.append(digest_text)
+    if relations_text:
+        parts.append(relations_text)
     # One-hop graph expansion (REVIEW_FINDINGS I3/H4e): the in-corpus records
     # linked to the query's named entities (a named fighter's missiles/radar),
     # so a question spanning a record and its related systems has the linked
@@ -2612,12 +3213,28 @@ def _openai_raw(system, user, model, base_url="http://localhost:8000/v1",
         base_url.rstrip("/") + "/chat/completions", data=body, headers=headers,
     )
     data = _http_json(req, timeout)
-    return data["choices"][0]["message"]["content"].strip()
+    choices = data.get("choices") or []
+    if not choices:
+        raise RuntimeError(f"provider returned no choices; usage={data.get('usage') or {}}")
+    choice = choices[0]
+    message = choice.get("message") or {}
+    content = message.get("content")
+    if isinstance(content, list):
+        content = "".join(
+            part.get("text", "") if isinstance(part, dict) else str(part)
+            for part in content)
+    if content is None:
+        raise RuntimeError(
+            "provider returned null message content "
+            f"(finish_reason={choice.get('finish_reason')!r}, "
+            f"usage={data.get('usage') or {}})"
+        )
+    return str(content).strip()
 
 
 OPENAI_MAX_TOKENS = 1024      # default cap for model answers
 FILTER_MAX_TOKENS = 256       # filter JSON is tiny; keeps extraction snappy
-OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+OPENROUTER_BASE_URL = llm_provider.BASE_URL
 OPENROUTER_DEFAULT_MODEL = "google/gemma-3-27b-it"  # capable, self-hostable default
 
 # Convenience aliases so --model can be short ("qwen3-14b", "mistral-small")
@@ -2728,54 +3345,55 @@ DEFAULTS = {
 def _openrouter_raw(system, user, model, timeout=HTTP_TIMEOUT,
                     max_tokens=OPENAI_MAX_TOKENS, response_format=None):
     model = OPENROUTER_ALIASES.get(model, model)
-    key = os.environ.get("OPENROUTER_API_KEY")
-    if not key:
-        raise RuntimeError(
-            "OPENROUTER_API_KEY not set. Get a key at https://openrouter.ai/keys"
-        )
     # OpenRouter recommends (not strictly requires) these for app attribution
     # and to appear in their public rankings; harmless to omit but good practice.
     extra = {
         "HTTP-Referer": os.environ.get("OPENROUTER_REFERER", "https://ragkit.local"),
         "X-Title": os.environ.get("OPENROUTER_TITLE", "ragkit"),
     }
-    return _openai_raw(system, user, model, base_url=OPENROUTER_BASE_URL,
-                       api_key=key, extra_headers=extra, timeout=timeout,
-                       max_tokens=max_tokens, response_format=response_format)
+    # Hosted-LLM transport swap point: repo-root llm_provider.py.
+    return llm_provider.chat(system, user, model, extra_headers=extra,
+                             timeout=timeout, max_tokens=max_tokens,
+                             response_format=response_format)
 
 
 def gen_local(query, contexts, model="Qwen/Qwen2.5-1.5B-Instruct", digest=None,
-              table=None, max_context_tokens=None, related=None):
+              table=None, max_context_tokens=None, related=None, relations=None):
     return gen_local_raw(system_prompt_for(table),
                          build_prompt(query, contexts, digest, table,
-                                      max_context_tokens, related=related), model)
+                                      max_context_tokens, related=related,
+                                      relations=relations), model)
 
 
 def gen_anthropic(query, contexts, model="claude-sonnet-4-6", digest=None,
-                  table=None, max_context_tokens=None, related=None):
+                  table=None, max_context_tokens=None, related=None, relations=None):
     return _anthropic_raw(system_prompt_for(table),
                           build_prompt(query, contexts, digest, table,
-                                       max_context_tokens, related=related), model)
+                                       max_context_tokens, related=related,
+                                       relations=relations), model)
 
 
 def gen_openrouter(query, contexts, model=None, digest=None, table=None,
-                   max_context_tokens=None, related=None):
+                   max_context_tokens=None, related=None, relations=None):
     return _openrouter_raw(system_prompt_for(table),
                            build_prompt(query, contexts, digest, table,
-                                        max_context_tokens, related=related),
+                                        max_context_tokens, related=related,
+                                        relations=relations),
                            model or OPENROUTER_DEFAULT_MODEL)
 
 
 def gen_openai(query, contexts, model, base_url="http://localhost:8000/v1",
-               digest=None, table=None, max_context_tokens=None, related=None):
+               digest=None, table=None, max_context_tokens=None, related=None,
+               relations=None):
     return _openai_raw(system_prompt_for(table),
                        build_prompt(query, contexts, digest, table,
-                                    max_context_tokens, related=related),
+                                    max_context_tokens, related=related,
+                                    relations=relations),
                        model, base_url)
 
 
 def generate(query, contexts, backend, model=None, base_url=None, digest=None,
-             table=None, max_context_tokens=None, related=None):
+             table=None, max_context_tokens=None, related=None, relations=None):
     """max_context_tokens (REVIEW_FINDINGS B1) is the GLOBAL prompt budget --
     passed straight through to build_prompt/assemble_context, which is the
     only place passages/table/digest/related are traded off against ONE total.
@@ -2788,19 +3406,22 @@ def generate(query, contexts, backend, model=None, base_url=None, digest=None,
     and reproduces the exact pre-expansion prompt."""
     if backend == "local":
         return gen_local(query, contexts, model or "Qwen/Qwen2.5-1.5B-Instruct",
-                         digest, table, max_context_tokens, related=related)
+                         digest, table, max_context_tokens, related=related,
+                         relations=relations)
     if backend == "anthropic":
         return gen_anthropic(query, contexts, model or "claude-sonnet-4-6",
-                             digest, table, max_context_tokens, related=related)
+                             digest, table, max_context_tokens, related=related,
+                             relations=relations)
     if backend == "openrouter":
         return gen_openrouter(query, contexts, model, digest, table,
-                              max_context_tokens, related=related)
+                              max_context_tokens, related=related,
+                              relations=relations)
     if backend == "openai":
         if not model:
             raise RuntimeError("--model required for openai backend")
         return gen_openai(query, contexts, model,
                           base_url or "http://localhost:8000/v1", digest, table,
-                          max_context_tokens, related=related)
+                          max_context_tokens, related=related, relations=relations)
     raise RuntimeError(f"unknown backend {backend}")
 
 
@@ -2926,8 +3547,10 @@ def extract_filter_ex(query, catalogue, backend, model=None, base_url=None,
         catalogue, only_fields=only_fields, min_count=min_count,
         max_fields=max_fields, category_stats=category_stats,
         category_value=category_value)
+    today = _dt.date.today().isoformat()
     sys_p = (
         "You convert a question into a JSON metadata filter. "
+        f"Today's date is {today}. "
         "Output ONLY a JSON object, no prose. Use only the fields and values "
         "listed. Numeric: {\"field\":{\"min\":n,\"max\":n}}. If the question "
         "expresses a value in a different unit than the field's listed unit, add "
@@ -2937,9 +3560,15 @@ def extract_filter_ex(query, catalogue, backend, model=None, base_url=None,
         "Categorical: {\"field\":{\"in\":[...]}}. "
         "Multi-value: {\"field\":{\"contains\":[...]}}. "
         "Date: {\"field\":{\"date_from\":\"YYYY-MM-DD\",\"date_to\":\"YYYY-MM-DD\"}}. "
+        "Resolve relative time expressions (e.g. last 20 years, recent, the 90's) "
+        "into numeric bounds on the in-service year field when that field is listed. "
         "If no filter applies, output {}."
     )
-    user_p = f"{spec}\n\nQuestion: {query}\n\nJSON filter:"
+    glossary = abbreviation_glossary_for_query(query)
+    glossary_block = f"\n\nDomain abbreviations in this question:\n{glossary}" if glossary else ""
+    hints = filter_extraction_hints(query, catalogue)
+    hints_block = f"\n\nFilter selection hints:\n{hints}" if hints else ""
+    user_p = f"{spec}{glossary_block}{hints_block}\n\nQuestion: {query}\n\nJSON filter:"
     fmt = ({"type": "json_object"}
            if (json_mode and backend in ("openrouter", "openai")) else None)
 
@@ -3001,7 +3630,7 @@ def answer(db_path, query, backend, model=None, base_url=None,
            filter_max_fields=DEFAULTS["filter_max_fields"],
            filter_mode=DEFAULTS["filter_mode"], field_select=DEFAULTS["field_select"],
            field_select_k=DEFAULTS["field_select_k"], min_rel=DEFAULTS["min_rel"],
-           filter_model=None):
+           filter_model=None, field_aliases=None):
     """filters: an explicit filter dict (from UI/caller).
     auto_filter: if True and no explicit filters, ask the model to derive one.
     two_pass: use the broad-category-then-detail extractor (extract_filter_2pass).
@@ -3049,6 +3678,7 @@ def answer(db_path, query, backend, model=None, base_url=None,
     con = connect(db_path)
     catalogue = load_catalogue(con)
     aliases = load_aliases(con)
+    field_alias_map = load_field_aliases(field_aliases)
     filter_info = {"applied": {}, "errors": [], "source": None, "fell_back": False,
                   "extraction": None}
 
@@ -3086,6 +3716,13 @@ def answer(db_path, query, backend, model=None, base_url=None,
         # filtered set isn't silently reduced to k with no signal.
         if clean:
             filter_info["matched_records"] = count_matches(con, clean)
+            degenerate, reason = is_degenerate_filter(
+                con, clean, catalogue, filter_info["matched_records"])
+            if degenerate:
+                filter_info["degenerate"] = reason
+                filter_info["applied"] = {}
+                clean = {}
+                filter_info.pop("matched_records", None)
 
     # Record the mode actually used (auto resolves to hard/fill based on the matched
     # count), so callers/UI can see whether the filter gated or just topped up.
@@ -3100,6 +3737,13 @@ def answer(db_path, query, backend, model=None, base_url=None,
     # retrieve() -- guarantees a named record surfaces even when embeddings/
     # RRF rank it poorly (the common case for exact designations).
     pin = match_entities(query, aliases)
+    missing_designations = unmatched_designations(query, aliases)
+    if missing_designations:
+        filter_info["unknown_designations"] = missing_designations
+        names = ", ".join(missing_designations)
+        return (f"No matching record ID or alias was found for {names}. "
+                "I don't have evidence for that designation in the indexed catalogue.",
+                [], filter_info)
 
     contexts = retrieve(con, query, k=k, embed_model=embed_model,
                         clean_filter=clean or None,
@@ -3118,6 +3762,18 @@ def answer(db_path, query, backend, model=None, base_url=None,
         return "No records indexed.", [], filter_info
 
     shown = {c["rid"] for c in contexts}
+    # Same-record I3: a field-named lookup needs the named record's parameter
+    # passage even when its single best-cosine pinned passage is prose. Restrict
+    # to pins that retrieve() actually admitted so this cannot bypass a hard
+    # filter. No pin or no field-name hit remains a byte-identical no-op.
+    admitted_pins = [parent for parent in pin if parent in shown]
+    own_params = pinned_parameter_passages(
+        con, query, admitted_pins, catalogue, contexts=contexts,
+        embed_model=embed_model) if admitted_pins else []
+    if own_params:
+        contexts = contexts + own_params
+        filter_info["pinned_parameters"] = own_params
+        shown.update(c["rid"] for c in own_params)
     # One-hop expansion (REVIEW_FINDINGS I3/H4e): pull in the in-corpus records
     # linked to the entities the query NAMES (the pins), so a question spanning
     # a record and its related systems ("how far do the F-22's missiles reach")
@@ -3129,18 +3785,35 @@ def answer(db_path, query, backend, model=None, base_url=None,
                               exclude=shown) if pin else []
     if related:
         filter_info["related"] = related
+    relations = relation_evidence(con, query, pin) if pin else []
+    if relations:
+        filter_info["relation_evidence"] = relations
+
+    direct = direct_parameter_answer(
+        con, query, catalogue=catalogue, aliases=aliases,
+        field_aliases=field_alias_map)
+    if direct:
+        filter_info["direct_answer"] = {
+            "rid": direct["rid"], "field": direct["field"],
+            "value": direct["value"],
+        }
+        return direct["reply"], contexts, filter_info
 
     # Represent the fuller matched set beyond the top-k passages. Analytic
     # questions get a structured table (exact fields incl. descriptions);
     # otherwise a snippet-per-record digest for prose breadth.
     digest, table = [], None
     matched = filter_info.get("matched_records")
-    if clean and not filter_info["fell_back"] and matched:
+    pinned_compare = (not clean and len(pin) >= 2
+                      and is_analytic_query(query, {}, aliases=aliases))
+    if (clean and not filter_info["fell_back"] and matched) or pinned_compare:
         if is_analytic_query(query, clean, aliases=aliases):
-            table = record_table(con, query, clean, catalogue=catalogue)
+            table = record_table(
+                con, query, clean, catalogue=catalogue,
+                parent_rids=pin if pinned_compare else None)
             if table:
                 filter_info["table"] = table
-        if not table and matched > len(contexts):
+        if not table and matched and matched > len(contexts):
             # exclude both the shown passages AND the related block, so a record
             # isn't listed in two supplementary sections at once.
             digest = record_digest(con, query, clean, embed_model=embed_model,
@@ -3150,7 +3823,7 @@ def answer(db_path, query, backend, model=None, base_url=None,
 
     reply = generate(query, contexts, backend, model, base_url,
                      digest=digest, table=table, related=related,
-                     max_context_tokens=max_context_tokens)
+                     relations=relations, max_context_tokens=max_context_tokens)
     return reply, contexts, filter_info
 
 
@@ -3236,6 +3909,10 @@ def main():
                          "alias or slug, e.g. mistral-small); default: reuse "
                          "--model (see DEFAULTS['filter_model'] for why this "
                          "isn't defaulted to the bench's dedicated model here)")
+    pa.add_argument("--field-aliases", default=None,
+                    help="optional JSON file of query field aliases; defaults "
+                         f"to {DEFAULT_FIELD_ALIAS_FILE} or RAGKIT_FIELD_ALIASES "
+                         "when present")
     pa.add_argument("--field-select", choices=("embed", "coverage"), default=DEFAULTS["field_select"],
                     help="single-pass filter-field selection: 'embed' (query-"
                          "relevance ranked, REVIEW_FINDINGS A2) or 'coverage' "
@@ -3298,7 +3975,8 @@ def main():
             two_pass=a.two_pass, filter_min_count=a.filter_min_count,
             filter_max_fields=a.filter_max_fields, filter_mode=a.filter_mode,
             field_select=a.field_select, field_select_k=a.field_select_k,
-            min_rel=a.min_rel, filter_model=a.filter_model)
+            min_rel=a.min_rel, filter_model=a.filter_model,
+            field_aliases=a.field_aliases)
         print(reply)
         print("\n--- retrieved ---", file=sys.stderr)
         for c in ctx:
@@ -3326,7 +4004,10 @@ def main():
             db=a.db, eval_set=a.eval_set, k=a.k, min_rel=a.min_rel,
             max_context_tokens=a.max_context_tokens, backend=a.backend,
             model=a.model, base_url=a.base_url, filter_model=a.filter_model,
-            json_out=a.json_out, limit=a.limit)
+            json_out=a.json_out, limit=a.limit,
+            case_ids=getattr(a, "case_ids", None),
+            classes=getattr(a, "classes", None),
+            checkpoint_jsonl=getattr(a, "checkpoint_jsonl", None))
         sys.exit(0 if ok else 1)
 
 

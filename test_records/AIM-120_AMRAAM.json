@@ -62,6 +62,13 @@
     },
     {
       "country": "United States",
+      "type": "IOC Year",
+      "proliferation": 1991,
+      "region": "North America",
+      "organization": "USAF / USN / USMC"
+    },
+    {
+      "country": "United States",
       "proliferation": "Production",
       "region": "North America",
       "organization": "RTX (Raytheon)"

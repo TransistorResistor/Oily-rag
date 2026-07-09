@@ -1,0 +1,31 @@
+{
+  "Maximum range": [
+    "range",
+    "max range",
+    "maximum effective range",
+    "reach"
+  ],
+  "Detection range": [
+    "radar range",
+    "sensor range",
+    "search range",
+    "tracking range"
+  ],
+  "Unit cost": [
+    "cost",
+    "price",
+    "unit price"
+  ],
+  "serviceEntryYear": [
+    "entered service",
+    "in service year",
+    "IOC",
+    "initial operational capability"
+  ],
+  "Operated by (country)": [
+    "operated by",
+    "operator",
+    "operators",
+    "users"
+  ]
+}

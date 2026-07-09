@@ -61,6 +61,13 @@
     },
     {
       "country": "Russia",
+      "type": "IOC Year",
+      "proliferation": 2005,
+      "region": "Europe, Asia",
+      "organization": "Russian Federation Armed Forces"
+    },
+    {
+      "country": "Russia",
       "proliferation": "Production",
       "region": "Europe",
       "organization": "Almaz-Antey"

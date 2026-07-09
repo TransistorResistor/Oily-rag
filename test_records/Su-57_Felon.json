@@ -59,6 +59,20 @@
     },
     {
       "country": "Russia",
+      "type": "IOC Year",
+      "proliferation": 2020,
+      "region": "Eastern Europe",
+      "organization": "Russian Aerospace Forces"
+    },
+    {
+      "country": "Export customers",
+      "type": "Projected Fielding",
+      "proliferation": "0 - 5 years",
+      "region": "Multiple regions",
+      "organization": "Prospective foreign operators"
+    },
+    {
+      "country": "Russia",
       "proliferation": "Production",
       "region": "Eastern Europe",
       "organization": "Sukhoi / United Aircraft Corporation"

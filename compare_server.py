@@ -31,12 +31,12 @@ import os
 import sys
 import threading
 import time
-import urllib.request
 import webbrowser
 
 from flask import Flask, request, jsonify, Response
 
 import ragkit
+import llm_provider
 import catalogue as cat_mod
 from models_registry import MODELS, MODELS_BY_ID
 
@@ -213,6 +213,13 @@ def build_context(query, auto_filter, two_pass=None):
             # filtered set isn't silently reduced to k with no signal.
             if clean:
                 filter_info["matched_records"] = ragkit.count_matches(con, clean)
+                degenerate, reason = ragkit.is_degenerate_filter(
+                    con, clean, catalogue, filter_info["matched_records"])
+                if degenerate:
+                    filter_info["degenerate"] = reason
+                    filter_info["applied"] = {}
+                    filter_info.pop("matched_records", None)
+                    clean = None
         # Surface the extraction outcome regardless of whether a filter
         # resulted (REVIEW_FINDINGS A5): "parse_failed" is otherwise
         # indistinguishable in the UI from a legitimate "no filter applies"
@@ -251,6 +258,14 @@ def build_context(query, auto_filter, two_pass=None):
                                min_rel=CONFIG.get("min_rel", 0.0))
 
     shown = {c["rid"] for c in contexts}
+    admitted_pins = [parent for parent in pin if parent in shown]
+    own_params = (ragkit.pinned_parameter_passages(
+        con, query, admitted_pins, catalogue, contexts=contexts)
+        if admitted_pins else [])
+    if own_params:
+        contexts = contexts + own_params
+        filter_info["pinned_parameters"] = own_params
+        shown.update(c["rid"] for c in own_params)
     # One-hop expansion (REVIEW_FINDINGS I3/H4e): pull in the in-corpus records
     # linked to the entities the query NAMES (the pins) so a question spanning a
     # record and its related systems has the linked records' own text in
@@ -260,6 +275,9 @@ def build_context(query, auto_filter, two_pass=None):
                if pin else [])
     if related:
         filter_info["related"] = related
+    relations = ragkit.relation_evidence(con, query, pin) if pin else []
+    if relations:
+        filter_info["relation_evidence"] = relations
 
     # Represent the fuller matched set beyond the top-k passages. Analytic
     # questions (compare / which has the most / numeric filter) get a structured
@@ -267,12 +285,16 @@ def build_context(query, auto_filter, two_pass=None):
     # snippet-per-record digest for prose breadth.
     digest, table = [], None
     matched = filter_info.get("matched_records")
-    if clean and matched:
+    pinned_compare = (not clean and len(pin) >= 2
+                      and ragkit.is_analytic_query(query, {}, aliases=aliases))
+    if (clean and matched) or pinned_compare:
         if ragkit.is_analytic_query(query, clean, aliases=aliases):
-            table = ragkit.record_table(con, query, clean, catalogue=catalogue)
+            table = ragkit.record_table(
+                con, query, clean, catalogue=catalogue,
+                parent_rids=pin if pinned_compare else None)
             if table:
                 filter_info["table"] = table
-        if not table and matched > len(contexts):
+        if not table and matched and matched > len(contexts):
             # exclude both the shown passages AND the related block so a record
             # isn't listed in two supplementary sections at once.
             digest = ragkit.record_digest(
@@ -282,6 +304,7 @@ def build_context(query, auto_filter, two_pass=None):
 
     prompt = ragkit.build_prompt(query, contexts, digest=digest, table=table,
                                  related=related,
+                                 relations=relations,
                                  max_context_tokens=CONFIG["max_context_tokens"])
     return contexts, prompt, filter_info
 
@@ -400,11 +423,15 @@ def verify_slugs(timeout=5):
     OpenRouter's public /models list, so a wrong/renamed slug is flagged and
     disabled in the UI instead of 404-ing on the user's click. Non-fatal if
     offline — everything stays enabled and the call just errors on use."""
+    if ragkit._env_true("RAGKIT_OFFLINE"):
+        print("  offline mode: skipping OpenRouter model-slug check; "
+              "context preview remains available", file=sys.stderr)
+        for m in MODELS:
+            m["available"] = False
+        return
     try:
-        req = urllib.request.Request(ragkit.OPENROUTER_BASE_URL + "/models",
-                                     headers={"user-agent": "ragkit-bench"})
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            known = {m.get("id") for m in json.load(resp).get("data", [])}
+        data = llm_provider.list_models(timeout=timeout)
+        known = {m.get("id") for m in data.get("data", [])}
     except Exception as e:
         print(f"  (couldn't verify slugs: {e}; leaving all models enabled)",
               file=sys.stderr)
@@ -489,11 +516,15 @@ def warm_start():
     ragkit.embed(["warm up"])
     # preload the cross-encoder reranker too; best-effort so an offline first run
     # (model not yet cached) still boots — retrieval just falls back to RRF order.
-    try:
-        ragkit.get_reranker().predict([("warm up", "warm up")])
-    except Exception as e:
-        print(f"  (reranker unavailable: {e}; retrieval will use RRF order)",
+    if ragkit._env_true("RAGKIT_DISABLE_RERANK"):
+        print("  reranker disabled by RAGKIT_DISABLE_RERANK; using RRF order",
               file=sys.stderr)
+    else:
+        try:
+            ragkit.get_reranker().predict([("warm up", "warm up")])
+        except Exception as e:
+            print(f"  (reranker unavailable: {e}; retrieval will use RRF order)",
+                  file=sys.stderr)
     print(f"  embedder + reranker ready in {time.time() - t0:.1f}s", file=sys.stderr)
 
 
