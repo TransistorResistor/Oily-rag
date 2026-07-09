@@ -1,287 +1,331 @@
 {
-  "version": 1,
-  "created": "2026-07-02",
-  "notes": "Gold set for retrieval + filter-extraction eval. expected_rids are ANY-OF unless required_rids is present (ALL required, for comparisons).",
+  "version": 2,
+  "created": "2026-07-08",
+  "notes": "Gold set regenerated for the current test_records/ corpus: 26 air-defence records, modelIDs 1001-1025 plus exemplar 000000. Retrieval expected_rids are ANY-OF unless required_rids is present (ALL required, for comparisons). expected_filter uses the generated catalogue fields from a fresh test_records ingest.",
   "cases": [
     {
       "id": "lookup-01",
       "class": "lookup",
-      "query": "What is the AIM-120 AMRAAM?",
-      "expected_rids": ["2006"],
+      "query": "What is the F-22 Raptor?",
+      "expected_rids": ["1001"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Formal designation lookup. AIM-120_AMRAAM.json, modelID 2006, nomenclature 'AIM-120 AMRAAM'."
+      "notes": "Lockheed Martin F-22 Raptor, modelID 1001."
     },
     {
       "id": "lookup-02",
       "class": "lookup",
-      "query": "Tell me about the T-90 tank.",
-      "expected_rids": ["2056"],
+      "query": "Tell me about the AIM-120 AMRAAM.",
+      "expected_rids": ["1002"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Formal designation lookup. T-90.json, modelID 2056, nomenclature 'T-90', systemType Main Battle Tank."
+      "notes": "AIM-120 AMRAAM, modelID 1002."
     },
     {
       "id": "lookup-03",
       "class": "lookup",
-      "query": "What is the F-16 Fighting Falcon?",
-      "expected_rids": ["2025"],
+      "query": "What is the AN/APG-77 radar?",
+      "expected_rids": ["1003"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Formal/popular name lookup (query omits manufacturer 'General Dynamics'). General_Dynamics_F-16_Fighting_Falcon.json, modelID 2025."
+      "notes": "AN/APG-77 Radar, modelID 1003, platform F-22 Raptor."
     },
     {
       "id": "lookup-04",
       "class": "lookup",
-      "query": "Tell me about the F-22 Raptor.",
-      "expected_rids": ["2030"],
+      "query": "What is the F-35 Lightning II?",
+      "expected_rids": ["1004"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Formal designation + popular nickname 'Raptor'. Lockheed_Martin_F-22_Raptor.json, modelID 2030."
+      "notes": "Lockheed Martin F-35 Lightning II, modelID 1004."
     },
     {
       "id": "lookup-05",
       "class": "lookup",
-      "query": "Tell me about the Abrams tank.",
-      "expected_rids": ["2033"],
+      "query": "Tell me about the Su-57 Felon.",
+      "expected_rids": ["1005"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Partial name lookup, omits 'M1'. M1_Abrams.json, modelID 2033, nomenclature 'M1 Abrams'."
+      "notes": "Sukhoi Su-57, modelID 1005, alias Felon."
     },
     {
       "id": "lookup-06",
       "class": "lookup",
-      "query": "Tell me about the Sidewinder missile.",
-      "expected_rids": ["2008"],
+      "query": "What is the S-400 Triumf?",
+      "expected_rids": ["1010"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Popular name lookup, omits 'AIM-9'. AIM-9_Sidewinder.json, modelID 2008."
+      "notes": "S-400 Triumf, modelID 1010."
     },
     {
       "id": "lookup-07",
       "class": "lookup",
-      "query": "What is the Eurofighter Typhoon?",
-      "expected_rids": ["2021"],
+      "query": "Tell me about NASAMS.",
+      "expected_rids": ["1021"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Formal designation lookup. Eurofighter_Typhoon.json, modelID 2021, systemType Fighter Aircraft."
+      "notes": "NASAMS, modelID 1021."
     },
     {
       "id": "lookup-08",
       "class": "lookup",
-      "query": "What is the Humvee?",
-      "expected_rids": ["2026"],
+      "query": "What is the SPYDER air-defense system?",
+      "expected_rids": ["1025"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Popular-name lookup. Humvee.json, modelID 2026, systemType Utility Vehicle."
-    },
-    {
-      "id": "lookup-09",
-      "class": "lookup",
-      "query": "Tell me about the S-400 missile system.",
-      "expected_rids": ["2049"],
-      "required_rids": [],
-      "expected_filter": null,
-      "expected_answer_contains": [],
-      "notes": "Formal designation lookup. S-400_missile_system.json, modelID 2049, systemType Surface-to-Air Missile."
+      "notes": "SPYDER, modelID 1025."
     },
     {
       "id": "parametric-01",
       "class": "parametric",
-      "query": "What is the range of the AIM-120 AMRAAM?",
-      "expected_rids": ["2006"],
+      "query": "What is the maximum range of the AIM-120 AMRAAM?",
+      "expected_rids": ["1002"],
       "required_rids": [],
       "expected_filter": null,
-      "expected_answer_contains": ["75"],
-      "notes": "AIM-120_AMRAAM.json parametrics: Range parameterValue '75', uom 'km' (baseline AIM-120A/B variant)."
+      "expected_answer_contains": ["180"],
+      "notes": "AIM-120 AMRAAM Maximum range variants include 105 km and 180 km."
     },
     {
       "id": "parametric-02",
       "class": "parametric",
-      "query": "How heavy is the M1 Abrams?",
-      "expected_rids": ["2033"],
+      "query": "What is the detection range of the AN/APG-77 radar?",
+      "expected_rids": ["1003"],
       "required_rids": [],
       "expected_filter": null,
-      "expected_answer_contains": ["54000"],
-      "notes": "M1_Abrams.json parametrics: Mass parameterValue '54000', uom 'kg'."
+      "expected_answer_contains": ["400"],
+      "notes": "AN/APG-77 Detection range variants include 193 km and 400 km."
     },
     {
       "id": "parametric-03",
       "class": "parametric",
-      "query": "What is the wingspan of the F-22 Raptor?",
-      "expected_rids": ["2030"],
+      "query": "What is the maximum range of the S-400 Triumf?",
+      "expected_rids": ["1010"],
       "required_rids": [],
       "expected_filter": null,
-      "expected_answer_contains": ["13.56"],
-      "notes": "Lockheed_Martin_F-22_Raptor.json parametrics: Wingspan parameterValue '13.56', uom 'm'."
+      "expected_answer_contains": ["400"],
+      "notes": "S-400 Triumf Maximum range variants include 400 km, 250 km, and 120 km."
     },
     {
       "id": "parametric-04",
       "class": "parametric",
-      "query": "What is the unit cost of the FIM-92 Stinger?",
-      "expected_rids": ["2023"],
+      "query": "How long does NASAMS take to deploy?",
+      "expected_rids": ["1021"],
       "required_rids": [],
       "expected_filter": null,
-      "expected_answer_contains": ["38000"],
-      "notes": "FIM-92_Stinger.json parametrics: Unit cost parameterValue '38000', uom 'USD'."
+      "expected_answer_contains": ["10"],
+      "notes": "NASAMS Deployment time is 10 min."
     },
     {
       "id": "parametric-05",
       "class": "parametric",
-      "query": "How many F-35 Lightning IIs have been built?",
-      "expected_rids": ["2031"],
+      "query": "What is the service ceiling of the Su-57?",
+      "expected_rids": ["1005"],
       "required_rids": [],
       "expected_filter": null,
-      "expected_answer_contains": ["1325"],
-      "notes": "Lockheed_Martin_F-35_Lightning_II.json parametrics: Number built parameterValue '1325', uom 'units'."
+      "expected_answer_contains": ["20000"],
+      "notes": "Sukhoi Su-57 Service ceiling is 20000 m."
     },
     {
       "id": "parametric-06",
       "class": "parametric",
-      "query": "What is the service ceiling of the Chengdu J-20?",
-      "expected_rids": ["2019"],
+      "query": "What is the unit cost of the Eurofighter Typhoon?",
+      "expected_rids": ["1006"],
       "required_rids": [],
       "expected_filter": null,
-      "expected_answer_contains": ["20000"],
-      "notes": "Chengdu_J-20.json parametrics: Service ceiling parameterValue '20000', uom 'm'."
+      "expected_answer_contains": ["95000000"],
+      "notes": "Eurofighter Typhoon Unit cost is 95000000 USD."
     },
     {
       "id": "comparison-01",
       "class": "comparison",
       "query": "Compare the F-22 Raptor and the F-35 Lightning II.",
       "expected_rids": [],
-      "required_rids": ["2030", "2031"],
+      "required_rids": ["1001", "1004"],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Requires both Lockheed_Martin_F-22_Raptor.json (2030) and Lockheed_Martin_F-35_Lightning_II.json (2031) in context to answer a comparison."
+      "notes": "Requires both current US fighter records in context."
     },
     {
       "id": "comparison-02",
       "class": "comparison",
-      "query": "Which is faster, the AIM-9 Sidewinder or the AIM-120 AMRAAM?",
+      "query": "Which radar has the greater detection range, the AN/APG-77 or the AN/APG-81?",
       "expected_rids": [],
-      "required_rids": ["2008", "2006"],
+      "required_rids": ["1003", "1009"],
       "expected_filter": null,
-      "expected_answer_contains": ["aim-120"],
-      "notes": "AIM-9_Sidewinder.json Maximum speed = 2.5 Mach (modelID 2008); AIM-120_AMRAAM.json Maximum speed = 4 Mach (modelID 2006). AMRAAM is faster."
+      "expected_answer_contains": ["AN/APG-77"],
+      "notes": "AN/APG-77 Detection range reaches 400 km; AN/APG-81 reaches 215 km."
     },
     {
       "id": "comparison-03",
       "class": "comparison",
-      "query": "Compare the M1 Abrams and the T-90 main battle tanks.",
+      "query": "Compare the S-300 and S-400 air-defense systems.",
       "expected_rids": [],
-      "required_rids": ["2033", "2056"],
+      "required_rids": ["1011", "1010"],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "Requires both M1_Abrams.json (2033) and T-90.json (2056) in context; both are systemType Main Battle Tank."
+      "notes": "Requires both S-300 and S-400 system records."
     },
     {
       "id": "comparison-04",
       "class": "comparison",
-      "query": "Which has greater range, the Tomahawk missile or the BrahMos?",
+      "query": "Which missile has greater maximum range, Python-5 or Derby?",
       "expected_rids": [],
-      "required_rids": ["2059", "2018"],
+      "required_rids": ["1022", "1023"],
       "expected_filter": null,
-      "expected_answer_contains": ["tomahawk"],
-      "notes": "Tomahawk_missile.json Range = 2500 km (modelID 2059); BrahMos.json Range = 900 km (modelID 2018). Tomahawk has the greater range."
+      "expected_answer_contains": ["Derby"],
+      "notes": "Python-5 Maximum range is 20 km; Derby Maximum range is 50 km."
     },
     {
       "id": "analytic-01",
       "class": "analytic",
-      "query": "Which air-to-air missiles have a range over 50 km?",
-      "expected_rids": ["2006", "2046"],
+      "query": "Which fighter aircraft entered service after 2010?",
+      "expected_rids": ["1005"],
       "required_rids": [],
-      "expected_filter": {"systemType": {"in": ["Air-to-Air Missile"]}, "Range": {"min": 50, "unit": "km"}},
+      "expected_filter": {
+        "systemType": {"in": ["Fighter Aircraft"]},
+        "serviceEntryYear": {"min": 2010}
+      },
       "expected_answer_contains": [],
-      "notes": "All Air-to-Air Missile records and their Range: AIM-120 AMRAAM 75 km (2006), AIM-7 Sparrow 26 km (2007), AIM-9 Sidewinder 35.4 km (2008), R-60 8 km (2044), R-73 30 km (2045), R-77 80 km (2046). Only 2006 and 2046 exceed 50 km."
+      "notes": "Among Fighter Aircraft records with serviceEntryYear, Su-57 is 2020; F-22 and Eurofighter are 2005/2003. F-35 lacks derived serviceEntryYear in this corpus."
     },
     {
       "id": "analytic-02",
       "class": "analytic",
-      "query": "What is the heaviest main battle tank in the corpus?",
-      "expected_rids": ["2029"],
+      "query": "Which surface-to-air missile systems have a maximum range of at least 100 km?",
+      "expected_rids": ["1010", "1011"],
       "required_rids": [],
-      "expected_filter": {"systemType": {"in": ["Main Battle Tank"]}},
+      "expected_filter": {
+        "systemType": {"in": ["Surface-to-Air Missile System"]},
+        "Maximum range": {"min": 100, "unit": "km"}
+      },
       "expected_answer_contains": [],
-      "notes": "Main Battle Tank Mass values: Leopard 2 55200 kg (2029), M1 Abrams 54000 kg (2033), T-90 46000 kg (2056). Leopard 2 is heaviest."
+      "notes": "S-400 and S-300 exceed 100 km as system records; NASAMS and SPYDER are below 100 km."
     },
     {
       "id": "analytic-03",
       "class": "analytic",
-      "query": "List US fighter aircraft in the database.",
-      "expected_rids": ["2016", "2025", "2030", "2031", "2039"],
+      "query": "List air defense radars with detection range over 300 km.",
+      "expected_rids": ["1016", "1017"],
       "required_rids": [],
-      "expected_filter": {"systemType": {"in": ["Fighter Aircraft"]}, "Country of origin": {"in": ["United States"]}},
+      "expected_filter": {
+        "systemType": {"in": ["Air Defense Radar"]},
+        "Detection range": {"min": 300, "unit": "km"}
+      },
       "expected_answer_contains": [],
-      "notes": "Fighter Aircraft records with Country of origin = 'United States': F/A-18E/F Super Hornet (2016), F-16 Fighting Falcon (2025), F-22 Raptor (2030), F-35 Lightning II (2031), F-15 Eagle (2039). Excludes Chengdu J-20 (China), Dassault Rafale (France), Eurofighter Typhoon (Multinational), Mikoyan MiG-29 (Soviet Union), Shenyang J-16 (China), Sukhoi Su-27/35/57 (Soviet Union/Russia), and TAI TF Kaan (no Country of origin parametric present)."
+      "notes": "91N6E and 92N6E have Detection range 340 km; 64N6E and 96L6E are exactly 300 km and should not satisfy a strict over-300 query."
     },
     {
       "id": "analytic-04",
       "class": "analytic",
-      "query": "Which surface-to-air missile systems have a range of at least 100 km?",
-      "expected_rids": ["2036", "2049"],
+      "query": "Which Russian anti-aircraft missiles have maximum range above 100 km?",
+      "expected_rids": ["1012", "1013", "1014", "1015"],
       "required_rids": [],
-      "expected_filter": {"systemType": {"in": ["Surface-to-Air Missile"]}, "Range": {"min": 100, "unit": "km"}},
+      "expected_filter": {
+        "systemType": {"in": ["Anti-Aircraft Missile"]},
+        "Country of origin": {"in": ["Russia"]},
+        "Maximum range": {"min": 100, "unit": "km"}
+      },
       "expected_answer_contains": [],
-      "notes": "Surface-to-Air Missile Range values: FIM-92 Stinger has no Range parametric recorded (2023, data quirk), MIM-104 Patriot 160 km (2036), MIM-23 Hawk 50 km (2037, below threshold), S-400 400 km (2049). Only 2036 and 2049 qualify."
+      "notes": "40N6, 48N6M, 9M96 and 9M96DM are Russian anti-aircraft missiles with ranges over 100 km."
     },
     {
       "id": "analytic-05",
       "class": "analytic",
-      "query": "Which fighter aircraft have a service ceiling above 19,000 meters?",
-      "expected_rids": ["2019", "2030", "2039"],
+      "query": "Which systems are operated by India?",
+      "expected_rids": ["1010", "1011", "1012", "1013", "1014", "1015", "1022", "1023", "1024", "1025"],
       "required_rids": [],
-      "expected_filter": {"systemType": {"in": ["Fighter Aircraft"]}, "Service ceiling": {"min": 19000, "unit": "m"}},
+      "expected_filter": {
+        "Operated by (country)": {"contains": ["India"]}
+      },
       "expected_answer_contains": [],
-      "notes": "Fighter Aircraft Service ceiling values above 19000 m: Chengdu J-20 20000 m (2019), F-22 Raptor 20000 m (2030), F-15 Eagle 20000 m (2039). Others are below the threshold (e.g. Su-27 18500 m, MiG-29 18000 m) or lack a Service ceiling parametric entirely (Eurofighter Typhoon, F-16 Fighting Falcon, Su-57, TAI TF Kaan)."
+      "notes": "Exercises the multi-value proliferation adapter for India operators."
     },
     {
       "id": "analytic-06",
       "class": "analytic",
-      "query": "Which weapons in the corpus cost less than $50,000 per unit?",
-      "expected_rids": ["2023", "2035"],
+      "query": "Which in-production missiles cost less than $500,000 per unit?",
+      "expected_rids": ["1007"],
       "required_rids": [],
-      "expected_filter": {"systemGroup": {"in": ["Weapon"]}, "Unit cost": {"max": 50000, "unit": "USD"}},
+      "expected_filter": {
+        "systemGroup": {"in": ["Missiles"]},
+        "Status": {"in": ["In Production"]},
+        "Unit cost": {"max": 500000, "unit": "USD"}
+      },
       "expected_answer_contains": [],
-      "notes": "Among Weapon-group records with a Unit cost parametric, only FIM-92 Stinger ($38,000, modelID 2023) and M4 carbine ($700, modelID 2035) are under $50,000; all other priced weapons are six/seven figures (e.g. AIM-120 AMRAAM $1.095M, S-400 $500M). Several weapon records have no Unit cost parametric at all (GAU-8 Avenger, M2 Browning, Rheinmetall Rh-120, VA-111 Shkval) and are excluded rather than treated as matches."
+      "notes": "AIM-9X Sidewinder is an in-production missile with Unit cost 280000 USD; AIM-120 is higher."
+    },
+    {
+      "id": "analytic-07",
+      "class": "analytic",
+      "query": "Which aircraft radars are fitted to the F-35 Lightning II?",
+      "expected_rids": ["1009"],
+      "required_rids": [],
+      "expected_filter": {
+        "systemType": {"in": ["Aircraft Radar"]},
+        "Platform": {"in": ["F-35 Lightning II"]}
+      },
+      "expected_answer_contains": [],
+      "notes": "AN/APG-81 Radar has Platform F-35 Lightning II and relation to the F-35 record."
+    },
+    {
+      "id": "analytic-08",
+      "class": "analytic",
+      "query": "Which records have projected fielding status?",
+      "expected_rids": ["1005", "000000"],
+      "required_rids": [],
+      "expected_filter": {
+        "Fielding status": {"contains": ["Projected"]}
+      },
+      "expected_answer_contains": [],
+      "notes": "Su-57 and the exemplar record carry Fielding status Projected."
     },
     {
       "id": "prose-01",
       "class": "prose",
-      "query": "Why was the AIM-120 AMRAAM developed?",
-      "expected_rids": ["2006"],
+      "query": "Why is the F-22 Raptor associated with stealth and supercruise?",
+      "expected_rids": ["1001"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "AIM-120_AMRAAM.json History description explains the ACEVAL/AIMVAL findings that Sparrow's need for continuous illumination let opposing Sidewinder-armed aircraft achieve mutual kills, driving a memorandum of agreement with European allies for the US to develop AMRAAM."
+      "notes": "Targets F-22 descriptive prose and parameters around stealth/air-superiority role and supercruise."
     },
     {
       "id": "prose-02",
       "class": "prose",
-      "query": "How does the AIM-9 Sidewinder guide itself to a target?",
-      "expected_rids": ["2008"],
+      "query": "How does the AIM-120 AMRAAM guide itself to a target?",
+      "expected_rids": ["1002"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "AIM-9_Sidewinder.json Design description: 'The seeker tracks a difference in temperatures detected and uses proportional guidance to achieve impact', with later variants gaining all-aspect infrared tracking capability."
+      "notes": "Targets AIM-120 guidance prose/parameter: inertial navigation, datalink mid-course update, active radar terminal homing."
     },
     {
       "id": "prose-03",
       "class": "prose",
-      "query": "How does the AGM-88 HARM find and attack its targets?",
-      "expected_rids": ["2005"],
+      "query": "What role do Big Bird radars play in the S-300 and S-400 families?",
+      "expected_rids": ["1016", "1019"],
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "AGM-88_HARM.json Design description: proportional guidance system homes in on enemy radar emissions via a fixed antenna and seeker head in the missile's nose, propelled by a solid-propellant booster-sustainer rocket motor."
+      "notes": "Targets the 91N6E and 64N6E Big Bird surveillance/acquisition radar records."
+    },
+    {
+      "id": "prose-04",
+      "class": "prose",
+      "query": "What missiles does NASAMS employ?",
+      "expected_rids": ["1021"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Targets NASAMS prose/parametric evidence for AIM-120, AIM-9 Sidewinder and AMRAAM-ER."
     },
     {
       "id": "negative-01",
@@ -291,7 +335,7 @@
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "No B-2 Spirit record exists in pages_schema (63 records span modelID 2001-2063; no B-2 file). Correct behavior is to state the information is not available in the corpus rather than fabricate an answer."
+      "notes": "No B-2 Spirit record exists in the current air-defence corpus."
     },
     {
       "id": "negative-02",
@@ -301,7 +345,7 @@
       "required_rids": [],
       "expected_filter": null,
       "expected_answer_contains": [],
-      "notes": "No Iron Dome record exists in pages_schema. Correct behavior is to state the information is not available in the corpus rather than fabricate an answer or substitute a different SAM system (e.g. Patriot, S-400)."
+      "notes": "No Iron Dome record exists in the current air-defence corpus."
     }
   ]
 }

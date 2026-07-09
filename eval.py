@@ -279,11 +279,57 @@ def _filter_field_match(exp_cond, got_cond):
     lenient the rule."""
     if not got_cond:
         return False
-    if "in" in exp_cond:
-        return bool(set(got_cond.get("in") or []) & set(exp_cond["in"]))
+    if "in" in exp_cond or "contains" in exp_cond:
+        exp_vals = exp_cond.get("in") or exp_cond.get("contains") or []
+        got_vals = got_cond.get("in") or got_cond.get("contains") or []
+        return bool(_normalized_value_overlaps(exp_vals, got_vals))
     exp_dirs = {d for d in ("min", "max") if d in exp_cond}
     got_dirs = {d for d in ("min", "max") if d in got_cond}
     return bool(exp_dirs) and exp_dirs == got_dirs
+
+
+_FIELD_EQUIVALENTS = {
+    "Platform": {"Fitted to"},
+    "Fitted to": {"Platform"},
+    "Combat weight": {"Weight", "Mass"},
+    "Weight": {"Combat weight", "Mass"},
+    "Mass": {"Weight", "Combat weight"},
+}
+
+
+def _equivalent_filter_fields(field, catalogue):
+    names = [field]
+    for f in _FIELD_EQUIVALENTS.get(field, set()):
+        if f in catalogue:
+            names.append(f)
+    return names
+
+
+def _normalized_value_overlaps(expected, got):
+    exp_norm = {ragkit._normalize_label(v) for v in expected}
+    got_norm = {ragkit._normalize_label(v) for v in got}
+    overlaps = set(exp_norm & got_norm)
+    for e in exp_norm:
+        for g in got_norm:
+            if e and g and (e in g or g in e):
+                overlaps.add(e if len(e) <= len(g) else g)
+    return sorted(overlaps)
+
+
+def _filter_value_overlap(exp_cond, got_cond):
+    if not got_cond:
+        return {"ok": False, "reason": "missing"}
+    exp_vals = exp_cond.get("in") or exp_cond.get("contains") or []
+    got_vals = got_cond.get("in") or got_cond.get("contains") or []
+    if exp_vals or got_vals:
+        overlap = _normalized_value_overlaps(exp_vals, got_vals)
+        return {"ok": bool(overlap), "expected": exp_vals, "got": got_vals,
+                "overlap": overlap}
+    exp_dirs = {d for d in ("min", "max") if d in exp_cond}
+    got_dirs = {d for d in ("min", "max") if d in got_cond}
+    return {"ok": bool(exp_dirs) and exp_dirs == got_dirs,
+            "expected_bounds": {k: exp_cond.get(k) for k in exp_dirs},
+            "got_bounds": {k: got_cond.get(k) for k in got_dirs}}
 
 
 def _extract_filter_like_answer(con, catalogue, query, backend, model, base_url):
@@ -320,14 +366,26 @@ def score_filter_extraction(case, con, catalogue, backend, model, base_url):
     raw, info = _extract_filter_like_answer(con, catalogue, case["query"],
                                             backend, model, base_url)
     clean, _errors = ragkit.validate_filter(raw, catalogue)
-    matched = sum(1 for f, cond in expected.items()
-                 if _filter_field_match(cond, clean.get(f)))
+    field_details = {}
+    matched = 0
+    for f, cond in expected.items():
+        candidates = _equivalent_filter_fields(f, catalogue)
+        got_field = next((name for name in candidates if name in clean), None)
+        got_cond = clean.get(got_field) if got_field else None
+        ok = _filter_field_match(cond, got_cond)
+        if ok:
+            matched += 1
+        field_details[f] = {
+            "matched": ok,
+            "matched_as": got_field,
+            "value": _filter_value_overlap(cond, got_cond),
+        }
     precision = (matched / len(clean)) if clean else 0.0
     recall = (matched / len(expected)) if expected else None
     return {
         "expected_fields": sorted(expected), "got_fields": sorted(clean),
         "matched_fields": matched, "precision": precision, "recall": recall,
-        "extraction_status": info["status"],
+        "extraction_status": info["status"], "field_details": field_details,
     }
 
 
@@ -343,7 +401,30 @@ _NEGATIVE_KEYWORDS = (
     "not available", "no information", "not in the", "not provided",
     "cannot find", "can't find", "unable to find", "doesn't contain",
     "does not contain", "no record", "not mentioned", "not present",
+    "does not mention", "do not mention", "not mention",
+    "does not reference", "do not reference", "not reference",
+    "unknown based on",
 )
+
+
+_NUMBER_RE = re.compile(r"(?<![A-Za-z0-9])[-+]?\d[\d,]*(?:\.\d+)?(?![A-Za-z0-9])")
+
+
+def _normalize_numeric_text(s):
+    return re.sub(r"(?<=\d),(?=\d{3}(?:\D|$))", "", str(s))
+
+
+def _expected_answer_hit(expected, reply_low, reply_numeric_norm):
+    exp = str(expected)
+    if exp.lower() in reply_low:
+        return True
+    exp_norm = _normalize_numeric_text(exp).lower()
+    if exp_norm and exp_norm in reply_numeric_norm:
+        return True
+    nums = [_normalize_numeric_text(m.group(0)) for m in _NUMBER_RE.finditer(exp)]
+    if nums and all(n in reply_numeric_norm for n in nums):
+        return True
+    return False
 
 
 def score_answer(case, reply):
@@ -356,9 +437,10 @@ def score_answer(case, reply):
     right tool here)."""
     result = {}
     low = (reply or "").lower()
+    numeric_norm = _normalize_numeric_text(reply or "").lower()
     expects = case.get("expected_answer_contains") or []
     if expects:
-        hits = [s for s in expects if s.lower() in low]
+        hits = [s for s in expects if _expected_answer_hit(s, low, numeric_norm)]
         result["answer_contains_ok"] = len(hits) == len(expects)
         result["answer_contains_hits"] = hits
         result["answer_contains_expected"] = expects
@@ -375,6 +457,11 @@ def score_answer(case, reply):
 # report zero citations rather than mis-parsing one, which is the safe
 # failure direction for a verification check.
 _CITATION_RE = re.compile(r"\[([^\[\]]{1,40})\]")
+_RID_TOKEN_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]*")
+
+
+def _looks_like_rid_token(tok, ctx_set):
+    return tok in ctx_set or any(ch.isdigit() for ch in tok)
 
 
 def score_citations(reply, ctx_rids):
@@ -382,14 +469,20 @@ def score_citations(reply, ctx_rids):
     aren't actually among the rids retrieve() put in the prompt's context
     (REVIEW_FINDINGS G6 -- the classic small-model failure is citing a
     plausible-sounding id that was never shown to it)."""
-    cited = sorted({m.group(1).strip() for m in _CITATION_RE.finditer(reply or "")})
+    cited = set()
     ctx_set = set(ctx_rids)
+    for m in _CITATION_RE.finditer(reply or ""):
+        for tok in _RID_TOKEN_RE.findall(m.group(1)):
+            tok = tok.strip()
+            if _looks_like_rid_token(tok, ctx_set):
+                cited.add(tok)
+    cited = sorted(cited)
     hallucinated = [c for c in cited if c not in ctx_set]
     return {"cited": cited, "hallucinated": hallucinated}
 
 
 def run_llm_stages(con, catalogue, results, backend, model, base_url,
-                   filter_model, max_context_tokens):
+                   filter_model, max_context_tokens, checkpoint_jsonl=None):
     """Run the three opt-in LLM-dependent checks for every retrieval result
     and return {case_id: {...}}. Costs one filter-extraction call (only for
     cases with `expected_filter`) plus one answer-generation call PER CASE
@@ -397,19 +490,41 @@ def run_llm_stages(con, catalogue, results, backend, model, base_url,
     this is never called unless the caller passed --backend explicitly (see
     run_eval)."""
     out = {}
-    for r in results:
-        case = r["case"]
-        entry = {}
-        fmodel = filter_model or model
-        fres = score_filter_extraction(case, con, catalogue, backend, fmodel, base_url)
-        if fres:
-            entry["filter"] = fres
-        reply = ragkit.generate(case["query"], r["contexts"], backend, model,
-                                base_url, max_context_tokens=max_context_tokens)
-        entry["reply"] = reply
-        entry["answer"] = score_answer(case, reply)
-        entry["citations"] = score_citations(reply, r["ctx_rids"])
-        out[r["id"]] = entry
+    aliases = ragkit.load_aliases(con)
+    field_aliases = ragkit.load_field_aliases()
+    ck = (open(checkpoint_jsonl, "w", encoding="utf-8")
+          if checkpoint_jsonl else None)
+    try:
+        for r in results:
+            case = r["case"]
+            entry = {}
+            fmodel = filter_model or model
+            fres = score_filter_extraction(case, con, catalogue, backend, fmodel, base_url)
+            if fres:
+                entry["filter"] = fres
+            direct = ragkit.direct_parameter_answer(
+                con, case["query"], catalogue=catalogue, aliases=aliases,
+                field_aliases=field_aliases)
+            if direct:
+                reply = direct["reply"]
+                entry["direct_answer"] = {
+                    "rid": direct["rid"], "field": direct["field"],
+                    "value": direct["value"],
+                }
+            else:
+                reply = ragkit.generate(
+                    case["query"], r["contexts"], backend, model, base_url,
+                    max_context_tokens=max_context_tokens)
+            entry["reply"] = reply
+            entry["answer"] = score_answer(case, reply)
+            entry["citations"] = score_citations(reply, r["ctx_rids"])
+            out[r["id"]] = entry
+            if ck:
+                ck.write(json.dumps({"id": r["id"], "llm": entry}, default=str) + "\n")
+                ck.flush()
+    finally:
+        if ck:
+            ck.close()
     return out
 
 
@@ -529,13 +644,29 @@ def _case_report(r, llm_entry):
     return out
 
 
+def _select_cases(cases, case_ids=None, classes=None):
+    selected = list(cases)
+    if case_ids:
+        wanted = [c.strip() for c in re.split(r"[,\s]+", case_ids) if c.strip()]
+        wanted_set = set(wanted)
+        selected = [c for c in selected if c.get("id") in wanted_set]
+        missing = [cid for cid in wanted if cid not in {c.get("id") for c in selected}]
+        if missing:
+            raise RuntimeError(f"case id(s) not found: {', '.join(missing)}")
+    if classes:
+        cls_set = {c.strip() for c in re.split(r"[,\s]+", classes) if c.strip()}
+        selected = [c for c in selected if c.get("class") in cls_set]
+    return selected
+
+
 # --------------------------------------------------------------------------- #
 # Entry point                                                                  #
 # --------------------------------------------------------------------------- #
 
 def run_eval(db="rag_test.db", eval_set=DEFAULT_EVAL_SET, k=None, min_rel=None,
             max_context_tokens=None, backend=None, model=None, base_url=None,
-            filter_model=None, json_out=None, limit=None, quiet=False):
+            filter_model=None, json_out=None, limit=None, case_ids=None,
+            classes=None, checkpoint_jsonl=None, quiet=False):
     """Run the full harness once and return (report_dict, ok). `ok` is True
     whenever the run itself completed (this is a MEASUREMENT tool, not a
     pass/fail quality gate -- there's no --fail-under threshold, deliberately:
@@ -558,6 +689,7 @@ def run_eval(db="rag_test.db", eval_set=DEFAULT_EVAL_SET, k=None, min_rel=None,
     cap = ragkit.DEFAULTS["max_context_tokens"] if max_context_tokens is None else max_context_tokens
 
     cases = load_cases(eval_set)
+    cases = _select_cases(cases, case_ids=case_ids, classes=classes)
     if limit:
         cases = cases[:limit]
     if not cases:
@@ -575,7 +707,8 @@ def run_eval(db="rag_test.db", eval_set=DEFAULT_EVAL_SET, k=None, min_rel=None,
     llm_by_id, llm_agg = None, None
     if backend:
         llm_by_id = run_llm_stages(con, catalogue, results, backend, model,
-                                   base_url, filter_model, cap)
+                                   base_url, filter_model, cap,
+                                   checkpoint_jsonl=checkpoint_jsonl)
         llm_agg = aggregate_llm(llm_by_id)
 
     if not quiet:
@@ -585,6 +718,7 @@ def run_eval(db="rag_test.db", eval_set=DEFAULT_EVAL_SET, k=None, min_rel=None,
         "db": db, "eval_set": eval_set, "k": k, "min_rel": min_rel,
         "prompt_token_cap": cap,
         "backend": backend, "model": model,
+        "case_ids": case_ids, "classes": classes,
         "aggregate": agg,
         "llm_aggregate": llm_agg,
         "cases": [_case_report(r, (llm_by_id or {}).get(r["id"])) for r in results],
@@ -623,6 +757,12 @@ def build_arg_parser(parser=None):
                    help="write the full per-case JSON report to this path")
     p.add_argument("--limit", type=int, default=None,
                    help="only run the first N cases (debugging)")
+    p.add_argument("--case-ids", default=None,
+                   help="comma/space separated case id list to run")
+    p.add_argument("--class", dest="classes", default=None,
+                   help="comma/space separated case class list to run")
+    p.add_argument("--checkpoint-jsonl", default=None,
+                   help="write one JSONL row per completed LLM case during hosted stages")
     p.add_argument("--backend", choices=("local", "anthropic", "openrouter", "openai"),
                    default=None,
                    help="OPT-IN: also run the LLM-dependent stages (filter-"
@@ -647,7 +787,8 @@ def main(argv=None):
             max_context_tokens=args.max_context_tokens, backend=args.backend,
             model=args.model, base_url=args.base_url,
             filter_model=args.filter_model, json_out=args.json_out,
-            limit=args.limit)
+            limit=args.limit, case_ids=args.case_ids, classes=args.classes,
+            checkpoint_jsonl=args.checkpoint_jsonl)
     except Exception as e:
         print(f"eval failed: {e}", file=sys.stderr)
         return 1
