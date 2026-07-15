@@ -35,3 +35,33 @@ output/
 brainstorm_*.json
 brainstorm_*.jsonl
 enrich_demo/testdocs3/
+
+# generated test corpora and document fixtures
+large-test-corpus/
+test-corpus/
+test_corpus/
+testdocs*/
+enrich_demo/testdocs*/
+
+# local Claude/agent instruction files
+**/CLAUDE.md
+**/AGENTS.md
+.claude/
+.agents/
+
+# local tooling, editor, and OS artifacts
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.log
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# generated large-evaluation report
+large_online_query_report.md
