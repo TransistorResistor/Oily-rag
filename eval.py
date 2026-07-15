@@ -62,7 +62,8 @@ DEFAULT_EVAL_SET = "eval_set.json"
 # order groups by class already, but dict iteration would otherwise sort
 # alphabetically (analytic, comparison, lookup, negative, parametric, prose),
 # which reads worse than the set's own narrative order.
-CLASS_ORDER = ["lookup", "parametric", "comparison", "analytic", "prose", "negative"]
+CLASS_ORDER = ["lookup", "parametric", "comparison", "analytic", "prose",
+               "robustness", "negative"]
 
 
 # --------------------------------------------------------------------------- #
@@ -124,7 +125,8 @@ def score_retrieval(case, ctx_rids):
     return hit, rank
 
 
-def run_retrieval_case(con, aliases, case, k, min_rel, cap_tokens):
+def run_retrieval_case(con, aliases, case, k, min_rel, cap_tokens,
+                       allow_embed_mismatch=False):
     """Run ONE case's retrieval stage, fully offline: embed the query,
     deterministically pin any named entity (REVIEW_FINDINGS G1, via
     ragkit.match_entities), then ragkit.retrieve() with k/min_rel and NO
@@ -142,8 +144,14 @@ def run_retrieval_case(con, aliases, case, k, min_rel, cap_tokens):
     and would silently paper over a real entity-pinning wiring bug behind a
     filter nothing at query time actually produces."""
     query = case["query"]
+    catalogue = ragkit.load_catalogue(con)
+    plan = ragkit.build_query_plan(
+        con, query, catalogue=catalogue, aliases=aliases,
+        field_aliases=ragkit.load_field_aliases())
     pin = ragkit.match_entities(query, aliases)
-    contexts = ragkit.retrieve(con, query, k=k, pin_entities=pin, min_rel=min_rel)
+    contexts = ragkit.retrieve(con, query, k=k, pin_entities=pin,
+                               min_rel=min_rel,
+                               allow_embed_mismatch=allow_embed_mismatch)
     ctx_rids = [c["rid"] for c in contexts]
     hit, rank = score_retrieval(case, ctx_rids)
     prompt_capped = ragkit.build_prompt(query, contexts, max_context_tokens=cap_tokens)
@@ -156,6 +164,7 @@ def run_retrieval_case(con, aliases, case, k, min_rel, cap_tokens):
         "contexts": contexts,
         "ctx_rids": ctx_rids,
         "n_pinned": len(pin),
+        "plan": plan,
         "hit": hit,
         "rank": rank,
         "prompt_tokens_capped": ragkit._est_tokens(prompt_capped),
@@ -354,18 +363,11 @@ def _extract_filter_like_answer(con, catalogue, query, backend, model, base_url)
         max_fields=ragkit.DEFAULTS["filter_max_fields"])
 
 
-def score_filter_extraction(case, con, catalogue, backend, model, base_url):
-    """Field-level precision/recall of extract_filter_ex against a case's
-    `expected_filter` (see _filter_field_match for the lenient match rule).
-    None for a case with no `expected_filter` (only the analytic-* cases in
-    eval_set.json have one -- lookups/parametrics/comparisons/prose don't
-    need a filter to answer correctly, so there's nothing to grade here)."""
+def score_clean_filter(case, catalogue, clean, extraction_status="not_needed"):
+    """Score an already validated filter, including deterministic/planned ones."""
     expected = case.get("expected_filter")
     if not expected:
         return None
-    raw, info = _extract_filter_like_answer(con, catalogue, case["query"],
-                                            backend, model, base_url)
-    clean, _errors = ragkit.validate_filter(raw, catalogue)
     field_details = {}
     matched = 0
     for f, cond in expected.items():
@@ -385,8 +387,23 @@ def score_filter_extraction(case, con, catalogue, backend, model, base_url):
     return {
         "expected_fields": sorted(expected), "got_fields": sorted(clean),
         "matched_fields": matched, "precision": precision, "recall": recall,
-        "extraction_status": info["status"], "field_details": field_details,
+        "extraction_status": extraction_status, "field_details": field_details,
     }
+
+
+def score_filter_extraction(case, con, catalogue, backend, model, base_url):
+    """Field-level precision/recall of extract_filter_ex against a case's
+    `expected_filter` (see _filter_field_match for the lenient match rule).
+    None for a case with no `expected_filter` (only the analytic-* cases in
+    eval_set.json have one -- lookups/parametrics/comparisons/prose don't
+    need a filter to answer correctly, so there's nothing to grade here)."""
+    expected = case.get("expected_filter")
+    if not expected:
+        return None
+    raw, info = _extract_filter_like_answer(con, catalogue, case["query"],
+                                            backend, model, base_url)
+    clean, _errors = ragkit.validate_filter(raw, catalogue)
+    return score_clean_filter(case, catalogue, clean, info["status"])
 
 
 # Approximate, English-only "I don't have that information" phrasing check
@@ -444,7 +461,12 @@ def score_answer(case, reply):
         result["answer_contains_ok"] = len(hits) == len(expects)
         result["answer_contains_hits"] = hits
         result["answer_contains_expected"] = expects
-    if case["class"] == "negative":
+    # A `negative` case has no in-corpus record at all; a `robustness` case
+    # flagged `expect_refusal` DOES have a record (retrieval should still find
+    # it) but asks for a fictional attribute or a false-premise fact the model
+    # must decline rather than invent. Both fold into the same "didn't
+    # fabricate" keyword check / pass-rate metric.
+    if case["class"] == "negative" or case.get("expect_refusal"):
         result["negative_ok"] = any(kw in low for kw in _NEGATIVE_KEYWORDS)
     return result
 
@@ -481,6 +503,42 @@ def score_citations(reply, ctx_rids):
     return {"cited": cited, "hallucinated": hallucinated}
 
 
+def score_prepared_evidence(case, prep):
+    """Score optional evidence requirements against the production envelope.
+
+    Gold cases may provide `expected_evidence` with `fields`, `contains`, and
+    `required_rids`. This deliberately inspects prepared evidence before answer
+    generation, separating planning/context failures from model wording.
+    """
+    expected = case.get("expected_evidence") or {}
+    if not expected:
+        return None
+    text_parts = [prep.get("prompt") or "", prep.get("deterministic_reply") or ""]
+    table = prep.get("table") or {}
+    for row in table.get("rows") or []:
+        text_parts.append(json.dumps(row, default=str))
+    haystack = "\n".join(text_parts).lower()
+    fields = [str(x) for x in expected.get("fields") or []]
+    contains = [str(x) for x in expected.get("contains") or []]
+    required = {str(x) for x in expected.get("required_rids") or []}
+    seen_rids = {str(c["rid"]) for c in prep.get("contexts") or []}
+    seen_rids.update(str(x["rid"]) for x in prep.get("related") or [])
+    seen_rids.update(str(x["rid"]) for x in table.get("rows") or [])
+    direct = (prep.get("filter_info") or {}).get("direct_answer")
+    if direct:
+        seen_rids.add(str(direct["rid"]))
+    field_hits = [f for f in fields if f.lower() in haystack]
+    contains_hits = [v for v in contains if v.lower() in haystack]
+    return {
+        "ok": (len(field_hits) == len(fields)
+               and len(contains_hits) == len(contains)
+               and required <= seen_rids),
+        "field_hits": field_hits,
+        "contains_hits": contains_hits,
+        "missing_rids": sorted(required - seen_rids),
+    }
+
+
 def run_llm_stages(con, catalogue, results, backend, model, base_url,
                    filter_model, max_context_tokens, checkpoint_jsonl=None):
     """Run the three opt-in LLM-dependent checks for every retrieval result
@@ -499,25 +557,39 @@ def run_llm_stages(con, catalogue, results, backend, model, base_url,
             case = r["case"]
             entry = {}
             fmodel = filter_model or model
-            fres = score_filter_extraction(case, con, catalogue, backend, fmodel, base_url)
+            prep = ragkit.prepare_answer(
+                con, case["query"], backend=backend, model=model,
+                base_url=base_url, auto_filter=True, filter_model=fmodel,
+                max_context_tokens=max_context_tokens)
+            finfo = prep["filter_info"]
+            entry["plan"] = finfo.get("plan")
+            fres = score_clean_filter(
+                case, catalogue, finfo.get("applied") or {},
+                finfo.get("extraction") or "empty")
             if fres:
                 entry["filter"] = fres
-            direct = ragkit.direct_parameter_answer(
-                con, case["query"], catalogue=catalogue, aliases=aliases,
-                field_aliases=field_aliases)
-            if direct:
-                reply = direct["reply"]
-                entry["direct_answer"] = {
-                    "rid": direct["rid"], "field": direct["field"],
-                    "value": direct["value"],
-                }
+            if prep["deterministic_reply"] is not None:
+                reply = prep["deterministic_reply"]
+                entry["deterministic"] = True
             else:
                 reply = ragkit.generate(
-                    case["query"], r["contexts"], backend, model, base_url,
+                    case["query"], prep["contexts"], backend, model, base_url,
+                    digest=prep["digest"], table=prep["table"],
+                    related=prep["related"], relations=prep["relations"],
                     max_context_tokens=max_context_tokens)
             entry["reply"] = reply
             entry["answer"] = score_answer(case, reply)
-            entry["citations"] = score_citations(reply, r["ctx_rids"])
+            evidence_score = score_prepared_evidence(case, prep)
+            if evidence_score is not None:
+                entry["evidence"] = evidence_score
+            allowed_rids = {c["rid"] for c in prep["contexts"]}
+            allowed_rids.update(x["rid"] for x in prep["related"])
+            if prep["table"]:
+                allowed_rids.update(x["rid"] for x in prep["table"].get("rows", []))
+            direct = finfo.get("direct_answer")
+            if direct:
+                allowed_rids.add(direct["rid"])
+            entry["citations"] = score_citations(reply, sorted(allowed_rids))
             out[r["id"]] = entry
             if ck:
                 ck.write(json.dumps({"id": r["id"], "llm": entry}, default=str) + "\n")
@@ -635,6 +707,7 @@ def _case_report(r, llm_entry):
         "ctx_rids": r["ctx_rids"],
         "ctx_titles": [c["title"] for c in r["contexts"]],
         "n_pinned": r["n_pinned"], "hit": r["hit"], "rank": r["rank"],
+        "plan": r.get("plan"),
         "prompt_tokens_capped": r["prompt_tokens_capped"],
         "prompt_tokens_uncapped": r["prompt_tokens_uncapped"],
     }
@@ -666,7 +739,8 @@ def _select_cases(cases, case_ids=None, classes=None):
 def run_eval(db="rag_test.db", eval_set=DEFAULT_EVAL_SET, k=None, min_rel=None,
             max_context_tokens=None, backend=None, model=None, base_url=None,
             filter_model=None, json_out=None, limit=None, case_ids=None,
-            classes=None, checkpoint_jsonl=None, quiet=False):
+            classes=None, checkpoint_jsonl=None, quiet=False,
+            allow_embed_mismatch=False):
     """Run the full harness once and return (report_dict, ok). `ok` is True
     whenever the run itself completed (this is a MEASUREMENT tool, not a
     pass/fail quality gate -- there's no --fail-under threshold, deliberately:
@@ -695,12 +769,15 @@ def run_eval(db="rag_test.db", eval_set=DEFAULT_EVAL_SET, k=None, min_rel=None,
     if not cases:
         raise RuntimeError(f"no cases loaded from {eval_set!r}")
 
-    con = ragkit.connect(db)
+    con = ragkit.connect_readonly(db)
+    ragkit._check_embed_model(con, ragkit.DEFAULT_EMBED_MODEL,
+                              allow_embed_mismatch)
     aliases = ragkit.load_aliases(con)
     catalogue = ragkit.load_catalogue(con)
 
     results = [run_retrieval_case(con, aliases, case, k=k, min_rel=min_rel,
-                                  cap_tokens=cap)
+                                  cap_tokens=cap,
+                                  allow_embed_mismatch=allow_embed_mismatch)
               for case in cases]
     agg = aggregate_retrieval(results, token_cap=cap)
 
@@ -776,6 +853,10 @@ def build_arg_parser(parser=None):
                    help="separate model for the filter-extraction stage "
                         f"(default: reuse --model; bench's own default is "
                         f"{ragkit.DEFAULTS['filter_model']!r}, see DEFAULTS)")
+    p.add_argument("--allow-embed-mismatch", action="store_true",
+                   default=ragkit.DEFAULTS["allow_embed_mismatch"],
+                   help="unsafe: allow querying an index built with a different "
+                        "embedding model name (dimension mismatches still fail)")
     return p
 
 
@@ -788,7 +869,11 @@ def main(argv=None):
             model=args.model, base_url=args.base_url,
             filter_model=args.filter_model, json_out=args.json_out,
             limit=args.limit, case_ids=args.case_ids, classes=args.classes,
-            checkpoint_jsonl=args.checkpoint_jsonl)
+            checkpoint_jsonl=args.checkpoint_jsonl,
+            allow_embed_mismatch=args.allow_embed_mismatch)
+    except ragkit.EmbedModelMismatchError as e:
+        print(str(e), file=sys.stderr)
+        return 1
     except Exception as e:
         print(f"eval failed: {e}", file=sys.stderr)
         return 1

@@ -14,6 +14,7 @@ Rule throughout: propose facts, never LLM-drafted prose.
 """
 
 import hashlib
+import json
 import re
 
 import provider
@@ -31,6 +32,13 @@ _LOWTRUST_CUES = re.compile(
     r"(?i)unconfirmed|analysts?\s+(?:speculate|believe|estimate|assess)|"
     r"not\s+been\s+officially\s+confirmed|leaked|social media|unverified|"
     r"rumou?red|reportedly circulating|open-source speculation")
+
+# Claim-level assertion safety. Capability language such as "can engage" remains
+# assertive; negated and explicitly hypothetical statements park before mapping.
+_NONASSERTED_CUES = re.compile(
+    r"(?i)\b(?:no|not|never|neither|without|cannot|can't|doesn't|does\s+not|"
+    r"didn't|did\s+not|won't|wouldn't|might|may|could|proposed|planned|"
+    r"hypothetical|conceptual)\b")
 
 
 def _sha(*parts):
@@ -111,6 +119,10 @@ def ground(value_raw, quote, doc_text):
     if sent:
         return "doc", sent
     return None, None
+
+
+def _is_nonasserted(text):
+    return bool(_NONASSERTED_CUES.search(text or ""))
 
 
 def _unit_adjacent(doc_text, value_raw, unit_raw):
@@ -389,6 +401,9 @@ class DocContext:
     def __init__(self, rc, text):
         self.rc = rc
         self.text = text
+        self.field_mapper = "legacy"
+        self.text_fields = False
+        self.last_mapping = None
         self.mentions = rc.find_mentions(text)
         self.mentioned_ids = {}
         for mid, alias, amb, pos in self.mentions:
@@ -452,8 +467,20 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
     quote = claim.get("quote") or ""
     # dual-unit value (5b): detect BEFORE _clean_value_unit (which would mangle
     # '18/10'). Unit source = explicit unit slot, else the attribute parenthetical.
-    dual = _dual_unit_value(claim.get("value"),
-                            (claim.get("unit") or "").strip() or (paren_unit or ""))
+    dual_unit_src = ((claim.get("unit") or "").strip() or (paren_unit or ""))
+    dual = _dual_unit_value(claim.get("value"), dual_unit_src)
+    # Cheap models sometimes keep only the first number in `value` and leave the
+    # complete dual cell in quote/qualifier. Recover a literal A/B pair from the
+    # grounded evidence before classification; never synthesize a missing number.
+    if dual is None and "/" in dual_unit_src:
+        evidence = " ".join(str(x or "") for x in
+                            (quote, claim.get("qualifier")))
+        pair = re.search(
+            r"([-+]?\d[\d,]*(?:\.\d+)?)\s*/\s*"
+            r"([-+]?\d[\d,]*(?:\.\d+)?)", evidence)
+        if pair:
+            dual = _dual_unit_value(
+                f"{pair.group(1)}/{pair.group(2)}", dual_unit_src)
     value_raw, unit_raw = _clean_value_unit(claim.get("value"), claim.get("unit"))
     unit_from_header = False
     if not unit_raw and paren_unit and "/" not in paren_unit:
@@ -463,7 +490,22 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
     # embeds a motion verb ("launch weight", "firing range") must reach the
     # numeric comparator, NOT be hijacked into the relation branch below -- so we
     # only fall through to relation detection when the attribute maps to no field.
-    field = rc.map_attribute(attr)
+    if getattr(ctx, "field_mapper", "legacy") == "catalogue":
+        mapping = rc.resolve_attribute(
+            attr, claim, mid=mid,
+            context_text=" ".join([quote, ground_sent, doc_text[:500]]))
+        field = mapping.get("field")
+    else:
+        field = rc.map_attribute(attr)
+        mapping = {
+            "field": field, "mapping_candidate": field,
+            "mapping_status": "resolved" if field else "unmapped",
+            "mapping_method": "legacy", "mapping_score": 1.0 if field else 0.0,
+            "mapping_tier": "high" if field else "low", "runner_up": None,
+            "runner_up_score": 0.0, "mapping_evidence": [],
+            "mapper_version": "legacy",
+        }
+    ctx.last_mapping = mapping
 
     # ---- relation ---------------------------------------------------------- #
     if field is None and (attr in refcat_mod.RELATION_ATTRS
@@ -536,7 +578,10 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
     # ---- parametric -------------------------------------------------------- #
     # `field` was resolved at the top of the function (before relation gating).
     if field is None:
-        return {"proposal_type": None, "park_reason": "unmapped",
+        reason = ("ambiguous_field"
+                  if mapping.get("mapping_status") == "ambiguous"
+                  else "unmapped")
+        return {"proposal_type": None, "park_reason": reason,
                 "status_hint": "parked", "canon_field": None,
                 "value_disp": f"{value_raw} {unit_raw}".strip()}
 
@@ -549,10 +594,27 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
     # missile"), so exact-match comparison manufactures spurious conflicts and
     # low-value text gap-fills. Those are parked, not surfaced (design tradeoff:
     # structured facts surface; free-text is left to prose/semantic search).
-    if not is_numeric_field:
+    if not is_numeric_field and not getattr(ctx, "text_fields", False):
         return {"proposal_type": None, "park_reason": "text_field",
                 "status_hint": "parked", "canon_field": field,
                 "value_disp": value_raw}
+    if not is_numeric_field:
+        verdict, text_value, dbrepr = rc.compare_text(value_raw, field, mid)
+        if verdict == "match":
+            return {"proposal_type": None, "park_reason": None,
+                    "status_hint": "dropped", "drop": "already_present",
+                    "canon_field": field}
+        if verdict == "difference":
+            return {"proposal_type": None, "park_reason": "text_difference",
+                    "status_hint": "parked", "canon_field": field,
+                    "value_disp": text_value, "db_value": dbrepr,
+                    "value_norm": None, "unit_norm": None}
+        target = re.sub(r"\s+", " ", re.sub(
+            r"[^a-z0-9]+", " ", text_value.lower())).strip()
+        return {"proposal_type": "gap_fill", "canon_field": field,
+                "value_disp": text_value, "target_value": target,
+                "db_value": None, "value_norm": None, "unit_norm": None,
+                "park_reason": None, "status_hint": "ok"}
 
     # ---- dual-unit value (5b) --------------------------------------------- #
     # "Maximum range (km/nm) | 18/10": pick ONE value (the position whose unit is
@@ -615,9 +677,8 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
     # canonical-unit sibling of a decomposed dual value surfaces. An ABSENT field
     # still gap-fills (no DB value -> guard skipped).
     canon_unit = rc.field_unit(field)
-    if unit_raw and canon_unit and rc.db_values(mid, field) \
-            and not _can_convert(unit_raw, canon_unit):
-        return {"proposal_type": None, "park_reason": "incomplete",
+    if unit_raw and canon_unit and not _can_convert(unit_raw, canon_unit):
+        return {"proposal_type": None, "park_reason": "incompatible_unit",
                 "status_hint": "parked", "canon_field": field,
                 "value_disp": f"{value_raw} {unit_raw}".strip(),
                 "target_value": None, "value_norm": val_num, "unit_norm": None,
@@ -640,6 +701,98 @@ def classify_claim(claim, mid, ctx, rc, doc_text="", ground_sent=""):
     return {"proposal_type": ptype, "canon_field": field, "value_disp": disp,
             "target_value": tv, "value_norm": nval, "unit_norm": nunit,
             "db_value": dbrepr, "park_reason": None, "status_hint": "ok"}
+
+
+def _mapping_columns(mapping, rc):
+    mapping = mapping or {}
+    evidence = mapping.get("mapping_evidence") or []
+    return {
+        "mapping_status": mapping.get("mapping_status"),
+        "mapping_method": mapping.get("mapping_method"),
+        "mapping_score": mapping.get("mapping_score"),
+        "mapping_tier": mapping.get("mapping_tier"),
+        "mapping_candidate": mapping.get("mapping_candidate"),
+        "runner_up": mapping.get("runner_up"),
+        "runner_up_score": mapping.get("runner_up_score"),
+        "mapping_evidence": json.dumps(evidence, ensure_ascii=False),
+        "mapper_version": mapping.get("mapper_version"),
+        "alias_version": getattr(getattr(rc, "field_catalogue", None),
+                                 "alias_version", 0),
+    }
+
+
+def _source_values_for_field(text, labels, canon_unit):
+    """Find literal numeric values following a field label in source text.
+
+    This is a safety scan, not claim generation. It only determines whether the
+    source visibly gives multiple incompatible values for a field the LLM already
+    extracted.
+    """
+    flat = re.sub(r"\s+", " ", _strip_md(text or ""))
+    found = []
+    for label in {str(x or "").strip() for x in labels if str(x or "").strip()}:
+        words = re.findall(r"[A-Za-z0-9]+", label)
+        if not words:
+            continue
+        pattern = r"\b" + r"\s+".join(re.escape(w) for w in words) + r"\b"
+        hits = list(re.finditer(pattern, flat, re.IGNORECASE))
+        # A single flattened table header can be followed by several unrelated
+        # row values. Only use this source-level safety scan when the field label
+        # itself recurs (e.g. prose plus a contradictory table row). Multiple
+        # extracted claims are reconciled separately without this restriction.
+        if len(hits) < 2:
+            continue
+        for hit in hits:
+            tail = flat[hit.end():hit.end() + 90]
+            num = re.search(
+                r"(?<!\d)([-+]?\d[\d,]*(?:\.\d+)?)(?!\d)"
+                r"\s*([A-Za-z%Â°Âµ]+)?", tail)
+            if not num:
+                continue
+            raw = num.group(1).replace(",", "")
+            unit = (num.group(2) or canon_unit or "").strip()
+            value = refcat_mod._canon_num(raw)
+            if value is None:
+                continue
+            norm, norm_unit = value, unit
+            if unit and canon_unit:
+                try:
+                    norm = refcat_mod.units.convert(value, unit, canon_unit)
+                    norm_unit = canon_unit
+                except refcat_mod.units.ConversionError:
+                    continue
+            item = {"value_norm": norm, "unit_norm": norm_unit}
+            if not any(_corroboration_relation(item, old) == "agree"
+                       for old in found):
+                found.append(item)
+    return found
+
+
+def _apply_intradoc_safety(rows, doc_text, rc):
+    """Park proposal groups contradicted by another value in the same source."""
+    groups = {}
+    for row in rows:
+        if row.get("proposal_type") not in ("gap_fill", "conflict"):
+            continue
+        if row.get("status") not in ("surfaced", "parked"):
+            continue
+        if not row.get("partial_fp"):
+            continue
+        groups.setdefault(row["partial_fp"], []).append(row)
+    for group in groups.values():
+        observed = [{"value_norm": r.get("value_norm"),
+                     "unit_norm": r.get("unit_norm")} for r in group
+                    if r.get("value_norm") is not None]
+        field = group[0].get("canon_field")
+        labels = [field] + [r.get("attribute") for r in group]
+        observed.extend(_source_values_for_field(
+            doc_text, labels, rc.field_unit(field) if field else None))
+        conflict = any(
+            _corroboration_relation(a, b) == "conflict"
+            for i, a in enumerate(observed) for b in observed[i + 1:])
+        if conflict:
+            for row in group:
+                row.update(status="parked", park_reason="intradoc_conflict")
 
 
 def process_document(doc, ctx, claims, rc, con, run_id, model):
@@ -681,6 +834,15 @@ def process_document(doc, ctx, claims, rc, con, run_id, model):
             "unit_norm": None, "value_disp": None, "proposal_type": None,
             "db_value": None, "status": None, "park_reason": None,
             "full_fp": None, "partial_fp": None,
+            "raw_claim_json": json.dumps(claim, ensure_ascii=False,
+                                         sort_keys=True),
+            "mapping_status": None, "mapping_method": None,
+            "mapping_score": None, "mapping_tier": None,
+            "mapping_candidate": None, "runner_up": None,
+            "runner_up_score": None, "mapping_evidence": None,
+            "mapper_version": getattr(ctx, "field_mapper", "legacy"),
+            "alias_version": getattr(getattr(rc, "field_catalogue", None),
+                                     "alias_version", 0),
         }
 
         if mid is None:
@@ -705,8 +867,26 @@ def process_document(doc, ctx, claims, rc, con, run_id, model):
         if gmode == "doc":
             base["quote"] = gsent            # cite a real grounding sentence
 
+        if _is_nonasserted(base["quote"] or gsent):
+            base.update(status="parked", park_reason="nonasserted",
+                        model_id=mid, record_title=rc.title(mid))
+            rows.append(base)
+            continue
+
         res = classify_claim(claim, mid, ctx, rc, doc["text"],
                              ground_sent=(gsent or ""))
+        mapping = ctx.last_mapping or {}
+        if res.get("canon_field") in (
+                "relation", "Operated by (country)", "alias") \
+                and not mapping.get("field"):
+            mapping = {
+                "mapping_status": "resolved", "mapping_method": "special_field",
+                "mapping_score": 1.0, "mapping_tier": "high",
+                "mapping_candidate": res.get("canon_field"), "runner_up": None,
+                "runner_up_score": 0.0, "mapping_evidence": [],
+                "mapper_version": getattr(ctx, "field_mapper", "legacy"),
+            }
+        base.update(_mapping_columns(mapping, rc))
         # relations re-attribute to the SUBJECT endpoint (record_mid); everything
         # else stays on the linked record. mid_eff drives record + fingerprints so
         # the two edge directions dedup onto one canonical proposal.
@@ -776,6 +956,7 @@ def process_document(doc, ctx, claims, rc, con, run_id, model):
             base.update(status="surfaced")
         rows.append(base)
 
+    _apply_intradoc_safety(rows, doc["text"], rc)
     for r in rows:
         state_mod.insert_claim(con, r)
     con.commit()
@@ -809,11 +990,9 @@ def graduation_pass(con):
 
     Claims cluster by record+field (`partial_fp`). Same/convertible units either
     agree within the numeric comparator's 2% tolerance or demonstrably conflict.
-    Unconvertible cross-unit pairs are indeterminate and deliberately count as
-    support: we give them the benefit of the doubt (pint may be unavailable, or
-    the pair may simply use unit families pint can't relate) and let the report
-    expose both unit/value variants to the reviewer. Demonstrable same-unit (or
-    convertible) conflicts never corroborate each other.
+    Only demonstrable agreement counts as support. Incomparable units remain
+    parked: autonomous corroboration must not turn dimensional uncertainty into
+    a factual proposal.
     """
     rows = con.execute(
         "SELECT claim_id,doc_id,partial_fp,value_norm,unit_norm,status,park_reason "
@@ -831,7 +1010,7 @@ def graduation_pass(con):
                 continue
             supporting_docs = {
                 other["doc_id"] for other in claims
-                if _corroboration_relation(target, other) != "conflict"
+                if _corroboration_relation(target, other) == "agree"
             }
             if len(supporting_docs) >= CORROBORATION_THRESHOLD:
                 cur = con.execute(
@@ -843,12 +1022,17 @@ def graduation_pass(con):
 
 
 def run_batch(folder, con, rc, model=llm_mod.DEFAULT_MODEL, only=None,
-              note="", verbose=True, render="text"):
+              note="", verbose=True, render="text", field_mapper="legacy",
+              text_fields=False):
     """Process a batch of documents. `only` = optional set/list of doc_ids to
     restrict to (the rest of the folder is left for a later batch). `render`
     selects the provider text-extraction mode ('text'|'md'). Returns a
     summary dict."""
-    run_id = state_mod.start_run(con, model, note)
+    alias_version = getattr(getattr(rc, "field_catalogue", None),
+                            "alias_version", 0)
+    run_id = state_mod.start_run(
+        con, model, note, field_mapper=field_mapper, text_fields=text_fields,
+        alias_version=alias_version)
     only = set(only) if only else None
     processed, skipped, failed = [], [], []
     llm_calls = ptok = ctok = 0
@@ -869,11 +1053,24 @@ def run_batch(folder, con, rc, model=llm_mod.DEFAULT_MODEL, only=None,
                     doc["title"], doc["text"], model=model)
             except Exception as exc:
                 failed.append(doc["doc_id"])
+                state_mod.record_failure(
+                    con, doc["doc_id"], doc["path"], doc["title"],
+                    doc["content_hash"], run_id, str(exc), None)
                 print(f"  ERROR {doc['doc_id']}: {exc}")
                 continue
             ptok += usage.get("prompt_tokens", 0) or 0
             ctok += usage.get("completion_tokens", 0) or 0
+            if err is not None:
+                failed.append(doc["doc_id"])
+                state_mod.record_failure(
+                    con, doc["doc_id"], doc["path"], doc["title"],
+                    doc["content_hash"], run_id, err, raw)
+                if verbose:
+                    print(f"  ERROR {doc['doc_id']}: {err}")
+                continue
             ctx = DocContext(rc, doc["text"])
+            ctx.field_mapper = field_mapper
+            ctx.text_fields = bool(text_fields)
             rows = process_document(doc, ctx, claims, rc, con, run_id, model)
             state_mod.record_doc(con, doc["doc_id"], doc["path"], doc["title"],
                                  doc["content_hash"], doc["date"], run_id, model,
@@ -892,4 +1089,6 @@ def run_batch(folder, con, rc, model=llm_mod.DEFAULT_MODEL, only=None,
     return {"run_id": run_id, "processed": processed, "skipped": skipped,
             "failed": failed, "error_count": len(failed),
             "llm_calls": llm_calls, "prompt_tokens": ptok,
-            "completion_tokens": ctok, "graduated": graduated}
+            "completion_tokens": ctok, "graduated": graduated,
+            "field_mapper": field_mapper, "text_fields": bool(text_fields),
+            "alias_version": alias_version}

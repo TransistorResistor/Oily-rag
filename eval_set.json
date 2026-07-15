@@ -346,6 +346,114 @@
       "expected_filter": null,
       "expected_answer_contains": [],
       "notes": "No Iron Dome record exists in the current air-defence corpus."
+    },
+    {
+      "id": "robust-01",
+      "class": "robustness",
+      "query": "Waht is teh AIM-120 amraam?",
+      "expected_rids": ["1002"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Input-form probe: misspelling/typos. Same target as lookup-02 (1002); retrieval must survive a garbled entity name."
+    },
+    {
+      "id": "robust-02",
+      "class": "robustness",
+      "query": "s-400 max range",
+      "expected_rids": ["1010"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Input-form probe: telegraphic, no punctuation, lowercase. Same target as parametric-03 (1010)."
+    },
+    {
+      "id": "robust-03",
+      "class": "robustness",
+      "query": "tell me about the su57 felon",
+      "expected_rids": ["1005"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Input-form probe: lowercase, missing hyphen in the designator (su57 vs Su-57). Same target as lookup-05 (1005)."
+    },
+    {
+      "id": "robust-04",
+      "class": "robustness",
+      "query": "Which surface-to-air missile systems have a maximum range of at least 55 nautical miles?",
+      "expected_rids": ["1010", "1011"],
+      "required_rids": [],
+      "expected_filter": {
+        "systemType": {"in": ["Surface-to-Air Missile System"]},
+        "Maximum range": {"min": 55, "unit": "nm"}
+      },
+      "expected_answer_contains": [],
+      "notes": "Input-form probe: filter bound stated in a non-canonical unit (55 nm = 101.9 km). Exercises the units.py conversion path inside validate_filter; same targets as analytic-02 (S-400 1010, S-300 1011, both >100 km)."
+    },
+    {
+      "id": "robust-05",
+      "class": "robustness",
+      "query": "What is the maximum range of the F-22 Raptor's laser cannon?",
+      "expected_rids": ["1001"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "expect_refusal": true,
+      "notes": "False-premise probe: the F-22 record (1001) exists and should be retrieved, but it has no laser cannon. The answer must decline, not fabricate a range. Distinct from `negative` (record present, attribute fictional)."
+    },
+    {
+      "id": "robust-06",
+      "class": "robustness",
+      "query": "When did the S-400 Triumf retire from service?",
+      "expected_rids": ["1010"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "expect_refusal": true,
+      "notes": "False-premise probe: the S-400 (1010) is in service and carries no retirement date; the model must decline rather than invent one."
+    },
+    {
+      "id": "robust-07",
+      "class": "robustness",
+      "query": "tell me about the APG radar",
+      "expected_rids": ["1003", "1009"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Underspecified-referent probe: a partial designator matching two records, AN/APG-77 (1003) and AN/APG-81 (1009). ANY-OF: retrieval should surface at least one; a good answer flags the ambiguity."
+    },
+    {
+      "id": "robust-08",
+      "class": "robustness",
+      "query": "Which fighter aircraft entered service between 2003 and 2010?",
+      "expected_rids": ["1001", "1006"],
+      "required_rids": [],
+      "expected_filter": {
+        "systemType": {"in": ["Fighter Aircraft"]},
+        "serviceEntryYear": {"min": 2003, "max": 2010}
+      },
+      "expected_answer_contains": [],
+      "notes": "Interval-filter probe (REVIEW_FINDINGS L): a closed [min,max] range, not the single open bound the analytic cases use. F-22 (1001, 2005) and Eurofighter (1006, 2003) qualify; Su-57 (2020) does not. Measures whether closed intervals are handled."
+    },
+    {
+      "id": "robust-09",
+      "class": "robustness",
+      "query": "What is the maximum range of the S-400 and which countries operate it?",
+      "expected_rids": ["1010"],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Compound/multi-intent probe: one parametric ask plus one operator ask in a single query. Same target (1010); measures whether two intents in one turn still retrieve and get answered together."
+    },
+    {
+      "id": "robust-10",
+      "class": "robustness",
+      "query": "what kinds of systems can you tell me about?",
+      "expected_rids": [],
+      "required_rids": [],
+      "expected_filter": null,
+      "expected_answer_contains": [],
+      "notes": "Meta/scope probe (REVIEW_FINDINGS K): not answerable from a single record (empty expected_rids, scored as no-target). Documents that a corpus-scope question should describe coverage, not fabricate or crash. Answer quality is inspected, not keyword-scored."
     }
   ]
 }

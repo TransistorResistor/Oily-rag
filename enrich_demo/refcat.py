@@ -30,6 +30,7 @@ if _REPO not in sys.path:
     sys.path.insert(0, _REPO)
 import record_model  # noqa: E402
 import units  # noqa: E402
+import field_mapper  # noqa: E402
 
 _UNIT_SPELL = {
     "minute": "min", "minutes": "min", "min": "min", "mins": "min",
@@ -229,6 +230,7 @@ class RefCatalogue:
         self.alias_index = {}                         # alias_lc -> [model_id,...]
         self.countries = set()                        # all known operator countries
         self._build()
+        self.field_catalogue = field_mapper.FieldCatalogue(self.records)
 
     # ---- loading ---------------------------------------------------------- #
     def _build(self):
@@ -299,6 +301,9 @@ class RefCatalogue:
         d = self.dict_fields.get(field)
         return d["dtype"] if d else None
 
+    def field_profile(self, field):
+        return self.field_catalogue.fields.get(field)
+
     def relations(self, mid):
         """set of related child/parent names (lowercased) for edge dedup."""
         out = set()
@@ -357,6 +362,31 @@ class RefCatalogue:
             if len(cands) == 1:
                 return next(iter(cands))
         return None
+
+    def resolve_attribute(self, attribute, claim, mid=None, context_text=""):
+        """Schema-aware field resolution with diagnostics for the MVP mapper."""
+        expanded = _expand_abbrev(attribute or "")
+        return self.field_catalogue.resolve(
+            expanded, claim or {}, mid=mid, context_text=context_text)
+
+    def field_audit(self):
+        return self.field_catalogue.audit()
+
+    def compare_text(self, value_raw, field, mid):
+        """Conservative text/LOV comparison for opt-in MVP enrichment."""
+        def norm(v):
+            return re.sub(r"\s+", " ", re.sub(
+                r"[^a-z0-9]+", " ", str(v or "").lower())).strip()
+
+        value = str(value_raw or "").strip()
+        nvalue = norm(value)
+        existing = self.db_values(mid, field)
+        if not existing:
+            return "gap", value, None
+        db_values = [str(v).strip() for v, _ in existing]
+        if any(norm(v) == nvalue for v in db_values):
+            return "match", value, "; ".join(db_values)
+        return "difference", value, "; ".join(db_values)
 
     def compare_numeric(self, value_raw, unit_raw, field, mid):
         """Compare a doc value against the record's DB value(s) for `field`.

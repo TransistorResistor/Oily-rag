@@ -11,6 +11,13 @@ import os
 import collections
 
 
+def output_names(run_id, db_path=None):
+    stem = os.path.splitext(os.path.basename(db_path or ""))[0]
+    if stem and stem != "enrich_state":
+        return f"proposals_{stem}.json", f"report_run{run_id}_{stem}.md"
+    return "proposals.json", f"report_run{run_id}.md"
+
+
 def _fmt_quote(q):
     q = (q or "").strip().replace("\n", " ")
     return q if len(q) <= 240 else q[:237] + "..."
@@ -40,6 +47,8 @@ def _proposals(con, run_id):
         sources = [{"doc_title": cl["doc_title"], "doc_path": cl["doc_path"],
                     "quote": cl["quote"], "value": cl["value_disp"]}
                    for cl in claims]
+        mapping_tiers = collections.Counter(
+            (cl["mapping_tier"] or "legacy") for cl in claims)
         props.append({
             "proposal_id": fp,
             "type": c0["proposal_type"],
@@ -54,26 +63,50 @@ def _proposals(con, run_id):
             "value_distribution": dict(dist),
             "first_run": first_run,
             "is_new": first_run == run_id,
+            "mapping_tier": c0["mapping_tier"],
+            "mapping_method": c0["mapping_method"],
+            "mapping_score": c0["mapping_score"],
+            "mapping_tier_distribution": dict(mapping_tiers),
+            "mapper_version": c0["mapper_version"],
+            "alias_version": c0["alias_version"],
             "sources": sources,
         })
     return props
 
 
+def _alias_suggestions(con):
+    rows = con.execute(
+        "SELECT attribute,mapping_candidate,mapping_method,mapping_score,doc_id,"
+        "quote FROM claims WHERE attribute IS NOT NULL "
+        "AND mapping_candidate IS NOT NULL "
+        "AND mapping_method NOT IN ('legacy','canonical_exact','curated_alias',"
+        "'contextual_alias','special_field')"
+    ).fetchall()
+    grouped = collections.defaultdict(list)
+    for row in rows:
+        term = " ".join((row["attribute"] or "").lower().split())
+        if term:
+            grouped[(term, row["mapping_candidate"])].append(row)
+    out = []
+    for (term, field), items in grouped.items():
+        scores = [float(r["mapping_score"] or 0.0) for r in items]
+        out.append({
+            "term": term, "field": field, "count": len(items),
+            "average_score": round(sum(scores) / len(scores), 4),
+            "documents": sorted({r["doc_id"] for r in items}),
+            "example_quotes": [r["quote"] for r in items[:3] if r["quote"]],
+        })
+    return sorted(out, key=lambda x: (-x["count"], -x["average_score"], x["term"]))
+
+
 def build(con, run_id, out_dir, db_path=None):
     props = _proposals(con, run_id)
     # ---- proposals.json --------------------------------------------------- #
-    # Always write the legacy filename (evaluate.py's default input). When a
-    # non-default state DB is used, ALSO write proposals_<dbstem>.json so that
-    # concurrent corpora (each with their own --db) don't clobber each other's
-    # eval input -- point the matching evaluator at that file with a path arg.
+    proposals_name, report_name = output_names(run_id, db_path=db_path)
     def _dump(name):
         with open(os.path.join(out_dir, name), "w", encoding="utf-8") as f:
             json.dump(props, f, indent=2)
-    _dump("proposals.json")
-    if db_path:
-        stem = os.path.splitext(os.path.basename(db_path))[0]
-        if stem and stem != "enrich_state":
-            _dump(f"proposals_{stem}.json")
+    _dump(proposals_name)
 
     # ---- group by record -------------------------------------------------- #
     by_rec = collections.OrderedDict()
@@ -87,7 +120,7 @@ def build(con, run_id, out_dir, db_path=None):
         L.append(f"*Model:* `{run['model']}`  |  *Docs this run:* {run['docs']}  "
                  f"|  *LLM calls:* {run['llm_calls']}  |  *Tokens:* "
                  f"{run['prompt_tokens']} prompt + {run['completion_tokens']} "
-                 f"completion\n")
+                 f"completion  |  *Field mapper:* `{run['field_mapper']}`\n")
     total_new = sum(1 for p in props if p["is_new"])
     L.append(f"**{len(props)} live proposals** ({total_new} new this run) across "
              f"{len(by_rec)} records.\n")
@@ -142,8 +175,11 @@ def build(con, run_id, out_dir, db_path=None):
     # that linked to no record stay in their own Unlinked section.
     frags = con.execute(
         "SELECT record_title, attribute, value_raw, unit_raw, value_disp, quote, "
-        "doc_title, doc_path, park_reason FROM claims "
-        "WHERE status='parked' AND park_reason IN ('unmapped','incomplete') "
+        "doc_title, doc_path, park_reason,mapping_candidate,mapping_score,"
+        "runner_up FROM claims "
+        "WHERE status='parked' AND park_reason IN ('unmapped','ambiguous_field',"
+        "'incomplete','incompatible_unit','text_difference','intradoc_conflict',"
+        "'nonasserted','inconsistent_dual') "
         "ORDER BY record_title").fetchall()
     linked = collections.OrderedDict()
     unlinked = []
@@ -158,8 +194,12 @@ def build(con, run_id, out_dir, db_path=None):
         raw = (r["value_raw"] or "").strip()
         u = (r["unit_raw"] or "").strip()
         val = (raw + (" " + u if u else "")).strip() or (r["value_disp"] or "?")
+        candidate = (f"; candidate `{r['mapping_candidate']}`"
+                     f" score {float(r['mapping_score'] or 0):.2f}"
+                     if r["mapping_candidate"] else "")
+        runner = f"; runner-up `{r['runner_up']}`" if r["runner_up"] else ""
         return (f"  - _{r['attribute'] or '?'}_ = `{val}` "
-                f"({r['park_reason']}) - {r['doc_title']}\n"
+                f"({r['park_reason']}{candidate}{runner}) - {r['doc_title']}\n"
                 f"      > {_fmt_quote(r['quote'])}")
 
     if linked or unlinked:
@@ -203,8 +243,21 @@ def build(con, run_id, out_dir, db_path=None):
                 L.append(f"      > {_fmt_quote(r['quote'])}")
         L.append("")
 
+    suggestions = _alias_suggestions(con)
+    if suggestions:
+        L.append("\n## Equivalent-term suggestions\n")
+        L.append("*Definition-profile mappings that may merit promotion into "
+                 "`field_aliases.json`.*\n")
+        for s in suggestions:
+            L.append(f"- `{s['term']}` -> **{s['field']}** "
+                     f"({s['count']} occurrence(s), average score "
+                     f"{s['average_score']:.2f})")
+            for quote in s["example_quotes"][:2]:
+                L.append(f"    > {_fmt_quote(quote)}")
+        L.append("")
+
     md = "\n".join(L)
-    path = os.path.join(out_dir, f"report_run{run_id}.md")
+    path = os.path.join(out_dir, report_name)
     with open(path, "w", encoding="utf-8") as f:
         f.write(md)
     return path, props
@@ -214,10 +267,12 @@ def _emit(L, p):
     tag = {"gap_fill": "gap-fill", "relation": "relation"}.get(p["type"], p["type"])
     nclust = p.get("cluster_sources", p["n_sources"])
     corr = f" - corroborated by {nclust} sources" if nclust > 1 else ""
+    mapping = (" - experimental mapping"
+               if p.get("mapping_tier") == "medium" else "")
     if p["type"] == "relation":
-        L.append(f"- **relation**: {p['value']}{corr}")
+        L.append(f"- **relation**: {p['value']}{corr}{mapping}")
     else:
-        L.append(f"- **{p['field']}** = `{p['value']}` ({tag}){corr}")
+        L.append(f"- **{p['field']}** = `{p['value']}` ({tag}){corr}{mapping}")
     if p["qualifier"]:
         L.append(f"    - Qualifier: _{p['qualifier']}_")
     if nclust > 1 and len(p["value_distribution"]) > 1:

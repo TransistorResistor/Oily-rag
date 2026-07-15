@@ -20,6 +20,7 @@ if _REPO not in sys.path:
 import llm_provider  # noqa: E402
 
 DEFAULT_MODEL = "google/gemma-3-4b-it"
+EXTRACTION_VERSION = "claims-v2"
 
 # short aliases -> OpenRouter slugs (subset of models_registry)
 ALIASES = {
@@ -42,8 +43,12 @@ SYSTEM = (
     "(e.g. value '380', unit 'km'). (4) qualifier = hedges/conditions verbatim "
     "('up to','estimated','with 40N6 missile') or null. (5) quote = the exact "
     "sentence or phrase from the document that states the fact, copied verbatim. "
-    "Extract every distinct fact. Do NOT invent values not present in the text. "
-    "Do not add prose outside the JSON."
+    "Extract every distinct fact. For a table, keep each row attached to its row "
+    "entity and copy the complete raw cell: e.g. value '100 / 181', unit 'km/NM' "
+    "for a Range (km/NM) cell. Do not convert units, choose one side of a dual "
+    "value, or rename the attribute to a database field. If the document has no "
+    "relevant claims, return exactly {\"claims\":[]}. Do NOT invent values not "
+    "present in the text. Do not add prose outside the JSON."
 )
 
 USER_TMPL = (

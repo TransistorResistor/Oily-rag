@@ -13,6 +13,7 @@ State lives in enrich_state.db (separate file). rag_test.db is never opened.
 """
 
 import argparse
+import json
 import os
 import sys
 
@@ -32,10 +33,13 @@ def cmd_run(args):
     con = state_mod.connect(args.db)
     rc = refcat_mod.load_reference()
     only = [x.strip() for x in args.only.split(",")] if args.only else None
-    print(f"Running batch (model={args.model}, render={args.render}) over "
+    print(f"Running batch (model={args.model}, render={args.render}, "
+          f"field-mapper={args.field_mapper}, text-fields={args.text_fields}) over "
           f"{args.folder}" + (f" only={only}" if only else "") + " ...")
     summ = pipe.run_batch(args.folder, con, rc, model=args.model, only=only,
-                          note=args.note, render=args.render)
+                          note=args.note, render=args.render,
+                          field_mapper=args.field_mapper,
+                          text_fields=args.text_fields)
     print(f"\nRun {summ['run_id']}: processed {len(summ['processed'])} docs, "
           f"skipped {len(summ['skipped'])} (already seen), "
           f"failed {summ['error_count']}, "
@@ -44,11 +48,8 @@ def cmd_run(args):
           f"graduated {summ['graduated']} parked claim(s).")
     path, props = report_mod.build(con, summ["run_id"], HERE, db_path=args.db)
     print(f"Report: {path}")
-    stem = os.path.splitext(os.path.basename(args.db))[0]
-    extra = (f" (+ proposals_{stem}.json)"
-             if stem and stem != "enrich_state" else "")
-    print(f"Proposals: {os.path.join(HERE, 'proposals.json')}{extra} "
-          f"({len(props)} live)")
+    proposals_name, _ = report_mod.output_names(summ["run_id"], db_path=args.db)
+    print(f"Proposals: {os.path.join(HERE, proposals_name)} ({len(props)} live)")
 
 
 def cmd_report(args):
@@ -58,7 +59,9 @@ def cmd_report(args):
         r = con.execute("SELECT MAX(run_id) m FROM runs").fetchone()
         run_id = r["m"]
     path, props = report_mod.build(con, run_id, HERE, db_path=args.db)
+    proposals_name, _ = report_mod.output_names(run_id, db_path=args.db)
     print(f"Report for run {run_id}: {path} ({len(props)} live proposals)")
+    print(f"Proposals: {os.path.join(HERE, proposals_name)}")
 
 
 def cmd_reject(args):
@@ -95,11 +98,25 @@ def cmd_status(args):
     con = state_mod.connect(args.db)
     d = con.execute("SELECT COUNT(*) n FROM docs_seen").fetchone()["n"]
     runs = con.execute("SELECT COUNT(*) n FROM runs").fetchone()["n"]
+    failures = con.execute("SELECT COUNT(*) n FROM doc_failures").fetchone()["n"]
     import collections
     st = collections.Counter()
     for r in con.execute("SELECT status FROM claims"):
         st[r["status"]] += 1
-    print(f"docs_seen={d}  runs={runs}  claims-by-status={dict(st)}")
+    print(f"docs_seen={d}  runs={runs}  failures={failures}  "
+          f"claims-by-status={dict(st)}")
+
+
+def cmd_field_audit(args):
+    rc = refcat_mod.load_reference()
+    audit = rc.field_audit()
+    payload = json.dumps(audit, indent=2, ensure_ascii=False)
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as f:
+            f.write(payload + "\n")
+        print(f"Field audit: {args.output} ({audit['field_count']} fields)")
+    else:
+        print(payload)
 
 
 def main():
@@ -115,6 +132,11 @@ def main():
     r.add_argument("--render", default="text", choices=["text", "md"],
                    help="PDF extraction mode: plain text (default) or markdown "
                         "pipe tables")
+    r.add_argument("--field-mapper", default="legacy",
+                   choices=["legacy", "catalogue"],
+                   help="legacy synonyms or generated catalogue+alias resolver")
+    r.add_argument("--text-fields", action="store_true",
+                   help="allow conservative Text/LOV gap-fill classification")
     r.set_defaults(func=cmd_run)
 
     rp = sub.add_parser("report")
@@ -128,6 +150,9 @@ def main():
 
     sub.add_parser("list-proposals").set_defaults(func=cmd_list)
     sub.add_parser("status").set_defaults(func=cmd_status)
+    fa = sub.add_parser("field-audit")
+    fa.add_argument("--output", default=None)
+    fa.set_defaults(func=cmd_field_audit)
 
     args = ap.parse_args()
     args.func(args)

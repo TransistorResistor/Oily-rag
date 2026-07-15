@@ -277,9 +277,21 @@ function renderContext(d){
   el("ctxmeta").textContent = nsrc + " record" + (nsrc===1?"":"s");
   // filter
   const fa = d.filter && d.filter.applied && Object.keys(d.filter.applied).length;
-  el("filtersec").style.display = fa ? "" : "none";
-  if(fa){
-    let txt = JSON.stringify(d.filter.applied);
+  const plan = d.filter && d.filter.plan;
+  const showPlan = plan || fa || (d.filter && (d.filter.errors||[]).length);
+  el("filtersec").style.display = showPlan ? "" : "none";
+  if(showPlan){
+    let txt = fa ? JSON.stringify(d.filter.applied) : "# no complete filter applied";
+    if(plan){
+      txt += "\n# route: " + (plan.route||"hybrid") +
+             "; confidence: " + (plan.confidence||"unknown") +
+             "; complete: " + String(plan.complete !== false);
+      if(plan.stop_reason) txt += "\n# stop: " + plan.stop_reason;
+      if((plan.unresolved_constraints||[]).length)
+        txt += "\n# unresolved: " + JSON.stringify(plan.unresolved_constraints);
+      if((plan.ambiguities||[]).length)
+        txt += "\n# ambiguities: " + JSON.stringify(plan.ambiguities);
+    }
     if(typeof d.filter.matched_records === "number"){
       const shown = d.sources ? d.sources.length : 0;
       txt += "\n# matched " + d.filter.matched_records +

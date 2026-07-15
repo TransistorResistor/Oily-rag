@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "fields": {
+    "Maximum range": {
+      "aliases": [
+        "range",
+        "maximum range",
+        "max range",
+        "maximum engagement range",
+        "engagement range",
+        "effective range",
+        "maximum effective range",
+        "intercept range",
+        "firing range"
+      ]
+    },
+    "Detection range": {
+      "aliases": ["detection range", "radar range"]
+    },
+    "Radar detection range": {
+      "aliases": ["radar detection range"]
+    },
+    "Maximum altitude": {
+      "aliases": [
+        "altitude",
+        "maximum altitude",
+        "max altitude",
+        "engagement altitude",
+        "engagement ceiling",
+        "ceiling",
+        "altitude ceiling"
+      ]
+    },
+    "Service ceiling": {
+      "aliases": ["service ceiling"]
+    },
+    "Maximum speed": {
+      "aliases": ["speed", "maximum speed", "max speed", "top speed"]
+    },
+    "Deployment time": {
+      "aliases": [
+        "deployment time",
+        "deployment duration",
+        "setup time",
+        "setup duration",
+        "emplacement time",
+        "emplacement duration",
+        "ready time",
+        "reaction time"
+      ]
+    },
+    "Weight": {
+      "aliases": ["weight", "launch weight", "mass"]
+    },
+    "Warhead weight": {
+      "aliases": ["warhead weight", "warhead mass"]
+    },
+    "Length": {
+      "aliases": ["length", "overall length"]
+    },
+    "Diameter": {
+      "aliases": ["diameter"]
+    },
+    "Wingspan": {
+      "aliases": ["wingspan", "wing span"]
+    },
+    "Introduced": {
+      "aliases": ["introduced", "entered service"]
+    },
+    "Simultaneous targets engaged": {
+      "aliases": [
+        "simultaneous targets",
+        "targets engaged",
+        "simultaneous targets engaged"
+      ]
+    },
+    "Simultaneous targets tracked": {
+      "aliases": ["simultaneous targets tracked"]
+    },
+    "Off-boresight launch angle": {
+      "aliases": ["off-boresight launch angle"]
+    },
+    "Unit cost": {
+      "aliases": ["unit cost", "cost"]
+    }
+  },
+  "contextual_aliases": [
+    {
+      "term": "time",
+      "field": "Deployment time",
+      "requires_any_context": ["deploy", "deployment", "setup", "emplacement", "ready"]
+    }
+  ]
+}

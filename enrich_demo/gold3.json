@@ -1,0 +1,77 @@
+[
+  {
+    "doc_id": "d3_new_entity",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": []
+  },
+  {
+    "doc_id": "d3_negation",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": []
+  },
+  {
+    "doc_id": "d3_temporal",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": [
+      {
+        "type": "conflict",
+        "record": "S-300",
+        "field": "Maximum range",
+        "value": "150 km",
+        "db": "200"
+      }
+    ]
+  },
+  {
+    "doc_id": "d3_intradoc",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": []
+  },
+  {
+    "doc_id": "d3_ocr_garbled",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": true,
+    "suppress_test": false,
+    "has_table": true,
+    "gold": []
+  },
+  {
+    "doc_id": "d3_valid_control",
+    "batch": 1,
+    "trust": "normal",
+    "noise": false,
+    "expect_zero": false,
+    "suppress_test": false,
+    "has_table": false,
+    "gold": [
+      {
+        "type": "gap_fill",
+        "record": "S-300",
+        "field": "Maximum altitude",
+        "value": "27 km"
+      }
+    ]
+  }
+]

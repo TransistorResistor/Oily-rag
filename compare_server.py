@@ -41,6 +41,7 @@ import catalogue as cat_mod
 from models_registry import MODELS, MODELS_BY_ID
 
 app = Flask(__name__)
+app.config["MAX_CONTENT_LENGTH"] = 64 * 1024
 # Model used to derive the metadata filter (separate from the models under test).
 # Needs reliable JSON/schema adherence; a 4B model isn't enough on a large
 # catalogue. REVIEW_FINDINGS E2: this value now comes from ragkit.DEFAULTS (the
@@ -92,6 +93,7 @@ CONFIG = {
     "field_select": ragkit.DEFAULTS["field_select"],
     "field_select_k": ragkit.DEFAULTS["field_select_k"],
     "min_rel": ragkit.DEFAULTS["min_rel"],
+    "allow_embed_mismatch": ragkit.DEFAULTS["allow_embed_mismatch"],
     "filter_model": FILTER_MODEL,
 }
 
@@ -107,25 +109,60 @@ _aliases_cache = {}
 _aliases_lock = threading.Lock()
 
 
+def _db_version_key(db_path):
+    if not ragkit._cacheable(db_path):
+        return None
+    abs_path = ragkit._cache_key(db_path)
+    try:
+        mtime = os.path.getmtime(abs_path)
+    except OSError:
+        mtime = None
+    return abs_path, mtime
+
+
+def _drop_old_versions(cache, version_key):
+    if version_key is None:
+        return
+    abs_path, _mtime = version_key
+    for key in list(cache):
+        if key[0] == abs_path and key != version_key:
+            cache.pop(key, None)
+
+
 def get_conn():
+    db = CONFIG["db"]
+    version_key = _db_version_key(db)
+    if version_key is None:
+        return ragkit.connect(db)
     con = getattr(_local, "con", None)
-    if con is None or getattr(_local, "con_db", None) != CONFIG["db"]:
-        con = ragkit.connect(CONFIG["db"])
+    old_version = getattr(_local, "con_version", None)
+    if con is None or old_version != version_key:
+        if old_version is not None and old_version != version_key:
+            try:
+                con.close()
+            except Exception:
+                pass
+            ragkit.invalidate_caches(db)
+        con = ragkit.connect_readonly(db)
         _local.con = con
-        _local.con_db = CONFIG["db"]
+        _local.con_db = db
+        _local.con_version = version_key
     return con
 
 
 def get_catalogue(con):
     """Parse the filter catalogue once per db (it only changes on re-ingest)."""
-    db = CONFIG["db"]
-    cat = _catalogue_cache.get(db)
+    key = _db_version_key(CONFIG["db"])
+    if key is None:
+        return ragkit.load_catalogue(con)
+    cat = _catalogue_cache.get(key)
     if cat is None:
         with _catalogue_lock:
-            cat = _catalogue_cache.get(db)
+            cat = _catalogue_cache.get(key)
             if cat is None:
                 cat = ragkit.load_catalogue(con)
-                _catalogue_cache[db] = cat
+                _drop_old_versions(_catalogue_cache, key)
+                _catalogue_cache[key] = cat
     return cat
 
 
@@ -133,14 +170,17 @@ def get_aliases(con):
     """The entity alias table (ragkit.load_aliases), cached like get_catalogue --
     used to suppress is_analytic_query's table-injection on single-entity lookups
     (REVIEW_FINDINGS A7)."""
-    db = CONFIG["db"]
-    al = _aliases_cache.get(db)
+    key = _db_version_key(CONFIG["db"])
+    if key is None:
+        return ragkit.load_aliases(con)
+    al = _aliases_cache.get(key)
     if al is None:
         with _aliases_lock:
-            al = _aliases_cache.get(db)
+            al = _aliases_cache.get(key)
             if al is None:
                 al = ragkit.load_aliases(con)
-                _aliases_cache[db] = al
+                _drop_old_versions(_aliases_cache, key)
+                _aliases_cache[key] = al
     return al
 
 
@@ -171,14 +211,61 @@ def _select_filter_fields(con, query, catalogue):
 def build_context(query, auto_filter, two_pass=None):
     """Run retrieval (+ optional model-driven filter) and return the contexts,
     the assembled prompt, and the filter info — the exact material a model sees."""
+    if two_pass is None:
+        two_pass = CONFIG.get("two_pass", False)
+    prep = ragkit.prepare_answer(
+        get_conn(), query, backend="openrouter",
+        model=CONFIG.get("filter_model", FILTER_MODEL),
+        auto_filter=auto_filter, two_pass=two_pass,
+        k=CONFIG["k"], max_context_tokens=CONFIG["max_context_tokens"],
+        filter_min_count=CONFIG.get("filter_min_count", 1),
+        filter_max_fields=CONFIG.get("filter_max_fields"),
+        filter_mode=CONFIG.get("filter_mode", "auto"),
+        field_select=CONFIG.get("field_select"),
+        field_select_k=CONFIG.get("field_select_k", 15),
+        min_rel=CONFIG.get("min_rel", 0.0),
+        filter_model=CONFIG.get("filter_model", FILTER_MODEL),
+        allow_embed_mismatch=CONFIG.get("allow_embed_mismatch", False),
+    )
+    finfo = prep["filter_info"]
+    if prep["deterministic_reply"] is not None:
+        finfo["deterministic_reply"] = prep["deterministic_reply"]
+    return prep["contexts"], prep["prompt"], finfo
+
+    # Legacy implementation retained temporarily below as unreachable reference
+    # while callers migrate to ragkit.prepare_answer().
     con = get_conn()
     catalogue = get_catalogue(con)
     aliases = get_aliases(con)
-    filter_info = {"applied": {}, "errors": [], "source": None}
+    field_aliases = ragkit.load_field_aliases()
+    plan = ragkit.build_query_plan(
+        con, query, catalogue=catalogue, aliases=aliases,
+        field_aliases=field_aliases)
+    filter_info = {"applied": {}, "errors": [], "source": None,
+                   "plan": plan}
     clean = None
     if two_pass is None:
         two_pass = CONFIG.get("two_pass", False)
-    if auto_filter and catalogue:
+    raw = None
+    if plan.get("deterministic_filter"):
+        raw = plan["deterministic_filter"]
+        clean, errors = ragkit.validate_filter(raw, catalogue)
+        if plan.get("deterministic_filter_errors"):
+            errors = list(errors) + list(plan["deterministic_filter_errors"])
+        filter_info.update({
+            "applied": clean, "errors": errors,
+            "source": "deterministic", "extraction": "not_needed",
+        })
+        if clean:
+            filter_info["matched_records"] = ragkit.count_matches(con, clean)
+            degenerate, reason = ragkit.is_degenerate_filter(
+                con, clean, catalogue, filter_info["matched_records"])
+            if degenerate:
+                filter_info["degenerate"] = reason
+                filter_info["applied"] = {}
+                filter_info.pop("matched_records", None)
+                clean = None
+    elif auto_filter and catalogue:
         # Derive the filter with a model that reliably emits the JSON schema. A
         # 4B model produces malformed/duplicate-shape filters against a large
         # catalogue; mistral-small is the registry's filter-extraction pick.
@@ -206,7 +293,9 @@ def build_context(query, auto_filter, two_pass=None):
                 max_fields=CONFIG.get("filter_max_fields"))
         if raw:
             clean, errors = ragkit.validate_filter(raw, catalogue)
-            filter_info = {"applied": clean, "errors": errors, "source": "model"}
+            filter_info.update({
+                "applied": clean, "errors": errors, "source": "model",
+            })
             if tp:
                 filter_info["two_pass"] = tp
             # report how many records match before the top-k cap, so a large
@@ -246,6 +335,20 @@ def build_context(query, auto_filter, two_pass=None):
     # poorly -- the common case for exact designations.
     pin = ragkit.match_entities(query, aliases)
 
+    # Too-many-matches guard (REVIEW_FINDINGS R3): flag a bare designator-family
+    # reference ("the APG radar") that resolves to more records than the top-k
+    # can represent. The bench previews context rather than short-circuiting
+    # generation, so surface it in filter_info for the UI; the CLI/eval path
+    # (ragkit.answer) turns the same signal into a disambiguation reply.
+    _disamb = ragkit.ambiguous_family(
+        query, aliases,
+        CONFIG.get("disambiguation_threshold",
+                   ragkit.DEFAULTS["disambiguation_threshold"]))
+    if _disamb:
+        filter_info["disambiguation"] = {"stem": _disamb[0],
+                                         "count": len(_disamb[1])}
+        filter_info["plan"]["stop_reason"] = "clarification_required"
+
     # max_context_tokens is intentionally NOT passed here (REVIEW_FINDINGS
     # B1): retrieve() returns full-size passages, and build_prompt below is
     # the ONE place the whole prompt (passages+table+digest) is budgeted, so
@@ -255,7 +358,9 @@ def build_context(query, auto_filter, two_pass=None):
                                clean_filter=clean or None,
                                filter_mode=eff_mode, matched_parents=matched,
                                pin_entities=pin,
-                               min_rel=CONFIG.get("min_rel", 0.0))
+                               min_rel=CONFIG.get("min_rel", 0.0),
+                               allow_embed_mismatch=CONFIG.get(
+                                   "allow_embed_mismatch", False))
 
     shown = {c["rid"] for c in contexts}
     admitted_pins = [parent for parent in pin if parent in shown]
@@ -278,6 +383,7 @@ def build_context(query, auto_filter, two_pass=None):
     relations = ragkit.relation_evidence(con, query, pin) if pin else []
     if relations:
         filter_info["relation_evidence"] = relations
+        filter_info["plan"]["route"] = "relation"
 
     # Represent the fuller matched set beyond the top-k passages. Analytic
     # questions (compare / which has the most / numeric filter) get a structured
@@ -294,6 +400,8 @@ def build_context(query, auto_filter, two_pass=None):
                 parent_rids=pin if pinned_compare else None)
             if table:
                 filter_info["table"] = table
+                filter_info["plan"]["route"] = (
+                    "comparison" if pinned_compare else "analytic_filter")
         if not table and matched and matched > len(contexts):
             # exclude both the shown passages AND the related block so a record
             # isn't listed in two supplementary sections at once.
@@ -301,6 +409,9 @@ def build_context(query, auto_filter, two_pass=None):
                 con, query, clean, exclude=shown | {r["rid"] for r in related})
             if digest:
                 filter_info["digest"] = digest
+    filter_info["plan"].setdefault(
+        "stop_reason",
+        "table_complete" if table else "retrieval_complete")
 
     prompt = ragkit.build_prompt(query, contexts, digest=digest, table=table,
                                  related=related,
@@ -322,6 +433,8 @@ def api_context():
     two_pass = data.get("two_pass")  # None -> use CONFIG default
     if not query:
         return jsonify({"error": "empty query"}), 400
+    if len(query) > 4000:
+        return jsonify({"error": "query is too long (maximum 4000 characters)"}), 400
     try:
         contexts, prompt, finfo = build_context(query, auto_filter, two_pass=two_pass)
     except Exception as e:
@@ -333,6 +446,7 @@ def api_context():
         "system_prompt": ragkit.system_prompt_for(finfo.get("table")),
         "prompt": prompt,
         "filter": finfo,
+        "deterministic_reply": finfo.get("deterministic_reply"),
         "sources": [{"rid": c["rid"], "title": c["title"], "text": c["text"]}
                     for c in contexts],
     })
@@ -361,6 +475,12 @@ def api_compare():
     two_pass = data.get("two_pass")  # None -> use CONFIG default
     if not query:
         return jsonify({"error": "empty query"}), 400
+    if len(query) > 4000:
+        return jsonify({"error": "query is too long (maximum 4000 characters)"}), 400
+    if not isinstance(model_ids, list) or not all(isinstance(x, str) for x in model_ids):
+        return jsonify({"error": "models must be a list of model IDs"}), 400
+    if len(set(model_ids)) != len(model_ids):
+        return jsonify({"error": "duplicate model IDs are not allowed"}), 400
     if not model_ids:
         return jsonify({"error": "no models selected"}), 400
     if len(model_ids) > 3:
@@ -378,11 +498,24 @@ def api_compare():
 
     # fan out to the selected models concurrently so side-by-side isn't serial
     results = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as ex:
-        futures = [ex.submit(_run_one, mid, system_prompt, prompt)
-                   for mid in model_ids]
-        for fut in futures:
-            results.append(fut.result())
+    deterministic_reply = finfo.get("deterministic_reply")
+    if deterministic_reply is not None:
+        for mid in model_ids:
+            m = MODELS_BY_ID.get(mid)
+            results.append({
+                "model_id": mid,
+                "name": m["name"] if m else mid,
+                "answer": deterministic_reply,
+                "latency_s": 0.0,
+                "error": None,
+                "deterministic": True,
+            })
+    else:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as ex:
+            futures = [ex.submit(_run_one, mid, system_prompt, prompt)
+                       for mid in model_ids]
+            for fut in futures:
+                results.append(fut.result())
     # preserve the order the user selected
     order = {mid: i for i, mid in enumerate(model_ids)}
     results.sort(key=lambda r: order.get(r["model_id"], 99))
@@ -407,15 +540,10 @@ def index():
 # --------------------------------------------------------------------------- #
 
 def _resolve_db(db):
-    """If the given db doesn't exist, fall back to a common name so first-run
-    doesn't fail on the default. Returns the path to actually use."""
-    if os.path.exists(db):
-        return db
-    for cand in ("rag_test.db", "rag.db"):
-        if cand != db and os.path.exists(cand):
-            print(f"  db '{db}' not found; using '{cand}'", file=sys.stderr)
-            return cand
-    return db  # let warm_start surface the empty/missing-db hint
+    """Validate the selected query DB before SQLite can create an empty file."""
+    con = ragkit.connect_readonly(db)
+    con.close()
+    return db
 
 
 def verify_slugs(timeout=5):
@@ -532,7 +660,7 @@ def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
                open_browser=True, filter_min_count=None, filter_max_fields=None,
                two_pass=None, filter_mode=None, field_select=None,
                field_select_k=None, min_rel=None, filter_model=None,
-               host="127.0.0.1"):
+               allow_embed_mismatch=None, host="127.0.0.1"):
     """Single entrypoint used by both this file's CLI and `ragkit.py serve`.
 
     host (REVIEW_FINDINGS F1): defaults to 127.0.0.1 (local-only) rather than
@@ -541,7 +669,11 @@ def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
     to anyone else on the LAN. Pass host="0.0.0.0" (or any other non-loopback
     address) to opt in explicitly; doing so prints a warning below rather
     than silently binding wide."""
-    CONFIG["db"] = _resolve_db(db)
+    try:
+        CONFIG["db"] = _resolve_db(db)
+    except FileNotFoundError as exc:
+        print(str(exc), file=sys.stderr)
+        sys.exit(1)
     CONFIG["k"] = k
     CONFIG["max_context_tokens"] = max_context_tokens
     if filter_min_count is not None:
@@ -560,6 +692,8 @@ def run_server(db="rag_test.db", port=8099, k=4, max_context_tokens=3000,
         CONFIG["min_rel"] = min_rel
     if filter_model is not None:
         CONFIG["filter_model"] = filter_model
+    if allow_embed_mismatch is not None:
+        CONFIG["allow_embed_mismatch"] = allow_embed_mismatch
     url = f"http://localhost:{port}"
     print(f"RAG model bench → {url}   (db={CONFIG['db']})", file=sys.stderr)
     _check_api_key()
@@ -615,6 +749,10 @@ def main():
                         "score below which a candidate passage is dropped "
                         "instead of padded into k (REVIEW_FINDINGS G3) "
                         f"(default {CONFIG['min_rel']}, i.e. no floor)")
+    p.add_argument("--allow-embed-mismatch", action="store_true",
+                   default=CONFIG["allow_embed_mismatch"],
+                   help="unsafe: allow querying an index built with a different "
+                        "embedding model name (dimension mismatches still fail)")
     args = p.parse_args()
     run_server(args.db, args.port, args.k,
                max_context_tokens=args.max_context_tokens or None,  # 0 -> uncapped
@@ -625,7 +763,8 @@ def main():
                filter_mode=args.filter_mode,
                field_select=args.field_select,
                field_select_k=args.field_select_k,
-               min_rel=args.min_rel)
+               min_rel=args.min_rel,
+               allow_embed_mismatch=args.allow_embed_mismatch)
 
 
 # PAGE is defined in compare_server_page.py and injected at import time to keep

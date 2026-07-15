@@ -101,6 +101,7 @@ import statistics
 import struct
 import sys
 import threading
+import tempfile
 import urllib.request
 import urllib.error
 
@@ -354,9 +355,50 @@ def _canonicalize_stored_fields(fields, field_units, catalogue, dropped=None):
 # DB build                                                                     #
 # --------------------------------------------------------------------------- #
 
+DB_NOT_INGESTED_MSG = "DB not found or not ingested: {path} - run `ragkit.py ingest` first"
+
+
+class IngestError(RuntimeError):
+    pass
+
+
+class EmbedModelMismatchError(RuntimeError):
+    pass
+
+
 def connect(db_path):
     con = sqlite3.connect(db_path)
     con.execute("PRAGMA journal_mode=WAL;")
+    return con
+
+
+def _sqlite_uri(path, mode):
+    return "file:" + os.path.abspath(path).replace("\\", "/") + f"?mode={mode}"
+
+
+def _has_ingested_schema(con):
+    row = con.execute(
+        "SELECT name FROM sqlite_master WHERE type IN ('table','view') "
+        "AND name IN ('records','record_params')"
+    ).fetchone()
+    return row is not None
+
+
+def connect_readonly(db_path):
+    if not os.path.exists(db_path):
+        raise FileNotFoundError(DB_NOT_INGESTED_MSG.format(path=db_path))
+    try:
+        con = sqlite3.connect(_sqlite_uri(db_path, "rw"), uri=True)
+    except sqlite3.OperationalError as exc:
+        raise FileNotFoundError(DB_NOT_INGESTED_MSG.format(path=db_path)) from exc
+    try:
+        if not _has_ingested_schema(con):
+            con.close()
+            raise FileNotFoundError(DB_NOT_INGESTED_MSG.format(path=db_path))
+    except sqlite3.DatabaseError:
+        con.close()
+        raise
+    con.execute("PRAGMA query_only=ON;")
     return con
 
 
@@ -459,24 +501,35 @@ def _field_descriptor(field, spec):
     return " - ".join(parts)
 
 
-def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
-    con = connect(db_path)
-    # A record now expands into several passage rows, so rebuild cleanly rather
-    # than upserting by rid (old whole-doc rows would otherwise linger). This
-    # also means an OLD per-passage-`fields` db is always fully replaced by a
-    # re-ingest -- see _ensure_current_schema for what happens if one is instead
-    # opened directly for querying without re-ingesting.
-    con.execute("DROP TABLE IF EXISTS records_fts")
-    con.execute("DROP TABLE IF EXISTS records")
-    con.execute("DROP TABLE IF EXISTS record_params")
-    con.execute("DROP TABLE IF EXISTS field_embeddings")
-    con.execute("DROP TABLE IF EXISTS record_relations")
-    init_db(con)
+def _load_records_for_ingest(src):
+    if os.path.isdir(src):
+        files = sorted(glob.glob(os.path.join(src, "*.json")))
+        if not files:
+            raise IngestError(f"No records found in {src!r}.")
+    elif os.path.exists(src):
+        files = [src]
+    else:
+        raise IngestError(f"Source not found: {src}")
 
-    records = list(load_records(src))
+    records = []
+    for fp in files:
+        try:
+            records.extend(list(load_records(fp)))
+        except Exception as exc:
+            raise IngestError(f"Failed to load records from {fp}: {exc}") from exc
     if not records:
-        print("No records found.", file=sys.stderr)
-        return
+        raise IngestError(f"No parseable records found in {src!r}.")
+    return records
+
+
+def _connect_build_db(path):
+    con = sqlite3.connect(path)
+    con.execute("PRAGMA journal_mode=DELETE;")
+    return con
+
+
+def _build_index(con, records, db_path, embed_model=DEFAULT_EMBED_MODEL):
+    init_db(con)
     raws = [r for _, _, _, r, _ in records]
 
     # Relations + curated aliases, first pass (REVIEW_FINDINGS H4/H5): walk every
@@ -663,10 +716,60 @@ def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
 
     con.commit()
     n = con.execute("SELECT COUNT(*) FROM records").fetchone()[0]
+    if n <= 0:
+        raise IngestError("Ingest sanity check failed: zero passages indexed.")
     print(f"Done. {len(records)} records -> {n} passages indexed in {db_path}.",
           file=sys.stderr)
     print(f"Catalogue: {len(catalogue)} fields classified.", file=sys.stderr)
     print(import_report(dropped, len(records)), file=sys.stderr)
+
+
+def _cleanup_sqlite_file(path):
+    for suffix in ("", "-wal", "-shm", "-journal"):
+        try:
+            os.remove(path + suffix)
+        except FileNotFoundError:
+            pass
+
+
+def _cleanup_sqlite_sidecars(path):
+    for suffix in ("-wal", "-shm", "-journal"):
+        try:
+            os.remove(path + suffix)
+        except FileNotFoundError:
+            pass
+
+
+def ingest(db_path, src, embed_model=DEFAULT_EMBED_MODEL):
+    records = _load_records_for_ingest(src)
+    target_dir = os.path.dirname(os.path.abspath(db_path)) or "."
+    os.makedirs(target_dir, exist_ok=True)
+    fd, tmp_path = tempfile.mkstemp(
+        prefix=os.path.basename(db_path) + ".tmp-", dir=target_dir)
+    os.close(fd)
+    con = None
+    try:
+        con = _connect_build_db(tmp_path)
+        _build_index(con, records, db_path, embed_model=embed_model)
+        con.close()
+        con = None
+        check = sqlite3.connect(tmp_path)
+        try:
+            n = check.execute("SELECT COUNT(*) FROM records").fetchone()[0]
+            if n <= 0:
+                raise IngestError("Ingest sanity check failed: zero passages indexed.")
+            ok = check.execute("PRAGMA integrity_check").fetchone()[0]
+            if ok != "ok":
+                raise IngestError(f"Ingest integrity check failed: {ok}")
+        finally:
+            check.close()
+        _cleanup_sqlite_sidecars(db_path)
+        os.replace(tmp_path, db_path)
+    except Exception:
+        if con is not None:
+            con.close()
+        _cleanup_sqlite_file(tmp_path)
+        raise
 
 
 def import_report(dropped, n_records):
@@ -714,31 +817,69 @@ def load_category_stats(con):
 
 
 _embed_model_warned = set()
+_embed_model_provenance_warned = set()
 
 
-def _check_embed_model(con, embed_model):
+def _check_embed_model(con, embed_model, allow_embed_mismatch=False,
+                       query_dim=None):
     """REVIEW_FINDINGS I7c: a db embedded with model A but queried with model B
     lives in a different vector space, so every cosine similarity is meaningless
     -- and nothing errors (matmul still runs when the dims happen to match, e.g.
     two different 384-dim models). ingest() records the embedder name+dim in
-    meta['embed_model']; warn loudly (once per db+model pair, so a server loop
-    isn't spammed) when the query-time model disagrees. Silent for dbs ingested
-    before this key existed -- there's nothing to compare against."""
+    meta['embed_model']; fail by default when the query-time model disagrees,
+    unless an explicit unsafe override asks for the old warning-only path.
+    Dbs ingested before this key existed remain readable, but print a once-per-db
+    diagnostic so the operator knows the vector space cannot be verified."""
+    db_path = _db_path_of(con)
     row = con.execute("SELECT value FROM meta WHERE key='embed_model'").fetchone()
     if not row:
-        return  # db predates embedder-provenance tracking
+        key = _cache_key(db_path) if db_path else None
+        if key not in _embed_model_provenance_warned:
+            _embed_model_provenance_warned.add(key)
+            where = f" {db_path!r}" if db_path else ""
+            print(f"  ! WARNING: db{where} has no embed_model provenance; "
+                  f"cannot verify that query embed-model {embed_model!r} "
+                  f"matches the index. Re-ingest to record embedder "
+                  f"provenance.", file=sys.stderr)
+        return
     try:
-        built = json.loads(row[0]).get("model")
+        meta = json.loads(row[0])
     except (ValueError, TypeError):
+        meta = {}
+    built = meta.get("model") if isinstance(meta, dict) else None
+    built_dim = meta.get("dim") if isinstance(meta, dict) else None
+    if built_dim is not None and query_dim is not None:
+        try:
+            built_dim_i = int(built_dim)
+            query_dim_i = int(query_dim)
+        except (TypeError, ValueError):
+            built_dim_i, query_dim_i = built_dim, query_dim
+        if built_dim_i != query_dim_i:
+            raise EmbedModelMismatchError(
+                f"Embedding dimension mismatch: index was built with "
+                f"embed-model {built!r} at dim {built_dim_i}, but query "
+                f"embed-model {embed_model!r} produced dim {query_dim_i}. "
+                f"Re-ingest with the query embed model; "
+                f"--allow-embed-mismatch cannot override a dimension mismatch."
+            )
+    if not built:
         return
     if built and built != embed_model:
-        key = (_db_path_of(con), built, embed_model)
-        if key not in _embed_model_warned:
-            _embed_model_warned.add(key)
-            print(f"  ! WARNING: index built with embed-model {built!r} but "
-                  f"querying with {embed_model!r} -- cosine similarity is "
-                  f"meaningless across models. Re-ingest, or query with the "
-                  f"matching --embed-model.", file=sys.stderr)
+        if not allow_embed_mismatch:
+            raise EmbedModelMismatchError(
+                f"Embedding model mismatch: index was built with embed-model "
+                f"{built!r}, but query requested {embed_model!r}. Re-ingest "
+                f"with the query embed model, or pass --allow-embed-mismatch "
+                f"to use this unsafe cross-model vector comparison."
+            )
+        key = (_cache_key(db_path) if db_path else None, built, embed_model)
+        if key in _embed_model_warned:
+            return
+        _embed_model_warned.add(key)
+        print(f"  ! WARNING: index built with embed-model {built!r} but "
+              f"querying with {embed_model!r} -- cosine similarity is "
+              f"meaningless across models. Re-ingest, or query with the "
+              f"matching --embed-model.", file=sys.stderr)
 
 
 def load_field_embeddings(con):
@@ -815,6 +956,344 @@ def query_field_intents(query, catalogue, field_aliases=None):
         max_words = max(len(_normalize_field_name(f).split()) for f in tied)
         tied = [f for f in tied if len(_normalize_field_name(f).split()) == max_words]
     return tied
+
+
+_NUM_BOUND_RE = re.compile(
+    r"\b(?P<op>at\s+least|not\s+less\s+than|greater\s+than|more\s+than|"
+    r"over|above|minimum|min|at\s+most|not\s+more\s+than|less\s+than|"
+    r"under|below|maximum|max)\s+"
+    r"(?P<num>[+-]?\d+(?:,\d{3})*(?:\.\d+)?)\s*(?P<unit>[A-Za-z/%°µ]+)?",
+    re.I)
+_BETWEEN_BOUND_RE = re.compile(
+    r"\bbetween\s+(?P<lo>[+-]?\d+(?:,\d{3})*(?:\.\d+)?)\s*"
+    r"(?P<unit1>[A-Za-z/%°µ]+)?\s+(?:and|to|-)\s+"
+    r"(?P<hi>[+-]?\d+(?:,\d{3})*(?:\.\d+)?)\s*"
+    r"(?P<unit2>[A-Za-z/%°µ]+)?",
+    re.I)
+_TOP_N_RE = re.compile(r"\b(?:top|first)\s+(\d{1,3})\b", re.I)
+
+# Supersede the legacy bound regex with currency/scale-aware parsing. Keeping
+# this definition beside the other planner cues avoids changing the older
+# extraction regexes used elsewhere in the module.
+_NUM_BOUND_RE = re.compile(
+    r"\b(?P<op>at\s+least|not\s+less\s+than|greater\s+than|more\s+than|"
+    r"over|above|minimum|min|at\s+most|not\s+more\s+than|less\s+than|"
+    r"under|below|maximum|max)\s+"
+    r"(?P<currency>[$€£])?\s*"
+    r"(?P<num>[+-]?\d+(?:,\d{3})*(?:\.\d+)?)\s*"
+    r"(?P<scale>thousand|million|billion|mn|bn|m)?\s*"
+    r"(?P<unit>[A-Za-z/%]+)?", re.I)
+_NUMERIC_CONSTRAINT_CUE_RE = re.compile(
+    r"\b(?:at\s+least|not\s+less\s+than|greater\s+than|more\s+than|over|"
+    r"above|at\s+most|not\s+more\s+than|less\s+than|under|below|between)\b",
+    re.I)
+_SUBJECTIVE_CRITERION_RE = re.compile(
+    r"\b(best|most\s+(?:modern|advanced|capable)|modern|advanced|capable|"
+    r"cheap|cheap(?:er|est)|widely\s+used|popular)\b", re.I)
+_CURRENCY_UNITS = {"$": "USD", "€": "EUR", "£": "GBP"}
+_NUMBER_SCALES = {
+    "thousand": 1_000.0, "million": 1_000_000.0,
+    "billion": 1_000_000_000.0, "mn": 1_000_000.0,
+    "bn": 1_000_000_000.0, "m": 1_000_000.0,
+}
+
+
+def _record_title_map(con, rids=None):
+    if rids:
+        keys = [str(r) for r in dict.fromkeys(rids)]
+        if not keys:
+            return {}
+        placeholders = ",".join("?" * len(keys))
+        rows = con.execute(
+            f"SELECT parent_rid, title FROM record_params "
+            f"WHERE parent_rid IN ({placeholders})", keys).fetchall()
+    else:
+        rows = con.execute(
+            "SELECT parent_rid, title FROM record_params").fetchall()
+    return {str(rid): title for rid, title in rows}
+
+
+def _plan_entities(query, aliases, titles=None):
+    """Alias mentions for QueryPlan diagnostics, preserving the user's route
+    through the alias table without exposing every alias scanned."""
+    if not aliases or not query:
+        return []
+    ql = query.lower()
+    titles = titles or {}
+    out, seen = [], set()
+    for alias in sorted(aliases.keys(), key=len, reverse=True):
+        if not _alias_pattern(alias).search(ql):
+            continue
+        for rid in aliases[alias]:
+            rid = str(rid)
+            if rid in seen:
+                continue
+            seen.add(rid)
+            out.append({
+                "rid": rid,
+                "title": titles.get(rid),
+                "mention": alias,
+                "match": "exact_alias",
+            })
+    return out
+
+
+def _plan_fields(query, catalogue, field_aliases=None):
+    fields = query_field_intents(
+        query, catalogue, field_aliases=field_aliases)
+    return [{"canonical": f, "mention": f, "match": "field_alias_or_name"}
+            for f in fields]
+
+
+def _deterministic_label_filter(query, catalogue):
+    """Find explicit catalogue labels in the query.
+
+    This is intentionally exact-phrase only: it catches stable class/nationality
+    wording ("Air-to-Air Missile", "United States") but does not infer labels
+    from loose adjectives. validate_filter remains the trust boundary.
+    """
+    ql = (query or "").lower()
+    raw = {}
+    for _label, pattern, field, value in _CLASS_FIELD_HINTS:
+        spec = (catalogue or {}).get(field) or {}
+        if pattern.search(query or "") and value in (spec.get("values") or []):
+            raw[field] = {"in": [value]}
+    if not re.search(r"\b(operated by|operator|user|using|in service with)\b", ql):
+        origin = (catalogue or {}).get("Country of origin") or {}
+        allowed_origins = set(origin.get("values") or [])
+        for adjective, country in _NATIONALITY_HINTS.items():
+            if country in allowed_origins and re.search(
+                    r"(?<![a-z0-9])" + re.escape(adjective) + r"(?![a-z0-9])", ql):
+                raw["Country of origin"] = {"in": [country]}
+                break
+    for field, spec in (catalogue or {}).items():
+        if spec.get("admin"):
+            continue
+        t = spec.get("type")
+        if t not in {"categorical", "multi_value"}:
+            continue
+        hits = []
+        for value in spec.get("values") or []:
+            value_s = str(value or "").strip()
+            # One/two-letter labels and all-digit labels are too collision-prone
+            # for query-wide phrase matching.
+            if len(value_s) < 3 or value_s.isdigit():
+                continue
+            if _phrase_hit(value_s, ql):
+                hits.append(value)
+        if hits:
+            if field == "Type" and any(
+                    v in ((catalogue.get("systemType") or {}).get("values") or [])
+                    for v in hits):
+                continue
+            key = "contains" if t == "multi_value" else "in"
+            raw[field] = {key: hits}
+    return raw
+
+
+def _deterministic_numeric_filter(query, catalogue, fields):
+    if len(fields) != 1:
+        return {}
+    field = fields[0]
+    spec = (catalogue or {}).get(field) or {}
+    if spec.get("type") != "numeric":
+        return {}
+    text = query or ""
+    raw = {}
+    m = _BETWEEN_BOUND_RE.search(text)
+    if m:
+        raw[field] = {
+            "min": float(m.group("lo").replace(",", "")),
+            "max": float(m.group("hi").replace(",", "")),
+        }
+        unit = m.group("unit2") or m.group("unit1")
+        if unit:
+            raw[field]["unit"] = unit
+        return raw
+    m = _NUM_BOUND_RE.search(text)
+    if not m:
+        return {}
+    op = re.sub(r"\s+", " ", m.group("op").lower())
+    value = float(m.group("num").replace(",", ""))
+    scale = (m.groupdict().get("scale") or "").lower()
+    if scale:
+        value *= _NUMBER_SCALES[scale]
+    cond = {}
+    if op in {"at most", "not more than", "less than", "under", "below",
+              "maximum", "max"}:
+        cond["max"] = value
+    else:
+        cond["min"] = value
+    currency = m.groupdict().get("currency")
+    if currency:
+        cond["unit"] = _CURRENCY_UNITS[currency]
+    elif m.group("unit"):
+        cond["unit"] = m.group("unit")
+    raw[field] = cond
+    return raw
+
+
+def _merge_raw_filters(*filters):
+    merged = {}
+    for flt in filters:
+        for field, cond in (flt or {}).items():
+            if field not in merged:
+                merged[field] = dict(cond)
+                continue
+            # Merge compatible deterministic clauses; if a later source gives
+            # a different categorical set, union it rather than dropping signal.
+            cur = merged[field]
+            for key, value in cond.items():
+                if key in {"in", "contains"}:
+                    existing = list(cur.get(key) or [])
+                    for v in value or []:
+                        if v not in existing:
+                            existing.append(v)
+                    cur[key] = existing
+                else:
+                    cur[key] = value
+    return merged
+
+
+def _plan_sort_or_aggregate(query):
+    q = query or ""
+    top = _TOP_N_RE.search(q)
+    if top:
+        return {"type": "limit", "limit": int(top.group(1))}
+    if re.search(r"\b(how many|number of|count of)\b", q, re.I):
+        return {"type": "count"}
+    if re.search(r"\b(rank|sort|longest|shortest|highest|lowest|"
+                 r"heaviest|lightest|fastest|slowest|most|least)\b", q, re.I):
+        direction = "ascending" if _LOW_SORT_RE.search(q) else "descending"
+        return {"type": "sort", "direction": direction}
+    return None
+
+
+def build_query_plan(con, query, catalogue=None, aliases=None, filters=None,
+                     field_aliases=None):
+    """Build a conservative, serializable retrieval plan before ranking.
+
+    The plan is diagnostic-first: it selects only routes supported by stable
+    signals (exact aliases, field names/aliases, exact catalogue labels, and
+    explicit numeric bounds). Low-confidence or unsupported cases keep the
+    current hybrid retrieval fallback.
+    """
+    catalogue = catalogue if catalogue is not None else load_catalogue(con)
+    aliases = aliases if aliases is not None else load_aliases(con)
+    pins = match_entities(query, aliases)
+    titles = _record_title_map(con, pins) if pins else {}
+    fields = query_field_intents(query, catalogue, field_aliases=field_aliases)
+    if _NUMERIC_CONSTRAINT_CUE_RE.search(query or ""):
+        numeric_fields = [f for f in fields
+                          if (catalogue.get(f) or {}).get("type") == "numeric"]
+        if numeric_fields:
+            fields = numeric_fields
+    field_entries = [
+        {"canonical": f, "mention": f, "match": "field_alias_or_name"}
+        for f in fields]
+    raw_det = _merge_raw_filters(
+        _deterministic_label_filter(query, catalogue),
+        _deterministic_numeric_filter(query, catalogue, fields))
+    det_clean, det_errors = validate_filter(raw_det, catalogue) if raw_det else ({}, [])
+    intents = []
+    route = "hybrid"
+    confidence = "low"
+    ambiguities = []
+    prose_needed = True
+    relations = []
+    if len(fields) > 1:
+        ambiguities.append({
+            "type": "field",
+            "message": "multiple plausible fields matched",
+            "candidates": fields,
+        })
+    if _RELATION_QUERY_RE.search(query or ""):
+        intents.append("relation")
+        relations.append({"type": "one_hop", "match": "relation_verb"})
+        route = "relation"
+        confidence = "medium" if pins else "low"
+    if len(pins) >= 2 and is_analytic_query(query, {}, aliases=aliases):
+        intents.append("comparison")
+        route = "comparison"
+        confidence = "high"
+        prose_needed = False
+    elif len(pins) == 1 and len(fields) == 1:
+        intents.append("parameter_lookup")
+        route = "exact_entity_field"
+        confidence = "high"
+        prose_needed = False
+    if det_clean and is_analytic_query(query, det_clean, aliases=aliases):
+        intents.append("analytic_filter")
+        if route == "hybrid":
+            route = "analytic_filter"
+            confidence = "high"
+            prose_needed = False
+    if not intents:
+        if pins:
+            intents.append("entity_lookup")
+            confidence = "medium"
+        else:
+            intents.append("prose")
+    if filters is not None:
+        intents.append("explicit_filter")
+    constraints = []
+    for field, cond in det_clean.items():
+        rendered = {"field": field, "type": cond.get("type")}
+        for key in ("min", "max", "in", "contains", "date_from", "date_to",
+                    "unit", "_converted", "_field_remapped", "_remapped"):
+            if key in cond:
+                rendered[key] = cond[key]
+        constraints.append(rendered)
+    if filters is not None:
+        explicit_clean, explicit_errors = validate_filter(filters, catalogue)
+        det_errors = list(det_errors) + list(explicit_errors)
+        for field, cond in explicit_clean.items():
+            if any(c.get("field") == field for c in constraints):
+                continue
+            rendered = {"field": field, "type": cond.get("type")}
+            rendered.update({k: v for k, v in cond.items()
+                             if not str(k).startswith("_")})
+            constraints.append(rendered)
+    unresolved = []
+    if _NUMERIC_CONSTRAINT_CUE_RE.search(query or ""):
+        resolved_bound = any(
+            c.get("type") == "numeric" and
+            ("min" in c or "max" in c) for c in constraints)
+        if not resolved_bound:
+            unresolved.append({
+                "type": "numeric_constraint",
+                "mention": query,
+                "reason": "numeric bound could not be mapped to one canonical field/value",
+            })
+    subjective = _SUBJECTIVE_CRITERION_RE.search(query or "")
+    if subjective and not any(
+            c.get("type") == "numeric" and ("min" in c or "max" in c)
+            for c in constraints):
+        unresolved.append({
+            "type": "subjective_criterion",
+            "mention": subjective.group(0),
+            "reason": "no explicit criterion or threshold was supplied",
+        })
+    complete = not ambiguities and not unresolved
+    return {
+        "version": 1,
+        "intents": list(dict.fromkeys(intents)),
+        "route": route,
+        "entities": _plan_entities(query, aliases, titles=titles),
+        "fields": field_entries,
+        "constraints": constraints,
+        "relations": relations,
+        "temporal": None,
+        "sort_or_aggregate": _plan_sort_or_aggregate(query),
+        "prose_needed": prose_needed,
+        "ambiguities": ambiguities,
+        "unresolved_constraints": unresolved,
+        "complete": complete,
+        "confidence": confidence,
+        "fallback": "hybrid",
+        "deterministic_filter": det_clean,
+        "deterministic_filter_errors": det_errors,
+    }
 
 
 def select_fields(con, query, catalogue, k=15, always=(),
@@ -1247,6 +1726,16 @@ def load_field_aliases(path=None):
     files are ignored so the default CLI/UI path stays zero-config.
     """
     aliases = {_normalize_field_name(k): v for k, v in _FIELD_NAME_ALIASES.items()}
+    if isinstance(path, dict):
+        data = path
+        for key, value in (data or {}).items():
+            if isinstance(value, list):
+                canonical = str(key)
+                for alias in value:
+                    aliases[_normalize_field_name(alias)] = canonical
+            elif isinstance(value, str):
+                aliases[_normalize_field_name(key)] = value
+        return aliases
     path = path or os.environ.get("RAGKIT_FIELD_ALIASES") or DEFAULT_FIELD_ALIAS_FILE
     if not path or not os.path.exists(path):
         return aliases
@@ -1713,7 +2202,8 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
              clean_filter=None, max_context_tokens=None, max_per_parent=1,
              rerank=True, rerank_pool=30, rerank_model=DEFAULT_RERANK_MODEL,
              filter_mode="hard", soft_boost=0.15, guard_min=None,
-             matched_parents=None, pin_entities=None, min_rel=0.0):
+             matched_parents=None, pin_entities=None, min_rel=0.0,
+             allow_embed_mismatch=False):
     """Hybrid vector + FTS5 retrieval, RRF-fused, optionally cross-encoder
     reranked -- plus (REVIEW_FINDINGS G1/G2/G3) deterministic entity pinning,
     balanced multi-entity comparisons, and relevance-floor adaptive packing.
@@ -1807,8 +2297,10 @@ def retrieve(con, query, k=4, pool=20, embed_model=DEFAULT_EMBED_MODEL, rrf_k=60
     restrict = (mode == "hard")
 
     # --- vector side ---
-    _check_embed_model(con, embed_model)  # REVIEW_FINDINGS I7c
+    _check_embed_model(con, embed_model, allow_embed_mismatch)  # REVIEW_FINDINGS I7c
     qvec = embed([query], embed_model)[0]
+    _check_embed_model(con, embed_model, allow_embed_mismatch,
+                       query_dim=np.asarray(qvec).shape[-1])
     all_rowids, all_matrix = cache["rowids"], cache["matrix"]
     if all_rowids.size == 0:
         return []
@@ -2457,6 +2949,119 @@ def unmatched_designations(query, aliases):
     if match_entities(query, aliases):
         return []
     return found
+
+
+# The alphabetic run immediately preceding the numeric part of a designation is
+# its family stem: "AN/APG-77" -> "apg", "AIM-120" -> "aim", "S-400" -> "s". A
+# .search (not match) so an "AN/" prefix or other lead-in doesn't hide the stem.
+_FAMILY_STEM_RE = re.compile(r"([A-Za-z]+)[- ]?\d")
+
+
+def _family_stem(alias):
+    m = _FAMILY_STEM_RE.search(alias or "")
+    return m.group(1).lower() if m else None
+
+
+def designator_families(aliases):
+    """Group parent rids into designator FAMILIES keyed by the alphabetic stem
+    that precedes a numeric suffix ("AN/APG-77", "AN/APG-81" -> family "apg").
+    Aliases with no <letters><number> shape (plain names like "NASAMS", full
+    titles) contribute no family. Pure (no db), like match_entities, so it's
+    testable against a synthetic alias table.
+
+    >>> fams = designator_families({"an/apg-77": ["1003"], "an/apg-81": ["1009"],
+    ...                             "nasams": ["1021"]})
+    >>> sorted(fams["apg"])
+    ['1003', '1009']
+    >>> "nasams" in fams
+    False
+    """
+    fams = {}
+    for alias, rids in (aliases or {}).items():
+        stem = _family_stem(alias)
+        if not stem:
+            continue
+        fams.setdefault(stem, set()).update(rids)
+    return fams
+
+
+def ambiguous_family(query, aliases, threshold):
+    """A BARE family reference in `query` that resolves to more than `threshold`
+    distinct records and names no specific member. Returns (STEM, sorted_rids)
+    for the largest such family, or None.
+
+    "Bare" = the (uppercase) stem appears as a whole word NOT immediately
+    followed by a number, so "the APG radar" triggers but "APG-77" and "compare
+    APG-77 and APG-81" do not -- those name specific members and are handled by
+    match_entities pinning. Matching is deliberately case-SENSITIVE on the
+    uppercase designator form: military designators are written in caps ("APG",
+    "AIM", "S"), so this separates the designator from the identical English
+    word ("the aim of ..."). The cost is that a fully lower-cased ambiguous
+    reference ("the apg radar") won't trigger and simply falls back to top-k
+    retrieval -- a safe degradation, not a wrong answer.
+
+    >>> al = {f"an/apg-{i}": [str(1100 + i)] for i in range(30)}
+    >>> stem, rids = ambiguous_family("Tell me about the APG radar", al, 8)
+    >>> stem, len(rids)
+    ('APG', 30)
+    >>> ambiguous_family("What is the AN/APG-77 detection range?", al, 8) is None
+    True
+    >>> ambiguous_family("the apg radar", al, 8) is None   # lower-case: no trigger
+    True
+    """
+    if not query or not aliases:
+        return None
+    best = None
+    for stem, rids in designator_families(aliases).items():
+        if len(rids) <= threshold:
+            continue
+        pat = re.compile(r"\b" + re.escape(stem.upper()) + r"\b(?![\s-]*\d)")
+        if pat.search(query) and (best is None or len(rids) > len(best[1])):
+            best = (stem.upper(), sorted(rids))
+    return best
+
+
+def disambiguation_reply(stem, members, list_limit=12):
+    """Deterministic "which one did you mean" reply (no LLM call), given a
+    family `stem` and `members` as a display-ordered list of (rid, title).
+    Lists up to `list_limit` members, then "and N more"."""
+    n = len(members)
+    shown = members[:list_limit]
+    listed = "; ".join(f"{title} [{rid}]" for rid, title in shown)
+    more = f"; and {n - len(shown)} more" if n > len(shown) else ""
+    return (f'Your question matches {n} records in the "{stem}" family, which '
+            f"is too many to answer as one. Did you mean one of: {listed}{more}? "
+            f"Please ask again naming the specific designation.")
+
+
+def disambiguation_answer(con, query, aliases=None, threshold=None):
+    """Deterministic "too many matches -- which one?" short-circuit, a sibling
+    to direct_parameter_answer. Fires when the query is a bare reference to a
+    designator family (e.g. "the APG radar") that resolves to more than
+    `threshold` records: retrieval would otherwise return an arbitrary k of them
+    with no signal that the true set was far larger (see REVIEW_FINDINGS R3).
+    Returns {reply, stem, count, members:[{rid,title}]} or None.
+    """
+    aliases = aliases if aliases is not None else load_aliases(con)
+    if threshold is None:
+        threshold = DEFAULTS["disambiguation_threshold"]
+    hit = ambiguous_family(query, aliases, threshold)
+    if not hit:
+        return None
+    stem, member_rids = hit
+    placeholders = ",".join("?" * len(member_rids))
+    rows = con.execute(
+        f"SELECT parent_rid, title FROM record_params WHERE parent_rid IN ({placeholders})",
+        member_rids).fetchall()
+    title_of = {r[0]: r[1] for r in rows}
+    members = sorted(((rid, title_of.get(rid, str(rid))) for rid in member_rids),
+                     key=lambda rt: (rt[1] or "").lower())
+    return {
+        "reply": disambiguation_reply(stem, members),
+        "stem": stem,
+        "count": len(member_rids),
+        "members": [{"rid": r, "title": t} for r, t in members],
+    }
 
 
 def is_analytic_query(query, clean_filter, aliases=None):
@@ -3339,6 +3944,14 @@ DEFAULTS = {
     "field_select_k": 15,
     "min_rel": 0.0,
     "filter_model": "mistral-small",
+    "allow_embed_mismatch": False,
+    # Above this many records resolving from a single BARE designator-family
+    # reference ("the APG radar" when the corpus holds dozens of AN/APG-xx
+    # variants), answer() short-circuits to a disambiguation reply instead of
+    # returning an arbitrary k passages as if they were the whole set. ~2x the
+    # default k: a family with more members than retrieval can representatively
+    # show. See disambiguation_answer / ambiguous_family.
+    "disambiguation_threshold": 8,
 }
 
 
@@ -3630,7 +4243,10 @@ def answer(db_path, query, backend, model=None, base_url=None,
            filter_max_fields=DEFAULTS["filter_max_fields"],
            filter_mode=DEFAULTS["filter_mode"], field_select=DEFAULTS["field_select"],
            field_select_k=DEFAULTS["field_select_k"], min_rel=DEFAULTS["min_rel"],
-           filter_model=None, field_aliases=None):
+           filter_model=None, field_aliases=None,
+           allow_embed_mismatch=DEFAULTS["allow_embed_mismatch"],
+           disambiguation_threshold=DEFAULTS["disambiguation_threshold"],
+           _con=None, prepare_only=False):
     """filters: an explicit filter dict (from UI/caller).
     auto_filter: if True and no explicit filters, ask the model to derive one.
     two_pass: use the broad-category-then-detail extractor (extract_filter_2pass).
@@ -3675,20 +4291,69 @@ def answer(db_path, query, backend, model=None, base_url=None,
     Returns (reply, contexts, filter_info) -- filter_info carries the one-hop
     'related' block (REVIEW_FINDINGS I3/H4e) when the query names linked
     entities, so callers/UI can surface it alongside the digest/table."""
-    con = connect(db_path)
+    con = _con if _con is not None else connect_readonly(db_path)
     catalogue = load_catalogue(con)
     aliases = load_aliases(con)
     field_alias_map = load_field_aliases(field_aliases)
     filter_info = {"applied": {}, "errors": [], "source": None, "fell_back": False,
                   "extraction": None}
+    plan = build_query_plan(
+        con, query, catalogue=catalogue, aliases=aliases, filters=filters,
+        field_aliases=field_alias_map)
+    filter_info["plan"] = plan
+    early_missing = unmatched_designations(query, aliases)
+    if early_missing:
+        filter_info["unknown_designations"] = early_missing
+        filter_info["plan"]["stop_reason"] = "unknown_designation"
+        names = ", ".join(early_missing)
+        return (f"No matching record ID or alias was found for {names}. "
+                "I don't have evidence for that designation in the indexed catalogue.",
+                [], filter_info)
+    early_disamb = disambiguation_answer(
+        con, query, aliases=aliases, threshold=disambiguation_threshold)
+    if early_disamb:
+        filter_info["disambiguation"] = {
+            "stem": early_disamb["stem"], "count": early_disamb["count"],
+            "members": early_disamb["members"],
+        }
+        filter_info["plan"]["stop_reason"] = "clarification_required"
+        return early_disamb["reply"], [], filter_info
+    if filters is None and plan.get("route") == "exact_entity_field" \
+            and plan.get("complete"):
+        early_direct = direct_parameter_answer(
+            con, query, catalogue=catalogue, aliases=aliases,
+            field_aliases=field_alias_map)
+        if early_direct:
+            filter_info["direct_answer"] = {
+                "rid": early_direct["rid"], "field": early_direct["field"],
+                "value": early_direct["value"],
+            }
+            filter_info["plan"]["stop_reason"] = "deterministic_reply"
+            return early_direct["reply"], [], filter_info
+    subjective = [x for x in plan.get("unresolved_constraints") or []
+                  if x.get("type") == "subjective_criterion"]
+    if subjective and filters is None:
+        mention = subjective[0].get("mention") or "that criterion"
+        filter_info["plan"]["stop_reason"] = "clarification_required"
+        filter_info["clarification"] = {
+            "type": "criterion", "mention": mention}
+        return (f"What should '{mention}' mean for this comparison—for example "
+                "service-entry year, range, cost, or another catalogue field?",
+                [], filter_info)
 
+    deterministic_filter = plan.get("deterministic_filter") or {}
     raw_filter = filters
+    if raw_filter is None and deterministic_filter and plan.get("complete"):
+        raw_filter = deterministic_filter
+        filter_info["source"] = "deterministic"
+        filter_info["extraction"] = "not_needed"
     if raw_filter is None and auto_filter and catalogue:
         fmodel = filter_model or model
         if two_pass:
-            raw_filter, tp_info = extract_filter_2pass(
+            model_filter, tp_info = extract_filter_2pass(
                 query, catalogue, con, backend, fmodel, base_url,
                 min_count=filter_min_count)
+            raw_filter = _merge_raw_filters(deterministic_filter, model_filter)
             filter_info["two_pass"] = tp_info
             filter_info["extraction"] = tp_info.get("extraction", "empty")
         else:
@@ -3698,18 +4363,27 @@ def answer(db_path, query, backend, model=None, base_url=None,
                 always = cat_mod.partition_fields(catalogue, min_count=filter_min_count)
                 only_fields = select_fields(con, query, catalogue,
                                             k=field_select_k, always=always)
-            raw_filter, ex_info = extract_filter_ex(
+            model_filter, ex_info = extract_filter_ex(
                 query, catalogue, backend, fmodel, base_url,
                 only_fields=only_fields,
                 min_count=filter_min_count, max_fields=filter_max_fields)
+            raw_filter = _merge_raw_filters(deterministic_filter, model_filter)
             filter_info["extraction"] = ex_info["status"]
-        filter_info["source"] = "model"
-    elif raw_filter is not None:
+        filter_info["source"] = (
+            "deterministic+model" if deterministic_filter else "model")
+    elif raw_filter is None and deterministic_filter:
+        # A partial deterministic interpretation is useful diagnostics, but it
+        # must not silently narrow retrieval when unresolved clauses remain.
+        filter_info["source"] = "partial_deterministic"
+        filter_info["extraction"] = "fallback_required"
+    elif raw_filter is not None and filter_info["source"] is None:
         filter_info["source"] = "explicit"
 
     clean = {}
     if raw_filter:
         clean, errors = validate_filter(raw_filter, catalogue)
+        if plan.get("deterministic_filter_errors"):
+            errors = list(errors) + list(plan["deterministic_filter_errors"])
         filter_info["applied"] = clean
         filter_info["errors"] = errors
         # how many records actually match (before the top-k cap), so a large
@@ -3728,7 +4402,13 @@ def answer(db_path, query, backend, model=None, base_url=None,
     # count), so callers/UI can see whether the filter gated or just topped up.
     eff_mode = filter_mode
     if clean and filter_mode == "auto":
-        eff_mode = "hard" if (filter_info.get("matched_records") or 0) > k else "fill"
+        deterministic_analytic = (
+            filter_info.get("source") == "deterministic"
+            and plan.get("complete")
+            and plan.get("route") == "analytic_filter")
+        eff_mode = ("hard" if deterministic_analytic
+                    or (filter_info.get("matched_records") or 0) > k
+                    else "fill")
     if clean:
         filter_info["filter_mode"] = eff_mode
 
@@ -3740,23 +4420,73 @@ def answer(db_path, query, backend, model=None, base_url=None,
     missing_designations = unmatched_designations(query, aliases)
     if missing_designations:
         filter_info["unknown_designations"] = missing_designations
+        filter_info["plan"]["stop_reason"] = "unknown_designation"
         names = ", ".join(missing_designations)
         return (f"No matching record ID or alias was found for {names}. "
                 "I don't have evidence for that designation in the indexed catalogue.",
                 [], filter_info)
 
+    # Too-many-matches guard (REVIEW_FINDINGS R3): run before retrieval so the
+    # clarification path makes no embedding or hosted-model call.
+    disamb = disambiguation_answer(
+        con, query, aliases=aliases, threshold=disambiguation_threshold)
+    if disamb:
+        filter_info["disambiguation"] = {
+            "stem": disamb["stem"], "count": disamb["count"],
+            "members": disamb["members"],
+        }
+        filter_info["plan"]["stop_reason"] = "clarification_required"
+        return disamb["reply"], [], filter_info
+
+    if (plan.get("ambiguities") and filters is None and not auto_filter):
+        candidates = []
+        for ambiguity in plan["ambiguities"]:
+            candidates.extend(ambiguity.get("candidates") or [])
+        choices = ", ".join(dict.fromkeys(map(str, candidates)))
+        filter_info["plan"]["stop_reason"] = "clarification_required"
+        filter_info["clarification"] = {
+            "type": "field", "candidates": list(dict.fromkeys(candidates))}
+        return (f"I found more than one possible field for that question"
+                f"{': ' + choices if choices else ''}. Please name the field "
+                f"you want me to use.", [], filter_info)
+
+    # Exact named-record + field lookup: answer directly from structured data
+    # before embeddings. If an active hard filter excludes the named record, do
+    # not bypass it; let the normal retrieval/fallback path explain the result.
+    direct = direct_parameter_answer(
+        con, query, catalogue=catalogue, aliases=aliases,
+        field_aliases=field_alias_map)
+    if direct:
+        allowed = True
+        if clean and eff_mode == "hard":
+            allowed = direct["rid"] in (_eligible_parents(con, clean) or set())
+        if allowed:
+            filter_info["direct_answer"] = {
+                "rid": direct["rid"], "field": direct["field"],
+                "value": direct["value"],
+            }
+            filter_info["plan"]["route"] = "exact_entity_field"
+            filter_info["plan"]["stop_reason"] = "deterministic_reply"
+            return direct["reply"], [], filter_info
+
+    # Only vector-backed routes require embedder provenance. Deterministic
+    # replies above remain usable even when an unrelated vector index needs
+    # re-ingestion.
+    _check_embed_model(con, embed_model, allow_embed_mismatch)
     contexts = retrieve(con, query, k=k, embed_model=embed_model,
                         clean_filter=clean or None,
                         filter_mode=eff_mode,
                         matched_parents=filter_info.get("matched_records"),
-                        pin_entities=pin, min_rel=min_rel)
+                        pin_entities=pin, min_rel=min_rel,
+                        allow_embed_mismatch=allow_embed_mismatch)
 
     # Empty-set fallback: if a filter excluded everything, retry unfiltered
     # rather than misleadingly answering "no information".
     if not contexts and clean:
         filter_info["fell_back"] = True
         contexts = retrieve(con, query, k=k, embed_model=embed_model,
-                            pin_entities=pin, min_rel=min_rel)
+                            pin_entities=pin, min_rel=min_rel,
+                            allow_embed_mismatch=allow_embed_mismatch)
 
     if not contexts:
         return "No records indexed.", [], filter_info
@@ -3788,16 +4518,7 @@ def answer(db_path, query, backend, model=None, base_url=None,
     relations = relation_evidence(con, query, pin) if pin else []
     if relations:
         filter_info["relation_evidence"] = relations
-
-    direct = direct_parameter_answer(
-        con, query, catalogue=catalogue, aliases=aliases,
-        field_aliases=field_alias_map)
-    if direct:
-        filter_info["direct_answer"] = {
-            "rid": direct["rid"], "field": direct["field"],
-            "value": direct["value"],
-        }
-        return direct["reply"], contexts, filter_info
+        filter_info["plan"]["route"] = "relation"
 
     # Represent the fuller matched set beyond the top-k passages. Analytic
     # questions get a structured table (exact fields incl. descriptions);
@@ -3813,6 +4534,10 @@ def answer(db_path, query, backend, model=None, base_url=None,
                 parent_rids=pin if pinned_compare else None)
             if table:
                 filter_info["table"] = table
+                if pinned_compare:
+                    filter_info["plan"]["route"] = "comparison"
+                elif clean:
+                    filter_info["plan"]["route"] = "analytic_filter"
         if not table and matched and matched > len(contexts):
             # exclude both the shown passages AND the related block, so a record
             # isn't listed in two supplementary sections at once.
@@ -3820,11 +4545,53 @@ def answer(db_path, query, backend, model=None, base_url=None,
                                    exclude=shown | {r["rid"] for r in related})
             if digest:
                 filter_info["digest"] = digest
+    filter_info["plan"].setdefault(
+        "stop_reason",
+        "table_complete" if table else
+        "fallback_limit" if filter_info.get("fell_back") else
+        "retrieval_complete")
+
+    if prepare_only:
+        prompt = build_prompt(
+            query, contexts, digest=digest, table=table, related=related,
+            relations=relations, max_context_tokens=max_context_tokens)
+        filter_info["_prepared"] = {
+            "prompt": prompt, "table": table, "digest": digest,
+            "related": related, "relations": relations,
+            "system_prompt": system_prompt_for(table),
+        }
+        return None, contexts, filter_info
 
     reply = generate(query, contexts, backend, model, base_url,
                      digest=digest, table=table, related=related,
                      relations=relations, max_context_tokens=max_context_tokens)
     return reply, contexts, filter_info
+
+
+def prepare_answer(con, query, backend="openrouter", model=None, base_url=None,
+                   **kwargs):
+    """Shared query orchestration for CLI, bench, and eval.
+
+    Returns a serializable preparation envelope without calling the answer
+    model. Deterministic/clarification routes carry `deterministic_reply`;
+    generative routes carry the exact prompt/evidence sections to use.
+    """
+    reply, contexts, info = answer(
+        None, query, backend, model=model, base_url=base_url,
+        _con=con, prepare_only=True, **kwargs)
+    prepared = info.pop("_prepared", {})
+    return {
+        "query": query,
+        "deterministic_reply": reply,
+        "contexts": contexts,
+        "filter_info": info,
+        "prompt": prepared.get("prompt", ""),
+        "system_prompt": prepared.get("system_prompt", system_prompt_for(None)),
+        "table": prepared.get("table"),
+        "digest": prepared.get("digest") or [],
+        "related": prepared.get("related") or [],
+        "relations": prepared.get("relations") or [],
+    }
 
 
 # --------------------------------------------------------------------------- #
@@ -3840,7 +4607,7 @@ def answer(db_path, query, backend, model=None, base_url=None,
 
 
 def serve(db_path, port=8099, k=4, max_context_tokens=None, open_browser=True,
-          min_rel=None, host="127.0.0.1"):
+          min_rel=None, host="127.0.0.1", allow_embed_mismatch=False):
     # Imported lazily to avoid a circular import at module load (compare_server
     # imports ragkit) and to keep flask an optional dependency of the CLI.
     # host (REVIEW_FINDINGS F1): local-only by default; see
@@ -3849,7 +4616,8 @@ def serve(db_path, port=8099, k=4, max_context_tokens=None, open_browser=True,
     compare_server.run_server(db_path, port=port, k=k,
                               max_context_tokens=max_context_tokens,
                               open_browser=open_browser, min_rel=min_rel,
-                              host=host)
+                              host=host,
+                              allow_embed_mismatch=allow_embed_mismatch)
 
 
 # --------------------------------------------------------------------------- #
@@ -3928,6 +4696,10 @@ def main():
                          "instead of padded into k (REVIEW_FINDINGS G3); "
                          f"default {DEFAULTS['min_rel']} preserves the old "
                          "always-fill-k behaviour")
+    pa.add_argument("--allow-embed-mismatch", action="store_true",
+                    default=DEFAULTS["allow_embed_mismatch"],
+                    help="unsafe: allow querying an index built with a different "
+                         "embedding model name (dimension mismatches still fail)")
 
     ps = sub.add_parser("serve", help="launch the model-comparison web bench")
     ps.add_argument("--db", default="rag_test.db")
@@ -3946,6 +4718,10 @@ def main():
                          "127.0.0.1 (local-only); pass 0.0.0.0 to expose on "
                          "the LAN (and your OpenRouter spend with it) -- "
                          "prints a warning when doing so")
+    ps.add_argument("--allow-embed-mismatch", action="store_true",
+                    default=DEFAULTS["allow_embed_mismatch"],
+                    help="unsafe: allow querying an index built with a different "
+                         "embedding model name (dimension mismatches still fail)")
 
     # `eval` subcommand (REVIEW_FINDINGS F2): the flag set lives in eval.py's
     # own build_arg_parser (shared with `python eval.py` directly) so the two
@@ -3961,22 +4737,35 @@ def main():
 
     a = p.parse_args()
     if a.cmd == "ingest":
-        ingest(a.db, a.src, a.embed_model)
+        try:
+            ingest(a.db, a.src, a.embed_model)
+        except IngestError as exc:
+            print(str(exc), file=sys.stderr)
+            sys.exit(1)
     elif a.cmd == "ask":
         if a.show_catalogue:
-            con = connect(a.db)
+            try:
+                con = connect_readonly(a.db)
+            except FileNotFoundError as exc:
+                print(str(exc), file=sys.stderr)
+                sys.exit(1)
             print(cat_mod.catalogue_to_prompt(load_catalogue(con)))
             return
         explicit = json.loads(a.filter) if a.filter else None
-        reply, ctx, finfo = answer(
-            a.db, a.query, a.backend, a.model, a.base_url, a.embed_model, a.k,
-            filters=explicit, auto_filter=a.auto_filter,
-            max_context_tokens=a.max_context_tokens or None,  # 0 -> uncapped
-            two_pass=a.two_pass, filter_min_count=a.filter_min_count,
-            filter_max_fields=a.filter_max_fields, filter_mode=a.filter_mode,
-            field_select=a.field_select, field_select_k=a.field_select_k,
-            min_rel=a.min_rel, filter_model=a.filter_model,
-            field_aliases=a.field_aliases)
+        try:
+            reply, ctx, finfo = answer(
+                a.db, a.query, a.backend, a.model, a.base_url, a.embed_model, a.k,
+                filters=explicit, auto_filter=a.auto_filter,
+                max_context_tokens=a.max_context_tokens or None,  # 0 -> uncapped
+                two_pass=a.two_pass, filter_min_count=a.filter_min_count,
+                filter_max_fields=a.filter_max_fields, filter_mode=a.filter_mode,
+                field_select=a.field_select, field_select_k=a.field_select_k,
+                min_rel=a.min_rel, filter_model=a.filter_model,
+                field_aliases=a.field_aliases,
+                allow_embed_mismatch=a.allow_embed_mismatch)
+        except (FileNotFoundError, EmbedModelMismatchError) as exc:
+            print(str(exc), file=sys.stderr)
+            sys.exit(1)
         print(reply)
         print("\n--- retrieved ---", file=sys.stderr)
         for c in ctx:
@@ -3998,16 +4787,22 @@ def main():
     elif a.cmd == "serve":
         serve(a.db, port=a.port, k=a.k,
               max_context_tokens=a.max_context_tokens or None,  # 0 -> uncapped
-              open_browser=not a.no_open, min_rel=a.min_rel, host=a.host)
+              open_browser=not a.no_open, min_rel=a.min_rel, host=a.host,
+              allow_embed_mismatch=a.allow_embed_mismatch)
     elif a.cmd == "eval":
-        _report, ok = eval_mod.run_eval(
-            db=a.db, eval_set=a.eval_set, k=a.k, min_rel=a.min_rel,
-            max_context_tokens=a.max_context_tokens, backend=a.backend,
-            model=a.model, base_url=a.base_url, filter_model=a.filter_model,
-            json_out=a.json_out, limit=a.limit,
-            case_ids=getattr(a, "case_ids", None),
-            classes=getattr(a, "classes", None),
-            checkpoint_jsonl=getattr(a, "checkpoint_jsonl", None))
+        try:
+            _report, ok = eval_mod.run_eval(
+                db=a.db, eval_set=a.eval_set, k=a.k, min_rel=a.min_rel,
+                max_context_tokens=a.max_context_tokens, backend=a.backend,
+                model=a.model, base_url=a.base_url, filter_model=a.filter_model,
+                json_out=a.json_out, limit=a.limit,
+                case_ids=getattr(a, "case_ids", None),
+                classes=getattr(a, "classes", None),
+                checkpoint_jsonl=getattr(a, "checkpoint_jsonl", None),
+                allow_embed_mismatch=getattr(a, "allow_embed_mismatch", False))
+        except (FileNotFoundError, EmbedModelMismatchError) as exc:
+            print(str(exc), file=sys.stderr)
+            sys.exit(1)
         sys.exit(0 if ok else 1)
 
 
