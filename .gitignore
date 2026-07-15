@@ -65,3 +65,10 @@ Thumbs.db
 
 # generated large-evaluation report
 large_online_query_report.md
+
+# keep user-facing setup and usage documentation
+!USER_GUIDE.md
+!SETUP.md
+!SETUP_GUIDE.md
+!DEPLOYMENT_GUIDE.md
+!**/README.md
