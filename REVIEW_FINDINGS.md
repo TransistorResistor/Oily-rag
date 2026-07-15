@@ -618,3 +618,119 @@ Review interaction: this extends F2. The existing eval harness is good enough fo
 6. **Retrieval caching + fields de-duplication** (D1 + B2) — in-memory embedding matrix and per-record fields; buys headroom to grow the corpus 10–50× without an architecture change.
 
 Quick wins (do anytime): F1 bind localhost, E2 unify defaults, E1 single model registry, D3 truncation bug, F3 rename `catalogue.py`, F4 `.gitignore`.
+
+## R. Input-form eval coverage: robustness class + enrichment corpus 3 (added 2026-07-09)
+
+**Motivation.** Every prior eval case — RAG `eval_set.json` and enrichment `gold*.json` alike — feeds *clean* input: grammatical queries, correct spelling, full proper nouns, one intent, canonical units; and well-formed extracted claims. That measures breadth of *answer/proposal type* but not breadth of *input form*. A regression in messy-input handling would pass every gate green. These additions close that blind spot. They are deliberately authored to *measure* known-fragile paths, so some cases are expected to fail on first run — that is the finding, not a defect in the case.
+
+### R1. RAG `robustness` class (10 cases, `eval_set.json`)
+New `class: "robustness"`; the harness already breaks down per-class and supports `--class robustness`. Each case reuses a verified target rid from its clean analogue, so the free offline retrieval hit-rate directly measures whether degraded input still retrieves the right record.
+
+| id | probe | target |
+|----|-------|--------|
+| robust-01 | misspelling / typos (`Waht is teh AIM-120 amraam`) | 1002 |
+| robust-02 | telegraphic, no punctuation, lowercase (`s-400 max range`) | 1010 |
+| robust-03 | lowercase + missing hyphen (`su57 felon`) | 1005 |
+| robust-04 | filter bound in a non-canonical unit (55 nm ≈ 102 km) — exercises `units.py` in `validate_filter` | 1010,1011 |
+| robust-05 | false premise: fictional attribute (F-22 "laser cannon") — `expect_refusal` | 1001 |
+| robust-06 | false premise: wrong-state fact (S-400 "retirement date") — `expect_refusal` | 1010 |
+| robust-07 | underspecified referent: partial designator matching two records ("the APG radar") | 1003,1009 |
+| robust-08 | closed interval filter `[2003,2010]` (§L) — measures whether closed ranges work | 1001,1006 |
+| robust-09 | compound / multi-intent (range **and** operators in one turn) | 1010 |
+| robust-10 | meta / corpus-scope question — empty target, must describe not fabricate (§K) | — |
+
+**Harness change (`eval.py`):** `expect_refusal: true` on a case applies the existing `_NEGATIVE_KEYWORDS` "didn't fabricate" check even though the record *is* present (so retrieval is still scored positive). Folds into the same negative-pass-rate metric; no new plumbing. Requires `--backend` to score the refusal itself; retrieval/filter stages are free/offline.
+
+### R2. Enrichment corpus 3 (`gen_testdocs3.py` → `testdocs3/` + `gold3.json`, `evaluate3.py`)
+Six documents stressing the *shape of the incoming claim* rather than table structure (that is corpus 2/2b). All anchors verified against `test_records/` on 2026-07-09. Four `expect_zero` traps ("must stay silent") + two positive controls so the corpus can't pass by being globally silent:
+
+- **d3_new_entity** — clean figure for a non-catalogued system (S-500 Prometheus): must park unlinked, not force-map onto a neighbour (§N).
+- **d3_negation** — negated restatement ("does not exceed 50 km"): must not ingest as an affirmative claim.
+- **d3_temporal** — dated/superseded figure ("As of 2014 … 150 km" vs S-300's 200 km): gold encodes the *desired* behaviour (surface a **conflict**); if a hedge-detector parks it, that discrepancy-suppression is the finding.
+- **d3_intradoc** — same doc, two values for one absent field (NASAMS max altitude prose 21 km vs table 16 km): internally inconsistent → park.
+- **d3_ocr_garbled** — OCR glyph corruption (`3OO`, `l0`): unparseable → drop/park; safety-netted so even a lenient repair dedups to nothing.
+- **d3_valid_control** — clean gap-fill (S-300 max altitude 27 km): the positive control.
+
+`evaluate3.py` reuses `evaluate2b`'s scorer (`_num`/`_doc_id`/`gold_proposals`/`match`) by import rather than a fourth copy — matching logic stays in one place. Run: `python gen_testdocs3.py` once, then `python enrich.py --db run3.db run --folder testdocs3 --note corpus3` and `python evaluate3.py proposals_run3.json`.
+
+### R3. Too-many-matches disambiguation guard (IMPLEMENTED 2026-07-09)
+The scaling failure robust-07 was designed to expose: with a crowded corpus, a **bare** designator-family reference ("the APG radar") resolves — lexically — to every member of the family, but `retrieve()` hard-caps output at `k` (default 4). On today's 2-member APG corpus that is harmless; at 30 members the model silently receives an arbitrary 4 with *no signal* the true set was far larger, and answers as if those 4 were complete (the passage loop breaks at `len(out) >= k`; `related`/pin paths don't change the count). Confirmed by tracing `retrieve()`.
+
+**Fix (deterministic, no LLM call — sibling to `direct_parameter_answer`):**
+- `designator_families(aliases)` groups parent rids by the alphabetic stem before a numeric suffix (`AN/APG-77`,`AN/APG-81` → family `apg`); plain names (`NASAMS`) contribute none. Pure/testable.
+- `ambiguous_family(query, aliases, threshold)` fires only on a **bare** family reference — the *uppercase* stem as a whole word **not** followed by a number — so "the APG radar" triggers but "APG-77" and "compare APG-77 and APG-81" do not (those pin specific members). Case-sensitivity on the uppercase designator form is the guard that separates the designator `AIM` from the English word "aim"; a fully lower-cased ambiguous reference simply falls back to top-k (safe degradation, not a wrong answer).
+- `disambiguation_answer(con, query, …)` resolves member titles from `record_params` and returns a deterministic "matches N records in the *APG* family … did you mean: … ? Please ask again naming the specific designation" reply (lists up to 12, then "and N more").
+- Wired into `ragkit.answer()` (short-circuits before `direct_parameter_answer`; `filter_info["disambiguation"]` carries stem/count/members) and `eval.run_llm_stages` (same order, no drift); `compare_server.build_context` surfaces a detection-only `filter_info["disambiguation"]` flag for the bench preview.
+- Threshold = `DEFAULTS["disambiguation_threshold"]` = **8** (~2× `k`). Verified inert on the current corpus (largest real family is `n` at 6 < 8), so existing behaviour is byte-for-byte preserved until a family actually gets crowded.
+
+**Gate:** `test_disambiguation.py` (7 checks + 8 doctests) over a synthetic 30-member APG corpus — the >threshold path can't be exercised on the real records — covering: family grouping, bare-trigger, specific-designator/comparison non-trigger, below-threshold non-trigger, the case-sensitive English-word guard, reply capping, and an end-to-end `disambiguation_answer` against an in-memory `record_params` table.
+
+**Status:** generators + gold + scorers land green structurally (offline RAG retrieval scored; `evaluate3` smoke-verified). The LLM-dependent scores (RAG `expect_refusal` refusal rate, filter accuracy on robust-04/08; enrichment corpus-3 P/R) are opt-in `--backend` runs and are the intended next measurement pass — expect robust-08 (closed intervals) and the negation/temporal/intra-doc traps to reveal real gaps.
+
+## S. Data-safety work package (IMPLEMENTED 2026-07-09, via Codex)
+
+Four items from `CODEX-IDd-TODO.md` shipped as one package — theme: *every run is safe to re-run*. Planned/verified here; implemented by Codex; all gates re-run independently after handoff.
+
+- **S1 (P0.1) — staged atomic ingest.** `ragkit.ingest()` now (1) loads/normalizes ALL source records via `_load_records_for_ingest` and raises `IngestError` on a missing/empty/unparseable source *before touching the target*; (2) builds the full index into a same-directory temp file (`<db>.tmp-*`, `mkstemp`); (3) sanity-checks it (non-zero passage count + `PRAGMA integrity_check`); (4) atomically `os.replace()`s the target (clearing stale WAL/SHM sidecars first). Any failure deletes the temp file and leaves the original byte-identical. CLI surface and summary lines unchanged.
+- **S2 (P0.3) — failed extraction is retryable.** `pipeline.run_batch` now routes both transport exceptions and parser errors (`unparseable JSON` / `no claims array`) to a new append-only `doc_failures` ledger (`state.record_failure`: doc, hash, run, error, 1000-char raw snippet, ts) instead of `record_doc` — so the doc is NOT hash-skipped and retries next run. Failures count into the run's `error_count` and `enrich.py status` now prints `failures=N`.
+- **S3 (P0.4) — report path isolation.** `report.output_names(run_id, db_path)` is the single naming decision: default `enrich_state` DB keeps legacy `proposals.json`/`report_runN.md`; any non-default DB writes ONLY `proposals_<stem>.json` + `report_runN_<stem>.md`. Two scratch DBs whose latest run is both 1 can no longer clobber each other or the tracked demo evidence. `enrich.py run/report` print the actual filenames written.
+- **S4 (P2.12) — read paths can't create an empty DB.** New `ragkit.connect_readonly()` (existence check → URI `mode=rw` open → `records`/`record_params` schema check → `PRAGMA query_only=ON`) used by `ask`, `eval`, and `compare_server` (which also lost its silent fall-back-to-`rag_test.db` behavior — a wrong `--db` now exits 1 with `DB not found or not ingested: <path> — run ragkit.py ingest first` instead of guessing).
+
+**Gates (all green, re-run independently 2026-07-09):** new `test_data_safety.py` (4: empty/missing source preserves DB byte-identical; injected embed failure preserves DB + cleans temp; happy path queryable; readonly missing-DB error creates nothing) and `enrich_demo/test_extraction_failures.py` (5: malformed JSON / missing claims array / transport exception all retryable + ledgered; clean retry lands in `docs_seen`; two non-default DBs produce no legacy-named files). Existing gates unchanged: `test_fixes.py` 5/5, `test_disambiguation.py` 7/7, `test_i3_context.py` 4/4 byte-identical, CLI missing-DB smoke exits 1 with no file created. Tracked evidence (`proposals.json`, `report_run1/2.md`) untouched.
+
+**Deliberately deferred:** P0.2 (per-record unit canonicalization) — it changes stored values and filter semantics, so it needs its own package with an eval re-baseline. P1.9 was found already fixed in the tree (`catalogue.py` uses `math.ceil(MAJORITY_MIN * n)`).
+
+## T. Index-provenance work package (IMPLEMENTED 2026-07-10, via Codex)
+
+TODO items 6 + 7 shipped as one package — theme: *the index you query is the index you think it is*. Item 2 (P0.2 unit canonicalization) was scoped in but found already implemented when anchors were re-verified before dispatch: `ragkit._canonicalize_stored_fields()` converts stored values at ingest, `validate_filter` converts filter bounds with an `_converted` audit trail, and `test_rag_effectiveness_fixes.py` covers the mixed `m`/`mm` Diameter case — so the package reduced to 6 + 7.
+
+- **T1 (item 6) — embed-model mismatch fails fast.** `_check_embed_model()` now raises `ragkit.EmbedModelMismatchError` (one-line actionable message) when the index's recorded embed model differs from the query-time model, instead of warning and proceeding with cross-model cosine scores. Explicit unsafe override: `DEFAULTS["allow_embed_mismatch"]` + `--allow-embed-mismatch` on `ask`/`eval`/`serve`/`compare_server.py`, which restores the old once-per-(db,pair) warning. A **dimension** mismatch (stored dim vs. query embedder dim) raises even with the override — cross-dim comparison is broken, not just meaningless. Provenance-less DBs (e.g. `rag_test.db`) keep working but print a once-per-db "cannot verify; re-ingest to record provenance" diagnostic. `ask`/`eval` CLIs catch the exception and exit 1, same pattern as `IngestError`.
+- **T2 (item 7) — compare_server caches roll over on DB replacement.** One coordinated version key `(abs path, mtime)` via `compare_server._db_version_key()` (reuses `ragkit._cacheable`/`_cache_key`): `get_conn()` closes+reopens the thread-local connection when the file's mtime changes (a replaced file otherwise keeps being read through the old Windows handle) and calls `ragkit.invalidate_caches(db)` so all layers roll together; `get_catalogue()`/`get_aliases()` are keyed by the same version with old versions evicted under their locks. Non-cacheable paths (`:memory:`) skip caching entirely. This closes the gap the S-package's atomic `os.replace()` ingest opened: swapping a DB under a live server is now a supported path end-to-end.
+
+**Gates (all green, re-run independently 2026-07-10):** new `test_provenance_and_caches.py` (5, offline stubbed embedder: name mismatch raises; override warns + retrieves; doctored dim mismatch raises even with override; provenance-less DB warns + retrieves; compare_server connection/catalogue/alias caches rebuild after re-ingest to the same path). Regressions: `test_data_safety.py` 4/4, `test_rag_effectiveness_fixes.py` all-pass, `test_disambiguation.py` 7/7, `test_i3_context.py` 4/4, `enrich_demo/test_fixes.py` 5/5, `enrich_demo/test_extraction_failures.py` 5/5. (Codex initially delivered the new tests as a duplicate `test_index_provenance.py` alongside a byte-equivalent pre-existing `test_provenance_and_caches.py`; the duplicate was deleted after both ran green.)
+
+**Still open from the queue:** item 5 (extraction config in enrichment identity), item 8 (token cap: hard cap vs. documented soft target — needs a design decision), item 10 remainder (platform lock/env export), items 11/13.
+
+## U. Schema-unaware question benchmark (measured 2026-07-11)
+
+Thirty natural questions were selected from a broader brainstorm written from the perspective of a user who knows the defence-equipment domain but has not seen the catalogue schema. The sample covers corpus discovery, capability searches, comparisons, component relationships, operators/service, cost, explanatory questions, informal wording, and ambiguous range terminology. It was run against a fresh disposable index built from the current 26 `test_records` records, never the stale 63-record `rag_test.db`.
+
+Artifacts: `brainstorm_eval_set.json` (gold/questions), `brainstorm_eval_offline.json` (offline retrieval), and `brainstorm_mistral_{1,2,3}.json` (three hosted batches). The disposable index is `brainstorm_eval.db`. These are scratch evaluation evidence, not replacements for `eval_set.json` or the tracked demo reports.
+
+### U1. Results
+
+- **Retrieval:** adjusted hit rate **82.8% (24/29 scored questions)**. The harness initially printed 79.3% (23/29), but manual review found one erroneous gold target for active-radar guidance: retrieval correctly returned Derby (`1023`) and 9M96 (`1014`), while the draft gold named unrelated/wrong IDs. The no-target corpus-scope case is excluded from the denominator.
+- **By class, before the gold correction:** comparisons 100%, relations 100%, parametric 100%, scope 100% (one scored + one no-target), analytic 66.7%, robust/informal 66.7%, prose 50%.
+- **Automated answer checks:** **8/10 (80%)** expected-string checks passed. This metric covers only questions with a compact objective answer and must not be read as the overall answer score.
+- **Manual answer-quality estimate:** approximately **72%**, counting fully correct/grounded answers as 1, materially useful but incomplete answers as 0.5, and wrong/evasive answers as 0 across all 30. This is a review estimate, not a harness-produced metric.
+- **Citations:** 28/30 cases had no out-of-context record citation. Two broad list answers triggered citation-verification failures (seven cited RIDs total); at least some appear to be records named from broad structured/context material not admitted to the verifier's allowed-RID set, so verifier coverage and the answers both need inspection rather than treating all seven as proven factual hallucinations.
+- **Prompt budget:** capped and uncapped prompts were identical for all cases; median 876 tokens, maximum 1,243, and 0/30 exceeded the 3,000-token target.
+
+Hosted answers used `mistralai/mistral-small-3.2-24b-instruct`, a configured mid-tier model. An initial Qwen3 14B attempt was abandoned as the benchmark model because a comparison answer consumed the 1,024-token completion allowance mostly as reasoning (`reasoning_tokens=888`) and returned null content with `finish_reason=length`; the harness then aborted the whole batch. Seven earlier Qwen cases completed, but they are not mixed into the reported Mistral answer score.
+
+### U2. What worked
+
+- Named multi-entity comparisons reliably surfaced every required record: F-22/F-35/Su-57, S-300/S-400, NASAMS/SPYDER, and both aircraft radars.
+- First-class/reverse relations worked well: F135 -> F-35, F-35 -> APG-81/F135/weapons, NASAMS -> AMRAAM, and S-400 -> its missile family.
+- Informal named-relation wording such as `does the f35 use the apg81` answered correctly.
+- The system correctly distinguished the S-400's quoted 400 km missile/engagement range from the roughly 340 km 91N6E radar detection range.
+- The compact context budget was ample for this corpus; failures were evidence selection/query-planning problems, not context overflow.
+
+### U3. Failure modes
+
+1. **Corpus-scope questions are answered from top-k samples as if exhaustive.** `What kinds of aircraft and air-defence equipment are covered?` returned four fighters and then claimed no separate air-defence equipment was present, despite the corpus being dominated by missiles/radars/SAM systems. This strengthens K7: scope/meta questions need deterministic catalogue aggregation, not ordinary passage retrieval.
+2. **Comparative adjectives are misclassified as subjective ambiguity.** `cheapest` and `cheaper` caused a clarification asking whether the user meant year/range/cost, even though cost is an obvious catalogue field. `capable of supercruise` similarly caused an irrelevant clarification about year/range/cost. Query planning should map common adjectives/phrases (`cheapest`, `quickest to deploy`, `longest range`, `capable of supercruise`) to candidate fields/capabilities before emitting an unresolved subjective criterion.
+3. **Correct record retrieval does not guarantee the needed parameter reaches the answer.** NASAMS was a retrieval hit for `How quickly can NASAMS be made ready?`, but the answer said the information was unavailable instead of returning the recorded 10-minute deployment time. This is another concrete I3/Q4 instance: recognized entity + field needs authoritative same-record parameter attachment/ordering.
+4. **Broad capability/category boundaries leak.** The BVR-air-combat answer included the 40N6 surface-to-air missile; active-radar-guidance retrieval/answers mixed relevant missile types and omitted AMRAAM; the short-range air-to-air superlative selected AIM-9X at 45 km despite longer candidates in the corpus. System type/category constraints and superlative aggregation need to be deterministic where possible.
+5. **Explanatory paraphrases can miss direct evidence.** `How does an active-radar missile find its target?` failed to retrieve/use the AMRAAM guidance passage and abstained. This is a vocabulary/field-selection miss rather than a lack of corpus evidence.
+6. **Broad list completeness is weak.** Russian-system and India-operator answers were useful but incomplete, and their citations exposed disagreement between the context builder and citation verifier about which structured/list records were admissible.
+7. **Hosted evaluation is checkpointed but not resumable.** `--checkpoint-jsonl` preserves completed rows, but `run_llm_stages` opens it with `"w"` and always restarts from case one. A five-minute timeout left seven usable rows, yet the next run could not resume them. The harness also aborts the entire batch on one provider null-content/error instead of recording a per-case runtime failure and continuing. Q6's checkpointing recommendation is therefore only partly complete.
+
+### U4. Recommended order
+
+1. Deterministic catalogue aggregation for corpus-scope/list-all questions.
+2. Phrase-to-field/capability mapping for schema-unaware comparative language before ambiguity handling.
+3. Stronger authoritative same-record parameter attachment and ordering for entity + field queries.
+4. Deterministic category-constrained superlatives, keeping air-to-air, surface-to-air, radar detection, engagement, and platform ranges distinct.
+5. Make hosted eval JSONL genuinely resumable and catch/report provider failures per case.
+6. Align citation verification's allowed-RID construction with every structured table/digest/list source exposed to generation.

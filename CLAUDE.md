@@ -63,6 +63,11 @@ Corpora 2/2b have their own generator/gold/evaluator (`gen_testdocs2.py`/`gold2.
 ```bash
 "$PY" enrich_demo/test_fixes.py     # 5 targeted robustness tests (state/pipeline/refcat)
 "$PY" test_i3_context.py            # 4 context-assembly checks against local MiniLM (no LLM needed)
+"$PY" test_disambiguation.py        # 7 checks: too-many-matches family disambiguation (no LLM/db/embedder)
+"$PY" test_data_safety.py           # 4 checks: atomic ingest + read-only connect (stubbed embedder, offline)
+"$PY" enrich_demo/test_extraction_failures.py  # 5 checks: extraction-failure retryability + report path isolation
+"$PY" test_provenance_and_caches.py # 5 checks: embed-model mismatch fail-fast + compare_server cache rollover on DB replace (stubbed embedder, offline)
+"$PY" test_rag_effectiveness_fixes.py  # focused retrieval/filter regressions incl. unit canonicalization (offline)
 ```
 
 ### User demos
@@ -96,6 +101,6 @@ Layout (see `enrich_demo/README.md` for the full table): `provider.py` (PDF text
 ## Conventions when working in this repo
 
 - Don't commit changes unless explicitly asked to.
-- Treat `ragkit.py ingest` as destructive until `CODEX-IDd-TODO.md` P0.1 is fixed: it drops the target index before validating that the source is non-empty or that embedding will finish. Validate the source first and ingest into a disposable/new DB; never point an exploratory run at the only useful index.
-- Use a disposable enrichment DB for eval work. An LLM response that is returned but unparsable is currently recorded as a processed document, and every report build writes the shared `proposals.json`/`report_runN.md` names; see `CODEX-IDd-TODO.md` P0.3-P0.4. Do not interpret such a run as safely retryable or overwrite the tracked demo evidence.
+- `ragkit.py ingest` is staged/atomic as of 2026-07-09 (CODEX-IDd-TODO P0.1): the source is validated first, the index is built into a temp file, and the target is only replaced on success — a failed or empty ingest leaves the existing DB untouched. Query paths (`ask`/`eval`/compare_server) use `connect_readonly` and error out on a missing/never-ingested DB instead of creating an empty file (P2.12). Still prefer a disposable DB for exploratory ingests.
+- Use a disposable enrichment DB for eval work. As of 2026-07-09 an unparsable/failed LLM extraction is NOT marked processed — it lands in the `doc_failures` ledger and stays retryable (P0.3) — and report builds for a non-default `--db` write only DB-scoped names (`proposals_<stem>.json`, `report_runN_<stem>.md`), never the shared demo evidence (P0.4). Only the default `enrich_state.db` writes the legacy `proposals.json`/`report_runN.md` names.
 - When you fix a bug or ship a feature, verify it against the relevant gate(s) above (offline test scripts and/or a fresh eval-gate run) rather than reasoning from the diff alone. State DBs (`*.db`) and per-run `proposals_*.json` files are scratch evidence; do not overwrite the tracked `enrich_demo/proposals.json`, `report_run1.md`, or `report_run2.md` with throwaway output.

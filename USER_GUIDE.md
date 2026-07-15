@@ -7,6 +7,10 @@ This repository has two user-facing demos:
 
 Both demos bind to `127.0.0.1` by default. They do not need to be exposed to the LAN.
 
+For clean-room installation, offline bundles, dependency/model details, and beta
+onboarding against a new JSON parameter snapshot, see
+[`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md).
+
 ## 1. Prerequisites
 
 The prepared development environment uses:

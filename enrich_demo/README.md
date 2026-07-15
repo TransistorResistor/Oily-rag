@@ -22,6 +22,8 @@ scope (an unknown system surfaces only as an "unlinked" parked fragment).
 | file | role |
 |---|---|
 | `refcat.py`   | reference catalogue + data-dictionary + deterministic claim→field mapping + alias lexicon |
+| `field_mapper.py` | generated `parameterDescr`/type/unit/example catalogue + confidence-tiered resolver |
+| `field_aliases.json` | versioned curated equivalent terms and contextual aliases |
 | `provider.py` | folder PDF provider (PyMuPDF text extraction, content-hash, boilerplate stripping) |
 | `llm.py`      | the single LLM touch-point: one claim-extraction call per doc (OpenRouter, urllib) |
 | `pipeline.py` | linking (second-signal gate), validation (quote-grounding, unit norm, dedup/conflict), fingerprints, parking, SQL graduation |
@@ -75,6 +77,13 @@ distractor_derby_horse,unlinked_patriot,hedged_s300,relation_f35_aim9x --note ba
 # pymupdf4llm). Folded into the content hash, so the same PDF re-renders as a
 # distinct doc under a different mode.
 "$PY" enrich.py --db phaseB_md.db run --render md --folder testdocs2b --note md
+
+# MVP schema-aware mapper; Text/LOV gap-fills are opt-in
+"$PY" enrich.py --db mapper_mvp.db run --field-mapper catalogue --text-fields \
+  --folder testdocs --note mapper-mvp
+
+# Inspect the field catalogue generated from parameterDescr/dataType/uom/examples
+"$PY" enrich.py field-audit --output field_audit.json
 ```
 `report.py` always writes the legacy `proposals.json` AND, for any non-default
 `--db`, `proposals_<dbstem>.json` (so concurrent corpora don't clobber each
@@ -89,3 +98,8 @@ text-vs-md A/B and the header-unit / dual-unit table handling.
 - `proposals.json` — machine-readable live proposals.
 
 See **FINDINGS.md** for the eval scores and the unforeseen issues/tradeoffs.
+
+For the next current-data experiment -- generating a field catalogue from
+`parameterDescr`/`dataType`/`uom`/examples and overlaying a small curated
+equivalent-term map -- see **MVP_FIELD_MAPPING_PLAN.md**. A governed production
+field registry and database-provider abstraction are explicitly deferred there.
