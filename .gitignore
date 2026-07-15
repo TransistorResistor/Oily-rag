@@ -30,3 +30,8 @@ catalogue_snapshot/
 
 # throwaway working files
 tmp_*
+.review_scratch/
+output/
+brainstorm_*.json
+brainstorm_*.jsonl
+enrich_demo/testdocs3/
